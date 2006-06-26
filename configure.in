@@ -1,0 +1,100 @@
+AC_INIT([gnome-main-menu], [0.6.2], [])
+
+AC_CONFIG_SRCDIR([.])
+AC_CONFIG_HEADERS([config.h])
+
+AM_INIT_AUTOMAKE([1.9 tar-ustar])
+AM_MAINTAINER_MODE
+
+AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
+
+GNOME_COMPILE_WARNINGS
+
+AC_ISC_POSIX
+AC_PROG_CC
+AC_STDC_HEADERS
+AM_PROG_LIBTOOL
+
+dnl ==============================================
+dnl translation support
+dnl ==============================================
+
+GETTEXT_PACKAGE=gnome-main-menu
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+ALL_LINGUAS="ar bg bn br bs ca cs cy da de el en_IGID es fi fr gl he hi hr hu id it ja ka km ko lo lt nb nl pa pl pt_BR pt ro ru sk sl sr sv ta tr uk zh_CN zh_TW"
+
+IT_PROG_INTLTOOL([0.34])
+AM_GLIB_GNU_GETTEXT
+
+dnl ==============================================
+dnl Check that we meet the  dependencies
+dnl ==============================================
+AM_PATH_GLIB_2_0(2.8.0,,,gobject)
+
+COMMON_MODULES="glib-2.0 gobject-2.0 gtk+-2.0 gdk-2.0"
+
+PKG_CHECK_MODULES(LIBUTILS, $COMMON_MODULES gnome-desktop-2.0)
+
+PKG_CHECK_MODULES(GLADE, libglade-2.0)
+AC_SUBST(GLADE_CFLAGS)
+AC_SUBST(GLADE_LIBS)
+
+PKG_CHECK_MODULES(LIBSLAB, [ $COMMON_MODULES gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango ])
+
+AC_SUBST(LIBSLAB_CFLAGS)
+AC_SUBST(LIBSLAB_LIBS)
+
+PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager hal-storage ])
+
+AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, have_iwlib=yes, have_iwlib=no)], have_iwlib=no)
+
+if test "x$have_iwlib" != "xyes" ; then
+	AC_ERROR(cannot find iwlib)
+else
+	MAIN_MENU_LIBS="$MAIN_MENU_LIBS -liw"
+	AC_SUBST(MAIN_MENU_LIBS)
+fi
+
+AC_SUBST(MAIN_MENU_CFLAGS)
+AC_SUBST(MAIN_MENU_LIBS)
+
+PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 libgnomeui-2.0 libgnome-menu ])
+
+AC_SUBST(APPLICATION_BROWSER_CFLAGS)
+AC_SUBST(APPLICATION_BROWSER_LIBS)
+
+PKG_CHECK_MODULES(CONTROL_CENTER, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 libgnomeui-2.0 libgnome-menu ])
+
+AC_SUBST(CONTROL_CENTER_CFLAGS)
+AC_SUBST(CONTROL_CENTER_LIBS)
+
+dnl ==============================================
+dnl Gconf
+dnl ==============================================
+
+AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
+
+if test x"$GCONFTOOL" = xno; then
+  AC_MSG_ERROR([gconftool-2 executable was not found in your path - should be install with gconf])
+fi
+
+AM_GCONF_SOURCE_2
+
+dnl ==============================================
+dnl End: Gconf
+dnl ==============================================
+
+AC_OUTPUT([
+Makefile
+application-browser/etc/Makefile
+application-browser/src/Makefile
+control-center/etc/Makefile
+control-center/src/Makefile
+libslab/src/Makefile
+libslab/src/libslab.pc
+main-menu/etc/Makefile
+main-menu/src/Makefile
+utils/Makefile
+po/Makefile.in
+])

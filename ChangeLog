@@ -1,0 +1,1375 @@
+2006-06-20  Jim Krehl  <jimmyk@novell.com>
+	* Branch made to prepare source for public licensing.
+
+2006-06-20  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/document-tile.c:
+	More fixing for 177414 - memory leaks
+
+2006-06-18  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/document-tile.c:
+	Make the main-menu respect the /apps/nautilus/preferences/enable_delete
+	key, BNC #183636.
+
+	Added functionality to remove entries from ~/.recently-used when a user
+	deletes/trashes a document from the main-menu (BNC #181704) and
+	rewrites ~/.recently-used when a user renames a file with the main-menu
+	(BNC #183638).  Additionally, make the main-menu less naive about these
+	operations if they fail (BNC #185170).
+
+2006-06-16  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c:
+	Added a keyboard grab to the main menu, BNC #185462.
+
+2006-06-16  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  main-menu/src/hard-drive-status-tile.c
+	  main-menu/src/network-status-tile.c
+	  main-menu/src/network-status-agent.c
+	  main-menu/src/network-status-info.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/main-menu-conf.c
+	  utils/themed-icon.c
+	  libslab/src/application-tile.c
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/tile-action.c
+	  libslab/src/app-shell.h
+	  libslab/src/tile.c:
+	Fix for 177414 - memory leaks
+
+2006-06-12  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Fix for 181665 - launch app even if in multiple categories
+
+2006-06-09  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/document-tile.c:
+	Switched the "Send To" trigger from using g_spawn_async with a full
+	command line as one string to using the argv array.  This prevents the
+	shell from having to parse potentially problematic strings, BNC
+	#183045.
+
+	Additionally, make the "Send To" menu option insensitive if the file is
+	not local, BNC #183190.
+
+2006-06-01  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Fix for 180305 - AB crash when new apps gconf key is zero
+
+2006-05-31  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/document-tile.c:
+	Cleaned up some memory issues for BNC #177862, BNC #177414, BNC
+	#177756.  Also made sure that a DocumentTile always at least has a
+	default icon, "gnome-fs-regular".
+
+	* main-menu/src/main-menu.c
+	  main-menu/src/network-status-tile.c:
+	Incorporated a patch submitted by Zhe Su for BNC #179578.  The network
+	information dialog uses a glade file from the NetworkManager package,
+	this patch ensures that the localization is taken from the
+	NetworkManager domain instead of the gnome-main-menu domain.
+
+2006-05-26  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/document-tile.c:
+	Fix for 179208 - no mime-type causing main-menu crash
+
+2006-05-25  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/file-area-widget.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/tile-table.c
+	  libslab/src/application-tile.c:
+	Added a bunch of memory clean-up, BNC #177414.
+
+2006-05-25  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/document-tile.c:
+	Replaced egg_recent_item_get_mime_type with an explicit
+	gnome_vfs_get_file_info with the
+	GNOME_VFS_FILE_INFO_FORCE_FAST_MIME_TYPE flag set, to avoid blocking.
+
+2006-05-25  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/document-tile.c:
+	Fix for 178541 - no default action causing main-menu crash
+
+2006-05-24  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/recent-file.c:
+	Revert back to svn version r584.  Also removed g_file_test call.
+	Checking recent file validity in the main-menu has created a pile of
+	bugs, BNC #177756, BNC #177862, BNC #177807, and BNC #151222.  The
+	main-menu is now naive about files which while listed in
+	~/.recently-used may not exist for a varierty of reasons, e.g. un- or
+	stale mounted volumes.
+
+	* sled/gnome-main-menu.spec:
+	Added a conditional statement to %post to modify the default "Favorite
+	Applications" list if the rpm is being installed on SLES or not, BNC
+	#177399.
+
+2006-05-22  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/recent-file.c:
+	Partial fix for #177807 - main menu crash - appears to be reentrancy
+	issue with gnome_vfs_monitor_add callback
+
+2006-05-18  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in:
+	Fix for #175646 - translation problem
+
+2006-05-18  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/tile-table.c
+	  main-menu/src/tile-table.h:
+	Fixed null pointer deference behind BNC #176709.  Also fixed an related
+	but unreported bug -- when dragging a launcher from outside the
+	main-menu onto a "Favorite App" that launcher was not added to the
+	Favorite Apps list.
+
+2006-05-17  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/file-area-widget.h
+	  utils/gnome-utils.c
+	  utils/gnome-utils.h:
+	Added support for the /desktop/gnome/lockdown/disable_command_line key
+	in the main-menu.  Any .desktop file with the TerminalEmulator category
+	will not be display if this key is TRUE.  Also added support for the
+	/apps/panel/global/disable_{lock_screen,log_out} keys.  BNC #172687.
+
+	* main-menu/etc/slab.schemas.in.in:
+	Changed defaults nautilus.desktop to nautilus-home.desktop, BNC
+	#176381.
+
+2006-05-16  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/tile-table.c
+	  libslab/src/application-tile.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/tile-table.c:
+	Fix for BNC #142932.  Added file monitors to application tiles to turn
+	themselves on and off if the underlying .desktop file {dis,re}appears.
+	Added functionality to the TileTable widget in the main-menu to
+	automatically handle this new application tile behavior.
+
+2006-05-12  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h:
+	Fix for #155134 - search blocks typing
+	#172687 - Sabayon profiles not functioning
+
+2006-05-11  Rodrigo Moya <rodrigo@novell.com>
+	* main-menu/src/main-menu-ui.c (main_menu_ui_new): install a handler
+	to receive messages via X events.
+	(slab_action_filter): the handler.
+	Fix for #152992.
+
+2006-05-09  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/recent-files.c:
+	Fix for 151222 - hang on stale nfs mount 
+
+2006-05-08  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c:
+	Fix for BNC #171114, Subheader label needs ellipsizing.
+
+2006-05-03  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/file-area-widget.c:
+	Fix for BNC #171100.
+
+2006-05-03  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/shell-window.c
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h:
+	Fix for 171036 - initial sizing 
+
+2006-05-03  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/file-area-widget.c
+	  main-menu/src/document-tile.h
+	  main-menu/src/tile-table.c
+	  main-menu/src/tile-table.h:
+	Fix for BNC #170704, BNC #171131.
+
+2006-05-02  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/hard-drive-status-tile.c
+	  main-menu/src/hard-drive-status-tile.h
+	  main-menu/src/main-menu-ui.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/Makefile.am:
+	Fix for BNC #170356, BNC #158503.
+
+2006-05-02  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in:
+	Fix for 170702 - add yast to CC
+
+2006-05-01  JP Rosevear  <jpr@novell.com>
+
+	* main-menu/src/main-menu-ui.c (bonobo_menu_menu_about_cb): just
+	call gtk_widget_show instead of gtk_widget_show_all which will
+	display widgets that are unused
+	Fix for BNC #168643
+
+2006-04-26  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/application-tile.c:
+	Fix for BNC #158787.
+	
+2006-04-25  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	* libslab/src/app-resizer.c:
+	Fix for 168630 - scrolling 
+
+2006-04-21  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h:
+	Fix for 154484 - AB/CC window position
+
+2006-04-19  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-resizer.c
+	* libslab/src/app-resizer.h
+	* libslab/src/shell-window.c
+	* libslab/src/shell-window.h
+	* libslab/src/slab-section.c
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h:
+	Fix for 146557 - font cropping
+	Also scrolling when smaller than 1 column
+
+2006-04-18  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c:
+	Fix for BNC #138730.
+
+2006-04-14  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-common.h
+	  main-menu/src/main-menu-engine.c
+	  main-menu/src/main-menu-ui.c
+	  main-menu/src/file-area-widget.c
+	  main-menu/src/main-menu-conf.c
+	  main-menu/src/file-area-widget.h
+	  main-menu/src/main-menu-conf.h
+	  main-menu/src/tile-table.c
+	  main-menu/src/tile-table.h
+	  main-menu/src/Makefile.am
+	  utils/gnome-utils.c
+	  utils/gnome-utils.h
+	  libslab/src/tile.c:
+	Reorg for BNC #160191, BNC #146300.
+
+2006-04-12  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h
+	* application-browser/src/application-browser.c
+	* control-center/src/control-center.c
+	* libslab/src/application-tile.c
+	* libslab/src/application-tile.h:
+	Fix for 164628 - icon size in CC
+
+2006-04-10  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/slab-section.c
+	* libslab/src/slab-section.h:
+	Match the new group selection from Product Design
+
+2006-04-07  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/nameplate-tile.c
+	* libslab/src/shell-window.c:
+	Fix for #158820 and conform with focus discussion with Product Design
+
+2006-04-05  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	* libslab/src/app-shell.h:
+	Fix for #136989 and #158253	
+
+2006-04-04  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Handle invalid menu file and fix for AB crash #158586	
+
+2006-04-04  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-agent.c:
+
+	Fix for BNC #163264, possible fix for BNC #162466, BNC #162920.
+
+2006-03-29  Michael Meeks  <michael.meeks@novell.com>
+
+	* configure.in, libslab/src/Makefile,
+	* libslab/src/libslab.pc: create / install
+	libslab.pc.
+
+2006-03-27  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-resizer.h
+	* libslab/src/app-resizer.c
+	* libslab/src/app-shell.c:
+	Eliminate flicker when changing filter
+
+2006-03-27  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/Makefile.am
+	  main-menu/src/main-menu-ui.c
+	  main-menu/src/network-status-tile.c
+	  main-menu/src/network-status-agent.c
+	  main-menu/src/network-status-agent.h
+	  main-menu/src/network-status-info.c
+	  main-menu/src/network-status-info.h:
+	Fix network status, BNC #158173.
+
+2006-03-24  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/tile.h
+	* libslab/src/tile.c:
+	Partial fix for 158820 - focus/enter highlight
+
+2006-03-22  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Fix for 154490 - no match display
+
+2006-03-20  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Fix for 129432.
+
+2006-03-20  Dan Winship  <danw@novell.com>
+
+	* main-menu/src/egg-recent-model.c: Don't try to start monitoring
+	the file until it's been set. Same bug as 156801, just less
+	visible here.
+
+	* main-menu/src/main-menu-ui.c (show_main_window): Always call
+	gtk_window_present_with_time, to forcibly request keyboard focus
+	(which metacity doesn't otherwise give to DOCK-type windows).
+
+2006-03-16  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  libslab/src/app-resizer.c
+	  libslab/src/slab-section.c
+	  libslab/src/slab-section.h
+	  libslab/src/shell-window.c
+	  libslab/src/shell-window.h:
+	More work on theme.
+
+2006-03-14  Dan Winship  <danw@novell.com>
+
+	* main-menu/src/slab-window.c (slab_window_new): set the type_hint
+	to DOCK so it won't be drawn underneath other panels in the area.
+	157386.
+
+2006-03-13  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  libslab/src/app-resizer.h
+	  libslab/src/app-resizer.c
+	  libslab/src/slab-section.c
+	  libslab/src/slab-section.h
+	  application-browser/src/application-browser.c:
+	fix for 156846, 154780
+
+2006-03-13  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/etc/slab.schemas.in:
+
+	Fix for BNC #139617.
+
+2006-03-10  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/main-menu-conf.c
+	  main-menu/src/main-menu-common.h
+	  main-menu/src/main-menu-engine.c
+	  main-menu/etc/slab.schemas.in:
+
+	Changed gconf key name, BNC #157166.  Removed beagle-gui dependency.
+
+2006-03-08  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c:
+
+	Fixed network connection info dialog.
+
+2006-03-07  Jim Krehl  <jimmyk@novell.com>
+	* utils/gnome-utils.c
+	  utils/themed-icon.c:
+
+	Reload unloaded images, for BNC #148034.
+
+2006-03-07  Dan Winship  <danw@novell.com>
+
+	* main-menu/src/main-menu-ui.c: track the panel background. Part
+	of 155345.
+
+2006-03-03  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/network-status-tile.c
+
+	Change computer icon name to gnome default.  Update to new
+	NetworkManager API.
+
+2006-03-03  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  application-browser/src/application-browser.c
+	  libslab/src/app-shell-startup.c:
+	possible fix for 149735.
+	change icon for AB
+	remove exec matching
+
+2006-03-03  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Fix for 154266.
+	Handle gconf key on add/remove from startup
+
+2006-03-02  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/main-menu-conf.c
+	  main-menu/src/main-menu-conf.h
+	  main-menu/src/system-tile.c
+	  main-menu/src/system-tile.h
+	  main-menu/etc/slab.schemas.in
+	  configure.in
+	  utils/gnome-utils.c
+	  utils/gnome-utils.h:
+
+	Re-architected how the system area is specified in gconf and generated.
+	Fix for BNC #154440.
+
+2006-02-28  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Make AB/CC quit on Ctl-W.
+
+2006-02-28  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/document-tile.c
+	  main-menu/src/egg-recent-model.c
+	  main-menu/src/egg-recent-model.h
+	  main-menu/src/recent-files.c
+	  main-menu/src/recent-files.h
+	  main-menu/src/main-menu-engine.c
+	  libslab/src/application-tile.c
+	  libslab/src/recent-apps-db.c
+	  libslab/src/recent-apps-db.h:
+
+	Switched from using sqlite to using .recently-used-apps to store
+	application launch times.  BNC #152405
+
+2006-02-28  Rodney Dawes  <dobey@novell.com>
+
+	* main-menu/src/network-status-tile.c (network_status_tile_new):
+	(update_tile): Use the same icon names as nm-applet for status
+
+2006-02-27  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	Update NewApps removal strategy	
+
+2006-02-22  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/etc/slab.schemas.in:
+	Fix for BNC #152173.
+
+	* libslab/src/app-shell.c:
+	Fix for multiple launches on double click.
+
+2006-02-14  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c,
+	  main-menu/src/hard-drive-status.c,
+	  main-menu/src/main-menu-ui.c:
+	Fix for BNC #150012.  Fixes for 2006-02-17 walkthrough.
+
+
+2006-02-15  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c:
+	Fix for BNC #149031.
+
+2006-02-14  Rodney Dawes  <dobey@novell.com>
+
+	* main-menu/src/main-menu-ui.c (main_menu_ui_update_file_area):
+	Don't call gtk_combo_box_set_active () here. Doing so causes a nasty
+	infinite loop because we monitor the changed signal on GtkComboBox
+
+2006-02-13  Scott Reeves  <sreeves@novell.com>
+	* po/fr.po:
+		French i18n file	
+
+2006-02-09  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+		Fix for Bug146010 - x-screensaver
+		Fix to create dir if newapps file does not exist.
+
+2006-02-03  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/network-status-tile.c
+	  main-menu/src/hard-drive-status.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/system-tile.c
+	  main-menu/src/Makefile.am
+	  configure.in
+	  utils/gnome-utils.c
+	  utils/Makefile.am
+	  utils/gnome-utils.h
+	  libslab/src/application-tile.c
+	  Makefile.am:
+	  	Partial reorg (moving toward no -devel package).  Fixes for:
+		https://bugzilla.novell.com/show_bug.cgi?id=146041 and
+		https://bugzilla.novell.com/show_bug.cgi?id=140803 and
+		https://bugzilla.novell.com/show_bug.cgi?id=147237 (maybe).
+
+2006-02-02  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c:
+		NetworkManager API change.
+
+	* main-menu/etc/slab.schemas.in:
+		Replaced red-carpet.desktop with zen-installer.desktop.
+
+	* libslab/src/application-tile.c:
+		More fix for https://bugzilla.novell.com/show_bug.cgi?id=146557.
+
+2006-01-30  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/application-tile.c:
+		Fix for Bug146557
+
+2006-01-30  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status-tile.c:
+	  	Fix for https://bugzilla.novell.com/show_bug.cgi?id=139617
+
+2006-01-27  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/system-tile.c
+	  libslab/src/slab-gnome-util.c:
+		Change help to ghelp. Fix bug with launching system tiles
+		twice in main-menu
+
+2006-01-25  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  libslab/src/tile-button.h
+	  libslab/src/tile-button.c
+	  libslab/src/tile-standard.h
+	  libslab/src/tile-standard.c
+	  control-center/src/control-center.c
+	  application-browser/etc/application-browser.schemas.in:
+		remove old tile files. partial move to the new "new apps"
+		method. move control center actions to new tile.
+
+2006-01-24  Dan Winship  <danw@novell.com>
+
+	* main-menu/src/main-menu-ui.c (main_menu_ui_new,
+	bind_search_key): add code to bind beagle-search's activation key
+	(since the user won't be running beagle-search in tray mode in
+	NLD.)
+
+2006-01-24  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/Makefile.am
+	  configure.in
+	  Makefile.am
+	  po
+	  po/Makefile.in.in
+	  po/ChangeLog
+	  po/POTFILES.in
+	  po/en_IGID.po:
+		Added translation support and a test translation for English
+		Gibberish.
+
+2006-01-20  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h:
+		Convert to new Tile. Add exec name matching in filter	
+
+2006-01-19  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/application-tile.c:
+		Fix for https://bugzilla.novell.com/show_bug.cgi?id=143115.
+
+2006-01-16  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/hard-drive-status.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/network-status.c
+	  main-menu/src/hard-drive-status.h
+	  main-menu/src/document-tile.h
+	  main-menu/src/network-status.h
+	  main-menu/src/system-tile.c
+	  main-menu/src/system-tile.h
+	  main-menu/etc/slab.schemas.in
+	  libslab/src/application-tile.c
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/tile.h
+	  libslab/src/application-tile.h
+	  libslab/src/slab-gnome-util.h
+	  libslab/src/app-shell.c
+	  libslab/src/tile.c:
+	  	Added "Add to Startup Programs" action to ApplicationTiles.
+
+	* main-menu/etc/slab.schemas.in:
+	  	Changed package management commands to zen-*.
+
+	* main-menu/src/main-menu-ui.c
+	  main-menu-conf.c
+	  main-menu-conf.h
+	  slab.schemas.in:
+	  	Added lock-down configuration
+
+2006-01-13  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+		Fix for 142302 - scrolling
+
+2006-01-13  Dan Winship  <danw@novell.com>
+
+	* main-menu/etc/slab.schemas.in: Change search_command to
+	"beagle-search"
+
+2006-01-12  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/network-status.c:
+		updated for new NM API.
+
+	* libslab/src/application-tile.c
+	  libslab/src/application-tile.h:
+	  	added some accessors.
+
+	* libslab/src/tile-application.c
+	  libslab/src/tile-application.h:
+		removed these, as all of the old tile stuff is now deprecated.
+		tile-button and tile-standard remain until they can be removed
+		from the application browser and control center.
+
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h:
+	  	updated the application tiles to the new tile API.
+
+	* libslab/src/tile.c:
+		facilitated keyboard activation of the context-menus.
+
+2006-01-11  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  libslab/src/app-shell-startup.c
+	  control-center/src/control-center.c
+	  application-browser/src/application-browser.c:
+		Fix to give window icon. Bug137004.
+		Check for empty startup time
+
+2006-01-09  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/tile-application.c
+	  libslab/src/tile-button.c
+	  libslab/src/tile-button.h
+	  libslab/src/app-shell-startup.c
+	  control-center/src/control-center.c
+	  application-browser/src/application-browser.c:
+		Fix for AB/CC not coming to the front on relaunch. Bug140027.
+		Make the context menu popup in response to the keyboard signal
+
+2006-01-06  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+		Fix for keyboard navigation not scrolling. Bug138033.
+
+2005-12-22  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c
+	  control-center/src/control-center.c
+	  libslab/src/slab-section.c
+	  libslab/src/Makefile.am
+	  libslab/src/app-shell.h
+	  libslab/src/app-shell.c
+	  libslab/src/app-shell-startup.h
+	  libslab/src/app-shell-startup.c:
+	  	Monitor for changes to desktop files and auto update the app
+		browser. Clear and focus the filter when unhiding.	
+
+2005-12-22  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/document-tile.h
+	  libslab/src/nameplate-tile.c:
+
+	  	Added "Rename..." to document-tile context-menu.
+
+	* main-menu/etc/GNOME_MainMenu.server.in:
+
+		Renamed applet.
+
+2005-12-21  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/document-tile.c:
+
+	  	Added "Move to Trash" context-menu item.
+
+	* main-menu/src/hard-drive-status.c:
+
+		Fix for https://bugzilla.novell.com/show_bug.cgi?id=133595.
+
+2005-12-20  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/document-tile.h
+	  main-menu/etc/slab.schemas.in
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h:
+
+	  	Making recent docs tiles interactive.
+
+2005-12-19  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/main-menu-conf.c
+	  main-menu/src/document-tile.c
+	  main-menu/src/main-menu-conf.h
+	  main-menu/src/recent-files.c
+	  main-menu/src/recent-files.h
+	  main-menu/src/main-menu-engine.c:
+
+		Added recent docs tiles, though currently non-interactive.
+
+2005-12-16  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c
+	  control-center/src/control-center.c:
+	  	Call autostart complete - Bug 138023
+
+2005-12-15  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.h
+	  libslab/src/app-shell.c
+	  application-browser/src/application-browser.c
+	  control-center/src/control-center.c:
+		Add hide command line for autostart and make control center a
+		singleton.
+
+2005-12-09  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.h
+	  libslab/src/app-shell.c
+	  application-browser/src/application-browser.c:
+		Change to single click launch and singleton instance.
+
+2005-12-01  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/main-menu-engine.c:
+		Finished refactoring to allow for switchable file views
+		(Favorite Apps, Recent Apps, etc).
+
+2005-12-09  Dan Winship  <danw@novell.com>
+
+	* main-menu/etc/slab.schemas.in: Use "search" (holmes) rather than best
+
+2005-12-08  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/tile-button.c
+	  libslab/src/app-shell.c:
+		Fix problem of context menu not updating after action add.
+
+2005-12-01  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-conf.c
+	  main-menu/src/main-menu-conf.h
+	  main-menu/src/main-menu.c
+	  main-menu/src/Makefile.am
+	  main-menu/etc/slab.schemas.in
+	  configure.in
+	  libslab/src/tile-application.c
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/recent-apps-db.c
+	  libslab/src/slab-gnome-util.h
+	  libslab/src/recent-apps-db.h
+	  libslab/src/slab-section.c
+	  libslab/src/Makefile.am
+	  libslab/src/slab-section.h:
+	  	Merged in recent apps branch.
+
+2005-12-01  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/hard-drive-status.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/network-status.c
+	  libslab/src/app-shell.c
+	  libslab/src/tile-application.c
+	  libslab/src/tile-application.h
+	  libslab/src/tile-button.c
+	  libslab/src/tile-button.h:
+		Add enum of actions. Change to customized close behavior.
+
+2005-12-01  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c:
+		Fix for PrintScreen bug
+		(https://bugzilla.novell.com/show_bug.cgi?id=135951)
+
+	* libslab/src/tile-button.c:
+		Completely retarded oops.
+
+2005-11-30  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/tile-button.c:
+		Fixed broken-icon reloading.
+
+	* main-menu/src/main-menu.c
+	  libslab/src/tile-application.c
+	  libslab/src/slab-section.c:
+	  	Fixed various compiler warnings.
+
+2005-11-30  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in
+	  control-center/src/control-center.c
+	  application-browser/src/application-browser.c
+	  application-browser/etc/application-browser.schemas.in
+	  libslab/src/app-shell.c
+	  libslab/src/app-shell.h:
+		Rework gconf keys layout. Start of customized close behaivor.
+
+2005-11-23  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in:
+		Change gconf keys to use specific sub commands of YaST.
+		Requires new gnome-desktop fix. 
+
+2005-11-20  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/tile-application.c
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h:
+		Implemented the Upgrade/Uninstall options for application tile
+		context menus.  However, the tile will not be removed from the
+		main-menu automatically until the main-menu is restarted.
+
+	* libslab/src/tile-button.c:
+		Attempts to reload broken icons.  This fix is for the bug that
+		icons appear as broken if the startup timing of the gnome-panel
+		does not jive with whatever system makes icons available.  This
+		is handled in the expose event, but should probably be handled
+		by a theme-change event instead.
+
+2005-11-21  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c
+	  application-browser/etc/application-browser.schemas.in:
+	  	Handle errors on stat and ignore current directory in path
+		Change gconf key for default number of new apps
+
+2005-11-21  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c
+	  main-menu/src/text-button.c
+	  libslab/src/tile-button.c
+	  libslab/src/double-click-detector.c
+	  libslab/src/double-click-detector.h:
+		Removed standalone debugging.  Updated double-click-detector
+		with new API and using event times as reported by gdk.  Fixed a
+		bug with button press handling.
+
+2005-11-18  Scott Reeves  <sreeves@novell.com>
+	* control-center/src/control-center.c
+	  application-browser/src/application-browser.c
+	  application-browser/etc/Makefile.am
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h
+	  libslab/src/app-shell.c
+	  libslab/src/app-shell.h
+	  main-menu/src/main-menu.c:
+	  	Change main-menu to print warning when can't find search tool
+		Add gconf keys for "New Applications" category
+		Add new utility function for getting gconf int
+		Initial version of code for new app category
+
+2005-11-15  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c:
+		redoing closing when clicking outside the slab, using pointer
+		grabs instead of monitoring focus which was problematic for DnD
+		re-ordering.
+
+2005-11-14  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c
+	  main-menu/etc/slab.schemas.in
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h:
+		implemented tile reordering (with DnD).  3 reordering
+		strategies are implemented which are configurable with gconf
+		key =
+		/desktop/gnome/applications/main-menu/main_menu_reordering.
+		the possible values are MAIN_MENU_REORDERING_SWAP,
+		MAIN_MENU_REORDERING_PUSH and MAIN_MENU_REORDERING_PUSH_PULL.
+		SWAP indicates that when a tile is dragged onto another tile
+		they should simply swap position.  PUSH indicates that when a
+		tile, A, is dragged onto another tile, B, a vacant spot is
+		created in tile A's place.  tile B (and all tiles after B)
+		shift down until the new vacant space is filled.  this
+		operation wraps around in the case that tile A appears before
+		tile B prior to the drag and drop operation.  PUSH_PULL is
+		similar to PUSH except that when tiles are shifted they are
+		either pushed into the vacant spaced or pulled from the other
+		direction, depending on which strategy affects the least number
+		of tiles.
+
+2005-11-09  Jim Krehl  <jimmyk@novell.com>
+	* configure.in
+	  ChangeLog
+	  Makefile.am
+	  icons/:
+		removed the icons package, should now depend on the tango-icons
+		package.
+
+2005-11-09  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-entry.c: Simplify this a bunch by drawing the
+	watermark on top of the text rather than underneath it; since it's
+	translucent and the same color as the text, there's no difference
+	visually. Also fixes a bug where the watermark was sometimes
+	escaping into other widgets' backgrounds.
+
+	* search/: kill
+
+2005-11-07  Scott Reeves  <sreeves@novell.com>
+	* control-center/src/control-center.c
+	  main-menu/src/hard-drive-status.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/network-status.c
+	  libslab/src/tile-application.c
+	  libslab/src/tile-button.c
+	  libslab/src/tile-button.h
+	  libslab/src/app-shell.c:
+	  	Change the TileButtonActions to always have the tile set
+		Add a new signal generated whenever a TileButtonAction is
+		performed.
+		Make the CC/AB left side actions close properly.
+
+2005-11-07  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/hard-drive-status.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/slab-window.c
+	  main-menu/src/network-status.c
+	  main-menu/src/text-button.c
+	  libslab/src/tile-button.c
+	  libslab/src/slab-section.c
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h:
+	  	Fixed a number of memory leaks and unnecessary abstraction.
+
+	* main-menu/src/hard-drive-status.c:
+		Fixed oops regarding the desc label.
+
+	* main-menu/src/main-menu.c
+	  main-menu/etc/slab.schemas.in
+	  libslab/src/slab-gnome-util.c
+	  libslab/src/slab-gnome-util.h:
+	  	Added a "Lock Screen ..." system tile.
+
+	* main-menu/src/main-menu.c:
+		Changed tile spacing.
+
+	* main-menu/etc/slab.schemas.in:
+		Reordered system tiles.
+
+	* libslab/src/tile-button.c:
+		Do not steal focus from the search entry.
+
+	* libslab/src/search-bar.c:
+		Vertically align the entry and the button.
+
+2005-11-04  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in
+	  application-browser/src/application-browser.c
+	  control-center/src/control-center.c:
+	  	Add a gconf key for CC
+		Make the AB and CC follow their respective  gconf key for urgent close
+
+2005-11-04  Scott Reeves  <sreeves@novell.com>
+	* control-center/etc/control-center.schemas.in:
+		Update the schema fields and temp fallback to YaST until there
+		are better desktop files for "Add User" and "Configure
+		Network"
+
+2005-11-03  Scott Reeves  <sreeves@novell.com>
+	* control-center/src/control-center.c
+	  control-center/etc/Makefile.am
+	  libslab/src/slab-gnome-util.h
+	  libslab/src/app-shell.c
+	  libslab/src/app-shell.h:
+		Add the CC gconf schema keys for the "Common Tasks"
+		Read the tasks list from gconf
+		Make the CC actually launch desktop files when tasks are
+		activated.
+
+2005-11-02  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-entry.c (fix_watermark,
+	nld_search_entry_size_allocate): draw the watermark on the right,
+	not the left now (or actually, "on the side opposite where typing
+	starts", since it obeys LTR/RTL now.)
+
+	* libslab/src/app-shell.c (create_application_category_sections):
+	Use g_markup_printf_escaped in case the category name has an "&"
+	in it.
+
+2005-10-31  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/app-shell.c
+	  libslab/src/tile-standard.c:
+		Modified the "name_label" of the standard tile to be wrapped.
+		This seems to require gtk_widget_set_size_request to be called
+		on the action GtkLabel instance.  However, given that it's only
+		after allocation that it is known if a label needs to be
+		wrapped, it's necessary to insert the
+		gtk_widget_set_size_request call before the allocation phase of
+		the name_label.  This approach does not seem to work when the
+		name_label widget is governed by a GtkSizeGroup.
+
+		Also, changed "name-bold" to default to FALSE.
+
+	* libslab/src/tile-application.c
+	  main-menu/src/main-menu.c:
+		Replaced gnome_desktop_item_get_string (...) with
+		gnome_desktop_item_get_localestring (...) for translated
+		desktop file strings.
+
+		Added the ability to drag a tile onto the panel button to add
+		it to the menu.
+
+		Fix for https://bugzilla.novell.com/show_bug.cgi?id=131647
+
+2005-10-28  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c:
+		Re-added close when main-menu loses focus.
+
+	* main-menu/etc/slab.schemas.in:
+		Correctly points to the search desktop file.
+
+	* main-menu/src/hard-drive-status.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/network-status.c
+	  libslab/src/tile-application.c
+	  libslab/src/tile-button.c
+	  libslab/src/tile-button.h:
+		Added a "tile-activated" signal which is triggered by
+		"single-click", "double-click" and executing a "primary"
+		TileButtonAction.  Applications can listen for this signal if
+		they want to do a particular action whenever a tile is
+		activated, e.g. an application like ... i don't know ... the
+		main-menu can close itself when a tile is clicked on or
+		activated via its context menu.
+
+2005-10-27  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c 
+	  control-center/src/control-center.c
+	  libslab/src/app-resizer.c
+	  libslab/src/app-resizer.h
+	  libslab/src/app-shell.c:
+	  	Make the GtkSizeGroups singletons across all categories so all
+		tiles are same size, force maximum size, handle space in
+		tables for app-resizer
+
+2005-10-27  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/tile-button.c:
+		Fixed more icon loading bugs.
+
+	* main-menu/src/text-button.[ch]
+	  main-menu/src/main-menu.c:
+		Cursor changes when on top of the "More Applications ..." link
+
+2005-10-26  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/tile-button.c:
+		Tile no longer draws focus line, though not in the most ideal
+		way, perhaps.  Tile emits "single-click" signal when keyboard
+		activated.  Fixed icon loading bug.
+
+	* main-menu/src/main-menu.c:
+		Tiles in the "System" and "Status" sections are now managed by
+		the same set of GtkSizeGroups.
+
+	* configure.in
+	  libslab/src/tile-standard.c:
+		Added ellipsizing to the standard tile, including a new
+		property named "description-ellipsize-mode".  Adds a dependency
+		on Pango.  Font size is never "large" now.
+
+	* libslab/src/slab-section.c
+	  libslab/src/slab-section.h:
+		Added const modifiers to the constructors' parameters and added
+		the appropriate g_strdup calls.
+
+	* libslab/src/app-resizer.c
+	  libslab/src/app-shell.c:
+		Removed hard-coded tile size and added GtkSizeGroups to line
+		things up within categories.
+
+2005-10-25  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/app-shell.c:
+	   	Make the left pane size static after initial layout.	
+
+2005-10-25  Scott Reeves  <sreeves@novell.com>
+	* libslab/src/shell-window.c 
+	  libslab/src/app-shell.c:
+	  	Add spacing between pane division and category name
+		Clear group selection when filter changed
+
+2005-10-25  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu.c:
+		De-modularized construction of the main-menu, for
+		simplification and fixing many urgent closing bugs.
+		Also adjusted tile padding.
+
+	* main-menu/src/application-section.c
+	  main-menu/src/hard-drive-status.c
+	  main-menu/src/network-status.c
+	  main-menu/src/tile-status.c
+	  main-menu/src/tile-system.c
+	  main-menu/src/tile-table.c
+	  main-menu/src/tile-status.h
+	  main-menu/src/tile-system.h
+	  main-menu/src/Makefile.am:
+		Completely removed the TileStatus and TileSystem sub-types and
+		replaced them with TileStandard.
+
+	* libslab/src/slab-gnome-util.h
+	  main-menu/etc/slab.schemas.in:
+		Added a new key for configuring the network.
+
+	* libslab/src/tile-application.c
+	  libslab/src/tile-application.h:
+		Added a function to launch the application associated with the
+		tile.
+
+	* libslab/src/tile-button.c:
+		Changed the focus behavior and rendering of the tiles.  When
+		the mouse moves over a tile it enters the PRELIGHT state and
+		grabs focus.  FIXME: The tile still draws the focus line on the
+		widget, but it really shouldn't.
+
+2005-10-25  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c
+	  control-center/src/control-center.c
+	  libslab/src/tile-button.c
+	  libslab/src/tile-button.h
+	  libslab/src/app-shell.h
+	  libslab/src/app-shell.c:
+	  	Add a common method to activate a tile.
+		Make the AB and CC close/not close on tile activate
+		Removed redundant assign in tile-button.c
+
+2005-10-24  Dan Winship  <danw@novell.com>
+
+	* configure.in: 
+	* Makefile.am: add search/
+
+	* search/: C-based search tool using libbeagle. Work in progress.
+	(Doesn't use tiles yet.)
+
+	* libslab/src/search-bar.c (emit_search): if the timeout is set,
+	clear it (so that you don't get a second "search" signal 1 second
+	after hitting return, etc).
+	(nld_search_bar_set_text): add an "activate" arg to say whether or
+	not to emit the "search" signal.
+
+2005-10-24  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-bar.c: Mark the widget CAN_FOCUS. Focus the
+	entry on a focus grab, even when the context picker is before it
+	in the focus chain. Also, pack the search bar hbox into a vbox
+	with expand TRUE and fill FALSE so that the menu and button won't
+	grow taller if the search bar is packed into a container with some
+	other larger widget.
+
+	* libslab/src/search-entry.c: Regenerate a larger watermark pixmap
+	if the entry is widened, so that you can't see that the image is
+	being tiled.
+
+2005-10-21  Jim Krehl  <jimmyk@novell.com>
+	* libslab/src/normalized-grid.h
+	  libslab/src/normalized-grid.c:
+		Added a new container widget which contains a group of
+		composite widgets and lays them out such that specified
+		component widgets (i.e.  specific sub-widgets of each composite
+		widget added to the NormalizedGrid) are all made a uniform
+		size.  This is done so that TileButtons can be laid out in a
+		GtkTable and have the icons and text labels within each
+		TileButton line up with each other.
+
+
+2005-10-20  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-bar.c (nld_search_bar_clear): New method to
+	clear the search bar (without emitting a "search" signal.)
+
+	* main-menu/src/search-section.c (handle_search): Clear the search
+	entry and hide the slab when search is activated (FIXME, a little
+	kludgy).
+
+	* main-menu/etc/slab.schemas.in: point to holmes instead of best
+	for search
+
+2005-10-20  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/application-section.c
+	  main-menu/src/tile-table.c
+	  main-menu/src/system-section.c
+	  main-menu/src/tile-table.h:
+		reorg tile-table
+
+	* main-menu/etc/slab.schemas.in:
+		pointing to the new control center desktop file instead of
+		gnomecc.desktop
+
+	* control-center/etc/control-center.desktop.in:
+		added an Icon field
+
+2005-10-20  Dan Winship  <danw@novell.com>
+
+	* libslab/src/shell-window.h: s/GtkWindow/GtkFrame/
+
+	* libslab/src/search-bar.h: fill in argument names in the "search"
+	signal prototype, for gapi
+
+2005-10-19  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-context-picker.c: Context-picker popup menu
+	for searches.
+
+	* libslab/src/search-bar.c: Complete search bar widget, featuring
+	an NldSearchEntry, an optional NldSearchContextPicker, an optional
+	"Find Now" button, and an optional automatically-emit-"search"-
+	after-the-user-stops-typing timeout. (The context picker
+	interaction is not quite right at the moment, awaiting
+	clarifications...)
+	
+	* libslab/src/app-shell.c (create_filter_section): Use a search
+	bar (with no menu or button, but a 0-second autosearch timeout).
+
+	* main-menu/src/search-section.c (create_search_section): Use a
+	search bar with a "Find Now" button.
+
+2005-10-19  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/main-menu.c:
+		fixed positioning/raising bugs
+		fixed panel orientation bugs
+		added a bonobo context menu for the panel button
+
+2005-10-18  JP Rosevear  <jpr@novell.com>
+
+	* application-browser/src/application-browser.c
+	(generate_categories): remove erroneous comment
+
+	* libslab/src/Makefile.am: make sure search-entry-watermark.h is
+	built and disted
+
+2005-10-18  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/hard-drive-status.c
+	  slab/configure.in:
+		now using HAL to determine which devices are pertinent for the
+		hard drive status.
+
+2005-10-18  Dan Winship  <danw@novell.com>
+
+	* libslab/src/search-entry.c: GtkEntry subclass that displays a
+	magnifying glass watermark.
+
+	* libslab/src/search-entry-watermark.svg: the watermark image
+
+	* libslab/src/Makefile.am: add a rule to turn the svg file into a
+	string in a header file so we don't have to load it off disk.
+
+	* application-browser/src/application-browser.c
+	(create_filter_section):
+	* main-menu/src/search-section.c (create_search_section): Use
+	NldSearchEntry.
+
+2005-10-17  Dan Winship  <danw@novell.com>
+
+	* libslab/src/tile-button.c: action-related changes to reduce
+	duplicated code and make it easier to wrap for C#.
+	(TileButtonAction): new type encapsulating all the information
+	about a tile action. (In particular, to let the sidebar know when
+	an action (like "Help") is disabled.)
+	(tile_button_action_new, tile_button_action_new_full,
+	tile_button_action_new_separator): Constructors for
+	TileButtonActions.
+	(tile_button_class_init): Add a "get_actions" signal, that tells
+	the class to fill in the actions list (rather than always doing it
+	at construct time even if it never gets used).
+	(tile_button_get_actions): construct the actions list if needed,
+	and return it.
+	(tile_button_set_activate_on_click): New flag saying to use the
+	main-menu behavior of activating the default action on
+	single-click.
+	(handle_button_event): Implement activate_on_click. On a
+	right-click, use tile_button_get_actions() and
+	build_context_menu()
+	(build_context_menu): Build a context menu from the actions list.
+	Automatically make the first action bold, and make actions with no
+	callbacks be insensitive.
+	(tile_button_get_context_menu, tile_button_set_context_menu):
+	Gone; the context menu is now constructed automatically from the
+	actions list when needed.
+
+	* libslab/src/tile-application.c:
+	* libslab/src/tile-status.c: 
+	* libslab/src/tile-system.c: update for changed api
+
+	* application-browser/src/application-browser.c
+	(populate_actions_section, handle_action_clicked): Use
+	tile_button_get_actions() and TileButtonAction. Desensitize
+	disabled actions. (Note: this looks like crap against the left
+	pane's background color, so this will need some design team love).
+
+	* main-menu/src/hard-drive-status.c (create_hard_drive_status_widget): 
+	* main-menu/src/network-status.c (create_network_status_tile):
+	* main-menu/src/system-section.c (create_logout_tile): Remove
+	"<b>" and "</b>" from the default action label, since they're added
+	automatically now.
+
+	* main-menu/src/tile-table.c (build_tiles): Use
+	tile_button_set_activate_on_click().
+
+2005-10-14  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/network-status.c:
+		removed libgtop and iwlib dependency, now uses dbus and
+		NetworkManager
+
+2005-10-12  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/slab-window.c
+	  libslab/src/tile-application.c:
+		fixed dnd from the application browser to the
+		main-menu
+
+2005-10-11  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/application-section.c
+	  main-menu/src/tile-table.c
+	  main-menu/src/slab-window.c
+	  main-menu/src/slab-window.h
+	  libslab/src/tile-application.c:
+		added Add/Remove to/from Menu functionality
+
+	* application-browser/src/application-browser.c:
+		removed #include ref to obsolete context-menu.h
+
+	* main-menu/src/main-menu.c:
+		close should happen on Ctrl-W not Ctrl-Q
+
+	* main-menu/src/tomboykeybinder.c:
+		fixed compile warning
+
+	* main-menu/src/hard-drive-status.c:
+		work-around for goofy (%llu/%lu) printf types
+
+	* main-menu/src/search-section.c 
+	  main-menu/src/network-status.c 
+	  main-menu/src/tile-table.c
+	  main-menu/src/main-menu.c
+	  main-menu/src/system-section.c
+	  application-browser/src/Makefile.am 
+	  configure.in
+	  Makefile.am
+	  main-menu/src/Makefile.am:
+		reorg of slab-util.h, moved from slab-common (which obsoletes
+		the lib) into libslab, renamed to slab-gnome-util.h
+
+	* main-menu/src/slab-window.c:
+		must check if widget->window exists before calling
+		gdk_window_resize ()
+
+2005-10-07  Jim Krehl  <jimmyk@novell.com>
+
+	* main-menu/src/main-menu.c:
+		main-menu closes on Escape and <Ctrl>q
+		main-menu opens on <Ctrl>Escape
+
+	* libslab/src:
+		added more tile types
+
+	* main-menu/src:
+		fixed system/status context menus
+
+2005-10-06  JP Rosevear  <jpr@novell.com>
+
+	* application-browser/src/application-browser.c
+	(generate_categories): use gmenu foo to find top level categories
+	walk recurse for .desktop files
+	(generate_launchers): recurse looking for .desktop files
+
+2005-10-04  JP Rosevear  <jpr@novell.com>
+
+	* main-menu/src/main-menu.c: don't hard code version/package name,
+	use new .server naming scheme
+
+	* main-menu/etc/Makefile.am (server_DATA): build renamed .server
+	file
+
+	* main-menu/etc/FNJURGGEN_SlabApplet_Factory.server.in: Update
+	name, description
+
+2005-09-20  JP Rosevear  <jpr@novell.com>
+
+	* Makefile.am: install the schema
+
+	* configure.in: gconf checks
+
+2005-09-16  JP Rosevear  <jpr@novell.com>
+
+	* autofooify the build
