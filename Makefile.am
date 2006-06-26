@@ -1,6 +1,7 @@
 SUBDIRS =				\
 	utils				\
-	libslab/src			\
+	libtile				\
+	libslab				\
 	application-browser/etc		\
 	application-browser/src		\
 	control-center/etc		\

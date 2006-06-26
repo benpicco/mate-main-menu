@@ -1,0 +1,332 @@
+<gconfschemafile>
+	<schemalist>
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/user_specified_apps</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/user_specified_apps</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>list</type>
+			<list_type>string</list_type>
+			<default>[MozillaFirefox.desktop,evolution.desktop,banshee.desktop,writer.desktop,f-spot.desktop,nautilus-home.desktop]</default>
+			<locale name="C">
+				<short>.desktop files for "Favorite Applications"</short>
+				<long>.desktop files for "Favorite Applications"</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/uninstall_package_command</key>
+			<applyto>/desktop/gnome/applications/main-menu/uninstall_package_command</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>zen-remover PACKAGE_NAME</default>
+			<locale name="C">
+				<short>command to uninstall packages</short>
+				<long>command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/upgrade_package_command</key>
+			<applyto>/desktop/gnome/applications/main-menu/upgrade_package_command</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>zen-updater --no-tray PACKAGE_NAME</default>
+			<locale name="C">
+				<short>command to upgrade packages</short>
+				<long>command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/system-area/system_item_list</key>
+			<applyto>/desktop/gnome/applications/main-menu/system-area/system_item_list</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>list</type>
+			<list_type>int</list_type>
+			<default>[0,1,2,3,4]</default>
+			<locale name="C">
+				<short>System area items</short>
+				<long>The list of the items which will appear in the System area.  Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4.  HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, "help_item", "control_center_item" and "package_manager_item" keys.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/system-area/help_item</key>
+			<applyto>/desktop/gnome/applications/main-menu/system-area/help_item</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>yelp.desktop</default>
+			<locale name="C">
+				<short>help item .desktop file</short>
+				<long>help item .desktop file</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/system-area/control_center_item</key>
+			<applyto>/desktop/gnome/applications/main-menu/system-area/control_center_item</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>@DATADIR@/applications/control-center.desktop</default>
+			<locale name="C">
+				<short>control center item .desktop file</short>
+				<long>control center item .desktop file</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/system-area/package_manager_item</key>
+			<applyto>/desktop/gnome/applications/main-menu/system-area/package_manager_item</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>zen-installer.desktop</default>
+			<locale name="C">
+				<short>package manager item .desktop file</short>
+				<long>package manager item .desktop file</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/application_browser</key>
+			<applyto>/desktop/gnome/applications/main-menu/application_browser</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>@DATADIR@/applications/application-browser.desktop</default>
+			<locale name="C">
+				<short>.desktop path for the application browser</short>
+				<long>.desktop path for the application browser</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file_browser</key>
+			<applyto>/desktop/gnome/applications/main-menu/file_browser</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>nautilus-home.desktop</default>
+			<locale name="C">
+				<short>.desktop file for the file browser</short>
+				<long>.desktop file for the file browser</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/system_monitor</key>
+			<applyto>/desktop/gnome/applications/main-menu/system_monitor</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>gnome-system-monitor.desktop</default>
+			<locale name="C">
+				<short>.desktop file for the gnome-system-monitor</short>
+				<long>.desktop file for the gnome-system-monitor</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/network_config_tool</key>
+			<applyto>/desktop/gnome/applications/main-menu/network_config_tool</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>/usr/share/applications/YaST2/lan.desktop</default>
+			<locale name="C">
+				<short>.desktop file for the net config tool</short>
+				<long>.desktop file for the YaST2 network_devices utility</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock_screen_priority</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock_screen_priority</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>list</type>
+			<list_type>string</list_type>
+			<default>[gnome-screensaver-command --lock,xscreensaver-command --lock]</default>
+			<locale name="C">
+				<short>prioritized list of commands to lock the screen</short>
+				<long>prioritized list of commands to lock the screen</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/search_command</key>
+			<applyto>/desktop/gnome/applications/main-menu/search_command</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>beagle-search SEARCH_STRING</default>
+			<locale name="C">
+				<short>This is the command to execute when the search entry is used.</short>
+				<long>This is the command to execute when the search entry is used.  SEARCH_STRING is replaced with the entered search text.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/urgent_close</key>
+			<applyto>/desktop/gnome/applications/main-menu/urgent_close</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>if true, main menu is more anxious to close</short>
+				<long>if true, main menu will close under these additional conditions: tile is activated, search activated</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_reordering</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/file_reordering</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>int</type>
+			<default>2</default>
+			<locale name="C">
+				<short>determines the reordering algorithm used when moving tiles around the main-menu</short>
+				<long>possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL].  SWAP indicates that when a tile is dragged onto another tile they should simply swap position.  PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place.  tile B (and all tiles after B) shift down until the new vacant space is filled.  this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation.  PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_class</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/file_class</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>int</type>
+			<default>0</default>
+			<locale name="C">
+				<short>determines which types of files to display in the file area</short>
+				<long>possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES].  RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser).  USER_SPECIFIED_APPS is equivalent to "Favorite Applications".  RECENT_FILES is the list of files from ~/.recently-used.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_mgr_open_cmd</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/file_mgr_open_cmd</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>nautilus --browser FILE_URI</default>
+			<locale name="C">
+				<short>This is the command to execute when the "Open in File Manager" menu item is activated.</short>
+				<long>This is the command to execute when the "Open in File Manager" menu item is activated.  FILE_URI is replaced with a uri corresponding to the dirname of the activated file.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>nautilus-sendto --default-dir=DIRNAME BASENAME</default>
+			<locale name="C">
+				<short>This is the command to execute when the "Send To..." menu item is activated.</short>
+				<long>This is the command to execute when the "Send To..." menu item is activated.  DIRNAME and BASENAME are replaced with the corresponding components of the activated tile.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/item_limit</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/item_limit</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>int</type>
+			<default>6</default>
+			<locale name="C">
+				<short>determines the limit of tiles in the file-area.</short>
+				<long>determines the limit of tiles in the file-area.  *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_blacklist</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/file_blacklist</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>list</type>
+			<list_type>string</list_type>
+			<default>[application-browser.desktop]</default>
+			<locale name="C">
+				<short>contains the list of files (including .desktop files) to be excluded from the "Recently Used Applications" and "Recent Files" lists</short>
+				<long>contains the list of files (including .desktop files) to be excluded from the "Recently Used Applications" and "Recent Files" lists</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/global_startup_dir</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/global_startup_dir</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>@DATADIR@/autostart</default>
+			<locale name="C">
+				<short>System-wide autostart program drop dir</short>
+				<long>Location of the system-wide directory in which startup programs are found.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/user_startup_dir</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/user_startup_dir</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>.config/autostart</default>
+			<locale name="C">
+				<short>User autostart program drop dir (within the home dir)</short>
+				<long>Location of the user directory in which startup programs are found.  The dir path should not be absolute, as the value of this key is appended to this path: ~/.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the application browser link</short>
+				<long>set to true if the link to the application browser should be visible and active.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/search_area_visible</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/search_area_visible</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the search area</short>
+				<long>set to true if the search area should be visible and active.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/status_area_visible</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/status_area_visible</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the status area</short>
+				<long>set to true if the status area should be visible and active.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/system_area_visible</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/system_area_visible</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the system area</short>
+				<long>set to true if the system area should be visible and active.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/showable_file_types</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/showable_file_types</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>list</type>
+			<list_type>int</list_type>
+			<default>[0,1,2]</default>
+			<locale name="C">
+				<short>lock-down configuration of the file area</short>
+				<long>contains the list (in no particular order) of allowable file types to show in the file area.  possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES].  RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser).  USER_SPECIFIED_APPS is equivalent to "Favorite Applications".  RECENT_FILES is the list of files from ~/.recently-used.</long>
+			</locale>
+		</schema>
+	</schemalist>
+</gconfschemafile>

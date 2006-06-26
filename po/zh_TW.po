@@ -1,0 +1,675 @@
+# Chinese message file for YaST2 (@memory@). -*- coding: utf-8 -*-
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Copyright (C) 2002 SuSE Linux AG.
+# Copyright (C) 2001 SuSE GmbH.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: YaST (@memory@)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-19 15:33+0200\n"
+"PO-Revision-Date: 2006-06-09 09:56\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:69
+msgid "Application Browser"
+msgstr "應用程式瀏覽器"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+#: ../control-center/etc/control-center.schemas.in.h:2
+msgid "Exit shell on add or remove action performed"
+msgstr "執行新增或移除動作時結束外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+#: ../control-center/etc/control-center.schemas.in.h:3
+msgid "Exit shell on help action performed"
+msgstr "執行說明動作時結束外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+#: ../control-center/etc/control-center.schemas.in.h:4
+msgid "Exit shell on start action performed"
+msgstr "執行啟動動作時結束外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+#: ../control-center/etc/control-center.schemas.in.h:5
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr "執行升級或解除安裝動作時結束外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "現有 .desktop 檔案的檔名"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+#: ../control-center/etc/control-center.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr "指出是否要在執行說明動作時關閉外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+#: ../control-center/etc/control-center.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr "指出是否要在執行啟動動作時關閉外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+#: ../control-center/etc/control-center.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr "指出是否要在執行新增或移除動作時關閉外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+#: ../control-center/etc/control-center.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr "指出是否要在執行升級或解除安裝動作時關閉外圍程序"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "新應用程式最大數目"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr "出現在新應用程式類別的最大應用程式數目"
+
+#: ../application-browser/src/application-browser.c:62
+msgid "New Applications"
+msgstr "新應用程式"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Filter"
+msgstr "過濾"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Groups"
+msgstr "群組"
+
+#: ../application-browser/src/application-browser.c:66
+msgid "Application Actions"
+msgstr "應用程式動作"
+
+#: ../control-center/etc/control-center.desktop.in.in.h:1
+#: ../control-center/src/control-center.c:115
+#: ../main-menu/src/system-tile.c:95
+msgid "Control Center"
+msgstr "控制中心"
+
+#: ../control-center/etc/control-center.schemas.in.h:1
+msgid "Close the control-center when a task is activated"
+msgstr "啟動任務時關閉控制中心"
+
+#: ../control-center/etc/control-center.schemas.in.h:10
+msgid "Task names and associated .desktop files"
+msgstr "任務名稱和關聯的 .desktop 檔案"
+
+#: ../control-center/etc/control-center.schemas.in.h:11
+msgid ""
+"The task name to be displayed in the control-center (thus needing to be "
+"translated) followed by a \";\" separator then the filename of an "
+"associated .desktop file to launch for that task."
+msgstr ""
+"顯示在控制中心的任務名稱 (這時表示需要轉譯) 後面會接上「;」分隔符號，如此便會"
+"產生該任務要啟動之關聯 .desktop 檔案的檔名。"
+
+#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
+#: ../control-center/etc/control-center.schemas.in.h:13
+msgid ""
+"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
+"desktop]"
+msgstr ""
+"[變更桌面背景;background.desktop,新增印表機;gnome-cups-manager.desktop,設定網"
+"路;YaST2/lan.desktop,變更密碼;gnome-passwd.desktop,新增使用者;YaST2/users."
+"desktop,開啟管理者設定;YaST.desktop]"
+
+#: ../control-center/etc/control-center.schemas.in.h:14
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
+msgstr "如果發生這種情形，控制中心會在啟動「一般工作」時關閉"
+
+#: ../control-center/src/control-center.c:112
+msgid "Common Tasks"
+msgstr "一般工作"
+
+#. make start action
+#: ../libslab/src/application-tile.c:322
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>啟動 %s</b>"
+
+#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
+msgid "Help"
+msgstr "說明"
+
+#: ../libslab/src/application-tile.c:350
+msgid "Help Unavailable"
+msgstr "無法使用說明"
+
+#. make upgrade action
+#: ../libslab/src/application-tile.c:388
+msgid "Upgrade"
+msgstr "升級"
+
+#. make uninstall action
+#: ../libslab/src/application-tile.c:395
+msgid "Uninstall"
+msgstr "解除安裝"
+
+#: ../libslab/src/application-tile.c:790
+msgid "Remove from Favorites"
+msgstr "從我的最愛中移除"
+
+#: ../libslab/src/application-tile.c:792
+msgid "Add to Favorites"
+msgstr "新增至我的最愛"
+
+#: ../libslab/src/application-tile.c:852
+msgid "Remove from Startup Programs"
+msgstr "從啟動程式中移除"
+
+#: ../libslab/src/application-tile.c:854
+msgid "Add to Startup Programs"
+msgstr "新增至啟動程式"
+
+#: ../libslab/src/app-shell.c:644
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+
+#: ../libslab/src/search-bar.c:235
+msgid "Find Now"
+msgstr "立即尋找"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "Open Menu"
+msgstr "開啟功能表"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_About"
+msgstr "關於(_A)"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "預設的功能表和應用程式瀏覽器"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:309
+msgid "GNOME Main Menu"
+msgstr "GNOME 主功能表"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "GNOME 原廠主功能表"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "主功能表"
+
+#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
+msgid "Software Update"
+msgstr "軟體更新"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr "YaST2 網路裝置公用程式的 .desktop 檔案(_D)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr "檔案瀏覽器的 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "gnome-system-monitor 的 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr "網路組態工具的 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop files for \"Favorite Applications\""
+msgstr "「我的最愛應用程式」的 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr "應用瀏覽器的 .desktop 路徑"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
+msgstr "可在其中找到啟動程式的系統範圍目錄位置。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"Location of the user directory in which startup programs are found. The dir "
+"path should not be absolute, as the value of this key is appended to this "
+"path: ~/."
+msgstr ""
+"可在其中找到啟動程式的使用者目錄位置。此目錄路徑一定不是絕對路徑，因為這個路"
+"徑是附加這個金鑰值：~/。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid "System area items"
+msgstr "系統區域項目"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "System-wide autostart program drop dir"
+msgstr "系統範圍自動啟動程式放下目錄"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid ""
+"The list of the items which will appear in the System area. Possible values "
+"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
+"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
+"the appropriate .desktop files defined in the, respectively, \"help_item\", "
+"\"control_center_item\" and \"package_manager_item\" keys."
+msgstr ""
+"將出現在系統區域的項目清單。可能值包括 HELP = 0、CONTROL_CENTER = 1、"
+"PACKAGE_MANAGER = 2、LOG_OUT = 3、LOCK_SCREEN = 4. HELP，CONTROL_CENTER 和 "
+"PACKAGE_MANAGER 必須分別在「help_item」、「control_center_item」和"
+"「package_manager_item」金鑰中定義適當的 .desktop 檔案。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr "這是在啟動「在檔案管理員開啟」功能表項目時執行的指令。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"這是在啟動「在檔案管理員開啟」功能表項目時執行的指令。FILE_URI 會取代成已啟動"
+"檔案目錄名稱所對應的 uri。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr "這是在啟動「傳送到...」功能表項目時執行的指令。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"這是在啟動「傳送到...」功能表項目時執行的指令。DIRNAME 和 BASENAME 會取代成啟"
+"動中拼磚的對應元件。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid "This is the command to execute when the search entry is used."
+msgstr "這是在使用搜尋項目時執行的指令。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+"這是在使用搜尋項目時執行的指令。SEARCH_STRING  會取代成輸入的搜尋文字。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "User autostart program drop dir (within the home dir)"
+msgstr "使用者自動啟動程式放下目錄 (包含於主目錄)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "command to uninstall packages"
+msgstr "解除安裝套件的指令"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "解除安裝套件的指令，指令中的 PACKAGE_NAME 會取代成套件名稱"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "command to upgrade packages"
+msgstr "升級套件的指令"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "升級套件的指令，指令中的 PACKAGE_NAME 會取代成套件名稱"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid ""
+"contains the list (in no particular order) of allowable file types to show "
+"in the file area. possible values (see also the note for /desktop/gnome/"
+"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
+"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
+"recently used (instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+"包含允許於檔案區域顯示的檔案類型清單 (無特定順序)。可能值包括 (另請參閱 /"
+"desktop/gnome/ applications/main-menu/file-area/file_class 的注意)：0 "
+"[USER_SPECIFIED_APPS]、1  [RECENTLY_USED_APPS]、2 [RECENT_FILES]。"
+"RECENTLY_USED_APPS 是指最近使用過的清單 (使用 main-menu 或 application-"
+"browser 執行)。USER_SPECIFIED_APPS 相等於「我的最愛應用程式」。RECENT_FILES  "
+"是指 ~/.recently-used 的檔案清單。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"包含要排除在「最近使用過的應用程式」和「最近的檔案」等清單之外的檔案清單 (包"
+"括 .desktop 檔案)。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "control center item .desktop file"
+msgstr "控制中心項目 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "determines the limit of tiles in the file-area."
+msgstr "決定 file-area 中的拼磚限制。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid ""
+"determines the limit of tiles in the file-area. *Note: this does not affect "
+"the number of tiles if the file-class is USER_SPECIFIED_*."
+msgstr ""
+"決定 file-area 中的拼磚限制。*注意： 當 file-class 是 USER_SPECIFIED_ 時，這"
+"個限制不會影響到拼磚數目*。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid ""
+"determines the reordering algorithm used when moving tiles around the main-"
+"menu"
+msgstr "決定移動 main- menu 周圍拼磚時所使用的重新排序演算法"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "determines which types of files to display in the file area"
+msgstr "決定要在檔案區域顯示的檔案類型"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "help item .desktop file"
+msgstr "說明項目 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "if true, main menu is more anxious to close"
+msgstr "如果發生這種情形，主功能表會更快加以關閉"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+"如果發生這種情形，主功能表會在下面這些其他條件下關閉： 拼磚已經啟動、搜尋已經"
+"啟動"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down configuration of the file area"
+msgstr "鎖定檔案區域的組態"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the application browser link"
+msgstr "鎖定應用程式瀏覽器連結的狀態"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the search area"
+msgstr "鎖定搜尋區域的狀態"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "lock-down status for the status area"
+msgstr "鎖定狀態區域的狀態"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "lock-down status for the system area"
+msgstr "鎖定系統區域的狀態"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "package manager item .desktop file"
+msgstr "套件管理員項目 .desktop 檔案"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+"when a tile is dragged onto another tile they should simply swap position. "
+"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
+"vacant spot is created in tile A's place. tile B (and all tiles after B) "
+"shift down until the new vacant space is filled. this operation wraps around "
+"in the case that tile A appears before tile B prior to the drag and drop "
+"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
+"they are either pushed into the vacant spaced or pulled from the other "
+"direction, depending on which strategy affects the least number of tiles."
+msgstr ""
+"可能值 = 0 [SWAP]、1 [PUSH]、2 [PUSH_PULL]。SWAP 代表當您將拼磚拖曳到另一個拼"
+"磚時，這兩塊拼磚只是互換位置。PUSH 代表當您將拼磚 A 拖曳到另一個拼磚 B 時，拼"
+"磚 A 的位置會產生一個空洞。拼磚 B (以及 B 後面的所有拼磚) 都會向下移動，直到"
+"補滿新的空洞。如果拼磚 A 在拖曳操作之前就出現在拼磚 B 前面，就要持續進行這項"
+"操作。PUSH_PULL 很類似 PUSH 操作，除了拼磚在移動時可以推入空洞或是從其他方向"
+"拉出，這要由哪種策略可以影響到最少的拼磚數目來決定。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+"(instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+"可能值 = 0 [USER_SPECIFIED_APPS]、1 [RECENTLY_USED_APPS]、2  [RECENT_FILES]。"
+"RECENTLY_USED_APPS 是指最近使用過的清單 (使用 main-menu 或 application-"
+"browser 執行)。USER_SPECIFIED_APPS 相等於「我的最愛應用程式」。RECENT_FILES  "
+"是指 ~/.recently-used 的檔案清單。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "prioritized list of commands to lock the screen"
+msgstr "鎖定螢幕的指令優先順序清單"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr "如果應用程式瀏覽器連結應該顯示並且啟用，請設定為 True。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the search area should be visible and active."
+msgstr "如果搜尋區域應該顯示並且啟用，請設定 True。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:44
+msgid "set to true if the status area should be visible and active."
+msgstr "如果狀態區域應該顯示並且啟用，請設定 True。"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:45
+msgid "set to true if the system area should be visible and active."
+msgstr "如果系統區域應該顯示並且啟用，請設定 True。"
+
+#: ../main-menu/src/document-tile.c:119
+msgid "Edited %m/%d/%Y"
+msgstr "已編輯的 %m/%d/%Y"
+
+#: ../main-menu/src/document-tile.c:153
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>使用 \"%s\" 開啟</b>"
+
+#: ../main-menu/src/document-tile.c:163
+msgid "Open with Default Application"
+msgstr "使用預設應用程式開啟"
+
+#: ../main-menu/src/document-tile.c:181
+msgid "Open in File Manager"
+msgstr "在檔案管理員開啟"
+
+#. make rename action
+#: ../main-menu/src/document-tile.c:199
+msgid "Rename..."
+msgstr "重新命名..."
+
+#. make move to trash action
+#: ../main-menu/src/document-tile.c:212
+msgid "Move to Trash"
+msgstr "移到垃圾筒"
+
+#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
+msgid "Delete"
+msgstr "刪除"
+
+#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
+msgid "Send To..."
+msgstr "傳送到..."
+
+#: ../main-menu/src/file-area-widget.c:130
+msgid "Show:"
+msgstr "顯示："
+
+#: ../main-menu/src/file-area-widget.c:179
+msgid "Favorite Applications"
+msgstr "我的最愛應用程式"
+
+#: ../main-menu/src/file-area-widget.c:209
+msgid "Recently Used Applications"
+msgstr "最近使用過的應用程式"
+
+#: ../main-menu/src/file-area-widget.c:229
+msgid "Recent Documents"
+msgstr "最近的文件"
+
+#: ../main-menu/src/file-area-widget.c:381
+msgid "More Applications..."
+msgstr "其他應用程式..."
+
+#: ../main-menu/src/file-area-widget.c:385
+msgid "All Documents..."
+msgstr "所有文件..."
+
+#: ../main-menu/src/hard-drive-status-tile.c:83
+msgid "Hard Drive"
+msgstr "硬碟"
+
+#: ../main-menu/src/hard-drive-status-tile.c:316
+#, c-format
+msgid "%lluG"
+msgstr "%lluG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:318
+#, c-format
+msgid "%lluM"
+msgstr "%lluM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:320
+#, c-format
+msgid "%lluK"
+msgstr "%lluK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:322
+#, c-format
+msgid "%llub"
+msgstr "%llub"
+
+#: ../main-menu/src/hard-drive-status-tile.c:342
+#, c-format
+msgid "%s Free / %s Total"
+msgstr "%s 可用 / %s 全部"
+
+#: ../main-menu/src/main-menu-ui.c:310
+msgid "The GNOME Main Menu"
+msgstr "GNOME 主功能表"
+
+#: ../main-menu/src/main-menu-ui.c:432
+msgid "System"
+msgstr "系統"
+
+#: ../main-menu/src/main-menu-ui.c:436
+msgid "Status"
+msgstr "狀態"
+
+#: ../main-menu/src/main-menu-ui.c:630
+msgid "Computer"
+msgstr "電腦"
+
+#: ../main-menu/src/main-menu-ui.c:965
+msgid "Search:"
+msgstr "搜尋："
+
+#: ../main-menu/src/network-status-tile.c:72
+#: ../main-menu/src/network-status-tile.c:184
+msgid "Network: None"
+msgstr "網路： 無"
+
+#: ../main-menu/src/network-status-tile.c:75
+#: ../main-menu/src/network-status-tile.c:185
+msgid "Click to configure network"
+msgstr "按一下以設定網路"
+
+#: ../main-menu/src/network-status-tile.c:191
+#, c-format
+msgid "Connected to: %s"
+msgstr "連線至： %s"
+
+#: ../main-menu/src/network-status-tile.c:194
+msgid "Network: Wireless"
+msgstr "網路： 無線"
+
+#: ../main-menu/src/network-status-tile.c:199
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "使用乙太網路 (%s)"
+
+#: ../main-menu/src/network-status-tile.c:202
+msgid "Network: Wired"
+msgstr "網路： 有線"
+
+#: ../main-menu/src/network-status-tile.c:308
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "無線乙太網路 (%s)"
+
+#: ../main-menu/src/network-status-tile.c:312
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "有線乙太網路 (%s)"
+
+#: ../main-menu/src/network-status-tile.c:316
+#: ../main-menu/src/network-status-tile.c:326
+#: ../main-menu/src/system-tile.c:127
+msgid "Unknown"
+msgstr "未知的"
+
+#: ../main-menu/src/network-status-tile.c:324
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d MB/秒"
+
+#: ../main-menu/src/system-tile.c:107
+msgid "Install Software"
+msgstr "安裝軟體"
+
+#: ../main-menu/src/system-tile.c:112
+msgid "Log Out ..."
+msgstr "登出 ..."
+
+#: ../main-menu/src/system-tile.c:117
+msgid "Lock Screen ..."
+msgstr "鎖定螢幕 ..."
+
+#~ msgid "Number of days to be in New Applications category"
+#~ msgstr "出現在新應用程式類別的天數"
+
+#~ msgid ""
+#~ "The number of days relative to current date that an application will be "
+#~ "considered a New Application"
+#~ msgstr "應用程式當作新應用程式的相對天數 (從目前日期算起)"
+
+#~ msgid "All Applications..."
+#~ msgstr "所有應用程式..."
+
+#~ msgid "Search"
+#~ msgstr "搜尋"

@@ -1,0 +1,648 @@
+# English/Gibberish translation of gnome-main-menu
+# Copyright (C) 2006
+# This file is distributed under the same license as the gnome-main-menu package.
+# Jim Krehl <jimmyk@novell.com>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-main-menu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-16 19:19-0400\n"
+"PO-Revision-Date: 2006-01-24 16:29-0500\n"
+"Last-Translator: Jim Krehl <jimmyk@novell.com>\n"
+"Language-Team: English Gibberish (IGID dialect) <jimmyk@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:69
+msgid "Application Browser"
+msgstr "Agidappligidicigidashigidon Brigidowsigider"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+#: ../control-center/etc/control-center.schemas.in.h:2
+msgid "Exit shell on add or remove action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+#: ../control-center/etc/control-center.schemas.in.h:3
+msgid "Exit shell on help action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+#: ../control-center/etc/control-center.schemas.in.h:4
+msgid "Exit shell on start action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+#: ../control-center/etc/control-center.schemas.in.h:5
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+#: ../control-center/etc/control-center.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+#: ../control-center/etc/control-center.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+#: ../control-center/etc/control-center.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+#: ../control-center/etc/control-center.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+#, fuzzy
+msgid "Max number of New Applications"
+msgstr "Nigidew Agidappligidicigidashigidons"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:62
+msgid "New Applications"
+msgstr "Nigidew Agidappligidicigidashigidons"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Filter"
+msgstr "Figidiltigider"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Groups"
+msgstr "Grigidoups"
+
+#: ../application-browser/src/application-browser.c:66
+msgid "Application Actions"
+msgstr "Agidappligidicigidashigidon Agidacshigidons"
+
+#: ../control-center/etc/control-center.desktop.in.in.h:1
+#: ../control-center/src/control-center.c:115
+#: ../main-menu/src/system-tile.c:95
+msgid "Control Center"
+msgstr "Cigidontrigidol Cigiden"
+
+#: ../control-center/etc/control-center.schemas.in.h:1
+msgid "Close the control-center when a task is activated"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:10
+msgid "Task names and associated .desktop files"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:11
+msgid ""
+"The task name to be displayed in the control-center (thus needing to be "
+"translated) followed by a \";\" separator then the filename of an "
+"associated .desktop file to launch for that task."
+msgstr ""
+
+#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
+#: ../control-center/etc/control-center.schemas.in.h:13
+msgid ""
+"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
+"desktop]"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:14
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+
+#: ../control-center/src/control-center.c:112
+msgid "Common Tasks"
+msgstr "Cigidommigidon Tigidasks"
+
+#. make start action
+#: ../libslab/src/application-tile.c:322
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Stigidart %s</b>"
+
+#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
+msgid "Help"
+msgstr "Higidelp"
+
+#: ../libslab/src/application-tile.c:350
+msgid "Help Unavailable"
+msgstr "Higidelp Ugidunigidavigidailigidabigidel"
+
+#. make upgrade action
+#: ../libslab/src/application-tile.c:388
+msgid "Upgrade"
+msgstr "Ugidupgrigidade"
+
+#. make uninstall action
+#: ../libslab/src/application-tile.c:395
+msgid "Uninstall"
+msgstr "Ugidunigidinstigidall"
+
+#: ../libslab/src/application-tile.c:790
+msgid "Remove from Favorites"
+msgstr "Rigidemigidove frigidom Figidavigidorigidites"
+
+#: ../libslab/src/application-tile.c:792
+msgid "Add to Favorites"
+msgstr "Agidadd tigido Figidavigidorigidites"
+
+#: ../libslab/src/application-tile.c:852
+msgid "Remove from Startup Programs"
+msgstr "Rigidemigidove frigidom Stigidartigidup Prigidogrigidams"
+
+#: ../libslab/src/application-tile.c:854
+msgid "Add to Startup Programs"
+msgstr "Agidadd tigido Stigidartigidup Prigidogrigidams"
+
+#: ../libslab/src/app-shell.c:644
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+
+#: ../libslab/src/search-bar.c:235
+msgid "Find Now"
+msgstr "Figidind Nigidow"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#, fuzzy
+msgid "Open Menu"
+msgstr "Ogidopigiden %s"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_About"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#, fuzzy
+msgid "Default menu and application browser"
+msgstr "Agidappligidicigidashigidon Brigidowsigider"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:309
+msgid "GNOME Main Menu"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr ""
+
+#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
+msgid "Software Update"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+#, fuzzy
+msgid ".desktop files for \"Favorite Applications\""
+msgstr "Figidavigidorigidite Agidappligidicigidashigidons"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"Location of the user directory in which startup programs are found. The dir "
+"path should not be absolute, as the value of this key is appended to this "
+"path: ~/."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid "System area items"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "System-wide autostart program drop dir"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid ""
+"The list of the items which will appear in the System area. Possible values "
+"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
+"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
+"the appropriate .desktop files defined in the, respectively, \"help_item\", "
+"\"control_center_item\" and \"package_manager_item\" keys."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "User autostart program drop dir (within the home dir)"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "command to uninstall packages"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "command to upgrade packages"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid ""
+"contains the list (in no particular order) of allowable file types to show "
+"in the file area. possible values (see also the note for /desktop/gnome/"
+"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
+"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
+"recently used (instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "control center item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "determines the limit of tiles in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid ""
+"determines the limit of tiles in the file-area. *Note: this does not affect "
+"the number of tiles if the file-class is USER_SPECIFIED_*."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid ""
+"determines the reordering algorithm used when moving tiles around the main-"
+"menu"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "determines which types of files to display in the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "help item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "if true, main menu is more anxious to close"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down configuration of the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the application browser link"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the search area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "lock-down status for the status area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "lock-down status for the system area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "package manager item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+"when a tile is dragged onto another tile they should simply swap position. "
+"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
+"vacant spot is created in tile A's place. tile B (and all tiles after B) "
+"shift down until the new vacant space is filled. this operation wraps around "
+"in the case that tile A appears before tile B prior to the drag and drop "
+"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
+"they are either pushed into the vacant spaced or pulled from the other "
+"direction, depending on which strategy affects the least number of tiles."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+"(instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "prioritized list of commands to lock the screen"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the search area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:44
+msgid "set to true if the status area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:45
+msgid "set to true if the system area should be visible and active."
+msgstr ""
+
+#: ../main-menu/src/document-tile.c:111
+msgid "Edited %m/%d/%Y"
+msgstr "Egidedigiditigided %m/%d/%Y"
+
+#: ../main-menu/src/document-tile.c:145
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Ogidopigiden wigidith \"%s\"</b>"
+
+#: ../main-menu/src/document-tile.c:155
+msgid "Open with Default Application"
+msgstr "Ogidopigiden wigidith Digidefigidault Agidappligidicigidashigidon"
+
+#: ../main-menu/src/document-tile.c:173
+msgid "Open in File Manager"
+msgstr "Ogidopigiden igidin Figidile Migidanigidagigider"
+
+#. make rename action
+#: ../main-menu/src/document-tile.c:191
+msgid "Rename..."
+msgstr "Rigidenigidame..."
+
+#. make move to trash action
+#: ../main-menu/src/document-tile.c:204
+msgid "Move to Trash"
+msgstr "Migidove tigido Trigidash"
+
+#. make delete action
+#: ../main-menu/src/document-tile.c:212
+msgid "Delete"
+msgstr "Digideligidete"
+
+#: ../main-menu/src/document-tile.c:232 ../main-menu/src/document-tile.c:239
+msgid "Send To..."
+msgstr "Sigidend Tigido..."
+
+#: ../main-menu/src/file-area-widget.c:130
+msgid "Show:"
+msgstr "Shigidow:"
+
+#: ../main-menu/src/file-area-widget.c:179
+msgid "Favorite Applications"
+msgstr "Figidavigidorigidite Agidappligidicigidashigidons"
+
+#: ../main-menu/src/file-area-widget.c:209
+msgid "Recently Used Applications"
+msgstr "Rigidecigidentligidy Ugidusigided Agidappligidicigidashigidons"
+
+#: ../main-menu/src/file-area-widget.c:229
+msgid "Recent Documents"
+msgstr "Rigidecigident Digidocigidumigidents"
+
+#: ../main-menu/src/file-area-widget.c:381
+msgid "More Applications..."
+msgstr "Migidore Agidappligidicigidashigidons..."
+
+#: ../main-menu/src/file-area-widget.c:385
+#, fuzzy
+msgid "All Documents..."
+msgstr "Rigidecigident Digidocigidumigidents"
+
+#: ../main-menu/src/hard-drive-status-tile.c:83
+msgid "Hard Drive"
+msgstr "Higidard Drigidive"
+
+#: ../main-menu/src/hard-drive-status-tile.c:316
+#, c-format
+msgid "%lluG"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:318
+#, c-format
+msgid "%lluM"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:320
+#, c-format
+msgid "%lluK"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:322
+#, c-format
+msgid "%llub"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:342
+#, c-format
+msgid "%s Free / %s Total"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:310
+msgid "The GNOME Main Menu"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:432
+msgid "System"
+msgstr "Sigidystigidem"
+
+#: ../main-menu/src/main-menu-ui.c:436
+msgid "Status"
+msgstr "Stigidatigidus"
+
+#: ../main-menu/src/main-menu-ui.c:630
+msgid "Computer"
+msgstr "Cigidompigidutigider"
+
+#: ../main-menu/src/main-menu-ui.c:965
+msgid "Search:"
+msgstr "Sigidearch:"
+
+#: ../main-menu/src/network-status-tile.c:72
+#: ../main-menu/src/network-status-tile.c:184
+msgid "Network: None"
+msgstr "Nigidetwigidork: Nigidone"
+
+#: ../main-menu/src/network-status-tile.c:75
+#: ../main-menu/src/network-status-tile.c:185
+msgid "Click to configure network"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:191
+#, c-format
+msgid "Connected to: %s"
+msgstr "Cigidonnigidectigided to: %s"
+
+#: ../main-menu/src/network-status-tile.c:194
+msgid "Network: Wireless"
+msgstr "Nigidetwigidork: Wigidireligidess"
+
+#: ../main-menu/src/network-status-tile.c:199
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "Ugidusigiding egidethigidernigidet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:202
+msgid "Network: Wired"
+msgstr "Nigidetwigidork: Wigidirigided"
+
+#: ../main-menu/src/network-status-tile.c:308
+#, fuzzy, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "Ugidusigiding egidethigidernigidet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:312
+#, fuzzy, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "Ugidusigiding egidethigidernigidet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:316
+#: ../main-menu/src/network-status-tile.c:326
+#: ../main-menu/src/system-tile.c:127
+msgid "Unknown"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:324
+#, c-format
+msgid "%d Mb/s"
+msgstr ""
+
+#: ../main-menu/src/system-tile.c:107
+msgid "Install Software"
+msgstr ""
+
+#: ../main-menu/src/system-tile.c:112
+#, fuzzy
+msgid "Log Out ..."
+msgstr "Ligidogigidout ..."
+
+#: ../main-menu/src/system-tile.c:117
+msgid "Lock Screen ..."
+msgstr "Ligidock Scrigideen ..."
+
+#~ msgid "Search"
+#~ msgstr "Sigidearch"
+
+#~ msgid "%s Total / %s Free"
+#~ msgstr "%s Tigidotigidal / %s Frigidee"
+
+#~ msgid "All Applications..."
+#~ msgstr "Agidall Agidappligidicigidashigidons..."
+
+#~ msgid "Click to see connection settings"
+#~ msgstr "Cligidick tigido sigidee cigidonnigidecshigidon sigidettigidings"
+
+#~ msgid "Logout"
+#~ msgstr "Ligidogigidout"
+
+#~ msgid "Lock Screen"
+#~ msgstr "Ligidock Scrigideen"

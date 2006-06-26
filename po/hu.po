@@ -1,0 +1,694 @@
+# translation of hu.po to Hungarian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Kalman Kemenczy <kkemenczy@novell.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-19 15:33+0200\n"
+"PO-Revision-Date: 2006-05-23 10:02+0200\n"
+"Last-Translator: Kalman Kemenczy <kkemenczy@novell.com>\n"
+"Language-Team: Hungarian <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:69
+msgid "Application Browser"
+msgstr "Alkalmazásböngésző"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+#: ../control-center/etc/control-center.schemas.in.h:2
+msgid "Exit shell on add or remove action performed"
+msgstr "Hozzáadás vagy eltávolítás művelet után kilépés a parancsértelmezőbe"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+#: ../control-center/etc/control-center.schemas.in.h:3
+msgid "Exit shell on help action performed"
+msgstr "Súgó művelet után kilépés a parancsértelmezőbe"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+#: ../control-center/etc/control-center.schemas.in.h:4
+msgid "Exit shell on start action performed"
+msgstr "Indítás művelet után kilépés a parancsértelmezőbe"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+#: ../control-center/etc/control-center.schemas.in.h:5
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr "Frissítés vagy eltávolítás művelet után kilépés a parancsértelmezőbe"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "Meglévő .desktop fájlok fájlnevei"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+#: ../control-center/etc/control-center.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+"Azt jelzi, hogy be kell-e zárni a parancsértelmezőt egy súgóművelet "
+"elvégzése után"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+#: ../control-center/etc/control-center.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+"Azt jelzi, hogy be kell-e zárni a parancsértelmezőt egy indítási művelet "
+"elvégzése után"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+#: ../control-center/etc/control-center.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr ""
+"Azt jelzi, hogy be kell-e zárni a parancsértelmezőt egy hozzáadás vagy "
+"eltávolítás művelet elvégzése után"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+#: ../control-center/etc/control-center.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+"Azt jelzi, hogy be kell-e zárni a parancsértelmezőt egy frissítés vagy "
+"eltávolítás művelet elvégzése után"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "Új alkalmazások max. száma"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr "Maximum hány alkalmazás szerepeljen az Új alkalmazások kategóriában"
+
+#: ../application-browser/src/application-browser.c:62
+msgid "New Applications"
+msgstr "Új alkalmazások"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Filter"
+msgstr "Szűrő"
+
+#: ../application-browser/src/application-browser.c:66
+#: ../control-center/src/control-center.c:112
+msgid "Groups"
+msgstr "Csoportok"
+
+#: ../application-browser/src/application-browser.c:66
+msgid "Application Actions"
+msgstr "Alkalmazásműveletek"
+
+#: ../control-center/etc/control-center.desktop.in.in.h:1
+#: ../control-center/src/control-center.c:115
+#: ../main-menu/src/system-tile.c:95
+msgid "Control Center"
+msgstr "Vezérlőközpont"
+
+#: ../control-center/etc/control-center.schemas.in.h:1
+msgid "Close the control-center when a task is activated"
+msgstr "Vezérlőközpont bezárása egy feladat aktiválásakor"
+
+#: ../control-center/etc/control-center.schemas.in.h:10
+msgid "Task names and associated .desktop files"
+msgstr "Feladatnevek és hozzájuk tartozó .desktop fájlok"
+
+#: ../control-center/etc/control-center.schemas.in.h:11
+msgid ""
+"The task name to be displayed in the control-center (thus needing to be "
+"translated) followed by a \";\" separator then the filename of an "
+"associated .desktop file to launch for that task."
+msgstr ""
+"A vezérlőközpontban megjelenő (ezért lefordítandó) feladatnév, amelyet egy "
+"\";\" elválasztó követ, majd a feladathoz elindítandó .desktop fájl fájlneve."
+
+#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
+#: ../control-center/etc/control-center.schemas.in.h:13
+msgid ""
+"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
+"desktop]"
+msgstr ""
+"[Asztal hátterének módosítása;background.desktop,Nyomtató hozzáadása;gnome-"
+"cups-manager.desktop,Hálózat beállítása;YaST2/lan.desktop,Jelszó módosítása;"
+"gnome-passwd.desktop,Felhasználó hozzáadása;YaST2/users.desktop,"
+"Adminisztrátori beállítások;YaST.desktop]"
+
+#: ../control-center/etc/control-center.schemas.in.h:14
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+"ha igaz, a vezérlőközpont automatikusan bezárul egy \"Gyakori feladat\" "
+"aktiválásakor"
+
+#: ../control-center/src/control-center.c:112
+msgid "Common Tasks"
+msgstr "Általános feladatok"
+
+#. make start action
+#: ../libslab/src/application-tile.c:322
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>%s indítása</b>"
+
+#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
+msgid "Help"
+msgstr "Súgó"
+
+#: ../libslab/src/application-tile.c:350
+msgid "Help Unavailable"
+msgstr "Nincs súgó"
+
+#. make upgrade action
+#: ../libslab/src/application-tile.c:388
+msgid "Upgrade"
+msgstr "Frissítés"
+
+#. make uninstall action
+#: ../libslab/src/application-tile.c:395
+msgid "Uninstall"
+msgstr "Eltávolítás"
+
+#: ../libslab/src/application-tile.c:790
+msgid "Remove from Favorites"
+msgstr "Eltávolítás a Kedvencek közül"
+
+#: ../libslab/src/application-tile.c:792
+msgid "Add to Favorites"
+msgstr "Hozzáadás a Kedvencekhez"
+
+#: ../libslab/src/application-tile.c:852
+msgid "Remove from Startup Programs"
+msgstr "Eltávolítás az Indítópultból"
+
+#: ../libslab/src/application-tile.c:854
+msgid "Add to Startup Programs"
+msgstr "Hozzáadás az Indítópulthoz"
+
+#: ../libslab/src/app-shell.c:644
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+
+#: ../libslab/src/search-bar.c:235
+msgid "Find Now"
+msgstr "Keresés most"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "Open Menu"
+msgstr "Menü megnyitása"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_About"
+msgstr "_Névjegy"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "Alapértelmezett menü és alkalmazásböngésző"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:309
+msgid "GNOME Main Menu"
+msgstr "GNOME főmenü"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "GNOME főmenü factory"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "Főmenü"
+
+#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
+msgid "Software Update"
+msgstr "Szoftverfrissítés"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr ".desktop fájl a YaST2 network_devices segédprogramhoz"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr ".desktop fájl a fájlböngészőhöz"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr ".desktop fájl a gnome-system-monitor programhoz"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr ".desktop fájl a hálózatkonfigurációs eszközhöz"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop files for \"Favorite Applications\""
+msgstr "A \"Kedvenc alkalmazások\" .desktop fájljai"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr ".desktop elérési út az alkalmazásböngészőhöz"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
+msgstr ""
+"A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"Location of the user directory in which startup programs are found. The dir "
+"path should not be absolute, as the value of this key is appended to this "
+"path: ~/."
+msgstr ""
+"A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók. A "
+"könyvtár elérési útnak nem szabad abszolútnak lennie, mert a ~/ érték még "
+"hozzáfűzésre kerül."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid "System area items"
+msgstr "Rendszerterület elemei"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "System-wide autostart program drop dir"
+msgstr "Rendszerszintű automatikus indítási programkönyvtár"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid ""
+"The list of the items which will appear in the System area. Possible values "
+"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
+"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
+"the appropriate .desktop files defined in the, respectively, \"help_item\", "
+"\"control_center_item\" and \"package_manager_item\" keys."
+msgstr ""
+"A Rendszer területen megjelenő elemek listája. A lehetséges értékek: HELP = "
+"0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. A "
+"HELP, a CONTROL_CENTER és a PACKAGE_MANAGER esetében a megfelelő .desktop "
+"fájloknak rendre a \"help_item\", \"control_center_item\" és "
+"\"package_manager_item\" kulcsokban kell megadva lenniük."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+"Ez a parancs kerül végrehajtásra a \"Megnyitás a fájlkezelőben\" menüelem "
+"aktiválásakor."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"Ez a parancs kerül végrehajtásra a \"Megnyitás a fájlkezelőben\" menüelem "
+"aktiválásakor. A FILE_URI helyére az aktivált fájl könyvtárnevének megfelelő "
+"URI kerül."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr ""
+"Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor. A "
+"DIRNAME és BASENAME helyére az aktivált cím megfelelő összetevői kerülnek."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid "This is the command to execute when the search entry is used."
+msgstr "Ez a parancs kerül végrehajtásra a keresés bejegyzés használatakor."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+"Ez a parancs kerül végrehajtásra a keresés bejegyzés használatakor. A "
+"SEARCH_STRING helyére a beírt szöveg kerül."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "User autostart program drop dir (within the home dir)"
+msgstr ""
+"Felhasználói automatikus indítási programkönyvtár (a saját könyvtáron belül)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "command to uninstall packages"
+msgstr "parancs csomagok eltávolításához"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"parancs csomagok eltávolításához, a PACKAGE_NAME helyére a csomag neve kerül "
+"a parancsban"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "command to upgrade packages"
+msgstr "parancs csomagok frissítéséhez"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"parancs csomagok frissítéséhez, a PACKAGE_NAME helyére a csomag neve kerül a "
+"parancsban"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid ""
+"contains the list (in no particular order) of allowable file types to show "
+"in the file area. possible values (see also the note for /desktop/gnome/"
+"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
+"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
+"recently used (instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+"A fájlterületen megjeleníthető fájltípusok listáját tartalmazza (sorrendezés "
+"nélkül). A lehetséges értékek (lásd még a /desktop/gnome/applications/main-"
+"menu/file-area/file_class megjegyzését): 0 [USER_SPECIFIED_APPS], 1 "
+"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. A RECENTLY_USED_APPS a legutóbb "
+"használt (a main-menu-ben vagy az application-browser-ben példányosított) "
+"elemek listája. A USER_SPECIFIED_APPS a \"Kedvenc alkalmazások\" "
+"megfelelője. A RECENT_FILES a ~/.recently-used fájljainak listája."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"A \"Legutóbb használt alkalmazások\" és a \"Legutóbbi fájlok\" listákból "
+"kihagyandó fájlok listája (a .desktop fájlok is)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "control center item .desktop file"
+msgstr "vezérlőközpont elem .desktop fájlja"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "determines the limit of tiles in the file-area."
+msgstr "a file-area mozaikjainak korlátait adja meg."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid ""
+"determines the limit of tiles in the file-area. *Note: this does not affect "
+"the number of tiles if the file-class is USER_SPECIFIED_*."
+msgstr ""
+"a file-area mozaikjainak korlátait adja meg. *Megjegyzés: nem befolyásolja a "
+"szeletek számát, ha a file-class értéke USER_SPECIFIED_*."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid ""
+"determines the reordering algorithm used when moving tiles around the main-"
+"menu"
+msgstr ""
+"A mozaikok a main-menu körülötti mozgatásánál használt újrarendezési "
+"algoritmust adja meg."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "determines which types of files to display in the file area"
+msgstr "a fájlterületen megjelenítendő fájlok típusát adja meg"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "help item .desktop file"
+msgstr "súgóelem .desktop fájl"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "if true, main menu is more anxious to close"
+msgstr "ha igaz, a főmenü jobban igyekszik bezáródni"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+"ha igaz, a főmenü a következő esetekbe is bezáródik: a mozaik aktiválódik, "
+"keresés aktiválódik"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down configuration of the file area"
+msgstr "a fájlterület lezárási állapota"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the application browser link"
+msgstr "az alkalmazásböngésző hivatkozás lezárási állapota"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the search area"
+msgstr "a keresési terület lezárási állapota"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "lock-down status for the status area"
+msgstr "az állapotterület lezárási állapota"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "lock-down status for the system area"
+msgstr "a rendszerterület lezárási állapota"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "package manager item .desktop file"
+msgstr "csomagkezelő elem .desktop fájl"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+"when a tile is dragged onto another tile they should simply swap position. "
+"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
+"vacant spot is created in tile A's place. tile B (and all tiles after B) "
+"shift down until the new vacant space is filled. this operation wraps around "
+"in the case that tile A appears before tile B prior to the drag and drop "
+"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
+"they are either pushed into the vacant spaced or pulled from the other "
+"direction, depending on which strategy affects the least number of tiles."
+msgstr ""
+"lehetséges értékek = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. A SWAP azt jelzi, "
+"hogy ha az egyik mozaikot a másikra húzza, akkor egyszerűen cseréljenek "
+"helyet. A PUSH azt jelzi, hogy ha az A mozaikot egy másik B mozaikra húzza, "
+"akkor egy üres hely keletkezzen A helyén. A B mozaik (és az összes utána "
+"található B) lefelé csúszik, amíg az új üres hely be nem töltődik. Ez a "
+"művelet körbefordul, ha A az egérművelet előtt B előtt szerepelne. A "
+"PUSH_PULL hasonló a PUSH-hoz, csak amikor a mozaikok megcserélődnek, akkor "
+"vagy az üres helyre tuszkolódnak be, vagy kihúzódnak a másik irányban, attól "
+"függően, melyik van hatással kevesebb mozaikra."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+"(instantiated with the main-menu or the application-browser). "
+"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
+"is the list of files from ~/.recently-used."
+msgstr ""
+"lehetséges értékek = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+"[RECENT_FILES]. A RECENTLY_USED_APPS a legutóbb használt (a main-menu-ben "
+"vagy az application-browser-ben példányosított) elemek listája. A "
+"USER_SPECIFIED_APPS a \"Kedvenc alkalmazások\" megfelelője. A RECENT_FILES a "
+"~/.recently-used fájljainak listája."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "prioritized list of commands to lock the screen"
+msgstr "a képernyő zárolására szolgáló parancsok prioritásos listája"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+"igaz, ha az alkalmazásböngésző hivatkozásának láthatónak és aktívnak kell "
+"lennie."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the search area should be visible and active."
+msgstr "igaz, ha a keresési területnek láthatónak és aktívnak kell lennie."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:44
+msgid "set to true if the status area should be visible and active."
+msgstr "igaz, ha az állapotterületnek láthatónak és aktívnak kell lennie."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:45
+msgid "set to true if the system area should be visible and active."
+msgstr "igaz, ha a rendszerterületnek láthatónak és aktívnak kell lennie."
+
+#: ../main-menu/src/document-tile.c:119
+msgid "Edited %m/%d/%Y"
+msgstr "Szerkesztve: %m/%d/%Y"
+
+#: ../main-menu/src/document-tile.c:153
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Megnyitás a(z) \"%s\" alkalmazással</b>"
+
+#: ../main-menu/src/document-tile.c:163
+msgid "Open with Default Application"
+msgstr "Megnyitás az alapértelmezett alkalmazással"
+
+#: ../main-menu/src/document-tile.c:181
+msgid "Open in File Manager"
+msgstr "Megnyitás a Fájlkezelőben"
+
+#. make rename action
+#: ../main-menu/src/document-tile.c:199
+msgid "Rename..."
+msgstr "Átnevezés..."
+
+#. make move to trash action
+#: ../main-menu/src/document-tile.c:212
+msgid "Move to Trash"
+msgstr "Áthelyezés a Kukába"
+
+#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
+msgid "Delete"
+msgstr "Törlés"
+
+#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
+msgid "Send To..."
+msgstr "Átküldés..."
+
+#: ../main-menu/src/file-area-widget.c:130
+msgid "Show:"
+msgstr "Megjelenítés:"
+
+#: ../main-menu/src/file-area-widget.c:179
+msgid "Favorite Applications"
+msgstr "Kedvenc alkalmazások"
+
+#: ../main-menu/src/file-area-widget.c:209
+msgid "Recently Used Applications"
+msgstr "Nemrég használt alkalmazások"
+
+#: ../main-menu/src/file-area-widget.c:229
+msgid "Recent Documents"
+msgstr "Friss dokumentumok"
+
+#: ../main-menu/src/file-area-widget.c:381
+msgid "More Applications..."
+msgstr "További alkalmazások..."
+
+#: ../main-menu/src/file-area-widget.c:385
+msgid "All Documents..."
+msgstr "Összes dokumentum"
+
+#: ../main-menu/src/hard-drive-status-tile.c:83
+msgid "Hard Drive"
+msgstr "Merevlemez"
+
+#: ../main-menu/src/hard-drive-status-tile.c:316
+#, c-format
+msgid "%lluG"
+msgstr "%lluG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:318
+#, c-format
+msgid "%lluM"
+msgstr "%lluM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:320
+#, c-format
+msgid "%lluK"
+msgstr "%lluK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:322
+#, c-format
+msgid "%llub"
+msgstr "%llub"
+
+#: ../main-menu/src/hard-drive-status-tile.c:342
+#, c-format
+msgid "%s Free / %s Total"
+msgstr "Szabad: %s / Összes: %s"
+
+#: ../main-menu/src/main-menu-ui.c:310
+msgid "The GNOME Main Menu"
+msgstr "A GNOME főmenü"
+
+#: ../main-menu/src/main-menu-ui.c:432
+msgid "System"
+msgstr "Rendszer"
+
+#: ../main-menu/src/main-menu-ui.c:436
+msgid "Status"
+msgstr "Állapot"
+
+#: ../main-menu/src/main-menu-ui.c:630
+msgid "Computer"
+msgstr "Számítógép"
+
+#: ../main-menu/src/main-menu-ui.c:965
+msgid "Search:"
+msgstr "Keresés:"
+
+#: ../main-menu/src/network-status-tile.c:72
+#: ../main-menu/src/network-status-tile.c:184
+msgid "Network: None"
+msgstr "Hálózati: Nincs"
+
+#: ../main-menu/src/network-status-tile.c:75
+#: ../main-menu/src/network-status-tile.c:185
+msgid "Click to configure network"
+msgstr "Kattintson a hálózat beállításához"
+
+#: ../main-menu/src/network-status-tile.c:191
+#, c-format
+msgid "Connected to: %s"
+msgstr "Csatlakoztatva: %s"
+
+#: ../main-menu/src/network-status-tile.c:194
+msgid "Network: Wireless"
+msgstr "Hálózat: vezetéknélküli"
+
+#: ../main-menu/src/network-status-tile.c:199
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "Ethernet (%s) használata"
+
+#: ../main-menu/src/network-status-tile.c:202
+msgid "Network: Wired"
+msgstr "Hálózat: vezetékes"
+
+#: ../main-menu/src/network-status-tile.c:308
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "Vezetéknélküli Ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:312
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "Vezetékes Ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:316
+#: ../main-menu/src/network-status-tile.c:326
+#: ../main-menu/src/system-tile.c:127
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: ../main-menu/src/network-status-tile.c:324
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d Mb/s"
+
+#: ../main-menu/src/system-tile.c:107
+msgid "Install Software"
+msgstr "Szoftver telepítése"
+
+#: ../main-menu/src/system-tile.c:112
+msgid "Log Out ..."
+msgstr "Kijelentkezés ..."
+
+#: ../main-menu/src/system-tile.c:117
+msgid "Lock Screen ..."
+msgstr "Képernyő lezárása..."

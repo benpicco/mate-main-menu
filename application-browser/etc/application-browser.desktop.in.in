@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SuSE-translate=true
+_Name=Application Browser
+Exec=@BINDIR@/application-browser
+Terminal=false
+Type=Application
+StartupNotify=true
+Encoding=UTF-8
+NoDisplay=true
