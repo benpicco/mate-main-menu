@@ -1,65 +1,63 @@
-# Dutch message file for YaST 2 (@memory@).
-# Copyright (C) 2005 SUSE Linux Products GmbH.
-# Copyright (C) 2002 SuSE Linux AG.
-# Copyright (C) 1999, 2000, 2001 SuSE GmbH.
-# A.S. Kerkmeester <ask_murphy@bigfoot.com>, 1999, 2000, 2001.
-# FAX-Translations <all@fax-translations.com>, 2000.
-# Karl Eichwalder <ke@suse.de>, 1999, 2000.
-# Martin Lohner <ml@suse.de>, 2000.
-# peter@sybex.nl, 2000.
+# Dutch translation of the Gnome main menu (slab)
+# Copyright (C) 2006 Novell, Inc
+#
+# This file is distributed under the same license as the slab package.
+#
+# Wouter Bolsterlee <uws+gnome@xs4all.nl>, 2006
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: Gnome main menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2002-07-01 14:34+0200\n"
-"Last-Translator: A.S. Kerkmeester <ask_murphy@bigfoot.com>\n"
-"Language-Team: Dutch <i18n@suse.de>\n"
+"POT-Creation-Date: 2006-09-08 01:11+0200\n"
+"PO-Revision-Date: 2006-09-08 01:13+0200 \n"
+"Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:69
-#, fuzzy
+#: ../application-browser/src/application-browser.c:118
 msgid "Application Browser"
-msgstr "Applicatievolgorde"
+msgstr "Toepassingenoverzicht"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 #: ../control-center/etc/control-center.schemas.in.h:2
 msgid "Exit shell on add or remove action performed"
-msgstr ""
+msgstr "Shell sluiten na toevoegen/verwijderen"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 #: ../control-center/etc/control-center.schemas.in.h:3
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "Shell sluiten na help-actie"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 #: ../control-center/etc/control-center.schemas.in.h:4
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "Shell sluiten na opstarten"
 
+# Vrij vertaald (Wouter Bolsterlee)
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 #: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
+msgstr "Shell sluiten na een upgrade of installatie"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr ""
+msgstr "Bestandsnaam van bestaande .desktop-bestanden"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 #: ../control-center/etc/control-center.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "Geeft aan of de shell wordt gesloten nadat de help-actie is uitgevoerd"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 #: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
 msgstr ""
+"Geeft aan of de shell wordt gesloten nadat een opstarten-actie is uitgevoerd"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
@@ -67,6 +65,8 @@ msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
 msgstr ""
+"Geeft aan of de shell wordt gesloten nadat een toevoegen- of verwijderen-"
+"actie is uitgevoerd"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
@@ -74,53 +74,54 @@ msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
 msgstr ""
+"Geeft aan of de shell wordt gesloten nadat een upgrade of installatie-actie "
+"is uitgevoerd"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
-#, fuzzy
 msgid "Max number of New Applications"
-msgstr "Applicatie volgorde"
+msgstr "Maximum aantal nieuwe toepassingen"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
 msgstr ""
+"Het maximum aantal toepassingen dat getoond wordt in de category ‘Nieuwe "
+"toepassingen’"
 
-#: ../application-browser/src/application-browser.c:62
-#, fuzzy
+#: ../application-browser/src/application-browser.c:105
 msgid "New Applications"
-msgstr "Applicatie volgorde"
+msgstr "Nieuwe toepassingen"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
-#, fuzzy
+#: ../application-browser/src/application-browser.c:112
+#: ../control-center/src/control-center.c:149
 msgid "Filter"
-msgstr "Filter:"
+msgstr "Filter"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:112
+#: ../control-center/src/control-center.c:149
 msgid "Groups"
-msgstr "Groepen"
+msgstr "Zoeken"
 
-#: ../application-browser/src/application-browser.c:66
-#, fuzzy
+#: ../application-browser/src/application-browser.c:113
 msgid "Application Actions"
-msgstr "Applicatie volgorde"
+msgstr "Toepassing"
 
+# Vrij vertaald (Wouter Bolsterlee)
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:115
-#: ../main-menu/src/system-tile.c:95
-#, fuzzy
+#: ../control-center/src/control-center.c:154
+#: ../main-menu/src/system-tile.c:119
 msgid "Control Center"
-msgstr "YaST2 Controlecentrum"
+msgstr "Systeemvoorkeuren"
 
+# Vrij vertaald (Wouter Bolsterlee)
 #: ../control-center/etc/control-center.schemas.in.h:1
 msgid "Close the control-center when a task is activated"
-msgstr ""
+msgstr "Systeemvoorkeuren sluiten na activatie van een taak"
 
 #: ../control-center/etc/control-center.schemas.in.h:10
 msgid "Task names and associated .desktop files"
-msgstr ""
+msgstr "Taaknamen en bijbehorende .desktop-bestanden"
 
 #: ../control-center/etc/control-center.schemas.in.h:11
 msgid ""
@@ -128,6 +129,9 @@ msgid ""
 "translated) followed by a \";\" separator then the filename of an "
 "associated .desktop file to launch for that task."
 msgstr ""
+"De naam van de taak in het configuratiecentrum, gevolgd door een ‘;’-"
+"scheidingsteken en de bestandsnaam van het bijbehorende .desktop-bestand "
+"voor het uitvoeren van deze taak."
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
@@ -137,136 +141,168 @@ msgid ""
 "desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
 "desktop]"
 msgstr ""
+"[Werkbladachtergrond wijzigen;background.desktop,Printer toevoegen;gnome-"
+"cups-manager.desktop,Netwerk instellen;YaST2/lan.desktop,Wachtwoord wijzigen;"
+"gnome-passwd.desktop,Gebruiker toevoegen;YaST2/users.desktop,"
+"Beheerinstellingen openen;YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
+"Indien ingeschakeld sluit het configuratiecentrum na activatie van een "
+"‘algemene taak’"
 
-# /usr/lib/YaST2/clients/lan_dns.ycp:87
-# /usr/lib/YaST2/clients/lan_dns.ycp:87
-#: ../control-center/src/control-center.c:112
-#, fuzzy
+#: ../control-center/src/control-center.c:149
 msgid "Common Tasks"
-msgstr "Algemene naam"
+msgstr "Algemene taken"
 
-#. make start action
-#: ../libslab/src/application-tile.c:322
-#, fuzzy, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Patch: </b>"
-
-#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
-msgid "Help"
-msgstr "Help"
-
-#: ../libslab/src/application-tile.c:350
-#, fuzzy
-msgid "Help Unavailable"
-msgstr "Niet beschikbaar"
-
-#. make upgrade action
-#: ../libslab/src/application-tile.c:388
-#, fuzzy
-msgid "Upgrade"
-msgstr "Opwaardering"
-
-#. make uninstall action
-#: ../libslab/src/application-tile.c:395
-#, fuzzy
-msgid "Uninstall"
-msgstr "Installeren"
-
-#: ../libslab/src/application-tile.c:790
-#, fuzzy
-msgid "Remove from Favorites"
-msgstr "'fstab'-regels verwijderen"
-
-#: ../libslab/src/application-tile.c:792
-#, fuzzy
-msgid "Add to Favorites"
-msgstr "Aan filter t&oevoegen"
-
-#: ../libslab/src/application-tile.c:852
-msgid "Remove from Startup Programs"
-msgstr ""
-
-#: ../libslab/src/application-tile.c:854
-msgid "Add to Startup Programs"
-msgstr ""
-
-#: ../libslab/src/app-shell.c:644
+#: ../libslab/app-shell.c:801
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
+"<span size=\"large\"><b>Geen resultaten.</b> </span><span>\n"
+"\n"
+" Het filter ‘<b>%s</b>’ geeft geen resultaten.</span>"
 
-#: ../libslab/src/search-bar.c:235
-#, fuzzy
+#: ../libslab/search-bar.c:261
 msgid "Find Now"
-msgstr "Voer nu uit"
+msgstr "Nu zoeken"
+
+#. make start action
+#: ../libtile/application-tile.c:353
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>%s starten</b>"
+
+#: ../libtile/application-tile.c:374 ../main-menu/src/system-tile.c:105
+msgid "Help"
+msgstr "Hulp"
+
+#: ../libtile/application-tile.c:383
+msgid "Help Unavailable"
+msgstr "Hulp niet beschikbaar"
+
+#. make upgrade action
+#: ../libtile/application-tile.c:422
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: ../libtile/application-tile.c:431
+msgid "Uninstall"
+msgstr "Deïnstalleren"
+
+#: ../libtile/application-tile.c:814
+msgid "Remove from Favorites"
+msgstr "Uit bladwijzers verwijderen"
+
+#: ../libtile/application-tile.c:817
+msgid "Add to Favorites"
+msgstr "Aan bladwijzers toevoegen"
+
+#: ../libtile/application-tile.c:881
+msgid "Remove from Startup Programs"
+msgstr "Uit opstartprogramma's verwijderen"
+
+#: ../libtile/application-tile.c:885
+msgid "Add to Startup Programs"
+msgstr "Aan opstartprogramma's toevoegen"
+
+#: ../libtile/document-tile.c:145
+msgid "Edited %m/%d/%Y"
+msgstr "Bewerkt op %m-%d-%Y"
+
+#: ../libtile/document-tile.c:178
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Openen met ‘%s’</b>"
+
+#: ../libtile/document-tile.c:195
+msgid "Open with Default Application"
+msgstr "Met standaardtoepassing openen"
+
+#: ../libtile/document-tile.c:212
+msgid "Open in File Manager"
+msgstr "Openen in bestandsbeheer"
+
+#. make rename action
+#: ../libtile/document-tile.c:230
+msgid "Rename..."
+msgstr "Hernoemen…"
+
+#: ../libtile/document-tile.c:245
+msgid "Move to Trash"
+msgstr "In prullenbak gooien"
+
+#: ../libtile/document-tile.c:255 ../libtile/document-tile.c:619
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: ../libtile/document-tile.c:275 ../libtile/document-tile.c:283
+msgid "Send To..."
+msgstr "Verzenden naar…"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
-msgstr ""
+msgstr "Menu openen"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
 msgid "_About"
-msgstr ""
+msgstr "I_nfo"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
-#, fuzzy
 msgid "Default menu and application browser"
-msgstr "Applicatievolgorde"
+msgstr "Standaar menu- en toepassingenoverzicht"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:309
+#: ../main-menu/src/main-menu-ui.c:332
 msgid "GNOME Main Menu"
-msgstr ""
+msgstr "Hoofdmenu"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr ""
+msgstr "Hoofdmenu-fabriek"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
-msgstr ""
+msgstr "Hoofdmenu"
 
 #: ../main-menu/etc/main-menu-rug.desktop.in.h:1
 msgid "Software Update"
-msgstr ""
+msgstr "Sofware-update"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
-msgstr ""
+msgstr ".desktop-bestand voor het YaST2 netwerk-hulpprogramma"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr ""
+msgstr ".desktop-bestand voor bestandsbeheer"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
-msgstr ""
+msgstr ".desktop-bestand voor procesbeheer"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
-msgstr ""
+msgstr ".desktop-bestand voor netwerkconfiguratie"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-#, fuzzy
 msgid ".desktop files for \"Favorite Applications\""
-msgstr "Opties opslaan"
+msgstr ".desktop-bestanden voor de voorkeurstoepassingen"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
-msgstr ""
+msgstr ".desktop-pad voor het toepassingenoverzicht"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "Location of the system-wide directory in which startup programs are found."
 msgstr ""
+"Locatie van de systeembrede map waarin opstartprogramma's worden gezocht."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -274,14 +310,16 @@ msgid ""
 "path should not be absolute, as the value of this key is appended to this "
 "path: ~/."
 msgstr ""
+"De locatie van de gebruikersmap waarin opstartprogramma's worden gezocht. "
+"Dit mag geen absoluut pad zijn, omdat de waarde voorafgegaan wordt aan ‘~/’."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "System area items"
-msgstr ""
+msgstr "Items in het systeemgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "System-wide autostart program drop dir"
-msgstr ""
+msgstr "Systeembrede map voor autostart-programma's"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid ""
@@ -291,12 +329,19 @@ msgid ""
 "the appropriate .desktop files defined in the, respectively, \"help_item\", "
 "\"control_center_item\" and \"package_manager_item\" keys."
 msgstr ""
+"De lijst met items die in het systeemgebied getoond worden. Mogelijke "
+"waarden zijn HELP (0), CONTROL_CENTER (1), PACKAGE_MANAGER (2), LOG_OUT (3) "
+"en LOCK_SCREEN (4). HELP, CONTROL_CENTER and PACKAGE_MANAGER hebben een "
+"correct .desktop-bestand nodig in respectievelijk de velden ‘help_item’, "
+"‘control_center_item’ en ‘package_manager_item’."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als het item ‘Openen in "
+"bestandsbeheer’ wordt gekozen."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid ""
@@ -304,12 +349,17 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als het item ‘Openen in "
+"bestandsbeheer’ wordt gekozen. FILE_URI wordt vervangen door de URI van de "
+"map waarin het geactiveerde bestand zich bevindt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als het item ‘Verzenden naar…’ "
+"wordt gekozen."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid ""
@@ -317,40 +367,50 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als het item ‘Verzenden naar…’ "
+"wordt gekozen. DIRNAME en BASENAME worden vervangen door de componenten van "
+"het geactiveerde gebied."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "This is the command to execute when the search entry is used."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als de zoekregel wordt gebruikt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
+"Dit is de opdrachtregel die uitgevoerd wordt als de zoekregel wordt "
+"gebruikt. SEARCH_STRING wordt vervangen door de ingevoerde tekst."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
+msgstr "Gebruikersmap voor autostart-programma's (binnen de persoonlijke map)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to uninstall packages"
-msgstr ""
+msgstr "De opdrachtregel om pakketten te deïnstalleren."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
+"De opdrachtregel om pakketten te deïnstalleren. PACKAGE_NAME wordt vervangen "
+"door de naam van het gekozen pakket."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "command to upgrade packages"
-msgstr ""
+msgstr "De opdrachtregel om pakketten te upgraden."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
+"De opdrachtregel om pakketten te upgraden. PACKAGE_NAME wordt vervangen door "
+"de naam van het gekozen pakket."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid ""
@@ -362,74 +422,93 @@ msgid ""
 "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
 "is the list of files from ~/.recently-used."
 msgstr ""
+"Bevat de ongeordende lijst van de bestandstypes die getoond worden in het "
+"bestandsgebied. Mogelijke waarden zijn (zie ook de opmerking bij ‘/desktop/"
+"gnome/applications/main-menu/file-area/file_class): USER_SPECIFIED_APPS (0), "
+"RECENTLY_USED_APPS (1) en RECENT_FILES (2). RECENTLY_USED_APPS is de lijst "
+"met recent gebruikte toepassingen (opgestart via het hoofdmenu of het "
+"toepassingenoverzicht). USER_SPECIFIED_APPS komt overeen met de "
+"voorkeurstoepassingen. RECENT_FILES is de lijst met bestanden uit ~/."
+"recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
+"Bevat de lijst met bestanden (inclusief .desktop-bestanden) die niet in de "
+"lijst met ‘Recent gebruikte toepassingen’ en ‘Recent gebruikte bestanden’ "
+"zullen verschijnen."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "control center item .desktop file"
-msgstr ""
+msgstr ".desktop-bestand voor het configuratiecentrum"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "determines the limit of tiles in the file-area."
-msgstr ""
+msgstr "Geeft het maximum aantal vlakken in het bestandsgebied aan"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid ""
 "determines the limit of tiles in the file-area. *Note: this does not affect "
 "the number of tiles if the file-class is USER_SPECIFIED_*."
 msgstr ""
+"Geeft het maximum aantal vlakken in het bestandsgebied aan. Let op: dit "
+"heeft geen invloed op het aantal vlakken als de bestands-klasse "
+"USER_SPECIFIED_* is."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid ""
 "determines the reordering algorithm used when moving tiles around the main-"
 "menu"
 msgstr ""
+"Geeft het sorteeralgoritme voor het verplaatsen van vlakken in het hoofdmenu."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "determines which types of files to display in the file area"
 msgstr ""
+"Geeft aan welke type bestanden weergegeven worden in het bestandsgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "help item .desktop file"
-msgstr ""
+msgstr ".desktop-bestand voor hulp"
 
+# Vrij vertaald (Wouter Bolsterlee)
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "if true, main menu is more anxious to close"
-msgstr ""
+msgstr "Indien ingeschakeld sluit hoofdmenu gemakkelijker"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
 msgstr ""
+"Indien ingeschakeld sluit het hoofdmenu in deze aanvullende gevallen: vlak "
+"geselecteerd, zoeken geactiveerd"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "lock-down configuration of the file area"
-msgstr ""
+msgstr "Lockdown-instellingen van het bestandsgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "lock-down status for the application browser link"
-msgstr ""
+msgstr "Lockdown-instelling van het toepassingenoverzicht"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "lock-down status for the search area"
-msgstr ""
+msgstr "Lockdown-instelling voor het zoekgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "lock-down status for the status area"
-msgstr ""
+msgstr "Lockdown-instelling voor het statusgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "lock-down status for the system area"
-msgstr ""
+msgstr "Lockdown-instelling voor het systeemgebied"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "package manager item .desktop file"
-msgstr ""
+msgstr ".desktop-bestand van het pakketbeheer"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
@@ -443,6 +522,14 @@ msgid ""
 "they are either pushed into the vacant spaced or pulled from the other "
 "direction, depending on which strategy affects the least number of tiles."
 msgstr ""
+"Mogelijke waarden: SWAP (0), PUSH (1) en PUSH_PULL (2). SWAP betekent dat "
+"twee gebieden van positie wisselen als ze versleept worden. PUSH betekent "
+"dat als een vlak A op een ander vlak B wordt gesleept, een lege plek op de "
+"oude plaats van A ontstaat. De overige vlakken verschuiven totdat deze lege "
+"plek is opgevuld. Dit werkt ook andersom in het geval dat vlak A zich vóór "
+"vlak B bevond voor het verslepen. PUSH_PULL werkt ongeveer hetzelfde: als "
+"vlakken versleept worden zullen ze zo herordend worden dat er zo min "
+"mogelijk vlakken verschuiven."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
@@ -452,223 +539,167 @@ msgid ""
 "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
 "is the list of files from ~/.recently-used."
 msgstr ""
+"Mogelijke waarden: USER_SPECIFIED_APPS (0), RECENTLY_USED_APPS (1) en "
+"RECENT_FILES (2). RECENTLY_USED_APPS is de lijst met recent gebruikte "
+"toepassingen (opgestart via het hoofdmenu of het toepassingenoverzicht). "
+"USER_SPECIFIED_APPS komt overeen met de voorkeurstoepassingen. RECENT_FILES "
+"is de lijst met bestanden uit ~/.recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid "prioritized list of commands to lock the screen"
-msgstr ""
+msgstr "Geordende lijst van opdrachtregels om het scherm te vergrendelen"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
+"Indien ingeschakeld zal het toepassingenoverzicht zichtbaar en actief zijn."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
 msgid "set to true if the search area should be visible and active."
-msgstr ""
+msgstr "Indien ingeschakeld zal het zoekgebied zichtbaar en actief zijn."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:44
 msgid "set to true if the status area should be visible and active."
-msgstr ""
+msgstr "Indien ingeschakeld zal het statusgebied zichtbaar en actief zijn."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:45
 msgid "set to true if the system area should be visible and active."
-msgstr ""
+msgstr "Indien ingeschakeld zal het systeemgebied zichtbaar en actief zijn."
 
-#: ../main-menu/src/document-tile.c:119
-msgid "Edited %m/%d/%Y"
-msgstr ""
-
-#: ../main-menu/src/document-tile.c:153
-#, fuzzy, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>In conflict met: </b>"
-
-#: ../main-menu/src/document-tile.c:163
-msgid "Open with Default Application"
-msgstr ""
-
-#: ../main-menu/src/document-tile.c:181
-msgid "Open in File Manager"
-msgstr ""
-
-#. make rename action
-#: ../main-menu/src/document-tile.c:199
-#, fuzzy
-msgid "Rename..."
-msgstr "Her&noemen"
-
-#. make move to trash action
-#: ../main-menu/src/document-tile.c:212
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Converters"
-
-#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
-#, fuzzy
-msgid "Send To..."
-msgstr "&Overschakelen naar..."
-
-#: ../main-menu/src/file-area-widget.c:130
-#, fuzzy
+# Vrij vertaald (Wouter Bolsterlee)
+#: ../main-menu/src/file-area-widget.c:153
 msgid "Show:"
-msgstr "Nu:"
+msgstr "Bekijken:"
 
-#: ../main-menu/src/file-area-widget.c:179
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:208
 msgid "Favorite Applications"
-msgstr "Opties opslaan"
+msgstr "Voorkeurstoepassingen"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:235
 msgid "Recently Used Applications"
-msgstr ""
+msgstr "Recent gebruikte toepassingen"
 
-#: ../main-menu/src/file-area-widget.c:229
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:256
 msgid "Recent Documents"
-msgstr "Document"
+msgstr "Recent gebruikte documenten"
 
-#: ../main-menu/src/file-area-widget.c:381
+#: ../main-menu/src/file-area-widget.c:405
 msgid "More Applications..."
-msgstr ""
+msgstr "Meer toepassingen…"
 
-#: ../main-menu/src/file-area-widget.c:385
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:410
 msgid "All Documents..."
-msgstr "Document"
+msgstr "Alle documenten…"
 
-#: ../main-menu/src/hard-drive-status-tile.c:83
-#, fuzzy
+#: ../main-menu/src/hard-drive-status-tile.c:108
 msgid "Hard Drive"
 msgstr "Harde schijf"
 
-#: ../main-menu/src/hard-drive-status-tile.c:316
+#: ../main-menu/src/hard-drive-status-tile.c:346
 #, c-format
 msgid "%lluG"
-msgstr ""
+msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:318
+#: ../main-menu/src/hard-drive-status-tile.c:348
 #, c-format
 msgid "%lluM"
-msgstr ""
+msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:320
+#: ../main-menu/src/hard-drive-status-tile.c:350
 #, c-format
 msgid "%lluK"
-msgstr ""
+msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:322
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%llub"
-msgstr ""
+msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:342
+#: ../main-menu/src/hard-drive-status-tile.c:373
 #, c-format
 msgid "%s Free / %s Total"
-msgstr ""
+msgstr "%s vrij / %s totaal"
 
-#: ../main-menu/src/main-menu-ui.c:310
+#: ../main-menu/src/main-menu-ui.c:333
 msgid "The GNOME Main Menu"
-msgstr ""
+msgstr "Het Gnome-menu"
 
-#: ../main-menu/src/main-menu-ui.c:432
+#: ../main-menu/src/main-menu-ui.c:459
 msgid "System"
 msgstr "Systeem"
 
-# /usr/lib/YaST2/clients/lan_inetd_custom.ycp:754
-#: ../main-menu/src/main-menu-ui.c:436
+#: ../main-menu/src/main-menu-ui.c:463
 msgid "Status"
 msgstr "Status"
 
-#: ../main-menu/src/main-menu-ui.c:630
+#: ../main-menu/src/main-menu-ui.c:621
 msgid "Computer"
 msgstr "Computer"
 
-#: ../main-menu/src/main-menu-ui.c:965
-#, fuzzy
+#: ../main-menu/src/main-menu-ui.c:967
 msgid "Search:"
-msgstr "&Zoeken:"
+msgstr "Zoeken:"
 
-# /usr/lib/YaST2/clients/dialup_dev_cfg.ycp:71
-#: ../main-menu/src/network-status-tile.c:72
-#: ../main-menu/src/network-status-tile.c:184
-#, fuzzy
+#: ../main-menu/src/network-status-tile.c:96
+#: ../main-menu/src/network-status-tile.c:214
 msgid "Network: None"
-msgstr "Netwerkmodus"
+msgstr "Netwerk: geen"
 
-#: ../main-menu/src/network-status-tile.c:75
-#: ../main-menu/src/network-status-tile.c:185
-#, fuzzy
+#: ../main-menu/src/network-status-tile.c:99
+#: ../main-menu/src/network-status-tile.c:215
 msgid "Click to configure network"
-msgstr "Ingestelde items weergeven"
+msgstr "Klik om het netwerk in te stellen"
 
-#: ../main-menu/src/network-status-tile.c:191
-#, fuzzy, c-format
+#: ../main-menu/src/network-status-tile.c:221
+#, c-format
 msgid "Connected to: %s"
-msgstr "Verbonden met"
+msgstr "Verbonden met: %s"
 
-# /usr/lib/YaST2/clients/lan_address.ycp:106
-#: ../main-menu/src/network-status-tile.c:194
-#, fuzzy
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Network: Wireless"
-msgstr "Netwerkadres"
+msgstr "Netwerk: draadloos"
 
-#: ../main-menu/src/network-status-tile.c:199
-#, fuzzy, c-format
+# Vrij vertaald (Wouter Bolsterlee)
+#: ../main-menu/src/network-status-tile.c:230
+#, c-format
 msgid "Using ethernet (%s)"
-msgstr "Server %1 wordt gebruikt"
+msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:202
-#, fuzzy
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Network: Wired"
-msgstr "Netwerkkaart"
+msgstr "Netwerk: bekabeld"
 
-# /usr/lib/YaST2/clients/dialup_ISP_sel.ycp:77
-# /usr/lib/YaST2/clients/dialup_ISP_sel.ycp:96
-# /usr/lib/YaST2/clients/dialup_ISP_sel.ycp:184
-# /usr/lib/YaST2/clients/dialup_ISP_sel.ycp:203
-#: ../main-menu/src/network-status-tile.c:308
-#, fuzzy, c-format
+#: ../main-menu/src/network-status-tile.c:344
+#, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr "Draadloze expert instellingen"
+msgstr "Draadloos netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:312
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr ""
+msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:316
-#: ../main-menu/src/network-status-tile.c:326
-#: ../main-menu/src/system-tile.c:127
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:366
+#: ../main-menu/src/system-tile.c:154
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../main-menu/src/network-status-tile.c:324
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
-msgstr ""
+msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:107
-#, fuzzy
+#: ../main-menu/src/system-tile.c:133
 msgid "Install Software"
-msgstr "Installeer firmware"
+msgstr "Software installeren"
 
-#: ../main-menu/src/system-tile.c:112
-#, fuzzy
+#: ../main-menu/src/system-tile.c:138
 msgid "Log Out ..."
-msgstr "Afmelden"
+msgstr "Uitloggen…"
 
-#: ../main-menu/src/system-tile.c:117
+#: ../main-menu/src/system-tile.c:143
 msgid "Lock Screen ..."
-msgstr ""
-
-#, fuzzy
-#~ msgid "All Applications..."
-#~ msgstr "&LDAP opties..."
-
-#~ msgid "Search"
-#~ msgstr "Zoeken"
+msgstr "Scherm vergrendelen…"
