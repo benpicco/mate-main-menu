@@ -31,7 +31,8 @@ double_click_detector_get_type (void)
 {
 	static GType object_type = 0;
 
-	if (!object_type) {
+	if (!object_type)
+	{
 		static const GTypeInfo object_info = {
 			sizeof (DoubleClickDetectorClass),
 			NULL,
@@ -44,9 +45,9 @@ double_click_detector_get_type (void)
 			(GInstanceInitFunc) double_click_detector_init
 		};
 
-		object_type = g_type_register_static (G_TYPE_OBJECT,
-						      "DoubleClickDetector",
-						      &object_info, 0);
+		object_type =
+			g_type_register_static (G_TYPE_OBJECT, "DoubleClickDetector", &object_info,
+			0);
 	}
 
 	return object_type;
@@ -66,11 +67,9 @@ double_click_detector_init (DoubleClickDetector * detector)
 	GtkSettings *settings;
 	gint click_interval;
 
-
 	settings = gtk_settings_get_default ();
 
-	g_object_get (G_OBJECT (settings),
-		      "gtk-double-click-time", &click_interval, NULL);
+	g_object_get (G_OBJECT (settings), "gtk-double-click-time", &click_interval, NULL);
 
 	detector->double_click_time = (guint32) click_interval;
 	detector->last_click_time = 0;
@@ -88,22 +87,20 @@ double_click_detector_dispose (GObject * obj)
 }
 
 gboolean
-double_click_detector_is_double_click (DoubleClickDetector * detector,
-				       guint32 event_time,
-				       gboolean auto_update)
+double_click_detector_is_double_click (DoubleClickDetector * detector, guint32 event_time,
+	gboolean auto_update)
 {
 	gint32 delta;
-
 
 	g_assert (detector != NULL);
 
 	if (event_time <= 0)
 		event_time = GDK_CURRENT_TIME;
 
-	if (detector->last_click_time <= 0) {
+	if (detector->last_click_time <= 0)
+	{
 		if (auto_update)
-			double_click_detector_update_click_time (detector,
-								 event_time);
+			double_click_detector_update_click_time (detector, event_time);
 
 		return FALSE;
 	}
@@ -111,15 +108,13 @@ double_click_detector_is_double_click (DoubleClickDetector * detector,
 	delta = event_time - detector->last_click_time;
 
 	if (auto_update)
-		double_click_detector_update_click_time (detector,
-							 event_time);
+		double_click_detector_update_click_time (detector, event_time);
 
 	return delta < detector->double_click_time;
 }
 
 void
-double_click_detector_update_click_time (DoubleClickDetector * detector,
-					 guint32 event_time)
+double_click_detector_update_click_time (DoubleClickDetector * detector, guint32 event_time)
 {
 	if (event_time <= 0)
 		event_time = GDK_CURRENT_TIME;

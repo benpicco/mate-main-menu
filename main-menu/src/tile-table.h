@@ -24,7 +24,6 @@
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
-
 #define TILE_TABLE_TYPE         (tile_table_get_type ())
 #define TILE_TABLE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), TILE_TABLE_TYPE, TileTable))
 #define TILE_TABLE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), TILE_TABLE_TYPE, TileTableClass))
@@ -32,31 +31,36 @@ G_BEGIN_DECLS
 #define IS_TILE_TABLE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), TILE_TABLE_TYPE))
 #define TILE_TABLE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TILE_TABLE_TYPE, TileTableClass))
 
-typedef struct {
+typedef struct
+{
 	GtkTable parent;
 } TileTable;
 
-typedef struct {
+typedef struct
+{
 	guint32 time;
 
 	GList *tiles_prev;
 	GList *tiles_curr;
 } TileTableUpdateEvent;
 
-typedef struct {
+typedef struct
+{
 	guint32 time;
 
 	gchar *uri;
 } TileTableURIAddedEvent;
 
-typedef struct {
+typedef struct
+{
 	GtkTableClass parent_class;
 
 	void (*tile_table_update) (TileTable *, TileTableUpdateEvent *);
 	void (*tile_table_uri_added) (TileTable *, TileTableURIAddedEvent *);
 } TileTableClass;
 
-typedef enum {
+typedef enum
+{
 	TILE_TABLE_REORDERING_SWAP,
 	TILE_TABLE_REORDERING_PUSH,
 	TILE_TABLE_REORDERING_PUSH_PULL
@@ -65,11 +69,10 @@ typedef enum {
 GType tile_table_get_type (void);
 
 GtkWidget *tile_table_new (guint n_cols, gboolean reorderable,
-			   TileTableReorderingPriority priority);
+	TileTableReorderingPriority priority);
 
 gint tile_table_load_tiles (TileTable * table, GList * tiles);
 void tile_table_set_limit (TileTable * table, gint limit);
 
 G_END_DECLS
-
 #endif

@@ -8,11 +8,7 @@ INCLUDES =							\
 bin_PROGRAMS = application-browser
 
 application_browser_SOURCES =					\
-	app-layout.c						\
-	app-layout.h						\
-	application-browser.c					\
-	app-window.c						\
-	app-window.h
+	application-browser.c
 
 application_browser_LDADD =					\
 	$(APPLICATION_BROWSER_LIBS)				\

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2006-06-09 09:51\n"
+"PO-Revision-Date: 2006-06-23 13:57\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
@@ -43,8 +43,7 @@ msgstr "Salir de la shell al llevar a cabo acción de inicio"
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 #: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
-"Salir de la shell al llevar a cabo acción de actualización o desinstalación"
+msgstr "Salir de la shell al llevar a cabo acción de actualización o desinstalación"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
@@ -58,38 +57,25 @@ msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de ayuda"
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 #: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
-"Indica si se debe cerrar la shell al llevar a cabo una acción de inicio"
+msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de inicio"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
-msgid ""
-"Indicates whether to close the shell when an add or remove action is "
-"performed"
-msgstr ""
-"Indica si se debe cerrar la shell al llevar a cabo una acción de adición o "
-"eliminación"
+msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de adición o eliminación"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
-msgid ""
-"Indicates whether to close the shell when an upgrade or uninstall action is "
-"performed"
-msgstr ""
-"Indica si se debe cerrar la shell al llevar a cabo una acción de "
-"actualización o desinstalación"
+msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
+msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de actualización o desinstalación"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
 msgstr "Número máximo de nuevas aplicaciones"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid ""
-"The maximum number of applications that will be displayed in the New "
-"Applications category"
-msgstr ""
-"Número máximo de aplicaciones que deben aparecer en la categoría de nuevas "
-"aplicaciones"
+msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgstr "Número máximo de aplicaciones que deben aparecer en la categoría de nuevas aplicaciones"
 
 #: ../application-browser/src/application-browser.c:62
 msgid "New Applications"
@@ -124,35 +110,17 @@ msgid "Task names and associated .desktop files"
 msgstr "Nombres de tareas y archivos .desktop asociados"
 
 #: ../control-center/etc/control-center.schemas.in.h:11
-msgid ""
-"The task name to be displayed in the control-center (thus needing to be "
-"translated) followed by a \";\" separator then the filename of an "
-"associated .desktop file to launch for that task."
-msgstr ""
-"El nombre de la tarea que debe aparecer en el centro de control (y por lo "
-"tanto debe traducirse), seguido de un separador \";\" y, a continuación, el "
-"nombre de archivo de un archivo .desktop asociado que debe iniciarse para la "
-"tarea."
+msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
+msgstr "El nombre de la tarea que debe aparecer en el centro de control (y por lo tanto debe traducirse), seguido de un separador \";\" y, a continuación, el nombre de archivo de un archivo .desktop asociado que debe iniciarse para la tarea."
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
-"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
-"desktop]"
-msgstr ""
-"[Cambiar fondo de escritorio;background.desktop,Añadir impresora;gnome-cups-"
-"manager.desktop,Configurar red;YaST2/lan.desktop,Cambiar contraseña;gnome-"
-"passwd.desktop,Añadir usuario;YaST2/users.desktop,Abrir configuración de "
-"administrador;YaST.desktop]"
+msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgstr "[Cambiar fondo de escritorio;background.desktop,Añadir impresora;gnome-cups-manager.desktop,Configurar red;YaST2/lan.desktop,Cambiar contraseña;gnome-passwd.desktop,Añadir usuario;YaST2/users.desktop,Abrir configuración de administrador;YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
-msgstr ""
-"si el valor es true, el centro de control se cerrará cuando se active una "
-"tarea común"
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
+msgstr "si el valor es true, el centro de control se cerrará cuando se active una tarea común"
 
 #: ../control-center/src/control-center.c:112
 msgid "Common Tasks"
@@ -201,11 +169,8 @@ msgstr "Añadir a programas de inicio"
 
 #: ../libslab/src/app-shell.c:644
 #, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
+msgid "<span size=\"large\"><b>No matches found.</b> </span><span>\n\n Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr "<span size=\"large\"><b>No se han encontrado coincidencias.</b> </span><span>\n\n El filtro \"<b>%s</b>\" no coincide con ningún elemento.</span>"
 
 # clients/inst_resize_ui.ycp:637
 # clients/inst_resize_ui.ycp:637
@@ -271,21 +236,12 @@ msgid ".desktop path for the application browser"
 msgstr "Vía de archivo .desktop para el navegador de aplicaciones"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
-msgstr ""
-"Ubicación del directorio de sistema en el que se encuentran los programas de "
-"inicio."
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr "Ubicación del directorio de sistema en el que se encuentran los programas de inicio."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid ""
-"Location of the user directory in which startup programs are found. The dir "
-"path should not be absolute, as the value of this key is appended to this "
-"path: ~/."
-msgstr ""
-"Ubicación del directorio de usuario en el que se encuentran los programas de "
-"inicio. La vía del directorio no debe ser absoluta, dado que el valor de "
-"esta clave se añade a la siguiente vía: ~/."
+msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
+msgstr "Ubicación del directorio de usuario en el que se encuentran los programas de inicio. La vía del directorio no debe ser absoluta, dado que el valor de esta clave se añade a la siguiente vía: ~/."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "System area items"
@@ -296,125 +252,60 @@ msgid "System-wide autostart program drop dir"
 msgstr "Directorio de programas de inicio automático para todo el sistema"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid ""
-"The list of the items which will appear in the System area. Possible values "
-"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
-"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
-"the appropriate .desktop files defined in the, respectively, \"help_item\", "
-"\"control_center_item\" and \"package_manager_item\" keys."
-msgstr ""
-"Lista de los elementos que aparecen en el área del sistema. Los valores "
-"posibles son HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
-"LOCK_SCREEN = 4. HELP, CONTROL_CENTER y PACKAGE_MANAGER necesitan disponer "
-"de los archivos .desktop adecuados definidos en las claves \"help_item\", "
-"\"control_center_item\" y \"package_manager_item\"."
+msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+msgstr "Lista de los elementos que aparecen en el área del sistema. Los valores posibles son HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER y PACKAGE_MANAGER necesitan disponer de los archivos .desktop adecuados definidos en las claves \"help_item\", \"control_center_item\" y \"package_manager_item\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated."
-msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Abrir en el gestor de archivos\"."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgstr "Éste es el comando que se debe ejecutar al activar el elemento de menú \"Abrir en el gestor de archivos\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
-"of the activated file."
-msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Abrir en el gestor de archivos\". FILE_URI se sustituye con un uri "
-"correspondiente al nombre de directorio del archivo activado."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgstr "Éste es el comando que se debe ejecutar al activar el elemento de menú \"Abrir en el gestor de archivos\". FILE_URI se sustituye con un uri correspondiente al nombre de directorio del archivo activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated."
-msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Enviar a...\"."
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgstr "Éste es el comando que se debe ejecutar al activar el elemento de menú \"Enviar a...\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated. DIRNAME and BASENAME are replaced with the corresponding "
-"components of the activated tile."
-msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Enviar a...\". DIRNAME y BASENAME se sustituyen por los componentes "
-"correspondientes del elemento activado."
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgstr "Éste es el comando que se debe ejecutar al activar el elemento de menú \"Enviar a...\". DIRNAME y BASENAME se sustituyen por los componentes correspondientes del elemento activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "This is the command to execute when the search entry is used."
-msgstr ""
-"Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda."
+msgstr "Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid ""
-"This is the command to execute when the search entry is used. SEARCH_STRING "
-"is replaced with the entered search text."
-msgstr ""
-"Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda. "
-"SEARCH_STRING se sustituye por el texto de búsqueda introducido."
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgstr "Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda. SEARCH_STRING se sustituye por el texto de búsqueda introducido."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
-"Directorio de programas de inicio automático del usuario (dentro del "
-"directorio personal)"
+msgstr "Directorio de programas de inicio automático del usuario (dentro del directorio personal)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to uninstall packages"
 msgstr "comando para desinstalar paquetes"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid ""
-"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-msgstr ""
-"comando para desinstalar paquetes, PACKAGE_NAME se sustituye por el nombre "
-"del paquete del comando"
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "comando para desinstalar paquetes, PACKAGE_NAME se sustituye por el nombre del paquete del comando"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "command to upgrade packages"
 msgstr "comando para actualizar paquetes"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-msgid ""
-"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-msgstr ""
-"comando para actualizar paquetes, PACKAGE_NAME se sustituye por el nombre "
-"del paquete del comando"
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "comando para actualizar paquetes, PACKAGE_NAME se sustituye por el nombre del paquete del comando"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid ""
-"contains the list (in no particular order) of allowable file types to show "
-"in the file area. possible values (see also the note for /desktop/gnome/"
-"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
-"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
-"recently used (instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
-msgstr ""
-"contiene la lista (en ningún orden concreto) de tipos de archivo permitidos "
-"que pueden aparecer en el área de archivos. Valores posibles (consulte "
-"también la nota de /desktop/gnome/ applications/main-menu/file-area/"
-"file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-"[RECENT_FILES]. RECENTLY_USED_APPS es la lista de las aplicaciones "
-"utilizadas recientemente (iniciadas con el menú principal o el navegador de "
-"aplicaciones). USER_SPECIFIED_APPS equivale a \"Aplicaciones favoritas\". "
-"RECENT_FILES es la lista de archivos de ~/.recently-used."
+msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+msgstr "contiene la lista (en ningún orden concreto) de tipos de archivo permitidos que pueden aparecer en el área de archivos. Valores posibles (consulte también la nota de /desktop/gnome/ applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS es la lista de las aplicaciones utilizadas recientemente (iniciadas con el menú principal o el navegador de aplicaciones). USER_SPECIFIED_APPS equivale a \"Aplicaciones favoritas\". RECENT_FILES es la lista de archivos de ~/.recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid ""
-"contains the list of files (including .desktop files) to be excluded from "
-"the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr ""
-"contiene la lista de archivos (incluidos los archivos .desktop) que deben "
-"excluirse de las listas \"Aplicaciones utilizadas recientemente\" y "
-"\"Archivos recientes\""
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr "contiene la lista de archivos (incluidos los archivos .desktop) que deben excluirse de las listas \"Aplicaciones utilizadas recientemente\" y \"Archivos recientes\""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "control center item .desktop file"
@@ -425,25 +316,16 @@ msgid "determines the limit of tiles in the file-area."
 msgstr "determina los límites de elementos del área de archivos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid ""
-"determines the limit of tiles in the file-area. *Note: this does not affect "
-"the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr ""
-"determina los límites de elementos del área de archivos. *Nota: esto no "
-"afecta al número de elementos si la clase de archivo es USER_SPECIFIED_*."
+msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
+msgstr "determina los límites de elementos del área de archivos. *Nota: esto no afecta al número de elementos si la clase de archivo es USER_SPECIFIED_*."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid ""
-"determines the reordering algorithm used when moving tiles around the main-"
-"menu"
-msgstr ""
-"determina el algoritmo de reordenación utilizado al mover los elementos en "
-"el menú principal"
+msgid "determines the reordering algorithm used when moving tiles around the main-menu"
+msgstr "determina el algoritmo de reordenación utilizado al mover los elementos en el menú principal"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "determines which types of files to display in the file area"
-msgstr ""
-"determina los tipos de archivos que deben aparecer en el área de archivos"
+msgstr "determina los tipos de archivos que deben aparecer en el área de archivos"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "help item .desktop file"
@@ -454,12 +336,8 @@ msgid "if true, main menu is more anxious to close"
 msgstr "si el valor es true, el menú principal se cierra más deprisa"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid ""
-"if true, main menu will close under these additional conditions: tile is "
-"activated, search activated"
-msgstr ""
-"si el valor es true, el menú principal se cerrará si se cumplen las "
-"siguientes condiciones adicionales: el elemento y la búsqueda se activan"
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgstr "si el valor es true, el menú principal se cerrará si se cumplen las siguientes condiciones adicionales: el elemento y la búsqueda se activan"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "lock-down configuration of the file area"
@@ -486,70 +364,32 @@ msgid "package manager item .desktop file"
 msgstr "archivo .desktop del elemento del gestor de paquetes"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid ""
-"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
-"when a tile is dragged onto another tile they should simply swap position. "
-"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
-"vacant spot is created in tile A's place. tile B (and all tiles after B) "
-"shift down until the new vacant space is filled. this operation wraps around "
-"in the case that tile A appears before tile B prior to the drag and drop "
-"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
-"they are either pushed into the vacant spaced or pulled from the other "
-"direction, depending on which strategy affects the least number of tiles."
-msgstr ""
-"valores posibles = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indica que, "
-"cuando un elemento se arrastra a otro, simplemente intercambian posiciones. "
-"PUSH indica que, si el elemento A se arrastra al elemento B, se crea un "
-"hueco vacío en el lugar del elemento A. El B (y todos los sucesivos) bajan "
-"hasta que se llena el espacio vacío. Esta operación se invierte si el "
-"elemento A aparece delante del elemento B antes de la operación de arrastrar "
-"y soltar. PUSH_PULL es similar a la operación PUSH, excepto en que, cuando "
-"los elementos cambian de lugar, ocupan el espacio vacío en la dirección que "
-"afecte al menor número de elementos."
+msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+msgstr "valores posibles = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indica que, cuando un elemento se arrastra a otro, simplemente intercambian posiciones. PUSH indica que, si el elemento A se arrastra al elemento B, se crea un hueco vacío en el lugar del elemento A. El B (y todos los sucesivos) bajan hasta que se llena el espacio vacío. Esta operación se invierte si el elemento A aparece delante del elemento B antes de la operación de arrastrar y soltar. PUSH_PULL es similar a la operación PUSH, excepto en que, cuando los elementos cambian de lugar, ocupan el espacio vacío en la dirección que afecte al menor número de elementos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid ""
-"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
-"(instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
-msgstr ""
-"valores posibles = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-"[RECENT_FILES]. RECENTLY_USED_APPS es la lista de las aplicaciones "
-"utilizadas recientemente (iniciadas con el menú principal o el navegador de "
-"aplicaciones). USER_SPECIFIED_APPS equivale a \"Aplicaciones favoritas\". "
-"RECENT_FILES es la lista de archivos de ~/.recently-used."
+msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+msgstr "valores posibles = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS es la lista de las aplicaciones utilizadas recientemente (iniciadas con el menú principal o el navegador de aplicaciones). USER_SPECIFIED_APPS equivale a \"Aplicaciones favoritas\". RECENT_FILES es la lista de archivos de ~/.recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid "prioritized list of commands to lock the screen"
 msgstr "lista prioritaria de los comandos que bloquean la pantalla"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid ""
-"set to true if the link to the application browser should be visible and "
-"active."
-msgstr ""
-"establezca el valor true si el enlace con el navegador de aplicaciones debe "
-"permanecer visible y activo."
+msgid "set to true if the link to the application browser should be visible and active."
+msgstr "establezca el valor true si el enlace con el navegador de aplicaciones debe permanecer visible y activo."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
 msgid "set to true if the search area should be visible and active."
-msgstr ""
-"establezca el valor true si el área de búsqueda debe permanecer visible y "
-"activa."
+msgstr "establezca el valor true si el área de búsqueda debe permanecer visible y activa."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:44
 msgid "set to true if the status area should be visible and active."
-msgstr ""
-"establezca el valor true si el área de estado debe permanecer visible y "
-"activa."
+msgstr "establezca el valor true si el área de estado debe permanecer visible y activa."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:45
 msgid "set to true if the system area should be visible and active."
-msgstr ""
-"establezca el valor true si el área del sistema debe permanecer visible y "
-"activa."
+msgstr "establezca el valor true si el área del sistema debe permanecer visible y activa."
 
 #: ../main-menu/src/document-tile.c:119
 msgid "Edited %m/%d/%Y"
@@ -746,16 +586,13 @@ msgstr "Bloquear pantalla..."
 #~ msgid "Number of days to be in New Applications category"
 #~ msgstr ""
 #~ "Número de días que deben permanecer en la categoría de nuevas aplicaciones"
-
 #~ msgid ""
 #~ "The number of days relative to current date that an application will be "
 #~ "considered a New Application"
 #~ msgstr ""
 #~ "Número de días desde la fecha actual durante los que la aplicación se "
 #~ "considerará nueva"
-
 #~ msgid "All Applications..."
 #~ msgstr "Todas las aplicaciones..."
-
 #~ msgid "Search"
 #~ msgstr "Buscar"

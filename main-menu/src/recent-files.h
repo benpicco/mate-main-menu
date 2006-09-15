@@ -26,7 +26,9 @@
 #define RECENT_FILES_FILE_PATH ".recently-used"
 #define RECENT_APPS_FILE_PATH  ".recently-used-apps"
 
-G_BEGIN_DECLS GList * get_recent_files (const gchar * store_path);
+G_BEGIN_DECLS
+
+GList * get_recent_files (const gchar * store_path);
 
 G_END_DECLS
 #endif /* __RECENT_FILES_H__ */

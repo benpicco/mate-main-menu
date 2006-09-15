@@ -28,23 +28,28 @@
 #include "main-menu-conf.h"
 
 G_BEGIN_DECLS
+
 #define SYSTEM_TILE_TYPE         (system_tile_get_type ())
 #define SYSTEM_TILE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), SYSTEM_TILE_TYPE, SystemTile))
 #define SYSTEM_TILE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), SYSTEM_TILE_TYPE, SystemTileClass))
 #define IS_SYSTEM_TILE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), SYSTEM_TILE_TYPE))
 #define IS_SYSTEM_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), SYSTEM_TILE_TYPE))
 #define SYSTEM_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), SYSTEM_TILE_TYPE, SystemTileClass))
-	typedef struct {
+
+typedef struct
+{
 	NameplateTile nameplate_tile;
 } SystemTile;
 
-typedef struct {
+typedef struct
+{
 	NameplateTileClass nameplate_tile_class;
 } SystemTileClass;
 
 #define SYSTEM_TILE_ACTION_OPEN 0
 
-typedef enum {
+typedef enum
+{
 	SYSTEM_TILE_TYPE_HELP = 0,
 	SYSTEM_TILE_TYPE_CONTROL_CENTER = 1,
 	SYSTEM_TILE_TYPE_PACKAGE_MANAGER = 2,
@@ -55,8 +60,7 @@ typedef enum {
 
 GType system_tile_get_type (void);
 
-GtkWidget *system_tile_new_with_type (SystemTileType type,
-				      MainMenuConf * conf);
+GtkWidget *system_tile_new_with_type (SystemTileType type, MainMenuConf * conf);
 
 G_END_DECLS
 #endif

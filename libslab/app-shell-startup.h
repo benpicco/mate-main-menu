@@ -25,10 +25,11 @@
 #include <bonobo/bonobo-main.h>
 
 G_BEGIN_DECLS
-	gint apss_new_instance_cb (BonoboApplication * app, gint argc,
-				   char *argv [], gpointer data);
-gboolean apss_already_running (int argc, char *argv [],
-			       BonoboApplication ** app, const gchar * name);
+
+gint apss_new_instance_cb (BonoboApplication * app, gint argc, char *argv[],
+	gpointer data);
+gboolean apss_already_running (int argc, char *argv[], BonoboApplication ** app,
+	const gchar * name);
 
 G_END_DECLS
 #endif /* __APP_SHELL_STARTUP_H__ */

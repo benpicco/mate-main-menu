@@ -31,9 +31,11 @@
 #include "tile.h"
 
 G_BEGIN_DECLS
+
 #define CATEGORY_SPACING 0
 #define GROUP_POSITION_NUMBER_KEY "Unique Group Position Number"
 #define APP_ACTION_KEY  "Unique Application Action Key"
+
 /* constants for initial sizing */
 #define SIZING_SCREEN_WIDTH_LARGE  1024
 #define SIZING_SCREEN_WIDTH_MEDIUM 800
@@ -43,13 +45,16 @@ G_BEGIN_DECLS
 #define SIZING_SCREEN_WIDTH_SMALL_NUMCOLS  1
 #define SIZING_TILE_WIDTH 230
 #define SIZING_HEIGHT_PERCENT 0.8
-	typedef struct {
+
+typedef struct
+{
 	const gchar *name;
 	gint max_items;
 	GArray *garray;
 } NewAppConfig;
 
-typedef struct _AppShellData {
+typedef struct _AppShellData
+{
 	GtkWidget *main_gnome_app;
 	gint main_gnome_app_window_x;
 	gint main_gnome_app_window_y;
@@ -59,8 +64,10 @@ typedef struct _AppShellData {
 	GtkWidget *groups_section;
 
 	GtkWidget *actions_section;
-	/* NULL - if the available actions depend on the current tile
-	   selected NON-NULL - a list of AppAction that are always shown */
+	/*
+		NULL      - if the available actions depend on the current tile selected
+		NON-NULL  - a list of AppAction that are always shown
+	*/
 	GSList *static_actions;
 
 	GtkWidget *filter_section;
@@ -69,8 +76,7 @@ typedef struct _AppShellData {
 
 	GtkWidget *category_layout;
 	GList *categories_list;
-	GList *cached_tables_list;	/* list of currently showing (not
-					   filtered out) tables */
+	GList *cached_tables_list;	/* list of currently showing (not filtered out) tables */
 	Tile *last_clicked_launcher;
 	SlabSection *selected_group;
 	GtkIconSize icon_size;
@@ -88,7 +94,8 @@ typedef struct _AppShellData {
 	GtkLabel *filtered_out_everything_widget_label;
 } AppShellData;
 
-typedef struct {
+typedef struct
+{
 	gchar *category;
 	Tile *group_launcher;
 
@@ -97,12 +104,14 @@ typedef struct {
 	GList *filtered_launcher_list;
 } CategoryData;
 
-typedef struct {
+typedef struct
+{
 	const gchar *name;
 	GnomeDesktopItem *item;
 } AppAction;
 
-typedef struct {
+typedef struct
+{
 	long time;
 	GnomeDesktopItem *item;
 } NewAppData;
@@ -110,20 +119,15 @@ typedef struct {
 void generate_categories (AppShellData * app_data);
 
 /* If new_apps is NULL then the new applications category is not created */
-AppShellData *appshelldata_new (const gchar * menu_name,
-				NewAppConfig * new_apps,
-				const gchar * gconf_keys_prefix,
-				GtkIconSize icon_size);
+AppShellData *appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps,
+	const gchar * gconf_keys_prefix, GtkIconSize icon_size);
 
-void layout_shell (AppShellData * app_data, const gchar * filter_title,
-		   const gchar * groups_title, const gchar * actions_title,
-		   GSList * actions, void (*actions_handler) (Tile *,
-							      TileEvent *,
-							      gpointer));
+void layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar * groups_title,
+	const gchar * actions_title, GSList * actions,
+	void (*actions_handler) (Tile *, TileEvent *, gpointer));
 
-gboolean create_main_window (AppShellData * app_data, const gchar * app_name,
-			     const gchar * title, const gchar * window_icon,
-			     gint width, gint height, gboolean hidden);
+gboolean create_main_window (AppShellData * app_data, const gchar * app_name, const gchar * title,
+	const gchar * window_icon, gint width, gint height, gboolean hidden);
 
 void hide_shell (AppShellData * app_data);
 

@@ -25,13 +25,16 @@
 #include <NetworkManager.h>
 
 G_BEGIN_DECLS
+
 #define NETWORK_STATUS_INFO_TYPE         (network_status_info_get_type ())
 #define NETWORK_STATUS_INFO(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), NETWORK_STATUS_INFO_TYPE, NetworkStatusInfo))
 #define NETWORK_STATUS_INFO_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), NETWORK_STATUS_INFO_TYPE, NetworkStatusInfoClass))
 #define IS_NETWORK_STATUS_INFO(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), NETWORK_STATUS_INFO_TYPE))
 #define IS_NETWORK_STATUS_INFO_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), NETWORK_STATUS_INFO_TYPE))
 #define NETWORK_STATUS_INFO_GET_CLASS(o) (G_TYPE_CHECK_GET_CLASS ((o), NETWORK_STATUS_INFO_TYPE, NetworkStatusInfoClass))
-	typedef struct {
+
+typedef struct
+{
 	GObject parent_placeholder;
 
 	gboolean active;
@@ -50,7 +53,8 @@ G_BEGIN_DECLS
 	gchar *hw_addr;
 } NetworkStatusInfo;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 } NetworkStatusInfoClass;
 

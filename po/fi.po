@@ -1,20 +1,21 @@
+# translation of gnome-main-menu.fi.po to
 # translation of fi.po to
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Finnish message file for YaST2 (@memory@).
 # Copyright (C) 2003 SuSE Linux AG.
 #
+#
 # Michael Hintsala <mhintsa@fi.ibm.com>, 2003. 2001.
 # Jyri Palokangas <jmp@netti.fi>, 2006.
 # Ilkka Tuohela <hile@iki.fi>, 2006.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: fi\n"
+"Project-Id-Version: gnome-main-menu.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-19 15:33+0200\n"
 "PO-Revision-Date: 2006-09-15 12:22+0300\n"
 "Last-Translator: Jyri Palokangas <jmp@netti.fi>\n"
-"Language-Team:  <yast-trans-fi@kotoistaminen.novell.fi>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,8 +66,7 @@ msgstr "Määrittää, suljetaanko kuori, kun käynnistystoiminto on suoritettu"
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr ""
-"Määrittää, suljetaanko kuori, kun lisäys- tai poistotoiminto on suoritettu"
+msgstr "Määrittää, suljetaanko kuori, kun lisäys- tai poistotoiminto on suoritettu"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
@@ -142,10 +142,8 @@ msgstr ""
 "YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
-msgstr ""
-"jos tosi, komentokeskus suljetaan kun \"Yleinen tehtävä\" on käynnistetty"
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
+msgstr "jos tosi, komentokeskus suljetaan kun \"Yleinen tehtävä\" on käynnistetty"
 
 #: ../control-center/src/control-center.c:112
 msgid "Common Tasks"
@@ -260,8 +258,7 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop-polku sovellusselaimelle"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
+msgid "Location of the system-wide directory in which startup programs are found."
 msgstr "Järjestelmänlaajuisen käynnistysohjelmien kansion sijainti"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
@@ -510,8 +507,7 @@ msgstr "järjestetty lista komentoja, jotka lukitaan näytölle"
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
-msgstr ""
-"aseta todeksi, jos linkin sovellusselaimeen tulisi olla näkyvä ja käytössä."
+msgstr "aseta todeksi, jos linkin sovellusselaimeen tulisi olla näkyvä ja käytössä."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
 msgid "set to true if the search area should be visible and active."
@@ -694,18 +690,3 @@ msgstr "Kirjaudu ulos ..."
 msgid "Lock Screen ..."
 msgstr "Lukitse näyttö ..."
 
-#~ msgid "Search"
-#~ msgstr "Etsi"
-
-#~ msgid "All Applications..."
-#~ msgstr "Kaikki sovellukset..."
-
-#~ msgid "Number of days to be in New Applications category"
-#~ msgstr "Kuinka monta päivää uudet sovellukset näytetään"
-
-#~ msgid ""
-#~ "The number of days relative to current date that an application will be "
-#~ "considered a New Application"
-#~ msgstr ""
-#~ "Kuinka monta päivää aiemmin asennettu sovellus tulkitaan uudeksi "
-#~ "sovellukseksi"

@@ -26,19 +26,23 @@
 #include "network-status-info.h"
 
 G_BEGIN_DECLS
+
 #define NETWORK_STATUS_AGENT_TYPE         (network_status_agent_get_type ())
 #define NETWORK_STATUS_AGENT(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), NETWORK_STATUS_AGENT_TYPE, NetworkStatusAgent))
 #define NETWORK_STATUS_AGENT_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), NETWORK_STATUS_AGENT_TYPE, NetworkStatusAgentClass))
 #define IS_NETWORK_STATUS_AGENT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), NETWORK_STATUS_AGENT_TYPE))
 #define IS_NETWORK_STATUS_AGENT_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), NETWORK_STATUS_AGENT_TYPE))
 #define NETWORK_STATUS_AGENT_GET_CLASS(o) (G_TYPE_CHECK_GET_CLASS ((o), NETWORK_STATUS_AGENT_TYPE, NetworkStatusAgentClass))
-	typedef struct {
+
+typedef struct
+{
 	GObject parent;
 
 	gboolean nm_present;
 } NetworkStatusAgent;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 
 	void (*status_changed) (NetworkStatusInfo *);
@@ -48,9 +52,7 @@ GType network_status_agent_get_type (void);
 
 NetworkStatusAgent *network_status_agent_new (void);
 
-NetworkStatusInfo
-	*network_status_agent_get_first_active_device_info (NetworkStatusAgent
-							    * agent);
+NetworkStatusInfo *network_status_agent_get_first_active_device_info (NetworkStatusAgent * agent);
 
 G_END_DECLS
 #endif /* __NETWORK_STATUS_AGENT_H_ */

@@ -25,6 +25,7 @@
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
+
 #define THEMED_ICON_TYPE            (themed_icon_get_type ())
 #define THEMED_ICON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), THEMED_ICON_TYPE, ThemedIcon))
 #define THEMED_ICON_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), THEMED_ICON_TYPE, ThemedIconClass))
@@ -32,14 +33,16 @@ G_BEGIN_DECLS
 #define IS_THEMED_ICON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), THEMED_ICON_TYPE))
 #define THEMED_ICON_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), THEMED_ICON_TYPE, ThemedIconClass))
 
-typedef struct {
+typedef struct
+{
 	GtkImage parent;
 
 	GtkIconSize size;
 	gchar *id;
 } ThemedIcon;
 
-typedef struct {
+typedef struct
+{
 	GtkImageClass parent_class;
 } ThemedIconClass;
 

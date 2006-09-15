@@ -24,20 +24,22 @@
 #include <gtk/gtkentry.h>
 
 G_BEGIN_DECLS
+
 #define NLD_TYPE_SEARCH_ENTRY            (nld_search_entry_get_type ())
 #define NLD_SEARCH_ENTRY(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), NLD_TYPE_SEARCH_ENTRY, NldSearchEntry))
 #define NLD_SEARCH_ENTRY_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), NLD_TYPE_SEARCH_ENTRY, NldSearchEntryClass))
 #define NLD_IS_SEARCH_ENTRY(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), NLD_TYPE_SEARCH_ENTRY))
 #define NLD_IS_SEARCH_ENTRY_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), NLD_TYPE_SEARCH_ENTRY))
 #define NLD_SEARCH_ENTRY_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), NLD_TYPE_SEARCH_ENTRY, NldSearchEntryClass))
-	typedef struct {
-	GtkEntry parent;
 
+typedef struct
+{
+	GtkEntry parent;
 } NldSearchEntry;
 
-typedef struct {
+typedef struct
+{
 	GtkEntryClass parent_class;
-
 } NldSearchEntryClass;
 
 GType nld_search_entry_get_type (void);

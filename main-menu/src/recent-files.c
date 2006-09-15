@@ -29,9 +29,7 @@ get_recent_files (const gchar * store_path)
 
 	GList *list;
 
-
-	recent_model =
-		egg_recent_model_new (store_path, EGG_RECENT_MODEL_SORT_MRU);
+	recent_model = egg_recent_model_new (store_path, EGG_RECENT_MODEL_SORT_MRU);
 
 	list = egg_recent_model_get_list (recent_model);
 

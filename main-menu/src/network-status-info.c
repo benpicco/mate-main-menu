@@ -22,10 +22,9 @@
 
 G_DEFINE_TYPE (NetworkStatusInfo, network_status_info, G_TYPE_OBJECT)
 
-     static void network_status_info_finalize (GObject *);
+static void network_status_info_finalize (GObject *);
 
-     static void
-       network_status_info_class_init (NetworkStatusInfoClass * this_class)
+static void network_status_info_class_init (NetworkStatusInfoClass * this_class)
 {
 	GObjectClass *g_obj_class = (GObjectClass *) this_class;
 
@@ -55,17 +54,26 @@ static void
 network_status_info_finalize (GObject * obj)
 {
 	NetworkStatusInfo *info = NETWORK_STATUS_INFO (obj);
-
-	g_free (info->iface);
-	g_free (info->essid);
-	g_free (info->driver);
-	g_free (info->ip4_addr);
-	g_free (info->broadcast);
-	g_free (info->subnet_mask);
-	g_free (info->route);
-	g_free (info->primary_dns);
-	g_free (info->secondary_dns);
-	g_free (info->hw_addr);
+	if (info->iface)
+		g_free (info->iface);
+	if (info->essid)
+		g_free (info->essid);
+	if (info->driver)
+		g_free (info->driver);
+	if (info->ip4_addr)
+		g_free (info->ip4_addr);
+	if (info->broadcast)
+		g_free (info->broadcast);
+	if (info->subnet_mask)
+		g_free (info->subnet_mask);
+	if (info->route)
+		g_free (info->route);
+	if (info->primary_dns)
+		g_free (info->primary_dns);
+	if (info->secondary_dns)
+		g_free (info->secondary_dns);
+	if (info->hw_addr)
+		g_free (info->hw_addr);
 
 	(*G_OBJECT_CLASS (network_status_info_parent_class)->finalize) (obj);
 }

@@ -23,40 +23,12 @@
 #include <gtk/gtklabel.h>
 #include <gtk/gtkalignment.h>
 
-static void slab_section_class_init (SlabSectionClass *);
-static void slab_section_init (SlabSection *);
+G_DEFINE_TYPE (SlabSection, slab_section, GTK_TYPE_VBOX)
+
 static void slab_section_finalize (GObject *);
-gboolean slab_section_expose_event (GtkWidget * widget,
-				    GdkEventExpose * event, gpointer data);
+gboolean slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data);
 
-GType
-slab_section_get_type ()
-{
-	static GType object_type = 0;
-
-	if (!object_type) {
-		static const GTypeInfo object_info = {
-			sizeof (SlabSectionClass),
-			NULL,
-			NULL,
-			(GClassInitFunc) slab_section_class_init,
-			NULL,
-			NULL,
-			sizeof (SlabSection),
-			0,
-			(GInstanceInitFunc) slab_section_init
-		};
-
-		object_type = g_type_register_static (GTK_TYPE_VBOX,
-						      "SlabSection",
-						      &object_info, 0);
-	}
-
-	return object_type;
-}
-
-static void
-slab_section_class_init (SlabSectionClass * slab_section_class)
+static void slab_section_class_init (SlabSectionClass * slab_section_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (slab_section_class);
 
@@ -74,28 +46,25 @@ static void
 slab_section_finalize (GObject * obj)
 {
 	g_assert (IS_SLAB_SECTION (obj));
+	(*G_OBJECT_CLASS (slab_section_parent_class)->finalize) (obj);
 }
 
 static void
 slab_section_set_title_color (GtkWidget * widget)
 {
-	switch (SLAB_SECTION (widget)->style) {
+	switch (SLAB_SECTION (widget)->style)
+	{
 	case Style1:
-		gtk_widget_modify_fg (SLAB_SECTION (widget)->title,
-				      GTK_STATE_NORMAL,
-				      &widget->style->bg [GTK_STATE_SELECTED]);
+		gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+			&widget->style->bg[GTK_STATE_SELECTED]);
 		break;
 	case Style2:
 		if (SLAB_SECTION (widget)->selected)
-			gtk_widget_modify_fg (SLAB_SECTION (widget)->title,
-					      GTK_STATE_NORMAL,
-					      &widget->style->
-					      dark [GTK_STATE_SELECTED]);
+			gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+				&widget->style->dark[GTK_STATE_SELECTED]);
 		else
-			gtk_widget_modify_fg (SLAB_SECTION (widget)->title,
-					      GTK_STATE_NORMAL,
-					      &widget->style->
-					      text [GTK_STATE_INSENSITIVE]);
+			gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+				&widget->style->text[GTK_STATE_INSENSITIVE]);
 		break;
 	default:
 		g_assert_not_reached ();
@@ -103,12 +72,11 @@ slab_section_set_title_color (GtkWidget * widget)
 }
 
 static void
-slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style,
-			gpointer user_data)
+slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user_data)
 {
 	static gboolean recursively_entered = FALSE;
-
-	if (!recursively_entered) {
+	if (!recursively_entered)
+	{
 		recursively_entered = TRUE;
 
 		slab_section_set_title_color (widget);
@@ -118,21 +86,16 @@ slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style,
 }
 
 gboolean
-slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event,
-			   gpointer data)
+slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
-	gdk_draw_rectangle (widget->window,
-			    widget->style->light_gc [GTK_STATE_SELECTED], TRUE,
-			    widget->allocation.x, widget->allocation.y,
-			    widget->allocation.width + 40,
-			    widget->allocation.height);
+	gdk_draw_rectangle (widget->window, widget->style->light_gc[GTK_STATE_SELECTED], TRUE,
+		widget->allocation.x, widget->allocation.y,
+		widget->allocation.width + 40, widget->allocation.height);
 
 	GList *child = gtk_container_get_children (GTK_CONTAINER (widget));
-
 	for (; child; child = child->next)
-		gtk_container_propagate_expose (GTK_CONTAINER (widget),
-						GTK_WIDGET (child->data),
-						event);
+		gtk_container_propagate_expose (GTK_CONTAINER (widget), GTK_WIDGET (child->data),
+			event);
 
 	return FALSE;
 }
@@ -144,12 +107,17 @@ slab_section_set_selected (SlabSection * section, gboolean selected)
 		return;
 	section->selected = selected;
 
-	/* 
-	   if(selected) { section->expose_handler_id =
-	   g_signal_connect(G_OBJECT(section), "expose-event",
-	   G_CALLBACK(slab_section_expose_event), NULL); } else {
+	/*
+	   if(selected)
+	   {
+	   section->expose_handler_id = g_signal_connect(G_OBJECT(section),
+	   "expose-event", G_CALLBACK(slab_section_expose_event), NULL);
+	   }
+	   else
+	   {
 	   g_signal_handler_disconnect(section, section->expose_handler_id);
-	   } */
+	   }
+	 */
 
 	slab_section_set_title_color (GTK_WIDGET (section));
 }
@@ -166,16 +134,14 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	section->selected = FALSE;
 
 	GtkWidget *align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
-
-	switch (style) {
+	switch (style)
+	{
 	case Style1:
 		gtk_alignment_set_padding (GTK_ALIGNMENT (align), 0, 0, 0, 0);
 		break;
 	case Style2:
-		gtk_alignment_set_padding (GTK_ALIGNMENT (align),
-					   SLAB_TOP_PADDING,
-					   SLAB_BOTTOM_PADDING,
-					   SLAB_LEFT_PADDING, 0);
+		gtk_alignment_set_padding (GTK_ALIGNMENT (align), SLAB_TOP_PADDING,
+			SLAB_BOTTOM_PADDING, SLAB_LEFT_PADDING, 0);
 		break;
 	default:
 		g_assert_not_reached ();
@@ -183,19 +149,16 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	gtk_box_pack_start (GTK_BOX (section), align, TRUE, TRUE, 0);
 
 	section->childbox = GTK_BOX (gtk_vbox_new (FALSE, 10));
-	gtk_container_add (GTK_CONTAINER (align),
-			   GTK_WIDGET (section->childbox));
+	gtk_container_add (GTK_CONTAINER (align), GTK_WIDGET (section->childbox));
 
 	section->title = gtk_label_new (title_markup);
 	gtk_label_set_use_markup (GTK_LABEL (section->title), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (section->title), 0.0, 0.5);
 
-	g_signal_connect (G_OBJECT (section),
-			  "style-set", G_CALLBACK (slab_section_style_set),
-			  NULL);
+	g_signal_connect (G_OBJECT (section), "style-set", G_CALLBACK (slab_section_style_set),
+		NULL);
 
-	gtk_box_pack_start (section->childbox, section->title, FALSE, FALSE,
-			    0);
+	gtk_box_pack_start (section->childbox, section->title, FALSE, FALSE, 0);
 
 	return GTK_WIDGET (section);
 }
@@ -217,8 +180,7 @@ slab_section_new (const gchar * title, SlabStyle style)
 void
 slab_section_set_title (SlabSection * section, const gchar * title)
 {
-	gchar *markup =
-		g_strdup_printf ("<span size=\"large\">%s</span>", title);
+	gchar *markup = g_strdup_printf ("<span size=\"large\">%s</span>", title);
 
 	gtk_label_set_markup (GTK_LABEL (section->title), markup);
 

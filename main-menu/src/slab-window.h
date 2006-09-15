@@ -37,7 +37,8 @@ G_BEGIN_DECLS
 typedef struct _SlabWindow SlabWindow;
 typedef struct _SlabWindowClass SlabWindowClass;
 
-struct _SlabWindow {
+struct _SlabWindow
+{
 	GtkWindow window;
 
 	GtkBox *_hbox;
@@ -45,15 +46,14 @@ struct _SlabWindow {
 	GtkWidget *_right_pane;
 };
 
-struct _SlabWindowClass {
+struct _SlabWindowClass
+{
 	GtkWindowClass parent_class;
 };
 
 GType slab_window_get_type (void);
 GtkWidget *slab_window_new (void);
-void slab_window_set_contents (SlabWindow * window, GtkWidget * left_pane,
-			       GtkWidget * right_pane);
+void slab_window_set_contents (SlabWindow * window, GtkWidget * left_pane, GtkWidget * right_pane);
 
 G_END_DECLS
-
 #endif /* __SLAB_WINDOW_H__ */

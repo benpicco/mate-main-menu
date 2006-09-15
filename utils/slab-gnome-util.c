@@ -35,7 +35,6 @@ get_slab_gconf_bool (const gchar * key)
 
 	gboolean value;
 
-
 	gconf_client = gconf_client_get_default ();
 	error = NULL;
 
@@ -74,7 +73,6 @@ get_slab_gconf_string (const gchar * key)
 
 	gchar *value;
 
-
 	gconf_client = gconf_client_get_default ();
 	error = NULL;
 
@@ -94,14 +92,13 @@ get_slab_gconf_slist (const gchar * key)
 
 	GSList *value;
 
-
 	gconf_client = gconf_client_get_default ();
 	error = NULL;
 
-	value = gconf_client_get_list (gconf_client, key, GCONF_VALUE_STRING,
-				       &error);
+	value = gconf_client_get_list (gconf_client, key, GCONF_VALUE_STRING, &error);
 
-	if (error) {
+	if (error)
+	{
 		g_warning ("error accessing %s [%s]\n", key, error->message);
 
 		g_error_free (error);
@@ -113,12 +110,15 @@ get_slab_gconf_slist (const gchar * key)
 GnomeDesktopItem *
 load_desktop_item_from_gconf_key (const gchar * key)
 {
+	GnomeDesktopItem *item;
 	gchar *id = get_slab_gconf_string (key);
 
 	if (!id)
 		return NULL;
 
-	return load_desktop_item_from_unknown (id);
+	item = load_desktop_item_from_unknown (id);
+	g_free (id);
+	return item;
 }
 
 GnomeDesktopItem *
@@ -127,14 +127,14 @@ load_desktop_item_from_unknown (const gchar * id)
 	GnomeDesktopItem *item;
 	GError *error;
 
-
 	error = NULL;
 
 	item = gnome_desktop_item_new_from_uri (id, 0, &error);
 
 	if (!error)
 		return item;
-	else {
+	else
+	{
 		g_error_free (error);
 		error = NULL;
 	}
@@ -143,7 +143,8 @@ load_desktop_item_from_unknown (const gchar * id)
 
 	if (!error)
 		return item;
-	else {
+	else
+	{
 		g_error_free (error);
 		error = NULL;
 	}
@@ -152,7 +153,8 @@ load_desktop_item_from_unknown (const gchar * id)
 
 	if (!error)
 		return item;
-	else {
+	else
+	{
 		g_error_free (error);
 		error = NULL;
 	}
@@ -168,31 +170,25 @@ get_package_name_from_desktop_item (GnomeDesktopItem * desktop_item)
 	gint retval;
 	GError *error;
 
-
 	argv = g_new (gchar *, 6);
-	argv [0] = "rpm";
-	argv [1] = "-qf";
-	argv [2] = "--qf";
-	argv [3] = "%{NAME}";
-	argv [4] =
-		g_filename_from_uri (gnome_desktop_item_get_location
-				     (desktop_item), NULL, NULL);
-	argv [5] = NULL;
+	argv[0] = "rpm";
+	argv[1] = "-qf";
+	argv[2] = "--qf";
+	argv[3] = "%{NAME}";
+	argv[4] = g_filename_from_uri (gnome_desktop_item_get_location (desktop_item), NULL, NULL);
+	argv[5] = NULL;
 
 	error = NULL;
 
-	if (!g_spawn_sync (NULL,
-			   argv,
-			   NULL,
-			   G_SPAWN_SEARCH_PATH,
-			   NULL, NULL, &package_name, NULL, &retval, &error)
-		) {
+	if (!g_spawn_sync (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, &package_name, NULL,
+			&retval, &error))
+	{
 		g_warning ("error: [%s]\n", error->message);
 
 		return NULL;
 	}
 
-	g_free (argv [4]);
+	g_free (argv[4]);
 	g_free (argv);
 
 	if (error)
@@ -212,15 +208,12 @@ open_desktop_item_exec (GnomeDesktopItem * desktop_item)
 	if (!desktop_item)
 		return FALSE;
 
-	gnome_desktop_item_launch (desktop_item,
-				   NULL,
-				   GNOME_DESKTOP_ITEM_LAUNCH_ONLY_ONE,
-				   &error);
+	gnome_desktop_item_launch (desktop_item, NULL, GNOME_DESKTOP_ITEM_LAUNCH_ONLY_ONE, &error);
 
-	if (error) {
+	if (error)
+	{
 		g_warning ("error launching %s [%s]\n",
-			   gnome_desktop_item_get_location (desktop_item),
-			   error->message);
+			gnome_desktop_item_get_location (desktop_item), error->message);
 
 		return FALSE;
 	}
@@ -236,22 +229,22 @@ open_desktop_item_help (GnomeDesktopItem * desktop_item)
 
 	GError *error;
 
-
 	if (!desktop_item)
 		return FALSE;
 
 	doc_path = gnome_desktop_item_get_string (desktop_item, "DocPath");
 
-	if (doc_path) {
+	if (doc_path)
+	{
 		help_uri = g_strdup_printf ("ghelp:%s", doc_path);
 
 		error = NULL;
 
 		gnome_url_show (help_uri, &error);
 
-		if (error) {
-			g_warning ("error opening %s [%s]\n", help_uri,
-				   error->message);
+		if (error)
+		{
+			g_warning ("error opening %s [%s]\n", help_uri, error->message);
 
 			return FALSE;
 		}
@@ -267,8 +260,7 @@ open_desktop_item_help (GnomeDesktopItem * desktop_item)
 gboolean
 desktop_item_is_in_main_menu (GnomeDesktopItem * desktop_item)
 {
-	return desktop_uri_is_in_main_menu (gnome_desktop_item_get_location
-					    (desktop_item));
+	return desktop_uri_is_in_main_menu (gnome_desktop_item_get_location (desktop_item));
 }
 
 gboolean
@@ -279,19 +271,19 @@ desktop_uri_is_in_main_menu (const gchar * uri)
 	GSList *node;
 	gint offset;
 
-
 	app_list = get_slab_gconf_slist (SLAB_USER_SPECIFIED_APPS_KEY);
 
 	if (!app_list)
 		return FALSE;
 
-	for (node = app_list; node; node = node->next) {
+	for (node = app_list; node; node = node->next)
+	{
 		offset = strlen (uri) - strlen ((gchar *) node->data);
 
 		if (offset < 0)
 			offset = 0;
 
-		if (!strcmp (&uri [offset], (gchar *) node->data))
+		if (!strcmp (&uri[offset], (gchar *) node->data))
 			return TRUE;
 	}
 
@@ -306,16 +298,15 @@ desktop_item_location_compare (gconstpointer a_obj, gconstpointer b_obj)
 
 	gint offset;
 
-
 	a = (const gchar *) a_obj;
 	b = (const gchar *) b_obj;
 
 	offset = strlen (a) - strlen (b);
 
 	if (offset > 0)
-		return strcmp (&a [offset], b);
+		return strcmp (&a[offset], b);
 	else if (offset < 0)
-		return strcmp (a, &b [-offset]);
+		return strcmp (a, &b[-offset]);
 	else
 		return strcmp (a, b);
 }
@@ -329,7 +320,6 @@ slab_load_image (GtkImage * image, GtkIconSize size, const gchar * image_id)
 
 	gchar *id;
 
-
 	if (!image_id)
 		return FALSE;
 
@@ -338,22 +328,23 @@ slab_load_image (GtkImage * image, GtkIconSize size, const gchar * image_id)
 	gtk_icon_size_lookup (size, &width, &height);
 
 	if (g_path_is_absolute (id))
-		pixbuf = gdk_pixbuf_new_from_file_at_size (id, width, height,
-							   NULL);
-	else {
-		if (		/* file extensions are not copesetic with
-				   loading by "name" */
-			   g_str_has_suffix (id, ".png") ||
-			   g_str_has_suffix (id, ".svg") ||
-			   g_str_has_suffix (id, ".xpm")
-			)
-			id [strlen (id) - 4] = '\0';
+		pixbuf = gdk_pixbuf_new_from_file_at_size (id, width, height, NULL);
+	else
+	{
+		if (	/* file extensions are not copesetic with loading by "name" */
+			g_str_has_suffix (id, ".png") ||
+			g_str_has_suffix (id, ".svg") ||
+			g_str_has_suffix (id, ".xpm")
+		   )
 
-		pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default
-						   (), id, width, 0, NULL);
+			id[strlen (id) - 4] = '\0';
+
+		pixbuf = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (), id, width, 0,
+			NULL);
 	}
 
-	if (pixbuf) {
+	if (pixbuf)
+	{
 		gtk_image_set_from_pixbuf (image, pixbuf);
 
 		g_object_unref (pixbuf);
@@ -362,8 +353,8 @@ slab_load_image (GtkImage * image, GtkIconSize size, const gchar * image_id)
 
 		return TRUE;
 	}
-	else {			/* This will make it show the "broken image"
-				   icon */
+	else
+	{			/* This will make it show the "broken image" icon */
 		gtk_image_set_from_file (image, id);
 
 		g_free (id);
@@ -373,18 +364,16 @@ slab_load_image (GtkImage * image, GtkIconSize size, const gchar * image_id)
 }
 
 gchar *
-string_replace_once (const gchar * str_template, const gchar * key,
-		     const gchar * value)
+string_replace_once (const gchar * str_template, const gchar * key, const gchar * value)
 {
 	GString *str_built;
 	gint pivot;
-
 
 	pivot = strstr (str_template, key) - str_template;
 
 	str_built = g_string_new_len (str_template, pivot);
 	g_string_append (str_built, value);
-	g_string_append (str_built, &str_template [pivot + strlen (key)]);
+	g_string_append (str_built, &str_template[pivot + strlen (key)]);
 
 	return g_string_free (str_built, FALSE);
 }
@@ -395,19 +384,16 @@ spawn_process (const gchar * command)
 	gchar **argv;
 	GError *error = NULL;
 
-
 	if (!command || strlen (command) < 1)
 		return;
 
 	argv = g_strsplit (command, " ", -1);
 
-	g_spawn_async (NULL,
-		       argv,
-		       NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+	g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
 
-	if (error) {
-		g_warning ("error spawning [%s]: [%s]\n", command,
-			   error->message);
+	if (error)
+	{
+		g_warning ("error spawning [%s]: [%s]\n", command, error->message);
 
 		g_error_free (error);
 	}
@@ -423,15 +409,11 @@ copy_file (const gchar * src_uri, const gchar * dst_uri)
 
 	GnomeVFSResult retval;
 
-
 	src = gnome_vfs_uri_new (src_uri);
 	dst = gnome_vfs_uri_new (dst_uri);
 
-	retval = gnome_vfs_xfer_uri (src, dst,
-				     GNOME_VFS_XFER_DEFAULT,
-				     GNOME_VFS_XFER_ERROR_MODE_ABORT,
-				     GNOME_VFS_XFER_OVERWRITE_MODE_SKIP,
-				     NULL, NULL);
+	retval = gnome_vfs_xfer_uri (src, dst, GNOME_VFS_XFER_DEFAULT,
+		GNOME_VFS_XFER_ERROR_MODE_ABORT, GNOME_VFS_XFER_OVERWRITE_MODE_SKIP, NULL, NULL);
 
 	if (retval != GNOME_VFS_OK)
 		g_warning ("error copying [%s] to [%s].", src_uri, dst_uri);

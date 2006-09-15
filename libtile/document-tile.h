@@ -1,14 +1,14 @@
 /*
- * This file is part of libslab.
+ * This file is part of libtile.
  *
  * Copyright (c) 2006 Novell, Inc.
  *
- * Libslab is free software; you can redistribute it and/or modify it under the
+ * Libtile is free software; you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2 of the License, or (at your option)
  * any later version.
  *
- * Libslab is distributed in the hope that it will be useful, but WITHOUT ANY
+ * Libtile is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
  * more details.
@@ -26,17 +26,21 @@
 #include "egg-recent-item.h"
 
 G_BEGIN_DECLS
+
 #define DOCUMENT_TILE_TYPE         (document_tile_get_type ())
 #define DOCUMENT_TILE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), DOCUMENT_TILE_TYPE, DocumentTile))
 #define DOCUMENT_TILE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), DOCUMENT_TILE_TYPE, DocumentTileClass))
 #define IS_DOCUMENT_TILE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), DOCUMENT_TILE_TYPE))
 #define IS_DOCUMENT_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), DOCUMENT_TILE_TYPE))
 #define DOCUMENT_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), DOCUMENT_TILE_TYPE, DocumentTileClass))
-	typedef struct {
+
+typedef struct
+{
 	NameplateTile nameplate_tile;
 } DocumentTile;
 
-typedef struct {
+typedef struct
+{
 	NameplateTileClass nameplate_tile_class;
 } DocumentTileClass;
 

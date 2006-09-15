@@ -26,6 +26,7 @@
 #include <libgnome/gnome-desktop-item.h>
 
 G_BEGIN_DECLS
+
 #define SLAB_APPLICATION_BROWSER_KEY    "/desktop/gnome/applications/main-menu/application_browser"
 #define SLAB_SYSTEM_LIST_KEY            "/desktop/gnome/applications/main-menu/system_list"
 #define SLAB_FILE_BROWSER_KEY           "/desktop/gnome/applications/main-menu/file_browser"
@@ -44,7 +45,8 @@ G_BEGIN_DECLS
 #define SLAB_FILE_SEND_TO_CMD           "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
 #define SLAB_GLOBAL_STARTUP_DIR_KEY     "/desktop/gnome/applications/main-menu/file-area/global_startup_dir"
 #define SLAB_USER_STARTUP_DIR_KEY       "/desktop/gnome/applications/main-menu/file-area/user_startup_dir"
-	gboolean get_slab_gconf_bool (const gchar * key);
+
+gboolean get_slab_gconf_bool (const gchar * key);
 gint get_slab_gconf_int (const gchar * key);
 GSList *get_slab_gconf_slist (const gchar * key);
 gchar *get_slab_gconf_string (const gchar * key);
@@ -62,11 +64,9 @@ gboolean desktop_uri_is_in_main_menu (const gchar * uri);
 
 gint desktop_item_location_compare (gconstpointer a, gconstpointer b);
 
-gboolean slab_load_image (GtkImage * image, GtkIconSize size,
-			  const gchar * image_id);
+gboolean slab_load_image (GtkImage * image, GtkIconSize size, const gchar * image_id);
 
-gchar *string_replace_once (const gchar * str_template, const gchar * key,
-			    const gchar * value);
+gchar *string_replace_once (const gchar * str_template, const gchar * key, const gchar * value);
 
 void spawn_process (const gchar * command);
 void copy_file (const gchar * src_uri, const gchar * dst_uri);

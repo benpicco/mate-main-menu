@@ -24,18 +24,21 @@
 #include <gtk/gtkbutton.h>
 
 G_BEGIN_DECLS
+
 #define NLD_TYPE_SEARCH_CONTEXT_PICKER            (nld_search_context_picker_get_type ())
 #define NLD_SEARCH_CONTEXT_PICKER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), NLD_TYPE_SEARCH_CONTEXT_PICKER, NldSearchContextPicker))
 #define NLD_SEARCH_CONTEXT_PICKER_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), NLD_TYPE_SEARCH_CONTEXT_PICKER, NldSearchContextPickerClass))
 #define NLD_IS_SEARCH_CONTEXT_PICKER(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), NLD_TYPE_SEARCH_CONTEXT_PICKER))
 #define NLD_IS_SEARCH_CONTEXT_PICKER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), NLD_TYPE_SEARCH_CONTEXT_PICKER))
 #define NLD_SEARCH_CONTEXT_PICKER_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), NLD_TYPE_SEARCH_CONTEXT_PICKER, NldSearchContextPickerClass))
-	typedef struct {
-	GtkButton parent;
 
+typedef struct
+{
+	GtkButton parent;
 } NldSearchContextPicker;
 
-typedef struct {
+typedef struct
+{
 	GtkButtonClass parent_class;
 
 	void (*context_changed) (NldSearchContextPicker *);
@@ -45,14 +48,11 @@ GType nld_search_context_picker_get_type (void);
 
 GtkWidget *nld_search_context_picker_new (void);
 
-void nld_search_context_picker_add_context (NldSearchContextPicker * picker,
-					    const char *label,
-					    const char *icon_name,
-					    int context_id);
+void nld_search_context_picker_add_context (NldSearchContextPicker * picker, const char *label,
+	const char *icon_name, int context_id);
 
 int nld_search_context_picker_get_context (NldSearchContextPicker * picker);
-void nld_search_context_picker_set_context (NldSearchContextPicker * picker,
-					    int context_id);
+void nld_search_context_picker_set_context (NldSearchContextPicker * picker, int context_id);
 
 G_END_DECLS
 #endif /* __NLD_SEARCH_CONTEXT_PICKER_H__ */

@@ -24,17 +24,21 @@
 #include "nameplate-tile.h"
 
 G_BEGIN_DECLS
+
 #define HARD_DRIVE_STATUS_TILE_TYPE         (hard_drive_status_tile_get_type ())
 #define HARD_DRIVE_STATUS_TILE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), HARD_DRIVE_STATUS_TILE_TYPE, HardDriveStatusTile))
 #define HARD_DRIVE_STATUS_TILE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), HARD_DRIVE_STATUS_TILE_TYPE, HardDriveStatusTileClass))
 #define IS_HARD_DRIVE_STATUS_TILE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), HARD_DRIVE_STATUS_TILE_TYPE))
 #define IS_HARD_DRIVE_STATUS_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), HARD_DRIVE_STATUS_TILE_TYPE))
 #define HARD_DRIVE_STATUS_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), HARD_DRIVE_STATUS_TILE_TYPE, HardDriveStatusTileClass))
-	typedef struct {
+
+typedef struct
+{
 	NameplateTile nameplate_tile;
 } HardDriveStatusTile;
 
-typedef struct {
+typedef struct
+{
 	NameplateTileClass nameplate_tile_class;
 } HardDriveStatusTileClass;
 

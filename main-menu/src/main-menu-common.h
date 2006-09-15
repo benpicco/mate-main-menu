@@ -27,6 +27,7 @@
 #include "main-menu-conf.h"
 
 G_BEGIN_DECLS
+
 #define MAIN_MENU_ENGINE_TYPE         (main_menu_engine_get_type ())
 #define MAIN_MENU_ENGINE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MAIN_MENU_ENGINE_TYPE, MainMenuEngine))
 #define MAIN_MENU_ENGINE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), MAIN_MENU_ENGINE_TYPE, MainMenuEngineClass))
@@ -39,22 +40,26 @@ G_BEGIN_DECLS
 #define IS_MAIN_MENU_UI(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MAIN_MENU_UI_TYPE))
 #define IS_MAIN_MENU_UI_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), MAIN_MENU_UI_TYPE))
 #define MAIN_MENU_UI_GET_CLASS(o) (G_TYPE_CHECK_GET_CLASS ((o), MAIN_MENU_UI_TYPE, MainMenuUIClass))
-	typedef struct {
+
+typedef struct
+{
 	GObject parent_placeholder;
 } MainMenuEngine;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 } MainMenuEngineClass;
 
-typedef struct {
+typedef struct
+{
 	GObject parent_placeholder;
 } MainMenuUI;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 } MainMenuUIClass;
-
 
 GType main_menu_engine_get_type (void);
 
@@ -62,17 +67,13 @@ MainMenuEngine *main_menu_engine_new (MainMenuConf * conf);
 
 void main_menu_engine_link_ui (MainMenuEngine * engine, MainMenuUI * ui);
 gboolean main_menu_engine_search_available (MainMenuEngine * engine);
-void main_menu_engine_execute_search (MainMenuEngine * engine,
-				      const gchar * search_string);
+void main_menu_engine_execute_search (MainMenuEngine * engine, const gchar * search_string);
 GList *main_menu_engine_get_system_list (MainMenuEngine * engine);
-void main_menu_engine_add_user_app (MainMenuEngine * engine,
-				    const gchar * desktop_uri);
-
+void main_menu_engine_add_user_app (MainMenuEngine * engine, const gchar * desktop_uri);
 
 GType main_menu_ui_get_type (void);
 
-MainMenuUI *main_menu_ui_new (PanelApplet * applet, MainMenuConf * conf,
-			      MainMenuEngine * engine);
+MainMenuUI *main_menu_ui_new (PanelApplet * applet, MainMenuConf * conf, MainMenuEngine * engine);
 
 void main_menu_ui_release (MainMenuUI * ui);
 void main_menu_ui_close (MainMenuUI * ui, gboolean assured);

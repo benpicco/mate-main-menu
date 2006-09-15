@@ -24,20 +24,24 @@
 #include <glib-object.h>
 
 G_BEGIN_DECLS
+
 #define DOUBLE_CLICK_DETECTOR_TYPE         (double_click_detector_get_type ())
 #define DOUBLE_CLICK_DETECTOR(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), DOUBLE_CLICK_DETECTOR_TYPE, DoubleClickDetector))
 #define DOUBLE_CLICK_DETECTOR_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), DOUBLE_CLICK_DETECTOR_TYPE, DoubleClickDetectorClass))
 #define IS_DOUBLE_CLICK_DETECTOR(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), DOUBLE_CLICK_DETECTOR_TYPE))
 #define IS_DOUBLE_CLICK_DETECTOR_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), DOUBLE_CLICK_DETECTOR_TYPE))
 #define DOUBLE_CLICK_DETECTOR_GET_CLASS(o) (G_TYPE_CHECK_GET_CLASS ((o), DOUBLE_CLICK_DETECTOR_TYPE, DoubleClickDetectorClass))
-	typedef struct {
+
+typedef struct
+{
 	GObject parent_placeholder;
 
 	guint32 double_click_time;
 	guint32 last_click_time;
 } DoubleClickDetector;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 } DoubleClickDetectorClass;
 
@@ -45,12 +49,10 @@ GType double_click_detector_get_type (void);
 
 DoubleClickDetector *double_click_detector_new (void);
 
-gboolean double_click_detector_is_double_click (DoubleClickDetector *
-						detector, guint32 event_time,
-						gboolean auto_update);
+gboolean double_click_detector_is_double_click (DoubleClickDetector * detector, guint32 event_time,
+	gboolean auto_update);
 
-void double_click_detector_update_click_time (DoubleClickDetector * detector,
-					      guint32 event_time);
+void double_click_detector_update_click_time (DoubleClickDetector * detector, guint32 event_time);
 
 G_END_DECLS
 #endif /* __DOUBLE_CLICK_DETECTOR_H__ */

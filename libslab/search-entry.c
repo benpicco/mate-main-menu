@@ -24,7 +24,8 @@
 #include <librsvg/rsvg.h>
 #include <string.h>
 
-typedef struct {
+typedef struct
+{
 	GdkPixbuf *watermark;
 	int width, height;
 } NldSearchEntryPrivate;
@@ -36,22 +37,16 @@ static void nld_search_entry_init (NldSearchEntry *);
 static void nld_search_entry_finalize (GObject *);
 
 static void nld_search_entry_realize (GtkWidget * widget);
-static gboolean nld_search_entry_expose_event (GtkWidget * widget,
-					       GdkEventExpose * event);
+static gboolean nld_search_entry_expose_event (GtkWidget * widget, GdkEventExpose * event);
 
 G_DEFINE_TYPE (NldSearchEntry, nld_search_entry, GTK_TYPE_ENTRY)
 
-     static void
-      
-	     nld_search_entry_class_init (NldSearchEntryClass *
-					  nld_search_entry_class)
+static void nld_search_entry_class_init (NldSearchEntryClass * nld_search_entry_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (nld_search_entry_class);
-	GtkWidgetClass *widget_class =
-		GTK_WIDGET_CLASS (nld_search_entry_class);
+	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (nld_search_entry_class);
 
-	g_type_class_add_private (nld_search_entry_class,
-				  sizeof (NldSearchEntryPrivate));
+	g_type_class_add_private (nld_search_entry_class, sizeof (NldSearchEntryPrivate));
 
 	widget_class->realize = nld_search_entry_realize;
 	widget_class->expose_event = nld_search_entry_expose_event;
@@ -75,14 +70,12 @@ nld_search_entry_finalize (GObject * object)
 	G_OBJECT_CLASS (nld_search_entry_parent_class)->finalize (object);
 }
 
-
 static void
 rsvg_size_callback (int *width, int *height, gpointer user_data)
 {
 	NldSearchEntryPrivate *priv = user_data;
 
-	*width = priv->width =
-		priv->height * (double) *width / (double) *height;
+	*width = priv->width = priv->height * (double) *width / (double) *height;
 	*height = priv->height;
 }
 
@@ -92,22 +85,20 @@ nld_search_entry_realize (GtkWidget * widget)
 	NldSearchEntryPrivate *priv = NLD_SEARCH_ENTRY_GET_PRIVATE (widget);
 	int height;
 	GdkColor *gdkcolor;
-	char *svg, color [7];
+	char *svg, color[7];
 	RsvgHandle *rsvg;
 
 	GTK_WIDGET_CLASS (nld_search_entry_parent_class)->realize (widget);
 
-	gdk_window_get_geometry (GTK_ENTRY (widget)->text_area,
-				 NULL, NULL, NULL, &height, NULL);
+	gdk_window_get_geometry (GTK_ENTRY (widget)->text_area, NULL, NULL, NULL, &height, NULL);
 
 	if (height - 2 == priv->height)
 		return;
 	priv->height = height - 2;
 
-	gdkcolor = &widget->style->fg [GTK_WIDGET_STATE (widget)];
-	snprintf (color, 6, "%02x%02x%02x",
-		  gdkcolor->red >> 8,
-		  gdkcolor->green >> 8, gdkcolor->blue >> 8);
+	gdkcolor = &widget->style->fg[GTK_WIDGET_STATE (widget)];
+	snprintf (color, 6, "%02x%02x%02x", gdkcolor->red >> 8, gdkcolor->green >> 8,
+		gdkcolor->blue >> 8);
 	svg = g_strdup_printf (SEARCH_ENTRY_WATERMARK_SVG, color, color);
 
 	rsvg = rsvg_handle_new ();
@@ -126,30 +117,26 @@ static gboolean
 nld_search_entry_expose_event (GtkWidget * widget, GdkEventExpose * event)
 {
 	NldSearchEntryPrivate *priv = NLD_SEARCH_ENTRY_GET_PRIVATE (widget);
+	GTK_WIDGET_CLASS (nld_search_entry_parent_class)->expose_event (widget, event);
 
-	GTK_WIDGET_CLASS (nld_search_entry_parent_class)->
-		expose_event (widget, event);
-
-	if (event->window == GTK_ENTRY (widget)->text_area) {
+	if (event->window == GTK_ENTRY (widget)->text_area)
+	{
 		int width, height, x;
 
-		if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_LTR) {
-			gdk_drawable_get_size (event->window, &width,
-					       &height);
+		if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_LTR)
+		{
+			gdk_drawable_get_size (event->window, &width, &height);
 			x = width - priv->width - 1;
 		}
 		else
 			x = 1;
-		gdk_draw_pixbuf (event->window,
-				 widget->style->
-				 fg_gc [GTK_WIDGET_STATE (widget)],
-				 priv->watermark, 0, 0, x, 1, priv->width,
-				 priv->height, GDK_RGB_DITHER_NORMAL, 0, 0);
+		gdk_draw_pixbuf (event->window, widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
+			priv->watermark, 0, 0, x, 1, priv->width, priv->height,
+			GDK_RGB_DITHER_NORMAL, 0, 0);
 	}
 
 	return FALSE;
 }
-
 
 GtkWidget *
 nld_search_entry_new (void)

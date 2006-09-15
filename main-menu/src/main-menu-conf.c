@@ -52,7 +52,8 @@
 
 #define VERBOSE 0
 
-typedef struct {
+typedef struct
+{
 	GConfClient *gconf_client;
 } MainMenuConfPrivate;
 
@@ -62,8 +63,7 @@ static void main_menu_conf_class_init (MainMenuConfClass *);
 static void main_menu_conf_init (MainMenuConf *);
 static void main_menu_conf_dispose (GObject *);
 
-static void main_menu_conf_change_cb (GConfClient *, guint, GConfEntry *,
-				      gpointer);
+static void main_menu_conf_change_cb (GConfClient *, guint, GConfEntry *, gpointer);
 
 static GConfValue *load_gconf_key (MainMenuConf *, const gchar *);
 static gboolean load_boolean_gconf_key (MainMenuConf *, const gchar *);
@@ -76,19 +76,21 @@ static GList *convert_gconf_list_to_glist (GConfValue *);
 static GSList *convert_glist_to_gconf_list (GList *);
 static void string_glist_free (GList *);
 
-enum {
+enum
+{
 	FILE_LIST_CHANGED,
 	LAST_SIGNAL
 };
 
-static guint main_menu_conf_signals [LAST_SIGNAL] = { 0 };
+static guint main_menu_conf_signals[LAST_SIGNAL] = { 0 };
 
 GType
 main_menu_conf_get_type (void)
 {
 	static GType object_type = 0;
 
-	if (!object_type) {
+	if (!object_type)
+	{
 		static const GTypeInfo object_info = {
 			sizeof (MainMenuConfClass),
 			NULL,
@@ -101,9 +103,8 @@ main_menu_conf_get_type (void)
 			(GInstanceInitFunc) main_menu_conf_init
 		};
 
-		object_type = g_type_register_static (G_TYPE_OBJECT,
-						      "MainMenuConf",
-						      &object_info, 0);
+		object_type =
+			g_type_register_static (G_TYPE_OBJECT, "MainMenuConf", &object_info, 0);
 	}
 
 	return object_type;
@@ -114,21 +115,17 @@ main_menu_conf_class_init (MainMenuConfClass * main_menu_conf_class)
 {
 	GObjectClass *g_obj_class = (GObjectClass *) main_menu_conf_class;
 
-
 	main_menu_conf_class->file_list_changed = NULL;
 
 	g_obj_class->dispose = main_menu_conf_dispose;
 
-	main_menu_conf_signals [FILE_LIST_CHANGED] =
-		g_signal_new ("file-list-changed",
-			      G_TYPE_FROM_CLASS (main_menu_conf_class),
-			      G_SIGNAL_RUN_FIRST | G_SIGNAL_ACTION,
-			      G_STRUCT_OFFSET (MainMenuConfClass,
-					       file_list_changed), NULL, NULL,
-			      g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
+	main_menu_conf_signals[FILE_LIST_CHANGED] = g_signal_new ("file-list-changed",
+		G_TYPE_FROM_CLASS (main_menu_conf_class),
+		G_SIGNAL_RUN_FIRST | G_SIGNAL_ACTION,
+		G_STRUCT_OFFSET (MainMenuConfClass, file_list_changed),
+		NULL, NULL, g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
 
-	g_type_class_add_private (main_menu_conf_class,
-				  sizeof (MainMenuConfPrivate));
+	g_type_class_add_private (main_menu_conf_class, sizeof (MainMenuConfPrivate));
 }
 
 static void
@@ -142,12 +139,10 @@ main_menu_conf_init (MainMenuConf * conf)
 
 	int type;
 
-
 	priv->gconf_client = gconf_client_get_default ();
 
 	conf->urgent_close = load_boolean_gconf_key (conf, URGENT_CLOSE_KEY);
-	conf->search_command =
-		load_string_gconf_key (conf, SEARCH_COMMAND_KEY);
+	conf->search_command = load_string_gconf_key (conf, SEARCH_COMMAND_KEY);
 	temp_key = load_string_gconf_key (conf, APP_BROWSER_KEY);
 	conf->app_browser = load_desktop_item_from_unknown (temp_key);
 	g_free (temp_key);
@@ -156,21 +151,15 @@ main_menu_conf_init (MainMenuConf * conf)
 	g_free (temp_key);
 
 	conf->file_area_conf = g_new0 (FileAreaConf, 1);
-	conf->file_area_conf->file_class =
-		(FileClass) load_int_gconf_key (conf, FILE_CLASS_KEY);
+	conf->file_area_conf->file_class = (FileClass) load_int_gconf_key (conf, FILE_CLASS_KEY);
 	conf->file_area_conf->reordering_priority =
-		(FileReorderingPriority) load_int_gconf_key (conf,
-							     FILE_REORDERING_KEY);
-	conf->file_area_conf->user_specified_apps =
-		load_string_list_gconf_key (conf, APP_LIST_KEY);
-	conf->file_area_conf->item_limit =
-		load_int_gconf_key (conf, ITEM_LIMIT_KEY);
+		(FileReorderingPriority) load_int_gconf_key (conf, FILE_REORDERING_KEY);
+	conf->file_area_conf->user_specified_apps = load_string_list_gconf_key (conf, APP_LIST_KEY);
+	conf->file_area_conf->item_limit = load_int_gconf_key (conf, ITEM_LIMIT_KEY);
 
 	conf->system_area_conf = g_new0 (SystemAreaConf, 1);
-	conf->system_area_conf->system_list =
-		load_int_list_gconf_key (conf, SYSTEM_LIST_KEY);
-	conf->system_area_conf->help_item =
-		load_string_gconf_key (conf, HELP_ITEM_KEY);
+	conf->system_area_conf->system_list = load_int_list_gconf_key (conf, SYSTEM_LIST_KEY);
+	conf->system_area_conf->help_item = load_string_gconf_key (conf, HELP_ITEM_KEY);
 	conf->system_area_conf->control_center_item =
 		load_string_gconf_key (conf, CTRL_CTR_ITEM_KEY);
 	conf->system_area_conf->package_manager_item =
@@ -183,24 +172,20 @@ main_menu_conf_init (MainMenuConf * conf)
 		load_boolean_gconf_key (conf, SYSTEM_VISIBLE_KEY);
 	conf->lock_down_conf->status_area_visible =
 		load_boolean_gconf_key (conf, STATUS_VISIBLE_KEY);
-	conf->lock_down_conf->ab_link_visible =
-		load_boolean_gconf_key (conf, AB_LINK_VISIBLE_KEY);
+	conf->lock_down_conf->ab_link_visible = load_boolean_gconf_key (conf, AB_LINK_VISIBLE_KEY);
 
-	showable_file_types =
-		load_int_list_gconf_key (conf, SHOWABLE_FILES_KEY);
+	showable_file_types = load_int_list_gconf_key (conf, SHOWABLE_FILES_KEY);
 
-	conf->lock_down_conf->file_area_showable_types [USER_SPECIFIED_APPS] =
-		FALSE;
-	conf->lock_down_conf->file_area_showable_types [RECENTLY_USED_APPS] =
-		FALSE;
-	conf->lock_down_conf->file_area_showable_types [RECENT_FILES] = FALSE;
+	conf->lock_down_conf->file_area_showable_types[USER_SPECIFIED_APPS] = FALSE;
+	conf->lock_down_conf->file_area_showable_types[RECENTLY_USED_APPS] = FALSE;
+	conf->lock_down_conf->file_area_showable_types[RECENT_FILES] = FALSE;
 
-	for (node = showable_file_types; node; node = node->next) {
+	for (node = showable_file_types; node; node = node->next)
+	{
 		type = GPOINTER_TO_INT (node->data);
 
 		if (0 <= type && type < FILE_CLASS_SENTINEL)
-			conf->lock_down_conf->file_area_showable_types [type] =
-				TRUE;
+			conf->lock_down_conf->file_area_showable_types[type] = TRUE;
 	}
 }
 
@@ -221,8 +206,8 @@ main_menu_conf_find_user_app_by_uri (MainMenuConf * conf, const gchar * uri)
 {
 	g_assert (conf != NULL);
 
-	return g_list_find_custom (conf->file_area_conf->user_specified_apps,
-				   uri, desktop_item_location_compare);
+	return g_list_find_custom (conf->file_area_conf->user_specified_apps, uri,
+		desktop_item_location_compare);
 }
 
 #if VERBOSE
@@ -232,11 +217,10 @@ dump_glist (GList * list)
 	GList *node;
 	gint i;
 
-
 	g_printf ("main-menu-conf.c\n");
 
 	for (node = list, i = 0; node; node = node->next, ++i)
-		g_printf ("dnode  [%d] =  [%s]\n", i, (gchar *) node->data);
+		g_printf ("dnode [%d] = [%s]\n", i, (gchar *) node->data);
 
 	g_printf ("\n");
 }
@@ -247,11 +231,10 @@ dump_gslist (GSList * list)
 	GSList *node;
 	gint i;
 
-
 	g_printf ("main-menu-conf.c\n");
 
 	for (node = list, i = 0; node; node = node->next, ++i)
-		g_printf ("snode  [%d] =  [%s]\n", i, (gchar *) node->data);
+		g_printf ("snode [%d] = [%s]\n", i, (gchar *) node->data);
 
 	g_printf ("\n");
 }
@@ -265,12 +248,13 @@ main_menu_conf_sync (MainMenuConf * conf, gpointer field)
 	GSList *gconf_list;
 	GError *error = NULL;
 
+	if (&conf->urgent_close == field)
+	{
+		gconf_client_set_bool (priv->gconf_client, URGENT_CLOSE_KEY, conf->urgent_close,
+			&error);
 
-	if (&conf->urgent_close == field) {
-		gconf_client_set_bool (priv->gconf_client, URGENT_CLOSE_KEY,
-				       conf->urgent_close, &error);
-
-		if (error) {
+		if (error)
+		{
 			g_warning ("error setting %s\n", URGENT_CLOSE_KEY);
 
 			g_error_free (error);
@@ -279,13 +263,13 @@ main_menu_conf_sync (MainMenuConf * conf, gpointer field)
 		return;
 	}
 
-	if (&conf->file_area_conf->file_class == field) {
-		gconf_client_set_int (priv->gconf_client,
-				      FILE_CLASS_KEY,
-				      conf->file_area_conf->file_class,
-				      &error);
+	if (&conf->file_area_conf->file_class == field)
+	{
+		gconf_client_set_int (priv->gconf_client, FILE_CLASS_KEY,
+			conf->file_area_conf->file_class, &error);
 
-		if (error) {
+		if (error)
+		{
 			g_warning ("error setting %s\n", FILE_CLASS_KEY);
 
 			g_error_free (error);
@@ -294,16 +278,16 @@ main_menu_conf_sync (MainMenuConf * conf, gpointer field)
 		return;
 	}
 
-	if (conf->file_area_conf->user_specified_apps == field) {
+	if (conf->file_area_conf->user_specified_apps == field)
+	{
 		gconf_list =
-			convert_glist_to_gconf_list (conf->file_area_conf->
-						     user_specified_apps);
+			convert_glist_to_gconf_list (conf->file_area_conf->user_specified_apps);
 
-		gconf_client_set_list (priv->gconf_client, APP_LIST_KEY,
-				       GCONF_VALUE_STRING, gconf_list,
-				       &error);
+		gconf_client_set_list (priv->gconf_client, APP_LIST_KEY, GCONF_VALUE_STRING,
+			gconf_list, &error);
 
-		if (error) {
+		if (error)
+		{
 			g_warning ("error setting %s\n", APP_LIST_KEY);
 
 			g_error_free (error);
@@ -323,7 +307,6 @@ load_boolean_gconf_key (MainMenuConf * conf, const gchar * key)
 	GConfValue *value;
 	gboolean retval;
 
-
 	value = load_gconf_key (conf, key);
 	retval = gconf_value_get_bool (value);
 
@@ -338,7 +321,6 @@ load_int_gconf_key (MainMenuConf * conf, const gchar * key)
 	GConfValue *value;
 	gint retval;
 
-
 	value = load_gconf_key (conf, key);
 	retval = gconf_value_get_int (value);
 
@@ -352,7 +334,6 @@ load_string_gconf_key (MainMenuConf * conf, const gchar * key)
 {
 	GConfValue *value;
 	gchar *retval;
-
 
 	value = load_gconf_key (conf, key);
 	retval = g_strdup (gconf_value_get_string (value));
@@ -372,10 +353,10 @@ load_string_list_gconf_key (MainMenuConf * conf, const gchar * key)
 
 	GSList *node;
 
-
 	value = load_gconf_key (conf, key);
 
-	for (node = gconf_value_get_list (value); node; node = node->next) {
+	for (node = gconf_value_get_list (value); node; node = node->next)
+	{
 		loop_value = (GConfValue *) node->data;
 		str = g_strdup (gconf_value_get_string (loop_value));
 
@@ -397,10 +378,10 @@ load_int_list_gconf_key (MainMenuConf * conf, const gchar * key)
 
 	GSList *node;
 
-
 	value = load_gconf_key (conf, key);
 
-	for (node = gconf_value_get_list (value); node; node = node->next) {
+	for (node = gconf_value_get_list (value); node; node = node->next)
+	{
 		loop_value = (GConfValue *) node->data;
 		x = gconf_value_get_int (loop_value);
 
@@ -420,22 +401,22 @@ load_gconf_key (MainMenuConf * conf, const gchar * key)
 	GConfValue *value;
 	GError *error = NULL;
 
-
 	value = gconf_client_get (priv->gconf_client, key, &error);
 
-	if (error) {
-		g_warning ("error accessing %s  [%s]\n", key, error->message);
+	if (error)
+	{
+		g_warning ("error accessing %s [%s]\n", key, error->message);
 
 		g_error_free (error);
 		error = NULL;
 	}
 
-	gconf_client_notify_add (priv->gconf_client, key,
-				 main_menu_conf_change_cb, conf, NULL,
-				 &error);
+	gconf_client_notify_add (priv->gconf_client, key, main_menu_conf_change_cb, conf, NULL,
+		&error);
 
-	if (error) {
-		g_warning ("error monitoring %s  [%s]\n", key, error->message);
+	if (error)
+	{
+		g_warning ("error monitoring %s [%s]\n", key, error->message);
 
 		g_error_free (error);
 	}
@@ -444,14 +425,13 @@ load_gconf_key (MainMenuConf * conf, const gchar * key)
 }
 
 static void
-main_menu_conf_change_cb (GConfClient * gconf_client, guint c_id,
-			  GConfEntry * entry, gpointer user_data)
+main_menu_conf_change_cb (GConfClient * gconf_client, guint c_id, GConfEntry * entry,
+	gpointer user_data)
 {
 	MainMenuConf *conf = MAIN_MENU_CONF (user_data);
 
 	const gchar *key;
 	GConfValue *value;
-
 
 	key = gconf_entry_get_key (entry);
 	value = gconf_entry_get_value (entry);
@@ -460,35 +440,28 @@ main_menu_conf_change_cb (GConfClient * gconf_client, guint c_id,
 		conf->urgent_close = gconf_value_get_bool (value);
 
 	else if (!strcmp (key, APP_BROWSER_KEY))
-		conf->app_browser =
-			load_desktop_item_from_unknown (gconf_value_get_string
-							(value));
+		conf->app_browser = load_desktop_item_from_unknown (gconf_value_get_string (value));
 
 	else if (!strcmp (key, FILE_BROWSER_KEY))
-		conf->app_browser =
-			load_desktop_item_from_unknown (gconf_value_get_string
-							(value));
+		conf->app_browser = load_desktop_item_from_unknown (gconf_value_get_string (value));
 
 	else if (!strcmp (key, SEARCH_COMMAND_KEY))
-		conf->search_command =
-			g_strdup (gconf_value_get_string (value));
+		conf->search_command = g_strdup (gconf_value_get_string (value));
 
 	else if (!strcmp (key, FILE_CLASS_KEY))
-		conf->file_area_conf->file_class =
-			(FileClass) gconf_value_get_int (value);
+		conf->file_area_conf->file_class = (FileClass) gconf_value_get_int (value);
 
 	else if (!strcmp (key, FILE_REORDERING_KEY))
 		conf->file_area_conf->reordering_priority =
 			(FileReorderingPriority) gconf_value_get_int (value);
 
-	else if (!strcmp (key, APP_LIST_KEY)) {
+	else if (!strcmp (key, APP_LIST_KEY))
+	{
 		string_glist_free (conf->file_area_conf->user_specified_apps);
 
-		conf->file_area_conf->user_specified_apps =
-			convert_gconf_list_to_glist (value);
+		conf->file_area_conf->user_specified_apps = convert_gconf_list_to_glist (value);
 
-		g_signal_emit (conf,
-			       main_menu_conf_signals [FILE_LIST_CHANGED], 0);
+		g_signal_emit (conf, main_menu_conf_signals[FILE_LIST_CHANGED], 0);
 	}
 
 	else;
@@ -504,9 +477,8 @@ convert_gconf_list_to_glist (GConfValue * gconf_list)
 
 	GSList *node;
 
-
-	for (node = gconf_value_get_list (gconf_list); node;
-	     node = node->next) {
+	for (node = gconf_value_get_list (gconf_list); node; node = node->next)
+	{
 		value = (GConfValue *) node->data;
 		str = g_strdup (gconf_value_get_string (value));
 
@@ -522,7 +494,6 @@ convert_glist_to_gconf_list (GList * list)
 	GSList *gconf_list = NULL;
 	GList *node;
 
-
 	for (node = list; node; node = node->next)
 		gconf_list = g_slist_append (gconf_list, node->data);
 
@@ -533,7 +504,6 @@ static void
 string_glist_free (GList * list)
 {
 	GList *node;
-
 
 	if (!list)
 		return;
@@ -549,42 +519,30 @@ main_menu_conf_dump (MainMenuConf * conf)
 {
 	GList *node;
 
-
 	g_printf ("MainMenuConf:                 %p\n", conf);
 	g_printf ("  urgent_close:               %d\n", conf->urgent_close);
 	g_printf ("  search_command:             %s\n", conf->search_command);
 	g_printf ("  app_browser:                %s\n",
-		  gnome_desktop_item_get_location (conf->app_browser));
+		gnome_desktop_item_get_location (conf->app_browser));
 	g_printf ("  file_browser:               %s\n",
-		  gnome_desktop_item_get_location (conf->file_browser));
+		gnome_desktop_item_get_location (conf->file_browser));
 	g_printf ("  file_area_conf:             %p\n", conf->file_area_conf);
-	g_printf ("    file_class:               %d\n",
-		  conf->file_area_conf->file_class);
-	g_printf ("    reordering_priority:      %d\n",
-		  conf->file_area_conf->reordering_priority);
-	g_printf ("    user_specified_apps:      %p\n",
-		  conf->file_area_conf->user_specified_apps);
+	g_printf ("    file_class:               %d\n", conf->file_area_conf->file_class);
+	g_printf ("    reordering_priority:      %d\n", conf->file_area_conf->reordering_priority);
+	g_printf ("    user_specified_apps:      %p\n", conf->file_area_conf->user_specified_apps);
 
-	for (node = conf->file_area_conf->user_specified_apps; node;
-	     node = node->next)
-		g_printf ("       [%s]\n", (gchar *) node->data);
+	for (node = conf->file_area_conf->user_specified_apps; node; node = node->next)
+		g_printf ("      [%s]\n", (gchar *) node->data);
 
 	g_printf ("  lock_down_conf:             %p\n", conf->lock_down_conf);
-	g_printf ("    search_area_visible:      %d\n",
-		  conf->lock_down_conf->search_area_visible);
-	g_printf ("    ab_link_visible:          %d\n",
-		  conf->lock_down_conf->ab_link_visible);
-	g_printf ("    system_area_visible:      %d\n",
-		  conf->lock_down_conf->system_area_visible);
-	g_printf ("    status_area_visible:      %d\n",
-		  conf->lock_down_conf->status_area_visible);
-	g_printf ("    file_area_showable_types:  [%d,%d,%d]\n",
-		  conf->lock_down_conf->
-		  file_area_showable_types [USER_SPECIFIED_APPS],
-		  conf->lock_down_conf->
-		  file_area_showable_types [RECENTLY_USED_APPS],
-		  conf->lock_down_conf->
-		  file_area_showable_types [RECENT_FILES]);
+	g_printf ("    search_area_visible:      %d\n", conf->lock_down_conf->search_area_visible);
+	g_printf ("    ab_link_visible:          %d\n", conf->lock_down_conf->ab_link_visible);
+	g_printf ("    system_area_visible:      %d\n", conf->lock_down_conf->system_area_visible);
+	g_printf ("    status_area_visible:      %d\n", conf->lock_down_conf->status_area_visible);
+	g_printf ("    file_area_showable_types: [%d,%d,%d]\n",
+		conf->lock_down_conf->file_area_showable_types[USER_SPECIFIED_APPS],
+		conf->lock_down_conf->file_area_showable_types[RECENTLY_USED_APPS],
+		conf->lock_down_conf->file_area_showable_types[RECENT_FILES]);
 
 	g_printf ("\n");
 }

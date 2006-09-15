@@ -26,13 +26,13 @@
 #include <libgnome/gnome-desktop-item.h>
 
 G_BEGIN_DECLS
-	gboolean load_image_by_id (GtkImage * image, GtkIconSize size,
-				   const gchar * image_id);
+
+gboolean load_image_by_id (GtkImage * image, GtkIconSize size,
+	const gchar * image_id);
 GnomeDesktopItem *load_desktop_item_by_unknown_id (const gchar * id);
 gpointer get_gconf_value (const gchar * key);
 void set_gconf_value (const gchar * key, gconstpointer data);
-guint connect_gconf_notify (const gchar * key, GConfClientNotifyFunc cb,
-			    gpointer user_data);
+guint connect_gconf_notify (const gchar * key, GConfClientNotifyFunc cb, gpointer user_data);
 void handle_g_error (GError ** error, const gchar * user_format, ...);
 GtkWidget *get_main_menu_section_header (const gchar * markup);
 

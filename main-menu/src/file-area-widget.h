@@ -26,19 +26,23 @@
 #include "main-menu-common.h"
 
 G_BEGIN_DECLS
+
 #define FILE_AREA_WIDGET_TYPE            (file_area_widget_get_type ())
 #define FILE_AREA_WIDGET(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), FILE_AREA_WIDGET_TYPE, FileAreaWidget))
 #define FILE_AREA_WIDGET_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), FILE_AREA_WIDGET_TYPE, FileAreaWidgetClass))
 #define IS_FILE_AREA_WIDGET(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), FILE_AREA_WIDGET_TYPE))
 #define IS_FILE_AREA_WIDGET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), FILE_AREA_WIDGET_TYPE))
 #define FILE_AREA_WIDGET_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), FILE_AREA_WIDGET_TYPE, FileAreaWidgetClass))
-	typedef struct {
+
+typedef struct
+{
 	GtkVBox parent;
 
 	GtkWidget *selector_label;
 } FileAreaWidget;
 
-typedef struct {
+typedef struct
+{
 	GtkWindowClass parent_class;
 } FileAreaWidgetClass;
 

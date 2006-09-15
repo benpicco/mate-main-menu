@@ -25,28 +25,33 @@
 #include <libgnome/gnome-desktop-item.h>
 
 G_BEGIN_DECLS
+
 #define MAIN_MENU_CONF_TYPE (main_menu_conf_get_type ())
 #define MAIN_MENU_CONF(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), MAIN_MENU_CONF_TYPE, MainMenuConf))
 #define MAIN_MENU_CONF_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), MAIN_MENU_CONF_TYPE, MainMenuConfClass))
 #define IS_MAIN_MENU_CONF(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MAIN_MENU_CONF_TYPE))
 #define IS_MAIN_MENU_CONF_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), MAIN_MENU_CONF_TYPE))
 #define MAIN_MENU_CONF_GET_CLASS(obj) (G_TYPE_CHECK_GET_CLASS ((obj), MAIN_MENU_CONF_TYPE, MainMenuConfClass))
-	typedef enum {
+
+typedef enum
+{
 	USER_SPECIFIED_APPS = 0,
 	RECENTLY_USED_APPS = 1,
 	RECENT_FILES = 2,
-	FILE_CLASS_SENTINEL = 3	/* must always be last and equal (in value)
-				   to the number of possible file class types 
-				 */
+
+	/* must always be last and equal (in value) to the number of possible file class types */
+	FILE_CLASS_SENTINEL = 3
 } FileClass;
 
-typedef enum {
+typedef enum
+{
 	FILE_REORDERING_SWAP,
 	FILE_REORDERING_PUSH,
 	FILE_REORDERING_PUSH_PULL
 } FileReorderingPriority;
 
-typedef struct {
+typedef struct
+{
 	FileClass file_class;
 	FileReorderingPriority reordering_priority;
 
@@ -55,7 +60,8 @@ typedef struct {
 	gboolean disable_command_line;
 } FileAreaConf;
 
-typedef struct {
+typedef struct
+{
 	GList *system_list;
 
 	gchar *help_item;
@@ -66,16 +72,18 @@ typedef struct {
 	gboolean disable_log_out;
 } SystemAreaConf;
 
-typedef struct {
+typedef struct
+{
 	gboolean search_area_visible;
 	gboolean ab_link_visible;
 	gboolean system_area_visible;
 	gboolean status_area_visible;
 
-	gboolean file_area_showable_types [FILE_CLASS_SENTINEL];
+	gboolean file_area_showable_types[FILE_CLASS_SENTINEL];
 } LockDownConf;
 
-typedef struct {
+typedef struct
+{
 	GObject parent_placeholder;
 
 	gboolean urgent_close;
@@ -89,7 +97,8 @@ typedef struct {
 	LockDownConf *lock_down_conf;
 } MainMenuConf;
 
-typedef struct {
+typedef struct
+{
 	GObjectClass parent_class;
 
 	void (*file_list_changed) (MainMenuConf *);
@@ -98,8 +107,7 @@ typedef struct {
 GType main_menu_conf_get_type (void);
 
 MainMenuConf *main_menu_conf_new (void);
-GList *main_menu_conf_find_user_app_by_uri (MainMenuConf * conf,
-					    const gchar * uri);
+GList *main_menu_conf_find_user_app_by_uri (MainMenuConf * conf, const gchar * uri);
 void main_menu_conf_sync (MainMenuConf * conf, gpointer field);
 
 void main_menu_conf_dump (MainMenuConf * conf);

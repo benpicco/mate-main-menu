@@ -29,16 +29,19 @@
 #include "app-shell.h"
 
 G_BEGIN_DECLS
+
 #define SHELL_WINDOW_TYPE            (shell_window_get_type ())
 #define SHELL_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), SHELL_WINDOW_TYPE, ShellWindow))
 #define SHELL_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), SHELL_WINDOW_TYPE, ShellWindowClass))
 #define IS_SHELL_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), SHELL_WINDOW_TYPE))
 #define IS_SHELL_WINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), SHELL_WINDOW_TYPE))
 #define SHELL_WINDOW_GET_CLASS(obj)  (G_TYPE_CHECK_GET_CLASS ((obj), SHELL_WINDOW_TYPE, ShellWindowClass))
+
 typedef struct _ShellWindow ShellWindow;
 typedef struct _ShellWindowClass ShellWindowClass;
 
-struct _ShellWindow {
+struct _ShellWindow
+{
 	GtkFrame frame;
 
 	GtkBox *_hbox;
@@ -48,14 +51,15 @@ struct _ShellWindow {
 	gulong resize_handler_id;
 };
 
-struct _ShellWindowClass {
+struct _ShellWindowClass
+{
 	GtkFrameClass parent_class;
 };
 
 GType shell_window_get_type (void);
 GtkWidget *shell_window_new (AppShellData * app_data);
 void shell_window_set_contents (ShellWindow * window, GtkWidget * left_pane,
-				GtkWidget * right_pane);
+	GtkWidget * right_pane);
 void shell_window_clear_resize_handler (ShellWindow * win);
 
 G_END_DECLS

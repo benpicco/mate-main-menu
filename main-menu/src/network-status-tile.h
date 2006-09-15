@@ -24,17 +24,21 @@
 #include "nameplate-tile.h"
 
 G_BEGIN_DECLS
+
 #define NETWORK_STATUS_TILE_TYPE         (network_status_tile_get_type ())
 #define NETWORK_STATUS_TILE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), NETWORK_STATUS_TILE_TYPE, NetworkStatusTile))
 #define NETWORK_STATUS_TILE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), NETWORK_STATUS_TILE_TYPE, NetworkStatusTileClass))
 #define IS_NETWORK_STATUS_TILE(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), NETWORK_STATUS_TILE_TYPE))
 #define IS_NETWORK_STATUS_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), NETWORK_STATUS_TILE_TYPE))
 #define NETWORK_STATUS_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), NETWORK_STATUS_TILE_TYPE, NetworkStatusTileClass))
-	typedef struct {
+
+typedef struct
+{
 	NameplateTile nameplate_tile;
 } NetworkStatusTile;
 
-typedef struct {
+typedef struct
+{
 	NameplateTileClass nameplate_tile_class;
 } NetworkStatusTileClass;
 

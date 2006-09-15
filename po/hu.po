@@ -1,4 +1,4 @@
-# translation of hu.po to Hungarian
+# translation of hu.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Kalman Kemenczy <kkemenczy@novell.com>, 2006.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2006-05-23 10:02+0200\n"
-"Last-Translator: Kalman Kemenczy <kkemenczy@novell.com>\n"
-"Language-Team: Hungarian <en@li.org>\n"
+"PO-Revision-Date: 2006-06-20 07:24+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:69
@@ -142,8 +142,7 @@ msgstr ""
 "Adminisztrátori beállítások;YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
 "ha igaz, a vezérlőközpont automatikusan bezárul egy \"Gyakori feladat\" "
 "aktiválásakor"
@@ -199,6 +198,9 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
+"<span size=\"large\"><b>Nincs találat.</b> </span><span>\n"
+"\n"
+" A megadott keresés: \"<b>%s</b>\", eredménytelen.</span>"
 
 #: ../libslab/src/search-bar.c:235
 msgid "Find Now"
@@ -258,10 +260,8 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop elérési út az alkalmazásböngészőhöz"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
-msgstr ""
-"A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók."
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr "A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -317,8 +317,7 @@ msgstr ""
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr ""
-"Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
+msgstr "Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid ""
@@ -343,8 +342,7 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
-"Felhasználói automatikus indítási programkönyvtár (a saját könyvtáron belül)"
+msgstr "Felhasználói automatikus indítási programkönyvtár (a saját könyvtáron belül)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to uninstall packages"
@@ -692,3 +690,4 @@ msgstr "Kijelentkezés ..."
 #: ../main-menu/src/system-tile.c:117
 msgid "Lock Screen ..."
 msgstr "Képernyő lezárása..."
+

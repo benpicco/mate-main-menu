@@ -1,14 +1,14 @@
 /*
- * This file is part of libslab.
+ * This file is part of libtile.
  *
  * Copyright (c) 2006 Novell, Inc.
  *
- * Libslab is free software; you can redistribute it and/or modify it under the
+ * Libtile is free software; you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free
  * Software Foundation; either version 2 of the License, or (at your option)
  * any later version.
  *
- * Libslab is distributed in the hope that it will be useful, but WITHOUT ANY
+ * Libtile is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
  * more details.
@@ -25,6 +25,7 @@
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
+
 #define TILE_TYPE         (tile_get_type ())
 #define TILE(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), TILE_TYPE, Tile))
 #define TILE_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), TILE_TYPE, TileClass))
@@ -40,6 +41,7 @@ G_BEGIN_DECLS
 #define TILE_ACTION_CHECK_FLAG(action,flag) ((TILE_ACTION (action)->flags & (flag)) != 0)
 #define TILE_STATE_ENTERED GTK_STATE_PRELIGHT
 #define TILE_STATE_FOCUSED GTK_STATE_PRELIGHT
+
 typedef struct _Tile Tile;
 typedef struct _TileClass TileClass;
 typedef struct _TileAction TileAction;
@@ -48,7 +50,8 @@ typedef struct _TileEvent TileEvent;
 
 typedef void (*TileActionFunc) (Tile *, TileEvent *, TileAction *);
 
-typedef enum {
+typedef enum
+{
 	TILE_EVENT_ACTIVATED_SINGLE_CLICK,
 	TILE_EVENT_ACTIVATED_DOUBLE_CLICK,
 	TILE_EVENT_ACTIVATED_KEYBOARD,
@@ -57,12 +60,14 @@ typedef enum {
 	TILE_EVENT_ACTION_TRIGGERED
 } TileEventType;
 
-typedef enum {
+typedef enum
+{
 	TILE_ACTION_OPENS_NEW_WINDOW = 1 << 0,
 	TILE_ACTION_OPENS_HELP = 1 << 1
 } TileActionFlags;
 
-struct _Tile {
+struct _Tile
+{
 	GtkButton gtk_button;
 
 	gchar *uri;
@@ -76,7 +81,8 @@ struct _Tile {
 	TileAction *default_action;
 };
 
-struct _TileClass {
+struct _TileClass
+{
 	GtkButtonClass gtk_button_class;
 
 	void (*tile_explicit_enable) (Tile *);
@@ -88,7 +94,8 @@ struct _TileClass {
 	void (*tile_action_triggered) (Tile *, TileEvent *, TileAction *);
 };
 
-struct _TileAction {
+struct _TileAction
+{
 	GObject parent;
 
 	Tile *tile;
@@ -99,11 +106,13 @@ struct _TileAction {
 	guint32 flags;
 };
 
-struct _TileActionClass {
+struct _TileActionClass
+{
 	GObjectClass parent_class;
 };
 
-struct _TileEvent {
+struct _TileEvent
+{
 	TileEventType type;
 	guint32 time;
 };
@@ -122,14 +131,12 @@ void tile_implicit_enable_with_time (Tile * tile, guint32 time);
 void tile_implicit_disable_with_time (Tile * tile, guint32 time);
 
 void tile_trigger_action (Tile * tile, TileAction * action);
-void tile_trigger_action_with_time (Tile * tile, TileAction * action,
-				    guint32 time);
+void tile_trigger_action_with_time (Tile * tile, TileAction * action, guint32 time);
 
-TileAction *tile_action_new (Tile * tile, TileActionFunc func,
-			     const gchar * menu_item_markup, guint32 flags);
+TileAction *tile_action_new (Tile * tile, TileActionFunc func, const gchar * menu_item_markup,
+	guint32 flags);
 
-void tile_action_set_menu_item_label (TileAction * action,
-				      const gchar * markup);
+void tile_action_set_menu_item_label (TileAction * action, const gchar * markup);
 GtkMenuItem *tile_action_get_menu_item (TileAction * action);
 
 G_END_DECLS
