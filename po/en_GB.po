@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-torrent\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-13 07:18+0100\n"
-"PO-Revision-Date: 2006-09-13 21:58-0000\n"
+"POT-Creation-Date: 2006-09-16 09:54+0100\n"
+"PO-Revision-Date: 2006-09-16 09:54-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:118
+#: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
 msgstr "Application Browser"
 
@@ -73,27 +73,27 @@ msgstr "Max number of New Applications"
 msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr "The maximum number of applications that will be displayed in the New Applications category"
 
-#: ../application-browser/src/application-browser.c:105
+#: ../application-browser/src/application-browser.c:84
 msgid "New Applications"
 msgstr "New Applications"
 
-#: ../application-browser/src/application-browser.c:112
-#: ../control-center/src/control-center.c:149
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Filter"
 msgstr "Filter"
 
-#: ../application-browser/src/application-browser.c:112
-#: ../control-center/src/control-center.c:149
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Groups"
 
-#: ../application-browser/src/application-browser.c:113
+#: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
 msgstr "Application Actions"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:154
-#: ../main-menu/src/system-tile.c:119
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Control Center"
 
@@ -118,11 +118,16 @@ msgstr "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-man
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "if true, the control-centre will close when a \"Common Task\" is activated"
 
-#: ../control-center/src/control-center.c:149
+#: ../control-center/src/control-center.c:61
+#, c-format
+msgid "key not found [%s]\n"
+msgstr "key not found [%s]\n"
+
+#: ../control-center/src/control-center.c:146
 msgid "Common Tasks"
 msgstr "Common Tasks"
 
-#: ../libslab/app-shell.c:801
+#: ../libslab/app-shell.c:702
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -133,83 +138,83 @@ msgstr ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 
-#: ../libslab/search-bar.c:261
+#: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "Find Now"
 
 #. make start action
-#: ../libtile/application-tile.c:353
+#: ../libtile/application-tile.c:326
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Start %s</b>"
 
-#: ../libtile/application-tile.c:374
-#: ../main-menu/src/system-tile.c:105
+#: ../libtile/application-tile.c:345
+#: ../main-menu/src/system-tile.c:100
 msgid "Help"
 msgstr "Help"
 
-#: ../libtile/application-tile.c:383
+#: ../libtile/application-tile.c:353
 msgid "Help Unavailable"
 msgstr "Help Unavailable"
 
-#. make upgrade action
-#: ../libtile/application-tile.c:422
+#: ../libtile/application-tile.c:394
 msgid "Upgrade"
 msgstr "Upgrade"
 
-#: ../libtile/application-tile.c:431
+#: ../libtile/application-tile.c:404
 msgid "Uninstall"
 msgstr "Uninstall"
 
-#: ../libtile/application-tile.c:814
+#: ../libtile/application-tile.c:791
 msgid "Remove from Favorites"
 msgstr "Remove from Favourites"
 
-#: ../libtile/application-tile.c:817
+#: ../libtile/application-tile.c:793
 msgid "Add to Favorites"
 msgstr "Add to Favourites"
 
-#: ../libtile/application-tile.c:881
+#: ../libtile/application-tile.c:848
 msgid "Remove from Startup Programs"
 msgstr "Remove from Startup Programs"
 
-#: ../libtile/application-tile.c:885
+#: ../libtile/application-tile.c:850
 msgid "Add to Startup Programs"
 msgstr "Add to Startup Programs"
 
-#: ../libtile/document-tile.c:145
+#: ../libtile/document-tile.c:139
 msgid "Edited %m/%d/%Y"
 msgstr "Edited %d/%m/%Y"
 
-#: ../libtile/document-tile.c:178
+#: ../libtile/document-tile.c:169
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Open with \"%s\"</b>"
 
-#: ../libtile/document-tile.c:195
+#: ../libtile/document-tile.c:182
 msgid "Open with Default Application"
 msgstr "Open with Default Application"
 
-#: ../libtile/document-tile.c:212
+#: ../libtile/document-tile.c:198
 msgid "Open in File Manager"
 msgstr "Open in File Manager"
 
 #. make rename action
-#: ../libtile/document-tile.c:230
+#: ../libtile/document-tile.c:214
 msgid "Rename..."
 msgstr "Rename..."
 
-#: ../libtile/document-tile.c:245
+#. make move to trash action
+#: ../libtile/document-tile.c:227
 msgid "Move to Trash"
 msgstr "Move to Trash"
 
-#: ../libtile/document-tile.c:255
-#: ../libtile/document-tile.c:619
+#: ../libtile/document-tile.c:237
+#: ../libtile/document-tile.c:576
 msgid "Delete"
 msgstr "Delete"
 
-#: ../libtile/document-tile.c:275
-#: ../libtile/document-tile.c:283
+#: ../libtile/document-tile.c:257
+#: ../libtile/document-tile.c:266
 msgid "Send To..."
 msgstr "Send To..."
 
@@ -226,7 +231,7 @@ msgid "Default menu and application browser"
 msgstr "Default menu and application browser"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:332
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "GNOME Main Menu"
 msgstr "GNOME Main Menu"
 
@@ -422,137 +427,137 @@ msgstr "set to true if the status area should be visible and active."
 msgid "set to true if the system area should be visible and active."
 msgstr "set to true if the system area should be visible and active."
 
-#: ../main-menu/src/file-area-widget.c:153
+#: ../main-menu/src/file-area-widget.c:142
 msgid "Show:"
 msgstr "Show:"
 
-#: ../main-menu/src/file-area-widget.c:208
+#: ../main-menu/src/file-area-widget.c:190
 msgid "Favorite Applications"
 msgstr "Favourite Applications"
 
-#: ../main-menu/src/file-area-widget.c:235
+#: ../main-menu/src/file-area-widget.c:206
 msgid "Recently Used Applications"
 msgstr "Recently Used Applications"
 
-#: ../main-menu/src/file-area-widget.c:256
+#: ../main-menu/src/file-area-widget.c:221
 msgid "Recent Documents"
 msgstr "Recent Documents"
 
-#: ../main-menu/src/file-area-widget.c:405
+#: ../main-menu/src/file-area-widget.c:357
 msgid "More Applications..."
 msgstr "More Applications..."
 
-#: ../main-menu/src/file-area-widget.c:410
+#: ../main-menu/src/file-area-widget.c:361
 msgid "All Documents..."
 msgstr "All Documents..."
 
-#: ../main-menu/src/hard-drive-status-tile.c:108
+#: ../main-menu/src/hard-drive-status-tile.c:103
 msgid "Hard Drive"
 msgstr "Hard Drive"
 
-#: ../main-menu/src/hard-drive-status-tile.c:346
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:348
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:350
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:373
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s Free / %s Total"
 
-#: ../main-menu/src/main-menu-ui.c:333
+#: ../main-menu/src/main-menu-ui.c:305
 msgid "The GNOME Main Menu"
 msgstr "The GNOME Main Menu"
 
-#: ../main-menu/src/main-menu-ui.c:459
+#: ../main-menu/src/main-menu-ui.c:421
 msgid "System"
 msgstr "System"
 
-#: ../main-menu/src/main-menu-ui.c:463
+#: ../main-menu/src/main-menu-ui.c:425
 msgid "Status"
 msgstr "Status"
 
-#: ../main-menu/src/main-menu-ui.c:621
+#: ../main-menu/src/main-menu-ui.c:558
 msgid "Computer"
 msgstr "Computer"
 
-#: ../main-menu/src/main-menu-ui.c:967
+#: ../main-menu/src/main-menu-ui.c:884
 msgid "Search:"
 msgstr "Search:"
 
-#: ../main-menu/src/network-status-tile.c:96
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Network: None"
 
-#: ../main-menu/src/network-status-tile.c:99
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 msgid "Click to configure network"
 msgstr "Click to configure network"
 
-#: ../main-menu/src/network-status-tile.c:221
+#: ../main-menu/src/network-status-tile.c:206
 #, c-format
 msgid "Connected to: %s"
 msgstr "Connected to: %s"
 
-#: ../main-menu/src/network-status-tile.c:225
+#: ../main-menu/src/network-status-tile.c:209
 msgid "Network: Wireless"
 msgstr "Network: Wireless"
 
-#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:214
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Using ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Network: Wired"
 msgstr "Network: Wired"
 
-#: ../main-menu/src/network-status-tile.c:344
+#: ../main-menu/src/network-status-tile.c:310
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Wireless Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Wired Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:366
-#: ../main-menu/src/system-tile.c:154
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Unknown"
 
-#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:133
+#: ../main-menu/src/system-tile.c:128
 msgid "Install Software"
 msgstr "Install Software"
 
-#: ../main-menu/src/system-tile.c:138
+#: ../main-menu/src/system-tile.c:135
 msgid "Log Out ..."
 msgstr "Log Out ..."
 
-#: ../main-menu/src/system-tile.c:143
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr "Lock Screen ..."
 
