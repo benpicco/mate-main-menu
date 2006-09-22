@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome main menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-08 01:11+0200\n"
-"PO-Revision-Date: 2006-09-08 01:13+0200 \n"
+"POT-Creation-Date: 2006-09-22 10:02+0200\n"
+"PO-Revision-Date: 2006-09-22 10:02+0200 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:118
+#: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
 msgstr "Toepassingenoverzicht"
 
@@ -89,28 +89,28 @@ msgstr ""
 "Het maximum aantal toepassingen dat getoond wordt in de category ‘Nieuwe "
 "toepassingen’"
 
-#: ../application-browser/src/application-browser.c:105
+#: ../application-browser/src/application-browser.c:84
 msgid "New Applications"
 msgstr "Nieuwe toepassingen"
 
-#: ../application-browser/src/application-browser.c:112
-#: ../control-center/src/control-center.c:149
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Filter"
 msgstr "Filter"
 
-#: ../application-browser/src/application-browser.c:112
-#: ../control-center/src/control-center.c:149
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Zoeken"
 
-#: ../application-browser/src/application-browser.c:113
+#: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
 msgstr "Toepassing"
 
 # Vrij vertaald (Wouter Bolsterlee)
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:154
-#: ../main-menu/src/system-tile.c:119
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Systeemvoorkeuren"
 
@@ -153,11 +153,16 @@ msgstr ""
 "Indien ingeschakeld sluit het configuratiecentrum na activatie van een "
 "‘algemene taak’"
 
-#: ../control-center/src/control-center.c:149
+#: ../control-center/src/control-center.c:61
+#, c-format
+msgid "key not found [%s]\n"
+msgstr "sleutel niet gevonden [%s]\n"
+
+#: ../control-center/src/control-center.c:146
 msgid "Common Tasks"
 msgstr "Algemene taken"
 
-#: ../libslab/app-shell.c:801
+#: ../libslab/app-shell.c:702
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -168,80 +173,80 @@ msgstr ""
 "\n"
 " Het filter ‘<b>%s</b>’ geeft geen resultaten.</span>"
 
-#: ../libslab/search-bar.c:261
+#: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "Nu zoeken"
 
 #. make start action
-#: ../libtile/application-tile.c:353
+#: ../libtile/application-tile.c:326
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>%s starten</b>"
 
-#: ../libtile/application-tile.c:374 ../main-menu/src/system-tile.c:105
+#: ../libtile/application-tile.c:345 ../main-menu/src/system-tile.c:100
 msgid "Help"
 msgstr "Hulp"
 
-#: ../libtile/application-tile.c:383
+#: ../libtile/application-tile.c:353
 msgid "Help Unavailable"
 msgstr "Hulp niet beschikbaar"
 
-#. make upgrade action
-#: ../libtile/application-tile.c:422
+#: ../libtile/application-tile.c:394
 msgid "Upgrade"
 msgstr "Upgrade"
 
-#: ../libtile/application-tile.c:431
+#: ../libtile/application-tile.c:404
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: ../libtile/application-tile.c:814
+#: ../libtile/application-tile.c:791
 msgid "Remove from Favorites"
 msgstr "Uit bladwijzers verwijderen"
 
-#: ../libtile/application-tile.c:817
+#: ../libtile/application-tile.c:793
 msgid "Add to Favorites"
 msgstr "Aan bladwijzers toevoegen"
 
-#: ../libtile/application-tile.c:881
+#: ../libtile/application-tile.c:848
 msgid "Remove from Startup Programs"
 msgstr "Uit opstartprogramma's verwijderen"
 
-#: ../libtile/application-tile.c:885
+#: ../libtile/application-tile.c:850
 msgid "Add to Startup Programs"
 msgstr "Aan opstartprogramma's toevoegen"
 
-#: ../libtile/document-tile.c:145
+#: ../libtile/document-tile.c:139
 msgid "Edited %m/%d/%Y"
 msgstr "Bewerkt op %m-%d-%Y"
 
-#: ../libtile/document-tile.c:178
+#: ../libtile/document-tile.c:169
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Openen met ‘%s’</b>"
 
-#: ../libtile/document-tile.c:195
+#: ../libtile/document-tile.c:182
 msgid "Open with Default Application"
 msgstr "Met standaardtoepassing openen"
 
-#: ../libtile/document-tile.c:212
+#: ../libtile/document-tile.c:198
 msgid "Open in File Manager"
 msgstr "Openen in bestandsbeheer"
 
 #. make rename action
-#: ../libtile/document-tile.c:230
+#: ../libtile/document-tile.c:214
 msgid "Rename..."
 msgstr "Hernoemen…"
 
-#: ../libtile/document-tile.c:245
+#. make move to trash action
+#: ../libtile/document-tile.c:227
 msgid "Move to Trash"
 msgstr "In prullenbak gooien"
 
-#: ../libtile/document-tile.c:255 ../libtile/document-tile.c:619
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:576
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../libtile/document-tile.c:275 ../libtile/document-tile.c:283
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
 msgid "Send To..."
 msgstr "Verzenden naar…"
 
@@ -258,7 +263,7 @@ msgid "Default menu and application browser"
 msgstr "Standaar menu- en toepassingenoverzicht"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:332
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "GNOME Main Menu"
 msgstr "Hoofdmenu"
 
@@ -569,137 +574,137 @@ msgid "set to true if the system area should be visible and active."
 msgstr "Indien ingeschakeld zal het systeemgebied zichtbaar en actief zijn."
 
 # Vrij vertaald (Wouter Bolsterlee)
-#: ../main-menu/src/file-area-widget.c:153
+#: ../main-menu/src/file-area-widget.c:142
 msgid "Show:"
 msgstr "Bekijken:"
 
-#: ../main-menu/src/file-area-widget.c:208
+#: ../main-menu/src/file-area-widget.c:190
 msgid "Favorite Applications"
 msgstr "Voorkeurstoepassingen"
 
-#: ../main-menu/src/file-area-widget.c:235
+#: ../main-menu/src/file-area-widget.c:206
 msgid "Recently Used Applications"
 msgstr "Recent gebruikte toepassingen"
 
-#: ../main-menu/src/file-area-widget.c:256
+#: ../main-menu/src/file-area-widget.c:221
 msgid "Recent Documents"
 msgstr "Recent gebruikte documenten"
 
-#: ../main-menu/src/file-area-widget.c:405
+#: ../main-menu/src/file-area-widget.c:357
 msgid "More Applications..."
 msgstr "Meer toepassingen…"
 
-#: ../main-menu/src/file-area-widget.c:410
+#: ../main-menu/src/file-area-widget.c:361
 msgid "All Documents..."
 msgstr "Alle documenten…"
 
-#: ../main-menu/src/hard-drive-status-tile.c:108
+#: ../main-menu/src/hard-drive-status-tile.c:103
 msgid "Hard Drive"
 msgstr "Harde schijf"
 
-#: ../main-menu/src/hard-drive-status-tile.c:346
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:348
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:350
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:373
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s vrij / %s totaal"
 
-#: ../main-menu/src/main-menu-ui.c:333
+#: ../main-menu/src/main-menu-ui.c:305
 msgid "The GNOME Main Menu"
 msgstr "Het Gnome-menu"
 
-#: ../main-menu/src/main-menu-ui.c:459
+#: ../main-menu/src/main-menu-ui.c:421
 msgid "System"
 msgstr "Systeem"
 
-#: ../main-menu/src/main-menu-ui.c:463
+#: ../main-menu/src/main-menu-ui.c:425
 msgid "Status"
 msgstr "Status"
 
-#: ../main-menu/src/main-menu-ui.c:621
+#: ../main-menu/src/main-menu-ui.c:558
 msgid "Computer"
 msgstr "Computer"
 
-#: ../main-menu/src/main-menu-ui.c:967
+#: ../main-menu/src/main-menu-ui.c:884
 msgid "Search:"
 msgstr "Zoeken:"
 
-#: ../main-menu/src/network-status-tile.c:96
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Netwerk: geen"
 
-#: ../main-menu/src/network-status-tile.c:99
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 msgid "Click to configure network"
 msgstr "Klik om het netwerk in te stellen"
 
-#: ../main-menu/src/network-status-tile.c:221
+#: ../main-menu/src/network-status-tile.c:206
 #, c-format
 msgid "Connected to: %s"
 msgstr "Verbonden met: %s"
 
-#: ../main-menu/src/network-status-tile.c:225
+#: ../main-menu/src/network-status-tile.c:209
 msgid "Network: Wireless"
 msgstr "Netwerk: draadloos"
 
 # Vrij vertaald (Wouter Bolsterlee)
-#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:214
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Network: Wired"
 msgstr "Netwerk: bekabeld"
 
-#: ../main-menu/src/network-status-tile.c:344
+#: ../main-menu/src/network-status-tile.c:310
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Draadloos netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:366
-#: ../main-menu/src/system-tile.c:154
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:133
+#: ../main-menu/src/system-tile.c:128
 msgid "Install Software"
 msgstr "Software installeren"
 
-#: ../main-menu/src/system-tile.c:138
+#: ../main-menu/src/system-tile.c:135
 msgid "Log Out ..."
 msgstr "Uitloggen…"
 
-#: ../main-menu/src/system-tile.c:143
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr "Scherm vergrendelen…"
