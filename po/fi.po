@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2006-09-15 12:22+0300\n"
+"POT-Creation-Date: 2006-09-25 20:42+0300\n"
+"PO-Revision-Date: 2006-09-25 20:42+0300\n"
 "Last-Translator: Jyri Palokangas <jmp@netti.fi>\n"
 "Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.2\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:69
+#: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
 msgstr "Sovellusselain"
 
@@ -66,7 +66,8 @@ msgstr "Määrittää, suljetaanko kuori, kun käynnistystoiminto on suoritettu"
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr "Määrittää, suljetaanko kuori, kun lisäys- tai poistotoiminto on suoritettu"
+msgstr ""
+"Määrittää, suljetaanko kuori, kun lisäys- tai poistotoiminto on suoritettu"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
@@ -87,27 +88,27 @@ msgid ""
 "Applications category"
 msgstr "Kuinka monta sovellusta voidaan näyttää luokassa Uudet Sovellukset"
 
-#: ../application-browser/src/application-browser.c:62
+#: ../application-browser/src/application-browser.c:84
 msgid "New Applications"
 msgstr "Uudet sovellukset"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Filter"
 msgstr "Suodin"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Ryhmät"
 
-#: ../application-browser/src/application-browser.c:66
+#: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
 msgstr "Sovelluksien toiminnot"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:115
-#: ../main-menu/src/system-tile.c:95
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Ohjauskeskus"
 
@@ -136,60 +137,27 @@ msgid ""
 "desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
 "desktop]"
 msgstr ""
-"[Muuta työpöydän taustaa;background.desktop,Lisää tulostin;gnome-cups-manager."
-"desktop,Verkkoasetukset;YaST2/lan.desktop,Muuta salasana;gnome-passwd."
-"desktop,Lisää käyttäjä,YaST2/users.desktop,Avaa ylläpitäjän asetukset;"
+"[Muuta työpöydän taustaa;background.desktop,Lisää tulostin;gnome-cups-"
+"manager.desktop,Verkkoasetukset;YaST2/lan.desktop,Muuta salasana;gnome-"
+"passwd.desktop,Lisää käyttäjä,YaST2/users.desktop,Avaa ylläpitäjän asetukset;"
 "YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid "if true, the control-center will close when a \"Common Task\" is activated"
-msgstr "jos tosi, komentokeskus suljetaan kun \"Yleinen tehtävä\" on käynnistetty"
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+"jos tosi, komentokeskus suljetaan kun \"Yleinen tehtävä\" on käynnistetty"
 
-#: ../control-center/src/control-center.c:112
+#: ../control-center/src/control-center.c:61
+#, c-format
+msgid "key not found [%s]\n"
+msgstr "avainta ei löydy [%s]\n"
+
+#: ../control-center/src/control-center.c:146
 msgid "Common Tasks"
 msgstr "Yleiset toiminnot"
 
-#. make start action
-#: ../libslab/src/application-tile.c:322
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Käynnistä %s</b>"
-
-#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
-msgid "Help"
-msgstr "Ohje"
-
-#: ../libslab/src/application-tile.c:350
-msgid "Help Unavailable"
-msgstr "Ohje ei ole käytettävissä"
-
-#. make upgrade action
-#: ../libslab/src/application-tile.c:388
-msgid "Upgrade"
-msgstr "Päivitä"
-
-#. make uninstall action
-#: ../libslab/src/application-tile.c:395
-msgid "Uninstall"
-msgstr "Poista asennus"
-
-#: ../libslab/src/application-tile.c:790
-msgid "Remove from Favorites"
-msgstr "Poista suosikeista"
-
-#: ../libslab/src/application-tile.c:792
-msgid "Add to Favorites"
-msgstr "Lisää suosikkeihin"
-
-#: ../libslab/src/application-tile.c:852
-msgid "Remove from Startup Programs"
-msgstr "Poista käynnistys-valikosta"
-
-#: ../libslab/src/application-tile.c:854
-msgid "Add to Startup Programs"
-msgstr "Lisää käynnistys-valikkoon"
-
-#: ../libslab/src/app-shell.c:644
+#: ../libslab/app-shell.c:702
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -200,9 +168,82 @@ msgstr ""
 "\n"
 " Suodattimesi \"<b>%s</b>\" ei vastaa yhtään kohtaa.</span>"
 
-#: ../libslab/src/search-bar.c:235
+#: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "Etsi nyt"
+
+#. make start action
+#: ../libtile/application-tile.c:326
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Käynnistä %s</b>"
+
+#: ../libtile/application-tile.c:345 ../main-menu/src/system-tile.c:100
+msgid "Help"
+msgstr "Ohje"
+
+#: ../libtile/application-tile.c:353
+msgid "Help Unavailable"
+msgstr "Ohje ei ole käytettävissä"
+
+#: ../libtile/application-tile.c:394
+msgid "Upgrade"
+msgstr "Päivitä"
+
+#: ../libtile/application-tile.c:404
+msgid "Uninstall"
+msgstr "Poista asennus"
+
+#: ../libtile/application-tile.c:791
+msgid "Remove from Favorites"
+msgstr "Poista suosikeista"
+
+#: ../libtile/application-tile.c:793
+msgid "Add to Favorites"
+msgstr "Lisää suosikkeihin"
+
+#: ../libtile/application-tile.c:848
+msgid "Remove from Startup Programs"
+msgstr "Poista käynnistys-valikosta"
+
+#: ../libtile/application-tile.c:850
+msgid "Add to Startup Programs"
+msgstr "Lisää käynnistys-valikkoon"
+
+#: ../libtile/document-tile.c:139
+msgid "Edited %m/%d/%Y"
+msgstr "Muokattu %m/%d/%Y"
+
+#: ../libtile/document-tile.c:169
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Avaa ohjelmalla \"%s\"</b>"
+
+#: ../libtile/document-tile.c:182
+msgid "Open with Default Application"
+msgstr "Avaa oletus sovelluksella"
+
+#: ../libtile/document-tile.c:198
+msgid "Open in File Manager"
+msgstr "Avaa tiedostonhallinnassa"
+
+#. make rename action
+#: ../libtile/document-tile.c:214
+msgid "Rename..."
+msgstr "Uudelleen nimeä..."
+
+#. make move to trash action
+#: ../libtile/document-tile.c:227
+msgid "Move to Trash"
+msgstr "Siirrä roskakoriin"
+
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:576
+msgid "Delete"
+msgstr "Poista"
+
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+msgid "Send To..."
+msgstr "Lähetä..."
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
@@ -217,7 +258,7 @@ msgid "Default menu and application browser"
 msgstr "Oletusvalikon ja sovellusten selain"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:309
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
@@ -258,7 +299,8 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop-polku sovellusselaimelle"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the system-wide directory in which startup programs are found."
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
 msgstr "Järjestelmänlaajuisen käynnistysohjelmien kansion sijainti"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
@@ -507,7 +549,8 @@ msgstr "järjestetty lista komentoja, jotka lukitaan näytölle"
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
-msgstr "aseta todeksi, jos linkin sovellusselaimeen tulisi olla näkyvä ja käytössä."
+msgstr ""
+"aseta todeksi, jos linkin sovellusselaimeen tulisi olla näkyvä ja käytössä."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
 msgid "set to true if the search area should be visible and active."
@@ -521,172 +564,136 @@ msgstr "aseta todeksi, jos tila-alueen tulisi olla näkyvä ja käytössä."
 msgid "set to true if the system area should be visible and active."
 msgstr "aseta todeksi, jos järjestelmäalueen tulisi olla näkyvä ja käytössä."
 
-#: ../main-menu/src/document-tile.c:119
-msgid "Edited %m/%d/%Y"
-msgstr "Muokattu %m/%d/%Y"
-
-#: ../main-menu/src/document-tile.c:153
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Avaa ohjelmalla \"%s\"</b>"
-
-#: ../main-menu/src/document-tile.c:163
-msgid "Open with Default Application"
-msgstr "Avaa oletus sovelluksella"
-
-#: ../main-menu/src/document-tile.c:181
-msgid "Open in File Manager"
-msgstr "Avaa tiedostonhallinnassa"
-
-#. make rename action
-#: ../main-menu/src/document-tile.c:199
-msgid "Rename..."
-msgstr "Uudelleen nimeä..."
-
-#. make move to trash action
-#: ../main-menu/src/document-tile.c:212
-msgid "Move to Trash"
-msgstr "Siirrä roskakoriin"
-
-#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
-msgid "Delete"
-msgstr "Poista"
-
-#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
-msgid "Send To..."
-msgstr "Lähetä..."
-
-#: ../main-menu/src/file-area-widget.c:130
+#: ../main-menu/src/file-area-widget.c:142
 msgid "Show:"
 msgstr "Näytä:"
 
-#: ../main-menu/src/file-area-widget.c:179
+#: ../main-menu/src/file-area-widget.c:190
 msgid "Favorite Applications"
 msgstr "Suosikit"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:206
 msgid "Recently Used Applications"
 msgstr "Viimeiseksi käytetyt sovellukset"
 
-#: ../main-menu/src/file-area-widget.c:229
+#: ../main-menu/src/file-area-widget.c:221
 msgid "Recent Documents"
 msgstr "Viimeisimmät asiakirjat"
 
-#: ../main-menu/src/file-area-widget.c:381
+#: ../main-menu/src/file-area-widget.c:357
 msgid "More Applications..."
 msgstr "Lisää sovelluksia..."
 
-#: ../main-menu/src/file-area-widget.c:385
+#: ../main-menu/src/file-area-widget.c:361
 msgid "All Documents..."
 msgstr "Kaikki asiakirjat..."
 
-#: ../main-menu/src/hard-drive-status-tile.c:83
+#: ../main-menu/src/hard-drive-status-tile.c:103
 msgid "Hard Drive"
 msgstr "Kiintolevy"
 
-#: ../main-menu/src/hard-drive-status-tile.c:316
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:318
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:320
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:322
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:342
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s Vapaana / %s Yhteensä"
 
-#: ../main-menu/src/main-menu-ui.c:310
+#: ../main-menu/src/main-menu-ui.c:305
 msgid "The GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
-#: ../main-menu/src/main-menu-ui.c:432
+#: ../main-menu/src/main-menu-ui.c:421
 msgid "System"
 msgstr "Järjestelmä"
 
-#: ../main-menu/src/main-menu-ui.c:436
+#: ../main-menu/src/main-menu-ui.c:425
 msgid "Status"
 msgstr "Tila"
 
-#: ../main-menu/src/main-menu-ui.c:630
+#: ../main-menu/src/main-menu-ui.c:558
 msgid "Computer"
 msgstr "Tietokone"
 
-#: ../main-menu/src/main-menu-ui.c:965
+#: ../main-menu/src/main-menu-ui.c:884
 msgid "Search:"
 msgstr "Etsi:"
 
-#: ../main-menu/src/network-status-tile.c:72
-#: ../main-menu/src/network-status-tile.c:184
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Verkko: Ei verkkoa"
 
-#: ../main-menu/src/network-status-tile.c:75
-#: ../main-menu/src/network-status-tile.c:185
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 msgid "Click to configure network"
 msgstr "Napsauta määrittääksesi verkkoyhteys"
 
-#: ../main-menu/src/network-status-tile.c:191
+#: ../main-menu/src/network-status-tile.c:206
 #, c-format
 msgid "Connected to: %s"
 msgstr "Liitettynä: %s"
 
-#: ../main-menu/src/network-status-tile.c:194
+#: ../main-menu/src/network-status-tile.c:209
 msgid "Network: Wireless"
 msgstr "Verkko: Langaton"
 
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:214
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Käyttäen verkkoa (%s)"
 
-#: ../main-menu/src/network-status-tile.c:202
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Network: Wired"
 msgstr "Verkko: Johdollinen"
 
-#: ../main-menu/src/network-status-tile.c:308
+#: ../main-menu/src/network-status-tile.c:310
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Langaton verkko (%s)"
 
-#: ../main-menu/src/network-status-tile.c:312
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Johdollinen verkko (%s)"
 
-#: ../main-menu/src/network-status-tile.c:316
-#: ../main-menu/src/network-status-tile.c:326
-#: ../main-menu/src/system-tile.c:127
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: ../main-menu/src/network-status-tile.c:324
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:107
+#: ../main-menu/src/system-tile.c:128
 msgid "Install Software"
 msgstr "Asenna sovelluksia"
 
-#: ../main-menu/src/system-tile.c:112
+#: ../main-menu/src/system-tile.c:135
 msgid "Log Out ..."
 msgstr "Kirjaudu ulos ..."
 
-#: ../main-menu/src/system-tile.c:117
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr "Lukitse näyttö ..."
-
