@@ -106,25 +106,13 @@ main (int argc, char *argv[])
 {
 	BonoboApplication *bonobo_app = NULL;
 	gboolean hidden = FALSE;
+	gchar * startup_id;
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 #endif
-
-	/* gnome_program_init clears the env variable that we depend on, so call this first */
-	if (apss_already_running (argc, argv, &bonobo_app, "GNOME-NLD-ControlCenter"))
-	{
-		gnome_program_init ("Gnome Control Center", "0.1", LIBGNOMEUI_MODULE, argc, argv,
-			NULL, NULL);
-		gdk_notify_startup_complete ();
-		bonobo_debug_shutdown ();
-		exit (1);
-	}
-
-	gnome_program_init ("Gnome Control Center", "0.1", LIBGNOMEUI_MODULE, argc, argv, NULL,
-		NULL);
 
 	if (argc > 1)
 	{
@@ -138,10 +126,22 @@ main (int argc, char *argv[])
 		hidden = TRUE;
 	}
 
-	AppShellData *app_data =
-		appshelldata_new ("preferences.menu", NULL, CONTROL_CENTER_PREFIX,
-		GTK_ICON_SIZE_DIALOG);
+	startup_id = g_strdup (g_getenv (DESKTOP_STARTUP_ID));
+	gnome_program_init ("Gnome Control Center", "0.1", LIBGNOMEUI_MODULE,
+		argc, argv, NULL, NULL);
+
+	if (apss_already_running (argc, argv, &bonobo_app, "GNOME-NLD-ControlCenter", startup_id))
+	{
+		gdk_notify_startup_complete ();
+		bonobo_debug_shutdown ();
+		g_free (startup_id);
+		exit (1);
+	}
+
+	AppShellData *app_data = appshelldata_new (
+		"preferences.menu", NULL, CONTROL_CENTER_PREFIX, GTK_ICON_SIZE_DIALOG);
 	generate_categories (app_data);
+
 	GSList *actions = get_actions_list ();
 	layout_shell (app_data, _("Filter"), _("Groups"), _("Common Tasks"), actions,
 		handle_static_action_clicked);
@@ -153,5 +153,6 @@ main (int argc, char *argv[])
 	if (bonobo_app)
 		bonobo_object_unref (bonobo_app);
 	bonobo_debug_shutdown ();
+	g_free (startup_id);
 	return 0;
 };

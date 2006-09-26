@@ -1,3 +1,10 @@
+2006-09-26  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c
+	* control-center/src/control-center.c
+	* libslab/app-shell-startup.c
+	* libslab/app-shell-startup.h:
+	Fix for BNC 204327 - CC and AB fail to launch
+
 2006-09-15  Scott Reeves  <sreeves@novell.com>
 	* *.c, *.h:
 	clean up formatting issues

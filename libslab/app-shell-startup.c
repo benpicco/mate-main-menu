@@ -67,7 +67,8 @@ apss_new_instance_cb (BonoboApplication * app, gint argc, char *argv[], gpointer
 }
 
 gboolean
-apss_already_running (int argc, char *argv[], BonoboApplication ** app, const gchar * name)
+apss_already_running (int argc, char *argv[], BonoboApplication ** app,
+	const gchar * name, gchar * startup_id)
 {
 	if (bonobo_init (&argc, argv) == FALSE)
 		g_error ("Problem with bonobo_init");
@@ -98,9 +99,9 @@ apss_already_running (int argc, char *argv[], BonoboApplication ** app, const gc
 		*app = NULL;
 		
 		gchar *newargv[1];
-		newargv[0] = g_strdup (g_getenv ("DESKTOP_STARTUP_ID"));
-		i = bonobo_app_client_new_instance (client, ((newargv[0]
-					&& newargv[0][0] != '\0') ? 1 : 0), newargv, NULL);
+		newargv[0] = startup_id;
+		i = bonobo_app_client_new_instance (client,
+			((newargv[0] && newargv[0][0] != '\0') ? 1 : 0), newargv, NULL);
 		g_object_unref (client);
 		return TRUE;
 	}

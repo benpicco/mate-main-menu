@@ -24,12 +24,14 @@
 #include <bonobo/bonobo-application.h>
 #include <bonobo/bonobo-main.h>
 
+#define DESKTOP_STARTUP_ID "DESKTOP_STARTUP_ID"
+
 G_BEGIN_DECLS
 
 gint apss_new_instance_cb (BonoboApplication * app, gint argc, char *argv[],
 	gpointer data);
 gboolean apss_already_running (int argc, char *argv[], BonoboApplication ** app,
-	const gchar * name);
+	const gchar * name, char * startup_id);
 
 G_END_DECLS
 #endif /* __APP_SHELL_STARTUP_H__ */

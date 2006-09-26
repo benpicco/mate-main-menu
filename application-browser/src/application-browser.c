@@ -48,24 +48,13 @@ main (int argc, char *argv[])
 {
 	BonoboApplication *bonobo_app = NULL;
 	gboolean hidden = FALSE;
+	gchar * startup_id;
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 #endif
-	/* gnome_program_init clears the env variable that we depend on, so call this first */
-	if (apss_already_running (argc, argv, &bonobo_app, "GNOME-NLD-AppBrowser"))
-	{
-		gnome_program_init ("Gnome Application Browser", "0.1", LIBGNOMEUI_MODULE, argc,
-			argv, NULL, NULL);
-		gdk_notify_startup_complete ();
-		bonobo_debug_shutdown ();
-		exit (1);
-	}
-
-	gnome_program_init ("Gnome Application Browser", "0.1", LIBGNOMEUI_MODULE, argc, argv, NULL,
-		NULL);
 
 	if (argc > 1)
 	{
@@ -79,12 +68,23 @@ main (int argc, char *argv[])
 		hidden = TRUE;
 	}
 
+	startup_id = g_strdup (g_getenv (DESKTOP_STARTUP_ID));
+	gnome_program_init ("Gnome Application Browser", "0.1", LIBGNOMEUI_MODULE,
+		argc, argv, NULL, NULL);
+
+	if (apss_already_running (argc, argv, &bonobo_app, "GNOME-NLD-AppBrowser", startup_id))
+	{
+		gdk_notify_startup_complete ();
+		bonobo_debug_shutdown ();
+		g_free (startup_id);
+		exit (1);
+	}
+
 	NewAppConfig *config = g_new0 (NewAppConfig, 1);
 	config->max_items = get_slab_gconf_int (NEW_APPS_MAX_ITEMS);
 	config->name = _("New Applications");
-	AppShellData *app_data =
-		appshelldata_new ("applications.menu", config, APPLICATION_BROWSER_PREFIX,
-		GTK_ICON_SIZE_DND);
+	AppShellData *app_data = appshelldata_new (
+		"applications.menu", config, APPLICATION_BROWSER_PREFIX, GTK_ICON_SIZE_DND);
 	generate_categories (app_data);
 
 	layout_shell (app_data, _("Filter"), _("Groups"), _("Application Actions"), NULL, NULL);
@@ -96,5 +96,6 @@ main (int argc, char *argv[])
 	if (bonobo_app)
 		bonobo_object_unref (bonobo_app);
 	bonobo_debug_shutdown ();
+	g_free (startup_id);
 	return 0;
 };
