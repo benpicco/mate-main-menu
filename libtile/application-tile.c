@@ -384,7 +384,7 @@ application_tile_setup (ApplicationTile * this)
 
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 
-		gtk_container_add (GTK_CONTAINER (context_menu), menu_item);
+		gtk_container_add (menu_ctnr, menu_item);
 	}
 
 	/* make upgrade action */
@@ -698,6 +698,7 @@ add_to_startup_list (ApplicationTile * this)
 	dst_uri = g_filename_to_uri (dst_filename, NULL, NULL);
 
 	copy_file (src_uri, dst_uri);
+	priv->startup_status = APP_IN_USER_STARTUP_DIR;
 
 	g_free (desktop_item_filename);
 	g_free (desktop_item_basename);
@@ -738,6 +739,7 @@ remove_from_startup_list (ApplicationTile * this)
 
 	gnome_vfs_xfer_delete_list (list, GNOME_VFS_XFER_ERROR_MODE_ABORT,
 		GNOME_VFS_XFER_REMOVESOURCE, NULL, NULL);
+	priv->startup_status = APP_NOT_IN_STARTUP_DIR;
 
 	g_free (ditem_filename);
 	g_free (ditem_basename);
