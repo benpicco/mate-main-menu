@@ -1,3 +1,7 @@
+2006-09-29  Jovan Naumovski  <jovan@lugola.net>
+
+	* configure.in: Added "mk" to ALL_LINGUAS.
+
 2006-09-26  Scott Reeves  <sreeves@novell.com>
 	* libtile/application-tile.c:
 	Fix for BNC 207329 - context menu issues.
