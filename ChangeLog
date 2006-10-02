@@ -1,4 +1,9 @@
-2006-10-02  Jim Krehl <jimmyk@novell.com>
+2006-10-02  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/file-area-widget.c:
+	Added check for NULL haystack before calling strstr.  Fixes BNC
+	#204707.
+
+2006-10-02  Jim Krehl  <jimmyk@novell.com>
 	* libtile/application-tile.c:
 	Removed file monitors from the application tile, fix for BNC #186555.
 

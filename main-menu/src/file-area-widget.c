@@ -443,7 +443,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 				categories = gnome_desktop_item_get_string (
 					item, GNOME_DESKTOP_ITEM_CATEGORIES);
 
-				if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
+				if (categories && strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
 					gtk_widget_destroy (tile);
 					tile = NULL;
 				}
@@ -486,7 +486,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 					categories = gnome_desktop_item_get_string (
 						item, GNOME_DESKTOP_ITEM_CATEGORIES);
 
-					if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
+					if (categories && strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
 						gtk_widget_destroy (tile);
 						tile = NULL;
 					}
