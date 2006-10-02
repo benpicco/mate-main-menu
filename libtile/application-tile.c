@@ -76,9 +76,6 @@ static void update_startup_menu_item (ApplicationTile *);
 
 static void gconf_user_list_change_cb (GConfClient *, guint, GConfEntry *, gpointer);
 
-static void desktop_file_monitor_cb (GnomeVFSMonitorHandle *, const gchar *, const gchar *,
-	GnomeVFSMonitorEventType, gpointer);
-
 typedef struct
 {
 	GnomeDesktopItem *desktop_item;
@@ -92,8 +89,6 @@ typedef struct
 	
 	GConfClient *gconf_client;
 	guint gconf_conn_id;
-	
-	GnomeVFSMonitorHandle *gnome_vfs_handle;
 } ApplicationTilePrivate;
 
 #define APPLICATION_TILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), APPLICATION_TILE_TYPE, ApplicationTilePrivate))
@@ -138,32 +133,17 @@ application_tile_new_full (const gchar * desktop_item_id, GtkIconSize image_size
 	ApplicationTile *this;
 	ApplicationTilePrivate *priv;
 
-	const gchar *uri = NULL;
-	gchar *filename;
-
 	GnomeDesktopItem *desktop_item;
 
-	gboolean enabled;
+	const gchar *uri = NULL;
+
 
 	desktop_item = load_desktop_item_from_unknown (desktop_item_id);
 
-	enabled = (desktop_item == NULL ? FALSE : TRUE);
-
-	if (enabled)
+	if (desktop_item)
 		uri = gnome_desktop_item_get_location (desktop_item);
-	else
-	{
-		filename = g_filename_from_uri (desktop_item_id, NULL, NULL);
 
-		if (filename)
-			uri = desktop_item_id;
-		else
-			uri = NULL;
-
-		g_free (filename);
-	}
-
-	if (!uri)
+	if (! desktop_item || ! uri)
 		return NULL;
 
 	this = g_object_new (APPLICATION_TILE_TYPE, "tile-uri", uri, NULL);
@@ -172,13 +152,7 @@ application_tile_new_full (const gchar * desktop_item_id, GtkIconSize image_size
 	priv->image_size = image_size;
 	priv->desktop_item = desktop_item;
 
-	TILE (this)->enabled = enabled;
-
-	if (TILE (this)->enabled)
-		application_tile_setup (this);
-
-	gnome_vfs_monitor_add (&priv->gnome_vfs_handle, TILE (this)->uri, GNOME_VFS_MONITOR_FILE,
-		desktop_file_monitor_cb, this);
+	application_tile_setup (this);
 
 	return GTK_WIDGET (this);
 }
@@ -196,7 +170,6 @@ application_tile_init (ApplicationTile * tile)
 
 	priv->gconf_client = NULL;
 	priv->gconf_conn_id = 0;
-	priv->gnome_vfs_handle = NULL;
 }
 
 static void
@@ -217,8 +190,6 @@ application_tile_finalize (GObject * g_object)
 
 	gconf_client_notify_remove (priv->gconf_client, priv->gconf_conn_id);
 	g_object_unref (priv->gconf_client);
-
-	gnome_vfs_monitor_cancel (priv->gnome_vfs_handle);
 
 	(*G_OBJECT_CLASS (application_tile_parent_class)->finalize) (g_object);
 }
@@ -754,7 +725,7 @@ application_tile_get_desktop_item (ApplicationTile * tile)
 }
 
 static gboolean
-is_desktop_item_in_user_list (const gchar * uri)
+is_desktop_item_in_user_list (const gchar *uri)
 {
 	GSList *app_list;
 
@@ -763,11 +734,10 @@ is_desktop_item_in_user_list (const gchar * uri)
 
 	app_list = get_slab_gconf_slist (SLAB_USER_SPECIFIED_APPS_KEY);
 
-	if (!app_list)
+	if (! app_list)
 		return FALSE;
 
-	for (node = app_list; node; node = node->next)
-	{
+	for (node = app_list; node; node = node->next) {
 		offset = strlen (uri) - strlen ((gchar *) node->data);
 
 		if (offset < 0)
@@ -850,36 +820,6 @@ update_startup_menu_item (ApplicationTile * this)
 		tile_action_set_menu_item_label (action, _("Remove from Startup Programs"));
 	else
 		tile_action_set_menu_item_label (action, _("Add to Startup Programs"));
-}
-
-static void
-desktop_file_monitor_cb (GnomeVFSMonitorHandle * handle, const gchar * monitor_uri,
-	const gchar * info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
-{
-	Tile *tile = TILE (user_data);
-
-	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (user_data);
-
-	switch (type)
-	{
-	case GNOME_VFS_MONITOR_EVENT_DELETED:
-		tile_implicit_disable (tile);
-		break;
-
-	/* FIXME: prolly need to lock the tile in the case that
-    GNOME_VFS_MONITOR_EVENT_CREATED multi-fires */
-	case GNOME_VFS_MONITOR_EVENT_CREATED:
-		if (!priv->desktop_item)
-			application_tile_setup (APPLICATION_TILE (tile));
-
-		if (priv->desktop_item)
-			tile_implicit_enable (tile);
-
-		break;
-
-	default:
-		break;
-	}
 }
 
 static void

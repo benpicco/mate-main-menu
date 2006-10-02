@@ -424,59 +424,69 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 
 	gint icon_width;
 
+	GList *existing_files = NULL;
+	gboolean lost_tile = FALSE;
+
 	GList *node;
+
 
 	disable_term = GPOINTER_TO_INT (get_gconf_value (DISABLE_TERMINAL_GCONF_KEY));
 
-	if (file_class == USER_SPECIFIED_APPS)
-	{
+	if (file_class == USER_SPECIFIED_APPS) {
 		files = get_gconf_value (USER_SPEC_APPS_GCONF_KEY);
 
-		for (node = files; node; node = node->next)
-		{
+		for (node = files; node; node = node->next) {
 			tile = application_tile_new ((gchar *) node->data);
 
-			if (disable_term)
-			{
+			if (disable_term) {
 				item = application_tile_get_desktop_item (APPLICATION_TILE (tile));
 				categories = gnome_desktop_item_get_string (
 					item, GNOME_DESKTOP_ITEM_CATEGORIES);
 
-				if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG))
-				{
+				if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
 					gtk_widget_destroy (tile);
 					tile = NULL;
 				}
 			}
 
-			if (tile)
+			if (tile) {
 				tiles = g_list_append (tiles, tile);
 
-			g_free (node->data);
+				existing_files = g_list_append (existing_files, node->data);
+			}
+			else {
+				lost_tile = TRUE;
+
+				g_free (node->data);
+			}
+		}
+
+		if (lost_tile) {
+			set_gconf_value (USER_SPEC_APPS_GCONF_KEY, existing_files);
+
+			for (node = existing_files; node; node = node->next)
+				g_free (node->data);
+
+			g_list_free (existing_files);
 		}
 	}
 
-	else if (file_class == RECENTLY_USED_APPS)
-	{
+	else if (file_class == RECENTLY_USED_APPS) {
 		files = get_recent_files (RECENT_APPS_FILE_PATH);
 
-		for (node = files; node; node = node->next)
-		{
+		for (node = files; node; node = node->next) {
 			desktop_item_url = egg_recent_item_get_uri ((EggRecentItem *) node->data);
 
-			if (!application_is_blacklisted (desktop_item_url))
-			{
+			if (!application_is_blacklisted (desktop_item_url)) {
 				tile = application_tile_new (desktop_item_url);
 
-				if (disable_term)
-				{
+				if (disable_term) {
 					item = application_tile_get_desktop_item (
 						APPLICATION_TILE (tile));
 					categories = gnome_desktop_item_get_string (
 						item, GNOME_DESKTOP_ITEM_CATEGORIES);
 
-					if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG))
-					{
+					if (strstr (categories, DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG)) {
 						gtk_widget_destroy (tile);
 						tile = NULL;
 					}
@@ -491,8 +501,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 		}
 	}
 
-	else
-	{
+	else {
 		files = get_recent_files (RECENT_FILES_FILE_PATH);
 
 		for (node = files; node; node = node->next)
@@ -502,8 +511,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_DND, &icon_width, NULL);
 
-	for (node = tiles; node; node = node->next)
-	{
+	for (node = tiles; node; node = node->next) {
 		gtk_widget_set_size_request (GTK_WIDGET (node->data), TILE_WIDTH_SCALE * icon_width,
 			-1);
 

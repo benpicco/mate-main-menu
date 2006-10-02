@@ -1,3 +1,13 @@
+2006-10-02  Jim Krehl <jimmyk@novell.com>
+	* libtile/application-tile.c:
+	Removed file monitors from the application tile, fix for BNC #186555.
+
+	* main-menu/src/file-area-widget.c:
+	Removing file monitors reverts the fix for BNC #142932.  Instead of
+	monitoring the .desktop file, the main-menu culls out non-existent
+	files from the user_specified_apps list which maintains consistency
+	without the expense of monitoring all .desktop files.
+
 2006-09-29  Jovan Naumovski  <jovan@lugola.net>
 
 	* configure.in: Added "mk" to ALL_LINGUAS.
