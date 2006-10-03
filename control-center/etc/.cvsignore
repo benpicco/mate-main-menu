@@ -1,0 +1,5 @@
+control-center.desktop
+control-center.desktop.in
+Makefile
+Makefile.in
+control-center.schemas

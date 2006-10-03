@@ -1,0 +1,7 @@
+GNOME_MainMenu.server
+GNOME_MainMenu.server.in
+Makefile
+Makefile.in
+slab.schemas
+slab.schemas.in
+main-menu-rug.desktop
