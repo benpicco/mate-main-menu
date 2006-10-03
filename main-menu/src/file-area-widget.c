@@ -52,8 +52,7 @@
 
 G_DEFINE_TYPE (FileAreaWidget, file_area_widget, GTK_TYPE_VBOX)
 
-typedef struct
-{
+typedef struct {
 	MainMenuUI *ui;
 	MainMenuEngine *engine;
 	
@@ -120,7 +119,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 	gint page_id;
 
 	GList *showable_types_list;
-	gboolean showable[FILE_CLASS_SENTINEL];
+	gboolean showable [FILE_CLASS_SENTINEL];
 
 	GList *tiles;
 
@@ -161,17 +160,15 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 	showable_types_list = (GList *) get_gconf_value (SHOWABLE_TYPES_GCONF_KEY);
 
 	for (i = 0; i < FILE_CLASS_SENTINEL; ++i)
-		showable[i] = FALSE;
+		showable [i] = FALSE;
 
 	for (node = showable_types_list; node; node = node->next)
-		showable[GPOINTER_TO_INT (node->data)] = TRUE;
+		showable [GPOINTER_TO_INT (node->data)] = TRUE;
 
 	g_list_free (showable_types_list);
 
-	for (i = 0; i < FILE_CLASS_SENTINEL; ++i)
-	{
-		if (showable[i])
-		{
+	for (i = 0; i < FILE_CLASS_SENTINEL; ++i) {
+		if (showable [i]) {
 			table = tile_table_new (2, i == USER_SPECIFIED_APPS ? TRUE : FALSE,
 				TILE_TABLE_REORDERING_PUSH_PULL);
 
@@ -184,8 +181,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 			tiles = get_tiles (this, i);
 
-			switch (i)
-			{
+			switch (i) {
 			case USER_SPECIFIED_APPS:
 				markup = _("Favorite Applications");
 
@@ -258,8 +254,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 	g_signal_connect (G_OBJECT (priv->notebook), "show", G_CALLBACK (notebook_show_cb), this);
 
-	if (GPOINTER_TO_INT (get_gconf_value (AB_LINK_VISIBLE_GCONF_KEY)))
-	{
+	if (GPOINTER_TO_INT (get_gconf_value (AB_LINK_VISIBLE_GCONF_KEY))) {
 		priv->browser_link = GTK_BUTTON (gtk_button_new ());
 
 		update_browser_link (this,
@@ -277,7 +272,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 }
 
 static void
-file_area_widget_class_init (FileAreaWidgetClass * this_class)
+file_area_widget_class_init (FileAreaWidgetClass *this_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
 
@@ -287,7 +282,7 @@ file_area_widget_class_init (FileAreaWidgetClass * this_class)
 }
 
 static void
-file_area_widget_init (FileAreaWidget * this)
+file_area_widget_init (FileAreaWidget *this)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
@@ -306,20 +301,20 @@ file_area_widget_init (FileAreaWidget * this)
 }
 
 static void
-file_area_widget_finalize (GObject * g_object)
+file_area_widget_finalize (GObject *g_object)
 {
 	/* FIXME */
 	(*G_OBJECT_CLASS (file_area_widget_parent_class)->finalize) (g_object);
 }
 
 void
-file_area_widget_update (FileAreaWidget * this)
+file_area_widget_update (FileAreaWidget *this)
 {
 	update_browser_link (this, GPOINTER_TO_INT (get_gconf_value (FILE_CLASS_GCONF_KEY)));
 }
 
 void
-layout_file_area (FileAreaWidget * this)
+layout_file_area (FileAreaWidget *this)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
@@ -336,8 +331,7 @@ layout_file_area (FileAreaWidget * this)
 
 	gtk_box_pack_start (GTK_BOX (this), GTK_WIDGET (priv->notebook), FALSE, FALSE, 0);
 
-	if (priv->browser_link)
-	{
+	if (priv->browser_link) {
 		alignment = gtk_alignment_new (1.0, 0.5, 0.0, 0.0);
 		gtk_container_add (GTK_CONTAINER (alignment), GTK_WIDGET (priv->browser_link));
 
@@ -346,28 +340,27 @@ layout_file_area (FileAreaWidget * this)
 }
 
 static void
-update_browser_link (FileAreaWidget * this, FileClass file_class)
+update_browser_link (FileAreaWidget *this, FileClass file_class)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
-	switch (file_class)
-	{
-	case RECENTLY_USED_APPS:
-	case USER_SPECIFIED_APPS:
-		gtk_button_set_label (priv->browser_link, _("More Applications..."));
-		break;
+	switch (file_class) {
+		case RECENTLY_USED_APPS:
+		case USER_SPECIFIED_APPS:
+			gtk_button_set_label (priv->browser_link, _("More Applications..."));
+			break;
 
-	case RECENT_FILES:
-		gtk_button_set_label (priv->browser_link, _("All Documents..."));
-		break;
+		case RECENT_FILES:
+			gtk_button_set_label (priv->browser_link, _("All Documents..."));
+			break;
 
-	default:
-		break;
+		default:
+			break;
 	}
 }
 
 static void
-load_tables (FileAreaWidget * this)
+load_tables (FileAreaWidget *this)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
@@ -392,7 +385,7 @@ load_tables (FileAreaWidget * this)
 }
 
 static void
-select_page (FileAreaWidget * this, GtkTreeIter * iter)
+select_page (FileAreaWidget *this, GtkTreeIter *iter)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
@@ -410,7 +403,7 @@ select_page (FileAreaWidget * this, GtkTreeIter * iter)
 }
 
 static GList *
-get_tiles (FileAreaWidget * this, FileClass file_class)
+get_tiles (FileAreaWidget *this, FileClass file_class)
 {
 	GList *files = NULL;
 	GList *tiles = NULL;
@@ -512,7 +505,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 	gtk_icon_size_lookup (GTK_ICON_SIZE_DND, &icon_width, NULL);
 
 	for (node = tiles; node; node = node->next) {
-		gtk_widget_set_size_request (GTK_WIDGET (node->data), TILE_WIDTH_SCALE * icon_width,
+		gtk_widget_set_size_request (GTK_WIDGET (node->data), TILE_WIDTH_SCALE *icon_width,
 			-1);
 
 		g_signal_connect (G_OBJECT (node->data), "tile-activated",
@@ -528,7 +521,7 @@ get_tiles (FileAreaWidget * this, FileClass file_class)
 }
 
 static void
-update_table (FileAreaWidget * this, FileClass file_class)
+update_table (FileAreaWidget *this, FileClass file_class)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
 
@@ -542,13 +535,11 @@ update_table (FileAreaWidget * this, FileClass file_class)
 
 	has_next = gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->file_tables), &iter);
 
-	while (has_next)
-	{
+	while (has_next) {
 		gtk_tree_model_get (GTK_TREE_MODEL (priv->file_tables), &iter, COLUMN_FILE_CLASS,
 			&file_class_i, COLUMN_TILE_TABLE, &table, -1);
 
-		if (file_class_i == file_class)
-		{
+		if (file_class_i == file_class) {
 			tiles = get_tiles (this, file_class_i);
 
 			gtk_list_store_set (priv->file_tables, &iter, COLUMN_TILE_LIST, tiles, -1);
@@ -564,7 +555,7 @@ update_table (FileAreaWidget * this, FileClass file_class)
 }
 
 static gboolean
-application_is_blacklisted (const gchar * desktop_item_url)
+application_is_blacklisted (const gchar *desktop_item_url)
 {
 	GSList *blacklist;
 	GSList *node;
@@ -573,10 +564,8 @@ application_is_blacklisted (const gchar * desktop_item_url)
 	retval = FALSE;
 	blacklist = get_slab_gconf_slist (SLAB_FILE_BLACKLIST);
 
-	for (node = blacklist; node; node = node->next)
-	{
-		if (strstr (desktop_item_url, (gchar *) node->data))
-		{
+	for (node = blacklist; node; node = node->next) {
+		if (strstr (desktop_item_url, (gchar *) node->data)) {
 			retval = TRUE;
 			/* free the rest of list and break out */
 			for (; node; node = node->next)
@@ -591,7 +580,7 @@ application_is_blacklisted (const gchar * desktop_item_url)
 }
 
 static void
-selector_changed_cb (GtkComboBox * combo_box, gpointer user_data)
+selector_changed_cb (GtkComboBox *combo_box, gpointer user_data)
 {
 	FileAreaWidget *this = FILE_AREA_WIDGET (user_data);
 
@@ -603,7 +592,7 @@ selector_changed_cb (GtkComboBox * combo_box, gpointer user_data)
 }
 
 static void
-link_clicked_cb (GtkButton * button, gpointer user_data)
+link_clicked_cb (GtkButton *button, gpointer user_data)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (user_data);
 
@@ -624,8 +613,7 @@ link_clicked_cb (GtkButton * button, gpointer user_data)
 
 	browser = load_desktop_item_by_unknown_id (desktop_item_id);
 
-	if (browser)
-	{
+	if (browser) {
 		open_desktop_item_exec (browser);
 
 		main_menu_ui_close (priv->ui, FALSE);
@@ -635,7 +623,7 @@ link_clicked_cb (GtkButton * button, gpointer user_data)
 }
 
 static void
-notebook_show_cb (GtkWidget * widget, gpointer user_data)
+notebook_show_cb (GtkWidget *widget, gpointer user_data)
 {
 	FileAreaWidget *this = FILE_AREA_WIDGET (user_data);
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
@@ -647,12 +635,10 @@ notebook_show_cb (GtkWidget * widget, gpointer user_data)
 
 	has_next = gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->file_tables), &iter);
 
-	while (has_next)
-	{
+	while (has_next) {
 		gtk_tree_model_get (GTK_TREE_MODEL (priv->file_tables), &iter, 0, &file_class, -1);
 
-		if (GPOINTER_TO_INT (get_gconf_value (FILE_CLASS_GCONF_KEY)) == file_class)
-		{
+		if (GPOINTER_TO_INT (get_gconf_value (FILE_CLASS_GCONF_KEY)) == file_class) {
 			select_page (this, &iter);
 
 			return;
@@ -663,7 +649,7 @@ notebook_show_cb (GtkWidget * widget, gpointer user_data)
 }
 
 static void
-tile_activated_cb (Tile * tile, TileEvent * event, gpointer user_data)
+tile_activated_cb (Tile *tile, TileEvent *event, gpointer user_data)
 {
 	if (event->type == TILE_EVENT_ACTIVATED_DOUBLE_CLICK)
 		return;
@@ -672,7 +658,7 @@ tile_activated_cb (Tile * tile, TileEvent * event, gpointer user_data)
 }
 
 static void
-tile_action_triggered_cb (Tile * tile, TileEvent * event, TileAction * action, gpointer user_data)
+tile_action_triggered_cb (Tile *tile, TileEvent *event, TileAction *action, gpointer user_data)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (user_data);
 
@@ -682,21 +668,21 @@ tile_action_triggered_cb (Tile * tile, TileEvent * event, TileAction * action, g
 }
 
 static void
-recent_apps_store_monitor_cb (GnomeVFSMonitorHandle * handle, const gchar * monitor_uri,
-	const gchar * info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+recent_apps_store_monitor_cb (GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
+	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
 {
 	update_table (FILE_AREA_WIDGET (user_data), RECENTLY_USED_APPS);
 }
 
 static void
-recent_files_store_monitor_cb (GnomeVFSMonitorHandle * handle, const gchar * monitor_uri,
-	const gchar * info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+recent_files_store_monitor_cb (GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
+	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
 {
 	update_table (FILE_AREA_WIDGET (user_data), RECENT_FILES);
 }
 
 static void
-tile_table_update_cb (TileTable * table, TileTableUpdateEvent * event, gpointer user_data)
+tile_table_update_cb (TileTable *table, TileTableUpdateEvent *event, gpointer user_data)
 {
 	GList *new_app_list = NULL;
 
@@ -705,8 +691,7 @@ tile_table_update_cb (TileTable * table, TileTableUpdateEvent * event, gpointer 
 
 	GList *node;
 
-	if (g_list_length (event->tiles_prev) == g_list_length (event->tiles_curr))
-	{
+	if (g_list_length (event->tiles_prev) == g_list_length (event->tiles_curr)) {
 		for (
 			node_u = event->tiles_prev, node_v = event->tiles_curr, equal = TRUE;
 			equal && node_u && node_v;
@@ -726,7 +711,7 @@ tile_table_update_cb (TileTable * table, TileTableUpdateEvent * event, gpointer 
 }
 
 static void
-tile_table_uri_added_cb (TileTable * table, TileTableURIAddedEvent * event, gpointer user_data)
+tile_table_uri_added_cb (TileTable *table, TileTableURIAddedEvent *event, gpointer user_data)
 {
 	GList *app_list;
 	gint uri_len;
@@ -736,8 +721,7 @@ tile_table_uri_added_cb (TileTable * table, TileTableURIAddedEvent * event, gpoi
 
 	uri_len = strlen (event->uri);
 
-	if (!strcmp (&event->uri[uri_len - 8], ".desktop"))
-	{
+	if (!strcmp (&event->uri [uri_len - 8], ".desktop")) {
 		app_list = get_gconf_value (USER_SPEC_APPS_GCONF_KEY);
 		app_list = g_list_append (app_list, event->uri);
 		set_gconf_value (USER_SPEC_APPS_GCONF_KEY, app_list);
@@ -745,7 +729,7 @@ tile_table_uri_added_cb (TileTable * table, TileTableURIAddedEvent * event, gpoi
 }
 
 static void
-tile_table_n_rows_notify_cb (GObject * obj, GParamSpec * spec, gpointer user_data)
+tile_table_n_rows_notify_cb (GObject *obj, GParamSpec *spec, gpointer user_data)
 {
 	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (user_data);
 
@@ -769,8 +753,7 @@ tile_table_n_rows_notify_cb (GObject * obj, GParamSpec * spec, gpointer user_dat
 
 	has_next = gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->file_tables), &iter);
 
-	while (has_next)
-	{
+	while (has_next) {
 		gtk_tree_model_get (GTK_TREE_MODEL (priv->file_tables), &iter, COLUMN_TILE_TABLE,
 			&table, -1);
 
@@ -781,7 +764,7 @@ tile_table_n_rows_notify_cb (GObject * obj, GParamSpec * spec, gpointer user_dat
 }
 
 static void
-user_spec_apps_gconf_notify_cb (GConfClient * client, guint conn_id, GConfEntry * entry,
+user_spec_apps_gconf_notify_cb (GConfClient *client, guint conn_id, GConfEntry *entry,
 	gpointer user_data)
 {
 	update_table (FILE_AREA_WIDGET (user_data), USER_SPECIFIED_APPS);
