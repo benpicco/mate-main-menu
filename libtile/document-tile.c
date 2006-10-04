@@ -441,10 +441,10 @@ create_header (const gchar * name)
 	GtkWidget *header;
 
 	header = gtk_label_new (name);
-	gtk_label_set_line_wrap (GTK_LABEL (header), TRUE);
+	gtk_label_set_ellipsize (GTK_LABEL (header), PANGO_ELLIPSIZE_END);
 	gtk_misc_set_alignment (GTK_MISC (header), 0.0, 0.5);
 
-	header_bin = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
+	header_bin = gtk_alignment_new (0.0, 0.5, 1.0, 0.0);
 	gtk_container_add (GTK_CONTAINER (header_bin), header);
 
 	g_signal_connect (G_OBJECT (header), "size-allocate", G_CALLBACK (header_size_allocate_cb),

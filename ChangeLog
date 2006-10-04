@@ -1,3 +1,9 @@
+2006-10-04  Jim Krehl  <jimmyk@novell.com>
+	* libtile/application-tile.c
+	  libtile/document-tile.c:
+	Changed from wrapping lines to ellipsizing the headers of application
+	and document tiles.  BNC #191536.
+
 2006-10-02  Jim Krehl  <jimmyk@novell.com>
 	* main-menu/src/file-area-widget.c:
 	Added check for NULL haystack before calling strstr.  Fixes BNC
@@ -9,9 +15,10 @@
 
 	* main-menu/src/file-area-widget.c:
 	Removing file monitors reverts the fix for BNC #142932.  Instead of
-	monitoring the .desktop file, the main-menu culls out non-existent
-	files from the user_specified_apps list which maintains consistency
-	without the expense of monitoring all .desktop files.
+	monitoring the .desktop file to fix BCN #142932, the main-menu culls
+	out non-existent files from the user_specified_apps list which
+	maintains consistency without the expense of monitoring all .desktop
+	files.
 
 2006-09-29  Jovan Naumovski  <jovan@lugola.net>
 
