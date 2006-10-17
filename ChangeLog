@@ -1,3 +1,12 @@
+2006-10-17  Jim Krehl  <jimmyk@novell.com>
+	* libtile/document-tile.c
+	  main-menu/src/recent-files.c
+	  main-menu/src/recent-files.h
+	  patch/gnome-desktop-recently-used-apps.patch
+	  patch/gnome-panel-recently-used-apps.patch:
+	Merged ~/.recently-used-apps into ~/.recently-used to prepare for
+	integration with GtkRecentManager.
+
 2006-10-04  Jim Krehl  <jimmyk@novell.com>
 	* libtile/application-tile.c
 	  libtile/document-tile.c:

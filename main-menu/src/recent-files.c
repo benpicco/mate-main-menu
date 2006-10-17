@@ -20,16 +20,35 @@
 
 #include "recent-files.h"
 
+#define EGG_ENABLE_RECENT_FILES
 #include "egg-recent-model.h"
 
 GList *
-get_recent_files (const gchar * store_path)
+get_recent_files ()
 {
 	EggRecentModel *recent_model;
 
 	GList *list;
 
-	recent_model = egg_recent_model_new (store_path, EGG_RECENT_MODEL_SORT_MRU);
+	recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
+
+	list = egg_recent_model_get_list (recent_model);
+
+	g_object_unref (recent_model);
+
+	return list;
+}
+
+GList *
+get_recent_apps ()
+{
+	EggRecentModel *recent_model;
+
+	GList *list;
+
+	recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
+
+	egg_recent_model_set_filter_groups (recent_model, "recently-used-apps", NULL);
 
 	list = egg_recent_model_get_list (recent_model);
 

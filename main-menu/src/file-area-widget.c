@@ -29,11 +29,12 @@
 
 #include "application-tile.h"
 #include "document-tile.h"
-#include "egg-recent-item.h"
 #include "gnome-utils.h"
 #include "recent-files.h"
 #include "slab-gnome-util.h"
 #include "tile-table.h"
+
+#include "egg-recent-item.h"
 
 #define MAIN_MENU_GCONF_DIR  "/desktop/gnome/applications/main-menu"
 #define FILE_AREA_GCONF_DIR  MAIN_MENU_GCONF_DIR "/file-area"
@@ -202,7 +203,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 				markup = _("Recently Used Applications");
 
 				filename = g_build_filename (
-					g_get_home_dir (), RECENT_APPS_FILE_PATH, NULL);
+					g_get_home_dir (), ".recently-used", NULL);
 
 				uri = gnome_vfs_get_uri_from_local_path (filename);
 
@@ -217,7 +218,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 				markup = _("Recent Documents");
 
 				filename = g_build_filename (
-					g_get_home_dir (), RECENT_FILES_FILE_PATH, NULL);
+					g_get_home_dir (), ".recently-used", NULL);
 
 				uri = gnome_vfs_get_uri_from_local_path (filename);
 
@@ -465,7 +466,7 @@ get_tiles (FileAreaWidget *this, FileClass file_class)
 	}
 
 	else if (file_class == RECENTLY_USED_APPS) {
-		files = get_recent_files (RECENT_APPS_FILE_PATH);
+		files = get_recent_apps ();
 
 		for (node = files; node; node = node->next) {
 			desktop_item_url = egg_recent_item_get_uri ((EggRecentItem *) node->data);
@@ -495,7 +496,7 @@ get_tiles (FileAreaWidget *this, FileClass file_class)
 	}
 
 	else {
-		files = get_recent_files (RECENT_FILES_FILE_PATH);
+		files = get_recent_files ();
 
 		for (node = files; node; node = node->next)
 			tiles = g_list_append (tiles,

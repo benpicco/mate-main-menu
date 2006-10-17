@@ -296,8 +296,7 @@ bonobo_menu_menu_about_cb (BonoboUIComponent * component, gpointer user_data, co
 	MainMenuUI *main_menu_ui = MAIN_MENU_UI (user_data);
 	MainMenuUIPrivate *priv = MAIN_MENU_UI_GET_PRIVATE (main_menu_ui);
 
-	if (!priv->about_dialog)
-	{
+	if (! priv->about_dialog) {
 		priv->about_dialog = gtk_about_dialog_new ();
 
 		g_object_set (priv->about_dialog,

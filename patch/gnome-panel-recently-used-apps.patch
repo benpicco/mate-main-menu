@@ -1,5 +1,7 @@
---- gnome-panel/panel-run-dialog.c	2006-03-10 18:11:53.000000000 -0500
-+++ gnome-panel/panel-run-dialog.c	2006-03-13 18:06:20.000000000 -0500
+Files gnome-panel-2.12.2.pristine/gnome-panel/.panel-run-dialog.c.swp and gnome-panel-2.12.2/gnome-panel/.panel-run-dialog.c.swp differ
+diff -uprN gnome-panel-2.12.2.pristine/gnome-panel/panel-run-dialog.c gnome-panel-2.12.2/gnome-panel/panel-run-dialog.c
+--- gnome-panel-2.12.2.pristine/gnome-panel/panel-run-dialog.c	2005-10-22 06:08:41.000000000 -0400
++++ gnome-panel-2.12.2/gnome-panel/panel-run-dialog.c	2006-10-17 16:18:26.000000000 -0400
 @@ -59,6 +59,7 @@
  #include "menu.h"
  #include "panel-lockdown.h"
@@ -8,7 +10,7 @@
  
  #define ICON_SIZE 48.0
  
-@@ -109,6 +110,8 @@
+@@ -109,6 +110,8 @@ enum {
  
  static PanelRunDialog *static_dialog = NULL;
  
@@ -17,8 +19,8 @@
  static void
  panel_run_dialog_destroy (PanelRunDialog *dialog)
  {
-@@ -395,6 +398,8 @@
- 		gnome_entry_append_history (GNOME_ENTRY (dialog->gnome_entry),
+@@ -395,6 +398,8 @@ panel_run_dialog_execute (PanelRunDialog
+ 		gnome_entry_prepend_history (GNOME_ENTRY (dialog->gnome_entry),
  					     TRUE, /* save item in history */
  					     command);
 +
@@ -26,7 +28,7 @@
  		
  		/* only close the dialog if we successfully showed or launched something */
  		gtk_widget_destroy (dialog->run_dialog);
-@@ -625,6 +630,87 @@
+@@ -625,6 +630,109 @@ panel_run_dialog_find_command_icon_idle 
  	return FALSE;
  }
  
@@ -38,6 +40,7 @@
 +	GtkTreePath  *path  = NULL;
 +
 +	gchar *found_ditem_path = NULL;
++	gchar *found_ditem_uri  = NULL;
 +
 +	gchar *cmd_i;
 +	gchar *ditem_path_i;
@@ -45,6 +48,9 @@
 +	gboolean fuzzy;
 +
 +	EggRecentModel *recent_model;
++	EggRecentItem  *recent_item;
++
++	GError *error = NULL;
 +
 +	
 +	if (! cmd)
@@ -96,505 +102,39 @@
 +		g_free (cmd_i);
 +		g_free (ditem_path_i);
 +
-+        } while (gtk_tree_model_iter_next (model, & iter));
++	} while (gtk_tree_model_iter_next (model, & iter));
 +
 +	gtk_tree_path_free (path);
 +
-+	recent_model = egg_recent_model_new_with_path (EGG_RECENT_MODEL_SORT_NONE, ".recently-used-apps");
++	recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_NONE);
 +
-+	if (recent_model && found_ditem_path)
-+		egg_recent_model_add (recent_model, found_ditem_path);
++	if (recent_model && found_ditem_path) {
++		found_ditem_uri = g_filename_to_uri (found_ditem_path, NULL, & error);
 +
-+	if (recent_model)
-+		g_object_unref (recent_model);
++		if (! error) {
++			recent_item = egg_recent_item_new_from_uri (found_ditem_uri);
++			egg_recent_item_add_group (recent_item, "recently-used-apps");
++			egg_recent_item_set_private (recent_item, TRUE);
++
++			egg_recent_model_add_full (recent_model, recent_item);
++		}
++		else {
++			g_warning ("unable to create uri from [%s] to insert into recent file list.\n",
++				found_ditem_path);
++
++			g_error_free (error);
++		}
++	}
++
++	g_object_unref (recent_model);
++
++	if (recent_item)
++		egg_recent_item_unref (recent_item);
 +
 +	g_free (found_ditem_path);
++	g_free (found_ditem_uri);
 +}
 +
  static gboolean
  panel_run_dialog_add_icon_idle (PanelRunDialog *dialog)
  {
---- gnome-panel/egg-recent-model.h	2004-02-04 08:05:46.000000000 -0500
-+++ gnome-panel/egg-recent-model.h	2006-03-13 17:36:08.000000000 -0500
-@@ -41,7 +41,8 @@
- GType    egg_recent_model_get_type     (void);
- 
- /* constructors */
--EggRecentModel * egg_recent_model_new (EggRecentModelSort sort);
-+EggRecentModel *egg_recent_model_new           (EggRecentModelSort sort);
-+EggRecentModel *egg_recent_model_new_with_path (EggRecentModelSort sort, const gchar *file_path);
- 
- /* public methods */
- void     egg_recent_model_set_filter_mime_types (EggRecentModel *model,
---- gnome-panel/egg-recent-model.c	2005-08-16 02:54:28.000000000 -0400
-+++ gnome-panel/egg-recent-model.c	2006-03-13 17:35:04.000000000 -0500
-@@ -29,6 +29,7 @@
- #include <unistd.h>
- #include <fcntl.h>
- #include <sys/time.h>
-+#include <sys/stat.h>
- #include <time.h>
- #include <gtk/gtk.h>
- #include <libgnomevfs/gnome-vfs.h>
-@@ -37,12 +38,18 @@
- #include "egg-recent-model.h"
- #include "egg-recent-item.h"
- 
--#define EGG_RECENT_MODEL_FILE_PATH "/.recently-used"
-+#define EGG_RECENT_MODEL_DEFAULT_FILE_PATH ".recently-used"
- #define EGG_RECENT_MODEL_BUFFER_SIZE 8192
- 
- #define EGG_RECENT_MODEL_MAX_ITEMS 500
- #define EGG_RECENT_MODEL_DEFAULT_LIMIT 10
- #define EGG_RECENT_MODEL_TIMEOUT_LENGTH 200
-+#define EGG_RECENT_MODEL_POLL_TIME 3
-+
-+/* needed for Darwin */
-+#if !HAVE_DECL_LOCKF
-+int lockf (int filedes, int function, off_t size);
-+#endif
- 
- #define EGG_RECENT_MODEL_KEY_DIR "/desktop/gnome/recent_files"
- #define EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY EGG_RECENT_MODEL_KEY_DIR "/default_limit"
-@@ -71,6 +78,8 @@
- 	guint expiration_change_notify_id;
- 
- 	guint changed_timeout;
-+	guint poll_timeout;
-+	time_t last_mtime;
- };
- 
- /* signals */
-@@ -88,14 +97,15 @@
- 	PROP_GROUP_FILTERS,
- 	PROP_SCHEME_FILTERS,
- 	PROP_SORT_TYPE,
--	PROP_LIMIT
-+	PROP_LIMIT,
-+	PROP_FILE_PATH
- };
- 
- typedef struct {
- 	GSList *states;
- 	GList *items;
- 	EggRecentItem *current_item;
--}ParseInfo;
-+} ParseInfo;
- 
- typedef enum {
- 	STATE_START,
-@@ -109,10 +119,10 @@
- 	STATE_GROUP
- } ParseState;
- 
--typedef struct _ChangedData {
-+typedef struct {
- 	EggRecentModel *model;
- 	GList *list;
--}ChangedData;
-+} ChangedData;
- 
- #define TAG_RECENT_FILES "RecentFiles"
- #define TAG_RECENT_ITEM "RecentItem"
-@@ -304,17 +314,23 @@
- 
- 
- 
--static void
--parse_info_init (ParseInfo *info)
-+static ParseInfo *
-+parse_info_init (void)
- {
--	info->states = g_slist_prepend (NULL, STATE_START);
--	info->items = NULL;
-+	ParseInfo *retval;
-+	
-+	retval = g_new0 (ParseInfo, 1);
-+	retval->states = g_slist_prepend (NULL, STATE_START);
-+	retval->items = NULL;
-+	
-+	return retval;
- }
- 
- static void
- parse_info_free (ParseInfo *info)
- {
- 	g_slist_free (info->states);
-+	g_free (info);
- }
- 
- static void
-@@ -443,15 +459,22 @@
- 
- 	switch (peek_state (info)) {
- 		case STATE_RECENT_ITEM:
--			info->items = g_list_append (info->items,
--						    info->current_item);
--			if (info->current_item->uri == NULL ||
--			    strlen (info->current_item->uri) == 0)
--				g_warning ("URI NOT LOADED");
-+			if (!info->current_item) {
-+				g_warning ("No recent item found\n");
-+				break;
-+			}
-+
-+			if (!info->current_item->uri) {
-+				g_warning ("Invalid item found\n");
-+				break;
-+			}
-+				
-+			info->items = g_list_prepend (info->items,
-+			                              info->current_item);
- 			info->current_item = NULL;
--		break;
-+			break;
- 		default:
--		break;
-+			break;
- 	}
- 
- 	pop_state (info);
-@@ -566,23 +589,23 @@
- }
- 
- static GList *
--egg_recent_model_filter (EggRecentModel *model,
--				GList *list)
-+egg_recent_model_filter (EggRecentModel *model, GList *list)
- {
--	EggRecentItem *item;
- 	GList *newlist = NULL;
-+	GList *l;
- 	gchar *mime_type;
- 	gchar *uri;
- 
- 	g_return_val_if_fail (list != NULL, NULL);
- 
--	while (list) {
-+	for (l = list; l != NULL ; l = l->next) {
-+		EggRecentItem *item = (EggRecentItem *) l->data;
- 		gboolean pass_mime_test = FALSE;
- 		gboolean pass_group_test = FALSE;
- 		gboolean pass_scheme_test = FALSE;
--		item = (EggRecentItem *)list->data;
--		list = list->next;
- 
-+		g_assert (item != NULL);
-+		
- 		uri = egg_recent_item_get_uri (item);
- 
- 		/* filter by mime type */
-@@ -625,17 +648,15 @@
- 
- 		if (pass_mime_test && pass_group_test && pass_scheme_test)
- 			newlist = g_list_prepend (newlist, item);
-+		else
-+			egg_recent_item_unref (item);
- 
- 		g_free (uri);
- 	}
- 
--	if (newlist) {
--		newlist = g_list_reverse (newlist);
--		g_list_free (list);
--	}
-+	g_list_free (list);
- 
--	
--	return newlist;
-+	return g_list_reverse (newlist);
- }
- 
- 
-@@ -732,25 +753,60 @@
- 	}
- }
- 
-+static gboolean
-+egg_recent_model_poll_timeout (gpointer user_data)
-+{
-+	EggRecentModel *model;
-+	struct stat stat_buf;
-+	int stat_res;
-+
-+	model = EGG_RECENT_MODEL (user_data);
-+	stat_res = stat (model->priv->path, &stat_buf);
-+
-+	if (!stat_res && stat_buf.st_mtime &&  
-+	    stat_buf.st_mtime != model->priv->last_mtime) {
-+		model->priv->last_mtime = stat_buf.st_mtime;
-+		
-+		if (model->priv->changed_timeout > 0)
-+			g_source_remove (model->priv->changed_timeout);
-+		
-+		model->priv->changed_timeout = g_timeout_add (
-+			EGG_RECENT_MODEL_TIMEOUT_LENGTH,
-+			(GSourceFunc)egg_recent_model_changed_timeout,
-+			model);
-+	}
-+	return TRUE;
-+}
-+
- static void
- egg_recent_model_monitor (EggRecentModel *model, gboolean should_monitor)
- {
- 	if (should_monitor && model->priv->monitor == NULL) {
- 		char *uri;
-+		GnomeVFSResult result;
- 
- 		uri = gnome_vfs_get_uri_from_local_path (model->priv->path);
- 
--		gnome_vfs_monitor_add (&model->priv->monitor,
--				       uri,
--				       GNOME_VFS_MONITOR_FILE,
--				       egg_recent_model_monitor_cb,
--				       model);
-+		result = gnome_vfs_monitor_add (&model->priv->monitor,
-+				       		uri,
-+				       		GNOME_VFS_MONITOR_FILE,
-+				       		egg_recent_model_monitor_cb,
-+				       		model);
- 
- 		g_free (uri);
- 
- 		/* if the above fails, don't worry about it.
- 		 * local notifications will still happen
- 		 */
-+		if (result == GNOME_VFS_ERROR_NOT_SUPPORTED) {
-+			if (model->priv->poll_timeout > 0)
-+				g_source_remove (model->priv->poll_timeout);
-+			
-+			model->priv->poll_timeout = g_timeout_add (
-+				EGG_RECENT_MODEL_POLL_TIME * 1000,
-+				egg_recent_model_poll_timeout,
-+				model);
-+		}
- 
- 	} else if (!should_monitor && model->priv->monitor != NULL) {
- 		gnome_vfs_monitor_cancel (model->priv->monitor);
-@@ -777,7 +833,7 @@
- 	GList *list=NULL;
- 	gchar *content;
- 	GMarkupParseContext *ctx;
--	ParseInfo info;
-+	ParseInfo *info;
- 	GError *error;
- 
- 	content = egg_recent_model_read_raw (model, file);
-@@ -787,35 +843,39 @@
- 		return NULL;
- 	}
- 
--	parse_info_init (&info);
-+	info = parse_info_init ();
- 	
--	ctx = g_markup_parse_context_new (&parser, 0, &info, NULL);
-+	ctx = g_markup_parse_context_new (&parser, 0, info, NULL);
- 	
- 	error = NULL;
--	if (!g_markup_parse_context_parse (ctx, content, strlen (content),
--					   &error)) {
--		g_warning (error->message);
-+	if (!g_markup_parse_context_parse (ctx, content, strlen (content), &error)) {
-+		g_warning ("Error while parsing the .recently-used file: %s\n",
-+			   error->message);
-+		
- 		g_error_free (error);
--		error = NULL;
--		goto out;
-+		parse_info_free (info);
-+
-+		return NULL;
- 	}
- 
- 	error = NULL;
--	if (!g_markup_parse_context_end_parse (ctx, &error))
--		goto out;
--	
--	g_markup_parse_context_free (ctx);
--out:
--	list = info.items;
-+	if (!g_markup_parse_context_end_parse (ctx, &error)) {
-+		g_warning ("Unable to complete parsing of the .recently-used file: %s\n",
-+			   error->message);
-+		
-+		g_error_free (error);
-+		g_markup_parse_context_free (ctx);
-+		parse_info_free (info);
- 
--	parse_info_free (&info);
-+		return NULL;
-+	}
-+	
-+	list = g_list_reverse (info->items);
- 
-+	g_markup_parse_context_free (ctx);
-+	parse_info_free (info);
- 	g_free (content);
- 
--	/*
--	g_print ("Total items: %d\n", g_list_length (list));
--	*/
--
- 	return list;
- }
- 
-@@ -942,7 +1002,7 @@
- static gboolean
- egg_recent_model_lock_file (FILE *file)
- {
--#ifdef F_TLOCK
-+#ifdef HAVE_LOCKF
- 	int fd;
- 	gint	try = 5;
- 
-@@ -974,13 +1034,13 @@
- 	return FALSE;
- #else
- 	return TRUE;
--#endif
-+#endif /* HAVE_LOCKF */
- }
- 
- static gboolean
- egg_recent_model_unlock_file (FILE *file)
- {
--#ifdef F_TLOCK
-+#ifdef HAVE_LOCKF
- 	int fd;
- 
- 	rewind (file);
-@@ -989,7 +1049,7 @@
- 	return (lockf (fd, F_ULOCK, 0) == 0) ? TRUE : FALSE;
- #else
- 	return TRUE;
--#endif
-+#endif /* HAVE_LOCKF */
- }
- 
- static void
-@@ -1040,6 +1100,9 @@
- 	g_hash_table_destroy (model->priv->monitors);
- 	model->priv->monitors = NULL;
- 
-+	if (model->priv->poll_timeout > 0)
-+		g_source_remove (model->priv->poll_timeout);
-+	model->priv->poll_timeout =0;
- 
- 	g_free (model->priv);
- 
-@@ -1084,6 +1147,14 @@
- 			model->priv->sort_type = g_value_get_int (value);
- 		break;
- 
-+		case PROP_FILE_PATH:
-+			model->priv->path = g_strdup_printf (
-+				"%s/%s",
-+				g_get_home_dir (),
-+				g_value_get_string (value)
-+			);
-+		break;
-+
- 		case PROP_LIMIT:
- 			egg_recent_model_set_limit (model,
- 						g_value_get_int (value));
-@@ -1121,6 +1192,10 @@
- 			g_value_set_int (value, model->priv->sort_type);
- 		break;
- 
-+		case PROP_FILE_PATH:
-+			g_value_set_string (value, model->priv->path);
-+		break;
-+
- 		case PROP_LIMIT:
- 			g_value_set_int (value, model->priv->limit);
- 		break;
-@@ -1186,6 +1261,14 @@
- 					 G_PARAM_READWRITE));
- 
- 	g_object_class_install_property (object_class,
-+					 PROP_FILE_PATH,
-+					 g_param_spec_string ("file-path",
-+					 "File Path",
-+					 "File path relative to $HOME.",
-+					 EGG_RECENT_MODEL_DEFAULT_FILE_PATH,
-+					 G_PARAM_READWRITE));
-+
-+	g_object_class_install_property (object_class,
- 					 PROP_LIMIT,
- 					 g_param_spec_int ("limit",
- 					 "Limit",
-@@ -1246,9 +1329,6 @@
- 
- 	model->priv = g_new0 (EggRecentModelPrivate, 1);
- 
--	model->priv->path = g_strdup_printf ("%s" EGG_RECENT_MODEL_FILE_PATH,
--					     g_get_home_dir ());
--
- 	model->priv->mime_filter_values   = NULL;
- 	model->priv->group_filter_values  = NULL;
- 	model->priv->scheme_filter_values = NULL;
-@@ -1290,6 +1370,8 @@
- 					(GDestroyNotify) gnome_vfs_monitor_cancel);
- 
- 	model->priv->monitor = NULL;
-+	model->priv->poll_timeout = 0;
-+	model->priv->last_mtime = 0;
- 	egg_recent_model_monitor (model, TRUE);
- }
- 
-@@ -1306,10 +1388,19 @@
- EggRecentModel *
- egg_recent_model_new (EggRecentModelSort sort)
- {
-+	return egg_recent_model_new_with_path (sort, EGG_RECENT_MODEL_DEFAULT_FILE_PATH);
-+}
-+
-+EggRecentModel *
-+egg_recent_model_new_with_path (EggRecentModelSort sort, const gchar *file_path)
-+{
- 	EggRecentModel *model;
- 
-+	if (! file_path)
-+		file_path = EGG_RECENT_MODEL_DEFAULT_FILE_PATH;
-+
- 	model = EGG_RECENT_MODEL (g_object_new (egg_recent_model_get_type (),
--				  "sort-type", sort, NULL));
-+				  "sort-type", sort, "file-path", file_path, NULL));
- 
- 	g_return_val_if_fail (model, NULL);
- 
-@@ -1508,16 +1599,15 @@
- egg_recent_model_get_list (EggRecentModel *model)
- {
- 	FILE *file;
--	GList *list=NULL;
-+	GList *list = NULL;
- 
- 	file = egg_recent_model_open_file (model, FALSE);
- 	if (file == NULL)
- 		return NULL;
- 	
--	if (egg_recent_model_lock_file (file)) {
-+	if (egg_recent_model_lock_file (file))
- 		list = egg_recent_model_read (model, file);
--		
--	} else {
-+	else {
- 		g_warning ("Failed to lock:  %s", strerror (errno));
- 		fclose (file);
- 		return NULL;
-@@ -1604,6 +1694,13 @@
- 		g_warning ("Failed to unlock: %s", strerror (errno));
- 
- 	fclose (file);
-+	
-+	if (model->priv->monitor == NULL) {
-+		/* since monitoring isn't working, at least give a
-+		 * local notification
-+		 */
-+		egg_recent_model_changed (model);
-+	}
- }
- 
- static void

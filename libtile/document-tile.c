@@ -32,6 +32,8 @@
 
 #include "slab-gnome-util.h"
 #include "gnome-utils.h"
+
+#define EGG_ENABLE_RECENT_FILES
 #include "egg-recent-model.h"
 
 #define GCONF_SEND_TO_CMD_KEY       "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
@@ -98,7 +100,7 @@ static void document_tile_class_init (DocumentTileClass * this_class)
 }
 
 GtkWidget *
-document_tile_new (EggRecentItem * recent_item)
+document_tile_new (EggRecentItem *recent_item)
 {
 	DocumentTile *this;
 	DocumentTilePrivate *priv;
@@ -511,7 +513,7 @@ rename_entry_activate_cb (GtkEntry * entry, gpointer user_data)
 
 	if (retval == GNOME_VFS_OK)
 	{
-		recent_model = egg_recent_model_new (NULL, EGG_RECENT_MODEL_SORT_MRU);
+		recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
 
 		egg_recent_model_delete (recent_model, TILE (tile)->uri);
 		egg_recent_model_add (recent_model, dst_uri_str);
@@ -714,7 +716,7 @@ move_to_trash_trigger (Tile * tile, TileEvent * event, TileAction * action)
 
 	if (retval == GNOME_VFS_OK)
 	{
-		recent_model = egg_recent_model_new (NULL, EGG_RECENT_MODEL_SORT_MRU);
+		recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
 
 		egg_recent_model_delete (recent_model, TILE (tile)->uri);
 
@@ -755,7 +757,7 @@ delete_trigger (Tile * tile, TileEvent * event, TileAction * action)
 
 	if (retval == GNOME_VFS_OK)
 	{
-		recent_model = egg_recent_model_new (NULL, EGG_RECENT_MODEL_SORT_MRU);
+		recent_model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
 
 		egg_recent_model_delete (recent_model, TILE (tile)->uri);
 

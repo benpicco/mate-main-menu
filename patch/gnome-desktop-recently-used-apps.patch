@@ -1,6 +1,26 @@
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.c ./libgnome-desktop/egg-recent-item.c
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.c	1969-12-31 19:00:00.000000000 -0500
-+++ ./libgnome-desktop/egg-recent-item.c	2006-05-08 16:18:44.000000000 -0400
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/Makefile.am gnome-desktop-2.12.2/libgnome-desktop/Makefile.am
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/Makefile.am	2004-11-18 12:42:53.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/Makefile.am	2006-10-17 16:43:21.000000000 -0400
+@@ -16,9 +16,13 @@ lib_LTLIBRARIES = libgnome-desktop-2.la
+ 
+ noinst_PROGRAMS = test-ditem test-hint test-ditem-edit
+ 
+-libgnome_desktop_2_la_SOURCES = \
+-	gnome-desktop-item.c	\
+-	gnome-ditem-edit.c	\
++libgnome_desktop_2_la_SOURCES =		\
++	gnome-desktop-item.c		\
++	gnome-ditem-edit.c		\
++	egg-recent-item.h		\
++	egg-recent-item.c		\
++	egg-recent-model.h		\
++	egg-recent-model.c		\
+ 	gnome-hint.c
+ 
+ libgnome_desktop_2_la_LIBADD = \
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-item.c gnome-desktop-2.12.2/libgnome-desktop/egg-recent-item.c
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-item.c	1969-12-31 19:00:00.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/egg-recent-item.c	2006-10-17 16:37:04.000000000 -0400
 @@ -0,0 +1,426 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 +/*
@@ -428,9 +448,9 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.c ./
 +	
 +	return boxed_type;
 +}
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.h ./libgnome-desktop/egg-recent-item.h
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.h	1969-12-31 19:00:00.000000000 -0500
-+++ ./libgnome-desktop/egg-recent-item.h	2006-05-08 16:18:44.000000000 -0400
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-item.h gnome-desktop-2.12.2/libgnome-desktop/egg-recent-item.h
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-item.h	1969-12-31 19:00:00.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/egg-recent-item.h	2006-10-17 16:37:04.000000000 -0400
 @@ -0,0 +1,80 @@
 +
 +#ifndef __EGG_RECENT_ITEM_H__
@@ -512,10 +532,10 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-item.h ./
 +G_END_DECLS
 +
 +#endif /* __EGG_RECENT_ITEM_H__ */
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-multi.c ./libgnome-desktop/egg-recent-model-multi.c
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-multi.c	1969-12-31 19:00:00.000000000 -0500
-+++ ./libgnome-desktop/egg-recent-model-multi.c	2006-05-08 17:03:13.000000000 -0400
-@@ -0,0 +1,1990 @@
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-model.c gnome-desktop-2.12.2/libgnome-desktop/egg-recent-model.c
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-model.c	1969-12-31 19:00:00.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/egg-recent-model.c	2006-10-17 16:52:31.000000000 -0400
+@@ -0,0 +1,1965 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 +/*
 + * This program is free software; you can redistribute it and/or modify
@@ -553,32 +573,34 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +#include <libgnomevfs/gnome-vfs.h>
 +#include <libgnomevfs/gnome-vfs-mime-utils.h>
 +#include <gconf/gconf-client.h>
-+#include "egg-recent-model-multi.h"
++
++#define EGG_ENABLE_RECENT_FILES
++#include "egg-recent-model.h"
 +#include "egg-recent-item.h"
 +
-+#define EGG_RECENT_MODEL_MULTI_DEFAULT_FILE_PATH ".recently-used"
-+#define EGG_RECENT_MODEL_MULTI_BUFFER_SIZE 8192
++#define EGG_RECENT_MODEL_FILE_PATH "/.recently-used"
++#define EGG_RECENT_MODEL_BUFFER_SIZE 8192
 +
-+#define EGG_RECENT_MODEL_MULTI_MAX_ITEMS 500
-+#define EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT 10
-+#define EGG_RECENT_MODEL_MULTI_TIMEOUT_LENGTH 200
-+#define EGG_RECENT_MODEL_MULTI_POLL_TIME 3
++#define EGG_RECENT_MODEL_MAX_ITEMS 500
++#define EGG_RECENT_MODEL_DEFAULT_LIMIT 10
++#define EGG_RECENT_MODEL_TIMEOUT_LENGTH 200
++#define EGG_RECENT_MODEL_POLL_TIME 3
 +
 +/* needed for Darwin */
 +#if !HAVE_DECL_LOCKF
 +int lockf (int filedes, int function, off_t size);
 +#endif
 +
-+#define EGG_RECENT_MODEL_MULTI_KEY_DIR "/desktop/gnome/recent_files"
-+#define EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT_KEY EGG_RECENT_MODEL_MULTI_KEY_DIR "/default_limit"
-+#define EGG_RECENT_MODEL_MULTI_EXPIRE_KEY EGG_RECENT_MODEL_MULTI_KEY_DIR "/expire"
++#define EGG_RECENT_MODEL_KEY_DIR "/desktop/gnome/recent_files"
++#define EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY EGG_RECENT_MODEL_KEY_DIR "/default_limit"
++#define EGG_RECENT_MODEL_EXPIRE_KEY EGG_RECENT_MODEL_KEY_DIR "/expire"
 +
-+struct _EggRecentModelMultiPrivate {
++struct _EggRecentModelPrivate {
 +	GSList *mime_filter_values;	/* list of mime types we allow */
 +	GSList *group_filter_values;	/* list of groups we allow */
 +	GSList *scheme_filter_values;	/* list of URI schemes we allow */
 +
-+	EggRecentModelMultiSort sort_type; /* type of sorting to be done */
++	EggRecentModelSort sort_type; /* type of sorting to be done */
 +
 +	int limit;			/* soft limit for length of the list */
 +	int expire_days;		/* number of days to hold an item */
@@ -615,8 +637,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	PROP_GROUP_FILTERS,
 +	PROP_SCHEME_FILTERS,
 +	PROP_SORT_TYPE,
-+	PROP_LIMIT,
-+	PROP_FILE_PATH
++	PROP_LIMIT
 +};
 +
 +typedef struct {
@@ -638,7 +659,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +} ParseState;
 +
 +typedef struct {
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
 +	GList *list;
 +} ChangedData;
 +
@@ -680,14 +701,14 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +static GObjectClass *parent_class;
 +
-+static void egg_recent_model_multi_clear_mime_filter (EggRecentModelMulti *model);
-+static void egg_recent_model_multi_clear_group_filter (EggRecentModelMulti *model);
-+static void egg_recent_model_multi_clear_scheme_filter (EggRecentModelMulti *model);
++static void egg_recent_model_clear_mime_filter (EggRecentModel *model);
++static void egg_recent_model_clear_group_filter (EggRecentModel *model);
++static void egg_recent_model_clear_scheme_filter (EggRecentModel *model);
 +
 +static GObjectClass *parent_class;
 +
 +static gboolean
-+egg_recent_model_multi_string_match (const GSList *list, const gchar *str)
++egg_recent_model_string_match (const GSList *list, const gchar *str)
 +{
 +	const GSList *tmp;
 +
@@ -707,7 +728,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gboolean
-+egg_recent_model_multi_write_raw (EggRecentModelMulti *model, FILE *file,
++egg_recent_model_write_raw (EggRecentModel *model, FILE *file,
 +			      const gchar *content)
 +{
 +	int len;
@@ -738,7 +759,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static GList *
-+egg_recent_model_multi_delete_from_list (GList *list,
++egg_recent_model_delete_from_list (GList *list,
 +				       const gchar *uri)
 +{
 +	GList *tmp;
@@ -768,7 +789,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_add_new_groups (EggRecentItem *item,
++egg_recent_model_add_new_groups (EggRecentItem *item,
 +				 EggRecentItem *upd_item)
 +{
 +	const GList *tmp;
@@ -786,7 +807,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gboolean
-+egg_recent_model_multi_update_item (GList *items, EggRecentItem *upd_item)
++egg_recent_model_update_item (GList *items, EggRecentItem *upd_item)
 +{
 +	GList      *tmp;
 +	const char *uri;
@@ -801,7 +822,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		if (gnome_vfs_uris_match (egg_recent_item_peek_uri (item), uri)) {
 +			egg_recent_item_set_timestamp (item, (time_t) -1);
 +
-+			egg_recent_model_multi_add_new_groups (item, upd_item);
++			egg_recent_model_add_new_groups (item, upd_item);
 +
 +			return TRUE;
 +		}
@@ -813,15 +834,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gchar *
-+egg_recent_model_multi_read_raw (EggRecentModelMulti *model, FILE *file)
++egg_recent_model_read_raw (EggRecentModel *model, FILE *file)
 +{
 +	GString *string;
-+	char buf[EGG_RECENT_MODEL_MULTI_BUFFER_SIZE];
++	char buf[EGG_RECENT_MODEL_BUFFER_SIZE];
 +
 +	rewind (file);
 +
 +	string = g_string_new (NULL);
-+	while (fgets (buf, EGG_RECENT_MODEL_MULTI_BUFFER_SIZE, file)) {
++	while (fgets (buf, EGG_RECENT_MODEL_BUFFER_SIZE, file)) {
 +		string = g_string_append (string, buf);
 +	}
 +
@@ -1045,7 +1066,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_enforce_limit (GList *list, int limit)
++egg_recent_model_enforce_limit (GList *list, int limit)
 +{
 +	int len;
 +	GList *end;
@@ -1069,18 +1090,18 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static GList *
-+egg_recent_model_multi_sort (EggRecentModelMulti *model, GList *list)
++egg_recent_model_sort (EggRecentModel *model, GList *list)
 +{
 +	switch (model->priv->sort_type) {
-+		case EGG_RECENT_MODEL_MULTI_SORT_MRU:
++		case EGG_RECENT_MODEL_SORT_MRU:
 +			list = g_list_sort (list,
 +					(GCompareFunc)list_compare_func_mru);	
 +		break;
-+		case EGG_RECENT_MODEL_MULTI_SORT_LRU:
++		case EGG_RECENT_MODEL_SORT_LRU:
 +			list = g_list_sort (list,
 +					(GCompareFunc)list_compare_func_lru);
 +		break;
-+		case EGG_RECENT_MODEL_MULTI_SORT_NONE:
++		case EGG_RECENT_MODEL_SORT_NONE:
 +		break;
 +	}
 +
@@ -1088,7 +1109,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gboolean
-+egg_recent_model_multi_group_match (EggRecentItem *item, GSList *groups)
++egg_recent_model_group_match (EggRecentItem *item, GSList *groups)
 +{
 +	GSList *tmp;
 +
@@ -1107,7 +1128,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static GList *
-+egg_recent_model_multi_filter (EggRecentModelMulti *model, GList *list)
++egg_recent_model_filter (EggRecentModel *model, GList *list)
 +{
 +	GList *newlist = NULL;
 +	GList *l;
@@ -1130,7 +1151,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		if (model->priv->mime_filter_values != NULL) {
 +			mime_type = egg_recent_item_get_mime_type (item);
 +
-+			if (egg_recent_model_multi_string_match
++			if (egg_recent_model_string_match
 +					(model->priv->mime_filter_values,
 +					 mime_type))
 +				pass_mime_test = TRUE;
@@ -1141,7 +1162,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +		/* filter by group */
 +		if (pass_mime_test && model->priv->group_filter_values != NULL) {
-+			if (egg_recent_model_multi_group_match
++			if (egg_recent_model_group_match
 +					(item, model->priv->group_filter_values))
 +				pass_group_test = TRUE;
 +		} else if (egg_recent_item_get_private (item)) {
@@ -1156,7 +1177,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +			
 +			scheme = gnome_vfs_get_uri_scheme (uri);
 +
-+			if (egg_recent_model_multi_string_match
++			if (egg_recent_model_string_match
 +				(model->priv->scheme_filter_values, scheme))
 +				pass_scheme_test = TRUE;
 +
@@ -1181,18 +1202,18 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +#if 0
 +static void
-+egg_recent_model_multi_monitor_list_cb (GnomeVFSMonitorHandle *handle,
++egg_recent_model_monitor_list_cb (GnomeVFSMonitorHandle *handle,
 +			       const gchar *monitor_uri,
 +			       const gchar *info_uri,
 +			       GnomeVFSMonitorEventType event_type,
 +			       gpointer user_data)
 +{
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
 +
-+	model = EGG_RECENT_MODEL_MULTI (user_data);
++	model = EGG_RECENT_MODEL (user_data);
 +
 +	if (event_type == GNOME_VFS_MONITOR_EVENT_DELETED) {
-+		egg_recent_model_multi_delete (model, monitor_uri);
++		egg_recent_model_delete (model, monitor_uri);
 +		g_hash_table_remove (model->priv->monitors, monitor_uri);
 +	}
 +}
@@ -1200,7 +1221,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +static void
-+egg_recent_model_multi_monitor_list (EggRecentModelMulti *model, GList *list)
++egg_recent_model_monitor_list (EggRecentModel *model, GList *list)
 +{
 +	GList *tmp;
 +
@@ -1222,7 +1243,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +		res = gnome_vfs_monitor_add (&handle, uri,
 +					     GNOME_VFS_MONITOR_FILE,
-+					     egg_recent_model_multi_monitor_list_cb,
++					     egg_recent_model_monitor_list_cb,
 +					     model);
 +		
 +		if (res == GNOME_VFS_OK)
@@ -1235,27 +1256,27 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +static gboolean
-+egg_recent_model_multi_changed_timeout (EggRecentModelMulti *model)
++egg_recent_model_changed_timeout (EggRecentModel *model)
 +{
 +	model->priv->changed_timeout = 0;
 +
-+	egg_recent_model_multi_changed (model);
++	egg_recent_model_changed (model);
 +
 +	return FALSE;
 +}
 +
 +static void
-+egg_recent_model_multi_monitor_cb (GnomeVFSMonitorHandle *handle,
++egg_recent_model_monitor_cb (GnomeVFSMonitorHandle *handle,
 +			       const gchar *monitor_uri,
 +			       const gchar *info_uri,
 +			       GnomeVFSMonitorEventType event_type,
 +			       gpointer user_data)
 +{
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
 +
 +	g_return_if_fail (user_data != NULL);
-+	g_return_if_fail (EGG_IS_RECENT_MODEL_MULTI (user_data));
-+	model = EGG_RECENT_MODEL_MULTI (user_data);
++	g_return_if_fail (EGG_IS_RECENT_MODEL (user_data));
++	model = EGG_RECENT_MODEL (user_data);
 +
 +	if (event_type == GNOME_VFS_MONITOR_EVENT_CHANGED ||
 +	    event_type == GNOME_VFS_MONITOR_EVENT_CREATED ||
@@ -1265,20 +1286,20 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		}
 +
 +		model->priv->changed_timeout = g_timeout_add (
-+			EGG_RECENT_MODEL_MULTI_TIMEOUT_LENGTH,
-+			(GSourceFunc)egg_recent_model_multi_changed_timeout,
++			EGG_RECENT_MODEL_TIMEOUT_LENGTH,
++			(GSourceFunc)egg_recent_model_changed_timeout,
 +			model);
 +	}
 +}
 +
 +static gboolean
-+egg_recent_model_multi_poll_timeout (gpointer user_data)
++egg_recent_model_poll_timeout (gpointer user_data)
 +{
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
 +	struct stat stat_buf;
 +	int stat_res;
 +
-+	model = EGG_RECENT_MODEL_MULTI (user_data);
++	model = EGG_RECENT_MODEL (user_data);
 +	stat_res = stat (model->priv->path, &stat_buf);
 +
 +	if (!stat_res && stat_buf.st_mtime &&  
@@ -1289,15 +1310,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +			g_source_remove (model->priv->changed_timeout);
 +		
 +		model->priv->changed_timeout = g_timeout_add (
-+			EGG_RECENT_MODEL_MULTI_TIMEOUT_LENGTH,
-+			(GSourceFunc)egg_recent_model_multi_changed_timeout,
++			EGG_RECENT_MODEL_TIMEOUT_LENGTH,
++			(GSourceFunc)egg_recent_model_changed_timeout,
 +			model);
 +	}
 +	return TRUE;
 +}
 +
 +static void
-+egg_recent_model_multi_monitor (EggRecentModelMulti *model, gboolean should_monitor)
++egg_recent_model_monitor (EggRecentModel *model, gboolean should_monitor)
 +{
 +	if (should_monitor && model->priv->monitor == NULL) {
 +		char *uri;
@@ -1308,7 +1329,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		result = gnome_vfs_monitor_add (&model->priv->monitor,
 +				       		uri,
 +				       		GNOME_VFS_MONITOR_FILE,
-+				       		egg_recent_model_multi_monitor_cb,
++				       		egg_recent_model_monitor_cb,
 +				       		model);
 +
 +		g_free (uri);
@@ -1321,8 +1342,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +				g_source_remove (model->priv->poll_timeout);
 +			
 +			model->priv->poll_timeout = g_timeout_add (
-+				EGG_RECENT_MODEL_MULTI_POLL_TIME * 1000,
-+				egg_recent_model_multi_poll_timeout,
++				EGG_RECENT_MODEL_POLL_TIME * 1000,
++				egg_recent_model_poll_timeout,
 +				model);
 +		}
 +
@@ -1333,20 +1354,20 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_set_limit_internal (EggRecentModelMulti *model, int limit)
++egg_recent_model_set_limit_internal (EggRecentModel *model, int limit)
 +{
 +	model->priv->limit = limit;
 +
 +	if (limit <= 0)
-+		egg_recent_model_multi_monitor (model, FALSE);
++		egg_recent_model_monitor (model, FALSE);
 +	else {
-+		egg_recent_model_multi_monitor (model, TRUE);
-+		egg_recent_model_multi_changed (model);
++		egg_recent_model_monitor (model, TRUE);
++		egg_recent_model_changed (model);
 +	}
 +}
 +
 +static GList *
-+egg_recent_model_multi_read (EggRecentModelMulti *model, FILE *file)
++egg_recent_model_read (EggRecentModel *model, FILE *file)
 +{
 +	GList *list=NULL;
 +	gchar *content;
@@ -1354,7 +1375,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	ParseInfo *info;
 +	GError *error;
 +
-+	content = egg_recent_model_multi_read_raw (model, file);
++	content = egg_recent_model_read_raw (model, file);
 +
 +	if (strlen (content) <= 0) {
 +		g_free (content);
@@ -1399,7 +1420,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +static gboolean
-+egg_recent_model_multi_write (EggRecentModelMulti *model, FILE *file, GList *list)
++egg_recent_model_write (EggRecentModel *model, FILE *file, GList *list)
 +{
 +	GString *string;
 +	gchar *data;
@@ -1488,7 +1509,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +	data = g_string_free (string, FALSE);
 +
-+	ret = egg_recent_model_multi_write_raw (model, file, data);
++	ret = egg_recent_model_write_raw (model, file, data);
 +
 +	g_free (data);
 +
@@ -1496,7 +1517,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static FILE *
-+egg_recent_model_multi_open_file (EggRecentModelMulti *model,
++egg_recent_model_open_file (EggRecentModel *model,
 +			    gboolean        for_writing)
 +{
 +	FILE *file;
@@ -1518,7 +1539,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gboolean
-+egg_recent_model_multi_lock_file (FILE *file)
++egg_recent_model_lock_file (FILE *file)
 +{
 +#ifdef HAVE_LOCKF
 +	int fd;
@@ -1556,7 +1577,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static gboolean
-+egg_recent_model_multi_unlock_file (FILE *file)
++egg_recent_model_unlock_file (FILE *file)
 +{
 +#ifdef HAVE_LOCKF
 +	int fd;
@@ -1571,15 +1592,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_finalize (GObject *object)
++egg_recent_model_finalize (GObject *object)
 +{
-+	EggRecentModelMulti *model = EGG_RECENT_MODEL_MULTI (object);
++	EggRecentModel *model = EGG_RECENT_MODEL (object);
 +
 +	if (model->priv->changed_timeout > 0) {
 +		g_source_remove (model->priv->changed_timeout);
 +	}
 +
-+	egg_recent_model_multi_monitor (model, FALSE);
++	egg_recent_model_monitor (model, FALSE);
 +
 +
 +	g_slist_foreach (model->priv->mime_filter_values,
@@ -1628,18 +1649,18 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_set_property (GObject *object,
++egg_recent_model_set_property (GObject *object,
 +			       guint prop_id,
 +			       const GValue *value,
 +			       GParamSpec *pspec)
 +{
-+	EggRecentModelMulti *model = EGG_RECENT_MODEL_MULTI (object);
++	EggRecentModel *model = EGG_RECENT_MODEL (object);
 +
 +	switch (prop_id)
 +	{
 +		case PROP_MIME_FILTERS:
 +			if (model->priv->mime_filter_values != NULL)
-+				egg_recent_model_multi_clear_mime_filter (model);
++				egg_recent_model_clear_mime_filter (model);
 +			
 +			model->priv->mime_filter_values =
 +				(GSList *)g_value_get_pointer (value);
@@ -1647,7 +1668,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +		case PROP_GROUP_FILTERS:
 +			if (model->priv->group_filter_values != NULL)
-+				egg_recent_model_multi_clear_group_filter (model);
++				egg_recent_model_clear_group_filter (model);
 +			
 +			model->priv->group_filter_values =
 +				(GSList *)g_value_get_pointer (value);
@@ -1655,7 +1676,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +		case PROP_SCHEME_FILTERS:
 +			if (model->priv->scheme_filter_values != NULL)
-+				egg_recent_model_multi_clear_scheme_filter (model);
++				egg_recent_model_clear_scheme_filter (model);
 +			
 +			model->priv->scheme_filter_values =
 +				(GSList *)g_value_get_pointer (value);
@@ -1665,17 +1686,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +			model->priv->sort_type = g_value_get_int (value);
 +		break;
 +
-+		case PROP_FILE_PATH:
-+			model->priv->path = g_strdup_printf (
-+				"%s/%s",
-+				g_get_home_dir (),
-+				g_value_get_string (value)
-+			);
-+			egg_recent_model_multi_monitor (model, TRUE);
-+		break;
-+
 +		case PROP_LIMIT:
-+			egg_recent_model_multi_set_limit (model,
++			egg_recent_model_set_limit (model,
 +						g_value_get_int (value));
 +		break;
 +
@@ -1686,12 +1698,12 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_get_property (GObject *object,
++egg_recent_model_get_property (GObject *object,
 +			       guint prop_id,
 +			       GValue *value,
 +			       GParamSpec *pspec)
 +{
-+	EggRecentModelMulti *model = EGG_RECENT_MODEL_MULTI (object);
++	EggRecentModel *model = EGG_RECENT_MODEL (object);
 +
 +	switch (prop_id)
 +	{
@@ -1711,10 +1723,6 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +			g_value_set_int (value, model->priv->sort_type);
 +		break;
 +
-+		case PROP_FILE_PATH:
-+			g_value_set_string (value, model->priv->path);
-+		break;
-+
 +		case PROP_LIMIT:
 +			g_value_set_int (value, model->priv->limit);
 +		break;
@@ -1726,7 +1734,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_class_init (EggRecentModelMultiClass * klass)
++egg_recent_model_class_init (EggRecentModelClass * klass)
 +{
 +	GObjectClass *object_class;
 +
@@ -1735,14 +1743,14 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	parent_class = g_type_class_peek_parent (klass);
 +
 +	object_class = G_OBJECT_CLASS (klass);
-+	object_class->set_property = egg_recent_model_multi_set_property;
-+	object_class->get_property = egg_recent_model_multi_get_property;
-+	object_class->finalize     = egg_recent_model_multi_finalize;
++	object_class->set_property = egg_recent_model_set_property;
++	object_class->get_property = egg_recent_model_get_property;
++	object_class->finalize     = egg_recent_model_finalize;
 +
 +	model_signals[CHANGED] = g_signal_new ("changed",
 +			G_OBJECT_CLASS_TYPE (object_class),
 +			G_SIGNAL_RUN_LAST,
-+			G_STRUCT_OFFSET (EggRecentModelMultiClass, changed),
++			G_STRUCT_OFFSET (EggRecentModelClass, changed),
 +			NULL, NULL,
 +			g_cclosure_marshal_VOID__POINTER,
 +			G_TYPE_NONE, 1,
@@ -1775,25 +1783,17 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +					 g_param_spec_int ("sort-type",
 +					 "Sort Type",
 +					 "Type of sorting to be done.",
-+					 0, EGG_RECENT_MODEL_MULTI_SORT_NONE,
-+					 EGG_RECENT_MODEL_MULTI_SORT_MRU,
++					 0, EGG_RECENT_MODEL_SORT_NONE,
++					 EGG_RECENT_MODEL_SORT_MRU,
 +					 G_PARAM_READWRITE));
-+
-+	g_object_class_install_property (object_class,
-+					 PROP_FILE_PATH,
-+					 g_param_spec_string ("file-path",
-+					 "File Path",
-+					 "File path relative to $HOME.",
-+					 EGG_RECENT_MODEL_MULTI_DEFAULT_FILE_PATH,
-+					 G_PARAM_READWRITE|G_PARAM_CONSTRUCT_ONLY));
 +
 +	g_object_class_install_property (object_class,
 +					 PROP_LIMIT,
 +					 g_param_spec_int ("limit",
 +					 "Limit",
 +					 "Max number of items allowed.",
-+					 -1, EGG_RECENT_MODEL_MULTI_MAX_ITEMS,
-+					 EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT,
++					 -1, EGG_RECENT_MODEL_MAX_ITEMS,
++					 EGG_RECENT_MODEL_DEFAULT_LIMIT,
 +					 G_PARAM_READWRITE));
 +
 +	klass->changed = NULL;
@@ -1802,13 +1802,13 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +static void
-+egg_recent_model_multi_limit_changed (GConfClient *client, guint cnxn_id,
++egg_recent_model_limit_changed (GConfClient *client, guint cnxn_id,
 +				GConfEntry *entry, gpointer user_data)
 +{
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
 +	GConfValue *value;
 +
-+	model = EGG_RECENT_MODEL_MULTI (user_data);
++	model = EGG_RECENT_MODEL (user_data);
 +
 +	g_return_if_fail (model != NULL);
 +
@@ -1827,18 +1827,18 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	}
 +
 +
-+	egg_recent_model_multi_set_limit_internal (model, gconf_value_get_int (value));
++	egg_recent_model_set_limit_internal (model, gconf_value_get_int (value));
 +}
 +
 +static void
-+egg_recent_model_multi_expiration_changed (GConfClient *client, guint cnxn_id,
++egg_recent_model_expiration_changed (GConfClient *client, guint cnxn_id,
 +				     GConfEntry *entry, gpointer user_data)
 +{
 +
 +}
 +
 +static void
-+egg_recent_model_multi_init (EggRecentModelMulti * model)
++egg_recent_model_init (EggRecentModel * model)
 +{
 +	if (!gnome_vfs_init ()) {
 +		g_warning ("gnome-vfs initialization failed.");
@@ -1846,41 +1846,44 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	}
 +	
 +
-+	model->priv = g_new0 (EggRecentModelMultiPrivate, 1);
++	model->priv = g_new0 (EggRecentModelPrivate, 1);
++
++	model->priv->path = g_strdup_printf ("%s" EGG_RECENT_MODEL_FILE_PATH,
++					     g_get_home_dir ());
 +
 +	model->priv->mime_filter_values   = NULL;
 +	model->priv->group_filter_values  = NULL;
 +	model->priv->scheme_filter_values = NULL;
 +	
 +	model->priv->client = gconf_client_get_default ();
-+	gconf_client_add_dir (model->priv->client, EGG_RECENT_MODEL_MULTI_KEY_DIR,
++	gconf_client_add_dir (model->priv->client, EGG_RECENT_MODEL_KEY_DIR,
 +			      GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
 +
 +	model->priv->limit_change_notify_id =
 +			gconf_client_notify_add (model->priv->client,
-+						 EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT_KEY,
-+						 egg_recent_model_multi_limit_changed,
++						 EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY,
++						 egg_recent_model_limit_changed,
 +						 model, NULL, NULL);
 +
 +	model->priv->expiration_change_notify_id =
 +			gconf_client_notify_add (model->priv->client,
-+						 EGG_RECENT_MODEL_MULTI_EXPIRE_KEY,
-+						 egg_recent_model_multi_expiration_changed,
++						 EGG_RECENT_MODEL_EXPIRE_KEY,
++						 egg_recent_model_expiration_changed,
 +						 model, NULL, NULL);
 +
 +	model->priv->expire_days = gconf_client_get_int (
 +					model->priv->client,
-+					EGG_RECENT_MODEL_MULTI_EXPIRE_KEY,
++					EGG_RECENT_MODEL_EXPIRE_KEY,
 +					NULL);
 +					
 +#if 0
 +	/* keep this out, for now */
 +	model->priv->limit = gconf_client_get_int (
 +					model->priv->client,
-+					EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT_KEY, NULL);
++					EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY, NULL);
 +	model->priv->use_default_limit = TRUE;
 +#endif
-+	model->priv->limit = EGG_RECENT_MODEL_MULTI_DEFAULT_LIMIT;
++	model->priv->limit = EGG_RECENT_MODEL_DEFAULT_LIMIT;
 +	model->priv->use_default_limit = FALSE;
 +
 +	model->priv->monitors = g_hash_table_new_full (
@@ -1891,34 +1894,26 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	model->priv->monitor = NULL;
 +	model->priv->poll_timeout = 0;
 +	model->priv->last_mtime = 0;
++	egg_recent_model_monitor (model, TRUE);
 +}
 +
 +
 +/**
-+ * egg_recent_model_multi_new:
++ * egg_recent_model_new:
 + * @sort:  the type of sorting to use
 + * @limit:  maximum number of items in the list
 + *
-+ * This creates a new EggRecentModelMulti object.
++ * This creates a new EggRecentModel object.
 + *
-+ * Returns: a EggRecentModelMulti object
++ * Returns: a EggRecentModel object
 + */
-+EggRecentModelMulti *
-+egg_recent_model_multi_new (EggRecentModelMultiSort sort)
++EggRecentModel *
++egg_recent_model_new (EggRecentModelSort sort)
 +{
-+	return egg_recent_model_multi_new_with_file_path (sort, EGG_RECENT_MODEL_MULTI_DEFAULT_FILE_PATH);
-+}
++	EggRecentModel *model;
 +
-+EggRecentModelMulti *
-+egg_recent_model_multi_new_with_file_path (EggRecentModelMultiSort sort, const gchar *file_path)
-+{
-+	EggRecentModelMulti *model;
-+
-+	if (! file_path)
-+		file_path = EGG_RECENT_MODEL_MULTI_DEFAULT_FILE_PATH;
-+
-+	model = EGG_RECENT_MODEL_MULTI (g_object_new (egg_recent_model_multi_get_type (),
-+				  "sort-type", sort, "file-path", file_path, NULL));
++	model = EGG_RECENT_MODEL (g_object_new (egg_recent_model_get_type (),
++				  "sort-type", sort, NULL));
 +
 +	g_return_val_if_fail (model, NULL);
 +
@@ -1926,8 +1921,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_add_full:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_add_full:
++ * @model:  A EggRecentModel object.
 + * @item:  A EggRecentItem
 + *
 + * This function adds an item to the list of recently used URIs.
@@ -1935,7 +1930,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 + * Returns: gboolean
 + */
 +gboolean
-+egg_recent_model_multi_add_full (EggRecentModelMulti * model, EggRecentItem *item)
++egg_recent_model_add_full (EggRecentModel * model, EggRecentItem *item)
 +{
 +	FILE *file;
 +	GList *list = NULL;
@@ -1945,7 +1940,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	time_t t;
 +	
 +	g_return_val_if_fail (model != NULL, FALSE);
-+	g_return_val_if_fail (EGG_IS_RECENT_MODEL_MULTI (model), FALSE);
++	g_return_val_if_fail (EGG_IS_RECENT_MODEL (model), FALSE);
 +
 +	uri = egg_recent_item_get_uri (item);
 +	if (strncmp (uri, "recent-files://", strlen ("recent-files://")) == 0) {
@@ -1955,29 +1950,29 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		g_free (uri);
 +	}
 +
-+	file = egg_recent_model_multi_open_file (model, TRUE);
++	file = egg_recent_model_open_file (model, TRUE);
 +	g_return_val_if_fail (file != NULL, FALSE);
 +
 +	time (&t);
 +	egg_recent_item_set_timestamp (item, t);
 +
-+	if (egg_recent_model_multi_lock_file (file)) {
++	if (egg_recent_model_lock_file (file)) {
 +
 +		/* read existing stuff */
-+		list = egg_recent_model_multi_read (model, file);
++		list = egg_recent_model_read (model, file);
 +
 +		/* if it's already there, we just update it */
-+		updated = egg_recent_model_multi_update_item (list, item);
++		updated = egg_recent_model_update_item (list, item);
 +
 +		if (!updated) {
 +			list = g_list_prepend (list, item);
 +
-+			egg_recent_model_multi_enforce_limit (list,
-+						EGG_RECENT_MODEL_MULTI_MAX_ITEMS);
++			egg_recent_model_enforce_limit (list,
++						EGG_RECENT_MODEL_MAX_ITEMS);
 +		}
 +
 +		/* write new stuff */
-+		if (!egg_recent_model_multi_write (model, file, list))
++		if (!egg_recent_model_write (model, file, list))
 +			g_warning ("Write failed: %s", strerror (errno));
 +
 +		if (!updated)
@@ -1991,7 +1986,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		return FALSE;
 +	}
 +
-+	if (!egg_recent_model_multi_unlock_file (file))
++	if (!egg_recent_model_unlock_file (file))
 +		g_warning ("Failed to unlock: %s", strerror (errno));
 +
 +	fclose (file);
@@ -2000,15 +1995,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		/* since monitoring isn't working, at least give a
 +		 * local notification
 +		 */
-+		egg_recent_model_multi_changed (model);
++		egg_recent_model_changed (model);
 +	}
 +
 +	return ret;
 +}
 +
 +/**
-+ * egg_recent_model_multi_add:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_add:
++ * @model:  A EggRecentModel object.
 + * @uri:  A string URI
 + *
 + * This function adds an item to the list of recently used URIs.
@@ -2016,7 +2011,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 + * Returns: gboolean
 + */
 +gboolean
-+egg_recent_model_multi_add (EggRecentModelMulti *model, const gchar *uri)
++egg_recent_model_add (EggRecentModel *model, const gchar *uri)
 +{
 +	EggRecentItem *item;
 +	gboolean ret = FALSE;
@@ -2028,7 +2023,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +	g_return_val_if_fail (item != NULL, FALSE);
 +
-+	ret = egg_recent_model_multi_add_full (model, item);
++	ret = egg_recent_model_add_full (model, item);
 +
 +	egg_recent_item_unref (item);
 +
@@ -2038,8 +2033,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +/**
-+ * egg_recent_model_multi_delete:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_delete:
++ * @model:  A EggRecentModel object.
 + * @uri: The URI you want to delete.
 + *
 + * This function deletes a URI from the file of recently used URIs.
@@ -2047,7 +2042,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 + * Returns: gboolean
 + */
 +gboolean
-+egg_recent_model_multi_delete (EggRecentModelMulti * model, const gchar * uri)
++egg_recent_model_delete (EggRecentModel * model, const gchar * uri)
 +{
 +	FILE *file;
 +	GList *list;
@@ -2055,27 +2050,27 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +	gboolean ret = FALSE;
 +
 +	g_return_val_if_fail (model != NULL, FALSE);
-+	g_return_val_if_fail (EGG_IS_RECENT_MODEL_MULTI (model), FALSE);
++	g_return_val_if_fail (EGG_IS_RECENT_MODEL (model), FALSE);
 +	g_return_val_if_fail (uri != NULL, FALSE);
 +
-+	file = egg_recent_model_multi_open_file (model, TRUE);
++	file = egg_recent_model_open_file (model, TRUE);
 +	g_return_val_if_fail (file != NULL, FALSE);
 +
-+	if (egg_recent_model_multi_lock_file (file)) {
-+		list = egg_recent_model_multi_read (model, file);
++	if (egg_recent_model_lock_file (file)) {
++		list = egg_recent_model_read (model, file);
 +
 +		if (list == NULL)
 +			goto out;
 +
 +		length = g_list_length (list);
 +
-+		list = egg_recent_model_multi_delete_from_list (list, uri);
++		list = egg_recent_model_delete_from_list (list, uri);
 +		
 +		if (length == g_list_length (list)) {
 +			/* nothing was deleted */
 +			EGG_RECENT_ITEM_LIST_UNREF (list);
 +		} else {
-+			egg_recent_model_multi_write (model, file, list);
++			egg_recent_model_write (model, file, list);
 +			EGG_RECENT_ITEM_LIST_UNREF (list);
 +			ret = TRUE;
 +
@@ -2087,7 +2082,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +out:
 +		
-+	if (!egg_recent_model_multi_unlock_file (file))
++	if (!egg_recent_model_unlock_file (file))
 +		g_warning ("Failed to unlock: %s", strerror (errno));
 +
 +	fclose (file);
@@ -2098,7 +2093,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		/* since monitoring isn't working, at least give a
 +		 * local notification
 +		 */
-+		egg_recent_model_multi_changed (model);
++		egg_recent_model_changed (model);
 +	}
 +
 +	return ret;
@@ -2106,39 +2101,39 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +/**
-+ * egg_recent_model_multi_get_list:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_get_list:
++ * @model:  A EggRecentModel object.
 + *
 + * This function gets the current contents of the file
 + *
 + * Returns: a GList
 + */
 +GList *
-+egg_recent_model_multi_get_list (EggRecentModelMulti *model)
++egg_recent_model_get_list (EggRecentModel *model)
 +{
 +	FILE *file;
 +	GList *list = NULL;
 +
-+	file = egg_recent_model_multi_open_file (model, FALSE);
++	file = egg_recent_model_open_file (model, FALSE);
 +	if (file == NULL)
 +		return NULL;
 +	
-+	if (egg_recent_model_multi_lock_file (file))
-+		list = egg_recent_model_multi_read (model, file);
++	if (egg_recent_model_lock_file (file))
++		list = egg_recent_model_read (model, file);
 +	else {
 +		g_warning ("Failed to lock:  %s", strerror (errno));
 +		fclose (file);
 +		return NULL;
 +	}
 +
-+	if (!egg_recent_model_multi_unlock_file (file))
++	if (!egg_recent_model_unlock_file (file))
 +		g_warning ("Failed to unlock: %s", strerror (errno));
 +
 +	if (list != NULL) {
-+		list = egg_recent_model_multi_filter (model, list);
-+		list = egg_recent_model_multi_sort (model, list);
++		list = egg_recent_model_filter (model, list);
++		list = egg_recent_model_sort (model, list);
 +
-+		egg_recent_model_multi_enforce_limit (list, model->priv->limit);
++		egg_recent_model_enforce_limit (list, model->priv->limit);
 +	}
 +
 +	fclose (file);
@@ -2149,8 +2144,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +/**
-+ * egg_recent_model_multi_set_limit:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_set_limit:
++ * @model:  A EggRecentModel object.
 + * @limit:  The maximum length of the list
 + *
 + * This function sets the maximum length of the list.  Note:  This only affects
@@ -2160,55 +2155,55 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 + * Returns:  void
 + */
 +void
-+egg_recent_model_multi_set_limit (EggRecentModelMulti *model, int limit)
++egg_recent_model_set_limit (EggRecentModel *model, int limit)
 +{
 +	model->priv->use_default_limit = FALSE;
 +
-+	egg_recent_model_multi_set_limit_internal (model, limit);
++	egg_recent_model_set_limit_internal (model, limit);
 +}
 +
 +/**
-+ * egg_recent_model_multi_get_limit:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_get_limit:
++ * @model:  A EggRecentModel object.
 + *
 + * This function gets the maximum length of the list. 
 + *
 + * Returns:  int
 + */
 +int
-+egg_recent_model_multi_get_limit (EggRecentModelMulti *model)
++egg_recent_model_get_limit (EggRecentModel *model)
 +{
 +	return model->priv->limit;
 +}
 +
 +
 +/**
-+ * egg_recent_model_multi_clear:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_clear:
++ * @model:  A EggRecentModel object.
 + *
 + * This function clears the contents of the file
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_clear (EggRecentModelMulti *model)
++egg_recent_model_clear (EggRecentModel *model)
 +{
 +	FILE *file;
 +	int fd;
 +
-+	file = egg_recent_model_multi_open_file (model, TRUE);
++	file = egg_recent_model_open_file (model, TRUE);
 +	g_return_if_fail (file != NULL);
 +
 +	fd = fileno (file);
 +
-+	if (egg_recent_model_multi_lock_file (file)) {
++	if (egg_recent_model_lock_file (file)) {
 +		ftruncate (fd, 0);
 +	} else {
 +		g_warning ("Failed to lock:  %s", strerror (errno));
 +		return;
 +	}
 +
-+	if (!egg_recent_model_multi_unlock_file (file))
++	if (!egg_recent_model_unlock_file (file))
 +		g_warning ("Failed to unlock: %s", strerror (errno));
 +
 +	fclose (file);
@@ -2217,12 +2212,12 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +		/* since monitoring isn't working, at least give a
 +		 * local notification
 +		 */
-+		egg_recent_model_multi_changed (model);
++		egg_recent_model_changed (model);
 +	}
 +}
 +
 +static void
-+egg_recent_model_multi_clear_mime_filter (EggRecentModelMulti *model)
++egg_recent_model_clear_mime_filter (EggRecentModel *model)
 +{
 +	g_return_if_fail (model != NULL);
 +
@@ -2235,15 +2230,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}	
 +
 +/**
-+ * egg_recent_model_multi_set_filter_mime_types:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_set_filter_mime_types:
++ * @model:  A EggRecentModel object.
 + *
 + * Sets which mime types are allowed in the list.
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_set_filter_mime_types (EggRecentModelMulti *model,
++egg_recent_model_set_filter_mime_types (EggRecentModel *model,
 +			       ...)
 +{
 +	va_list valist;
@@ -2252,7 +2247,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +	g_return_if_fail (model != NULL);
 +
-+	egg_recent_model_multi_clear_mime_filter (model);
++	egg_recent_model_clear_mime_filter (model);
 +
 +	va_start (valist, model);
 +
@@ -2270,7 +2265,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_clear_group_filter (EggRecentModelMulti *model)
++egg_recent_model_clear_group_filter (EggRecentModel *model)
 +{
 +	g_return_if_fail (model != NULL);
 +
@@ -2282,15 +2277,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_set_filter_groups:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_set_filter_groups:
++ * @model:  A EggRecentModel object.
 + *
 + * Sets which groups are allowed in the list.
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_set_filter_groups (EggRecentModelMulti *model,
++egg_recent_model_set_filter_groups (EggRecentModel *model,
 +			       ...)
 +{
 +	va_list valist;
@@ -2299,7 +2294,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +	g_return_if_fail (model != NULL);
 +
-+	egg_recent_model_multi_clear_group_filter (model);
++	egg_recent_model_clear_group_filter (model);
 +	
 +	va_start (valist, model);
 +
@@ -2317,7 +2312,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_clear_scheme_filter (EggRecentModelMulti *model)
++egg_recent_model_clear_scheme_filter (EggRecentModel *model)
 +{
 +	g_return_if_fail (model != NULL);
 +
@@ -2330,15 +2325,15 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_set_filter_uri_schemes:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_set_filter_uri_schemes:
++ * @model:  A EggRecentModel object.
 + *
 + * Sets which URI schemes (file, http, ftp, etc) are allowed in the list.
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_set_filter_uri_schemes (EggRecentModelMulti *model, ...)
++egg_recent_model_set_filter_uri_schemes (EggRecentModel *model, ...)
 +{
 +	va_list valist;
 +	GSList *list = NULL;
@@ -2346,7 +2341,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +	g_return_if_fail (model != NULL);
 +
-+	egg_recent_model_multi_clear_scheme_filter (model);
++	egg_recent_model_clear_scheme_filter (model);
 +	
 +	va_start (valist, model);
 +
@@ -2364,17 +2359,17 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_set_sort:
-+ * @model:  A EggRecentModelMulti object.
-+ * @sort:  A EggRecentModelMultiSort type
++ * egg_recent_model_set_sort:
++ * @model:  A EggRecentModel object.
++ * @sort:  A EggRecentModelSort type
 + *
 + * Sets the type of sorting to be used.
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_set_sort (EggRecentModelMulti *model,
-+			     EggRecentModelMultiSort sort)
++egg_recent_model_set_sort (EggRecentModel *model,
++			     EggRecentModelSort sort)
 +{
 +	g_return_if_fail (model != NULL);
 +	
@@ -2382,21 +2377,21 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_changed:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_changed:
++ * @model:  A EggRecentModel object.
 + *
 + * This function causes a "changed" signal to be emitted.
 + *
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_changed (EggRecentModelMulti *model)
++egg_recent_model_changed (EggRecentModel *model)
 +{
 +	GList *list = NULL;
 +
 +	if (model->priv->limit > 0) {
-+		list = egg_recent_model_multi_get_list (model);
-+		/* egg_recent_model_multi_monitor_list (model, list); */
++		list = egg_recent_model_get_list (model);
++		/* egg_recent_model_monitor_list (model, list); */
 +	
 +		g_signal_emit (G_OBJECT (model), model_signals[CHANGED], 0,
 +			       list);
@@ -2407,7 +2402,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +static void
-+egg_recent_model_multi_remove_expired_list (EggRecentModelMulti *model, GList *list)
++egg_recent_model_remove_expired_list (EggRecentModel *model, GList *list)
 +{
 +	time_t current_time;
 +	time_t day_seconds;
@@ -2423,7 +2418,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +		if ((timestamp+day_seconds) < current_time) {
 +			gchar *uri = egg_recent_item_get_uri (item);
-+			egg_recent_model_multi_delete (model, uri);
++			egg_recent_model_delete (model, uri);
 +
 +			g_strdup (uri);
 +		}
@@ -2434,8 +2429,8 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +
 +
 +/**
-+ * egg_recent_model_multi_remove_expired:
-+ * @model:  A EggRecentModelMulti object.
++ * egg_recent_model_remove_expired:
++ * @model:  A EggRecentModel object.
 + *
 + * Goes through the entire list, and removes any items that are older than
 + * the user-specified expiration period.
@@ -2443,30 +2438,30 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 + * Returns: void
 + */
 +void
-+egg_recent_model_multi_remove_expired (EggRecentModelMulti *model)
++egg_recent_model_remove_expired (EggRecentModel *model)
 +{
 +	FILE *file;
 +	GList *list=NULL;
 +
 +	g_return_if_fail (model != NULL);
 +
-+	file = egg_recent_model_multi_open_file (model, FALSE);
++	file = egg_recent_model_open_file (model, FALSE);
 +	if (file == NULL)
 +		return;
 +	
-+	if (egg_recent_model_multi_lock_file (file)) {
-+		list = egg_recent_model_multi_read (model, file);
++	if (egg_recent_model_lock_file (file)) {
++		list = egg_recent_model_read (model, file);
 +		
 +	} else {
 +		g_warning ("Failed to lock:  %s", strerror (errno));
 +		return;
 +	}
 +
-+	if (!egg_recent_model_multi_unlock_file (file))
++	if (!egg_recent_model_unlock_file (file))
 +		g_warning ("Failed to unlock: %s", strerror (errno));
 +
 +	if (list != NULL) {
-+		egg_recent_model_multi_remove_expired_list (model, list);
++		egg_recent_model_remove_expired_list (model, list);
 +		EGG_RECENT_ITEM_LIST_UNREF (list);
 +	}
 +
@@ -2474,137 +2469,142 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-mul
 +}
 +
 +/**
-+ * egg_recent_model_multi_get_type:
++ * egg_recent_model_get_type:
 + *
-+ * This returns a GType representing a EggRecentModelMulti object.
++ * This returns a GType representing a EggRecentModel object.
 + *
 + * Returns: a GType
 + */
 +GType
-+egg_recent_model_multi_get_type (void)
++egg_recent_model_get_type (void)
 +{
-+	static GType egg_recent_model_multi_type = 0;
++	static GType egg_recent_model_type = 0;
 +
-+	if(!egg_recent_model_multi_type) {
-+		static const GTypeInfo egg_recent_model_multi_info = {
-+			sizeof (EggRecentModelMultiClass),
++	if(!egg_recent_model_type) {
++		static const GTypeInfo egg_recent_model_info = {
++			sizeof (EggRecentModelClass),
 +			NULL, /* base init */
 +			NULL, /* base finalize */
-+			(GClassInitFunc)egg_recent_model_multi_class_init, /* class init */
++			(GClassInitFunc)egg_recent_model_class_init, /* class init */
 +			NULL, /* class finalize */
 +			NULL, /* class data */
-+			sizeof (EggRecentModelMulti),
++			sizeof (EggRecentModel),
 +			0,
-+			(GInstanceInitFunc) egg_recent_model_multi_init
++			(GInstanceInitFunc) egg_recent_model_init
 +		};
 +
-+		egg_recent_model_multi_type = g_type_register_static (G_TYPE_OBJECT,
-+							"EggRecentModelMulti",
-+							&egg_recent_model_multi_info, 0);
++		egg_recent_model_type = g_type_register_static (G_TYPE_OBJECT,
++							"EggRecentModel",
++							&egg_recent_model_info, 0);
 +	}
 +
-+	return egg_recent_model_multi_type;
++	return egg_recent_model_type;
 +}
 +
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-multi.h ./libgnome-desktop/egg-recent-model-multi.h
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/egg-recent-model-multi.h	1969-12-31 19:00:00.000000000 -0500
-+++ ./libgnome-desktop/egg-recent-model-multi.h	2006-05-08 16:48:27.000000000 -0400
-@@ -0,0 +1,81 @@
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-model.h gnome-desktop-2.12.2/libgnome-desktop/egg-recent-model.h
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/egg-recent-model.h	1969-12-31 19:00:00.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/egg-recent-model.h	2006-10-17 16:36:56.000000000 -0400
+@@ -0,0 +1,84 @@
 +/* vim: set sw=8: -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
-+#ifndef __EGG_RECENT_MODEL_MULTI_H__
-+#define __EGG_RECENT_MODEL_MULTI_H__
++#ifndef __EGG_RECENT_MODEL_H__
++#define __EGG_RECENT_MODEL_H__
 +
 +#include "egg-recent-item.h"
 +
++#ifndef EGG_ENABLE_RECENT_FILES
++#error "EggRecent has been DEPRECATED by the new recent files code inside GTK 2.9.0.  Use EGG_ENABLE_RECENT_FILES to compile this code, but you are using it at your own risk."
++#endif
++
 +G_BEGIN_DECLS
 +
-+#define EGG_TYPE_RECENT_MODEL_MULTI		(egg_recent_model_multi_get_type ())
-+#define EGG_RECENT_MODEL_MULTI(obj)		G_TYPE_CHECK_INSTANCE_CAST (obj, EGG_TYPE_RECENT_MODEL_MULTI, EggRecentModelMulti)
-+#define EGG_RECENT_MODEL_MULTI_CLASS(klass) 	G_TYPE_CHECK_CLASS_CAST (klass, EGG_TYPE_RECENT_MODEL_MULTI, EggRecentModelMultiClass)
-+#define EGG_IS_RECENT_MODEL_MULTI(obj)	G_TYPE_CHECK_INSTANCE_TYPE (obj, egg_recent_model_multi_get_type ())
++#define EGG_TYPE_RECENT_MODEL		(egg_recent_model_get_type ())
++#define EGG_RECENT_MODEL(obj)		G_TYPE_CHECK_INSTANCE_CAST (obj, EGG_TYPE_RECENT_MODEL, EggRecentModel)
++#define EGG_RECENT_MODEL_CLASS(klass) 	G_TYPE_CHECK_CLASS_CAST (klass, EGG_TYPE_RECENT_MODEL, EggRecentModelClass)
++#define EGG_IS_RECENT_MODEL(obj)	G_TYPE_CHECK_INSTANCE_TYPE (obj, egg_recent_model_get_type ())
 +
-+typedef struct _EggRecentModelMulti        EggRecentModelMulti;
-+typedef struct _EggRecentModelMultiPrivate EggRecentModelMultiPrivate;
-+typedef struct _EggRecentModelMultiClass   EggRecentModelMultiClass;
++typedef struct _EggRecentModel        EggRecentModel;
++typedef struct _EggRecentModelPrivate EggRecentModelPrivate;
++typedef struct _EggRecentModelClass   EggRecentModelClass;
 +
-+struct _EggRecentModelMulti {
++struct _EggRecentModel {
 +	GObject                parent_instance;
 +
-+	EggRecentModelMultiPrivate *priv;
++	EggRecentModelPrivate *priv;
 +};
 +
-+struct _EggRecentModelMultiClass {
++struct _EggRecentModelClass {
 +	GObjectClass parent_class;
 +			
-+	void (*changed) (EggRecentModelMulti *model, GList *list);
++	void (*changed) (EggRecentModel *model, GList *list);
 +};
 +
 +typedef enum {
-+	EGG_RECENT_MODEL_MULTI_SORT_MRU,
-+	EGG_RECENT_MODEL_MULTI_SORT_LRU,
-+	EGG_RECENT_MODEL_MULTI_SORT_NONE
-+} EggRecentModelMultiSort;
++	EGG_RECENT_MODEL_SORT_MRU,
++	EGG_RECENT_MODEL_SORT_LRU,
++	EGG_RECENT_MODEL_SORT_NONE
++} EggRecentModelSort;
 +
 +
 +/* Standard group names */
 +#define EGG_RECENT_GROUP_LAUNCHERS "Launchers"
 +
 +
-+GType    egg_recent_model_multi_get_type     (void);
++GType    egg_recent_model_get_type     (void);
 +
 +/* constructors */
-+EggRecentModelMulti * egg_recent_model_multi_new                (EggRecentModelMultiSort sort);
-+EggRecentModelMulti * egg_recent_model_multi_new_with_file_path (EggRecentModelMultiSort sort, const gchar *file_path);
++EggRecentModel * egg_recent_model_new (EggRecentModelSort sort);
 +
 +/* public methods */
-+void     egg_recent_model_multi_set_filter_mime_types (EggRecentModelMulti *model,
++void     egg_recent_model_set_filter_mime_types (EggRecentModel *model,
 +						   ...);
 +
-+void     egg_recent_model_multi_set_filter_groups (EggRecentModelMulti *model, ...);
++void     egg_recent_model_set_filter_groups (EggRecentModel *model, ...);
 +
-+void     egg_recent_model_multi_set_filter_uri_schemes (EggRecentModelMulti *model,
++void     egg_recent_model_set_filter_uri_schemes (EggRecentModel *model,
 +						   ...);
 +
-+void     egg_recent_model_multi_set_sort (EggRecentModelMulti *model,
-+				      EggRecentModelMultiSort sort);
++void     egg_recent_model_set_sort (EggRecentModel *model,
++				      EggRecentModelSort sort);
 +
-+gboolean egg_recent_model_multi_add_full (EggRecentModelMulti *model,
++gboolean egg_recent_model_add_full (EggRecentModel *model,
 +				      EggRecentItem *item);
 +
-+gboolean egg_recent_model_multi_add	     (EggRecentModelMulti *model,
++gboolean egg_recent_model_add	     (EggRecentModel *model,
 +				      const gchar *uri);
 +
-+gboolean egg_recent_model_multi_delete   (EggRecentModelMulti *model,
++gboolean egg_recent_model_delete   (EggRecentModel *model,
 +				      const gchar *uri);
 +
-+void egg_recent_model_multi_clear        (EggRecentModelMulti *model);
++void egg_recent_model_clear        (EggRecentModel *model);
 +
-+GList * egg_recent_model_multi_get_list  (EggRecentModelMulti *model);
++GList * egg_recent_model_get_list  (EggRecentModel *model);
 +
-+void egg_recent_model_multi_changed      (EggRecentModelMulti *model);
++void egg_recent_model_changed      (EggRecentModel *model);
 +
-+void egg_recent_model_multi_set_limit    (EggRecentModelMulti *model, int limit);
-+int  egg_recent_model_multi_get_limit    (EggRecentModelMulti *model);
++void egg_recent_model_set_limit    (EggRecentModel *model, int limit);
++int  egg_recent_model_get_limit    (EggRecentModel *model);
 +
-+void egg_recent_model_multi_remove_expired (EggRecentModelMulti *model);
++void egg_recent_model_remove_expired (EggRecentModel *model);
 +
 +G_END_DECLS
 +
-+#endif /* __EGG_RECENT_MODEL_MULTI_H__ */
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/gnome-desktop-item.c ./libgnome-desktop/gnome-desktop-item.c
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/gnome-desktop-item.c	2005-11-04 03:43:42.000000000 -0500
-+++ ./libgnome-desktop/gnome-desktop-item.c	2006-05-08 17:07:23.000000000 -0400
-@@ -59,6 +59,9 @@
++#endif /* __EGG_RECENT_MODEL_H__ */
+diff -uprN gnome-desktop-2.12.2.pristine/libgnome-desktop/gnome-desktop-item.c gnome-desktop-2.12.2/libgnome-desktop/gnome-desktop-item.c
+--- gnome-desktop-2.12.2.pristine/libgnome-desktop/gnome-desktop-item.c	2005-11-04 03:43:42.000000000 -0500
++++ gnome-desktop-2.12.2/libgnome-desktop/gnome-desktop-item.c	2006-10-17 16:50:23.000000000 -0400
+@@ -59,6 +59,11 @@
  #include <gtk/gtk.h>
  #endif
  
 +#include "egg-recent-item.h"
-+#include "egg-recent-model-multi.h"
++
++#define EGG_ENABLE_RECENT_FILES
++#include "egg-recent-model.h"
 +
  #define sure_string(s) ((s)!=NULL?(s):"")
  
  struct _GnomeDesktopItem {
-@@ -128,6 +131,8 @@
+@@ -128,6 +133,8 @@ static gboolean          ditem_save (Gno
  				     const char        *uri,
  				     GError           **error);
  
@@ -2613,7 +2613,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/gnome-desktop-item.c
  static int
  readbuf_getc (ReadBuf *rb)
  {
-@@ -2091,6 +2096,8 @@
+@@ -2091,6 +2098,8 @@ gnome_desktop_item_launch_on_screen_with
  			     (flags & GNOME_DESKTOP_ITEM_LAUNCH_APPEND_PATHS),
  			     error);
  
@@ -2622,7 +2622,7 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/gnome-desktop-item.c
  	return ret;
  }
  
-@@ -4095,3 +4102,22 @@
+@@ -4095,3 +4104,32 @@ gnome_desktop_item_error_quark (void)
  
  	return q;
  }
@@ -2630,39 +2630,28 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/gnome-desktop-item.c
 +static void
 +update_recently_used_apps (const GnomeDesktopItem *item)
 +{
-+	EggRecentModelMulti *model;
++	EggRecentModel *model;
++	EggRecentItem  *recent_item;
 +
 +
 +	if (! item)
 +		return;
 +
-+	model = egg_recent_model_multi_new_with_file_path (EGG_RECENT_MODEL_MULTI_SORT_MRU, ".recently-used-apps");
++	model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_MRU);
 +
 +	if (! model)
 +		return;
 +
-+	egg_recent_model_multi_add (model, gnome_desktop_item_get_location (item));
++	recent_item = egg_recent_item_new_from_uri (gnome_desktop_item_get_location (item));
++
++	if (recent_item) {
++		egg_recent_item_add_group (recent_item, "recently-used-apps");
++		egg_recent_item_set_private (recent_item, TRUE);
++
++		egg_recent_model_add_full (model, recent_item);
++
++		egg_recent_item_unref (recent_item);
++	}
 +
 +	g_object_unref (G_OBJECT (model));
 +}
-Files ../gnome-desktop-2.12.2-pristine/libgnome-desktop/.gnome-desktop-item.c.swp and ./libgnome-desktop/.gnome-desktop-item.c.swp differ
-diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/Makefile.am ./libgnome-desktop/Makefile.am
---- ../gnome-desktop-2.12.2-pristine/libgnome-desktop/Makefile.am	2004-11-18 12:42:53.000000000 -0500
-+++ ./libgnome-desktop/Makefile.am	2006-05-08 16:55:25.000000000 -0400
-@@ -16,9 +16,13 @@
- 
- noinst_PROGRAMS = test-ditem test-hint test-ditem-edit
- 
--libgnome_desktop_2_la_SOURCES = \
--	gnome-desktop-item.c	\
--	gnome-ditem-edit.c	\
-+libgnome_desktop_2_la_SOURCES =		\
-+	gnome-desktop-item.c		\
-+	gnome-ditem-edit.c		\
-+	egg-recent-item.h		\
-+	egg-recent-item.c		\
-+	egg-recent-model-multi.h	\
-+	egg-recent-model-multi.c	\
- 	gnome-hint.c
- 
- libgnome_desktop_2_la_LIBADD = \
