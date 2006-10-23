@@ -3,7 +3,9 @@
 	  libtile/document-tile.h
 	  utils/recent-files.c
 	  utils/recent-files.h
-	  main-menu/src/file-area-widget.c:
+	  main-menu/src/file-area-widget.c
+	  patch/gnome-desktop-recently-used-apps.patch
+	  patch/gnome-panel-recently-used-apps.patch:
 	Updated recent-files.[ch] to work with both the ~/.recently-used.xbel
 	and the older ~/.recently-used file formats.
 
