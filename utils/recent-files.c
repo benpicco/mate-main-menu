@@ -22,12 +22,8 @@
 
 #include <gtk/gtkversion.h>
 #if GTK_CHECK_VERSION (2, 10, 0)
-#	define USE_GTK_RECENT_MANAGER 1
-#else
-#	define USE_GTK_RECENT_MANAGER 0
-#endif
+#	define USE_GTK_RECENT_MANAGER
 
-#if USE_GTK_RECENT_MANAGER
 #	include <gtk/gtkrecentmanager.h>
 #	include <libgnomevfs/gnome-vfs-ops.h>
 #	include <libgnomevfs/gnome-vfs-utils.h>
@@ -44,7 +40,7 @@ G_DEFINE_TYPE (MainMenuRecentFile,    main_menu_recent_file,    G_TYPE_OBJECT)
 #define MAIN_MENU_RECENT_FILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MAIN_MENU_RECENT_FILE_TYPE, MainMenuRecentFilePrivate))
 
 typedef struct {
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GnomeVFSMonitorHandle *monitor_handle;
 #else
 	EggRecentModel *model;
@@ -54,7 +50,7 @@ typedef struct {
 } MainMenuRecentMonitorPrivate;
 
 typedef struct {
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GtkRecentInfo *item_obj;
 #else
 	EggRecentItem *item_obj;
@@ -76,15 +72,15 @@ static void main_menu_recent_file_finalize    (GObject *);
 
 static GList *get_files (MainMenuRecentMonitor *, gboolean);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 static void recent_file_store_monitor_cb (
 	GnomeVFSMonitorHandle *, const gchar *,
 	const gchar *, GnomeVFSMonitorEventType, gpointer);
+
+static gint recent_item_mru_comp_func (gconstpointer, gconstpointer);
 #else
 static void recent_file_store_changed_cb (EggRecentModel *, GList *, gpointer);
 #endif
-
-static gint recent_item_mru_comp_func (gconstpointer, gconstpointer);
 
 static void
 main_menu_recent_monitor_class_init (MainMenuRecentMonitorClass *this_class)
@@ -115,7 +111,7 @@ main_menu_recent_monitor_init (MainMenuRecentMonitor *this)
 {
 	MainMenuRecentMonitorPrivate *priv = MAIN_MENU_RECENT_MONITOR_GET_PRIVATE (this);
 
-#if ! USE_GTK_RECENT_MANAGER
+#ifndef USE_GTK_RECENT_MANAGER
 	priv->model = NULL;
 #endif
 
@@ -129,7 +125,7 @@ main_menu_recent_file_init (MainMenuRecentFile *this)
 
 	priv->item_obj = NULL;
 
-#if ! USE_GTK_RECENT_MANAGER
+#ifndef USE_GTK_RECENT_MANAGER
 	priv->uri       = NULL;
 	priv->mime_type = NULL;
 #endif
@@ -140,7 +136,7 @@ main_menu_recent_monitor_finalize (GObject *g_object)
 {
 	MainMenuRecentMonitorPrivate *priv = MAIN_MENU_RECENT_MONITOR_GET_PRIVATE (g_object);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	gnome_vfs_monitor_cancel (priv->monitor_handle);
 #else
 	g_signal_handler_disconnect (priv->model, priv->changed_handler_id);
@@ -156,7 +152,7 @@ main_menu_recent_file_finalize (GObject *g_object)
 {
 	MainMenuRecentFilePrivate *priv = MAIN_MENU_RECENT_FILE_GET_PRIVATE (g_object);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	if (priv->item_obj)
 		gtk_recent_info_unref (priv->item_obj);
 #else
@@ -176,7 +172,7 @@ main_menu_recent_monitor_new ()
 	MainMenuRecentMonitor *this = g_object_new (MAIN_MENU_RECENT_MONITOR_TYPE, NULL);
 	MainMenuRecentMonitorPrivate *priv = MAIN_MENU_RECENT_MONITOR_GET_PRIVATE (this);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GtkRecentManager *manager;
 	gchar *store_path;
 	gchar *store_uri;
@@ -209,7 +205,7 @@ get_files (MainMenuRecentMonitor *this, gboolean apps)
 	GList *list;
 	GList *items;
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GtkRecentManager *manager = gtk_recent_manager_get_default ();
 
 	GtkRecentInfo *info;
@@ -225,7 +221,7 @@ get_files (MainMenuRecentMonitor *this, gboolean apps)
 	GList *node;
 
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	list = gtk_recent_manager_get_items (manager);
 #else
 	egg_recent_model_set_sort (priv->model, EGG_RECENT_MODEL_SORT_MRU);
@@ -244,7 +240,7 @@ get_files (MainMenuRecentMonitor *this, gboolean apps)
 		item = g_object_new (MAIN_MENU_RECENT_FILE_TYPE, NULL);
 		item_priv = MAIN_MENU_RECENT_FILE_GET_PRIVATE (item);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 		info = (GtkRecentInfo *) node->data;
 
 		include = (apps && gtk_recent_info_has_group (info, "recently-used-apps")) ||
@@ -288,7 +284,7 @@ main_menu_recent_file_get_uri (MainMenuRecentFile *this)
 {
 	MainMenuRecentFilePrivate *priv = MAIN_MENU_RECENT_FILE_GET_PRIVATE (this);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	return gtk_recent_info_get_uri (priv->item_obj);
 #else
 	if (! priv->uri)
@@ -303,7 +299,7 @@ main_menu_recent_file_get_mime_type (MainMenuRecentFile *this)
 {
 	MainMenuRecentFilePrivate *priv = MAIN_MENU_RECENT_FILE_GET_PRIVATE (this);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	return gtk_recent_info_get_mime_type (priv->item_obj);
 #else
 	if (! priv->mime_type)
@@ -318,7 +314,7 @@ main_menu_recent_file_get_modified (MainMenuRecentFile *this)
 {
 	MainMenuRecentFilePrivate *priv = MAIN_MENU_RECENT_FILE_GET_PRIVATE (this);
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	return gtk_recent_info_get_modified (priv->item_obj);
 #else
 	return egg_recent_item_get_timestamp (priv->item_obj);
@@ -328,7 +324,7 @@ main_menu_recent_file_get_modified (MainMenuRecentFile *this)
 void
 main_menu_rename_recent_file (MainMenuRecentMonitor *this, const gchar *uri_0, const gchar *uri_1)
 {
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GtkRecentManager *manager;
 
 	GError *error = NULL;
@@ -354,7 +350,7 @@ main_menu_rename_recent_file (MainMenuRecentMonitor *this, const gchar *uri_0, c
 void
 main_menu_remove_recent_file (MainMenuRecentMonitor *this, const gchar *uri)
 {
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 	GtkRecentManager *manager;
 
 	GError *error = NULL;
@@ -376,7 +372,7 @@ main_menu_remove_recent_file (MainMenuRecentMonitor *this, const gchar *uri)
 #endif
 }
 
-#if USE_GTK_RECENT_MANAGER
+#ifdef USE_GTK_RECENT_MANAGER
 static void
 recent_file_store_monitor_cb (
 	GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
@@ -394,6 +390,7 @@ recent_file_store_changed_cb (EggRecentModel *model, GList *list, gpointer user_
 
 #endif
 
+#ifdef USE_GTK_RECENT_MANAGER
 static gint
 recent_item_mru_comp_func (gconstpointer a, gconstpointer b)
 {
@@ -405,3 +402,4 @@ recent_item_mru_comp_func (gconstpointer a, gconstpointer b)
 
 	return modified_b - modified_a;
 }
+#endif

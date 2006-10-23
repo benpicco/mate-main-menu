@@ -8,6 +8,7 @@ SUBDIRS =				\
 	control-center/src		\
 	main-menu/etc			\
 	main-menu/src			\
+	patch				\
 	po
 
 EXTRA_DIST =				\

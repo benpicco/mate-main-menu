@@ -106,5 +106,6 @@ libtile/Makefile
 main-menu/etc/Makefile
 main-menu/src/Makefile
 utils/Makefile
+patch/Makefile
 po/Makefile.in
 ])
