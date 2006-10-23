@@ -21,9 +21,9 @@
 #ifndef __DOCUMENT_TILE_H__
 #define __DOCUMENT_TILE_H__
 
-#include "nameplate-tile.h"
+#include <time.h>
 
-#include "egg-recent-item.h"
+#include "nameplate-tile.h"
 
 G_BEGIN_DECLS
 
@@ -34,13 +34,11 @@ G_BEGIN_DECLS
 #define IS_DOCUMENT_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), DOCUMENT_TILE_TYPE))
 #define DOCUMENT_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), DOCUMENT_TILE_TYPE, DocumentTileClass))
 
-typedef struct
-{
+typedef struct {
 	NameplateTile nameplate_tile;
 } DocumentTile;
 
-typedef struct
-{
+typedef struct {
 	NameplateTileClass nameplate_tile_class;
 } DocumentTileClass;
 
@@ -53,7 +51,8 @@ typedef struct
 
 GType document_tile_get_type (void);
 
-GtkWidget *document_tile_new (EggRecentItem * recent_item);
+GtkWidget *document_tile_new (const gchar *uri, const gchar *mime_type, time_t modified);
 
 G_END_DECLS
+
 #endif

@@ -34,8 +34,6 @@
 #include "slab-gnome-util.h"
 #include "tile-table.h"
 
-#include "egg-recent-item.h"
-
 #define MAIN_MENU_GCONF_DIR  "/desktop/gnome/applications/main-menu"
 #define FILE_AREA_GCONF_DIR  MAIN_MENU_GCONF_DIR "/file-area"
 #define LOCK_DOWN_GCONF_DIR  MAIN_MENU_GCONF_DIR "/lock-down"
@@ -64,6 +62,9 @@ typedef struct {
 	GtkButton *browser_link;
 	
 	GtkListStore *file_tables;
+
+	MainMenuRecentMonitor *recent_monitor;
+	gulong store_changed_cb_handle;
 } FileAreaWidgetPrivate;
 
 #define FILE_AREA_WIDGET_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), FILE_AREA_WIDGET_TYPE, FileAreaWidgetPrivate))
@@ -94,10 +95,7 @@ static void notebook_show_cb (GtkWidget *, gpointer);
 static void tile_activated_cb (Tile *, TileEvent *, gpointer);
 static void tile_action_triggered_cb (Tile *, TileEvent *, TileAction *, gpointer);
 
-static void recent_apps_store_monitor_cb (GnomeVFSMonitorHandle *, const gchar *,
-	const gchar *, GnomeVFSMonitorEventType, gpointer);
-static void recent_files_store_monitor_cb (GnomeVFSMonitorHandle *, const gchar *,
-	const gchar *, GnomeVFSMonitorEventType, gpointer);
+static void recent_files_store_changed_cb (MainMenuRecentMonitor *, gpointer);
 
 static void tile_table_update_cb (TileTable *, TileTableUpdateEvent *, gpointer);
 static void tile_table_uri_added_cb (TileTable *, TileTableURIAddedEvent *, gpointer);
@@ -124,10 +122,6 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 	GList *tiles;
 
-	GnomeVFSMonitorHandle *handle;
-	gchar *filename;
-	gchar *uri;
-
 	gchar *markup;
 
 	GList *node;
@@ -136,8 +130,9 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 	this = g_object_new (FILE_AREA_WIDGET_TYPE, "homogeneous", FALSE, "spacing", 12, NULL);
 
 	priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
-	priv->ui = ui;
-	priv->engine = engine;
+	priv->ui             = ui;
+	priv->engine         = engine;
+	priv->recent_monitor = main_menu_recent_monitor_new ();
 
 	this->selector_label = get_main_menu_section_header (_("Show:"));
 
@@ -183,56 +178,46 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 			tiles = get_tiles (this, i);
 
 			switch (i) {
-			case USER_SPECIFIED_APPS:
-				markup = _("Favorite Applications");
+				case USER_SPECIFIED_APPS:
+					markup = _("Favorite Applications");
 
-				connect_gconf_notify (USER_SPEC_APPS_GCONF_KEY,
-					user_spec_apps_gconf_notify_cb, this);
+					connect_gconf_notify (USER_SPEC_APPS_GCONF_KEY,
+						user_spec_apps_gconf_notify_cb, this);
 
-				g_signal_connect (G_OBJECT (table), "tile-table-update",
-					G_CALLBACK (tile_table_update_cb), this);
+					g_signal_connect (G_OBJECT (table), "tile-table-update",
+						G_CALLBACK (tile_table_update_cb), this);
 
-				g_signal_connect (G_OBJECT (table), "tile-table-uri-added",
-					G_CALLBACK (tile_table_uri_added_cb), this);
+					g_signal_connect (G_OBJECT (table), "tile-table-uri-added",
+						G_CALLBACK (tile_table_uri_added_cb), this);
 
-				g_signal_connect (G_OBJECT (table), "notify::n-rows",
-					G_CALLBACK (tile_table_n_rows_notify_cb), this);
-				break;
+					g_signal_connect (G_OBJECT (table), "notify::n-rows",
+						G_CALLBACK (tile_table_n_rows_notify_cb), this);
 
-			case RECENTLY_USED_APPS:
-				markup = _("Recently Used Applications");
+					break;
 
-				filename = g_build_filename (
-					g_get_home_dir (), ".recently-used", NULL);
+				case RECENTLY_USED_APPS:
+					markup = _("Recently Used Applications");
 
-				uri = gnome_vfs_get_uri_from_local_path (filename);
+					if (! priv->store_changed_cb_handle)
+						priv->store_changed_cb_handle = g_signal_connect (
+							G_OBJECT (priv->recent_monitor), "changed",
+							G_CALLBACK (recent_files_store_changed_cb), this);
 
-				gnome_vfs_monitor_add (&handle, uri, GNOME_VFS_MONITOR_FILE,
-					recent_apps_store_monitor_cb, this);
+					break;
 
-				g_free (filename);
-				g_free (uri);
-				break;
+				case RECENT_FILES:
+					markup = _("Recent Documents");
 
-			case RECENT_FILES:
-				markup = _("Recent Documents");
+					if (! priv->store_changed_cb_handle)
+						priv->store_changed_cb_handle = g_signal_connect (
+							G_OBJECT (priv->recent_monitor), "changed",
+							G_CALLBACK (recent_files_store_changed_cb), this);
 
-				filename = g_build_filename (
-					g_get_home_dir (), ".recently-used", NULL);
+					break;
 
-				uri = gnome_vfs_get_uri_from_local_path (filename);
-
-				gnome_vfs_monitor_add (&handle, uri, GNOME_VFS_MONITOR_FILE,
-					recent_files_store_monitor_cb, this);
-
-				g_free (filename);
-				g_free (uri);
-				break;
-				break;
-
-			default:
-				markup = "Unknown Type";
-				break;
+				default:
+					markup = "Unknown Type";
+					break;
 			}
 
 			gtk_list_store_set (priv->file_tables, &iter,
@@ -250,8 +235,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 	load_tables (this);
 
-	g_signal_connect (G_OBJECT (priv->selector), "changed", G_CALLBACK (selector_changed_cb),
-		this);
+	g_signal_connect (G_OBJECT (priv->selector), "changed", G_CALLBACK (selector_changed_cb), this);
 
 	g_signal_connect (G_OBJECT (priv->notebook), "show", G_CALLBACK (notebook_show_cb), this);
 
@@ -267,7 +251,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 	layout_file_area (this);
 
-	select_page (this, &iter_cur);
+	select_page (this, & iter_cur);
 
 	return GTK_WIDGET (this);
 }
@@ -299,13 +283,21 @@ file_area_widget_init (FileAreaWidget *this)
 	priv->browser_link = NULL;
 
 	priv->file_tables = NULL;
+
+	priv->recent_monitor = NULL;
+	priv->store_changed_cb_handle = 0;
 }
 
 static void
 file_area_widget_finalize (GObject *g_object)
 {
-	/* FIXME */
-	(*G_OBJECT_CLASS (file_area_widget_parent_class)->finalize) (g_object);
+	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (g_object);
+
+	g_signal_handler_disconnect (priv->recent_monitor, priv->store_changed_cb_handle);
+	priv->store_changed_cb_handle = 0;
+	g_object_unref (priv->recent_monitor);
+
+	(* G_OBJECT_CLASS (file_area_widget_parent_class)->finalize) (g_object);
 }
 
 void
@@ -374,8 +366,7 @@ load_tables (FileAreaWidget *this)
 
 	has_next = gtk_tree_model_get_iter_first (GTK_TREE_MODEL (priv->file_tables), &iter);
 
-	while (has_next)
-	{
+	while (has_next) {
 		gtk_tree_model_get (GTK_TREE_MODEL (priv->file_tables), &iter, COLUMN_TILE_TABLE,
 			&table, COLUMN_TILE_LIST, &list_ptr, -1);
 
@@ -406,11 +397,13 @@ select_page (FileAreaWidget *this, GtkTreeIter *iter)
 static GList *
 get_tiles (FileAreaWidget *this, FileClass file_class)
 {
+	FileAreaWidgetPrivate *priv = FILE_AREA_WIDGET_GET_PRIVATE (this);
+
 	GList *files = NULL;
 	GList *tiles = NULL;
 
 	GtkWidget *tile;
-	gchar *desktop_item_url;
+	const gchar *desktop_item_url;
 
 	GnomeDesktopItem *item;
 	const gchar *categories;
@@ -420,6 +413,8 @@ get_tiles (FileAreaWidget *this, FileClass file_class)
 
 	GList *existing_files = NULL;
 	gboolean lost_tile = FALSE;
+
+	MainMenuRecentFile *file;
 
 	GList *node;
 
@@ -466,10 +461,12 @@ get_tiles (FileAreaWidget *this, FileClass file_class)
 	}
 
 	else if (file_class == RECENTLY_USED_APPS) {
-		files = get_recent_apps ();
+		files = main_menu_get_recent_apps (priv->recent_monitor);
 
 		for (node = files; node; node = node->next) {
-			desktop_item_url = egg_recent_item_get_uri ((EggRecentItem *) node->data);
+			file = (MainMenuRecentFile *) node->data;
+
+			desktop_item_url = main_menu_recent_file_get_uri (file);
 
 			if (!application_is_blacklisted (desktop_item_url)) {
 				tile = application_tile_new (desktop_item_url);
@@ -490,17 +487,24 @@ get_tiles (FileAreaWidget *this, FileClass file_class)
 					tiles = g_list_append (tiles, tile);
 			}
 
-			g_free (desktop_item_url);
-			egg_recent_item_unref (node->data);
+			g_object_unref (file);
 		}
 	}
 
 	else {
-		files = get_recent_files ();
+		files = main_menu_get_recent_files (priv->recent_monitor);
 
-		for (node = files; node; node = node->next)
+		for (node = files; node; node = node->next) {
+			file = (MainMenuRecentFile *) node->data;
+
 			tiles = g_list_append (tiles,
-				document_tile_new ((EggRecentItem *) node->data));
+				document_tile_new (
+					main_menu_recent_file_get_uri       (file),
+					main_menu_recent_file_get_mime_type (file),
+					main_menu_recent_file_get_modified  (file)));
+
+			g_object_unref (file);
+		}
 	}
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_DND, &icon_width, NULL);
@@ -669,16 +673,9 @@ tile_action_triggered_cb (Tile *tile, TileEvent *event, TileAction *action, gpoi
 }
 
 static void
-recent_apps_store_monitor_cb (GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
-	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+recent_files_store_changed_cb (MainMenuRecentMonitor *manager, gpointer user_data)
 {
 	update_table (FILE_AREA_WIDGET (user_data), RECENTLY_USED_APPS);
-}
-
-static void
-recent_files_store_monitor_cb (GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
-	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
-{
 	update_table (FILE_AREA_WIDGET (user_data), RECENT_FILES);
 }
 

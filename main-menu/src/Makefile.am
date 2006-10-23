@@ -23,7 +23,6 @@ main_menu_SOURCES =							\
 	network-status-tile.c		network-status-tile.h		\
 	network-status-agent.c		network-status-agent.h		\
 	network-status-info.c		network-status-info.h		\
-	recent-files.c			recent-files.h			\
 	slab-window.c			slab-window.h			\
 	system-tile.c			system-tile.h			\
 	text-button.c			text-button.h			\

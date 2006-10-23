@@ -15,6 +15,8 @@ libutils_la_SOURCES =			\
 	egg-recent-model.h		\
 	gnome-utils.c			\
 	gnome-utils.h			\
+	recent-files.c			\
+	recent-files.h			\
 	slab-gnome-util.c		\
 	slab-gnome-util.h		\
 	themed-icon.c			\
