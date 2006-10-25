@@ -1,3 +1,10 @@
+2006-10-25  Scott Reeves  <sreeves@novell.com>
+	* libslab/app-shell.c
+	* libslab/libslab.pc.in
+	* utils/Makefile.am:
+	Fix for BNC 214705 - respect menu layout hints.
+	Add missing headers/libs to -devel package
+
 2006-10-23  Jim Krehl  <jimmyk@novell.com>
 	* libtile/document-tile.c
 	  libtile/document-tile.h
