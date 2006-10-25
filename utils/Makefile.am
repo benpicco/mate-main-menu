@@ -4,6 +4,11 @@ INCLUDES =				\
 
 noinst_LTLIBRARIES = libutils.la
 
+libutils_includedir = $(includedir)/slab
+libutils_include_HEADERS =			\
+	gnome-utils.h				\
+	slab-gnome-util.h			
+
 libutils_la_SOURCES =			\
 	double-click-detector.c		\
 	double-click-detector.h		\

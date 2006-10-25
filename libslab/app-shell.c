@@ -832,8 +832,9 @@ generate_categories (AppShellData * app_data)
 				data = g_new0 (CategoryData, 1);
 				data->category = g_strdup (category);
 				app_data->categories_list =
-					g_list_insert_sorted (app_data->categories_list, data,
-					category_data_compare);
+					/* use the gmenu order instead of alphabetical */
+					g_list_insert (app_data->categories_list, data, -1);
+					/* g_list_insert_sorted (app_data->categories_list, data, category_data_compare); */
 			}
 			else
 			{
@@ -1165,12 +1166,14 @@ insert_launcher_into_category (CategoryData * cat_data, GnomeDesktopItem * deskt
 	/* destroyed when they are removed */
 	g_object_ref (launcher);
 
+	/* use alphabetical order instead of the gmenu order. We group all sub items in each top level
+	category together, ignoring sub menus, so we also ignore sub menu layout hints */
 	cat_data->launcher_list =
-		g_list_insert_sorted (cat_data->launcher_list, launcher,
-		application_launcher_compare);
+		/* g_list_insert (cat_data->launcher_list, launcher, -1); */
+		g_list_insert_sorted (cat_data->launcher_list, launcher, application_launcher_compare);
 	cat_data->filtered_launcher_list =
-		g_list_insert_sorted (cat_data->filtered_launcher_list, launcher,
-		application_launcher_compare);
+		/* g_list_insert (cat_data->filtered_launcher_list, launcher, -1); */
+		g_list_insert_sorted (cat_data->filtered_launcher_list, launcher, application_launcher_compare);
 }
 
 static gint
