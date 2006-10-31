@@ -1,3 +1,13 @@
+2006-10-31  Rodney Dawes  <dobey@novell.com>
+
+	* libtile/application-tile.c (application_tile_setup):
+	Get the AtkObject from the widget and set up the name and description
+	from those in the desktop file, if available
+
+	* main-menu/src/slab-window.c (slab_window_init):
+	Set the title of the pop-up to the translatable "Main Menu" so that
+	ATs can figure out what window it is
+
 2006-10-25  Scott Reeves  <sreeves@novell.com>
 	* libslab/app-shell.c
 	* libslab/libslab.pc.in

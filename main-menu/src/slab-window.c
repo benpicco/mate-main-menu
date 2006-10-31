@@ -22,6 +22,7 @@
 
 #include <gconf/gconf-client.h>
 #include <gtk/gtk.h>
+#include <glib/gi18n.h>
 
 #include "slab-gnome-util.h"
 
@@ -52,6 +53,8 @@ slab_window_init (SlabWindow * window)
 	window->_hbox = NULL;
 	window->_left_pane = NULL;
 	window->_right_pane = NULL;
+
+	gtk_window_set_title (GTK_WINDOW (window), _("Main Menu"));
 }
 
 GtkWidget *

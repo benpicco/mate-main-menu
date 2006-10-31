@@ -243,6 +243,7 @@ application_tile_setup (ApplicationTile *this)
 	GtkWidget *header;
 	GtkWidget *subheader;
 	GtkMenu   *context_menu;
+	AtkObject *accessible;
 
 	TileAction  **actions;
 	TileAction   *action;
@@ -269,6 +270,12 @@ application_tile_setup (ApplicationTile *this)
 
 	name = gnome_desktop_item_get_localestring (priv->desktop_item, "Name");
 	desc = gnome_desktop_item_get_localestring (priv->desktop_item, "GenericName");
+
+	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
+	if (name)
+	  atk_object_set_name (accessible, name);
+	if (desc)
+	  atk_object_set_description (accessible, desc);
 
 	header    = create_header    (name);
 	subheader = create_subheader (desc);
