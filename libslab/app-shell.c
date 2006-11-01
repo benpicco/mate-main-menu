@@ -18,11 +18,17 @@
  * Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
 #include <libgnomevfs/gnome-vfs-ops.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+#include <glib/gi18n-lib.h>
 
 #include "app-shell.h"
 #include "shell-window.h"

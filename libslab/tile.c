@@ -297,10 +297,13 @@ tile_clicked (GtkButton * widget)
         TileEvent *tile_event;
 
 	tile_event = g_new0 (TileEvent, 1);
-	tile_event->type = TILE_EVENT_ACTIVATED_KEYBOARD;
+	tile_event->type = TILE_EVENT_ACTIVATED_DOUBLE_CLICK;
 	tile_event->time = gtk_get_current_event_time ();
 
 	g_signal_emit (widget, tile_signals[TILE_ACTIVATED_SIGNAL], 0, tile_event);
+
+	gtk_button_released (widget);
+	g_free (tile_event);
 }
 
 static gboolean

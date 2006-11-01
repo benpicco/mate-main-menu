@@ -1,5 +1,16 @@
 2006-11-01  Rodney Dawes  <dobey@novell.com>
 
+	* libslab/app-shell.c: If HAVE_CONFIG_H is defined then we should
+	include config.h so we get GETTEXT_PACKAGE and stuff
+	We need to include gi18n-lib.h here, as it's not being pulled in by
+	other headers (we don't include the generic gnome.h)
+
+	* libslab/tile.c (tile_clicked): We should simulate a mouse click here
+	rather than a keyboard press, to avoid starting apps twice
+	Also, add a call to gtk_button_released and free the tile_event
+
+2006-11-01  Rodney Dawes  <dobey@novell.com>
+
 	* libslab/document-tile.c (document_tile_new):
 	Grab the accessible AtkObject and set up the name and description for
 	the tile to use the basename and time_str
