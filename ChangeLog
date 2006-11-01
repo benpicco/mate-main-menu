@@ -1,3 +1,8 @@
+2006-11-01  Rodney Dawes  <dobey@novell.com>
+
+	* libtile/tile.c: Add an override method for the parent's clicked event
+	and generate and send off a tile action event
+
 2006-10-31  Rodney Dawes  <dobey@novell.com>
 
 	* libtile/application-tile.c (application_tile_setup):

@@ -43,6 +43,7 @@ static void tile_setup (Tile *);
 
 static void tile_enter (GtkButton * widget);
 static void tile_leave (GtkButton * widget);
+static void tile_clicked (GtkButton *widget);
 
 static gboolean tile_focus_in (GtkWidget *, GdkEventFocus *);
 static gboolean tile_focus_out (GtkWidget *, GdkEventFocus *);
@@ -109,6 +110,7 @@ tile_class_init (TileClass * this_class)
 
 	button_class->enter = tile_enter;
 	button_class->leave = tile_leave;
+	button_class->clicked = tile_clicked;
 
 	this_class->tile_explicit_enable = NULL;
 	this_class->tile_explicit_disable = NULL;
@@ -287,6 +289,18 @@ tile_leave (GtkButton * widget)
 		gtk_widget_set_state (GTK_WIDGET (widget), GTK_STATE_NORMAL);
 
 	TILE (widget)->entered = FALSE;
+}
+
+static void
+tile_clicked (GtkButton * widget)
+{
+        TileEvent *tile_event;
+
+	tile_event = g_new0 (TileEvent, 1);
+	tile_event->type = TILE_EVENT_ACTIVATED_KEYBOARD;
+	tile_event->time = gtk_get_current_event_time ();
+
+	g_signal_emit (widget, tile_signals[TILE_ACTIVATED_SIGNAL], 0, tile_event);
 }
 
 static gboolean
