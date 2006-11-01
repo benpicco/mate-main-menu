@@ -34,18 +34,9 @@ AM_PATH_GLIB_2_0(2.8.0,,,gobject)
 
 COMMON_MODULES="glib-2.0 gobject-2.0 gtk+-2.0 gdk-2.0"
 
-PKG_CHECK_MODULES(LIBUTILS, $COMMON_MODULES gnome-desktop-2.0)
-AC_SUBST(LIBUTILS_CFLAGS)
-AC_SUBST(LIBUTILS_LIBS)
-
 PKG_CHECK_MODULES(GLADE, libglade-2.0)
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
-
-PKG_CHECK_MODULES(LIBTILE, [ $COMMON_MODULES gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango ])
-
-AC_SUBST(LIBTILE_CFLAGS)
-AC_SUBST(LIBTILE_LIBS)
 
 PKG_CHECK_MODULES(LIBSLAB, [ $COMMON_MODULES gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango ])
 
@@ -102,10 +93,8 @@ control-center/etc/Makefile
 control-center/src/Makefile
 libslab/Makefile
 libslab/libslab.pc
-libtile/Makefile
 main-menu/etc/Makefile
 main-menu/src/Makefile
-utils/Makefile
 patch/Makefile
 po/Makefile.in
 ])

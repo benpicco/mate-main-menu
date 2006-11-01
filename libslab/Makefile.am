@@ -1,7 +1,5 @@
 INCLUDES =					\
 	$(LIBSLAB_CFLAGS)			\
-	-I$(top_srcdir)/libtile			\
-	-I$(top_srcdir)/utils			\
 	$(WARN_CFLAGS)
 
 lib_LTLIBRARIES = libslab.la
@@ -11,12 +9,31 @@ libslab_la_SOURCES =				\
 	app-resizer.c				\
 	app-shell.c				\
 	app-shell-startup.c			\
+	application-tile.c			\
+	document-tile.c				\
+	double-click-detector.c			\
+	double-click-detector.h			\
+	eggaccelerators.c			\
+	eggaccelerators.h			\
+	egg-recent-item.c			\
+	egg-recent-item.h			\
+	egg-recent-model.c			\
+	egg-recent-model.h			\
+	gnome-utils.c				\
+	nameplate-tile.c			\
+	recent-files.c				\
+	recent-files.h				\
 	search-bar.c				\
 	search-context-picker.c			\
 	search-entry-watermark.h		\
 	search-entry.c				\
 	shell-window.c				\
-	slab-section.c
+	slab-gnome-util.c			\
+	slab-section.c				\
+	themed-icon.c				\
+	themed-icon.h				\
+	tile-action.c				\
+	tile.c
 
 libslab_includedir = $(includedir)/slab
 libslab_include_HEADERS =			\
@@ -24,16 +41,20 @@ libslab_include_HEADERS =			\
 	app-resizer.h				\
 	app-shell.h				\
 	app-shell-startup.h			\
+	application-tile.h			\
+	document-tile.h				\
+	gnome-utils.h				\
+	nameplate-tile.h			\
 	search-bar.h				\
 	search-context-picker.h			\
 	search-entry.h				\
 	shell-window.h				\
-	slab-section.h
+	slab-gnome-util.h			\
+	slab-section.h				\
+	tile.h
 
 libslab_la_LIBADD =				\
-	$(LIBSLAB_LIBS)				\
-	$(LIBTILE_LIBS)				\
-	$(top_builddir)/utils/libutils.la
+	$(LIBSLAB_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libslab.pc

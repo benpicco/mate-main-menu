@@ -1,7 +1,5 @@
 INCLUDES =								\
 	$(MAIN_MENU_CFLAGS)						\
-	-I$(top_srcdir)/utils						\
-	-I$(top_srcdir)/libtile						\
 	-I$(top_srcdir)/libslab						\
 	$(WARN_CFLAGS)
 
@@ -32,6 +30,4 @@ main_menu_SOURCES =							\
 main_menu_LDADD =							\
 	$(MAIN_MENU_LIBS)						\
 	$(GLADE_LIBS)							\
-	$(top_builddir)/utils/libutils.la				\
-	$(top_builddir)/libtile/libtile.la				\
 	$(top_builddir)/libslab/libslab.la

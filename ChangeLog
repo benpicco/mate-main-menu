@@ -1,3 +1,13 @@
+2006-11-01  Rodrigo Moya <rodrigo@novell.com>
+
+	* util/*:
+	* libtile/*: moved all to libslab.
+
+	* libslab/Makefile.am: added new files from libutil and libtile.
+
+	* libslab/app-shell.c: no need to include gi18n.h, we are already getting
+	GNOME's i18n headers.
+
 2006-11-01  Rodney Dawes  <dobey@novell.com>
 
 	* libtile/tile.c: Add an override method for the parent's clicked event

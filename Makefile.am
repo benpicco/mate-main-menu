@@ -1,6 +1,4 @@
 SUBDIRS =				\
-	utils				\
-	libtile				\
 	libslab				\
 	application-browser/etc		\
 	application-browser/src		\

@@ -23,7 +23,6 @@
 #include <libgnomevfs/gnome-vfs-ops.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <glib/gi18n.h>
 
 #include "app-shell.h"
 #include "shell-window.h"
