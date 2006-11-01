@@ -184,6 +184,7 @@ static void
 update_tile (NetworkStatusTile * tile)
 {
 	NetworkStatusTilePrivate *priv = NETWORK_STATUS_TILE_GET_PRIVATE (tile);
+	AtkObject *accessible;
 
 	gchar *icon_name;
 	gchar *header_text;
@@ -194,7 +195,7 @@ update_tile (NetworkStatusTile * tile)
 	if (!priv->status_info)
 	{
 		icon_name = "nm-no-connection";
-		header_text = _("Network: None");
+		header_text = _("Networ_k: None");
 		subheader_text = _("Click to configure network");
 	}
 
@@ -206,7 +207,7 @@ update_tile (NetworkStatusTile * tile)
 			markup = g_strdup_printf (_("Connected to: %s"), priv->status_info->essid);
 
 			icon_name = "nm-device-wireless";
-			header_text = _("Network: Wireless");
+			header_text = _("Networ_k: Wireless");
 			subheader_text = markup;
 			break;
 
@@ -215,7 +216,7 @@ update_tile (NetworkStatusTile * tile)
 				priv->status_info->iface);
 
 			icon_name = "nm-device-wired";
-			header_text = _("Network: Wired");
+			header_text = _("Networ_k: Wired");
 			subheader_text = markup;
 			break;
 
@@ -230,6 +231,15 @@ update_tile (NetworkStatusTile * tile)
 	slab_load_image (GTK_IMAGE (NAMEPLATE_TILE (tile)->image), GTK_ICON_SIZE_BUTTON, icon_name);
 	gtk_label_set_text (GTK_LABEL (NAMEPLATE_TILE (tile)->header), header_text);
 	gtk_label_set_text (GTK_LABEL (NAMEPLATE_TILE (tile)->subheader), subheader_text);
+
+	gtk_label_set_use_underline (GTK_LABEL (NAMEPLATE_TILE (tile)->header), TRUE);
+	gtk_label_set_mnemonic_widget (GTK_LABEL (NAMEPLATE_TILE (tile)->header), GTK_WIDGET (tile));
+
+	accessible = gtk_widget_get_accessible (GTK_WIDGET (tile));
+	if (header_text)
+	  atk_object_set_name (accessible, header_text);
+	if (subheader_text)
+	  atk_object_set_description (accessible, subheader_text);
 
 	g_free (markup);
 }

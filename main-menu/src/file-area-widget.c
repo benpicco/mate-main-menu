@@ -134,7 +134,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 	priv->engine         = engine;
 	priv->recent_monitor = main_menu_recent_monitor_new ();
 
-	this->selector_label = get_main_menu_section_header (_("Show:"));
+	this->selector_label = get_main_menu_section_header (_("Sho_w:"));
 
 	priv->notebook = GTK_NOTEBOOK (gtk_notebook_new ());
 	gtk_notebook_set_show_tabs (priv->notebook, FALSE);
@@ -145,6 +145,10 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 
 	priv->selector =
 		GTK_COMBO_BOX (gtk_combo_box_new_with_model (GTK_TREE_MODEL (priv->file_tables)));
+
+	/* Set the mnemonic up for Show: */
+	gtk_label_set_use_underline (GTK_LABEL (this->selector_label), TRUE);
+	gtk_label_set_mnemonic_widget (GTK_LABEL (this->selector_label), GTK_WIDGET (priv->selector));
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->selector), renderer, TRUE);
@@ -240,7 +244,7 @@ GtkWidget *file_area_widget_new (MainMenuUI * ui, MainMenuEngine * engine)
 	g_signal_connect (G_OBJECT (priv->notebook), "show", G_CALLBACK (notebook_show_cb), this);
 
 	if (GPOINTER_TO_INT (get_gconf_value (AB_LINK_VISIBLE_GCONF_KEY))) {
-		priv->browser_link = GTK_BUTTON (gtk_button_new ());
+		priv->browser_link = GTK_BUTTON (gtk_button_new_with_mnemonic (NULL));
 
 		update_browser_link (this,
 			GPOINTER_TO_INT (get_gconf_value (FILE_CLASS_GCONF_KEY)));
@@ -340,11 +344,11 @@ update_browser_link (FileAreaWidget *this, FileClass file_class)
 	switch (file_class) {
 		case RECENTLY_USED_APPS:
 		case USER_SPECIFIED_APPS:
-			gtk_button_set_label (priv->browser_link, _("More Applications..."));
+			gtk_button_set_label (priv->browser_link, _("More _Applications..."));
 			break;
 
 		case RECENT_FILES:
-			gtk_button_set_label (priv->browser_link, _("All Documents..."));
+			gtk_button_set_label (priv->browser_link, _("_All Documents..."));
 			break;
 
 		default:

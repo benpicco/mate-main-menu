@@ -82,6 +82,9 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 
 	GnomeDesktopItem *desktop_item = NULL;
 	gchar *image_id = NULL;
+	gchar *header_txt = NULL;
+
+	AtkObject *accessible = NULL;
 
 	if (!(0 <= type && type < SYSTEM_TILE_TYPE_SENTINEL))
 		return NULL;
@@ -97,7 +100,7 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 				g_strdup (gnome_desktop_item_get_localestring (desktop_item,
 					"Icon"));
 			uri = g_strdup (gnome_desktop_item_get_location (desktop_item));
-			header = create_header (_("Help"));
+			header_txt = g_strdup (_("_Help"));
 		}
 
 		break;
@@ -111,7 +114,7 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 			image_id = g_strdup (
 				gnome_desktop_item_get_localestring (desktop_item, "Icon"));
 			uri = g_strdup (gnome_desktop_item_get_location (desktop_item));
-			header = create_header (_("Control Center"));
+			header_txt = g_strdup (_("_Control Center"));
 		}
 
 		break;
@@ -125,22 +128,22 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 			image_id = g_strdup (
 				gnome_desktop_item_get_localestring (desktop_item, "Icon"));
 			uri = g_strdup (gnome_desktop_item_get_location (desktop_item));
-			header = create_header (_("Install Software"));
+			header_txt = g_strdup (_("I_nstall Software"));
 		}
 
 		break;
 
 	case SYSTEM_TILE_TYPE_LOG_OUT:
-		image_id = "gnome-logout";
-		header = create_header (_("Log Out ..."));
-		uri = "system-tile://logout";
+	        image_id = g_strdup ("gnome-logout");
+		header_txt = g_strdup (_("Log _Out ..."));
+		uri = g_strdup ("system-tile://logout");
 
 		break;
 
 	case SYSTEM_TILE_TYPE_LOCK_SCREEN:
-		image_id = "gnome-lockscreen";
-		header = create_header (_("Lock Screen ..."));
-		uri = "system-tile://lockscreen";
+	        image_id = g_strdup ("gnome-lockscreen");
+		header_txt = g_strdup (_("_Lock Screen ..."));
+		uri = g_strdup ("system-tile://lockscreen");
 
 		break;
 
@@ -151,12 +154,14 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 	if (!uri)
 		return NULL;
 
-	if (!header)
+	if (!header_txt)
 	{
 		g_warning ("Unable to make header for SystemTileType:%d\n", type);
 
-		header = create_header (_("Unknown"));
+		header_txt = g_strdup (_("_Unknown"));
 	}
+
+	header = create_header (header_txt);
 
 	tile = g_object_new (SYSTEM_TILE_TYPE, "tile-uri", uri, "nameplate-image", gtk_image_new (),
 		"nameplate-header", header, "nameplate-subheader", NULL, NULL);
@@ -172,10 +177,22 @@ system_tile_new_with_type (SystemTileType type, MainMenuConf * conf)
 	priv = SYSTEM_TILE_GET_PRIVATE (tile);
 	priv->type = type;
 	priv->desktop_item = desktop_item;
-	priv->image_id = image_id;
+	priv->image_id = g_strdup (image_id);
 	priv->conf = conf;
 
 	load_image (tile);
+
+	/* Set up the mnemonic for the tile */
+	gtk_label_set_mnemonic_widget (GTK_LABEL (header), GTK_WIDGET (tile));
+
+	/* Set up the accessible name for the tile */
+	accessible = gtk_widget_get_accessible (GTK_WIDGET (tile));
+	if (header_txt)
+	  atk_object_set_name (accessible, header_txt);
+
+	g_free (header_txt);
+	g_free (image_id);
+	g_free (uri);
 
 	return GTK_WIDGET (tile);
 }
@@ -193,6 +210,12 @@ system_tile_init (SystemTile * tile)
 static void
 system_tile_finalize (GObject * g_object)
 {
+        SystemTile *tile = SYSTEM_TILE (g_object);
+        SystemTilePrivate *priv = SYSTEM_TILE_GET_PRIVATE (tile);
+
+	g_free (priv->image_id);
+	gnome_desktop_item_unref (priv->desktop_item);
+
 	/* FIXME - more to free ? */
 	(*G_OBJECT_CLASS (system_tile_parent_class)->finalize) (g_object);
 }
@@ -218,6 +241,7 @@ create_header (const gchar * name)
 	GtkWidget *header;
 
 	header = gtk_label_new (name);
+	gtk_label_set_use_underline (GTK_LABEL (header), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (header), 0.0, 0.5);
 
 	return header;

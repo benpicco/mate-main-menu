@@ -880,13 +880,15 @@ create_search_widget (MainMenuUI * ui, GtkSizeGroup * label_group)
 
 	hbox = gtk_hbox_new (FALSE, 12);
 
-	search_label = get_section_header_label (_("Search:"));
+	search_label = get_section_header_label (_("_Search:"));
 	gtk_misc_set_alignment (GTK_MISC (search_label), 0.0, 0.5);
 	gtk_size_group_add_widget (label_group, search_label);
 	gtk_box_pack_start (GTK_BOX (hbox), search_label, FALSE, FALSE, 0);
 
 	search_entry = gtk_entry_new ();
 	gtk_box_pack_start (GTK_BOX (hbox), search_entry, TRUE, TRUE, 0);
+
+	gtk_label_set_mnemonic_widget (GTK_LABEL (search_label), search_entry);
 
 	g_signal_connect (G_OBJECT (search_entry), "activate",
 		G_CALLBACK (search_entry_activate_cb), ui);
@@ -963,6 +965,7 @@ get_section_header_label (const gchar * markup)
 
 	label = gtk_label_new (text);
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
+	gtk_label_set_use_underline (GTK_LABEL (label), TRUE);
 	gtk_widget_set_name (label, "gnome-main-menu-section-header");
 
 	g_signal_connect (G_OBJECT (label), "style-set",

@@ -97,10 +97,16 @@ hard_drive_status_tile_new ()
 	GtkWidget *header;
 	GtkWidget *subheader;
 
+	AtkObject *accessible;
+	char *name;
+
 	image = gtk_image_new ();
 	slab_load_image (GTK_IMAGE (image), GTK_ICON_SIZE_BUTTON, "gnome-dev-harddisk");
 
-	header = gtk_label_new (_("Hard Drive"));
+	name = g_strdup (_("Hard _Drive"));
+
+	header = gtk_label_new (name);
+	gtk_label_set_use_underline (GTK_LABEL (header), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (header), 0.0, 0.5);
 
 	subheader = gtk_label_new (NULL);
@@ -123,6 +129,13 @@ hard_drive_status_tile_new ()
 
 	g_signal_connect (G_OBJECT (tile), "hide", G_CALLBACK (tile_hide_event_cb), NULL);
 	g_signal_connect (G_OBJECT (tile), "show", G_CALLBACK (tile_show_event_cb), NULL);
+
+	accessible = gtk_widget_get_accessible (tile);
+	atk_object_set_name (accessible, name);
+
+	gtk_label_set_mnemonic_widget (GTK_LABEL (header), GTK_WIDGET (tile));
+
+	g_free (name);
 
 	return GTK_WIDGET (tile);
 }
@@ -338,6 +351,7 @@ static void
 update_tile (HardDriveStatusTile * tile)
 {
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (tile);
+	AtkObject *accessible;
 
 	gchar *markup = NULL;
 
@@ -352,6 +366,10 @@ update_tile (HardDriveStatusTile * tile)
 	markup = g_strdup_printf (_("%s Free / %s Total"), available, capacity);
 
 	gtk_label_set_text (GTK_LABEL (NAMEPLATE_TILE (tile)->subheader), markup);
+
+	accessible = gtk_widget_get_accessible (GTK_WIDGET (tile));
+	if (markup)
+	  atk_object_set_description (accessible, markup);
 
 	g_free (available);
 	g_free (capacity);

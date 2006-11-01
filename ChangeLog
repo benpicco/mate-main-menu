@@ -1,3 +1,38 @@
+2006-11-01  Rodney Dawes  <dobey@novell.com>
+
+	* libslab/document-tile.c (document_tile_new):
+	Grab the accessible AtkObject and set up the name and description for
+	the tile to use the basename and time_str
+
+	* main-menu/src/file-area-widget.c (file_area_widget_new):
+	Set up the mnemonic for the Show: label in the main menu
+	Create the browser_link button with a mnemonic with a NULL label
+	(update_browser_link): Set mnemonics for the All Documents/Apps text
+
+	* main-menu/src/hard-drive-status-tile.c (hard_drive_status_tile_new):
+	Set up the accessible name for the hard drive status tile
+	Set up a mnemonic for the hard drive status tile
+	(update_tile): Set up the accessible description for the status tile
+
+	* main-menu/src/main-menu-ui.c (create_search_widget):
+	Set a mnemonic in the Search label and hook it up to the entry
+	(get_section_header_label): Enable mnemonic label text on the label
+
+	* main-menu/src/network-status-tile.c (update_tile):
+	Get the AtkObject for the widget and set up the name and description
+	Set up a mnemonic for the status tile
+
+	* main-menu/src/system-tile.c (system_tile_new_with_type):
+	Reduce the create_header calls into one, and just set the text for
+	the tile in the switch statement
+	Set up mnemonics for the system tiles
+	Set up accessible names for all the system tiles
+	Always duplicate/free the uri, image_id, and header_txt strings
+	Duplicate the image_id into the private structure
+	(system_tile_finalize): Free the duplicate image_id
+	Unref the desktop_item object
+	(create_header): Enable mnemonic underlines in the label
+
 2006-11-01  Rodrigo Moya <rodrigo@novell.com>
 
 	* util/*:

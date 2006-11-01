@@ -122,6 +122,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	gchar *markup;
 
+	AtkObject *accessible;
+
 	uri = g_strdup (in_uri);
 
 	image = gtk_image_new ();
@@ -141,7 +143,6 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	g_date_free (time_stamp);
 
 	subheader = create_subheader (time_str);
-	g_free (time_str);
 
 	context_menu = GTK_MENU (gtk_menu_new ());
 
@@ -152,7 +153,7 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	g_free (uri);
 
 	priv = DOCUMENT_TILE_GET_PRIVATE (this);
-	priv->basename    = basename;
+	priv->basename    = g_strdup (basename);
 	priv->mime_type   = g_strdup (mime_type);
 	priv->modified    = modified;
 	priv->header_bin  = GTK_BIN (header);
@@ -274,6 +275,15 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
 	load_image (this);
+
+	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
+	if (basename)
+	  atk_object_set_name (accessible, basename);
+	if (time_str)
+	  atk_object_set_description (accessible, time_str);
+
+	g_free (basename);
+	g_free (time_str);
 
 	return GTK_WIDGET (this);
 }
