@@ -8,8 +8,8 @@ control-center/etc/control-center.schemas.in
 control-center/src/control-center.c
 libslab/app-shell.c
 libslab/search-bar.c
-libtile/application-tile.c
-libtile/document-tile.c
+libslab/application-tile.c
+libslab/document-tile.c
 main-menu/etc/GNOME_MainMenu_ContextMenu.xml
 main-menu/etc/GNOME_MainMenu.server.in.in
 main-menu/etc/main-menu-rug.desktop.in
@@ -18,5 +18,5 @@ main-menu/src/file-area-widget.c
 main-menu/src/hard-drive-status-tile.c
 main-menu/src/main-menu-ui.c
 main-menu/src/network-status-tile.c
+main-menu/src/slab-window.c
 main-menu/src/system-tile.c
-utils/egg-recent-item.c
