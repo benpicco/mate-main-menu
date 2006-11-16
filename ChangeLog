@@ -1,3 +1,8 @@
+2006-11-08  Rodrigo Moya <rodrigo@novell.com>
+
+	* libslab/application-tile.c (verify_package_management_command):
+	check strings before sending them to strchr().
+
 2006-11-01  Rodney Dawes  <dobey@novell.com>
 
 	* libslab/app-shell.c: If HAVE_CONFIG_H is defined then we should

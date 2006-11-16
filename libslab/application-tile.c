@@ -562,6 +562,8 @@ verify_package_management_command (gchar *gconf_key)
 	gboolean retval;
 
 	cmd = get_slab_gconf_string (gconf_key);
+	if (!cmd)
+		return FALSE;
 
 	args = strchr (cmd, ' ');
 
