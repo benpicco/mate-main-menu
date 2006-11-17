@@ -1,5 +1,6 @@
 # Dutch translation of the Gnome main menu (slab)
 # Copyright (C) 2006 Novell, Inc
+# Copyright (C) 2006 Wouter Bolsterlee
 #
 # This file is distributed under the same license as the slab package.
 #
@@ -9,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome main menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-22 10:02+0200\n"
+"POT-Creation-Date: 2006-11-17 10:17+0100\n"
 "PO-Revision-Date: 2006-09-22 10:02+0200 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -89,7 +90,7 @@ msgstr ""
 "Het maximum aantal toepassingen dat getoond wordt in de category ‘Nieuwe "
 "toepassingen’"
 
-#: ../application-browser/src/application-browser.c:84
+#: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
 msgstr "Nieuwe toepassingen"
 
@@ -110,7 +111,6 @@ msgstr "Toepassing"
 # Vrij vertaald (Wouter Bolsterlee)
 #: ../control-center/etc/control-center.desktop.in.in.h:1
 #: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Systeemvoorkeuren"
 
@@ -162,7 +162,7 @@ msgstr "sleutel niet gevonden [%s]\n"
 msgid "Common Tasks"
 msgstr "Algemene taken"
 
-#: ../libslab/app-shell.c:702
+#: ../libslab/app-shell.c:707
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -178,75 +178,75 @@ msgid "Find Now"
 msgstr "Nu zoeken"
 
 #. make start action
-#: ../libtile/application-tile.c:326
+#: ../libslab/application-tile.c:307
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>%s starten</b>"
 
-#: ../libtile/application-tile.c:345 ../main-menu/src/system-tile.c:100
+#: ../libslab/application-tile.c:326
 msgid "Help"
 msgstr "Hulp"
 
-#: ../libtile/application-tile.c:353
+#: ../libslab/application-tile.c:333
 msgid "Help Unavailable"
 msgstr "Hulp niet beschikbaar"
 
-#: ../libtile/application-tile.c:394
+#: ../libslab/application-tile.c:372
 msgid "Upgrade"
 msgstr "Upgrade"
 
-#: ../libtile/application-tile.c:404
+#: ../libslab/application-tile.c:381
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: ../libtile/application-tile.c:791
+#: ../libslab/application-tile.c:778
 msgid "Remove from Favorites"
 msgstr "Uit bladwijzers verwijderen"
 
-#: ../libtile/application-tile.c:793
+#: ../libslab/application-tile.c:780
 msgid "Add to Favorites"
 msgstr "Aan bladwijzers toevoegen"
 
-#: ../libtile/application-tile.c:848
+#: ../libslab/application-tile.c:835
 msgid "Remove from Startup Programs"
 msgstr "Uit opstartprogramma's verwijderen"
 
-#: ../libtile/application-tile.c:850
+#: ../libslab/application-tile.c:837
 msgid "Add to Startup Programs"
 msgstr "Aan opstartprogramma's toevoegen"
 
-#: ../libtile/document-tile.c:139
+#: ../libslab/document-tile.c:142
 msgid "Edited %m/%d/%Y"
 msgstr "Bewerkt op %m-%d-%Y"
 
-#: ../libtile/document-tile.c:169
+#: ../libslab/document-tile.c:171
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Openen met ‘%s’</b>"
 
-#: ../libtile/document-tile.c:182
+#: ../libslab/document-tile.c:183
 msgid "Open with Default Application"
 msgstr "Met standaardtoepassing openen"
 
-#: ../libtile/document-tile.c:198
+#: ../libslab/document-tile.c:199
 msgid "Open in File Manager"
 msgstr "Openen in bestandsbeheer"
 
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/document-tile.c:215
 msgid "Rename..."
 msgstr "Hernoemen…"
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/document-tile.c:228
 msgid "Move to Trash"
 msgstr "In prullenbak gooien"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:576
+#: ../libslab/document-tile.c:238 ../libslab/document-tile.c:568
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/document-tile.c:258 ../libslab/document-tile.c:267
 msgid "Send To..."
 msgstr "Verzenden naar…"
 
@@ -260,10 +260,10 @@ msgstr "I_nfo"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr "Standaar menu- en toepassingenoverzicht"
+msgstr "Standaard menu- en toepassingenoverzicht"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-ui.c:303
 msgid "GNOME Main Menu"
 msgstr "Hoofdmenu"
 
@@ -272,6 +272,7 @@ msgid "GNOME Main Menu Factory"
 msgstr "Hoofdmenu-fabriek"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
@@ -573,138 +574,152 @@ msgstr "Indien ingeschakeld zal het statusgebied zichtbaar en actief zijn."
 msgid "set to true if the system area should be visible and active."
 msgstr "Indien ingeschakeld zal het systeemgebied zichtbaar en actief zijn."
 
-# Vrij vertaald (Wouter Bolsterlee)
-#: ../main-menu/src/file-area-widget.c:142
-msgid "Show:"
-msgstr "Bekijken:"
+#: ../main-menu/src/file-area-widget.c:137
+msgid "Sho_w:"
+msgstr "_Tonen:"
 
-#: ../main-menu/src/file-area-widget.c:190
+#: ../main-menu/src/file-area-widget.c:186
 msgid "Favorite Applications"
 msgstr "Voorkeurstoepassingen"
 
-#: ../main-menu/src/file-area-widget.c:206
+#: ../main-menu/src/file-area-widget.c:203
 msgid "Recently Used Applications"
 msgstr "Recent gebruikte toepassingen"
 
-#: ../main-menu/src/file-area-widget.c:221
+#: ../main-menu/src/file-area-widget.c:213
 msgid "Recent Documents"
 msgstr "Recent gebruikte documenten"
 
-#: ../main-menu/src/file-area-widget.c:357
-msgid "More Applications..."
-msgstr "Meer toepassingen…"
+#: ../main-menu/src/file-area-widget.c:347
+msgid "More _Applications..."
+msgstr "Meer toep_assingen…"
 
-#: ../main-menu/src/file-area-widget.c:361
-msgid "All Documents..."
-msgstr "Alle documenten…"
+#: ../main-menu/src/file-area-widget.c:351
+msgid "_All Documents..."
+msgstr "_Alle documenten…"
 
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
-msgstr "Harde schijf"
+#: ../main-menu/src/hard-drive-status-tile.c:106
+msgid "Hard _Drive"
+msgstr "Harde _schijf"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:339
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:341
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:343
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:366
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s vrij / %s totaal"
 
-#: ../main-menu/src/main-menu-ui.c:305
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "The GNOME Main Menu"
 msgstr "Het Gnome-menu"
 
-#: ../main-menu/src/main-menu-ui.c:421
+#: ../main-menu/src/main-menu-ui.c:420
 msgid "System"
 msgstr "Systeem"
 
-#: ../main-menu/src/main-menu-ui.c:425
+#: ../main-menu/src/main-menu-ui.c:424
 msgid "Status"
 msgstr "Status"
 
-#: ../main-menu/src/main-menu-ui.c:558
+#: ../main-menu/src/main-menu-ui.c:557
 msgid "Computer"
 msgstr "Computer"
 
-#: ../main-menu/src/main-menu-ui.c:884
-msgid "Search:"
-msgstr "Zoeken:"
+#: ../main-menu/src/main-menu-ui.c:883
+msgid "_Search:"
+msgstr "_Zoeken:"
 
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Netwerk: geen"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "Klik om het netwerk in te stellen"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "Netwer_k: geen"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "Verbonden met: %s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
-msgstr "Netwerk: draadloos"
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "Netwer_k: draadloos"
 
 # Vrij vertaald (Wouter Bolsterlee)
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
-msgstr "Netwerk: bekabeld"
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "Netwer_k: bekabeld"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Draadloos netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Bekabeld netwerk (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "Software installeren"
+#: ../main-menu/src/system-tile.c:103
+msgid "_Help"
+msgstr "_Hulp"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "Uitloggen…"
+# Vrij vertaald (Wouter Bolsterlee)
+#: ../main-menu/src/system-tile.c:117
+msgid "_Control Center"
+msgstr "_Systeemvoorkeuren"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "Scherm vergrendelen…"
+#: ../main-menu/src/system-tile.c:131
+msgid "I_nstall Software"
+msgstr "Software i_nstalleren"
+
+#: ../main-menu/src/system-tile.c:138
+msgid "Log _Out ..."
+msgstr "_Uitloggen…"
+
+#: ../main-menu/src/system-tile.c:145
+msgid "_Lock Screen ..."
+msgstr "Scherm ver_grendelen…"
+
+#: ../main-menu/src/system-tile.c:161
+msgid "_Unknown"
+msgstr "_Onbekend"
