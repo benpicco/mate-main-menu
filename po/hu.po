@@ -1,22 +1,21 @@
 # Hungarian translation of slab
-# This file is distributed under the same license as the slab package.
-# Copyright (C) 2006, Free Software Foundation, Inc.
 # Kalman Kemenczy <kkemenczy@novell.com>, 2006.
 # Gabor Kelemen <kelemeng@gnome.hu>, 2006.
-
+# This file is distributed under the same license as the slab package.
+# Copyright (C) 2006, Free Software Foundation, Inc.
 msgid ""
 msgstr ""
 "Project-Id-Version: slab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-19 06:51+0200\n"
-"PO-Revision-Date: 2006-10-21 21:30+0200\n"
+"POT-Creation-Date: 2006-11-17 07:16+0100\n"
+"PO-Revision-Date: 2006-11-17 14:02+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
-"Language-Team:  Hungarian <gnome@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -109,7 +108,6 @@ msgstr "Alkalmazásműveletek"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
 #: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Vezérlőközpont"
 
@@ -144,8 +142,7 @@ msgstr ""
 "Adminisztrátori beállítások;YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
 "ha igaz, a vezérlőközpont automatikusan bezárul egy \"Gyakori feladat\" "
 "aktiválásakor"
@@ -159,7 +156,7 @@ msgstr "a kulcs nem található [%s]\n"
 msgid "Common Tasks"
 msgstr "Általános feladatok"
 
-#: ../libslab/app-shell.c:702
+#: ../libslab/app-shell.c:707
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -175,75 +172,75 @@ msgid "Find Now"
 msgstr "Keresés most"
 
 #. make start action
-#: ../libtile/application-tile.c:300
+#: ../libslab/application-tile.c:307
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>%s indítása</b>"
 
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
+#: ../libslab/application-tile.c:326
 msgid "Help"
 msgstr "Súgó"
 
-#: ../libtile/application-tile.c:326
+#: ../libslab/application-tile.c:333
 msgid "Help Unavailable"
 msgstr "Nincs súgó"
 
-#: ../libtile/application-tile.c:365
+#: ../libslab/application-tile.c:372
 msgid "Upgrade"
 msgstr "Frissítés"
 
-#: ../libtile/application-tile.c:374
+#: ../libslab/application-tile.c:381
 msgid "Uninstall"
 msgstr "Eltávolítás"
 
-#: ../libtile/application-tile.c:769
+#: ../libslab/application-tile.c:778
 msgid "Remove from Favorites"
 msgstr "Eltávolítás a Kedvencek közül"
 
-#: ../libtile/application-tile.c:771
+#: ../libslab/application-tile.c:780
 msgid "Add to Favorites"
 msgstr "Hozzáadás a Kedvencekhez"
 
-#: ../libtile/application-tile.c:826
+#: ../libslab/application-tile.c:835
 msgid "Remove from Startup Programs"
 msgstr "Eltávolítás az Indítópultból"
 
-#: ../libtile/application-tile.c:828
+#: ../libslab/application-tile.c:837
 msgid "Add to Startup Programs"
 msgstr "Hozzáadás az Indítópulthoz"
 
-#: ../libtile/document-tile.c:141
+#: ../libslab/document-tile.c:142
 msgid "Edited %m/%d/%Y"
 msgstr "Szerkesztve: %m/%d/%Y"
 
-#: ../libtile/document-tile.c:171
+#: ../libslab/document-tile.c:171
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Megnyitás a(z) \"%s\" alkalmazással</b>"
 
-#: ../libtile/document-tile.c:184
+#: ../libslab/document-tile.c:183
 msgid "Open with Default Application"
 msgstr "Megnyitás az alapértelmezett alkalmazással"
 
-#: ../libtile/document-tile.c:200
+#: ../libslab/document-tile.c:199
 msgid "Open in File Manager"
 msgstr "Megnyitás a Fájlkezelőben"
 
 #. make rename action
-#: ../libtile/document-tile.c:216
+#: ../libslab/document-tile.c:215
 msgid "Rename..."
 msgstr "Átnevezés..."
 
 #. make move to trash action
-#: ../libtile/document-tile.c:229
+#: ../libslab/document-tile.c:228
 msgid "Move to Trash"
 msgstr "Áthelyezés a Kukába"
 
-#: ../libtile/document-tile.c:239 ../libtile/document-tile.c:578
+#: ../libslab/document-tile.c:238 ../libslab/document-tile.c:568
 msgid "Delete"
 msgstr "Törlés"
 
-#: ../libtile/document-tile.c:259 ../libtile/document-tile.c:268
+#: ../libslab/document-tile.c:258 ../libslab/document-tile.c:267
 msgid "Send To..."
 msgstr "Átküldés..."
 
@@ -269,6 +266,7 @@ msgid "GNOME Main Menu Factory"
 msgstr "GNOME főmenü factory"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "Főmenü"
 
@@ -301,10 +299,8 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop elérési út az alkalmazásböngészőhöz"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
-msgstr ""
-"A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók."
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr "A rendszerszintű könyvtár helye, amelyben az indítóprogramok találhatók."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -360,8 +356,7 @@ msgstr ""
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr ""
-"Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
+msgstr "Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid ""
@@ -386,8 +381,7 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
-"Felhasználói automatikus indítási programkönyvtár (a saját könyvtáron belül)"
+msgstr "Felhasználói automatikus indítási programkönyvtár (a saját könyvtáron belül)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to uninstall packages"
@@ -567,11 +561,11 @@ msgstr "igaz, ha az állapotterületnek láthatónak és aktívnak kell lennie."
 msgid "set to true if the system area should be visible and active."
 msgstr "igaz, ha a rendszerterületnek láthatónak és aktívnak kell lennie."
 
-#: ../main-menu/src/file-area-widget.c:142
-msgid "Show:"
-msgstr "Megjelenítés:"
+#: ../main-menu/src/file-area-widget.c:137
+msgid "Sho_w:"
+msgstr "_Megjelenítés:"
 
-#: ../main-menu/src/file-area-widget.c:187
+#: ../main-menu/src/file-area-widget.c:186
 msgid "Favorite Applications"
 msgstr "Kedvenc alkalmazások"
 
@@ -579,43 +573,43 @@ msgstr "Kedvenc alkalmazások"
 msgid "Recently Used Applications"
 msgstr "Nemrég használt alkalmazások"
 
-#: ../main-menu/src/file-area-widget.c:218
+#: ../main-menu/src/file-area-widget.c:213
 msgid "Recent Documents"
 msgstr "Friss dokumentumok"
 
+#: ../main-menu/src/file-area-widget.c:347
+msgid "More _Applications..."
+msgstr "_További alkalmazások..."
+
 #: ../main-menu/src/file-area-widget.c:351
-msgid "More Applications..."
-msgstr "További alkalmazások..."
+msgid "_All Documents..."
+msgstr "Összes _dokumentum..."
 
-#: ../main-menu/src/file-area-widget.c:355
-msgid "All Documents..."
-msgstr "Összes dokumentum"
+#: ../main-menu/src/hard-drive-status-tile.c:106
+msgid "Hard _Drive"
+msgstr "Mere_vlemez"
 
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
-msgstr "Merevlemez"
-
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:339
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:341
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:343
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:366
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "Szabad: %s / Összes: %s"
@@ -637,66 +631,81 @@ msgid "Computer"
 msgstr "Számítógép"
 
 #: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "Keresés:"
+msgid "_Search:"
+msgstr "_Keresés:"
 
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
-msgstr "Hálózati: Nincs"
+msgstr "Hálózat: Nincs"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "Kattintson a hálózat beállításához"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "_Hálózat: Nincs"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "Csatlakoztatva: %s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
-msgstr "Hálózat: vezeték nélküli"
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "_Hálózat: vezeték nélküli"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet (%s) használata"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
-msgstr "Hálózat: vezetékes"
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "_Hálózat: vezetékes"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Vezeték nélküli Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Vezetékes Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "Szoftver telepítése"
+#: ../main-menu/src/system-tile.c:103
+msgid "_Help"
+msgstr "_Súgó"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "Kijelentkezés ..."
+#: ../main-menu/src/system-tile.c:117
+msgid "_Control Center"
+msgstr "_Vezérlőközpont"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "Képernyő lezárása..."
+#: ../main-menu/src/system-tile.c:131
+msgid "I_nstall Software"
+msgstr "Szoftver tele_pítése"
+
+#: ../main-menu/src/system-tile.c:138
+msgid "Log _Out ..."
+msgstr "_Kijelentkezés ..."
+
+#: ../main-menu/src/system-tile.c:145
+msgid "_Lock Screen ..."
+msgstr "Képernyő le_zárása..."
+
+#: ../main-menu/src/system-tile.c:161
+msgid "_Unknown"
+msgstr "_Ismeretlen"
+
