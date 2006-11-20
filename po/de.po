@@ -1,26 +1,20 @@
-# German message file for YaST2 (@memory@).
-# Copyright (C) 2005 SUSE Linux Products GmbH.
-# Copyright (C) 2002, 2003 SuSE Linux AG.
-# Copyright (C) 1999, 2000, 2001 SuSE GmbH.
-# Antje Faber <afaber@suse.de>, 2000-2003.
-# Karl Eichwalder <ke@suse.de>, 1999-2003.
-# Martin Lohner <ml@suse.de>, 2000.
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2006-06-23 13:57\n"
+"POT-Creation-Date: 2006-10-26 12:18-0600\n"
+"PO-Revision-Date: 2006-11-03 12:03\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:69
+#: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
 msgstr "Application Browser"
 
@@ -76,27 +70,27 @@ msgstr "Maximale Anzahl neuer Anwendungen"
 msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr "Die maximale Anzahl an Anwendungen, die in der Kategorie 'Neue Anwendungen' angezeigt werden"
 
-#: ../application-browser/src/application-browser.c:62
+#: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
 msgstr "Neue Anwendungen"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Filter"
 msgstr "Filtern"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Gruppen"
 
-#: ../application-browser/src/application-browser.c:66
+#: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
 msgstr "Anwendungsaktionen"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:115
-#: ../main-menu/src/system-tile.c:95
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Kontrollzentrum"
 
@@ -121,60 +115,102 @@ msgstr "[Desktop-Hintergrund ändern;background.desktop,Drucker hinzufügen;gnom
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "bei 'true' wird das control-center (Kontrollzentrum) bei Aktivierung einer \"Allgemeinen Aufgabe\" geschlossen"
 
-#: ../control-center/src/control-center.c:112
+#: ../control-center/src/control-center.c:61
+#, fuzzy, c-format
+msgid "key not found [%s]\n"
+msgstr "Datei nicht gefunden"
+
+#: ../control-center/src/control-center.c:146
 msgid "Common Tasks"
 msgstr "Allgemeine Aufgaben"
 
+#: ../libslab/app-shell.c:702
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>Keine Übereinstimmung gefunden.</b> </span><span>\n"
+"\n"
+" Ihr Filter \"<b>%s</b>\" stimmt mit keinen Elementen überein.</span>"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "Suchen"
+
 #. make start action
-#: ../libslab/src/application-tile.c:322
+#: ../libtile/application-tile.c:300
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Starten %s</b>"
 
-#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
+#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
 msgid "Help"
 msgstr "Hilfe"
 
-#: ../libslab/src/application-tile.c:350
+#: ../libtile/application-tile.c:326
 msgid "Help Unavailable"
 msgstr "Hilfe nicht verfügbar"
 
-# Use "Update" here; cf. #29964
-# 2003-09-10 18:45:06 CEST -ke-
-#. make upgrade action
-#: ../libslab/src/application-tile.c:388
+#: ../libtile/application-tile.c:365
 msgid "Upgrade"
 msgstr "Aufrüsten"
 
-#. make uninstall action
-#: ../libslab/src/application-tile.c:395
+#: ../libtile/application-tile.c:374
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: ../libslab/src/application-tile.c:790
+#: ../libtile/application-tile.c:769
 msgid "Remove from Favorites"
 msgstr "Aus Favoriten entfernen"
 
-#: ../libslab/src/application-tile.c:792
+#: ../libtile/application-tile.c:771
 msgid "Add to Favorites"
 msgstr "Zu Favoriten hinzufügen"
 
-#: ../libslab/src/application-tile.c:852
+#: ../libtile/application-tile.c:826
 msgid "Remove from Startup Programs"
 msgstr "Aus Startprogrammen entfernen"
 
-#: ../libslab/src/application-tile.c:854
+#: ../libtile/application-tile.c:828
 msgid "Add to Startup Programs"
 msgstr "Zu Startprogrammen hinzufügen"
 
-#: ../libslab/src/app-shell.c:644
-#, c-format
-msgid "<span size=\"large\"><b>No matches found.</b> </span><span>\n\n Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr "<span size=\"large\"><b>Keine Übereinstimmung gefunden.</b> </span><span>\n\n Ihr Filter \"<b>%s</b>\" stimmt mit keinen Elementen überein.</span>"
+#: ../libtile/document-tile.c:140
+msgid "Edited %m/%d/%Y"
+msgstr "Bearbeitung %d/%m/%Y"
 
-#: ../libslab/src/search-bar.c:235
-msgid "Find Now"
-msgstr "Jetzt suchen"
+#: ../libtile/document-tile.c:170
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Öffnen mit \"%s\"</b>"
+
+#: ../libtile/document-tile.c:182
+msgid "Open with Default Application"
+msgstr "Mit Standardanwendung öffnen"
+
+#: ../libtile/document-tile.c:198
+msgid "Open in File Manager"
+msgstr "In Dateiverwaltungsprogramm öffnen"
+
+#. make rename action
+#: ../libtile/document-tile.c:214
+msgid "Rename..."
+msgstr "Umbenennen..."
+
+#. make move to trash action
+#: ../libtile/document-tile.c:227
+msgid "Move to Trash"
+msgstr "In den Müll veschieben"
+
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+msgid "Send To..."
+msgstr "Senden an..."
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
@@ -182,14 +218,14 @@ msgstr "Menü öffnen"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
 msgid "_About"
-msgstr "_About"
+msgstr "_Info"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Standardmenü und Application Browser"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:309
+#: ../main-menu/src/main-menu-ui.c:303
 msgid "GNOME Main Menu"
 msgstr "GNOME-Hauptmenü"
 
@@ -385,186 +421,136 @@ msgstr "wird auf 'true' eingestellt, wenn der Statusbereich angezeigt werden und
 msgid "set to true if the system area should be visible and active."
 msgstr "wird auf 'true' eingestellt, wenn der Systembereich angezeigt werden und aktiv sein soll."
 
-#: ../main-menu/src/document-tile.c:119
-msgid "Edited %m/%d/%Y"
-msgstr "Bearbeitung %d/%m/%Y"
-
-#: ../main-menu/src/document-tile.c:153
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Öffnen mit \"%s\"</b>"
-
-#: ../main-menu/src/document-tile.c:163
-msgid "Open with Default Application"
-msgstr "Mit Standardanwendung öffnen"
-
-#: ../main-menu/src/document-tile.c:181
-msgid "Open in File Manager"
-msgstr "In Dateiverwaltungsprogramm öffnen"
-
-#. make rename action
-#: ../main-menu/src/document-tile.c:199
-msgid "Rename..."
-msgstr "Umbenennen..."
-
-#. make move to trash action
-#: ../main-menu/src/document-tile.c:212
-msgid "Move to Trash"
-msgstr "In Papierkorb verschieben"
-
-#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
-msgid "Delete"
-msgstr "Löschen"
-
-#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
-msgid "Send To..."
-msgstr "Senden an..."
-
-#: ../main-menu/src/file-area-widget.c:130
+#: ../main-menu/src/file-area-widget.c:137
 msgid "Show:"
-msgstr "Anzeigen:"
+msgstr "Zeige:"
 
-#: ../main-menu/src/file-area-widget.c:179
+#: ../main-menu/src/file-area-widget.c:182
 msgid "Favorite Applications"
 msgstr "Bevorzugte Anwendungen"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:199
 msgid "Recently Used Applications"
 msgstr "Zuletzt verwendete Anwendungen"
 
-#: ../main-menu/src/file-area-widget.c:229
+#: ../main-menu/src/file-area-widget.c:209
 msgid "Recent Documents"
 msgstr "Zuletzt verwendete Dokumente"
 
-#: ../main-menu/src/file-area-widget.c:381
+#: ../main-menu/src/file-area-widget.c:343
 msgid "More Applications..."
 msgstr "Weitere Anwendungen..."
 
-#: ../main-menu/src/file-area-widget.c:385
+#: ../main-menu/src/file-area-widget.c:347
 msgid "All Documents..."
 msgstr "Alle Dokumente..."
 
-# &F is taken by "&FTP"
-# 2001-10-12 11:34:26 CEST -ke-
-#: ../main-menu/src/hard-drive-status-tile.c:83
+#: ../main-menu/src/hard-drive-status-tile.c:103
 msgid "Hard Drive"
 msgstr "Festplatte"
 
-#: ../main-menu/src/hard-drive-status-tile.c:316
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:318
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:320
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:322
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:342
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s frei/%s insgesamt"
 
-#: ../main-menu/src/main-menu-ui.c:310
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "The GNOME Main Menu"
 msgstr "Das GNOME-Hauptmenü"
 
-#: ../main-menu/src/main-menu-ui.c:432
+#: ../main-menu/src/main-menu-ui.c:420
 msgid "System"
 msgstr "System"
 
-#: ../main-menu/src/main-menu-ui.c:436
+#: ../main-menu/src/main-menu-ui.c:424
 msgid "Status"
 msgstr "Status"
 
-#: ../main-menu/src/main-menu-ui.c:630
+#: ../main-menu/src/main-menu-ui.c:557
 msgid "Computer"
 msgstr "Computer"
 
-#: ../main-menu/src/main-menu-ui.c:965
+#: ../main-menu/src/main-menu-ui.c:883
 msgid "Search:"
 msgstr "Suchen:"
 
-#: ../main-menu/src/network-status-tile.c:72
-#: ../main-menu/src/network-status-tile.c:184
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Netzwerk: Kein"
 
-#: ../main-menu/src/network-status-tile.c:75
-#: ../main-menu/src/network-status-tile.c:185
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 msgid "Click to configure network"
 msgstr "Zum Konfigurieren des Netzwerks hier klicken"
 
-#: ../main-menu/src/network-status-tile.c:191
+#: ../main-menu/src/network-status-tile.c:206
 #, c-format
 msgid "Connected to: %s"
 msgstr "Verbunden mit: %s"
 
-#: ../main-menu/src/network-status-tile.c:194
+#: ../main-menu/src/network-status-tile.c:209
 msgid "Network: Wireless"
 msgstr "Netzwerk: Kabellos (Funk)"
 
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:214
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet wird verwendet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:202
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Network: Wired"
 msgstr "Netzwerk: Verkabelt"
 
-#: ../main-menu/src/network-status-tile.c:308
+#: ../main-menu/src/network-status-tile.c:310
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Kabelloses Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:312
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Verkabeltes Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:316
-#: ../main-menu/src/network-status-tile.c:326
-#: ../main-menu/src/system-tile.c:127
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: ../main-menu/src/network-status-tile.c:324
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d MB/s"
 
-#: ../main-menu/src/system-tile.c:107
+#: ../main-menu/src/system-tile.c:128
 msgid "Install Software"
 msgstr "Installieren von Software"
 
-#: ../main-menu/src/system-tile.c:112
+#: ../main-menu/src/system-tile.c:135
 msgid "Log Out ..."
 msgstr "Abmelden..."
 
-#: ../main-menu/src/system-tile.c:117
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr "Bildschirm sperren..."
-
-#~ msgid "Number of days to be in New Applications category"
-#~ msgstr "Anzahl der Tage für Verbleib in Kategorie 'Neue Anwendungen'"
-#~ msgid ""
-#~ "The number of days relative to current date that an application will be "
-#~ "considered a New Application"
-#~ msgstr ""
-#~ "Die Anzahl an Tagen (in Bezug auf das aktuelle Datum), für die eine "
-#~ "Anwendung als neue Anwendung gilt"
-#~ msgid "All Applications..."
-#~ msgstr "Alle Anwendungen..."
-#~ msgid "Search"
-#~ msgstr "Suche"

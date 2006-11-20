@@ -1,27 +1,20 @@
-# French message file for YaST2 (@memory@).
-# Copyright (C) 2005 SUSE Linux Products GmbH.
-# Copyright (C) 2002, 2003 SuSE Linux AG.
-# Copyright (C) 2000, 2001 SuSE GmbH.
-# Patricia Vaz <patricia@suse.de>, 2003.
-# Francoise Lermen <flermen@suse.de>, 2000, 2001, 2002.
-# Karine Nguyen <karine@suse.de>, 2001.
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 15:33+0200\n"
-"PO-Revision-Date: 2006-06-23 13:58\n"
+"POT-Creation-Date: 2006-10-26 12:18-0600\n"
+"PO-Revision-Date: 2006-11-02 14:16\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-# TLABEL printer_2002_08_07_0216__246
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:69
+#: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
 msgstr "Explorateur d'applications"
 
@@ -69,7 +62,6 @@ msgstr "Indique s'il faut fermer le shell lorsqu'une opération d'ajout ou de su
 msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
 msgstr "Indique s'il faut fermer le shell lorsqu'une opération de mise à niveau ou de désinstallation est effectuée"
 
-# TLABEL printer_2002_08_07_0216__246
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
 msgstr "Nombre max de nouvelles applications"
@@ -78,31 +70,27 @@ msgstr "Nombre max de nouvelles applications"
 msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr "Nombre maximum d'applications qui seront affichées dans la catégorie Nouvelles applications"
 
-# TLABEL printer_2002_08_07_0216__246
-#: ../application-browser/src/application-browser.c:62
+#: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
 msgstr "Nouvelles applications"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Filter"
 msgstr "Filtre"
 
-# TLABEL users_2002_01_04_0147__21
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Groupes"
 
-# TLABEL printer_2002_08_07_0216__246
-#: ../application-browser/src/application-browser.c:66
+#: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
 msgstr "Opérations d'application"
 
-# TLABEL general_2002_03_14_2340__44
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:115
-#: ../main-menu/src/system-tile.c:95
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
 msgstr "Centre de contrôle"
 
@@ -121,69 +109,108 @@ msgstr "Nom de la tâche à afficher dans le centre de contrôle (devant donc ê
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
 msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
-msgstr "[Changer l'arrière-plan du bureau;background.desktop,Ajouter une imprimante;gnome-cups-manager.desktop,Configurer le réseau;YaST2/lan.desktop,Changer le mot de passe;gnome-passwd.desktop,Ajouter un utilisateur;YaST2/users.desktop,Ouvrir les paramètres de l'administrateur;YaST.desktop]"
+msgstr "[Changer l'arrière-plan du bureau;background.desktop, Ajouter une imprimante;gnome-cups-manager.desktop, Configurer le réseau;YaST2/lan.desktop, Changer le mot de passe;gnome-passwd.desktop, Ajouter un utilisateur;YaST2/users.desktop, Ouvrir les paramètres de l'administrateur;YaST.desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "si vrai, le centre de contrôle se ferme lorsqu'une \"Tâche courante\" est activée"
 
-# TLABEL network_2002_03_14_2340__32
-#: ../control-center/src/control-center.c:112
+#: ../control-center/src/control-center.c:61
+#, fuzzy, c-format
+msgid "key not found [%s]\n"
+msgstr "Fichier introuvable {0}"
+
+#: ../control-center/src/control-center.c:146
 msgid "Common Tasks"
 msgstr "Tâches courantes"
 
+#: ../libslab/app-shell.c:702
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>Aucune correspondance trouvée.</b> </span><span>\n"
+"\n"
+" Le filtre \"<b>%s</b>\" ne correspond à aucun élément.</span>"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "Rechercher maintenant"
+
 #. make start action
-#: ../libslab/src/application-tile.c:322
+#: ../libtile/application-tile.c:300
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Démarrer %s</b>"
 
-# TLABEL autoinst_2002_08_07_0216__152
-#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
+#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
 msgid "Help"
 msgstr "Aide"
 
-#: ../libslab/src/application-tile.c:350
+#: ../libtile/application-tile.c:326
 msgid "Help Unavailable"
 msgstr "Aide non disponible"
 
-# TLABEL packages_2002_01_04_0147__168
-#. make upgrade action
-#: ../libslab/src/application-tile.c:388
+#: ../libtile/application-tile.c:365
 msgid "Upgrade"
 msgstr "Mettre à niveau"
 
-# TLABEL online_update_2002_01_04_0147__8
-#. make uninstall action
-#: ../libslab/src/application-tile.c:395
+#: ../libtile/application-tile.c:374
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: ../libslab/src/application-tile.c:790
+#: ../libtile/application-tile.c:769
 msgid "Remove from Favorites"
 msgstr "Retirer des favoris"
 
-#: ../libslab/src/application-tile.c:792
+#: ../libtile/application-tile.c:771
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: ../libslab/src/application-tile.c:852
+#: ../libtile/application-tile.c:826
 msgid "Remove from Startup Programs"
 msgstr "Retirer des programmes de démarrage"
 
-#: ../libslab/src/application-tile.c:854
+#: ../libtile/application-tile.c:828
 msgid "Add to Startup Programs"
 msgstr "Ajouter aux programmes de démarrage"
 
-#: ../libslab/src/app-shell.c:644
-#, c-format
-msgid "<span size=\"large\"><b>No matches found.</b> </span><span>\n\n Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr "<span size=\"large\"><b>Aucune correspondance trouvée.</b> </span><span>\n\n Le filtre \"<b>%s</b>\" ne correspond à aucun élément.</span>"
+#: ../libtile/document-tile.c:140
+msgid "Edited %m/%d/%Y"
+msgstr "A modifié %m/%d/%Y"
 
-# TLABEL partitioning_2002_01_04_0147__125
-#: ../libslab/src/search-bar.c:235
-msgid "Find Now"
-msgstr "Rechercher maintenant"
+#: ../libtile/document-tile.c:170
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Ouvrir avec \"%s\"</b>"
+
+#: ../libtile/document-tile.c:182
+msgid "Open with Default Application"
+msgstr "Ouvrir avec l'application par défaut"
+
+#: ../libtile/document-tile.c:198
+msgid "Open in File Manager"
+msgstr "Ouvrir dans le Gestionnaire de fichiers"
+
+#. make rename action
+#: ../libtile/document-tile.c:214
+msgid "Rename..."
+msgstr "Renommer..."
+
+#. make move to trash action
+#: ../libtile/document-tile.c:227
+msgid "Move to Trash"
+msgstr "Mettre dans la corbeille"
+
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+msgid "Send To..."
+msgstr "Envoyer à..."
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
@@ -191,15 +218,14 @@ msgstr "Menu Ouvrir"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
 msgid "_About"
-msgstr "À _propos de"
+msgstr "À _propos"
 
-# TLABEL printer_2002_08_07_0216__246
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Menu et explorateur d'applications par défaut"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:309
+#: ../main-menu/src/main-menu-ui.c:303
 msgid "GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
@@ -231,7 +257,6 @@ msgstr "fichier .desktop pour le moniteur système gnome"
 msgid ".desktop file for the net config tool"
 msgstr "fichier .desktop pour l'outil de configuration de réseau"
 
-# TLABEL backup_2002_03_14_2340__52
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop files for \"Favorite Applications\""
 msgstr "fichiers .desktop pour les \"Applications favorites\""
@@ -306,7 +331,7 @@ msgstr "commande à exécuter pour mettre à niveau des paquetages, PACKAGE_NAME
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "contient la liste (dans un ordre quelconque) des types de fichiers autorisés dans la zone fichier. Valeurs possibles (reportez-vous également à la remarque pour /desktop/gnome/ applications/main-menu/file-area/file_class) : 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS est la liste des applications récemment utilisées (instanciées avec le menu principal ou l'explorateur d'applications).  USER_SPECIFIED_APPS équivaut à \"Applications favorites\". RECENT_FILES est la liste des fichiers récents ~/.recently-used."
+msgstr "contient la liste (dans un ordre quelconque) des types de fichiers autorisés dans la zone fichier. Valeurs possibles (reportez-vous également à la remarque pour /desktop/gnome/ applications/main-menu/file-area/file_class) : 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS est la liste des applications récemment utilisées (instanciées avec le menu principal ou l'explorateur d'applications). USER_SPECIFIED_APPS équivaut à \"Applications favorites\". RECENT_FILES est la liste des fichiers récents ~/.recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
@@ -370,11 +395,11 @@ msgstr "fichier .desktop d'élément du gestionnaire de paquetages"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "valeurs possibles = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indique que si mosaïque est déplacée sur une autre, elles doivent simplement changer de position.  PUSH indique que si une mosaïque A est déplacée sur une mosaïque B, un espace vacant est créé à la place de A. Cette opération provoque un ajustement si la mosaïque A apparaissait devant la mosaïque B avant le déplacement. PUSH_PULL est similaire à PUSH, mais si les mosaïques sont décalées elles sont poussées dans l'espace vacant ou éloignées de l'autre direction, selon la stratégie qui affecte le moins de mosaïques."
+msgstr "valeurs possibles = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indique que si un élément de mosaïque est déplacé sur un autre, ils doivent simplement changer de position. PUSH indique que si un élément de mosaïque A est déplacé sur un élément de mosaïque B, un espace vacant est créé à la place de A. Cette opération provoque un ajustement si l'élément de mosaïque A apparaissait devant l'élément de mosaïque B avant le déplacement. PUSH_PULL est similaire à PUSH, mais si les éléments de mosaïque sont décalés, ils sont poussés dans l'espace vacant ou éloignés de l'autre direction, selon la stratégie qui affecte le moins d'éléments de mosaïque."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "valeurs possibles = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS est la liste des applications récemment utilisées (instanciées avec le menu principal ou l'explorateur d'applications).  USER_SPECIFIED_APPS équivaut à \"Applications favorites\". RECENT_FILES est la liste des fichiers récents ~/.recently-used."
+msgstr "valeurs possibles = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS est la liste des applications récemment utilisées (instanciées avec le menu principal ou l'explorateur d'applications). USER_SPECIFIED_APPS équivaut à \"Applications favorites\". RECENT_FILES est la liste des fichiers récents ~/.recently-used."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid "prioritized list of commands to lock the screen"
@@ -396,208 +421,136 @@ msgstr "défini à vrai si la zone d'état doit être visible et activée."
 msgid "set to true if the system area should be visible and active."
 msgstr "défini à vrai si la zone système doit être visible et activée."
 
-#: ../main-menu/src/document-tile.c:119
-msgid "Edited %m/%d/%Y"
-msgstr "A modifié %m/%d/%Y"
-
-# TLABEL packages_2002_03_20_2159__0
-#: ../main-menu/src/document-tile.c:153
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Ouvrir avec \"%s\"</b>"
-
-#: ../main-menu/src/document-tile.c:163
-msgid "Open with Default Application"
-msgstr "Ouvrir avec l'application par défaut"
-
-#: ../main-menu/src/document-tile.c:181
-msgid "Open in File Manager"
-msgstr "Ouvrir dans le Gestionnaire de fichiers"
-
-# TLABEL autoinst_2002_08_07_0216__342
-#. make rename action
-#: ../main-menu/src/document-tile.c:199
-msgid "Rename..."
-msgstr "Renommer..."
-
-# TLABEL rpm-groups_2002_03_14_2340__26
-#. make move to trash action
-#: ../main-menu/src/document-tile.c:212
-msgid "Move to Trash"
-msgstr "Mettre dans la corbeille"
-
-# TLABEL autoinst_2002_08_07_0216__155
-#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
-msgid "Delete"
-msgstr "Effacer"
-
-# TLABEL profile-manager_2002_08_07_0216__18
-#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
-msgid "Send To..."
-msgstr "Envoyer à..."
-
-# TLABEL partitioning_2002_01_04_0147__125
-#: ../main-menu/src/file-area-widget.c:130
+#: ../main-menu/src/file-area-widget.c:137
 msgid "Show:"
-msgstr "Afficher :"
+msgstr "Afficher :"
 
-# TLABEL backup_2002_03_14_2340__52
-#: ../main-menu/src/file-area-widget.c:179
+#: ../main-menu/src/file-area-widget.c:182
 msgid "Favorite Applications"
 msgstr "Applications favorites"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:199
 msgid "Recently Used Applications"
 msgstr "Applications récemment utilisées"
 
-# TLABEL packages_2002_01_04_0147__66
-#: ../main-menu/src/file-area-widget.c:229
+#: ../main-menu/src/file-area-widget.c:209
 msgid "Recent Documents"
 msgstr "Documents récents"
 
-#: ../main-menu/src/file-area-widget.c:381
+#: ../main-menu/src/file-area-widget.c:343
 msgid "More Applications..."
 msgstr "Autres applications..."
 
-# TLABEL packages_2002_01_04_0147__66
-#: ../main-menu/src/file-area-widget.c:385
+#: ../main-menu/src/file-area-widget.c:347
 msgid "All Documents..."
 msgstr "Tous les documents..."
 
-# TLABEL packages_2002_01_04_0147__12
-#: ../main-menu/src/hard-drive-status-tile.c:83
+#: ../main-menu/src/hard-drive-status-tile.c:103
 msgid "Hard Drive"
 msgstr "Disque dur"
 
-#: ../main-menu/src/hard-drive-status-tile.c:316
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:318
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:320
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:322
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:342
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s Libre / %s Total"
 
-#: ../main-menu/src/main-menu-ui.c:310
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "The GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
-#: ../main-menu/src/main-menu-ui.c:432
+#: ../main-menu/src/main-menu-ui.c:420
 msgid "System"
 msgstr "Système"
 
-# TLABEL lan_inetd_2002_01_04_0147__28
-#: ../main-menu/src/main-menu-ui.c:436
+#: ../main-menu/src/main-menu-ui.c:424
 msgid "Status"
 msgstr "État"
 
-# TLABEL rpm-groups_2002_03_14_2340__25
-#: ../main-menu/src/main-menu-ui.c:630
+#: ../main-menu/src/main-menu-ui.c:557
 msgid "Computer"
 msgstr "Ordinateur"
 
-# TLABEL packages_2002_01_04_0147__110
-#: ../main-menu/src/main-menu-ui.c:965
+#: ../main-menu/src/main-menu-ui.c:883
 msgid "Search:"
 msgstr "Rechercher :"
 
-# TLABEL lan_2002_01_04_0147__264
-#: ../main-menu/src/network-status-tile.c:72
-#: ../main-menu/src/network-status-tile.c:184
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Réseau : aucun"
 
-# TLABEL wizard_2002_01_04_0147__43
-#: ../main-menu/src/network-status-tile.c:75
-#: ../main-menu/src/network-status-tile.c:185
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 msgid "Click to configure network"
 msgstr "Cliquer pour configurer le réseau"
 
-# TLABEL scanner_2002_01_04_0147__22
-#: ../main-menu/src/network-status-tile.c:191
+#: ../main-menu/src/network-status-tile.c:206
 #, c-format
 msgid "Connected to: %s"
 msgstr "Connecté à : %s"
 
-# TLABEL lan_2002_01_04_0147__254
-#: ../main-menu/src/network-status-tile.c:194
+#: ../main-menu/src/network-status-tile.c:209
 msgid "Network: Wireless"
 msgstr "Réseau : sans fil"
 
-# TLABEL runlevel_2002_08_07_0216__1
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:214
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Utilisation d'Ethernet (%s)"
 
-# TLABEL hwinfo_2002_01_04_0147__39
-#: ../main-menu/src/network-status-tile.c:202
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Network: Wired"
 msgstr "Réseau : câblé"
 
-# TLABEL network_2002_08_07_0216__65
-#: ../main-menu/src/network-status-tile.c:308
+#: ../main-menu/src/network-status-tile.c:310
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Ethernet sans fil (%s)"
 
-#: ../main-menu/src/network-status-tile.c:312
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet câblé (%s)"
 
-# TLABEL autoinst_2002_08_07_0216__168
-#: ../main-menu/src/network-status-tile.c:316
-#: ../main-menu/src/network-status-tile.c:326
-#: ../main-menu/src/system-tile.c:127
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: ../main-menu/src/network-status-tile.c:324
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-# TLABEL online_update_2002_01_04_0147__20
-#: ../main-menu/src/system-tile.c:107
+#: ../main-menu/src/system-tile.c:128
 msgid "Install Software"
 msgstr "Installation de logiciels"
 
-#: ../main-menu/src/system-tile.c:112
+#: ../main-menu/src/system-tile.c:135
 msgid "Log Out ..."
 msgstr "Se déconnecter..."
 
-#: ../main-menu/src/system-tile.c:117
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr "Verrouiller l'écran..."
-
-#~ msgid "Number of days to be in New Applications category"
-#~ msgstr "Nombre de jours à passer dans la catégorie Nouvelles applications"
-#~ msgid ""
-#~ "The number of days relative to current date that an application will be "
-#~ "considered a New Application"
-#~ msgstr ""
-#~ "Nombre de jours à partir de la date courante pendant lesquels une "
-#~ "application sera considérée comme nouvelle"
-# TLABEL backup_2002_03_14_2340__34
-#~ msgid "All Applications..."
-#~ msgstr "Toutes les applications..."
-# TLABEL packages_2002_01_04_0147__110
-#~ msgid "Search"
-#~ msgstr "Recherche"

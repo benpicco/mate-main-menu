@@ -1,27 +1,25 @@
-# Arabic translations for PACKAGE package.
-# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2006.
+# Arabic message file for YaST2 (@memory@).
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Copyright (C) 2002 SuSE Linux AG.
+# Copyright (C) 1999 SuSE GmbH.
+# Ghayss Tarraf <jodi@suse.de>, 2000.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Project\n"
+"Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-17 21:14+0000\n"
-"PO-Revision-Date: 2006-11-18 00:18+0100\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"POT-Creation-Date: 2006-10-26 12:18-0600\n"
+"PO-Revision-Date: 2001-07-13 15:36+0200\n"
+"Last-Translator: Ghayss Tarraf <jodi@suse.de>\n"
+"Language-Team: Arabic <i18n@suse.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n >= 3 && n <= 10 ? 3 : n >= 11 && n <= 99 ? 4 : 5;\n"
-"X-Poedit-Language: Arabic\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
-#, fuzzy
 msgid "Application Browser"
-msgstr "متصفّح الانترنت"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 #: ../control-center/etc/control-center.schemas.in.h:2
@@ -44,9 +42,8 @@ msgid "Exit shell on upgrade or uninstall action performed"
 msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
-#, fuzzy
 msgid "Filename of existing .desktop files"
-msgstr "تنميق المل_فات الموجودة"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 #: ../control-center/etc/control-center.schemas.in.h:6
@@ -69,41 +66,36 @@ msgid "Indicates whether to close the shell when an upgrade or uninstall action 
 msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
-#, fuzzy
 msgid "Max number of New Applications"
-msgstr "العدد القصوي لأفعال إلغاءات الأفعال"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
 msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr ""
 
 #: ../application-browser/src/application-browser.c:85
-#, fuzzy
 msgid "New Applications"
-msgstr "التطبيقات ال_حديثة:"
+msgstr ""
 
 #: ../application-browser/src/application-browser.c:90
 #: ../control-center/src/control-center.c:146
-#, fuzzy
 msgid "Filter"
-msgstr "مرشح"
+msgstr ""
 
 #: ../application-browser/src/application-browser.c:90
 #: ../control-center/src/control-center.c:146
-#, fuzzy
 msgid "Groups"
-msgstr "المجموعات"
+msgstr ""
 
 #: ../application-browser/src/application-browser.c:90
-#, fuzzy
 msgid "Application Actions"
-msgstr "أفعال الحاسوب"
+msgstr ""
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
 #: ../control-center/src/control-center.c:150
-#, fuzzy
+#: ../main-menu/src/system-tile.c:114
 msgid "Control Center"
-msgstr "مركز تحكم جنوم"
+msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:1
 msgid "Close the control-center when a task is activated"
@@ -127,16 +119,15 @@ msgid "if true, the control-center will close when a \"Common Task\" is activate
 msgstr ""
 
 #: ../control-center/src/control-center.c:61
-#, fuzzy, c-format
+#, c-format
 msgid "key not found [%s]\n"
-msgstr "المفتاح %s غير موجود في الإعدادات"
+msgstr ""
 
 #: ../control-center/src/control-center.c:146
-#, fuzzy
 msgid "Common Tasks"
-msgstr "المهام ال_فائت موعدها:"
+msgstr ""
 
-#: ../libslab/app-shell.c:707
+#: ../libslab/app-shell.c:702
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -145,107 +136,89 @@ msgid ""
 msgstr ""
 
 #: ../libslab/search-bar.c:255
-#, fuzzy
 msgid "Find Now"
-msgstr "_بحث الآن"
+msgstr ""
 
 #. make start action
-#: ../libslab/application-tile.c:307
-#, fuzzy, c-format
+#: ../libtile/application-tile.c:300
+#, c-format
 msgid "<b>Start %s</b>"
-msgstr "إبدأ"
+msgstr ""
 
-#: ../libslab/application-tile.c:326
-#, fuzzy
+#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
 msgid "Help"
-msgstr "مساعدة"
+msgstr ""
 
-#: ../libslab/application-tile.c:333
-#, fuzzy
+#: ../libtile/application-tile.c:326
 msgid "Help Unavailable"
-msgstr "غير متوفّر مؤقتا"
+msgstr ""
 
-#: ../libslab/application-tile.c:372
+#: ../libtile/application-tile.c:365
 msgid "Upgrade"
 msgstr ""
 
-#: ../libslab/application-tile.c:381
+#: ../libtile/application-tile.c:374
 msgid "Uninstall"
 msgstr ""
 
-#: ../libslab/application-tile.c:778
-#, fuzzy
+#: ../libtile/application-tile.c:769
 msgid "Remove from Favorites"
-msgstr "_حذف من شريط الأدوات"
+msgstr ""
 
-#: ../libslab/application-tile.c:780
-#, fuzzy
+#: ../libtile/application-tile.c:771
 msgid "Add to Favorites"
-msgstr "مُرفق للإضافة."
+msgstr ""
 
-#: ../libslab/application-tile.c:835
-#, fuzzy
+#: ../libtile/application-tile.c:826
 msgid "Remove from Startup Programs"
-msgstr "حذف من هذا الموضوع."
+msgstr ""
 
-#: ../libslab/application-tile.c:837
-#, fuzzy
+#: ../libtile/application-tile.c:828
 msgid "Add to Startup Programs"
-msgstr "نقر لإضافة مهمّة"
+msgstr ""
 
-#: ../libslab/document-tile.c:142
-#, fuzzy
+#: ../libtile/document-tile.c:140
 msgid "Edited %m/%d/%Y"
-msgstr "احفظ البحث المحرر"
+msgstr ""
 
-#: ../libslab/document-tile.c:171
-#, fuzzy, c-format
+#: ../libtile/document-tile.c:170
+#, c-format
 msgid "<b>Open with \"%s\"</b>"
-msgstr "الفتح بـاستخدام"
+msgstr ""
 
-#: ../libslab/document-tile.c:183
-#, fuzzy
+#: ../libtile/document-tile.c:182
 msgid "Open with Default Application"
-msgstr "افتح ب_تطبيق آخر..."
+msgstr ""
 
-#: ../libslab/document-tile.c:199
-#, fuzzy
+#: ../libtile/document-tile.c:198
 msgid "Open in File Manager"
-msgstr "اظهر الدليل في مدير الملفات"
+msgstr ""
 
 #. make rename action
-#: ../libslab/document-tile.c:215
-#, fuzzy
+#: ../libtile/document-tile.c:214
 msgid "Rename..."
-msgstr "اعد تسمية..."
+msgstr ""
 
 #. make move to trash action
-#: ../libslab/document-tile.c:228
-#, fuzzy
+#: ../libtile/document-tile.c:227
 msgid "Move to Trash"
-msgstr "نقل إلى سلّة المهملات"
+msgstr ""
 
-#: ../libslab/document-tile.c:238
-#: ../libslab/document-tile.c:568
-#, fuzzy
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
 msgid "Delete"
-msgstr "حذف"
+msgstr ""
 
-#: ../libslab/document-tile.c:258
-#: ../libslab/document-tile.c:267
-#, fuzzy
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
 msgid "Send To..."
-msgstr "إرسال إلى:"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-#, fuzzy
 msgid "Open Menu"
-msgstr "مخطط القائمة"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-#, fuzzy
 msgid "_About"
-msgstr "_حول"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
@@ -253,34 +226,28 @@ msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:303
-#, fuzzy
 msgid "GNOME Main Menu"
-msgstr "قائمة جنوم الرّئيسيّة"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-#, fuzzy
 msgid "GNOME Main Menu Factory"
-msgstr "مصنع محرر HTML لجينوم"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
-#: ../main-menu/src/slab-window.c:57
-#, fuzzy
 msgid "Main Menu"
-msgstr "القائمة الرئيسية"
+msgstr ""
 
 #: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-#, fuzzy
 msgid "Software Update"
-msgstr "التحديث التالي:"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
-#, fuzzy
 msgid ".desktop file for the file browser"
-msgstr "نمط التصفية لمتصفح الملفات "
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
@@ -295,9 +262,8 @@ msgid ".desktop files for \"Favorite Applications\""
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
-#, fuzzy
 msgid ".desktop path for the application browser"
-msgstr "متصفح و عارض مستندات لجنوم."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "Location of the system-wide directory in which startup programs are found."
@@ -308,9 +274,8 @@ msgid "Location of the user directory in which startup programs are found. The d
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-#, fuzzy
 msgid "System area items"
-msgstr "حذف أيّ عناصر"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "System-wide autostart program drop dir"
@@ -349,18 +314,16 @@ msgid "User autostart program drop dir (within the home dir)"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
-#, fuzzy
 msgid "command to uninstall packages"
-msgstr "أمر الجس الذي سينفّذ"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-#, fuzzy
 msgid "command to upgrade packages"
-msgstr "أمر الجس الذي سينفّذ"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
@@ -395,9 +358,8 @@ msgid "determines which types of files to display in the file area"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
-#, fuzzy
 msgid "help item .desktop file"
-msgstr "تمديد ملف سطح المكتب لإيبفني."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "if true, main menu is more anxious to close"
@@ -461,172 +423,135 @@ msgstr ""
 
 #: ../main-menu/src/file-area-widget.c:137
 #, fuzzy
-msgid "Sho_w:"
-msgstr "عرض كل المواضيع"
+msgid "Show:"
+msgstr "سوذو الشمالية"
 
-#: ../main-menu/src/file-area-widget.c:186
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:182
 msgid "Favorite Applications"
-msgstr "التطبيقات ال_حديثة:"
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:203
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:199
 msgid "Recently Used Applications"
-msgstr "فتح محفوظة مستخدمة مؤخرا"
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:213
-#, fuzzy
+#: ../main-menu/src/file-area-widget.c:209
 msgid "Recent Documents"
-msgstr "المستندات الحديثة"
+msgstr ""
+
+#: ../main-menu/src/file-area-widget.c:343
+msgid "More Applications..."
+msgstr ""
 
 #: ../main-menu/src/file-area-widget.c:347
-#, fuzzy
-msgid "More _Applications..."
-msgstr "التطبيقات ال_حديثة:"
+msgid "All Documents..."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:351
-#, fuzzy
-msgid "_All Documents..."
-msgstr "جميع المستندات"
+#: ../main-menu/src/hard-drive-status-tile.c:103
+msgid "Hard Drive"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:106
-#, fuzzy
-msgid "Hard _Drive"
-msgstr "السواقة مفتوحة"
-
-#: ../main-menu/src/hard-drive-status-tile.c:339
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:341
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:343
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:366
-#, fuzzy, c-format
+#: ../main-menu/src/hard-drive-status-tile.c:352
+#, c-format
 msgid "%s Free / %s Total"
-msgstr "مجموع الصفحات"
-
-#: ../main-menu/src/main-menu-ui.c:304
-#, fuzzy
-msgid "The GNOME Main Menu"
-msgstr "قائمة جنوم الرّئيسيّة"
-
-#: ../main-menu/src/main-menu-ui.c:420
-#, fuzzy
-msgid "System"
-msgstr "نظام"
-
-#: ../main-menu/src/main-menu-ui.c:424
-#, fuzzy
-msgid "Status"
-msgstr "الحالة"
-
-#: ../main-menu/src/main-menu-ui.c:557
-#, fuzzy
-msgid "Computer"
-msgstr "الحاسوب"
-
-#: ../main-menu/src/main-menu-ui.c:883
-#, fuzzy
-msgid "_Search:"
-msgstr "_بحث:"
-
-#: ../main-menu/src/network-status-tile.c:91
-#, fuzzy
-msgid "Network: None"
-msgstr "<small><i>لا شيء</i></small>"
-
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
-#, fuzzy
-msgid "Click to configure network"
-msgstr "إذهب إلى موقع الشبكة"
-
-#: ../main-menu/src/network-status-tile.c:198
-#, fuzzy
-msgid "Networ_k: None"
-msgstr "<small><i>لا شيء</i></small>"
-
-#: ../main-menu/src/network-status-tile.c:207
-#, fuzzy, c-format
-msgid "Connected to: %s"
-msgstr "مسجل ل %s"
-
-#: ../main-menu/src/network-status-tile.c:210
-#, fuzzy
-msgid "Networ_k: Wireless"
-msgstr "الواجهة اللّاسلكيّة"
-
-#: ../main-menu/src/network-status-tile.c:215
-#, fuzzy, c-format
-msgid "Using ethernet (%s)"
-msgstr "واجهة إيثرنت"
-
-#: ../main-menu/src/network-status-tile.c:219
-msgid "Networ_k: Wired"
 msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:320
-#, fuzzy, c-format
+#: ../main-menu/src/main-menu-ui.c:304
+msgid "The GNOME Main Menu"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:420
+msgid "System"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:424
+msgid "Status"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:557
+msgid "Computer"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:883
+msgid "Search:"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
+msgid "Network: None"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Click to configure network"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:206
+#, c-format
+msgid "Connected to: %s"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:209
+msgid "Network: Wireless"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:214
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:218
+msgid "Network: Wired"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:310
+#, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr "واجهة إيثرنت"
+msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:325
-#, fuzzy, c-format
+#: ../main-menu/src/network-status-tile.c:315
+#, c-format
 msgid "Wired Ethernet (%s)"
-msgstr "واجهة إيثرنت"
+msgstr ""
 
+#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
-#, fuzzy
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
-msgstr "مجهول"
+msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:337
-#, fuzzy, c-format
+#: ../main-menu/src/network-status-tile.c:327
+#, c-format
 msgid "%d Mb/s"
-msgstr "مب"
+msgstr ""
 
-#: ../main-menu/src/system-tile.c:103
-#, fuzzy
-msgid "_Help"
-msgstr "م_ساعدة"
+#: ../main-menu/src/system-tile.c:128
+msgid "Install Software"
+msgstr ""
 
-#: ../main-menu/src/system-tile.c:117
-#, fuzzy
-msgid "_Control Center"
-msgstr "مركز تحكم جنوم"
+#: ../main-menu/src/system-tile.c:135
+msgid "Log Out ..."
+msgstr ""
 
-#: ../main-menu/src/system-tile.c:131
-#, fuzzy
-msgid "I_nstall Software"
-msgstr "أدوات لتطوير البرمجيات"
-
-#: ../main-menu/src/system-tile.c:138
-#, fuzzy
-msgid "Log _Out ..."
-msgstr "اخرج"
-
-#: ../main-menu/src/system-tile.c:145
-#, fuzzy
-msgid "_Lock Screen ..."
-msgstr "إقفل الشاشة"
-
-#: ../main-menu/src/system-tile.c:161
-#, fuzzy
-msgid "_Unknown"
-msgstr "مجهول"
-
+#: ../main-menu/src/system-tile.c:142
+msgid "Lock Screen ..."
+msgstr ""

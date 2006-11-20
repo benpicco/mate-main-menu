@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 15:33+0200\n"
+"POT-Creation-Date: 2006-10-26 12:18-0600\n"
 "PO-Revision-Date: 2001-07-17 16:12+0200\n"
 "Last-Translator: Bill Giannakopoulos <BillG@hellug.gr>\n"
 "Language-Team: Greek <i18n@suse.de>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:69
+#: ../application-browser/src/application-browser.c:93
 #, fuzzy
 msgid "Application Browser"
 msgstr "Σειρά Εφαρμογής"
@@ -59,16 +59,12 @@ msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
-msgid ""
-"Indicates whether to close the shell when an add or remove action is "
-"performed"
+msgid "Indicates whether to close the shell when an add or remove action is performed"
 msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
-msgid ""
-"Indicates whether to close the shell when an upgrade or uninstall action is "
-"performed"
+msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
 msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
@@ -77,35 +73,33 @@ msgid "Max number of New Applications"
 msgstr "Σειρά Εφαρμογής"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid ""
-"The maximum number of applications that will be displayed in the New "
-"Applications category"
+msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr ""
 
-#: ../application-browser/src/application-browser.c:62
+#: ../application-browser/src/application-browser.c:85
 #, fuzzy
 msgid "New Applications"
 msgstr "Σειρά Εφαρμογής"
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 #, fuzzy
 msgid "Filter"
 msgstr "Φίλτρο: "
 
-#: ../application-browser/src/application-browser.c:66
-#: ../control-center/src/control-center.c:112
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
 msgid "Groups"
 msgstr "Ομάδες"
 
-#: ../application-browser/src/application-browser.c:66
+#: ../application-browser/src/application-browser.c:90
 #, fuzzy
 msgid "Application Actions"
 msgstr "Σειρά Εφαρμογής"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:115
-#: ../main-menu/src/system-tile.c:95
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
 #, fuzzy
 msgid "Control Center"
 msgstr "YaST2 Κέντρο Ελέγχου"
@@ -119,77 +113,29 @@ msgid "Task names and associated .desktop files"
 msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:11
-msgid ""
-"The task name to be displayed in the control-center (thus needing to be "
-"translated) followed by a \";\" separator then the filename of an "
-"associated .desktop file to launch for that task."
+msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
 msgstr ""
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
-"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
-"desktop]"
+msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
 msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
 
-#: ../control-center/src/control-center.c:112
+#: ../control-center/src/control-center.c:61
+#, c-format
+msgid "key not found [%s]\n"
+msgstr ""
+
+#: ../control-center/src/control-center.c:146
 #, fuzzy
 msgid "Common Tasks"
 msgstr "Κοινόχρηστο Όνομα"
 
-#. make start action
-#: ../libslab/src/application-tile.c:322
-#, fuzzy, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Διόρθωση: </b>"
-
-#: ../libslab/src/application-tile.c:343 ../main-menu/src/system-tile.c:83
-msgid "Help"
-msgstr "Βοήθεια"
-
-#: ../libslab/src/application-tile.c:350
-#, fuzzy
-msgid "Help Unavailable"
-msgstr "Μη-διαθέσιμη"
-
-#. make upgrade action
-#: ../libslab/src/application-tile.c:388
-#, fuzzy
-msgid "Upgrade"
-msgstr "Ενημέρωση"
-
-#. make uninstall action
-#: ../libslab/src/application-tile.c:395
-#, fuzzy
-msgid "Uninstall"
-msgstr "Εγκατάσταση"
-
-#: ../libslab/src/application-tile.c:790
-#, fuzzy
-msgid "Remove from Favorites"
-msgstr "Αφαίρεση Καταχωρήσεων fstab"
-
-#: ../libslab/src/application-tile.c:792
-#, fuzzy
-msgid "Add to Favorites"
-msgstr "Προ&σθήκη στο Φίλτρο"
-
-#: ../libslab/src/application-tile.c:852
-msgid "Remove from Startup Programs"
-msgstr ""
-
-#: ../libslab/src/application-tile.c:854
-msgid "Add to Startup Programs"
-msgstr ""
-
-#: ../libslab/src/app-shell.c:644
+#: ../libslab/app-shell.c:702
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -197,10 +143,91 @@ msgid ""
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
 
-#: ../libslab/src/search-bar.c:235
+#: ../libslab/search-bar.c:255
 #, fuzzy
 msgid "Find Now"
 msgstr "Εκτέλεση Τώρα"
+
+#. make start action
+#: ../libtile/application-tile.c:300
+#, fuzzy, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Διόρθωση: </b>"
+
+#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: ../libtile/application-tile.c:326
+#, fuzzy
+msgid "Help Unavailable"
+msgstr "Μη-διαθέσιμη"
+
+#: ../libtile/application-tile.c:365
+#, fuzzy
+msgid "Upgrade"
+msgstr "Ενημέρωση"
+
+#: ../libtile/application-tile.c:374
+#, fuzzy
+msgid "Uninstall"
+msgstr "Εγκατάσταση"
+
+#: ../libtile/application-tile.c:769
+#, fuzzy
+msgid "Remove from Favorites"
+msgstr "Αφαίρεση Καταχωρήσεων fstab"
+
+#: ../libtile/application-tile.c:771
+#, fuzzy
+msgid "Add to Favorites"
+msgstr "Προ&σθήκη στο Φίλτρο"
+
+#: ../libtile/application-tile.c:826
+msgid "Remove from Startup Programs"
+msgstr ""
+
+#: ../libtile/application-tile.c:828
+msgid "Add to Startup Programs"
+msgstr ""
+
+#: ../libtile/document-tile.c:140
+msgid "Edited %m/%d/%Y"
+msgstr ""
+
+#: ../libtile/document-tile.c:170
+#, fuzzy, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Συγκρούεται με: </b>"
+
+#: ../libtile/document-tile.c:182
+msgid "Open with Default Application"
+msgstr ""
+
+#: ../libtile/document-tile.c:198
+msgid "Open in File Manager"
+msgstr ""
+
+#. make rename action
+#: ../libtile/document-tile.c:214
+#, fuzzy
+msgid "Rename..."
+msgstr "&Όνομα"
+
+#. make move to trash action
+#: ../libtile/document-tile.c:227
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Μετατροπείς"
+
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#, fuzzy
+msgid "Send To..."
+msgstr "&Εναλλαγή Σε..."
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
@@ -216,7 +243,7 @@ msgid "Default menu and application browser"
 msgstr "Σειρά Εφαρμογής"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:309
+#: ../main-menu/src/main-menu-ui.c:303
 msgid "GNOME Main Menu"
 msgstr ""
 
@@ -226,7 +253,7 @@ msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
-msgstr ""
+msgstr "Κυρίως Μενού"
 
 #: ../main-menu/etc/main-menu-rug.desktop.in.h:1
 msgid "Software Update"
@@ -259,15 +286,11 @@ msgid ".desktop path for the application browser"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
+msgid "Location of the system-wide directory in which startup programs are found."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid ""
-"Location of the user directory in which startup programs are found. The dir "
-"path should not be absolute, as the value of this key is appended to this "
-"path: ~/."
+msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
@@ -279,38 +302,23 @@ msgid "System-wide autostart program drop dir"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid ""
-"The list of the items which will appear in the System area. Possible values "
-"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
-"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
-"the appropriate .desktop files defined in the, respectively, \"help_item\", "
-"\"control_center_item\" and \"package_manager_item\" keys."
+msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
-"of the activated file."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated."
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated. DIRNAME and BASENAME are replaced with the corresponding "
-"components of the activated tile."
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
@@ -318,9 +326,7 @@ msgid "This is the command to execute when the search entry is used."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid ""
-"This is the command to execute when the search entry is used. SEARCH_STRING "
-"is replaced with the entered search text."
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
@@ -332,9 +338,7 @@ msgid "command to uninstall packages"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid ""
-"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
@@ -342,26 +346,15 @@ msgid "command to upgrade packages"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-msgid ""
-"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid ""
-"contains the list (in no particular order) of allowable file types to show "
-"in the file area. possible values (see also the note for /desktop/gnome/"
-"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
-"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
-"recently used (instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
+msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid ""
-"contains the list of files (including .desktop files) to be excluded from "
-"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
@@ -373,15 +366,11 @@ msgid "determines the limit of tiles in the file-area."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid ""
-"determines the limit of tiles in the file-area. *Note: this does not affect "
-"the number of tiles if the file-class is USER_SPECIFIED_*."
+msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid ""
-"determines the reordering algorithm used when moving tiles around the main-"
-"menu"
+msgid "determines the reordering algorithm used when moving tiles around the main-menu"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
@@ -397,9 +386,7 @@ msgid "if true, main menu is more anxious to close"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid ""
-"if true, main menu will close under these additional conditions: tile is "
-"activated, search activated"
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
@@ -427,25 +414,11 @@ msgid "package manager item .desktop file"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid ""
-"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
-"when a tile is dragged onto another tile they should simply swap position. "
-"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
-"vacant spot is created in tile A's place. tile B (and all tiles after B) "
-"shift down until the new vacant space is filled. this operation wraps around "
-"in the case that tile A appears before tile B prior to the drag and drop "
-"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
-"they are either pushed into the vacant spaced or pulled from the other "
-"direction, depending on which strategy affects the least number of tiles."
+msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid ""
-"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
-"(instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
+msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
@@ -453,9 +426,7 @@ msgid "prioritized list of commands to lock the screen"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid ""
-"set to true if the link to the application browser should be visible and "
-"active."
+msgid "set to true if the link to the application browser should be visible and active."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
@@ -470,188 +441,150 @@ msgstr ""
 msgid "set to true if the system area should be visible and active."
 msgstr ""
 
-#: ../main-menu/src/document-tile.c:119
-msgid "Edited %m/%d/%Y"
-msgstr ""
-
-#: ../main-menu/src/document-tile.c:153
-#, fuzzy, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Συγκρούεται με: </b>"
-
-#: ../main-menu/src/document-tile.c:163
-msgid "Open with Default Application"
-msgstr ""
-
-#: ../main-menu/src/document-tile.c:181
-msgid "Open in File Manager"
-msgstr ""
-
-#. make rename action
-#: ../main-menu/src/document-tile.c:199
-#, fuzzy
-msgid "Rename..."
-msgstr "&Όνομα"
-
-#. make move to trash action
-#: ../main-menu/src/document-tile.c:212
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Μετατροπείς"
-
-#: ../main-menu/src/document-tile.c:221 ../main-menu/src/document-tile.c:594
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#: ../main-menu/src/document-tile.c:242 ../main-menu/src/document-tile.c:249
-#, fuzzy
-msgid "Send To..."
-msgstr "&Εναλλαγή Σε..."
-
-#: ../main-menu/src/file-area-widget.c:130
+#: ../main-menu/src/file-area-widget.c:137
 #, fuzzy
 msgid "Show:"
 msgstr "Τώρα:"
 
 #  progress stages
-#: ../main-menu/src/file-area-widget.c:179
+#: ../main-menu/src/file-area-widget.c:182
 #, fuzzy
 msgid "Favorite Applications"
 msgstr "Αποθήκευση επιλογών"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:199
 msgid "Recently Used Applications"
 msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:229
+#: ../main-menu/src/file-area-widget.c:209
 #, fuzzy
 msgid "Recent Documents"
 msgstr "Έγγραφο"
 
-#: ../main-menu/src/file-area-widget.c:381
+#: ../main-menu/src/file-area-widget.c:343
 msgid "More Applications..."
 msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:385
+#: ../main-menu/src/file-area-widget.c:347
 #, fuzzy
 msgid "All Documents..."
 msgstr "Έγγραφο"
 
-#: ../main-menu/src/hard-drive-status-tile.c:83
+#: ../main-menu/src/hard-drive-status-tile.c:103
 #, fuzzy
 msgid "Hard Drive"
 msgstr "Σκληρός Δίσκος"
 
-#: ../main-menu/src/hard-drive-status-tile.c:316
+#: ../main-menu/src/hard-drive-status-tile.c:326
 #, c-format
 msgid "%lluG"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:318
+#: ../main-menu/src/hard-drive-status-tile.c:328
 #, c-format
 msgid "%lluM"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:320
+#: ../main-menu/src/hard-drive-status-tile.c:330
 #, c-format
 msgid "%lluK"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:322
+#: ../main-menu/src/hard-drive-status-tile.c:332
 #, c-format
 msgid "%llub"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:342
+#: ../main-menu/src/hard-drive-status-tile.c:352
 #, c-format
 msgid "%s Free / %s Total"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:310
+#: ../main-menu/src/main-menu-ui.c:304
 msgid "The GNOME Main Menu"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:432
+#: ../main-menu/src/main-menu-ui.c:420
 msgid "System"
 msgstr "Σύστημα"
 
-#: ../main-menu/src/main-menu-ui.c:436
+#: ../main-menu/src/main-menu-ui.c:424
 msgid "Status"
 msgstr "Κατάσταση"
 
-#: ../main-menu/src/main-menu-ui.c:630
+#: ../main-menu/src/main-menu-ui.c:557
 msgid "Computer"
 msgstr "Υπολογιστής"
 
-#: ../main-menu/src/main-menu-ui.c:965
+#: ../main-menu/src/main-menu-ui.c:883
 #, fuzzy
 msgid "Search:"
 msgstr "Εύρεσ&η:"
 
-#: ../main-menu/src/network-status-tile.c:72
-#: ../main-menu/src/network-status-tile.c:184
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
 #, fuzzy
 msgid "Network: None"
 msgstr "Λειτουργία Δικτύου"
 
-#: ../main-menu/src/network-status-tile.c:75
-#: ../main-menu/src/network-status-tile.c:185
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
 #, fuzzy
 msgid "Click to configure network"
 msgstr "Εμφάνιση ρυθμισμένων καταχωρήσεων"
 
-#: ../main-menu/src/network-status-tile.c:191
+#: ../main-menu/src/network-status-tile.c:206
 #, fuzzy, c-format
 msgid "Connected to: %s"
 msgstr "Συνδεδεμένο στο"
 
-#: ../main-menu/src/network-status-tile.c:194
+#: ../main-menu/src/network-status-tile.c:209
 #, fuzzy
 msgid "Network: Wireless"
 msgstr "Διεύθυνση Δικτύου"
 
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:214
 #, fuzzy, c-format
 msgid "Using ethernet (%s)"
 msgstr "Χρήση του διακομιστή %1"
 
-#: ../main-menu/src/network-status-tile.c:202
+#: ../main-menu/src/network-status-tile.c:218
 #, fuzzy
 msgid "Network: Wired"
 msgstr "Κάρτα Δικτύου"
 
-#: ../main-menu/src/network-status-tile.c:308
+#: ../main-menu/src/network-status-tile.c:310
 #, fuzzy, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Ειδικές Ρυθμίσεις Ασύρματης Συσκευής"
 
-#: ../main-menu/src/network-status-tile.c:312
+#: ../main-menu/src/network-status-tile.c:315
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:316
-#: ../main-menu/src/network-status-tile.c:326
-#: ../main-menu/src/system-tile.c:127
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: ../main-menu/src/network-status-tile.c:324
+#: ../main-menu/src/network-status-tile.c:327
 #, c-format
 msgid "%d Mb/s"
 msgstr ""
 
-#: ../main-menu/src/system-tile.c:107
+#: ../main-menu/src/system-tile.c:128
 #, fuzzy
 msgid "Install Software"
 msgstr "Εγκατάσταση firmware"
 
-#: ../main-menu/src/system-tile.c:112
+#: ../main-menu/src/system-tile.c:135
 #, fuzzy
 msgid "Log Out ..."
 msgstr "Αποσύνδεση"
 
-#: ../main-menu/src/system-tile.c:117
+#: ../main-menu/src/system-tile.c:142
 msgid "Lock Screen ..."
 msgstr ""
 
