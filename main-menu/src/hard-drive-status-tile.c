@@ -154,6 +154,8 @@ hard_drive_status_tile_init (HardDriveStatusTile * tile)
 	dbus_error_init (&error);
 	priv->dbus_connection = dbus_bus_get (DBUS_BUS_SYSTEM, &error);
 
+	dbus_connection_set_exit_on_disconnect (priv->dbus_connection, FALSE);
+
 	if (dbus_error_is_set (&error))
 	{
 		g_warning ("error (%s): [%s]\n", error.name, error.message);
