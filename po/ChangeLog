@@ -1,3 +1,20 @@
+2006-11-24  Wouter Bolsterlee  <wbolster@cvs.gnome.org>
+
+	* nl.po:
+	
+	Dutch translation updated by Wouter Bolsterlee.
+
+	<rant>
+	Next time please DO NOT MERGE changes changing standard
+	terms used by the GNOME-NL team without us knowing.
+	Also, there were major regressions (lots of fuzzies)
+	after the so-called unapproved "translation updates".
+	I've also removed crap copyright notices for people who
+	never contributed to this translation. It was translated
+	from scratch by *me*, not by SuSE/Novell/KDE people.
+	Thank you for your cooperation.
+	</rant>
+
 2006-11-18  Djihed Afifi <djihed@gmail.com> 
 
 	* ar.po: Updated Arabic Translation.
