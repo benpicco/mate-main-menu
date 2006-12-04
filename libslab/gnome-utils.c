@@ -116,7 +116,7 @@ get_gconf_value (const gchar * key)
 	GConfValue *value;
 	GError *error = NULL;
 
-	gpointer retval;
+	gpointer retval = NULL;
 
 	GList *list;
 	GSList *slist;

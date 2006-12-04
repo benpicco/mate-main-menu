@@ -123,7 +123,10 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	gchar *markup;
 
 	AtkObject *accessible;
-
+	
+	gchar *filename;
+	gchar *tooltip_text;
+  
 	uri = g_strdup (in_uri);
 
 	image = gtk_image_new ();
@@ -144,11 +147,20 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	subheader = create_subheader (time_str);
 
+	filename = g_filename_from_uri (uri, NULL, NULL);
+
+  	if (filename)
+		tooltip_text = g_filename_to_utf8 (filename, -1, NULL, NULL, NULL);
+	else
+		tooltip_text = NULL;
+
+	g_free (filename);
+	
 	context_menu = GTK_MENU (gtk_menu_new ());
 
 	this = g_object_new (DOCUMENT_TILE_TYPE, "tile-uri", uri, "nameplate-image", image,
-		"nameplate-header", header, "nameplate-subheader", subheader, "context-menu",
-		context_menu, NULL);
+		"nameplate-header", header, "nameplate-subheader", subheader, 
+		"nameplate-tooltip", tooltip_text, "context-menu", context_menu, NULL);
 
 	g_free (uri);
 

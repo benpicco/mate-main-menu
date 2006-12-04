@@ -34,17 +34,16 @@ G_BEGIN_DECLS
 #define IS_NAMEPLATE_TILE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), NAMEPLATE_TILE_TYPE))
 #define NAMEPLATE_TILE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), NAMEPLATE_TILE_TYPE, NameplateTileClass))
 
-typedef struct
-{
+typedef struct {
 	Tile tile;
 
 	GtkWidget *image;
 	GtkWidget *header;
 	GtkWidget *subheader;
+	gchar     *tooltip;
 } NameplateTile;
 
-typedef struct
-{
+typedef struct {
 	TileClass tile_class;
 } NameplateTileClass;
 

@@ -253,10 +253,11 @@ application_tile_setup (ApplicationTile *this)
 	const gchar *name;
 	const gchar *desc;
 
+	const gchar *comment;
+
 	gchar *markup;
 
 	GError *error = NULL;
-
 
 	if (! priv->desktop_item) {
 		priv->desktop_item = load_desktop_item_from_unknown (TILE (this)->uri);
@@ -270,6 +271,7 @@ application_tile_setup (ApplicationTile *this)
 
 	name = gnome_desktop_item_get_localestring (priv->desktop_item, "Name");
 	desc = gnome_desktop_item_get_localestring (priv->desktop_item, "GenericName");
+	comment = gnome_desktop_item_get_localestring (priv->desktop_item, "Comment");	
 
 	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
 	if (name)
@@ -287,6 +289,7 @@ application_tile_setup (ApplicationTile *this)
 		"nameplate-image",         image,
 		"nameplate-header",        header,
 		"nameplate-subheader",     subheader,
+		"nameplate-tooltip",	   comment,
 		"context-menu",            context_menu,
 		"application-name",        name,
 		"application-description", desc,

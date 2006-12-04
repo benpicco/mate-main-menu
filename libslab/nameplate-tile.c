@@ -36,6 +36,7 @@ typedef struct
 	GtkContainer *image_ctnr;
 	GtkContainer *header_ctnr;
 	GtkContainer *subheader_ctnr;
+	GtkTooltips  *tooltips;
 } NameplateTilePrivate;
 
 #define NAMEPLATE_TILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), NAMEPLATE_TILE_TYPE, NameplateTilePrivate))
@@ -45,7 +46,8 @@ enum
 	PROP_0,
 	PROP_NAMEPLATE_IMAGE,
 	PROP_NAMEPLATE_HEADER,
-	PROP_NAMEPLATE_SUBHEADER
+	PROP_NAMEPLATE_SUBHEADER,
+	PROP_NAMEPLATE_TOOLTIP
 };
 
 G_DEFINE_TYPE (NameplateTile, nameplate_tile, TILE_TYPE)
@@ -53,8 +55,13 @@ G_DEFINE_TYPE (NameplateTile, nameplate_tile, TILE_TYPE)
 GtkWidget *nameplate_tile_new (const gchar * uri, GtkWidget * image, GtkWidget * header,
 	GtkWidget * subheader)
 {
-	return GTK_WIDGET (g_object_new (NAMEPLATE_TILE_TYPE, "tile-uri", uri, "nameplate-image",
-			image, "nameplate-header", header, "nameplate-subheader", subheader, NULL));
+	return GTK_WIDGET (
+		g_object_new (NAMEPLATE_TILE_TYPE,
+		"tile-uri",            uri,
+		"nameplate-image",     image,
+		"nameplate-header",    header,
+		"nameplate-subheader", subheader, 
+		NULL));
 }
 
 static void
@@ -83,11 +90,17 @@ nameplate_tile_class_init (NameplateTileClass * this_class)
 	g_object_class_install_property (g_obj_class, PROP_NAMEPLATE_SUBHEADER,
 		g_param_spec_object ("nameplate-subheader", "nameplate-subheader",
 			"nameplate subheader", GTK_TYPE_WIDGET, G_PARAM_READWRITE));
+
+	g_object_class_install_property (g_obj_class, PROP_NAMEPLATE_TOOLTIP,
+		g_param_spec_string ("nameplate-tooltip", "nameplate-tooltip",
+			"nameplate tooltip", NULL, G_PARAM_READWRITE));
+
 }
 
 static void
 nameplate_tile_init (NameplateTile * this)
 {
+	NAMEPLATE_TILE_GET_PRIVATE (this)->tooltips = NULL;
 }
 
 static GObject *
@@ -104,6 +117,8 @@ nameplate_tile_constructor (GType type, guint n_param, GObjectConstructParam * p
 static void
 nameplate_tile_finalize (GObject * g_object)
 {
+	g_free (NAMEPLATE_TILE (g_object)->tooltip);
+
 	(*G_OBJECT_CLASS (nameplate_tile_parent_class)->finalize) (g_object);
 }
 
@@ -126,6 +141,9 @@ nameplate_tile_get_property (GObject * g_object, guint prop_id, GValue * value,
 	case PROP_NAMEPLATE_SUBHEADER:
 		g_value_set_object (value, np_tile->subheader);
 		break;
+	case PROP_NAMEPLATE_TOOLTIP:
+		g_value_set_string (value, np_tile->tooltip);
+		break;
 
 	default:
 		break;
@@ -139,7 +157,24 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 	NameplateTile *this = NAMEPLATE_TILE (g_object);
 	NameplateTilePrivate *priv = NAMEPLATE_TILE_GET_PRIVATE (this);
 
-	GObject *widget_obj = g_value_get_object (value);
+	GObject *widget_obj = NULL;
+	gchar   *tooltip    = NULL;
+
+
+	switch (prop_id) {
+		case PROP_NAMEPLATE_IMAGE:
+		case PROP_NAMEPLATE_HEADER:
+		case PROP_NAMEPLATE_SUBHEADER:
+			widget_obj = g_value_get_object (value);
+			break;
+
+		case PROP_NAMEPLATE_TOOLTIP:
+			tooltip = g_value_get_string (value);
+			break;
+
+		default:
+			break;
+	}
 
 	switch (prop_id)
 	{
@@ -194,13 +229,28 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 
 		break;
 
+	case PROP_NAMEPLATE_TOOLTIP:
+		if (tooltip) {
+			if (! priv->tooltips)
+				priv->tooltips = gtk_tooltips_new ();
+
+			gtk_tooltips_set_tip (priv->tooltips, GTK_WIDGET(this), tooltip, tooltip);
+			gtk_tooltips_enable(priv->tooltips);
+		}
+		else
+			if (priv->tooltips)
+				gtk_tooltips_disable(priv->tooltips);
+
+		break;
+
+
 	default:
 		break;
 	}
 }
 
 static void
-nameplate_tile_setup (NameplateTile * this)
+nameplate_tile_setup (NameplateTile *this)
 {
 	NameplateTilePrivate *priv = NAMEPLATE_TILE_GET_PRIVATE (this);
 
