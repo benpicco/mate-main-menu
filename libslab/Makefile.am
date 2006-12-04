@@ -13,8 +13,6 @@ libslab_la_SOURCES =				\
 	document-tile.c				\
 	double-click-detector.c			\
 	double-click-detector.h			\
-	eggaccelerators.c			\
-	eggaccelerators.h			\
 	egg-recent-item.c			\
 	egg-recent-item.h			\
 	egg-recent-model.c			\

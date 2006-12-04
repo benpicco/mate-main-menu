@@ -11,6 +11,7 @@ AM_CPPFLAGS =								\
 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
 main_menu_SOURCES =							\
+	eggaccelerators.c		eggaccelerators.h		\
 	file-area-widget.c		file-area-widget.h		\
 	hard-drive-status-tile.c	hard-drive-status-tile.h	\
 	main-menu.c							\
