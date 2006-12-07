@@ -665,7 +665,7 @@ create_application_category_sections (AppShellData * app_data)
 			G_CALLBACK (handle_group_clicked), app_data);
 
 		gchar *markup =
-			g_markup_printf_escaped ("<span size=\"x-large\">%s</span>",
+			g_markup_printf_escaped ("<span size=\"x-large\" weight=\"bold\">%s</span>",
 			data->category);
 		data->section = SLAB_SECTION (slab_section_new_with_markup (markup, Style2));
 

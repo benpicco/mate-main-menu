@@ -169,7 +169,7 @@ slab_section_new (const gchar * title, SlabStyle style)
 	GtkWidget *section;
 	gchar *markup;
 
-	markup = g_strdup_printf ("<span size=\"large\">%s</span>", title);
+	markup = g_strdup_printf ("<span size=\"large\" weight=\"bold\">%s</span>", title);
 	section = slab_section_new_with_markup (markup, style);
 
 	g_free (markup);

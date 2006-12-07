@@ -181,7 +181,7 @@ shell_window_paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer 
 	right_pane = SHELL_WINDOW (widget)->_right_pane;
 
 	/* draw left pane background */
-	gdk_draw_rectangle (widget->window, widget->style->bg_gc[GTK_STATE_ACTIVE], TRUE,
+	gtk_paint_flat_box (widget->style, widget->window, widget->state, GTK_SHADOW_NONE, NULL, widget, "",
 		left_pane->allocation.x, left_pane->allocation.y, left_pane->allocation.width,
 		left_pane->allocation.height);
 
