@@ -1,3 +1,9 @@
+if ENABLE_NAUTILUS_EXTENSION
+NAUTILUS_DIR=nautilus-main-menu
+else
+NAUTILUS_DIR=
+endif
+
 SUBDIRS =				\
 	libslab				\
 	application-browser/etc		\
@@ -6,6 +12,7 @@ SUBDIRS =				\
 	control-center/src		\
 	main-menu/etc			\
 	main-menu/src			\
+	$(NAUTILUS_DIR)			\
 	patch				\
 	po
 
