@@ -1,3 +1,11 @@
+2006-12-18  Thomas Wood  <thos@gnome.org>
+
+	* libslab/app-shell.c:
+	* libslab/shell-window.c:
+
+	Use gtk+ to draw a border round the tile widget, rather than using a
+	custom drawn seperator.
+
 2006-12-15  JP Rosevear  <jpr@novell.com>
 
 	* Makefile.am: optionally compile nautilus-main-menu dir

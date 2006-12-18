@@ -89,10 +89,7 @@ shell_window_new (AppShellData * app_data)
 	ShellWindow *window = g_object_new (SHELL_WINDOW_TYPE, NULL);
 
 	gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-	/*
-	printf("shadow type:%d\n", gtk_frame_get_shadow_type(GTK_FRAME(window)));
 	gtk_frame_set_shadow_type(GTK_FRAME(window), GTK_SHADOW_NONE);
-	*/
 
 	window->_hbox = GTK_BOX (gtk_hbox_new (FALSE, 0));
 	gtk_container_add (GTK_CONTAINER (window), GTK_WIDGET (window->_hbox));
@@ -162,7 +159,7 @@ shell_window_set_contents (ShellWindow * shell, GtkWidget * left_pane, GtkWidget
 	shell->_right_pane = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
 
 	gtk_alignment_set_padding (GTK_ALIGNMENT (shell->_left_pane), 15, 15, 15, 15);
-	gtk_alignment_set_padding (GTK_ALIGNMENT (shell->_right_pane), 0, 0, 1, 0);	/* space for vertical line */
+	gtk_alignment_set_padding (GTK_ALIGNMENT (shell->_right_pane), 0, 0, 0, 0);	/* space for vertical line */
 
 	gtk_box_pack_start (shell->_hbox, shell->_left_pane, FALSE, FALSE, 0);
 	gtk_box_pack_start (shell->_hbox, shell->_right_pane, TRUE, TRUE, 0);	/* this one takes any extra space */
@@ -184,40 +181,6 @@ shell_window_paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer 
 	gtk_paint_flat_box (widget->style, widget->window, widget->state, GTK_SHADOW_NONE, NULL, widget, "",
 		left_pane->allocation.x, left_pane->allocation.y, left_pane->allocation.width,
 		left_pane->allocation.height);
-
-	/* draw right pane background */
-	/*
-	   gdk_draw_rectangle (
-	   widget->window,
-	   widget->style->base_gc [GTK_STATE_NORMAL],
-	   TRUE,
-	   right_pane->allocation.x, right_pane->allocation.y,
-	   right_pane->allocation.width, right_pane->allocation.height
-	   );
-	 */
-
-	/* draw pane separator */
-	GdkGC *line_gc = widget->style->fg_gc[GTK_STATE_INSENSITIVE];
-	GdkGCValues values;
-	gdk_gc_get_values (line_gc, &values);
-	gint orig_line_width = values.line_width;
-	values.line_width = 2;
-	gdk_gc_set_values (line_gc, &values, GDK_GC_LINE_WIDTH);
-	gdk_draw_line (widget->window, line_gc, right_pane->allocation.x, right_pane->allocation.y,
-		right_pane->allocation.x,
-		right_pane->allocation.y + right_pane->allocation.height - 1);
-	values.line_width = orig_line_width;
-	gdk_gc_set_values (line_gc, &values, GDK_GC_LINE_WIDTH);
-
-	/*
-	   gdk_gc_set_line_attributes(widget->style->black_gc, 2, GDK_LINE_SOLID, GDK_CAP_BUTT, GDK_JOIN_ROUND);
-	   gdk_draw_line (
-	   widget->window,
-	   widget->style->black_gc,
-	   right_pane->allocation.x, right_pane->allocation.y,
-	   right_pane->allocation.x, right_pane->allocation.y + right_pane->allocation.height - 1
-	   );
-	 */
 
 	child = gtk_container_get_children (GTK_CONTAINER (widget));
 	for (; child; child = child->next)
