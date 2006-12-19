@@ -1,0 +1,562 @@
+# translation of gnome-main-menu.et.po to Estonian
+# translation of
+# Copyright (C) 2006 SUSE Linux Products GmbH.
+# Estonian message file for YaST2 (@memory@).
+#
+# Ain Vagula <avagula@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-main-menu.et\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-26 12:18-0600\n"
+"PO-Revision-Date: 2006-11-02 16:22+0200\n"
+"Last-Translator: Ain Vagula <avagula@gmail.com>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:93
+msgid "Application Browser"
+msgstr "Rakenduste sirvija"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+#: ../control-center/etc/control-center.schemas.in.h:2
+msgid "Exit shell on add or remove action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+#: ../control-center/etc/control-center.schemas.in.h:3
+msgid "Exit shell on help action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+#: ../control-center/etc/control-center.schemas.in.h:4
+msgid "Exit shell on start action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+#: ../control-center/etc/control-center.schemas.in.h:5
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "Olemasolevate .desktop-failide nimed"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+#: ../control-center/etc/control-center.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+#: ../control-center/etc/control-center.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+#: ../control-center/etc/control-center.schemas.in.h:8
+msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+#: ../control-center/etc/control-center.schemas.in.h:9
+msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "Uute rakenduste suurim arv"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgstr "Suurim rakendusete arv, mida kuvatakse uute rakenduste kategooria all"
+
+#: ../application-browser/src/application-browser.c:85
+msgid "New Applications"
+msgstr "Uued rakendused"
+
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
+msgid "Filter"
+msgstr "Filter"
+
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:146
+msgid "Groups"
+msgstr "Rühmad"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Application Actions"
+msgstr ""
+
+#: ../control-center/etc/control-center.desktop.in.in.h:1
+#: ../control-center/src/control-center.c:150
+#: ../main-menu/src/system-tile.c:114
+msgid "Control Center"
+msgstr "Juhtimiskeskus"
+
+#: ../control-center/etc/control-center.schemas.in.h:1
+msgid "Close the control-center when a task is activated"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:10
+msgid "Task names and associated .desktop files"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:11
+msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
+msgstr ""
+
+#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
+#: ../control-center/etc/control-center.schemas.in.h:13
+msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:14
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+
+#: ../control-center/src/control-center.c:61
+#, c-format
+msgid "key not found [%s]\n"
+msgstr "võtit ei leitud [%s]\n"
+
+#: ../control-center/src/control-center.c:146
+msgid "Common Tasks"
+msgstr "Tavalised ülesanded"
+
+#: ../libslab/app-shell.c:702
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>Midagi ei leitud.</b> </span><span>\n"
+"\n"
+" Sinu filtrile \"<b>%s</b>\" ei vasta ükski element.</span>"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "Otsi nüüd"
+
+#. make start action
+#: ../libtile/application-tile.c:300
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Käivita %s</b>"
+
+#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
+msgid "Help"
+msgstr "Abi"
+
+#: ../libtile/application-tile.c:326
+msgid "Help Unavailable"
+msgstr "Abi pole saadaval"
+
+#: ../libtile/application-tile.c:365
+msgid "Upgrade"
+msgstr "Uuenda"
+
+#: ../libtile/application-tile.c:374
+msgid "Uninstall"
+msgstr "Eemalda"
+
+#: ../libtile/application-tile.c:769
+msgid "Remove from Favorites"
+msgstr "Eemalda lemmikute seast"
+
+#: ../libtile/application-tile.c:771
+msgid "Add to Favorites"
+msgstr "Lisa lemmikute sekka"
+
+#: ../libtile/application-tile.c:826
+msgid "Remove from Startup Programs"
+msgstr "Eemalda isekäivituvate rakenduste seast"
+
+#: ../libtile/application-tile.c:828
+msgid "Add to Startup Programs"
+msgstr "Lisa isekäivituvate rakenduste sekka"
+
+#: ../libtile/document-tile.c:140
+msgid "Edited %m/%d/%Y"
+msgstr "Muudetud %m/%d/%Y"
+
+#: ../libtile/document-tile.c:170
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Ava rakendusega \"%s\"</b>"
+
+#: ../libtile/document-tile.c:182
+msgid "Open with Default Application"
+msgstr "Ava vaikimisi rakendusega"
+
+#: ../libtile/document-tile.c:198
+msgid "Open in File Manager"
+msgstr "Ava failihalduris"
+
+#. make rename action
+#: ../libtile/document-tile.c:214
+msgid "Rename..."
+msgstr "Muuda nime..."
+
+#. make move to trash action
+#: ../libtile/document-tile.c:227
+msgid "Move to Trash"
+msgstr "Liiguta prügikasti"
+
+#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+msgid "Delete"
+msgstr "Kustuta"
+
+#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+msgid "Send To..."
+msgstr "Saada..."
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "Open Menu"
+msgstr "Ava menüü"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_About"
+msgstr "_Teave"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "Vaikimisi menüü ja rakenduste sirvija"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:303
+msgid "GNOME Main Menu"
+msgstr "GNOME peamenüü"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "Peamenüü"
+
+#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
+msgid "Software Update"
+msgstr "Tarkvara uuendamine"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr "YaST2 võrguseadmete utiliidi .desktop-fail"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr "Failisirvija .desktop-fail"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "gnome-system-monitor'i .desktop-fail"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr "Võrgu häälestamise tööriista .desktop-fail"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop files for \"Favorite Applications\""
+msgstr "\"Lemmikrakenduste\" .desktop-failid"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr "Süsteemse kataloogi asukoht, kus paiknevad isekäivituvad rakendused."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
+msgstr "Kasutaja kataloogi asukoht, kus paiknevad isekäivituvad rakendused. Asukoht ei tohi olla absoluutne, kuna selle võtme väärtus liidetakse asukohale: ~/."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid "System area items"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "System-wide autostart program drop dir"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "User autostart program drop dir (within the home dir)"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "command to uninstall packages"
+msgstr "käsk pakettide eemaldamiseks"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "käsk pakettide eemaldamiseks, PACKAGE_NAME asendatakse käsus paketi nimega"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "command to upgrade packages"
+msgstr "käsk pakettide uuendamiseks"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "käsk pakettide uuendamiseks, PACKAGE_NAME asendatakse käsus paketi nimega"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "control center item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "determines the limit of tiles in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "determines the reordering algorithm used when moving tiles around the main-menu"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "determines which types of files to display in the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "help item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "if true, main menu is more anxious to close"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down configuration of the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the application browser link"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the search area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "lock-down status for the status area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "lock-down status for the system area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "package manager item .desktop file"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "prioritized list of commands to lock the screen"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the link to the application browser should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the search area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:44
+msgid "set to true if the status area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:45
+msgid "set to true if the system area should be visible and active."
+msgstr ""
+
+#: ../main-menu/src/file-area-widget.c:137
+msgid "Show:"
+msgstr "Näidatakse:"
+
+#: ../main-menu/src/file-area-widget.c:182
+msgid "Favorite Applications"
+msgstr "Lemmikrakendused"
+
+#: ../main-menu/src/file-area-widget.c:199
+msgid "Recently Used Applications"
+msgstr "Hiljuti kasutatud rakendused"
+
+#: ../main-menu/src/file-area-widget.c:209
+msgid "Recent Documents"
+msgstr "Hiljuti kasutatud dokumendid"
+
+#: ../main-menu/src/file-area-widget.c:343
+msgid "More Applications..."
+msgstr "Veel rakendusi..."
+
+#: ../main-menu/src/file-area-widget.c:347
+msgid "All Documents..."
+msgstr "Kõik dokumendid..."
+
+#: ../main-menu/src/hard-drive-status-tile.c:103
+msgid "Hard Drive"
+msgstr "Kõvaketas"
+
+#: ../main-menu/src/hard-drive-status-tile.c:326
+#, c-format
+msgid "%lluG"
+msgstr "%lluG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:328
+#, c-format
+msgid "%lluM"
+msgstr "%lluM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:330
+#, c-format
+msgid "%lluK"
+msgstr "%lluK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:332
+#, c-format
+msgid "%llub"
+msgstr "%llub"
+
+#: ../main-menu/src/hard-drive-status-tile.c:352
+#, c-format
+msgid "%s Free / %s Total"
+msgstr "%s vaba / %s kokku"
+
+#: ../main-menu/src/main-menu-ui.c:304
+msgid "The GNOME Main Menu"
+msgstr "GNOME peamenüü"
+
+#: ../main-menu/src/main-menu-ui.c:420
+msgid "System"
+msgstr "Süsteem"
+
+#: ../main-menu/src/main-menu-ui.c:424
+msgid "Status"
+msgstr "Olek"
+
+#: ../main-menu/src/main-menu-ui.c:557
+msgid "Computer"
+msgstr "Arvuti"
+
+#: ../main-menu/src/main-menu-ui.c:883
+msgid "Search:"
+msgstr "Otsimine:"
+
+#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:197
+msgid "Network: None"
+msgstr "Võrk: puudub"
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Click to configure network"
+msgstr "Klõpsa võrgu häälestamiseks"
+
+#: ../main-menu/src/network-status-tile.c:206
+#, c-format
+msgid "Connected to: %s"
+msgstr "Ühendatud: %s"
+
+#: ../main-menu/src/network-status-tile.c:209
+msgid "Network: Wireless"
+msgstr "Võrk: juhtmeta"
+
+#: ../main-menu/src/network-status-tile.c:214
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "Etherneti kasutamine (%s)"
+
+#: ../main-menu/src/network-status-tile.c:218
+msgid "Network: Wired"
+msgstr "Võrk: juhtmega"
+
+#: ../main-menu/src/network-status-tile.c:310
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "Juhtmeta ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:315
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "Juhtmega ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:319
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/system-tile.c:158
+msgid "Unknown"
+msgstr "Tundmatu"
+
+#: ../main-menu/src/network-status-tile.c:327
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d Mb/s"
+
+#: ../main-menu/src/system-tile.c:128
+msgid "Install Software"
+msgstr "Tarkvara paigaldamine"
+
+#: ../main-menu/src/system-tile.c:135
+msgid "Log Out ..."
+msgstr "Logi välja ..."
+
+#: ../main-menu/src/system-tile.c:142
+msgid "Lock Screen ..."
+msgstr "Lukusta ekraan ..."
+
