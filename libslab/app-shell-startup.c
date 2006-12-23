@@ -75,10 +75,13 @@ apss_already_running (int argc, char *argv[], BonoboApplication ** app,
 	if (!bonobo_activate ())
 		g_error ("Problem with bonobo_activate()");
 
-	bonobo_activation_set_activation_env_value ("DISPLAY",
-		gdk_display_get_name (gdk_display_get_default ()));
-
-	*app = bonobo_application_new (name);
+	char * display_name = (char *) gdk_display_get_name (gdk_display_get_default ());
+	bonobo_activation_set_activation_env_value ("DISPLAY", display_name);
+ 
+	//make this a singleton per display per user
+	display_name = g_strconcat (name, display_name, NULL);
+	*app = bonobo_application_new (display_name);
+	g_free (display_name);
 
 	gchar const *envp[] = { "LANG", NULL };
 	gchar *serverinfo = bonobo_application_create_serverinfo (*app, envp);
