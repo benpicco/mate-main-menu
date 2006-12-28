@@ -22,7 +22,7 @@ dnl ==============================================
 GETTEXT_PACKAGE=gnome-main-menu
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
-ALL_LINGUAS="ar bg bn br bs ca cs cy da de dz el en_GB en_IGID es fi fr gl he hi hr hu id it ja ka km ko lo lt mk nb nl pa pl pt_BR pt ro ru sk sl sr sv ta tr uk zh_CN zh_TW"
+ALL_LINGUAS="ar bg bn br bs ca cs cy da de dz el en_CA en_GB en_IGID es fi fr gl he hi hr hu id it ja ka km ko lo lt mk nb nl pa pl pt_BR pt ro ru sk sl sr sv ta tr uk zh_CN zh_TW"
 
 IT_PROG_INTLTOOL([0.34])
 AM_GLIB_GNU_GETTEXT

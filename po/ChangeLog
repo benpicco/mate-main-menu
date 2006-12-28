@@ -1,3 +1,8 @@
+2006-12-28  Adam Weinberger  <adamw@gnome.org>
+
+	* POTFILES.in: Added missing file.
+	* en_CA.po: Added Canadian English translation.
+
 2006-12-13  Pema Geyleg  <pgeyleg@gmail.com>
 
 	* dz.po: Added Dzongkha Translation.

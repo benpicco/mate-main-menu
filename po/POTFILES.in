@@ -20,3 +20,4 @@ main-menu/src/main-menu-ui.c
 main-menu/src/network-status-tile.c
 main-menu/src/slab-window.c
 main-menu/src/system-tile.c
+nautilus-main-menu/nautilus-main-menu.c
