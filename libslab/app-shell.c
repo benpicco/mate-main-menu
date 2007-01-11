@@ -54,8 +54,9 @@ static GtkWidget *create_groups_section (AppShellData * app_data, const gchar * 
 static GtkWidget *create_actions_section (AppShellData * app_data, const gchar * title,
 	void (*actions_handler) (Tile *, TileEvent *, gpointer));
 
+static void generate_category (const char * category, GMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive);
 static void generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data,
-	CategoryData * cat_data);
+	CategoryData * cat_data, gboolean recursive);
 static void generate_new_apps (AppShellData * app_data);
 static void insert_launcher_into_category (CategoryData * cat_data, GnomeDesktopItem * desktop_item,
 	AppShellData * app_data);
@@ -797,13 +798,13 @@ appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps, const gchar 
 	return app_data;
 }
 
-/* FIXME If there are menu items at the top level we don't see them */
 void
 generate_categories (AppShellData * app_data)
 {
 	GMenuTreeDirectory *root_dir;
 	GSList *contents, *l;
-
+	gboolean need_misc = FALSE;
+	
 	if (!app_data->tree)
 	{
 		app_data->tree = gmenu_tree_lookup (app_data->menu_name, GMENU_TREE_FLAGS_NONE);
@@ -823,45 +824,64 @@ generate_categories (AppShellData * app_data)
 
 	for (l = contents; l; l = l->next)
 	{
-		if (gmenu_tree_item_get_type (l->data) == GMENU_TREE_ITEM_DIRECTORY)
+		const char *category;
+
+		switch (gmenu_tree_item_get_type (l->data))
 		{
-			CategoryData *data = NULL;
-			const char *category;
-			GList *list_entry;
-
+		case GMENU_TREE_ITEM_DIRECTORY:
 			category = gmenu_tree_directory_get_name (l->data);
-			list_entry =
-				g_list_find_custom (app_data->categories_list, category,
-				category_name_compare);
-			if (!list_entry)
-			{
-				data = g_new0 (CategoryData, 1);
-				data->category = g_strdup (category);
-				app_data->categories_list =
-					/* use the gmenu order instead of alphabetical */
-					g_list_insert (app_data->categories_list, data, -1);
-					/* g_list_insert_sorted (app_data->categories_list, data, category_data_compare); */
-			}
-			else
-			{
-				data = list_entry->data;
-			}
-
-			if (app_data->hash)	/* used to eliminate dups on a per category basis. */
-				g_hash_table_destroy (app_data->hash);
-			app_data->hash = g_hash_table_new (g_str_hash, g_str_equal);
-			generate_launchers (l->data, app_data, data);
+			generate_category(category, l->data, app_data, TRUE);
+			break;
+		case GMENU_TREE_ITEM_ENTRY:
+			need_misc = TRUE;
+			break;
+		default:
+			break;
 		}
 	}
+	if (need_misc)
+		generate_category (_("Other"), root_dir, app_data, FALSE);
+
 	if (app_data->hash)
 	{
 		g_hash_table_destroy (app_data->hash);
 		app_data->hash = NULL;
 	}
+	
 	gmenu_tree_item_unref (root_dir);
 
 	if (app_data->new_apps && (app_data->new_apps->max_items > 0))
 		generate_new_apps (app_data);
+}
+
+static void
+generate_category (const char * category, GMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive)
+{
+	CategoryData *data = NULL;
+	GList *list_entry;
+
+	list_entry =
+		g_list_find_custom (app_data->categories_list, category,
+		category_name_compare);
+	
+	if (!list_entry)
+	{
+		data = g_new0 (CategoryData, 1);
+		data->category = g_strdup (category);
+		app_data->categories_list =
+			/* use the gmenu order instead of alphabetical */
+			g_list_insert (app_data->categories_list, data, -1);
+			/* g_list_insert_sorted (app_data->categories_list, data, category_data_compare); */
+	}
+	else
+	{
+		data = list_entry->data;
+	}
+
+	if (app_data->hash)	/* used to eliminate dups on a per category basis. */
+		g_hash_table_destroy (app_data->hash);
+	app_data->hash = g_hash_table_new (g_str_hash, g_str_equal);
+	generate_launchers (root_dir, app_data, data, recursive);
 }
 
 static gboolean
@@ -915,7 +935,7 @@ check_specific_apps_hack (GnomeDesktopItem * item)
 }
 
 static void
-generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, CategoryData * cat_data)
+generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, CategoryData * cat_data, gboolean recursive)
 {
 	GnomeDesktopItem *desktop_item;
 	const gchar *desktop_file;
@@ -931,7 +951,8 @@ generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, Cate
 		{
 		case GMENU_TREE_ITEM_DIRECTORY:
 			/* g_message ("Found sub-category %s", gmenu_tree_directory_get_name (l->data)); */
-			generate_launchers (l->data, app_data, cat_data);
+			if (recursive)
+				generate_launchers (l->data, app_data, cat_data, TRUE);
 			break;
 		case GMENU_TREE_ITEM_ENTRY:
 			/* g_message ("Found item name is:%s", gmenu_tree_entry_get_name (l->data)); */

@@ -1,3 +1,11 @@
+2007-01-11  Scott Reeves  <sreeves@novell.com>
+	* libslab/app-shell.c:
+	Original Patch from Denis Washington. Tweaked the category name after
+	discussion on #control-center to indicate more clearly that this is
+	not a permanent home for items. They should classify themselves into
+	one of the existing top level categories.
+	http://bugzilla.gnome.org/show_bug.cgi?id=384051.
+
 2006-12-28  Adam Weinberger  <adamw@gnome.org>
 
 	* configure.in: Added en_CA to ALL_LINGUAS.
