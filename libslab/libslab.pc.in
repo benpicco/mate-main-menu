@@ -7,5 +7,5 @@ Name: libslab
 Description: Beautiful App Slab
 Requires: glib-2.0 gobject-2.0 gtk+-2.0 gdk-2.0 gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango
 Version: @VERSION@
-Libs: -L${libdir} -lslab -ltile
-Cflags: -I${includedir}/slab -I${includedir}/tile
+Libs: -L${libdir} -lslab
+Cflags: -I${includedir}/slab

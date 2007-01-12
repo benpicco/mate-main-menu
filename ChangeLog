@@ -1,4 +1,8 @@
 2007-01-12  Scott Reeves  <sreeves@novell.com>
+	* libslab/libslab.pc.in:
+	Clean up the .pc file
+
+2007-01-12  Scott Reeves  <sreeves@novell.com>
 	* ChangeLog
 	* libslab/app-resizer.c
 	* libslab/tile-action.c
