@@ -1,3 +1,14 @@
+2007-01-12  Scott Reeves  <sreeves@novell.com>
+	* ChangeLog
+	* libslab/app-resizer.c
+	* libslab/tile-action.c
+	* libslab/shell-window.c
+	* libslab/slab-section.c
+	* libslab/app-shell-startup.c
+	* libslab/app-shell.c:
+	Patch from Jens Granseuer for http://bugzilla.gnome.org/show_bug.cgi?id=383029.
+	http://bugzilla.gnome.org/show_bug.cgi?id=393708.
+
 2007-01-11  Scott Reeves  <sreeves@novell.com>
 	* libslab/app-shell.c:
 	Original Patch from Denis Washington. Tweaked the category name after

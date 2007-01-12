@@ -88,11 +88,13 @@ slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user
 gboolean
 slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
+	GList *child;
+
 	gdk_draw_rectangle (widget->window, widget->style->light_gc[GTK_STATE_SELECTED], TRUE,
 		widget->allocation.x, widget->allocation.y,
 		widget->allocation.width + 40, widget->allocation.height);
 
-	GList *child = gtk_container_get_children (GTK_CONTAINER (widget));
+	child = gtk_container_get_children (GTK_CONTAINER (widget));
 	for (; child; child = child->next)
 		gtk_container_propagate_expose (GTK_CONTAINER (widget), GTK_WIDGET (child->data),
 			event);
@@ -126,6 +128,7 @@ GtkWidget *
 slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 {
 	SlabSection *section;
+	GtkWidget *align;
 
 	section = g_object_new (SLAB_SECTION_TYPE, NULL);
 	gtk_box_set_homogeneous (GTK_BOX (section), FALSE);
@@ -133,7 +136,7 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	section->style = style;
 	section->selected = FALSE;
 
-	GtkWidget *align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
+	align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
 	switch (style)
 	{
 	case Style1:

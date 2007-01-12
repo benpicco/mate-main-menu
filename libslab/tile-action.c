@@ -25,19 +25,11 @@ G_DEFINE_TYPE (TileAction, tile_action, G_TYPE_OBJECT)
 static void tile_action_finalize (GObject *);
 static void tile_action_menu_item_activate_cb (GtkMenuItem *, gpointer);
 
-typedef struct
-{
-} TileActionPrivate;
-
-#define TILE_ACTION_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), TILE_ACTION_TYPE, TileActionPrivate))
-
 static void tile_action_class_init (TileActionClass * this_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
 
 	g_obj_class->finalize = tile_action_finalize;
-
-	g_type_class_add_private (this_class, sizeof (TileActionPrivate));
 }
 
 static void

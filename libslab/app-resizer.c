@@ -68,11 +68,13 @@ app_resizer_get_type (void)
 static void
 app_resizer_class_init (AppResizerClass * klass)
 {
+	GtkWidgetClass *widget_class;
+
 	parent_class = g_type_class_peek_parent (klass);
 
 	((GtkObjectClass *) klass)->destroy = app_resizer_destroy;
 
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+	widget_class = GTK_WIDGET_CLASS (klass);
 	widget_class->size_allocate = app_resizer_size_allocate;
 }
 
@@ -99,10 +101,12 @@ remove_container_entries (GtkContainer * widget)
 static void
 resize_table (GtkTable * table, gint columns, GList * launcher_list)
 {
+	float rows, remainder;
+
 	remove_container_entries (GTK_CONTAINER (table));
 
-	float rows = ((float) g_list_length (launcher_list)) / (float) columns;
-	float remainder = rows - ((int) rows);
+	rows = ((float) g_list_length (launcher_list)) / (float) columns;
+	remainder = rows - ((int) rows);
 	if (remainder != 0.0)
 		rows += 1;
 
@@ -158,6 +162,8 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 {
 	if (resizer->table_elements_homogeneous)
 	{
+		gint num_cols;
+
 		if (resizer->cached_element_width == -1)
 		{
 			GtkTable *table = GTK_TABLE (resizer->cached_tables_list->data);
@@ -168,7 +174,7 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 			resizer->cached_table_spacing = gtk_table_get_default_col_spacing (table);
 		}
 
-		gint num_cols =
+		num_cols =
 			(avail_width +
 			resizer->cached_table_spacing) / (resizer->cached_element_width +
 			resizer->cached_table_spacing);
@@ -216,6 +222,7 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 
 	static gboolean first_time = TRUE;
 	gint new_num_cols;
+	gint useable_area;
 
 	if (first_time)
 	{
@@ -231,11 +238,12 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 
 	if (!resizer->cached_tables_list)	/* if everthing is currently filtered out - just return */
 	{
+		GtkAllocation child_allocation;
+
 		if (GTK_WIDGET_CLASS (parent_class)->size_allocate)
 			(*GTK_WIDGET_CLASS (parent_class)->size_allocate) (widget, allocation);
 
 		/* We want the message to center itself and only scroll if it's bigger than the available real size. */
-		GtkAllocation child_allocation;
 		child_allocation.x = 0;
 		child_allocation.y = 0;
 		child_allocation.width = MAX (allocation->width, child->requisition.width);
@@ -246,7 +254,7 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 			child_allocation.height);
 		return;
 	}
-	gint useable_area =
+	useable_area =
 		allocation->width - (child->requisition.width -
 		GTK_WIDGET (resizer->cached_tables_list->data)->requisition.width);
 	new_num_cols =
@@ -272,10 +280,12 @@ GtkWidget *
 app_resizer_new (GtkVBox * child, gint initial_num_columns, gboolean homogeneous,
 	AppShellData * app_data)
 {
+	AppResizer *widget;
+
 	g_assert (child != NULL);
 	g_assert (GTK_IS_VBOX (child));
 
-	AppResizer *widget = g_object_new (APP_RESIZER_TYPE, NULL);
+	widget = g_object_new (APP_RESIZER_TYPE, NULL);
 	widget->cached_element_width = -1;
 	widget->cur_num_cols = initial_num_columns;
 	widget->table_elements_homogeneous = homogeneous;

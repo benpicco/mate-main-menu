@@ -127,6 +127,8 @@ static void
 shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisition,
 	AppShellData * app_data)
 {
+	gint height;
+
 	/*
 	Fixme - counting on this being called after the real size request is done.
 	seems to be that way but I don't know why. I would think I would need to explictly call it here first
@@ -142,7 +144,7 @@ shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisiti
 	/* use the left side as a minimum height, if the right side is taller,
 	   use it up to SIZING_HEIGHT_PERCENT of the screen height
 	*/
-	gint height =
+	height =
 		GTK_WIDGET (APP_RESIZER (app_data->category_layout)->child)->requisition.height +
 		10;
 	if (height > requisition->height)
