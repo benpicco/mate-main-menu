@@ -217,9 +217,10 @@ main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * 
 static gboolean
 main_delete_callback (GtkWidget * widget, GdkEvent * event, AppShellData * app_data)
 {
-	if (app_data->exit_on_close)
+	if (app_data->exit_on_close) {
 		gtk_main_quit ();
-	else
+		return FALSE;
+	} else
 		hide_shell (app_data);
 	return TRUE;		/* stop the processing of this event */
 }
