@@ -1,3 +1,16 @@
+2007-01-17  Rodrigo Moya <rodrigo@gnome-db.org>
+
+	* libslab/app-shell.[ch] (appshelldata_new): added an argument to
+	specify whether to exit the program when the shell window is closed.
+
+	* application-browser/src/application-browser.c (main): pass FALSE,
+	don't quit.
+
+	* control-center/src/control-center.c (main): pass TRUE, quit when
+	closed.
+	(handle_static_action_clicked): check for the exit_on_close flag if
+	the GConf key is set.
+
 2007-01-12  Scott Reeves  <sreeves@novell.com>
 	* libslab/libslab.pc.in:
 	Clean up the .pc file

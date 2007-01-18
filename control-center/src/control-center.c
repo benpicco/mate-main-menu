@@ -97,7 +97,8 @@ handle_static_action_clicked (Tile * tile, TileEvent * event, gpointer data)
 
 	temp = g_strdup_printf("%s%s", app_data->gconf_prefix, EXIT_SHELL_ON_STATIC_ACTION);
 	if (get_slab_gconf_bool(temp))
-		gtk_main_quit ();
+		if (app_data->exit_on_close)
+			gtk_main_quit ();
 	g_free (temp);
 }
 
@@ -139,7 +140,7 @@ main (int argc, char *argv[])
 	}
 
 	AppShellData *app_data = appshelldata_new (
-		"preferences.menu", NULL, CONTROL_CENTER_PREFIX, GTK_ICON_SIZE_DIALOG);
+		"preferences.menu", NULL, CONTROL_CENTER_PREFIX, GTK_ICON_SIZE_DIALOG, TRUE);
 	generate_categories (app_data);
 
 	GSList *actions = get_actions_list ();

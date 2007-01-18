@@ -217,7 +217,10 @@ main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * 
 static gboolean
 main_delete_callback (GtkWidget * widget, GdkEvent * event, AppShellData * app_data)
 {
-	hide_shell (app_data);
+	if (app_data->exit_on_close)
+		gtk_main_quit ();
+	else
+		hide_shell (app_data);
 	return TRUE;		/* stop the processing of this event */
 }
 
@@ -813,7 +816,7 @@ gmenu_tree_changed_callback (GMenuTree * old_tree, gpointer user_data)
 
 AppShellData *
 appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps, const gchar * gconf_keys_prefix,
-	GtkIconSize icon_size)
+	GtkIconSize icon_size, gboolean exit_on_close)
 {
 	AppShellData *app_data = g_new0 (AppShellData, 1);
 	app_data->gconf_prefix = gconf_keys_prefix;
@@ -821,6 +824,7 @@ appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps, const gchar 
 	app_data->menu_name = menu_name;
 	app_data->icon_size = icon_size;
 	app_data->stop_incremental_relayout = TRUE;
+	app_data->exit_on_close = exit_on_close;
 	return app_data;
 }
 
