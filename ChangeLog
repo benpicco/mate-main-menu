@@ -1,3 +1,8 @@
+2007-01-19  Scott Reeves  <sreeves@novell.com>
+	* control-center/src/control-center.c
+	* libslab/app-shell.c:
+	Check the exit arg when exiting via keyboard and context menu	
+
 2007-01-18  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* libslab/app-shell.c (main_delete_callback): return FALSE if we

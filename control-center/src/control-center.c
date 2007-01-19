@@ -97,8 +97,12 @@ handle_static_action_clicked (Tile * tile, TileEvent * event, gpointer data)
 
 	temp = g_strdup_printf("%s%s", app_data->gconf_prefix, EXIT_SHELL_ON_STATIC_ACTION);
 	if (get_slab_gconf_bool(temp))
+	{
 		if (app_data->exit_on_close)
 			gtk_main_quit ();
+		else
+			hide_shell (app_data);
+	}
 	g_free (temp);
 }
 

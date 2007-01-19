@@ -208,7 +208,10 @@ main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * 
 		((event->keyval == GDK_w || event->keyval == GDK_W)	&& (event->state & GDK_CONTROL_MASK)) ||
 		((event->keyval == GDK_q || event->keyval == GDK_Q) && (event->state & GDK_CONTROL_MASK)))
 	{
-		hide_shell (app_data);
+		if (app_data->exit_on_close)
+			gtk_main_quit ();
+		else
+			hide_shell (app_data);
 		return TRUE;
 	}
 	return FALSE;
@@ -217,11 +220,13 @@ main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * 
 static gboolean
 main_delete_callback (GtkWidget * widget, GdkEvent * event, AppShellData * app_data)
 {
-	if (app_data->exit_on_close) {
+	if (app_data->exit_on_close)
+	{
 		gtk_main_quit ();
 		return FALSE;
-	} else
-		hide_shell (app_data);
+	}
+
+	hide_shell (app_data);
 	return TRUE;		/* stop the processing of this event */
 }
 
@@ -1317,7 +1322,12 @@ handle_launcher_single_clicked (Tile * launcher, gpointer data)
 
 	gconf_key = g_strdup_printf ("%s%s", app_data->gconf_prefix, EXIT_SHELL_ON_ACTION_START);
 	if (get_slab_gconf_bool (gconf_key))
-		hide_shell (app_data);
+	{
+		if (app_data->exit_on_close)
+			gtk_main_quit ();
+		else
+			hide_shell (app_data);
+	}
 	g_free (gconf_key);
 }
 
@@ -1356,7 +1366,12 @@ handle_menu_action_performed (Tile * launcher, TileEvent * event, TileAction * a
 	if (temp)
 	{
 		if (get_slab_gconf_bool (temp))
-			hide_shell (app_data);
+		{
+			if (app_data->exit_on_close)
+				gtk_main_quit ();
+			else
+				hide_shell (app_data);
+		}
 		g_free (temp);
 	}
 	else
