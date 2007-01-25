@@ -39,7 +39,7 @@ After installing a "Gnome Main Menu" applet should appear in your "Add to panel
 
 Contributing
 ------------
-This project can be found in gnome-cvs under the module named "slab".  To
+This project can be found in gnome svn under the module named "gnome-main-menu".  To
 access this see: http://developer.gnome.org/tools/cvs.html.  Feel free to send
 any patches to anyone in the MAINTAINERS file.
 
