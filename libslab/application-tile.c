@@ -280,7 +280,10 @@ application_tile_setup (ApplicationTile *this)
 	  atk_object_set_description (accessible, desc);
 
 	header    = create_header    (name);
-	subheader = create_subheader (desc);
+	if (desc)  /*if no GenericName then just show and center the Name */
+		subheader = create_subheader (desc);
+	else
+		subheader = NULL;
 
 	context_menu = GTK_MENU (gtk_menu_new ());
 

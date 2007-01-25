@@ -294,7 +294,7 @@ tile_leave (GtkButton * widget)
 static void
 tile_clicked (GtkButton * widget)
 {
-        TileEvent *tile_event;
+	TileEvent *tile_event;
 
 	tile_event = g_new0 (TileEvent, 1);
 	tile_event->type = TILE_EVENT_ACTIVATED_DOUBLE_CLICK;

@@ -1,3 +1,12 @@
+2007-01-25  Scott Reeves  <sreeves@novell.com>
+	* control-center/src/control-center.c: - stop CC common tasks from
+	launching twic
+	* main-menu/src/system-tile.c: - patch from Otavio Salvador for
+	system-tile's launched twice.
+	* libslab/application-tile.c: - When no GenericName is present then
+	just show and center the Name
+		
+
 2007-01-19  Scott Reeves  <sreeves@novell.com>
 	* control-center/src/control-center.c
 	* libslab/app-shell.c:

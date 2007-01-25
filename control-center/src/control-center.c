@@ -91,6 +91,9 @@ get_actions_list ()
 void
 handle_static_action_clicked (Tile * tile, TileEvent * event, gpointer data)
 {
+	if (event->type == TILE_EVENT_ACTIVATED_DOUBLE_CLICK)
+		return;
+	
 	gchar *temp;
 
 	AppShellData *app_data = (AppShellData *) data;

@@ -250,7 +250,8 @@ create_header (const gchar * name)
 static void
 system_tile_activated (Tile * tile, TileEvent * event)
 {
-	tile_trigger_action_with_time (tile, tile->default_action, event->time);
+	if (event->type != TILE_EVENT_ACTIVATED_DOUBLE_CLICK)
+		tile_trigger_action_with_time (tile, tile->default_action, event->time);
 }
 
 static void
