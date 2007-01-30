@@ -1,3 +1,12 @@
+2007-01-30  Scott Reeves  <sreeves@novell.com>
+	* application-browser/src/application-browser.c
+	* control-center/src/control-center.c
+	* libslab/application-tile.c
+	* libslab/application-tile.h
+	* libslab/app-shell.c
+	* libslab/app-shell.h:
+	Fix for BNC#185957 - inconsistent GenericName display
+
 2007-01-25  Scott Reeves  <sreeves@novell.com>
 	* control-center/src/control-center.c: - stop CC common tasks from
 	launching twic

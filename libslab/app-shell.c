@@ -822,7 +822,7 @@ gmenu_tree_changed_callback (GMenuTree * old_tree, gpointer user_data)
 
 AppShellData *
 appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps, const gchar * gconf_keys_prefix,
-	GtkIconSize icon_size, gboolean exit_on_close)
+	GtkIconSize icon_size, gboolean show_tile_generic_name, gboolean exit_on_close)
 {
 	AppShellData *app_data = g_new0 (AppShellData, 1);
 	app_data->gconf_prefix = gconf_keys_prefix;
@@ -830,6 +830,7 @@ appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps, const gchar 
 	app_data->menu_name = menu_name;
 	app_data->icon_size = icon_size;
 	app_data->stop_incremental_relayout = TRUE;
+	app_data->show_tile_generic_name = show_tile_generic_name;
 	app_data->exit_on_close = exit_on_close;
 	return app_data;
 }
@@ -1216,7 +1217,7 @@ insert_launcher_into_category (CategoryData * cat_data, GnomeDesktopItem * deskt
 
 	launcher =
 		application_tile_new_full (gnome_desktop_item_get_location (desktop_item),
-		app_data->icon_size);
+		app_data->icon_size, app_data->show_tile_generic_name);
 	gtk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
 
 	filepath =

@@ -56,7 +56,8 @@ typedef struct
 GType application_tile_get_type (void);
 
 GtkWidget *application_tile_new (const gchar * desktop_item_id);
-GtkWidget *application_tile_new_full (const gchar * desktop_item_id, GtkIconSize icon_size);
+GtkWidget *application_tile_new_full (const gchar * desktop_item_id,
+	GtkIconSize icon_size, gboolean show_generic_name);
 
 GnomeDesktopItem *application_tile_get_desktop_item (ApplicationTile * tile);
 

@@ -82,6 +82,7 @@ typedef struct {
 	gboolean     image_is_broken;
 	GtkIconSize  image_size;
 
+	gboolean show_generic_name;
 	gboolean is_in_user_list;
 	StartupStatus startup_status;
 
@@ -126,11 +127,12 @@ application_tile_class_init (ApplicationTileClass *app_tile_class)
 GtkWidget *
 application_tile_new (const gchar *desktop_item_id)
 {
-	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND);
+	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND, TRUE);
 }
 
 GtkWidget *
-application_tile_new_full (const gchar *desktop_item_id, GtkIconSize image_size)
+application_tile_new_full (const gchar *desktop_item_id,
+	GtkIconSize image_size, gboolean show_generic_name)
 {
 	ApplicationTile        *this;
 	ApplicationTilePrivate *priv;
@@ -153,6 +155,7 @@ application_tile_new_full (const gchar *desktop_item_id, GtkIconSize image_size)
 
 	priv->image_size   = image_size;
 	priv->desktop_item = desktop_item;
+	priv->show_generic_name = show_generic_name;
 
 	application_tile_setup (this);
 
@@ -280,7 +283,7 @@ application_tile_setup (ApplicationTile *this)
 	  atk_object_set_description (accessible, desc);
 
 	header    = create_header    (name);
-	if (desc)  /*if no GenericName then just show and center the Name */
+	if (desc && priv->show_generic_name)  /*if no GenericName then just show and center the Name */
 		subheader = create_subheader (desc);
 	else
 		subheader = NULL;

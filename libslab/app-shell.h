@@ -93,6 +93,7 @@ typedef struct _AppShellData
 	GtkWidget *filtered_out_everything_widget;
 	GtkLabel *filtered_out_everything_widget_label;
 
+	gboolean show_tile_generic_name;
 	gboolean exit_on_close;
 } AppShellData;
 
@@ -122,7 +123,8 @@ void generate_categories (AppShellData * app_data);
 
 /* If new_apps is NULL then the new applications category is not created */
 AppShellData *appshelldata_new (const gchar * menu_name, NewAppConfig * new_apps,
-	const gchar * gconf_keys_prefix, GtkIconSize icon_size, gboolean exit_on_close);
+	const gchar * gconf_keys_prefix, GtkIconSize icon_size,
+	gboolean show_tile_generic_name, gboolean exit_on_close);
 
 void layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar * groups_title,
 	const gchar * actions_title, GSList * actions,
