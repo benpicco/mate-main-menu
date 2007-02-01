@@ -336,8 +336,6 @@ application_tile_setup (ApplicationTile *this)
 	}
 	else {
 		action = NULL;
-		menu_item = gtk_menu_item_new_with_label (_("Help Unavailable"));
-		gtk_widget_set_sensitive (menu_item, FALSE);
 	}
 
 	actions [APPLICATION_TILE_ACTION_HELP] = action;
@@ -346,7 +344,8 @@ application_tile_setup (ApplicationTile *this)
 
 /* insert separator */
 
-	gtk_container_add (menu_ctnr, gtk_separator_menu_item_new ());
+	if (action != NULL)
+		gtk_container_add (menu_ctnr, gtk_separator_menu_item_new ());
 
 /* make "add/remove to favorites" action */
 
