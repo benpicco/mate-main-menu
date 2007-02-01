@@ -245,30 +245,6 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/global_startup_dir</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/global_startup_dir</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>string</type>
-			<default>@DATADIR@/autostart</default>
-			<locale name="C">
-				<short>System-wide autostart program drop dir</short>
-				<long>Location of the system-wide directory in which startup programs are found.</long>
-			</locale>
-		</schema>
-
-		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/user_startup_dir</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/user_startup_dir</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>string</type>
-			<default>.config/autostart</default>
-			<locale name="C">
-				<short>User autostart program drop dir (within the home dir)</short>
-				<long>Location of the user directory in which startup programs are found.  The dir path should not be absolute, as the value of this key is appended to this path: ~/.</long>
-			</locale>
-		</schema>
-
-		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</key>
 			<applyto>/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</applyto>
 			<owner>gnome-main-menu</owner>

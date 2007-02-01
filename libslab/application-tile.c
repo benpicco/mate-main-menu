@@ -23,11 +23,8 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glib/gfileutils.h>
+#include <glib/gstdio.h>
 #include <gconf/gconf-client.h>
-#include <libgnomevfs/gnome-vfs-uri.h>
-#include <libgnomevfs/gnome-vfs-xfer.h>
-#include <libgnomevfs/gnome-vfs-ops.h>
-#include <libgnomevfs/gnome-vfs-monitor.h>
 
 #include "slab-gnome-util.h"
 
@@ -664,7 +661,6 @@ add_to_startup_list (ApplicationTile *this)
 
 	gchar *desktop_item_filename;
 	gchar *desktop_item_basename;
-	gchar *gconf_startupdir;
 
 	gchar *startup_dir;
 	gchar *dst_filename;
@@ -680,8 +676,7 @@ add_to_startup_list (ApplicationTile *this)
 
 	desktop_item_basename = g_path_get_basename (desktop_item_filename);
 
-	gconf_startupdir = get_slab_gconf_string (SLAB_USER_STARTUP_DIR_KEY);
-	startup_dir = g_build_filename (g_get_home_dir (), gconf_startupdir, NULL);
+	startup_dir = g_build_filename (g_get_user_config_dir (), "autostart", NULL);
 
 	if (! g_file_test (startup_dir, G_FILE_TEST_EXISTS))
 		g_mkdir_with_parents (startup_dir, 0700);
@@ -696,7 +691,6 @@ add_to_startup_list (ApplicationTile *this)
 
 	g_free (desktop_item_filename);
 	g_free (desktop_item_basename);
-	g_free (gconf_startupdir);
 	g_free (startup_dir);
 	g_free (dst_filename);
 	g_free (dst_uri);
@@ -710,11 +704,6 @@ remove_from_startup_list (ApplicationTile *this)
 	gchar *ditem_filename;
 	gchar *ditem_basename;
 	gchar *src_filename;
-	gchar *gconf_startupdir;
-
-	GnomeVFSURI *src_uri;
-
-	GList *list = NULL;
 
 	ditem_filename =
 		g_filename_from_uri (gnome_desktop_item_get_location (priv->desktop_item), NULL,
@@ -724,21 +713,18 @@ remove_from_startup_list (ApplicationTile *this)
 
 	ditem_basename = g_path_get_basename (ditem_filename);
 
-	gconf_startupdir = get_slab_gconf_string (SLAB_USER_STARTUP_DIR_KEY);
-	src_filename = g_build_filename (g_get_home_dir (), gconf_startupdir, ditem_basename, NULL);
+	src_filename = g_build_filename (g_get_user_config_dir (), "autostart", ditem_basename, NULL);
 
-	src_uri = gnome_vfs_uri_new (src_filename);
-
-	list = g_list_append (list, src_uri);
-
-	gnome_vfs_xfer_delete_list (
-		list, GNOME_VFS_XFER_ERROR_MODE_ABORT,
-		GNOME_VFS_XFER_REMOVESOURCE, NULL, NULL);
 	priv->startup_status = APP_NOT_IN_STARTUP_DIR;
+	if (g_file_test (src_filename, G_FILE_TEST_EXISTS))
+	{
+		if(g_file_test (src_filename, G_FILE_TEST_IS_DIR))
+			g_assert_not_reached ();
+		g_unlink (src_filename);
+	}
 
 	g_free (ditem_filename);
 	g_free (ditem_basename);
-	g_free (gconf_startupdir);
 	g_free (src_filename);
 }
 
@@ -794,37 +780,45 @@ get_desktop_item_startup_status (GnomeDesktopItem *desktop_item)
 {
 	gchar *filename;
 	gchar *basename;
-	gchar *gconf_startupdir;
 
-	gchar *global_target;
+	gchar *global_target0;
+	gchar *global_target1;
 	gchar *user_target;
 
 	StartupStatus retval;
-
+	gint x;
+	
 	filename = g_filename_from_uri (gnome_desktop_item_get_location (desktop_item), NULL, NULL);
-
 	if (!filename)
 		return APP_NOT_ELIGIBLE;
-
 	basename = g_path_get_basename (filename);
 
-	gconf_startupdir = get_slab_gconf_string (SLAB_GLOBAL_STARTUP_DIR_KEY);
-	global_target = g_build_filename (gconf_startupdir, basename, NULL);
-	g_free (gconf_startupdir);
+	retval = APP_NOT_IN_STARTUP_DIR;
+	/* const gchar * const * global_dirs = g_get_system_config_dirs(); */
+	const gchar * const * global_dirs = g_get_system_data_dirs();
+	for(x=0; global_dirs[x]; x++)
+	{
+		global_target0 = g_build_filename (global_dirs[x], "autostart", basename, NULL);
+		global_target1 = g_build_filename (global_dirs[x], "gnome", "autostart", basename, NULL);
+		if (g_file_test (global_target0, G_FILE_TEST_EXISTS) || g_file_test (global_target1, G_FILE_TEST_EXISTS))
+		{
+			retval = APP_NOT_ELIGIBLE;
+			g_free (global_target0);
+			g_free (global_target1);
+			break;
+		}
+		g_free (global_target0);
+		g_free (global_target1);
+	}
 
-	gconf_startupdir = get_slab_gconf_string (SLAB_USER_STARTUP_DIR_KEY);
-	user_target = g_build_filename (g_get_home_dir (), gconf_startupdir, basename, NULL);
+	if (retval != APP_NOT_ELIGIBLE)
+	{
+		user_target = g_build_filename (g_get_user_config_dir (), "autostart", basename, NULL);
+		if (g_file_test (user_target, G_FILE_TEST_EXISTS))
+			retval = APP_IN_USER_STARTUP_DIR;
+		g_free (user_target);
+	}
 
-	if (g_file_test (global_target, G_FILE_TEST_EXISTS))
-		retval = APP_NOT_ELIGIBLE;
-	else if (g_file_test (user_target, G_FILE_TEST_EXISTS))
-		retval = APP_IN_USER_STARTUP_DIR;
-	else
-		retval = APP_NOT_IN_STARTUP_DIR;
-
-	g_free (user_target);
-	g_free (global_target);
-	g_free (gconf_startupdir);
 	g_free (basename);
 	g_free (filename);
 

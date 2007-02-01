@@ -43,8 +43,6 @@ G_BEGIN_DECLS
 #define SLAB_FILE_BLACKLIST             "/desktop/gnome/applications/main-menu/file-area/file_blacklist"
 #define SLAB_FILE_MANAGER_OPEN_CMD      "/desktop/gnome/applications/main-menu/file-area/file_mgr_open_cmd"
 #define SLAB_FILE_SEND_TO_CMD           "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
-#define SLAB_GLOBAL_STARTUP_DIR_KEY     "/desktop/gnome/applications/main-menu/file-area/global_startup_dir"
-#define SLAB_USER_STARTUP_DIR_KEY       "/desktop/gnome/applications/main-menu/file-area/user_startup_dir"
 
 gboolean get_slab_gconf_bool (const gchar * key);
 gint get_slab_gconf_int (const gchar * key);
