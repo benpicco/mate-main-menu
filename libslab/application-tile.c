@@ -333,14 +333,13 @@ application_tile_setup (ApplicationTile *this)
 			TILE_ACTION_OPENS_NEW_WINDOW | TILE_ACTION_OPENS_HELP);
 
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		gtk_container_add (menu_ctnr, menu_item);
 	}
 	else {
 		action = NULL;
 	}
 
 	actions [APPLICATION_TILE_ACTION_HELP] = action;
-
-	gtk_container_add (menu_ctnr, menu_item);
 
 /* insert separator */
 

@@ -1,3 +1,7 @@
+2007-02-01  Scott Reeves  <sreeves@novell.com>
+	* application-tile.c: small fixup of previous patch to not try and
+	add the menu item when no help available.
+
 2007-02-01  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* application-tile.c (application_tile_setup): don't show the 'Help
