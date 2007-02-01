@@ -780,8 +780,8 @@ get_desktop_item_startup_status (GnomeDesktopItem *desktop_item)
 	gchar *filename;
 	gchar *basename;
 
-	gchar *global_target0;
-	gchar *global_target1;
+	const gchar * const * global_dirs;
+	gchar *global_target;
 	gchar *user_target;
 
 	StartupStatus retval;
@@ -793,21 +793,34 @@ get_desktop_item_startup_status (GnomeDesktopItem *desktop_item)
 	basename = g_path_get_basename (filename);
 
 	retval = APP_NOT_IN_STARTUP_DIR;
-	/* const gchar * const * global_dirs = g_get_system_config_dirs(); */
-	const gchar * const * global_dirs = g_get_system_data_dirs();
+	global_dirs = g_get_system_config_dirs();
 	for(x=0; global_dirs[x]; x++)
 	{
-		global_target0 = g_build_filename (global_dirs[x], "autostart", basename, NULL);
-		global_target1 = g_build_filename (global_dirs[x], "gnome", "autostart", basename, NULL);
-		if (g_file_test (global_target0, G_FILE_TEST_EXISTS) || g_file_test (global_target1, G_FILE_TEST_EXISTS))
+		global_target = g_build_filename (global_dirs[x], "autostart", basename, NULL);
+		if (g_file_test (global_target, G_FILE_TEST_EXISTS))
 		{
 			retval = APP_NOT_ELIGIBLE;
-			g_free (global_target0);
-			g_free (global_target1);
+			g_free (global_target);
 			break;
 		}
-		g_free (global_target0);
-		g_free (global_target1);
+		g_free (global_target);
+	}
+
+	/* gnome-session currently checks these dirs also. see startup-programs.c */
+	if (retval != APP_NOT_ELIGIBLE)
+	{
+		global_dirs = g_get_system_data_dirs();
+		for(x=0; global_dirs[x]; x++)
+		{
+			global_target = g_build_filename (global_dirs[x], "gnome", "autostart", basename, NULL);
+			if (g_file_test (global_target, G_FILE_TEST_EXISTS))
+			{
+				retval = APP_NOT_ELIGIBLE;
+				g_free (global_target);
+				break;
+			}
+			g_free (global_target);
+		}
 	}
 
 	if (retval != APP_NOT_ELIGIBLE)
