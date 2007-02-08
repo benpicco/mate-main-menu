@@ -1,3 +1,13 @@
+2007-02-06  Rodrigo Moya <rodrigo@gnome-db.org>
+
+	* application-tile.[ch] (application_tile_new_full): added 'gconf_prefix'
+	argument, so that the AppTile object is able to disable context menu
+	items based on the presence of some GConf keys.
+	(application_tile_set_property): free previous values for not leaking.
+
+	* app-shell.c (insert_launcher_into_category): pass the GConf prefix we
+	get from the application to the App tiles.
+
 2007-02-01  Scott Reeves  <sreeves@novell.com>
 	* application-tile.c: small fixup of previous patch to not try and
 	add the menu item when no help available.

@@ -1217,7 +1217,7 @@ insert_launcher_into_category (CategoryData * cat_data, GnomeDesktopItem * deskt
 
 	launcher =
 		application_tile_new_full (gnome_desktop_item_get_location (desktop_item),
-		app_data->icon_size, app_data->show_tile_generic_name);
+		app_data->icon_size, app_data->show_tile_generic_name, app_data->gconf_prefix);
 	gtk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
 
 	filepath =

@@ -42,7 +42,7 @@ static void application_tile_get_property (GObject *, guint,       GValue *, GPa
 static void application_tile_set_property (GObject *, guint, const GValue *, GParamSpec *);
 static void application_tile_finalize     (GObject *);
 
-static void application_tile_setup (ApplicationTile *);
+static void application_tile_setup (ApplicationTile *, const gchar *);
 
 static GtkWidget *create_header    (const gchar *);
 static GtkWidget *create_subheader (const gchar *);
@@ -92,7 +92,8 @@ typedef struct {
 enum {
 	PROP_0,
 	PROP_APPLICATION_NAME,
-	PROP_APPLICATION_DESCRIPTION
+	PROP_APPLICATION_DESCRIPTION,
+	PROP_APPLICATION_GCONF_PREFIX
 };
 
 static void
@@ -119,17 +120,24 @@ application_tile_class_init (ApplicationTileClass *app_tile_class)
 			"application-description", "application-description",
 			"the name of the application", NULL,
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
+	g_object_class_install_property (
+		g_obj_class, PROP_APPLICATION_GCONF_PREFIX,
+		g_param_spec_string (
+			"gconf-prefix", "gconf-prefix",
+			"configuration prefix", NULL,
+			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 }
 
 GtkWidget *
 application_tile_new (const gchar *desktop_item_id)
 {
-	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND, TRUE);
+	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND, TRUE, NULL);
 }
 
 GtkWidget *
 application_tile_new_full (const gchar *desktop_item_id,
-	GtkIconSize image_size, gboolean show_generic_name)
+	GtkIconSize image_size, gboolean show_generic_name, const gchar *gconf_prefix)
 {
 	ApplicationTile        *this;
 	ApplicationTilePrivate *priv;
@@ -154,7 +162,7 @@ application_tile_new_full (const gchar *desktop_item_id,
 	priv->desktop_item = desktop_item;
 	priv->show_generic_name = show_generic_name;
 
-	application_tile_setup (this);
+	application_tile_setup (this, gconf_prefix);
 
 	return GTK_WIDGET (this);
 }
@@ -172,6 +180,8 @@ application_tile_init (ApplicationTile *tile)
 
 	priv->gconf_client  = NULL;
 	priv->gconf_conn_id = 0;
+
+	tile->name = tile->description = tile->gconf_prefix = NULL;
 }
 
 static void
@@ -180,15 +190,27 @@ application_tile_finalize (GObject *g_object)
 	ApplicationTile *tile = APPLICATION_TILE (g_object);
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (g_object);
 
-	if (tile->name)
+	if (tile->name) {
 		g_free (tile->name);
-	if (tile->description)
+		tile->name = NULL;
+	}
+	if (tile->description) {
 		g_free (tile->description);
+		tile->description = NULL;
+	}
+	if (tile->gconf_prefix) {
+		g_free (tile->gconf_prefix);
+		tile->gconf_prefix = NULL;
+	}
 
-	if (priv->desktop_item)
+	if (priv->desktop_item) {
 		gnome_desktop_item_unref (priv->desktop_item);
-	if (priv->image_id)
+		priv->desktop_item = NULL;
+	}
+	if (priv->image_id) {
 		g_free (priv->image_id);
+		priv->image_id = NULL;
+	}
 
 	gconf_client_notify_remove (priv->gconf_client, priv->gconf_conn_id);
 	g_object_unref (priv->gconf_client);
@@ -202,16 +224,20 @@ application_tile_get_property (GObject *g_obj, guint prop_id, GValue *value, GPa
 	ApplicationTile *tile = APPLICATION_TILE (g_obj);
 
 	switch (prop_id) {
-		case PROP_APPLICATION_NAME:
-			g_value_set_string (value, tile->name);
-			break;
+	case PROP_APPLICATION_NAME:
+		g_value_set_string (value, tile->name);
+		break;
 
-		case PROP_APPLICATION_DESCRIPTION:
-			g_value_set_string (value, tile->description);
-			break;
+	case PROP_APPLICATION_DESCRIPTION:
+		g_value_set_string (value, tile->description);
+		break;
 
-		default:
-			break;
+	case PROP_APPLICATION_GCONF_PREFIX:
+		g_value_set_string (value, tile->gconf_prefix);
+		break;
+
+	default:
+		break;
 	}
 }
 
@@ -221,21 +247,31 @@ application_tile_set_property (GObject *g_obj, guint prop_id, const GValue *valu
 	ApplicationTile *tile = APPLICATION_TILE (g_obj);
 
 	switch (prop_id) {
-		case PROP_APPLICATION_NAME:
-			tile->name = g_strdup (g_value_get_string (value));
-			break;
+	case PROP_APPLICATION_NAME:
+		if (tile->name)
+			g_free (tile->name);
+		tile->name = g_strdup (g_value_get_string (value));
+		break;
 
-		case PROP_APPLICATION_DESCRIPTION:
-			tile->description = g_strdup (g_value_get_string (value));
-			break;
+	case PROP_APPLICATION_DESCRIPTION:
+		if (tile->description)
+			g_free (tile->description);
+		tile->description = g_strdup (g_value_get_string (value));
+		break;
 
-		default:
-			break;
+	case PROP_APPLICATION_GCONF_PREFIX:
+		if (tile->gconf_prefix)
+			g_free (tile->gconf_prefix);
+		tile->gconf_prefix = g_strdup (g_value_get_string (value));
+		break;
+
+	default:
+		break;
 	}
 }
 
 static void
-application_tile_setup (ApplicationTile *this)
+application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 {
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
 
@@ -255,7 +291,8 @@ application_tile_setup (ApplicationTile *this)
 
 	const gchar *comment;
 
-	gchar *markup;
+	const gchar *key;
+	gchar *markup, *value;
 
 	GError *error = NULL;
 
@@ -296,6 +333,7 @@ application_tile_setup (ApplicationTile *this)
 		"context-menu",            context_menu,
 		"application-name",        name,
 		"application-description", desc,
+		"gconf-prefix",            gconf_prefix,
 		NULL);
 
 	priv->is_in_user_list = is_desktop_item_in_user_list (TILE (this)->uri);
@@ -348,14 +386,24 @@ application_tile_setup (ApplicationTile *this)
 
 /* make "add/remove to favorites" action */
 
-	action = tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
-	actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = action;
+	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+		key = SLAB_USER_SPECIFIED_APPS_KEY;
+	else
+		key = "/apps/main-menu/file-area/user_specified_apps";
 
-	update_user_list_menu_item (this);
+	if ((value = get_slab_gconf_string (key))) {
+		action = tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
+		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = action;
 
-	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		update_user_list_menu_item (this);
 
-	gtk_container_add (menu_ctnr, menu_item);
+		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+
+		gtk_container_add (menu_ctnr, menu_item);
+
+		g_free (value);
+	} else
+		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = NULL;
 
 /* make "add/remove to startup" action */
 
@@ -372,21 +420,33 @@ application_tile_setup (ApplicationTile *this)
 
 /* make upgrade action */
 
-	if (verify_package_management_command (SLAB_UPGRADE_PACKAGE_KEY)) {
+	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+		key = SLAB_UPGRADE_PACKAGE_KEY;
+	else
+		key = "/apps/main-menu/upgrade_package_command";
+
+	if (verify_package_management_command (key)) {
 		action = tile_action_new (TILE (this), upgrade_trigger, _("Upgrade"), 0);
 		actions [APPLICATION_TILE_ACTION_UPGRADE_PACKAGE] = action;
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 		gtk_container_add (menu_ctnr, menu_item);
-	}
+	} else
+		actions [APPLICATION_TILE_ACTION_UPGRADE_PACKAGE] = NULL;
 
 /* make uninstall action */
 
-	if (verify_package_management_command (SLAB_UNINSTALL_PACKAGE_KEY)) {
+	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+		key = SLAB_UNINSTALL_PACKAGE_KEY;
+	else
+		key = "/apps/main-menu/uninstall_package_command";
+
+	if (verify_package_management_command (key)) {
 		action = tile_action_new (TILE (this), uninstall_trigger, _("Uninstall"), 0);
 		actions [APPLICATION_TILE_ACTION_UNINSTALL_PACKAGE] = action;
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 		gtk_container_add (menu_ctnr, menu_item);
-	}
+	} else
+		actions [APPLICATION_TILE_ACTION_UNINSTALL_PACKAGE] = NULL;
 
 	priv->gconf_client = gconf_client_get_default ();
 	priv->gconf_conn_id = gconf_client_notify_add (
