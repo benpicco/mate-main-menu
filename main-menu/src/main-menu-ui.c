@@ -311,7 +311,7 @@ bonobo_menu_menu_about_cb (BonoboUIComponent * component, gpointer user_data, co
 
 		gtk_widget_show (priv->about_dialog);
 
-		g_signal_connect (G_OBJECT (priv->about_dialog), "delete-event",
+		g_signal_connect (G_OBJECT (priv->about_dialog), "response",
 			G_CALLBACK (gtk_widget_hide_on_delete), NULL);
 	}
 

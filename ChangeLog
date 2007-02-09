@@ -1,3 +1,8 @@
+2007-02-09  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c:
+	Connect to the proper AboutDialog signal to close, BNC #212495, BGO
+	#389715.
+
 2007-02-01  Scott Reeves  <sreeves@novell.com>
 	* main-menu/etc/slab.schemas.in.in
 	* libslab/application-tile.c
