@@ -1,3 +1,10 @@
+2007-02-12  Rodney Dawes  <dobey@novell.com>
+
+	* libslab/tile.c (tile_expose): Modify the fg color to use the
+	SELECTED fg color, if the tile is in the SELECTED state
+
+	Fixes #398079
+
 2007-02-09  Jim Krehl  <jimmyk@novell.com>
 	* main-menu/src/main-menu-ui.c:
 	Connect to the proper AboutDialog signal to close, BNC #212495, BGO

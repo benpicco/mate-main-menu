@@ -336,6 +336,13 @@ tile_expose (GtkWidget * widget, GdkEventExpose * event)
 	if ((has_focus = GTK_WIDGET_HAS_FOCUS (widget)))
 		GTK_WIDGET_UNSET_FLAGS (widget, GTK_HAS_FOCUS);
 
+	if (GTK_WIDGET_STATE (widget) == GTK_STATE_SELECTED)
+	  gtk_widget_modify_fg (widget, GTK_STATE_NORMAL,
+				&widget->style->fg[GTK_STATE_SELECTED]);
+	else
+	  gtk_widget_modify_fg (widget, GTK_STATE_NORMAL,
+				&widget->style->fg[GTK_STATE_NORMAL]);
+	  
 	retval = (*GTK_WIDGET_CLASS (tile_parent_class)->expose_event) (widget, event);
 
 	if (has_focus)
