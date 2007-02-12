@@ -1,3 +1,11 @@
+2007-02-12  Damien Carbery <damien.carbery@sun.com>
+
+	Fixes #383022
+
+	* document-tile.c:
+	* gnome-utils.c: use more portable G_GNUC_FUNCTION instead of
+	__FUNCTION__.
+
 2007-02-06  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* application-tile.[ch] (application_tile_new_full): added 'gconf_prefix'

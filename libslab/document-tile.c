@@ -802,7 +802,7 @@ send_to_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
 
 	if (error)
-		handle_g_error (&error, "error in %s", __FUNCTION__);
+		handle_g_error (&error, "error in %s", G_GNUC_FUNCTION );
 
 	g_free (cmd);
 	g_free (filename);
