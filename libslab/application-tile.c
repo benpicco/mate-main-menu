@@ -386,7 +386,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make "add/remove to favorites" action */
 
-	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
 		key = SLAB_USER_SPECIFIED_APPS_KEY;
 	else
 		key = "/apps/main-menu/file-area/user_specified_apps";
@@ -420,7 +420,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make upgrade action */
 
-	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
 		key = SLAB_UPGRADE_PACKAGE_KEY;
 	else
 		key = "/apps/main-menu/upgrade_package_command";
@@ -435,7 +435,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make uninstall action */
 
-	if (g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
 		key = SLAB_UNINSTALL_PACKAGE_KEY;
 	else
 		key = "/apps/main-menu/uninstall_package_command";
