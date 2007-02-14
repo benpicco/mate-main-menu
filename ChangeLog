@@ -1,3 +1,11 @@
+2007-02-14  Rodney Dawes  <dobey@novell.com>
+
+	* libslab/tile.c (tile_expose): Revert previous patch, as it doesn't
+	actually seem to fix the text color, and causes #407481
+
+	Fixes #407481
+	Reopens #398079
+
 2007-02-12  Rodney Dawes  <dobey@novell.com>
 
 	* libslab/tile.c (tile_expose): Modify the fg color to use the
