@@ -1,3 +1,20 @@
+2007-02-15  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/system-tile.c
+	* main-menu/src/slab-window.c
+	* control-center/src/control-center.c
+	* libslab/application-tile.c
+	* libslab/slab-gnome-util.c
+	* libslab/slab-gnome-util.h
+	* libslab/document-tile.c
+	* libslab/shell-window.c
+	* libslab/slab-section.c
+	* libslab/app-shell.c:
+	Use smaller icons in CC - Partial fix for BGO 405078
+	Patch from Brandon Wright for overdrawn text - BGO 403856
+	Fix memory leaks - BGO 402563 and BNC 229190
+	Don't crash (on debug builds) when no menu file - BGO 407825
+	Check for NULL gconf prefix - BGO 406255
+
 2007-02-14  Rodney Dawes  <dobey@novell.com>
 
 	* libslab/tile.c (tile_expose): Revert previous patch, as it doesn't

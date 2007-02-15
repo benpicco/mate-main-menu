@@ -848,8 +848,9 @@ generate_categories (AppShellData * app_data)
 		gmenu_tree_add_monitor (app_data->tree, gmenu_tree_changed_callback, app_data);
 	}
 	root_dir = gmenu_tree_get_root_directory (app_data->tree);
-	contents = gmenu_tree_directory_get_contents (root_dir);
-	if (!contents)
+	if (root_dir)
+		contents = gmenu_tree_directory_get_contents (root_dir);
+	if (!root_dir || !contents)
 	{
 		GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 			GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Failure loading - %s",

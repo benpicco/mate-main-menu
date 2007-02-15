@@ -47,6 +47,7 @@ G_BEGIN_DECLS
 gboolean get_slab_gconf_bool (const gchar * key);
 gint get_slab_gconf_int (const gchar * key);
 GSList *get_slab_gconf_slist (const gchar * key);
+void free_slab_gconf_slist_of_strings (GSList * list);
 gchar *get_slab_gconf_string (const gchar * key);
 
 GnomeDesktopItem *load_desktop_item_from_gconf_key (const gchar * key);

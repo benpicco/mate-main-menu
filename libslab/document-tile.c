@@ -163,6 +163,7 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 		"nameplate-tooltip", tooltip_text, "context-menu", context_menu, NULL);
 
 	g_free (uri);
+	g_free (tooltip_text);
 
 	priv = DOCUMENT_TILE_GET_PRIVATE (this);
 	priv->basename    = g_strdup (basename);

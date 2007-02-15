@@ -292,7 +292,12 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	const gchar *comment;
 
 	const gchar *key;
-	gchar *markup, *value;
+	gchar *markup;
+
+	/*Fixme - need to address the entire gconf key location issue */
+	/*Fixme - this is just a temporary stop gap                   */
+	gboolean use_new_prefix;
+	GSList *list;
 
 	GError *error = NULL;
 
@@ -386,12 +391,18 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make "add/remove to favorites" action */
 
-	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if (this->gconf_prefix && !g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+		use_new_prefix = TRUE;
+	else
+		use_new_prefix = FALSE;
+
+	if(!use_new_prefix)
 		key = SLAB_USER_SPECIFIED_APPS_KEY;
 	else
 		key = "/apps/main-menu/file-area/user_specified_apps";
 
-	if ((value = get_slab_gconf_string (key))) {
+	if ((list = get_slab_gconf_slist (key))) {
+		free_slab_gconf_slist_of_strings (list);
 		action = tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
 		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = action;
 
@@ -401,7 +412,6 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 		gtk_container_add (menu_ctnr, menu_item);
 
-		g_free (value);
 	} else
 		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = NULL;
 
@@ -420,7 +430,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make upgrade action */
 
-	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if(!use_new_prefix)
 		key = SLAB_UPGRADE_PACKAGE_KEY;
 	else
 		key = "/apps/main-menu/upgrade_package_command";
@@ -435,7 +445,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make uninstall action */
 
-	if (this->gconf_prefix && g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+	if(!use_new_prefix)
 		key = SLAB_UNINSTALL_PACKAGE_KEY;
 	else
 		key = "/apps/main-menu/uninstall_package_command";
@@ -536,7 +546,7 @@ add_to_user_list (ApplicationTile *this)
 	GError      *error;
 
 
-	loc = (gchar *) gnome_desktop_item_get_location (priv->desktop_item);
+	loc = g_strdup (gnome_desktop_item_get_location (priv->desktop_item));
 
 	app_list = get_slab_gconf_slist (SLAB_USER_SPECIFIED_APPS_KEY);
 	app_list = g_slist_append (app_list, loc);
@@ -552,6 +562,7 @@ add_to_user_list (ApplicationTile *this)
 			"error adding %s to %s [%s]\n",
 			loc, SLAB_USER_SPECIFIED_APPS_KEY, error->message);
 
+	free_slab_gconf_slist_of_strings (app_list);
 	priv->is_in_user_list = TRUE;
 }
 
@@ -601,6 +612,7 @@ remove_from_user_list (ApplicationTile *this)
 			"error removing %s from %s [%s]\n",
 			loc, SLAB_USER_SPECIFIED_APPS_KEY, error->message);
 
+	free_slab_gconf_slist_of_strings (app_list);
 	priv->is_in_user_list = FALSE;
 }
 
@@ -799,7 +811,9 @@ is_desktop_item_in_user_list (const gchar *uri)
 
 	GSList *node;
 	gint offset;
+	gboolean retval;
 
+	retval = FALSE;
 	app_list = get_slab_gconf_slist (SLAB_USER_SPECIFIED_APPS_KEY);
 
 	if (! app_list)
@@ -812,10 +826,14 @@ is_desktop_item_in_user_list (const gchar *uri)
 			offset = 0;
 
 		if (! strcmp (& uri [offset], (gchar *) node->data))
-			return TRUE;
+		{
+			retval = TRUE;
+			break;
+		}
 	}
 
-	return FALSE;
+	free_slab_gconf_slist_of_strings (app_list);
+	return retval;
 }
 
 static void

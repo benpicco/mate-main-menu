@@ -84,6 +84,17 @@ get_slab_gconf_string (const gchar * key)
 	return value;
 }
 
+void
+free_slab_gconf_slist_of_strings (GSList * string_list)
+{
+	g_assert (string_list != NULL);
+	GSList * temp;
+
+	for(temp = string_list; temp; temp = temp->next)
+		g_free (temp->data);
+	g_slist_free (string_list);
+}
+
 GSList *
 get_slab_gconf_slist (const gchar * key)
 {

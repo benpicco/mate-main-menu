@@ -88,16 +88,9 @@ slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user
 gboolean
 slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
-	GList *child;
-
 	gdk_draw_rectangle (widget->window, widget->style->light_gc[GTK_STATE_SELECTED], TRUE,
 		widget->allocation.x, widget->allocation.y,
 		widget->allocation.width + 40, widget->allocation.height);
-
-	child = gtk_container_get_children (GTK_CONTAINER (widget));
-	for (; child; child = child->next)
-		gtk_container_propagate_expose (GTK_CONTAINER (widget), GTK_WIDGET (child->data),
-			event);
 
 	return FALSE;
 }

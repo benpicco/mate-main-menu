@@ -173,7 +173,6 @@ shell_window_set_contents (ShellWindow * shell, GtkWidget * left_pane, GtkWidget
 gboolean
 shell_window_paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
-	GList *child;
 	GtkWidget *left_pane, *right_pane;
 
 	left_pane = SHELL_WINDOW (widget)->_left_pane;
@@ -183,11 +182,6 @@ shell_window_paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer 
 	gtk_paint_flat_box (widget->style, widget->window, widget->state, GTK_SHADOW_NONE, NULL, widget, "",
 		left_pane->allocation.x, left_pane->allocation.y, left_pane->allocation.width,
 		left_pane->allocation.height);
-
-	child = gtk_container_get_children (GTK_CONTAINER (widget));
-	for (; child; child = child->next)
-		gtk_container_propagate_expose (GTK_CONTAINER (widget), GTK_WIDGET (child->data),
-			event);
 
 	return FALSE;
 }

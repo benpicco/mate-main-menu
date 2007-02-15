@@ -298,6 +298,7 @@ system_tile_lock_screen (Tile * tile, TileEvent * event, TileAction * action)
 	GSList *command_priority;
 
 	gchar *exec_string;
+	gboolean found_command;
 	gchar *cmd_string;
 	gchar *arg_string;
 
@@ -306,6 +307,7 @@ system_tile_lock_screen (Tile * tile, TileEvent * event, TileAction * action)
 
 	command_priority = get_slab_gconf_slist (SLAB_LOCK_SCREEN_PRIORITY_KEY);
 
+	found_command = FALSE;
 	for (node = command_priority; node; node = node->next)
 	{
 		exec_string = (gchar *) node->data;
@@ -335,9 +337,12 @@ system_tile_lock_screen (Tile * tile, TileEvent * event, TileAction * action)
 			g_free (arg_string);
 			g_free (exec_string);
 
-			return;
+			found_command = TRUE;
+			break;
 		}
 	}
 
-	g_warning ("could not find a command to lock screen\n");
+	free_slab_gconf_slist_of_strings (command_priority);
+	if(!found_command)
+		g_warning ("could not find a command to lock screen\n");
 }

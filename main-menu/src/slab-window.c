@@ -131,7 +131,6 @@ slab_window_size_allocate (GtkWidget * widget, GtkAllocation * alloc)
 gboolean
 paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
-	GList *child;
 	GtkWidget *left_pane, *right_pane;
 
 	/* draw colored border */
@@ -173,12 +172,6 @@ paint_window (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 	gdk_draw_line (widget->window, widget->style->dark_gc[GTK_STATE_NORMAL],
 		right_pane->allocation.x, right_pane->allocation.y, right_pane->allocation.x,
 		right_pane->allocation.y + right_pane->allocation.height - 1);
-
-	child = gtk_container_get_children (GTK_CONTAINER (widget));
-
-	for (; child; child = child->next)
-		gtk_container_propagate_expose (GTK_CONTAINER (widget), GTK_WIDGET (child->data),
-			event);
 
 	return FALSE;
 }

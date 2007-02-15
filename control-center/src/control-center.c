@@ -153,7 +153,7 @@ main (int argc, char *argv[])
 	}
 
 	app_data = appshelldata_new ("preferences.menu", NULL, CONTROL_CENTER_PREFIX,
-		GTK_ICON_SIZE_DIALOG, FALSE, TRUE);
+		GTK_ICON_SIZE_DND, FALSE, TRUE);
 	generate_categories (app_data);
 
 	actions = get_actions_list ();
