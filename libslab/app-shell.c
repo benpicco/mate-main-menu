@@ -84,7 +84,6 @@ static void tile_activated_cb (Tile * tile, TileEvent * event, gpointer user_dat
 static void handle_launcher_single_clicked (Tile * launcher, gpointer data);
 static void handle_menu_action_performed (Tile * launcher, TileEvent * event, TileAction * action,
 	gpointer data);
-static gint category_name_compare (gconstpointer a, gconstpointer b);
 static gint application_launcher_compare (gconstpointer a, gconstpointer b);
 static void gmenu_tree_changed_callback (GMenuTree * tree, gpointer user_data);
 gboolean regenerate_categories (AppShellData * app_data);
@@ -869,12 +868,13 @@ generate_categories (AppShellData * app_data)
 	for (l = contents; l; l = l->next)
 	{
 		const char *category;
+		GMenuTreeItem *item = l->data;
 
-		switch (gmenu_tree_item_get_type (l->data))
+		switch (gmenu_tree_item_get_type (item))
 		{
 		case GMENU_TREE_ITEM_DIRECTORY:
-			category = gmenu_tree_directory_get_name (l->data);
-			generate_category(category, l->data, app_data, TRUE);
+			category = gmenu_tree_directory_get_name ((GMenuTreeDirectory*)item);
+			generate_category(category, (GMenuTreeDirectory*)item, app_data, TRUE);
 			break;
 		case GMENU_TREE_ITEM_ENTRY:
 			need_misc = TRUE;
@@ -882,7 +882,11 @@ generate_categories (AppShellData * app_data)
 		default:
 			break;
 		}
+
+		gmenu_tree_item_unref (item);
 	}
+	g_slist_free (contents);
+
 	if (need_misc)
 		generate_category (_("Other"), root_dir, app_data, FALSE);
 
@@ -901,26 +905,28 @@ generate_categories (AppShellData * app_data)
 static void
 generate_category (const char * category, GMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive)
 {
-	CategoryData *data = NULL;
+	CategoryData *data;
+	/* This is not needed. GMenu already returns an ordered, non duplicate list
 	GList *list_entry;
-
 	list_entry =
 		g_list_find_custom (app_data->categories_list, category,
 		category_name_compare);
-	
 	if (!list_entry)
 	{
+	*/
 		data = g_new0 (CategoryData, 1);
 		data->category = g_strdup (category);
 		app_data->categories_list =
 			/* use the gmenu order instead of alphabetical */
-			g_list_insert (app_data->categories_list, data, -1);
+			g_list_append (app_data->categories_list, data);
 			/* g_list_insert_sorted (app_data->categories_list, data, category_data_compare); */
+	/*
 	}
 	else
 	{
 		data = list_entry->data;
 	}
+	*/
 
 	if (app_data->hash)	/* used to eliminate dups on a per category basis. */
 		g_hash_table_destroy (app_data->hash);
@@ -990,10 +996,7 @@ generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, Cate
 	contents = gmenu_tree_directory_get_contents (root_dir);
 	for (l = contents; l; l = l->next)
 	{
-		GMenuTreeItemType item_type;
-
-		item_type = gmenu_tree_item_get_type (l->data);
-		switch (item_type)
+		switch (gmenu_tree_item_get_type (l->data))
 		{
 		case GMENU_TREE_ITEM_DIRECTORY:
 			/* g_message ("Found sub-category %s", gmenu_tree_directory_get_name (l->data)); */
@@ -1032,6 +1035,8 @@ generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, Cate
 		default:
 			break;
 		}
+
+		gmenu_tree_item_unref (l->data);
 	}
 	g_slist_free (contents);
 }
@@ -1280,6 +1285,7 @@ application_launcher_compare (gconstpointer a, gconstpointer b)
 	return g_ascii_strcasecmp (val1, val2);
 }
 
+/*
 static gint
 category_name_compare (gconstpointer a, gconstpointer b)
 {
@@ -1292,6 +1298,7 @@ category_name_compare (gconstpointer a, gconstpointer b)
 	}
 	return g_ascii_strcasecmp (category, data->category);
 }
+*/
 
 static void
 tile_activated_cb (Tile * tile, TileEvent * event, gpointer user_data)

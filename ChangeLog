@@ -1,3 +1,13 @@
+2007-02-22  Scott Reeves  <sreeves@novell.com>
+	* libslab/slab-gnome-util.c
+	* libslab/app-shell.c
+	* libslab/app-resizer.c
+	* libslab/application-tile.c:
+	start of performance optimization work.
+	valgrind work for memory leaks.
+	Patch from Jens Granseuer for leaks - BGO 396110
+	Fix leaks for BGO 395014 based on patch from Paolo Borelli
+
 2007-02-21  Scott Reeves  <sreeves@novell.com>
 	* libslab/app-resizer.c
 	* libslab/app-shell.c

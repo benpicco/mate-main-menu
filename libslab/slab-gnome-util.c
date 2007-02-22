@@ -40,6 +40,7 @@ get_slab_gconf_bool (const gchar * key)
 
 	value = gconf_client_get_bool (gconf_client, key, &error);
 
+	g_object_unref (gconf_client);
 	if (error)
 		g_warning ("error accessing %s [%s]\n", key, error->message);
 
@@ -59,6 +60,7 @@ get_slab_gconf_int (const gchar * key)
 
 	value = gconf_client_get_int (gconf_client, key, &error);
 
+	g_object_unref (gconf_client);
 	if (error)
 		g_warning ("error accessing %s [%s]\n", key, error->message);
 
@@ -78,6 +80,7 @@ get_slab_gconf_string (const gchar * key)
 
 	value = gconf_client_get_string (gconf_client, key, &error);
 
+	g_object_unref (gconf_client);
 	if (error)
 		g_warning ("error accessing %s [%s]\n", key, error->message);
 
@@ -108,6 +111,7 @@ get_slab_gconf_slist (const gchar * key)
 
 	value = gconf_client_get_list (gconf_client, key, GCONF_VALUE_STRING, &error);
 
+	g_object_unref (gconf_client);
 	if (error)
 	{
 		g_warning ("error accessing %s [%s]\n", key, error->message);
@@ -195,8 +199,7 @@ get_package_name_from_desktop_item (GnomeDesktopItem * desktop_item)
 			&retval, &error))
 	{
 		g_warning ("error: [%s]\n", error->message);
-
-		return NULL;
+		retval = -1;
 	}
 
 	g_free (argv[4]);
@@ -226,6 +229,7 @@ open_desktop_item_exec (GnomeDesktopItem * desktop_item)
 		g_warning ("error launching %s [%s]\n",
 			gnome_desktop_item_get_location (desktop_item), error->message);
 
+		g_error_free (error);
 		return FALSE;
 	}
 
@@ -257,6 +261,8 @@ open_desktop_item_help (GnomeDesktopItem * desktop_item)
 		{
 			g_warning ("error opening %s [%s]\n", help_uri, error->message);
 
+			g_free (help_uri);
+			g_error_free (error);
 			return FALSE;
 		}
 
@@ -281,24 +287,32 @@ desktop_uri_is_in_main_menu (const gchar * uri)
 
 	GSList *node;
 	gint offset;
+	gint uri_len;
+	gboolean found = FALSE;
 
 	app_list = get_slab_gconf_slist (SLAB_USER_SPECIFIED_APPS_KEY);
 
 	if (!app_list)
 		return FALSE;
 
+	uri_len = strlen (uri);
+
 	for (node = app_list; node; node = node->next)
 	{
-		offset = strlen (uri) - strlen ((gchar *) node->data);
+		offset = uri_len - strlen ((gchar *) node->data);
 
 		if (offset < 0)
 			offset = 0;
 
 		if (!strcmp (&uri[offset], (gchar *) node->data))
-			return TRUE;
+		{
+			found = TRUE;
+			break;
+		}
 	}
 
-	return FALSE;
+	free_slab_gconf_slist_of_strings (app_list);
+	return found;
 }
 
 gint

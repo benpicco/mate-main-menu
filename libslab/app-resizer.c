@@ -86,16 +86,17 @@ app_resizer_init (AppResizer * window)
 void
 remove_container_entries (GtkContainer * widget)
 {
-	GList *children = gtk_container_get_children (widget);
-	if (children == NULL)
-		return;
+	GList *children, *l;
 
-	do
+	children = gtk_container_get_children (widget);
+	for (l = children; l; l = l->next)
 	{
-		GtkWidget *child = GTK_WIDGET (children->data);
+		GtkWidget *child = GTK_WIDGET (l->data);
 		gtk_container_remove (GTK_CONTAINER (widget), GTK_WIDGET (child));
 	}
-	while (NULL != (children = g_list_next (children)));
+
+	if (children)
+		g_list_free (children);
 }
 
 static void

@@ -811,6 +811,7 @@ is_desktop_item_in_user_list (const gchar *uri)
 
 	GSList *node;
 	gint offset;
+	gint uri_len;
 	gboolean retval;
 
 	retval = FALSE;
@@ -818,9 +819,10 @@ is_desktop_item_in_user_list (const gchar *uri)
 
 	if (! app_list)
 		return FALSE;
+	uri_len = strlen (uri);
 
 	for (node = app_list; node; node = node->next) {
-		offset = strlen (uri) - strlen ((gchar *) node->data);
+		offset = uri_len - strlen ((gchar *) node->data);
 
 		if (offset < 0)
 			offset = 0;
