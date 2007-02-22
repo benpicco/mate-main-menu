@@ -430,7 +430,8 @@ gtop_get_first_active_device_info ()
 			{
 				g_warning ("error opening socket\n");
 
-				return NULL;
+				info = NULL;
+				break;
 			}
 
 			info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
@@ -443,7 +444,7 @@ gtop_get_first_active_device_info ()
 				info->essid = g_strdup (wl_cfg.essid);
 				info->iface = g_strdup (networks[i]);
 
-				return info;
+				break;
 			}
 			else
 			{
@@ -451,11 +452,12 @@ gtop_get_first_active_device_info ()
 				info->essid = NULL;
 				info->iface = g_strdup (networks[i]);
 
-				return info;
+				break;
 			}
 		}
 	}
 
-	return NULL;
+	g_strfreev (networks);
+	return info;
 }
 

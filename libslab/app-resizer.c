@@ -317,7 +317,7 @@ app_resizer_set_vadjustment_value (GtkWidget * widget, gdouble value)
 	gtk_adjustment_set_value (adjust, value);
 }
 
-gboolean
+static gboolean
 app_resizer_paint_window (GtkWidget * widget, GdkEventExpose * event, AppShellData * app_data)
 {
 	/*

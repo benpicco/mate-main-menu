@@ -1,3 +1,12 @@
+2007-02-21  Scott Reeves  <sreeves@novell.com>
+	* libslab/app-resizer.c
+	* libslab/app-shell.c
+	* libslab/document-tile.c
+	* main-menu/src/network-status-agent.c:
+	valgrind work for memory leaks.
+	Patch from Kjartan Maraas for compiler warnings and leak - BGO 400533
+	A11y fix. Based on patch from Patrick Wade for BGO 399238
+
 2007-02-15  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/system-tile.c
 	* main-menu/src/slab-window.c

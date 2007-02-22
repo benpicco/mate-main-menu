@@ -85,7 +85,6 @@ static void handle_launcher_single_clicked (Tile * launcher, gpointer data);
 static void handle_menu_action_performed (Tile * launcher, TileEvent * event, TileAction * action,
 	gpointer data);
 static gint category_name_compare (gconstpointer a, gconstpointer b);
-static gint category_data_compare (gconstpointer a, gconstpointer b);
 static gint application_launcher_compare (gconstpointer a, gconstpointer b);
 static void gmenu_tree_changed_callback (GMenuTree * tree, gpointer user_data);
 gboolean regenerate_categories (AppShellData * app_data);
@@ -381,6 +380,7 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 	GtkWidget *vbox;
 	GSList *actions;
 	AppAction *action;
+	AtkObject *a11y_cat;
 
 	g_assert (app_data != NULL);
 
@@ -405,6 +405,9 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 			g_signal_connect (launcher, "tile-activated", G_CALLBACK (actions_handler),
 				app_data);
 			gtk_box_pack_start (GTK_BOX (vbox), launcher, FALSE, FALSE, 0);
+
+			a11y_cat = gtk_widget_get_accessible (GTK_WIDGET (launcher));
+			atk_object_set_name (a11y_cat, action->name);
 		}
 	}
 
@@ -668,6 +671,7 @@ static void
 create_application_category_sections (AppShellData * app_data)
 {
 	GList *cat_list;
+	AtkObject *a11y_cat;
 	gint pos = 0;
 
 	g_assert (app_data != NULL);
@@ -692,6 +696,8 @@ create_application_category_sections (AppShellData * app_data)
 		pos++;
 		g_signal_connect (data->group_launcher, "tile-activated",
 			G_CALLBACK (handle_group_clicked), app_data);
+		a11y_cat = gtk_widget_get_accessible (GTK_WIDGET (data->group_launcher));
+		atk_object_set_name (a11y_cat, data->category);
 
 		markup = g_markup_printf_escaped ("<span size=\"x-large\" weight=\"bold\">%s</span>",
 			data->category);
@@ -1027,6 +1033,7 @@ generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, Cate
 			break;
 		}
 	}
+	g_slist_free (contents);
 }
 
 static void
@@ -1284,19 +1291,6 @@ category_name_compare (gconstpointer a, gconstpointer b)
 		g_assert_not_reached ();
 	}
 	return g_ascii_strcasecmp (category, data->category);
-}
-
-static gint
-category_data_compare (gconstpointer a, gconstpointer b)
-{
-	CategoryData *data1 = (CategoryData *) a;
-	CategoryData *data2 = (CategoryData *) b;
-
-	if (data1->category == NULL || data2->category == NULL)
-	{
-		g_assert_not_reached ();
-	}
-	return g_ascii_strcasecmp (data1->category, data2->category);
 }
 
 static void
