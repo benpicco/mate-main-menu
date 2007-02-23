@@ -1,5 +1,4 @@
-# translation of gnome-main-menu.po to
-# Danish message file for YaST2 (@memory@).
+# Danish translation of gnome-main-menu.
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002 SuSE Linux AG.
 # Copyright (C) 2001 SuSE GmbH.
@@ -8,19 +7,20 @@
 # Ib Larsen <i.la@tele2adsl.dk>, 2006.
 # Martin Schlander <suse@linuxin.dk>, 2006.
 # Jan Madsen <jan.madsen.pt(a)gmail.com>, 2006.
+# Peter Bach <bach.peter@gmail.com>, 2007.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-11-03 16:49+0100\n"
-"Last-Translator: Martin Schlander <suse@linuxin.dk>\n"
-"Language-Team:  <opensuse-translation@opensuse.org>\n"
+"POT-Creation-Date: 2007-02-23 08:43+0200\n"
+"PO-Revision-Date: 2007-02-23 08:49+0200\n"
+"Last-Translator: Peter Bach <bach.peter@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -84,12 +84,12 @@ msgid "New Applications"
 msgstr "Nye programmer"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "Filter"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "Grupper"
 
@@ -98,8 +98,7 @@ msgid "Application Actions"
 msgstr "Programhandlinger"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "Kontrolcenter"
 
@@ -124,16 +123,16 @@ msgstr "[Skift skrivebordsbaggrund;background.desktop,Tilføj printer;gnome-cups
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "hvis sand, vil kontrolcenteret lukke, når en \"Almindelig opgave\" aktiveres"
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr "nøgle ikke fundet [%s]\n"
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "Almindelige opgaver"
 
-#: ../libslab/app-shell.c:702
+#: ../libslab/app-shell.c:747
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -144,82 +143,86 @@ msgstr ""
 "\n"
 "Dit filter \"<b>%s</b>\" matcher ikke nogen elementer.</span>"
 
+#: ../libslab/app-shell.c:887
+msgid "Other"
+msgstr "Andre"
+
 #
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "Find nu"
 
 #. make start action
-#: ../libtile/application-tile.c:300
+#: ../libslab/application-tile.c:356
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Start %s</b>"
 
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
+#: ../libslab/application-tile.c:375
 msgid "Help"
 msgstr "Hjælp"
 
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr "Hjælp ikke tilgængelig"
-
-#: ../libtile/application-tile.c:365
+#: ../libslab/application-tile.c:439
 msgid "Upgrade"
 msgstr "Opgradér"
 
-#: ../libtile/application-tile.c:374
+#: ../libslab/application-tile.c:454
 msgid "Uninstall"
 msgstr "Afinstallér"
 
-#: ../libtile/application-tile.c:769
+#: ../libslab/application-tile.c:849
 msgid "Remove from Favorites"
 msgstr "Fjern fra favoritter"
 
-#: ../libtile/application-tile.c:771
+#: ../libslab/application-tile.c:851
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add to Favorites"
 msgstr "Tilføj til favoritter"
 
-#: ../libtile/application-tile.c:826
+#: ../libslab/application-tile.c:927
 msgid "Remove from Startup Programs"
 msgstr "Fjern fra opstartsprogrammer"
 
-#: ../libtile/application-tile.c:828
+#: ../libslab/application-tile.c:929
 msgid "Add to Startup Programs"
 msgstr "Tilføj til opstartsprogrammer"
 
-#: ../libtile/document-tile.c:140
+#: ../libslab/document-tile.c:145
 msgid "Edited %m/%d/%Y"
 msgstr "Redigeret %d/%m/%y"
 
-#: ../libtile/document-tile.c:170
+#: ../libslab/document-tile.c:185
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Åbn med \"%s\"</b>"
 
-#: ../libtile/document-tile.c:182
+#: ../libslab/document-tile.c:197
 msgid "Open with Default Application"
 msgstr "Åbn med standardprogram"
 
-#: ../libtile/document-tile.c:198
+#: ../libslab/document-tile.c:213
 msgid "Open in File Manager"
 msgstr "Åbn i filhåndtering"
 
 #
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/document-tile.c:229
 msgid "Rename..."
 msgstr "Omdøb..."
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/document-tile.c:242
 msgid "Move to Trash"
 msgstr "Flyt til affald"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+#: ../libslab/document-tile.c:252
+#: ../libslab/document-tile.c:582
 msgid "Delete"
 msgstr "Slet"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/document-tile.c:272
+#: ../libslab/document-tile.c:281
 msgid "Send To..."
 msgstr "Send til..."
 
@@ -245,6 +248,7 @@ msgid "GNOME Main Menu Factory"
 msgstr "Gnome hovedmenu-værksted"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
@@ -277,210 +281,194 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop-sti til gennemse programmer"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the system-wide directory in which startup programs are found."
-msgstr "Placering af den systemomspændende mappe, i hvilken opstartsprogrammer findes."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
-msgstr "Placering af brugermappen i hvilken opstartsprogrammer findes. Mappestien bør ikke være absolut, da værdien af denne nøgle er tlføjet til denne sti: ~/."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "System area items"
 msgstr "Systemområdeelementer"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "System-wide autostart program drop dir"
-msgstr "Systemomspændende autostart-programmers drop-mappe"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
 msgstr "Listen over elementer, som vil vises i systemområdet. Mulige værdier er HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER og PACKAGE_MANAGER kræver at have passende .desktop-filer defineret i henholdsvis, \"help_item\", \"control_center_item\" og \"package_manager_item\" nøglerne."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr "Dette er kommandoen der skal udføres, når \"Åbn i filhåndtering\"-menupunktet aktiveres."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr "Dette er kommandoen der skal udføres, når \"Åbn i filhåndtering\" menupunktet aktiveres. FILE_URI erstattes med en uri svarende til mappenavnet på den aktiverede fil."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr "Dette er kommandoen at udføre, når \"Send til...\"-menupunktet aktiveres."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr "Dette er kommandoen at udføre, når \"Send til...\"-menupunktet aktiveres. DIRNAME og BASENAME erstattes med tilsvarende komponenter for det aktiverede element."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "Dette er kommandoen der skal udføres, når søgepunktet anvendes."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr "Dette er kommandoen som skal udføres, når søgepunktet anvendes. SEARCH_STRING erstattes med den indtastede søgetekst."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "User autostart program drop dir (within the home dir)"
-msgstr "Drop-mappe for bruger-autostart-program (indeni hjemmemappen)"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to uninstall packages"
 msgstr "kommando til at afinstallere pakker"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "Kommando til at afinstallere pakker, PACKAGE_NAME erstattes med navnet på pakken i kommandoen"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to upgrade packages"
 msgstr "kommando til at opgradere pakker"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "kommando til at opgradere pakker, PACKAGE_NAME erstattes med navnet på pakken i kommandoen"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
 msgstr "indeholder listen (i vilkårlig rækkefølge) af tilladelige filtyper at vise i filområdet. Mulige værdier (se også bemærkningen /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS er listen over senest brugte (angivet med hovedmenu eller gennemse programmer). USER_SPECIFIED_APPS svarer til \"Favoritprogrammer\". RECENT_FILES er listen over filer fra ~/.recently-used."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr "Indeholder listen over filer (indklusiv .desktop-filer) der vil blive eksluderet fra \"Nylig brugte programmer\" og \"Nylige filer\"-listerne"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "control center item .desktop file"
 msgstr ".desktop-fil for Kontrolcenterpunktet"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines the limit of tiles in the file-area."
 msgstr "bestemmer grænsen for elementer i filområdet."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
 msgstr "bestemmer grænsen for elementer i filområdet. *Bemærk: Dette berører ikke antallet af elementer hvis filklassen er USER_SPECIFIED_*."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid "determines the reordering algorithm used when moving tiles around the main-menu"
 msgstr "bestemmer den anvendte genordningsalgoritme når elementer flyttes rundt i hovedmenuen"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
 msgstr "bestemmer hvilke typer af filer der skal vises i filområdet"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "help item .desktop file"
 msgstr ".desktop-fil for hjælpeelement"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu is more anxious to close"
 msgstr "hvis sand, er hovedmenuen mere opsat på at lukke"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr "hvis sand, vil hovedmenuen lukke under disse yderligere vilkår: element er aktiveret, søgning aktiveret"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down configuration of the file area"
 msgstr "fastlås konfiguration af fil-området"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the application browser link"
 msgstr "fastlås status for gennemse programmer-linket"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the search area"
 msgstr "fastlås status for søgeområdet"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the status area"
 msgstr "fastlås status for statusområdet"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "lock-down status for the system area"
 msgstr "fastlås status for systemområdet"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "package manager item .desktop file"
 msgstr ".desktop-fil for pakkehåndtering"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
 msgstr "mulige værdier = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indikerer, at når et element trækkes ovenpå et andet element, skal de simpelthen bytte plads. PUSH indikerer, at når et element, A, trækkes ovenpå et andet element, B, oprettes en ledig plads i element As sted. Element B (og alle elementer efter B) flytter sig nedad indtil den nye ledige plads er udfyldt. Denne operation ombryder i det tilfælde at element A optræder før element B førend 'træk og slip'-handlingen. PUSH_PULL er ligesom PUSH, undtagen at når elementer skiftes, bliver de enten skubbet ind i den frie plads eller trukket fra den anden retning, afhængigt af hvilken strategi der påvirker det mindste antal af elementer."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
 msgstr "mulige værdier = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS er listen over seneste brugte (angivet med hovedmenuen eller gennemse programmer). USER_SPECIFIED_APPS svarer til \"Favoritprogrammer\". RECENT_FILES er listen over filer fra ~/.recently-used."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "prioritized list of commands to lock the screen"
 msgstr "prioriteret liste over kommandoer til at låse skærmen"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr "sæt til sand, hvis linket til gennemse programmer skal være synligt og aktivt."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the search area should be visible and active."
 msgstr "sæt til sand, hvis søgeområdet skal være synligt og aktivt."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the status area should be visible and active."
 msgstr "sæt til sand, hvis statusområdet skal være synligt og aktivt."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid "set to true if the system area should be visible and active."
 msgstr "sæt til sand, hvis systemområdet skal være synligt og aktivt."
 
 #: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr "Vis:"
+msgid "Sho_w:"
+msgstr "_Vis:"
 
-#: ../main-menu/src/file-area-widget.c:182
+#: ../main-menu/src/file-area-widget.c:186
 msgid "Favorite Applications"
 msgstr "Favoritprogrammer"
 
-#: ../main-menu/src/file-area-widget.c:199
+#: ../main-menu/src/file-area-widget.c:203
 msgid "Recently Used Applications"
 msgstr "Senest brugte programmer"
 
-#: ../main-menu/src/file-area-widget.c:209
+#: ../main-menu/src/file-area-widget.c:213
 msgid "Recent Documents"
 msgstr "Seneste dokumenter"
 
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr "Flere programmer..."
-
 #: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr "Alle Dokumenter..."
+msgid "More _Applications..."
+msgstr "_Flere programmer..."
 
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
-msgstr "Harddisk"
+#: ../main-menu/src/file-area-widget.c:351
+msgid "_All Documents..."
+msgstr "_Alle Dokumenter..."
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:106
+msgid "Hard _Drive"
+msgstr "_Harddisk"
+
+#: ../main-menu/src/hard-drive-status-tile.c:341
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:343
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:368
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s fri / %s total"
@@ -502,72 +490,114 @@ msgid "Computer"
 msgstr "Computer"
 
 #: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "Søg:"
+msgid "_Search:"
+msgstr "_Søg:"
 
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Netværk: ingen"
 
 #
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "Tryk for at konfigurere netværk"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "_Netværk: ingen"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "Tilsluttet til: %s"
 
 #
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
-msgstr "Netværk: Trådløst"
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "_Netværk: Trådløst"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Bruger ethernet (%s)"
 
 #
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
-msgstr "Netværk: Kablet"
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "_Netværk: Kablet"
 
 #
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Trådløst ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Kablet ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
+#: ../main-menu/src/system-tile.c:103
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: ../main-menu/src/system-tile.c:117
+msgid "_Control Center"
+msgstr "_Kontrolcenter"
+
 #
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "Installér software"
+#: ../main-menu/src/system-tile.c:131
+msgid "I_nstall Software"
+msgstr "_Installér software"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "Log ud ..."
+#: ../main-menu/src/system-tile.c:138
+msgid "Log _Out ..."
+msgstr "Log _ud ..."
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "Lås skærm ..."
+#: ../main-menu/src/system-tile.c:145
+msgid "_Lock Screen ..."
+msgstr "_Lås skærm ..."
+
+#: ../main-menu/src/system-tile.c:161
+msgid "_Unknown"
+msgstr "_Ukendt"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:122
+msgid "Add the current launcher to favorites"
+msgstr "Tilføj den nuværende starter til favoritterne"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:127
+msgid "Add the current document to favorites"
+msgstr "Tilføj det nuværende dokument til favoritterne"
+
+#~ msgid "Help Unavailable"
+#~ msgstr "Hjælp ikke tilgængelig"
+#~ msgid ""
+#~ "Location of the system-wide directory in which startup programs are found."
+#~ msgstr ""
+#~ "Placering af den systemomspændende mappe, i hvilken opstartsprogrammer "
+#~ "findes."
+#~ msgid ""
+#~ "Location of the user directory in which startup programs are found. The "
+#~ "dir path should not be absolute, as the value of this key is appended to "
+#~ "this path: ~/."
+#~ msgstr ""
+#~ "Placering af brugermappen i hvilken opstartsprogrammer findes. Mappestien "
+#~ "bør ikke være absolut, da værdien af denne nøgle er tlføjet til denne "
+#~ "sti: ~/."
+#~ msgid "System-wide autostart program drop dir"
+#~ msgstr "Systemomspændende autostart-programmers drop-mappe"
+#~ msgid "User autostart program drop dir (within the home dir)"
+#~ msgstr "Drop-mappe for bruger-autostart-program (indeni hjemmemappen)"
 
