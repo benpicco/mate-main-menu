@@ -9,15 +9,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
-"Report-Msgid-Bugs-To: tradgnome@softcatala.org\n"
-"POT-Creation-Date: 2007-01-21 11:58+0100\n"
-"PO-Revision-Date: 2007-01-21 12:04+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-25 14:27+0100\n"
+"PO-Revision-Date: 2007-02-25 14:27+0100\n"
 "Last-Translator: Sílvia Miranda <silviamira@gmail.com>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -98,12 +98,12 @@ msgid "New Applications"
 msgstr "Aplicacions noves"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:151
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "Filtre"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:151
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "Grups"
 
@@ -112,7 +112,7 @@ msgid "Application Actions"
 msgstr "Accions de l'aplicació"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:155
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "Centre de Control"
 
@@ -154,16 +154,16 @@ msgstr ""
 "Si s'habilita, el centre de control es tancarà en activar una \"tasca comuna"
 "\""
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr "no s'ha trobat la clau [%s]\n"
 
-#: ../control-center/src/control-center.c:151
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "Tasques comunes"
 
-#: ../libslab/app-shell.c:741
+#: ../libslab/app-shell.c:746
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -174,7 +174,7 @@ msgstr ""
 "\n"
 " El filtre \"<b>%s</b>\" no concorda amb cap element.</span>"
 
-#: ../libslab/app-shell.c:879
+#: ../libslab/app-shell.c:891
 msgid "Other"
 msgstr "Altres"
 
@@ -183,43 +183,39 @@ msgid "Find Now"
 msgstr "Troba ara"
 
 #. make start action
-#: ../libslab/application-tile.c:310
+#: ../libslab/application-tile.c:356
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Inici %s</b>"
 
-#: ../libslab/application-tile.c:329
+#: ../libslab/application-tile.c:375
 msgid "Help"
 msgstr "Ajuda"
 
-#: ../libslab/application-tile.c:336
-msgid "Help Unavailable"
-msgstr "L'ajuda no està disponible"
-
 # UG
-#: ../libslab/application-tile.c:375
+#: ../libslab/application-tile.c:439
 msgid "Upgrade"
 msgstr "Actualitza"
 
-#: ../libslab/application-tile.c:384
+#: ../libslab/application-tile.c:454
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: ../libslab/application-tile.c:781
+#: ../libslab/application-tile.c:851
 msgid "Remove from Favorites"
 msgstr "Suprimeix dels preferits"
 
-#: ../libslab/application-tile.c:783
+#: ../libslab/application-tile.c:853
 #: ../nautilus-main-menu/nautilus-main-menu.c:121
 #: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add to Favorites"
 msgstr "Afegeix als preferits"
 
-#: ../libslab/application-tile.c:838
+#: ../libslab/application-tile.c:929
 msgid "Remove from Startup Programs"
 msgstr "Suprimeix de les aplicacions d'inici"
 
-#: ../libslab/application-tile.c:840
+#: ../libslab/application-tile.c:931
 msgid "Add to Startup Programs"
 msgstr "Afegeix a les aplicacions d'inici"
 
@@ -227,34 +223,34 @@ msgstr "Afegeix a les aplicacions d'inici"
 msgid "Edited %m/%d/%Y"
 msgstr "Editat el %d/%m/%Y"
 
-#: ../libslab/document-tile.c:183
+#: ../libslab/document-tile.c:185
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Obre amb \"%s\"</b>"
 
-#: ../libslab/document-tile.c:195
+#: ../libslab/document-tile.c:197
 msgid "Open with Default Application"
 msgstr "Obre amb l'aplicació predeterminada"
 
-#: ../libslab/document-tile.c:211
+#: ../libslab/document-tile.c:213
 msgid "Open in File Manager"
 msgstr "Obre en el gestor de fitxers"
 
 #. make rename action
-#: ../libslab/document-tile.c:227
+#: ../libslab/document-tile.c:229
 msgid "Rename..."
 msgstr "Canvia el nom"
 
 #. make move to trash action
-#: ../libslab/document-tile.c:240
+#: ../libslab/document-tile.c:242
 msgid "Move to Trash"
 msgstr "Mou a la paperera"
 
-#: ../libslab/document-tile.c:250 ../libslab/document-tile.c:580
+#: ../libslab/document-tile.c:252 ../libslab/document-tile.c:582
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: ../libslab/document-tile.c:270 ../libslab/document-tile.c:279
+#: ../libslab/document-tile.c:272 ../libslab/document-tile.c:281
 msgid "Send To..."
 msgstr "Envia a..."
 
@@ -313,30 +309,10 @@ msgid ".desktop path for the application browser"
 msgstr "Camí .desktop del navegador d'aplicacions"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"Location of the system-wide directory in which startup programs are found."
-msgstr ""
-"Ubicació del directori global per al sistema on hi ha les aplicacions d'inici"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid ""
-"Location of the user directory in which startup programs are found. The dir "
-"path should not be absolute, as the value of this key is appended to this "
-"path: ~/."
-msgstr ""
-"Ubicació del directori d'usuari on hi ha les aplicacions d'inici. El camí "
-"del directori no ha de ser absolut, perquè el valor d'aquesta clau s'afegeix "
-"a aquest camí:  ~/."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "System area items"
 msgstr "Elements de l'àrea de sistema"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "System-wide autostart program drop dir"
-msgstr "Directori on deixar anar programes d'inici automàtic de tot el sistema"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "The list of the items which will appear in the System area. Possible values "
 "are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
@@ -351,7 +327,7 @@ msgstr ""
 "\"help_item\", \"control_center_item\" i \"package_manager_item\", "
 "respectivament."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
@@ -359,7 +335,7 @@ msgstr ""
 "Aquesta és l'ordre que s'executa quan s'activa l'element de menú \"Obre en "
 "el gestor de fitxers\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
@@ -369,7 +345,7 @@ msgstr ""
 "el gestor de fitxers\". FILE_URI es reemplaça amb l'URI corresponent al nom "
 "de directori del fitxer activat."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
@@ -377,7 +353,7 @@ msgstr ""
 "Aquesta és l'ordre que s'executa quan s'activa l'element de menú \"Envia a..."
 "\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
@@ -387,11 +363,11 @@ msgstr ""
 "\". DIRNAME i BASENAME es reemplacen amb els components corresponents del "
 "fitxer activat."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "Aquesta és l'ordre que s'executa quan s'utilitza un registre de cerca."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
@@ -399,17 +375,11 @@ msgstr ""
 "Aquesta és l'ordre que s'executa quan s'utilitza un registre de cerca. "
 "SEARCH_STRING es reemplaça amb el text de cerca introduït."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
-"Directori d'usuari (dins de la carpeta d'inici) on deixar anar aplicacions "
-"d'inici automàtic"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to uninstall packages"
 msgstr "ordre per a desinstal·lar aplicacions"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -417,11 +387,11 @@ msgstr ""
 "ordre per a desinstal·lar paquets. PACKAGE_NAME es reemplaça amb el nom del "
 "paquet a l'ordre"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to upgrade packages"
 msgstr "ordre per a actualitzar paquets"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -429,7 +399,7 @@ msgstr ""
 "ordre per a actualitzar paquets, PACKAGE_NAME es reemplaça pel nom del "
 "paquet a l'ordre"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid ""
 "contains the list (in no particular order) of allowable file types to show "
 "in the file area. possible values (see also the note for /desktop/gnome/"
@@ -448,7 +418,7 @@ msgstr ""
 "d'aplicacions). USER_SPECIFIED_APPS equival a \"Favorite Applications\". "
 "RECENT_FILES és la llista de fitxers de ~/.recently-used."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
@@ -457,15 +427,15 @@ msgstr ""
 "d'exclourede les llistes de les\"aplicacions usades recentment\" i dels "
 "\"fitxers recents\" "
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "control center item .desktop file"
 msgstr "Fitxer .desktop de l'element del centre de control"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines the limit of tiles in the file-area."
 msgstr "determina el límit de mosaics a l'àrea de fitxer"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid ""
 "determines the limit of tiles in the file-area. *Note: this does not affect "
 "the number of tiles if the file-class is USER_SPECIFIED_*."
@@ -473,7 +443,7 @@ msgstr ""
 "determina el límit de mosaics a l'àrea de fitxer. *Nota: això no afecta el "
 "nombre de mosaics si el tipus de fitxer és USER_SPECIFIED_*."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "determines the reordering algorithm used when moving tiles around the main-"
 "menu"
@@ -481,19 +451,19 @@ msgstr ""
 "determina l'algorisme de reordenació quan es mouen mosaics al voltant del "
 "menú principal"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
 msgstr "determina quins tipus de fitxers s'han de mostrar a l'àrea de fitxer"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "help item .desktop file"
 msgstr "Fitxer .desktop de l'element d'ajuda"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu is more anxious to close"
 msgstr "si s'habilita, el menú principal es tanca més de pressa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
@@ -501,31 +471,31 @@ msgstr ""
 "si s'habilita, el menú principal es tancarà si es compleixen aquestes "
 "condicions addicionals: si s'activa el mosaic, si s'activa la cerca"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down configuration of the file area"
 msgstr "Configuració de blocatge de l'àrea de fitxer"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the application browser link"
 msgstr "Estat de blocatge per a l'enllaç del navegador d'aplicacions"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the search area"
 msgstr "Estat de blocatge per a l'àrea de cerca"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the status area"
 msgstr "Estat de blocatge per a l'àrea d'estat"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "lock-down status for the system area"
 msgstr "Estat de blocatge per a l'àrea de sistema"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "package manager item .desktop file"
 msgstr "Fitxer .desktop de l'element del gestor de paquets"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid ""
 "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
 "when a tile is dragged onto another tile they should simply swap position. "
@@ -548,7 +518,7 @@ msgstr ""
 "s'estiren cap a l'altra direcció, depenent de l'estratègia que afecti menys "
 "mosaics."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid ""
 "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
 "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
@@ -562,11 +532,11 @@ msgstr ""
 "d'aplicacions). USER_SPECIFIED_APPS equival a \"Favorite Applications\". "
 "RECENT_FILES és la llista de fitxers de ~/.recently-used."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "prioritized list of commands to lock the screen"
 msgstr "llista prioritzada de les ordres per a blocar la pantalla"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
@@ -574,15 +544,15 @@ msgstr ""
 "habiliteu-ho si l'enllaç al navegador d'aplicacions ha de ser visible i "
 "actiu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the search area should be visible and active."
 msgstr "habiliteu-ho si l'àrea de cerca ha de ser visible i activa."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the status area should be visible and active."
 msgstr "habiliteu-ho si l'àrea d'estat ha de ser visible i activa."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid "set to true if the system area should be visible and active."
 msgstr "habiliteu-ho si l'àrea de sistema ha de ser visible i activa."
 
@@ -637,7 +607,7 @@ msgstr "%llub"
 #: ../main-menu/src/hard-drive-status-tile.c:368
 #, c-format
 msgid "%s Free / %s Total"
-msgstr "%s lliures / % totals"
+msgstr "%s lliures / %s totals"
 
 #: ../main-menu/src/main-menu-ui.c:304
 msgid "The GNOME Main Menu"
@@ -708,7 +678,7 @@ msgstr "Desconeguda"
 #: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
-msgstr "% Mb/s"
+msgstr "%d Mb/s"
 
 #: ../main-menu/src/system-tile.c:103
 msgid "_Help"
@@ -741,3 +711,30 @@ msgstr "Afegeix aquesta llançadora als preferits"
 #: ../nautilus-main-menu/nautilus-main-menu.c:127
 msgid "Add the current document to favorites"
 msgstr "Afegeix aquest document als preferits"
+
+#~ msgid "Help Unavailable"
+#~ msgstr "L'ajuda no està disponible"
+
+#~ msgid ""
+#~ "Location of the system-wide directory in which startup programs are found."
+#~ msgstr ""
+#~ "Ubicació del directori global per al sistema on hi ha les aplicacions "
+#~ "d'inici"
+
+#~ msgid ""
+#~ "Location of the user directory in which startup programs are found. The "
+#~ "dir path should not be absolute, as the value of this key is appended to "
+#~ "this path: ~/."
+#~ msgstr ""
+#~ "Ubicació del directori d'usuari on hi ha les aplicacions d'inici. El camí "
+#~ "del directori no ha de ser absolut, perquè el valor d'aquesta clau "
+#~ "s'afegeix a aquest camí:  ~/."
+
+#~ msgid "System-wide autostart program drop dir"
+#~ msgstr ""
+#~ "Directori on deixar anar programes d'inici automàtic de tot el sistema"
+
+#~ msgid "User autostart program drop dir (within the home dir)"
+#~ msgstr ""
+#~ "Directori d'usuari (dins de la carpeta d'inici) on deixar anar "
+#~ "aplicacions d'inici automàtic"
