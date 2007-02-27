@@ -1,21 +1,21 @@
-# translation of gnome-main-menu.cs.po to Czech
+# translation of cs.po to cs_CZ
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Klara Cihlarova <koty@seznam.cz>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.cs\n"
+"Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-10-27 13:19+0200\n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
+"PO-Revision-Date: 2006-06-19 15:53+0200\n"
 "Last-Translator: Klara Cihlarova <koty@seznam.cz>\n"
-"Language-Team: Czech <suse@suse.cz>\n"
+"Language-Team: cs_CZ <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -79,12 +79,12 @@ msgid "New Applications"
 msgstr "Nové aplikace"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "Filtr"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "Skupiny"
 
@@ -93,8 +93,7 @@ msgid "Application Actions"
 msgstr "Akce aplikací"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "Ovládací centrum"
 
@@ -119,16 +118,60 @@ msgstr "[Změnit pozadí plochy;background.desktop,Přidat tiskárnu;gnome-cups-
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "je-li pravdivé, bude ovládací centrum zavřeno při aktivaci \"Obvyklé činnosti\""
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr "nenalezen [%s]\n"
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "Obvyklé činnosti"
 
-#: ../libslab/app-shell.c:702
+#. make start action
+#: ../libslab/application-tile.c:316
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Spustit %s</b>"
+
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "Nápověda"
+
+#: ../libslab/application-tile.c:342
+msgid "Help Unavailable"
+msgstr "Nápověda není dostupná"
+
+#: ../libslab/application-tile.c:381
+msgid "Upgrade"
+msgstr "Aktualizovat"
+
+#: ../libslab/application-tile.c:390
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "Odebrat z oblíbených"
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "Přidat do oblíbených"
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr "Odebrat z autostartu"
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr "Přidat do autostartu"
+
+#: ../libslab/app-shell.c:740
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -139,97 +182,139 @@ msgstr ""
 "\n"
 " Nebyla nalezena žádná položka odpovídající filtru \"<b>%s</b>\".</span>"
 
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Najít"
+#: ../libslab/app-shell.c:879
+msgid "Other"
+msgstr "Ostatní"
 
-#. make start action
-#: ../libtile/application-tile.c:300
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Spustit %s</b>"
-
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr "Nápověda"
-
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr "Nápověda není dostupná"
-
-#: ../libtile/application-tile.c:365
-msgid "Upgrade"
-msgstr "Aktualizovat"
-
-#: ../libtile/application-tile.c:374
-msgid "Uninstall"
-msgstr "Odinstalovat"
-
-#: ../libtile/application-tile.c:769
-msgid "Remove from Favorites"
-msgstr "Odebrat z oblíbených"
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr "Přidat do oblíbených"
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr "Odebrat z autostartu"
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr "Přidat do autostartu"
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr "Upraveno %d.%m. %Y"
-
-#: ../libtile/document-tile.c:170
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Otevřít v \"%s\"</b>"
-
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr "Otevřít ve výchozí aplikaci"
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr "Otevřít ve správci souborů"
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+#, fuzzy
+msgid "<b>Open</b>"
+msgstr "<b>Výrobce:</b>"
 
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
 msgid "Rename..."
 msgstr "Přejmenovat..."
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
 msgid "Move to Trash"
 msgstr "Přesunout do koše"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
 msgid "Send To..."
 msgstr "Odeslat..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "Otevřít nabídku"
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr "Upraveno %d.%m. %Y"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "_O"
+#: ../libslab/document-tile.c:192
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Otevřít v \"%s\"</b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr "Otevřít ve výchozí aplikaci"
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr "Otevřít ve správci souborů"
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, fuzzy, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "Neočekávaný znak ve jménu rozhraní: '%s'"
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2388
+#, fuzzy, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "Adresář CA již existuje"
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "Najít"
+
+#: ../libslab/system-tile.c:113
+#, fuzzy, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>Otevřít v \"%s\"</b>"
+
+#: ../libslab/system-tile.c:126
+#, fuzzy
+msgid "Remove from System Items"
+msgstr "Odebrat z oblíbených"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Výchozí nabídka a prohlížeč aplikací"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -241,9 +326,14 @@ msgstr "Hlavní nabídka GNOME Factory"
 msgid "Main Menu"
 msgstr "Hlavní nabídka"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "Aktualizace software"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "_O"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#, fuzzy
+msgid "_Open Menu"
+msgstr "Otevřít nabídku"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -262,300 +352,409 @@ msgid ".desktop file for the net config tool"
 msgstr ".desktop soubor pro nástroj pro nastavení sítě"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr ".desktop soubory pro \"Oblíbené aplikace\""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr ".desktop cesta pro prohlížeč aplikací"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid "Location of the system-wide directory in which startup programs are found."
 msgstr "Umístění systémového souboru s porgramy pro spuštění."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
 msgstr "Umístění uživatelského adresáře s programy pro spuštění. Cesta by neměla být absolutní, neboť je připojena k ~/."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr "Systémové položky"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
-msgstr "Systémový adresář pro autostart"
+msgstr "Systém"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr "Systém položek, které se zobrazí v části Systém. Možné hodnoty HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER a PACKAGE_MANAGER vyžadují vlastní .desktop soubory definované v \"help_item\", \"control_center_item\" a \"package_manager_item\"."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr "Toto je příkaz k vykonání při aktivaci \"Otevřít ve správci souborů\""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr "Toto je příkaz k vykonání při aktivaci \"Otevřít ve správci souborů\". FILE_URI je nahrazeno uri adresáře odpovídajícího souboru."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr "Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr "Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\". DIRNAME a BASENAME jsou nahrazeny odpovídajícími komponentami aktivované dlaždice."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "Toto je příkaz k vykonání při použití pole hledání."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr "Toto je příkaz k vykonání při použití pole hledání. SEARCH_STRING je nahrazeno zadaným textem k vyhledání."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
 msgstr "Uživatelský adresář pro automatické spouštění programů (v domovském adresáři)"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "command to uninstall packages"
 msgstr "příkaz pro odinstalaci balíků"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "příkaz pro odinstalaci balíků, PACKAGE_NAME je nahrazeno jménem balíku v příkazu"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
 msgstr "příkaz pro aktualizaci balíků"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "příkaz pro aktualizaci balíků, PACKAGE_NAME je nahrazeno jménem balíku v příkazu"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "obsahuje seznam (neuspořádaný) typů souborů zobrazitelných v souborové oblasti. možné hodnoty (viz také poznámka pro /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS je seznam nedávno použitých aplikací (spuštěných z hlavní nabídky nebo prohlížeče aplikací). USER_SPECIFIED_APPS je totožné s \"Oblíbenými aplikacemi\". RECENT_FILES je seznam souborů z ~/.recently-used."
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr "obsahuje seznam souborů (včetně .desktop souborů), které mají být vyjmuty ze seznamů \"Naposledy použité aplikace\" a \"Nedávné soubory\""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr ".desktop soubor položky ovládacího centra"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+#, fuzzy
+msgid "determines the limit of items in the file-area."
 msgstr "určuje omezení dlaždic v souborové oblasti."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr "určuje omezení dlaždic v souborové oblasti. Poznámka: neovlivňuje počet dlaždic, je-li třída souboru USER_SPECIFIED_*."
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr "určuje přeskupovací algoritmus při přesouvání dlaždic v hlavní nabídce"
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+#, fuzzy
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr "určuje omezení dlaždic v souborové oblasti."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
 msgstr "určuje, jaké typy souborů zobrazovat v souborové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr ".desktop soubor položky nápovědy"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "if true, main menu is more anxious to close"
 msgstr "pokud pravdivé, zavírá se hlavní nabídka horlivěji"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr "je-li pravdivé, zavře se hlavní nabídka za těchto dalších okolností: aktivace dlaždice, aktivace hledání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
 msgstr "uzamknout konfiguraci souborové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the application browser link"
 msgstr "uzamknout stav odkazu prohlížeče aplikací"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the search area"
 msgstr "uzamknout stav oblasti heldání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the status area"
 msgstr "uzamknout stav stavové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the system area"
 msgstr "uzamknout stav systémové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr ".desktop soubor položky správce balíků"
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+#, fuzzy
+msgid "lock-down status for the user-specified apps section"
+msgstr "uzamknout stav oblasti heldání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "možné hodnoty = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP značí, že dlaždice má vyměnit polohu s dlaždicí, na kterou je přetažena. PUSH značí, že pokud je dlaždice A přetažena na dlaždici B, vznikne na místě dlaždice A volné místo. Dlaždice B (a dlaždice za ní) se posunou dolů aby místo zaplnily. PUSH_PULL se podobá PUSH, ale dlaždice se mohou pohybovat jedním nebo druhým směrem, tak aby jich bylo ovlivněno co nejméně."
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+#, fuzzy
+msgid "lock-down status for the user-specified dirs section"
+msgstr "uzamknout stav oblasti heldání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "možné hodnoty = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS je seznam nedávno použitých aplikací (spuštěných z hlavní nabídky nebo prohlížeče aplikací). USER_SPECIFIED_APPS je totožné s \"Oblíbenými aplikacemi\". RECENT_FILES je seznam souborů z ~/.recently-used."
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+#, fuzzy
+msgid "lock-down status for the user-specified docs section"
+msgstr "uzamknout stav oblasti heldání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr "podle priority seřazený seznam příkazů k uzamčení obrazovky"
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr "nastavte jako pravdivé pokud má být odkaz na prohlížeč aplikací viditelný a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
 msgstr "nastavte jako pravdivé, pokud má být oblast hledání viditelná a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the status area should be visible and active."
 msgstr "nastavte jako pravdivé, pokud má být stavová oblast viditelná a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the system area should be visible and active."
 msgstr "nastavte jako pravdivé, pokud má být systémová oblast aktivní a viditelná."
 
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr "Zobrazit:"
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:182
-msgid "Favorite Applications"
-msgstr "Oblíbené aplikace"
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
-msgstr "Naposledy použité aplikace"
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:209
-msgid "Recent Documents"
-msgstr "Nedávné dokumenty"
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr "Více aplikací..."
-
-#: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr "Všechny dokumenty"
-
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
+#: ../main-menu/src/hard-drive-status-tile.c:110
+#, fuzzy
+msgid "Hard _Drive"
 msgstr "Pevný disk"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s volné / %s celkem"
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr "Odhlášení"
+
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+msgid "Shutdown"
+msgstr "Vypnout"
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr "Uzamknout obrazovku"
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+# 60704 AttribValues/label
+#: ../main-menu/src/main-menu-migration.c:531
+#, fuzzy
+msgid "New Spreadsheet"
+msgstr "Tabulkový procesor pro KDE"
+
+#: ../main-menu/src/main-menu-migration.c:536
+#, fuzzy
+msgid "New Document"
+msgstr "Dokument"
+
+#: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "Systém"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "Stav"
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "Počítač"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "Hledat:"
-
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Síť: žádná"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "Kliknutím nastavíte síť"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+#, fuzzy
+msgid "Networ_k: None"
+msgstr "Síť: žádná"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "Připojen k: %s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
+#: ../main-menu/src/network-status-tile.c:210
+#, fuzzy
+msgid "Networ_k: Wireless"
 msgstr "Síť: bezdrátová"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
+#: ../main-menu/src/network-status-tile.c:219
+#, fuzzy
+msgid "Networ_k: Wired"
 msgstr "Síť: drátová"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Bezdrátový Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "Instalace softwaru"
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "Aplikace"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "Odhlásit..."
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "Počítač"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "Uzamknout obrazovku..."
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Dokumenty"
 
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "Oblíbené aplikace"
+
+#: ../main-menu/src/slab-window.glade.h:5
+#, fuzzy
+msgid "Favorite Documents"
+msgstr "Moje dokumenty"
+
+#: ../main-menu/src/slab-window.glade.h:6
+#, fuzzy
+msgid "Favorite Places"
+msgstr "Oblíbené aplikace"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "Více aplikací..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+#, fuzzy
+msgid "More Documents..."
+msgstr "Všechny dokumenty"
+
+#: ../main-menu/src/slab-window.glade.h:10
+#, fuzzy
+msgid "More Places..."
+msgstr "Více aplikací..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "Místa"
+
+#: ../main-menu/src/slab-window.glade.h:12
+#, fuzzy
+msgid "Recent Applications"
+msgstr "Naposledy použité aplikace"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "Nedávné dokumenty"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "Hledat:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "Stav"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "Systém"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#, fuzzy
+msgid "Remove the current document from favorites"
+msgstr "Odebrat z oblíbených"
+
+#~ msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "obsahuje seznam (neuspořádaný) typů souborů zobrazitelných v souborové oblasti. možné hodnoty (viz také poznámka pro /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS je seznam nedávno použitých aplikací (spuštěných z hlavní nabídky nebo prohlížeče aplikací). USER_SPECIFIED_APPS je totožné s \"Oblíbenými aplikacemi\". RECENT_FILES je seznam souborů z ~/.recently-used."
+
+#~ msgid "Software Update"
+#~ msgstr "Aktualizace software"
+
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr ".desktop soubory pro \"Oblíbené aplikace\""
+
+#~ msgid "System area items"
+#~ msgstr "Systém"
+
+#~ msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr "Systém."
+
+#~ msgid "control center item .desktop file"
+#~ msgstr ".desktop soubor položky ovládacího centra"
+
+#~ msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr "určuje omezení dlaždic v souborové oblasti. Poznámka: neovlivňuje počet dlaždic, je-li třída souboru USER_SPECIFIED_*."
+
+#~ msgid "determines the reordering algorithm used when moving tiles around the main-menu"
+#~ msgstr "určuje přeskupovací algoritmus při přesouvání dlaždic v hlavní nabídce"
+
+#~ msgid "help item .desktop file"
+#~ msgstr ".desktop soubor položky nápovědy"
+
+#~ msgid "package manager item .desktop file"
+#~ msgstr ".desktop soubor položky správce balíků"
+
+#~ msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+#~ msgstr "možné hodnoty = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP značí, že dlaždice má vyměnit polohu s dlaždicí, na kterou je přetažena. PUSH značí, že pokud je dlaždice A přetažena na dlaždici B, vznikne na místě dlaždice A volné místo. Dlaždice B (a dlaždice za ní) se posunou dolů aby místo zaplnily. PUSH_PULL se podobá PUSH, ale dlaždice se mohou pohybovat jedním nebo druhým směrem, tak aby jich bylo ovlivněno co nejméně."
+
+#~ msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "možné hodnoty = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS je seznam nedávno použitých aplikací (spuštěných z hlavní nabídky nebo prohlížeče aplikací). USER_SPECIFIED_APPS je totožné s \"Oblíbenými aplikacemi\". RECENT_FILES je seznam souborů z ~/.recently-used."
+
+#~ msgid "prioritized list of commands to lock the screen"
+#~ msgstr "podle priority seřazený seznam příkazů k uzamčení obrazovky"
+
+#~ msgid "Show:"
+#~ msgstr "Zobrazit:"
+
+#~ msgid "Install Software"
+#~ msgstr "Instalace softwaru"
+
+#~ msgid "Log Out ..."
+#~ msgstr "Odhlásit..."
+
+#~ msgid "Lock Screen ..."
+#~ msgstr "Uzamknout obrazovku..."

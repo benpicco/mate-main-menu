@@ -169,7 +169,7 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 			break;
 
 		case PROP_NAMEPLATE_TOOLTIP:
-			tooltip = g_value_get_string (value);
+			tooltip = g_value_dup_string (value);
 			break;
 
 		default:

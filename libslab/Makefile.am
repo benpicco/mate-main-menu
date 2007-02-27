@@ -10,14 +10,19 @@ libslab_la_SOURCES =				\
 	app-shell.c				\
 	app-shell-startup.c			\
 	application-tile.c			\
+	directory-tile.c			\
 	document-tile.c				\
 	double-click-detector.c			\
 	double-click-detector.h			\
+	eggbookmarkfile.c			\
+	eggbookmarkfile.h			\
 	egg-recent-item.c			\
 	egg-recent-item.h			\
 	egg-recent-model.c			\
 	egg-recent-model.h			\
 	gnome-utils.c				\
+	libslab-utils.c				\
+	libslab-utils.h				\
 	nameplate-tile.c			\
 	recent-files.c				\
 	recent-files.h				\
@@ -28,6 +33,7 @@ libslab_la_SOURCES =				\
 	shell-window.c				\
 	slab-gnome-util.c			\
 	slab-section.c				\
+	system-tile.c				\
 	themed-icon.c				\
 	themed-icon.h				\
 	tile-action.c				\
@@ -40,6 +46,7 @@ libslab_include_HEADERS =			\
 	app-shell.h				\
 	app-shell-startup.h			\
 	application-tile.h			\
+	directory-tile.h			\
 	document-tile.h				\
 	gnome-utils.h				\
 	nameplate-tile.h			\
@@ -49,6 +56,7 @@ libslab_include_HEADERS =			\
 	shell-window.h				\
 	slab-gnome-util.h			\
 	slab-section.h				\
+	system-tile.h				\
 	tile.h
 
 libslab_la_LIBADD =				\

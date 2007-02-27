@@ -1,7 +1,7 @@
 /*
  * This file is part of the Main Menu.
  *
- * Copyright (c) 2006 Novell, Inc.
+ * Copyright (c) 2006, 2007 Novell, Inc.
  *
  * The Main Menu is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
@@ -26,8 +26,9 @@
 #include <panel-applet.h>
 #include <string.h>
 
-#include "main-menu-common.h"
-#include "main-menu-conf.h"
+#include "main-menu-ui.h"
+
+#include "main-menu-migration.h"
 
 static gboolean main_menu_applet_init (PanelApplet *, const gchar *, gpointer);
 
@@ -35,13 +36,9 @@ PANEL_APPLET_BONOBO_FACTORY ("OAFIID:GNOME_MainMenu_Factory", PANEL_TYPE_APPLET,
 	main_menu_applet_init, NULL);
 
 static gboolean
-main_menu_applet_init (PanelApplet * applet, const gchar * iid, gpointer user_data)
+main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data)
 {
-	gchar *argv[1] = { "slab" };
-
-	MainMenuConf *conf;
-	MainMenuEngine *engine;
-	MainMenuUI *ui;
+	gchar *argv [1] = { "slab" };
 
 	if (strcmp (iid, "OAFIID:GNOME_MainMenu") != 0)
 		return FALSE;
@@ -61,13 +58,13 @@ main_menu_applet_init (PanelApplet * applet, const gchar * iid, gpointer user_da
 
 	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 1, argv, NULL, NULL);
 
-	conf = main_menu_conf_new ();
-	engine = main_menu_engine_new (conf);
-	ui = main_menu_ui_new (applet, conf, engine);
+	migrate_system_gconf_to_bookmark_file    ();
+	migrate_user_apps_gconf_to_bookmark_file ();
+	migrate_showable_file_types              ();
 
-	main_menu_engine_link_ui (engine, ui);
+	main_menu_ui_new (applet);
 
-	main_menu_ui_release (ui);
+	gtk_widget_show_all (GTK_WIDGET (applet));
 
 	return TRUE;
 }

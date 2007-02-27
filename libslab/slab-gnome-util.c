@@ -404,7 +404,7 @@ string_replace_once (const gchar * str_template, const gchar * key, const gchar 
 }
 
 void
-spawn_process (const gchar * command)
+spawn_process (const gchar *command)
 {
 	gchar **argv;
 	GError *error = NULL;

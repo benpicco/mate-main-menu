@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Vitaliy V. Sayfullin <vsayfullin@novell.ru>, 2006.
-# Aleksey Osipov <aliks-os@yandex.ru>, 2005, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-11-03 16:26+0200\n"
-"Last-Translator: Aleksey Osipov <aliks-os@yandex.ru>\n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
+"PO-Revision-Date: 2006-09-05 22:26+0400\n"
+"Last-Translator: Vitaliy V. Sayfullin <vsayfullin@novell.ru>\n"
 "Language-Team: Русский <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,12 +79,12 @@ msgid "New Applications"
 msgstr "Новые приложения"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "Фильтр"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "Группы"
 
@@ -94,8 +93,7 @@ msgid "Application Actions"
 msgstr "Действия приложения"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "Центр управления"
 
@@ -120,16 +118,60 @@ msgstr "[Сменить фон рабочего стола;background.desktop,Д
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "Если включено, то Центр управления будет закрыт при запуске \"Общих задач\""
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr "ключ не найден [%s]\n"
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "Общие задачи"
 
-#: ../libslab/app-shell.c:702
+#. make start action
+#: ../libslab/application-tile.c:316
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Запуск %s </b>"
+
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "Справка"
+
+#: ../libslab/application-tile.c:342
+msgid "Help Unavailable"
+msgstr "Справка недоступна"
+
+#: ../libslab/application-tile.c:381
+msgid "Upgrade"
+msgstr "Обновление"
+
+#: ../libslab/application-tile.c:390
+msgid "Uninstall"
+msgstr "Деинсталяция"
+
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "Удалить из Предпочтений"
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "Добавить в Предпочтения"
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr "Удалить из Автозапуска"
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr "Добавить в Автозапуск"
+
+#: ../libslab/app-shell.c:740
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -140,97 +182,140 @@ msgstr ""
 "\n"
 " Фильтр \"<b>%s</b>\" ничему не соответствует.</span>"
 
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Найти сейчас"
+#: ../libslab/app-shell.c:879
+msgid "Other"
+msgstr "Другой"
 
-#. make start action
-#: ../libtile/application-tile.c:300
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Запуск %s </b>"
-
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr "Справка"
-
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr "Справка недоступна"
-
-#: ../libtile/application-tile.c:365
-msgid "Upgrade"
-msgstr "Обновление"
-
-#: ../libtile/application-tile.c:374
-msgid "Uninstall"
-msgstr "Деинсталяция"
-
-#: ../libtile/application-tile.c:769
-msgid "Remove from Favorites"
-msgstr "Удалить из Предпочтений"
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr "Добавить в Предпочтения"
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr "Удалить из Автозапуска"
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr "Добавить в Автозапуск"
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr "Редактировано %m/%d/%Y"
-
-#: ../libtile/document-tile.c:170
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Открыть с помощью \"%s\"</b>"
-
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr "Открыть приложением по умолчанию"
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr "Открыть в файловом менеджере"
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+#, fuzzy
+msgid "<b>Open</b>"
+msgstr "<b>Производитель:</b>"
 
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
 msgid "Rename..."
 msgstr "Переименовать"
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
 msgid "Move to Trash"
 msgstr "В Корзину"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
 msgid "Delete"
 msgstr "Удалить"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
 msgid "Send To..."
 msgstr "Отправить..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "Открыть меню"
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr "Редактировано %m/%d/%Y"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "О программе"
+#: ../libslab/document-tile.c:192
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Открыть с помощью \"%s\"</b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr "Открыть приложением по умолчанию"
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr "Открыть в файловом менеджере"
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, fuzzy, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "Неожиданный знак в имени интерфейса: '%s'"
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#  translators: error message for "add share" command line action
+#: ../libslab/eggbookmarkfile.c:2388
+#, fuzzy, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "CA каталог уже существует."
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "Найти сейчас"
+
+#: ../libslab/system-tile.c:113
+#, fuzzy, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>Открыть с помощью \"%s\"</b>"
+
+#: ../libslab/system-tile.c:126
+#, fuzzy
+msgid "Remove from System Items"
+msgstr "Удалить из Предпочтений"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Проводник приложений по умолчанию"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Главное меню GNOME"
 
@@ -242,9 +327,14 @@ msgstr "Фабрика главного меню GNOME"
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "Обновление программ"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "О программе"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#, fuzzy
+msgid "_Open Menu"
+msgstr "Открыть меню"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -263,299 +353,407 @@ msgid ".desktop file for the net config tool"
 msgstr "Файл .desktop для инструмента настройки сети"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr "Файл .desktop для \"Предпочтительных приложений\""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr "Путь к .desktop для проводника приложений"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid "Location of the system-wide directory in which startup programs are found."
 msgstr "Местонахождение общесистемного каталога для программ автозапуска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
 msgstr "Местонахождение пользовательского каталога для программ автозапуска.Путь к каталогу не должен быть абсолютным, так как значение поля добавляетсяк пути: ~/."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr "Элементы Системной области"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
 msgstr "Общесистемный каталог удаленных программ автозапуска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr "Список пунктов, которые появятся в Системной области. Допустимые значение:Справка = 0, Центр управления = 1, Управление пакетами = 2, Выход из системы = 3,Заблокировать = 4. Справка, Центр управления и Управление пакетами должны иметьсоответствующие файлы .desktop, определенные в ключах \"help_item\",\"control_center_item\" и \"package_manager_item\"."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr "Эта команда запускатся при выборе пункта \"Открыть менеджер файлов\""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr "Эта команда запускатся при выборе пункта \"Открыть менеджер файлов\".FILE_URI заменяется строкой, соответствующей имени каталога запускаемого файла."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr "Эта команда запускается при выборе пункта меню \"Отправить\""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr "Эта команда запускается при выборе пункта меню \"Отправить\".DIRNAME и BASENAME заменяются соответствующими компонентами выбранного назначения."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "Эта команда запускается по входу в поиск."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr "Эта команда запускается по входу в поиск. SEARCH_STRING заменяется введенным поисковым запросом."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
 msgstr "Пользовательский drop-каталог для программ автозапуска (в домашнем каталоге пользователя)"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "command to uninstall packages"
 msgstr "Команда для деинсталяции пакетов"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "Команда для деинсталяции пакетов. PACKAGE_NAME заменяетсяименем пакета в команде"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
 msgstr "команда для обновленя пакетов"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "Команда для обновления пакетов, PACKAGE_NAME заменяетсяименем пакета в команде"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "Содержит список (неупорядоченный) типов файлов, которые разрешено показыватьв файловой области. Возможные значения (см. также /desktop/gnome/applications/main-menu/file-area/file_class): 0 [Пользовательские приложения],1 [Часто используемые приложения], 2 [Часто используемые файлы].Пользовательские приложения - эквивлент \"Предпочтительным приложениям\".Часто используемые файлы - список файлов из ~/.recently-used"
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr "Содержит список файлов (включая файлы .desktop), которые следуетисключить из списков Часто используемых приложений и файлов."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr "Файл .desktop элемента Центра управления"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+#, fuzzy
+msgid "determines the limit of items in the file-area."
 msgstr "определяет максимум элементов в файловой области"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr "Определяет максимум элементов в файловой области. Примечание:Не действительно если файл-класс равен USER_SPECIFIED_*"
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr "Определяет алгоритм распределения при перемещении элементов по главному меню"
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+#, fuzzy
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr "определяет максимум элементов в файловой области"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
 msgstr "Определяет какие типы файлов показывать в файловой области"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr "Файл .desktop элемента справки"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "if true, main menu is more anxious to close"
 msgstr "Если включено, то главное меню стремитсязакрыться как можно быстрее"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr "Если включено, то главное меню закроется при особых условиях: выбор элемента, начало поиска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
 msgstr "Блокирование конфигурации файловой области"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the application browser link"
 msgstr "Блокирование состояния ссылки на проводник приложений"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the search area"
 msgstr "Блокирование состояния области поиска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the status area"
 msgstr "Блокирование состояния области состояния"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the system area"
 msgstr "Блокирование состояния системной области"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr "Файл .desktop элемента управления пакетами"
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+#, fuzzy
+msgid "lock-down status for the user-specified apps section"
+msgstr "Блокирование состояния области поиска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "Допустимые значения = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP означает чтоесли элемент перетащен на другой элемент, они меняются местами.PUSH означает что если элемент А перетащен на элемент B, на месте элемента Аповляется свободное место. Элемент В (и все элементы после В) сдвигается внизпока не заполнится освободившеея место. В случае, если элемент А был доэлемента В, операция продожается с начала списка. PUSH_PULL похож на PUSHза исключением, когда элементы сдвигаются, они или перемещаются на свободноеместо или вытягивается с другого направления, в зависимости от того, какаястратегия затрагивает меньшее количество элементов"
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+#, fuzzy
+msgid "lock-down status for the user-specified dirs section"
+msgstr "Блокирование состояния области поиска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "допустимые значения = 0 [Пользовательские приложения], 1 [Часто используемыеприложения], 2 [Часто используемые файлы]. Часто используемые приложения -эквивалент \"Предпочтительным приложениям\". Часто используемые файлы - список файлов из ~/.recently-use."
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+#, fuzzy
+msgid "lock-down status for the user-specified docs section"
+msgstr "Блокирование состояния области поиска"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr "Приоритетный список команд для блокирования экрана"
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr "Истина если ссылка на проводник приложений должна быть видимой и активной."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
 msgstr "Истина если область поиска должна быть видимой и активной."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the status area should be visible and active."
 msgstr "Истина если область состояния должна быть видима и активна."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the system area should be visible and active."
 msgstr "Истина если системная область должна быть видима и активна."
 
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr "Показать:"
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:182
-msgid "Favorite Applications"
-msgstr "Предпочтительные приложения"
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
-msgstr "Часто используемые приложения"
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:209
-msgid "Recent Documents"
-msgstr "Последние открытые документы"
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr "Приложения..."
-
-#: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr "Все документы..."
-
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
+#: ../main-menu/src/hard-drive-status-tile.c:110
+#, fuzzy
+msgid "Hard _Drive"
 msgstr "Жесткий диск"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr "%lluГБ"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr "%lluМБ"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr "%lluКБ"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr "%lluБ"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s Свободно / %s Всего"
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr "Выйти из сеанса"
+
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+msgid "Shutdown"
+msgstr "Выключить"
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr "Блокировка экрана"
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:531
+msgid "New Spreadsheet"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:536
+#, fuzzy
+msgid "New Document"
+msgstr "Документ"
+
+#: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
 msgstr "Главное меню GNOME"
 
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "Система"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "Состояние"
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "Компьютер"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "Поиск:"
-
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "Сеть: Отсутствует"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "Нажмите для настройки сети"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+#, fuzzy
+msgid "Networ_k: None"
+msgstr "Сеть: Отсутствует"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "Подключенн к: %s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
+#: ../main-menu/src/network-status-tile.c:210
+#, fuzzy
+msgid "Networ_k: Wireless"
 msgstr "Сеть: Беспроводная"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Подключен к (%s)"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
+#: ../main-menu/src/network-status-tile.c:219
+#, fuzzy
+msgid "Networ_k: Wired"
 msgstr "Сеть: Проводная"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Беспроводная сеть (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Проводная сеть (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Неизвестный"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Мб/с"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "Установить ПО"
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "Программы"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "Выйти из системы..."
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "Компьютер"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "Заблокировать экран..."
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Документы"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "Предпочтительные приложения"
+
+#: ../main-menu/src/slab-window.glade.h:5
+#, fuzzy
+msgid "Favorite Documents"
+msgstr "Мои документы"
+
+#: ../main-menu/src/slab-window.glade.h:6
+#, fuzzy
+msgid "Favorite Places"
+msgstr "Предпочтительные приложения"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "Приложения..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+#, fuzzy
+msgid "More Documents..."
+msgstr "Все документы..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+#, fuzzy
+msgid "More Places..."
+msgstr "Приложения..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:12
+#, fuzzy
+msgid "Recent Applications"
+msgstr "Часто используемые приложения"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "Последние открытые документы"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "Поиск:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "Состояние"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "Система"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#, fuzzy
+msgid "Remove the current document from favorites"
+msgstr "Удалить из Предпочтений"
+
+#~ msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "Содержит список (неупорядоченный) типов файлов, которые разрешено показыватьв файловой области. Возможные значения (см. также /desktop/gnome/applications/main-menu/file-area/file_class): 0 [Пользовательские приложения],1 [Часто используемые приложения], 2 [Часто используемые файлы].Пользовательские приложения - эквивлент \"Предпочтительным приложениям\".Часто используемые файлы - список файлов из ~/.recently-used"
+
+#~ msgid "Software Update"
+#~ msgstr "Обновление программ"
+
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "Файл .desktop для \"Предпочтительных приложений\""
+
+#~ msgid "System area items"
+#~ msgstr "Элементы Системной области"
+
+#~ msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr "Список пунктов, которые появятся в Системной области. Допустимые значение:Справка = 0, Центр управления = 1, Управление пакетами = 2, Выход из системы = 3,Заблокировать = 4. Справка, Центр управления и Управление пакетами должны иметьсоответствующие файлы .desktop, определенные в ключах \"help_item\",\"control_center_item\" и \"package_manager_item\"."
+
+#~ msgid "control center item .desktop file"
+#~ msgstr "Файл .desktop элемента Центра управления"
+
+#~ msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr "Определяет максимум элементов в файловой области. Примечание:Не действительно если файл-класс равен USER_SPECIFIED_*"
+
+#~ msgid "determines the reordering algorithm used when moving tiles around the main-menu"
+#~ msgstr "Определяет алгоритм распределения при перемещении элементов по главному меню"
+
+#~ msgid "help item .desktop file"
+#~ msgstr "Файл .desktop элемента справки"
+
+#~ msgid "package manager item .desktop file"
+#~ msgstr "Файл .desktop элемента управления пакетами"
+
+#~ msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+#~ msgstr "Допустимые значения = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP означает чтоесли элемент перетащен на другой элемент, они меняются местами.PUSH означает что если элемент А перетащен на элемент B, на месте элемента Аповляется свободное место. Элемент В (и все элементы после В) сдвигается внизпока не заполнится освободившеея место. В случае, если элемент А был доэлемента В, операция продожается с начала списка. PUSH_PULL похож на PUSHза исключением, когда элементы сдвигаются, они или перемещаются на свободноеместо или вытягивается с другого направления, в зависимости от того, какаястратегия затрагивает меньшее количество элементов"
+
+#~ msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "допустимые значения = 0 [Пользовательские приложения], 1 [Часто используемыеприложения], 2 [Часто используемые файлы]. Часто используемые приложения -эквивалент \"Предпочтительным приложениям\". Часто используемые файлы - список файлов из ~/.recently-use."
+
+#~ msgid "prioritized list of commands to lock the screen"
+#~ msgstr "Приоритетный список команд для блокирования экрана"
+
+#~ msgid "Show:"
+#~ msgstr "Показать:"
+
+#~ msgid "Install Software"
+#~ msgstr "Установить ПО"
+
+#~ msgid "Log Out ..."
+#~ msgstr "Выйти из системы..."
+
+#~ msgid "Lock Screen ..."
+#~ msgstr "Заблокировать экран..."

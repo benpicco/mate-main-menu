@@ -47,6 +47,8 @@ static GType menu_type = 0;
 typedef enum {
 	FILE_INFO_LAUNCHER,
 	FILE_INFO_DOCUMENT,
+	FILE_INFO_LAUNCHER_RM,
+	FILE_INFO_DOCUMENT_RM,
 	FILE_INFO_OTHER,
 } MenuFileInfo;
 
@@ -126,12 +128,21 @@ main_menu_menu_item_new (MenuFileInfo  menu_file_info)
 		name = _("Add to Favorites");
 		tooltip = _("Add the current document to favorites");
 		break;
-		
+
+	case FILE_INFO_LAUNCHER_RM:
+		name = _("Remove from Favorites");
+		tooltip = _("Remove the current document from favorites");
+		break;
+
+	case FILE_INFO_DOCUMENT_RM:
+		name = _("Remove from Favorites");
+		tooltip = _("Remove the current document from favorites");
+		break;
+
 	case FILE_INFO_OTHER:
 	default:
 		g_assert_not_reached ();
 	}
-
 
 	ret = nautilus_menu_item_new ("NautilusMainMenu::main_menu",
 				      name, tooltip, "gnome-fs-client");

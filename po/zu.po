@@ -1,0 +1,694 @@
+# Copyright (C) 2007 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: installation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
+"PO-Revision-Date: 2006-11-03 14:26\n"
+"Last-Translator: Novell Language <language@novell.com>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:93
+msgid "Application Browser"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+#: ../control-center/etc/control-center.schemas.in.h:2
+msgid "Exit shell on add or remove action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+#: ../control-center/etc/control-center.schemas.in.h:3
+msgid "Exit shell on help action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+#: ../control-center/etc/control-center.schemas.in.h:4
+msgid "Exit shell on start action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+#: ../control-center/etc/control-center.schemas.in.h:5
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+#: ../control-center/etc/control-center.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+#: ../control-center/etc/control-center.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+#: ../control-center/etc/control-center.schemas.in.h:8
+msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+#: ../control-center/etc/control-center.schemas.in.h:9
+msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:85
+#, fuzzy
+msgid "New Applications"
+msgstr "Okusha okufakwayo"
+
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:160
+msgid "Filter"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:90
+#: ../control-center/src/control-center.c:160
+msgid "Groups"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Application Actions"
+msgstr ""
+
+#: ../control-center/etc/control-center.desktop.in.in.h:1
+#: ../control-center/src/control-center.c:164
+#, fuzzy
+msgid "Control Center"
+msgstr "Isikhungo Sokulawula Se-YaST2"
+
+#: ../control-center/etc/control-center.schemas.in.h:1
+msgid "Close the control-center when a task is activated"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:10
+msgid "Task names and associated .desktop files"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:11
+msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
+msgstr ""
+
+#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
+#: ../control-center/etc/control-center.schemas.in.h:13
+msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgstr ""
+
+#: ../control-center/etc/control-center.schemas.in.h:14
+msgid "if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+
+#: ../control-center/src/control-center.c:62
+#, c-format
+msgid "key not found [%s]\n"
+msgstr ""
+
+#: ../control-center/src/control-center.c:160
+msgid "Common Tasks"
+msgstr ""
+
+#. make start action
+#: ../libslab/application-tile.c:316
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr ""
+
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "Usizo"
+
+#: ../libslab/application-tile.c:342
+#, fuzzy
+msgid "Help Unavailable"
+msgstr "Akutholakali"
+
+#: ../libslab/application-tile.c:381
+msgid "Upgrade"
+msgstr ""
+
+#: ../libslab/application-tile.c:390
+msgid "Uninstall"
+msgstr ""
+
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr ""
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr ""
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr ""
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr ""
+
+#: ../libslab/app-shell.c:740
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+
+#: ../libslab/app-shell.c:879
+#, fuzzy
+msgid "Other"
+msgstr "&Okunye"
+
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+msgid "<b>Open</b>"
+msgstr ""
+
+#. make rename action
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
+msgid "Rename..."
+msgstr ""
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
+msgid "Move to Trash"
+msgstr ""
+
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
+#, fuzzy
+msgid "Delete"
+msgstr "Su&sa"
+
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
+msgid "Send To..."
+msgstr ""
+
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr ""
+
+#: ../libslab/document-tile.c:192
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr ""
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr ""
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2388
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr ""
+
+#: ../libslab/system-tile.c:113
+#, c-format
+msgid "<b>Open %s</b>"
+msgstr ""
+
+#: ../libslab/system-tile.c:126
+msgid "Remove from System Items"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
+msgid "GNOME Main Menu"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr ""
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop path for the application browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid "System-wide autostart program drop dir"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid "User autostart program drop dir (within the home dir)"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+#, fuzzy
+msgid "command to uninstall packages"
+msgstr "Ihlulekile ukufaka amaphakheji adingekayo."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "command to upgrade packages"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "determines the limit of items in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "determines which types of files to display in the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "if true, main menu is more anxious to close"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down configuration of the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the application browser link"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the search area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the status area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "lock-down status for the system area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down status for the user-specified apps section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the user-specified dirs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the user-specified docs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the link to the application browser should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "set to true if the search area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid "set to true if the status area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid "set to true if the system area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:110
+msgid "Hard _Drive"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:345
+#, c-format
+msgid "%lluG"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:347
+#, c-format
+msgid "%lluM"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:349
+#, c-format
+msgid "%lluK"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:351
+#, c-format
+msgid "%llub"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:372
+#, c-format
+msgid "%s Free / %s Total"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+msgid "Shutdown"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:531
+msgid "New Spreadsheet"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:536
+msgid "New Document"
+msgstr ""
+
+#: ../main-menu/src/main-menu-ui.c:1561
+msgid "The GNOME Main Menu"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:91
+msgid "Network: None"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:199
+#, fuzzy
+msgid "Click to configure network"
+msgstr "Ibingakahlelwa."
+
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:207
+#, c-format
+msgid "Connected to: %s"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:215
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:219
+#, fuzzy
+msgid "Networ_k: Wired"
+msgstr "ikhadi lenethiwekhi"
+
+#: ../main-menu/src/network-status-tile.c:320
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:325
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/network-status-tile.c:339
+msgid "Unknown"
+msgstr "Akwaziwa"
+
+#: ../main-menu/src/network-status-tile.c:337
+#, c-format
+msgid "%d Mb/s"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:1
+#, fuzzy
+msgid "Applications"
+msgstr "Okusha okufakwayo"
+
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:4
+#, fuzzy
+msgid "Favorite Applications"
+msgstr "Okusha okufakwayo"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:8
+#, fuzzy
+msgid "More Applications..."
+msgstr "Okusha okufakwayo"
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:12
+#, fuzzy
+msgid "Recent Applications"
+msgstr "Okusha okufakwayo"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+msgid "Remove the current document from favorites"
+msgstr ""

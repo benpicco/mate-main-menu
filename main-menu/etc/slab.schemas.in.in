@@ -1,24 +1,11 @@
 <gconfschemafile>
 	<schemalist>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/user_specified_apps</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/user_specified_apps</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>list</type>
-			<list_type>string</list_type>
-			<default>[MozillaFirefox.desktop,evolution.desktop,banshee.desktop,writer.desktop,f-spot.desktop,nautilus-home.desktop]</default>
-			<locale name="C">
-				<short>.desktop files for "Favorite Applications"</short>
-				<long>.desktop files for "Favorite Applications"</long>
-			</locale>
-		</schema>
-
-		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/uninstall_package_command</key>
 			<applyto>/desktop/gnome/applications/main-menu/uninstall_package_command</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>string</type>
-			<default>zen-remover PACKAGE_NAME</default>
+			<default>package-manager --remove PACKAGE_NAME</default>
 			<locale name="C">
 				<short>command to uninstall packages</short>
 				<long>command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command</long>
@@ -30,59 +17,10 @@
 			<applyto>/desktop/gnome/applications/main-menu/upgrade_package_command</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>string</type>
-			<default>zen-updater --no-tray PACKAGE_NAME</default>
+			<default>package-manager --update PACKAGE_NAME</default>
 			<locale name="C">
 				<short>command to upgrade packages</short>
 				<long>command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command</long>
-			</locale>
-		</schema>
-
-		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/system-area/system_item_list</key>
-			<applyto>/desktop/gnome/applications/main-menu/system-area/system_item_list</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>list</type>
-			<list_type>int</list_type>
-			<default>[0,1,2,3,4]</default>
-			<locale name="C">
-				<short>System area items</short>
-				<long>The list of the items which will appear in the System area.  Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4.  HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, "help_item", "control_center_item" and "package_manager_item" keys.</long>
-			</locale>
-		</schema>
-
-		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/system-area/help_item</key>
-			<applyto>/desktop/gnome/applications/main-menu/system-area/help_item</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>string</type>
-			<default>yelp.desktop</default>
-			<locale name="C">
-				<short>help item .desktop file</short>
-				<long>help item .desktop file</long>
-			</locale>
-		</schema>
-
-		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/system-area/control_center_item</key>
-			<applyto>/desktop/gnome/applications/main-menu/system-area/control_center_item</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>string</type>
-			<default>@DATADIR@/applications/control-center.desktop</default>
-			<locale name="C">
-				<short>control center item .desktop file</short>
-				<long>control center item .desktop file</long>
-			</locale>
-		</schema>
-
-		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/system-area/package_manager_item</key>
-			<applyto>/desktop/gnome/applications/main-menu/system-area/package_manager_item</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>string</type>
-			<default>zen-installer.desktop</default>
-			<locale name="C">
-				<short>package manager item .desktop file</short>
-				<long>package manager item .desktop file</long>
 			</locale>
 		</schema>
 
@@ -135,19 +73,6 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock_screen_priority</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock_screen_priority</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>list</type>
-			<list_type>string</list_type>
-			<default>[gnome-screensaver-command --lock,xscreensaver-command --lock]</default>
-			<locale name="C">
-				<short>prioritized list of commands to lock the screen</short>
-				<long>prioritized list of commands to lock the screen</long>
-			</locale>
-		</schema>
-
-		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/search_command</key>
 			<applyto>/desktop/gnome/applications/main-menu/search_command</applyto>
 			<owner>gnome-main-menu</owner>
@@ -172,18 +97,6 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_reordering</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/file_reordering</applyto>
-			<owner>gnome-main-menu</owner>
-			<type>int</type>
-			<default>2</default>
-			<locale name="C">
-				<short>determines the reordering algorithm used when moving tiles around the main-menu</short>
-				<long>possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL].  SWAP indicates that when a tile is dragged onto another tile they should simply swap position.  PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place.  tile B (and all tiles after B) shift down until the new vacant space is filled.  this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation.  PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles.</long>
-			</locale>
-		</schema>
-
-		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_class</key>
 			<applyto>/desktop/gnome/applications/main-menu/file-area/file_class</applyto>
 			<owner>gnome-main-menu</owner>
@@ -191,7 +104,7 @@
 			<default>0</default>
 			<locale name="C">
 				<short>determines which types of files to display in the file area</short>
-				<long>possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES].  RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser).  USER_SPECIFIED_APPS is equivalent to "Favorite Applications".  RECENT_FILES is the list of files from ~/.recently-used.</long>
+				<long>possible values = 0 [Applications], 1 [Documents], 2 [Places]</long>
 			</locale>
 		</schema>
 
@@ -220,14 +133,26 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/item_limit</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/item_limit</applyto>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/max_total_items</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/max_total_items</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>int</type>
-			<default>6</default>
+			<default>8</default>
 			<locale name="C">
-				<short>determines the limit of tiles in the file-area.</short>
-				<long>determines the limit of tiles in the file-area.  *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*.</long>
+				<short>determines the limit of items in the file-area.</short>
+				<long>determines the limit of items in the file-area.  The number favorite items is not limited.  This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items.  If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/file-area/min_recent_items</key>
+			<applyto>/desktop/gnome/applications/main-menu/file-area/min_recent_items</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>int</type>
+			<default>2</default>
+			<locale name="C">
+				<short>determines the minimum number of items in the "recent" section of the file-area.</short>
+				<long>determines the minimum number of items in the "recent" section of the file-area.</long>
 			</locale>
 		</schema>
 
@@ -293,15 +218,63 @@
 		</schema>
 
 		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_system_area</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_system_area</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the system area</short>
+				<long>set to true if the user is allowed to modify the list of system items.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_apps</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_apps</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the user-specified apps section</short>
+				<long>set to true if the user is allowed to modify the list of user-specified or "Favorite" applications.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_docs</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_docs</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the user-specified docs section</short>
+				<long>set to true if the user is allowed to modify the list of user-specified or "Favorite" documents.</long>
+			</locale>
+		</schema>
+
+		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_dirs</key>
+			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_dirs</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>bool</type>
+			<default>true</default>
+			<locale name="C">
+				<short>lock-down status for the user-specified dirs section</short>
+				<long>set to true if the user is allowed to modify the list of user-specified or "Favorite" directories or "Places".</long>
+			</locale>
+		</schema>
+
+		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/showable_file_types</key>
 			<applyto>/desktop/gnome/applications/main-menu/lock-down/showable_file_types</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>list</type>
 			<list_type>int</list_type>
-			<default>[0,1,2]</default>
+			<default>[0,1,2,3,4,5]</default>
 			<locale name="C">
 				<short>lock-down configuration of the file area</short>
-				<long>contains the list (in no particular order) of allowable file types to show in the file area.  possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES].  RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser).  USER_SPECIFIED_APPS is equivalent to "Favorite Applications".  RECENT_FILES is the list of files from ~/.recently-used.</long>
+				<long>contains the list (in no particular order) of allowable file tables to show in the file area.  possible values: 0 - show the user-specified or "Favorite" applications table, 1 - show the recently used applications table, 2 - show the user-specified or "Favorite" documents table, 3 - show the recently used documents table, 4 - show the user-specified of "Favorite" directories or "Places" table, and 5 - show the recently used directories or "Places" table.</long>
 			</locale>
 		</schema>
 	</schemalist>

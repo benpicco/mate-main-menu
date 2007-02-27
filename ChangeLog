@@ -1,3 +1,71 @@
+2007-02-26  Jim Krehl  <jimmyk@novell.com>
+	The commit merges in the "version-2" branch.  Many things have been
+	updated/changed for this version ...
+
+	* main-menu/src/bookmark-tile-table.c
+	* main-menu/src/bookmark-tile-table.h
+	* main-menu/src/main-menu.c
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/main-menu-ui.h
+	* main-menu/src/recent-apps-tile-table.c
+	* main-menu/src/recent-apps-tile-table.h
+	* main-menu/src/recent-docs-tile-table.c
+	* main-menu/src/recent-docs-tile-table.h
+	* main-menu/src/system-tile-table.c
+	* main-menu/src/system-tile-table.h
+	* main-menu/src/tile-table.c
+	* main-menu/src/tile-table.h
+	* main-menu/src/user-apps-tile-table.c
+	* main-menu/src/user-apps-tile-table.h
+	* main-menu/src/user-dirs-tile-table.c
+	* main-menu/src/user-dirs-tile-table.h
+	* main-menu/src/user-docs-tile-table.c
+	* main-menu/src/user-docs-tile-table.h:
+
+	There are now 3 types of items shown in the main section of the menu:
+	Applications, Documents, and Places.  Applications and Documents can be
+	either "Favorite" or "Recent".  Places corresponds to the list of
+	default places and user bookmarked places as in the FileChooser dialog.
+
+	* main-menu/src/slab-window.glade:
+
+	The main-menu is now defined by a glade file.
+
+	* main-menu/etc/applications.xbel
+	* main-menu/etc/documents.xbel
+	* main-menu/etc/places.xbel
+	* main-menu/etc/slab.schemas.in.in
+	* main-menu/etc/system-items.xbel
+	* main-menu/etc/gnome-screensaver-lock.desktop
+	* main-menu/etc/gnome-session-kill.desktop
+	* main-menu/src/main-menu-migration.h
+	* main-menu/src/main-menu-migration.c:
+
+	The lists of user bookmarked Applications and Documents, as well as the
+	list of system items is now maintained in XBEL files in the user's data
+	dir.  Because of the new storage scheme, migration needs to be done to
+	preserve user prefs over upgrade.  The system area now only references
+	.desktop files so for items like "Lock Screen" for which there is no
+	.desktop file the main-menu provides one.
+
+	* main-menu/src/main-menu-common.h
+	* main-menu/src/main-menu-engine.c
+	* main-menu/src/text-button.c
+	* main-menu/src/text-button.h
+	* main-menu/src/file-area-widget.c
+	* main-menu/src/main-menu-conf.c
+	* main-menu/src/file-area-widget.h
+	* main-menu/src/main-menu-conf.h
+	* main-menu/src/slab-window.c
+	* main-menu/src/slab-window.h:
+
+	These files are no longer pertinent.
+
+	* nautilus-main-menu/nautilus-main-menu.c:
+
+	Added a nautilus menu extension so that one can bookmark a document
+	with nautilus.
+
 2007-02-22  Scott Reeves  <sreeves@novell.com>
 	* libslab/slab-gnome-util.c
 	* libslab/app-shell.c
@@ -77,7 +145,6 @@
 	system-tile's launched twice.
 	* libslab/application-tile.c: - When no GenericName is present then
 	just show and center the Name
-		
 
 2007-01-19  Scott Reeves  <sreeves@novell.com>
 	* control-center/src/control-center.c

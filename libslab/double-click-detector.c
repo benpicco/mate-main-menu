@@ -1,7 +1,7 @@
 /*
  * This file is part of libslab.
  *
- * Copyright (c) 2006 Novell, Inc.
+ * Copyright (c) 2006, 2007 Novell, Inc.
  *
  * Libslab is free software; you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free
@@ -21,6 +21,8 @@
 #include "double-click-detector.h"
 
 #include <gtk/gtksettings.h>
+
+#include "libslab-utils.h"
 
 static void double_click_detector_class_init (DoubleClickDetectorClass *);
 static void double_click_detector_init (DoubleClickDetector *);
@@ -87,37 +89,34 @@ double_click_detector_dispose (GObject * obj)
 }
 
 gboolean
-double_click_detector_is_double_click (DoubleClickDetector * detector, guint32 event_time,
-	gboolean auto_update)
+double_click_detector_is_double_click (DoubleClickDetector *this, guint32 event_time,
+                                       gboolean auto_update)
 {
 	gint32 delta;
 
-	g_assert (detector != NULL);
-
 	if (event_time <= 0)
-		event_time = GDK_CURRENT_TIME;
+		event_time = libslab_get_current_time_millis ();
 
-	if (detector->last_click_time <= 0)
-	{
+	if (this->last_click_time <= 0) {
 		if (auto_update)
-			double_click_detector_update_click_time (detector, event_time);
+			double_click_detector_update_click_time (this, event_time);
 
 		return FALSE;
 	}
 
-	delta = event_time - detector->last_click_time;
+	delta = event_time - this->last_click_time;
 
 	if (auto_update)
-		double_click_detector_update_click_time (detector, event_time);
+		double_click_detector_update_click_time (this, event_time);
 
-	return delta < detector->double_click_time;
+	return delta < this->double_click_time;
 }
 
 void
-double_click_detector_update_click_time (DoubleClickDetector * detector, guint32 event_time)
+double_click_detector_update_click_time (DoubleClickDetector *this, guint32 event_time)
 {
 	if (event_time <= 0)
-		event_time = GDK_CURRENT_TIME;
+		event_time = libslab_get_current_time_millis ();
 
-	detector->last_click_time = event_time;
+	this->last_click_time = event_time;
 }

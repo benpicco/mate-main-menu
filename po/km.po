@@ -1,565 +1,738 @@
-# translation of gnome-main-menu.po to Khmer
-# translation of gnome-main-menu.km.po to
 # Khmer message file for YaST2 (@memory@).
 # Copyright (C) 2006 SUSE Linux Products GmbH.
+# Leang Chumsoben <soben@khmeros.info>, 2005, 2006.
 #
-# sokun <sokunpoch@khmeros.info>, 2006.
-# auk piseth <piseth_dv@khmeros.info>, 2006.
-# Eng Vannak <evannak@khmeros.info>, 2006.
-# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-11-09 13:28+0700\n"
-"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
-"Language-Team: Khmer <support@khmeros.info>\n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
+"PO-Revision-Date: 2006-01-04 08:58+0100\n"
+"Last-Translator: Leang Chumsoben <soben@khmeros.info>\n"
+"Language-Team: Khmer <i18n@suse.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: KBabel 1.11.2\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
+#, fuzzy
 msgid "Application Browser"
-msgstr "កម្មវិធី​រុករក​កម្មវិធី​"
+msgstr "លំដាប់​កម្មវិធី"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 #: ../control-center/etc/control-center.schemas.in.h:2
 msgid "Exit shell on add or remove action performed"
-msgstr "ចេញ​ពី​សែល​នៅពេល​ដែល​បានធ្វើសកម្មភាព​បន្ថែម ឬ យក​ចេញ"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 #: ../control-center/etc/control-center.schemas.in.h:3
 msgid "Exit shell on help action performed"
-msgstr "ចេញពី​សែល​នៅ​ពេល​ដែលបាន​ដំណើរ​ការ​សកម្មភាព​ជំនួយ"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 #: ../control-center/etc/control-center.schemas.in.h:4
 msgid "Exit shell on start action performed"
-msgstr "ចេញពី​សែល​នៅ​ពេលបាន​ដំណើរ​ការ​សកម្មភាព​ចាប់ផ្ដើម"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 #: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "ចេញពី​សែល​នៅពេល​ដែលបាន​ដំណើរការ​សកម្មភាព​ធ្វើឲ្យ​ប្រសើរ ឬ លុប"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr "ឈ្មោះ​ឯកសារ​ដែល​មានឯកសារ .desktop"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 #: ../control-center/etc/control-center.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr "បង្ហាញ​ថាតើ​ត្រូវបិទ​សែល​នៅ​ពេលបាន​ដំណើរការ​សកម្មភាព​ជំនួយ​ឬអត់"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 #: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr "បង្ហាញ​ថាតើ​ត្រូវបិទ​សែលនៅ​ពេលបាន​ដំណើរការ​ចាប់​ផ្ដើម​ឬអត់"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
 msgid "Indicates whether to close the shell when an add or remove action is performed"
-msgstr "បង្ហាញ​ថាតើ​ត្រូវបិទ​សែល​នៅ​ពេលបាន​ដំណើរការ​សកម្មភាព​ចាប់ផ្ដើម ឬ យកចេញ​ឬអត់"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
 msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
-msgstr "បង្ហាញ​ថា​តើត្រូវ​បិទ​សែល​នៅ​ពេលបាន​ដំណើរការ​សកម្មភាព​ធ្វើឲ្យ​ប្រសើរ ឬ លុប​ឬអត់"
+msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
+#, fuzzy
 msgid "Max number of New Applications"
-msgstr "ចំនួន​កម្មវិធី​ថ្មី​អតិបរមា"
+msgstr "លំដាប់​កម្មវិធី"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
 msgid "The maximum number of applications that will be displayed in the New Applications category"
-msgstr "ចំនួន​កម្មវិធី​អតិបរមា​ដែល​នឹងត្រូវ​បង្ហាញ​នៅ​ក្នុង​ប្រភេទ​កម្មវិធី​ថ្មី"
+msgstr ""
 
 #: ../application-browser/src/application-browser.c:85
+#, fuzzy
 msgid "New Applications"
-msgstr "កម្មវិធី​ថ្មី"
+msgstr "លំដាប់​កម្មវិធី"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
+#, fuzzy
 msgid "Filter"
-msgstr "តម្រង"
+msgstr "តម្រង ៖"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "ក្រុម"
 
 #: ../application-browser/src/application-browser.c:90
+#, fuzzy
 msgid "Application Actions"
-msgstr "អំពើ​របស់​កម្មវិធី"
+msgstr "របាយការណ៍​ត្រួតពិនិត្យបញ្ជី​កម្មវិធី"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
+#, fuzzy
 msgid "Control Center"
-msgstr "មជ្ឈមណ្ឌល​ត្រួតពិនិត្យ"
+msgstr "មជ្ឈមណ្ឌល​បញ្ជា​របស់ YaST2"
 
 #: ../control-center/etc/control-center.schemas.in.h:1
 msgid "Close the control-center when a task is activated"
-msgstr "បិទ​មជ្ឈមណ្ឌល​ត្រួត​ពិនិត្យ​នៅ​ពេល​ភារកិច្ច​សកម្ម"
+msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:10
 msgid "Task names and associated .desktop files"
-msgstr "ឈ្មោះ​ភារកិច្ច និង ​បាន​ដាក់​ភ្ជាប់ដោយ​ឯកសារ .desktop"
+msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:11
 msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
-msgstr "ឈ្មោះ​ភារកិច្ច​ដែល​ត្រូវបាន​បង្ហាញ​នៅក្នុង​មជ្ឈមណ្ឌល​ត្រួត​ពិនិត្យ (ដូច្នេះ តម្រួវ​ឲ្យ​បកប្រែ) ត្រូវបាន​ដាក់ពី​ក្រោយ​ដោយ​សញ្ញា​បំបែក \";\" បន្ទាប់​មក​ឈ្មោះ​ឯកសារ​របស់​ឯកសារ .desktop ដែល​បាន​ដាក់ភ្ជាប់​ត្រូវ​បង្ហាញ​សម្រាប់​ភារកិច្ច​នេះ ។"
+msgstr ""
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
 msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
-msgstr "[ផ្លាស់​ប្ដូរ​ផ្ទៃខាង​ក្រោយ​របស់​ផ្ទៃតុ;background.desktop,បន្ថែម​ម៉ាស៊ីន​បោះពុម្ព;gnome-cups-manager.desktop,កំណត់​រចនា​សម្ព័ន្ធ​បណ្ដាញ;YaST2/lan.desktop,ផ្លាស់​ប្ដូរ​ពាក្យ​សម្ងាត់;gnome-passwd.desktop,បន្ថែម​អ្នក​ប្រើ;YaST2/users.desktop,បើក​ការកំណត់​អ្នក​គ្រប់គ្រង;YaST.desktop]"
+msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:14
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
-msgstr "បើ​ពិត នោះ​មជ្ឈមណ្ឌល​ត្រួត​ពិនិត្យ នឹង​បិទ​នៅពេល​ដែល \"ភារកិច្ច​ទូទៅ\" សកម្ម"
+msgstr ""
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
-msgstr "រក​មិនឃើញកូនសោ [%s]\n"
+msgstr ""
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
+#, fuzzy
 msgid "Common Tasks"
-msgstr "ភារកិច្ច​ទូទៅ"
+msgstr "ឈ្មោះ​ទូទៅ"
 
-#: ../libslab/app-shell.c:702
+#. make start action
+#: ../libslab/application-tile.c:316
+#, fuzzy, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>បំណះ ៖ </b>"
+
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "ជំនួយ"
+
+#: ../libslab/application-tile.c:342
+#, fuzzy
+msgid "Help Unavailable"
+msgstr "មិន​មាន"
+
+#: ../libslab/application-tile.c:381
+#, fuzzy
+msgid "Upgrade"
+msgstr "ធ្វើ​ឲ្យ​ទាន់​សម័យ"
+
+#: ../libslab/application-tile.c:390
+#, fuzzy
+msgid "Uninstall"
+msgstr "ដំឡើង"
+
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#, fuzzy
+msgid "Remove from Favorites"
+msgstr "យក​ធាតុ fstab ចេញ"
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#, fuzzy
+msgid "Add to Favorites"
+msgstr "បន្ថែម​ទៅ​តម្រង"
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr ""
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr ""
+
+#: ../libslab/app-shell.c:740
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
-"<span size=\"large\"><b>រកមិន​ឃើញ​ដំណូច​ទេ ។</b> </span><span>\n"
-"\n"
-" តម្រង​របស់​អ្នក \"<b>%s</b>\" មិន​ផ្គូរផ្គង​ទៅ​នឹង​ធាតុ​ផ្សេង​ទៀតទេ ។</span>"
 
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "រក​ឥឡូវ​"
+#: ../libslab/app-shell.c:879
+msgid "Other"
+msgstr "ផ្សេង​ទៀត"
 
-#. make start action
-#: ../libtile/application-tile.c:300
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>ចាប់ផ្តើម​ %s</b>"
-
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr "ជំនួយ"
-
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr "មិន​អាច​រក​ជំនួយ​បាន​"
-
-#: ../libtile/application-tile.c:365
-msgid "Upgrade"
-msgstr "ធ្វើ​ឲ្យ​ប្រសើរ"
-
-#: ../libtile/application-tile.c:374
-msgid "Uninstall"
-msgstr "លុប"
-
-#: ../libtile/application-tile.c:769
-msgid "Remove from Favorites"
-msgstr "យកចេញ​ពី​សំណព្វ"
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr "បន្ថែម​ទៅ​សំណព្វ"
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr "យក​ចេញ​ពី​កម្មវិធី​ចាប់​ផ្ដើមឡើង"
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr "បន្ថែម​ទៅ​កម្មវិធី​ចាប់​ផ្ដើម​ឡើង"
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr "បាន​កែសម្រួល %m/%d/%Y"
-
-#: ../libtile/document-tile.c:170
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>បើក​ជាមួយ \"%s\"</b>"
-
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr "បើក​ជាមួយ​កម្មវិធី​លំនាំដើម"
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr "បើក​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ឯកសារ"
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+#, fuzzy
+msgid "<b>Open</b>"
+msgstr "<b>ក្រុមហ៊ុន​លក់ ៖</b>"
 
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
+#, fuzzy
 msgid "Rename..."
-msgstr "ប្ដូរ​ឈ្មោះ..."
+msgstr "ប្ដូរ​ឈ្មោះ"
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
+#, fuzzy
 msgid "Move to Trash"
-msgstr "ផ្លាស់ទី​ទៅ​ធុង​សម្រាម"
+msgstr "កម្មវិធី​បម្លែង"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
 msgid "Delete"
-msgstr "លុប"
+msgstr "លុប​"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
+#, fuzzy
 msgid "Send To..."
-msgstr "ផ្ញើ​ទៅ​កាន់..."
+msgstr "រក្សាទុក​ជា..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "មើល​ម៉ឺនុយ​"
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "អំពី"
+#: ../libslab/document-tile.c:192
+#, fuzzy, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>ប៉ះទង្គិច​ជាមួយ ៖ </b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr ""
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2388
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+#, fuzzy
+msgid "Find Now"
+msgstr "រត់​ឥឡូវ"
+
+#: ../libslab/system-tile.c:113
+#, fuzzy, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>ប៉ះទង្គិច​ជាមួយ ៖ </b>"
+
+#: ../libslab/system-tile.c:126
+#, fuzzy
+msgid "Remove from System Items"
+msgstr "យក​ធាតុ fstab ចេញ"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#, fuzzy
 msgid "Default menu and application browser"
-msgstr "ម៉ឺនុយ​លំនាំ​ដើម និង កម្មវិធី​រុករក​កម្មវិធី"
+msgstr "លំដាប់​កម្មវិធី"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
-msgstr "ម៉ឺនុយ​មេរបស់ GNOME"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr "រោងចក្រ​ម៉ឺនុយ​មេ​របស់​ GNOME"
+msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "ម៉ឺនុយ​មេ"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "ធ្វើ​ឲ្យ​កម្មវិធី​ទាន់សម័យ​"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "អំពី"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#, fuzzy
+msgid "_Open Menu"
+msgstr "ម៉ឺនុយ​មេ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
-msgstr "ឯកសារ .desktop សម្រាប់​ឧបករណ៍​ប្រើប្រាស់​ឧបករណ៍​បណ្ដាញ YaST2"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr "ឯកសារ .desktop សម្រាប់​កម្មវិធី​រុករក​ឯកសារ"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
-msgstr "ឯកសារ .desktop សម្រាប់​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់ gnome"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
-msgstr "ឯកសារ​ .desktop សម្រាប់​ឧបករណ៍​កំណត់រចនាសម្ព័ន្ធ​បណ្តាញ"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr "ឯកសារ .desktop សម្រាប់​ \"កម្មវិធី​សំណព្វ​\""
+msgid ".desktop path for the application browser"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
-msgid ".desktop path for the application browser"
-msgstr "ផ្លូវ .desktop សម្រាប់​កម្មវិធី​រុករក​កម្មវិធី"
+msgid "Location of the system-wide directory in which startup programs are found."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the system-wide directory in which startup programs are found."
-msgstr "ទីតាំង​ថត​ប្រព័ន្ធ​ទូលាយ​ដែល​បាន​រក​ឃើញ​កម្មវិធី​ចាប់ផ្ដើម​ឡើង ។"
+msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
-msgstr "ទីតាំង​ថត​អ្នកប្រើ​ដែល​បាន​រកឃើញ​កម្មវិធី​ចាប់ផ្ដើម​ឡើង ។ ផ្លូវ dir មិនគួរ​ថេរ​ទេ ព្រោះ​តម្លៃ​របស់​សោ​នេះ​ត្រូវបាន​បន្ថែម​ទៅ​ខាងចុង​ផ្លូវនេះ ៖ ~/."
+msgid "System-wide autostart program drop dir"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr "ធាតុ​តំបន់​ប្រព័ន្ធ"
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "System-wide autostart program drop dir"
-msgstr "ប្រព័ន្ធ​ទូលាយ​ចាប់ផ្ដើម​កម្មវិធី​ទម្លាក់​ថត​ដោយ​ស្វ័យប្រវត្តិ"
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr "បញ្ជី​ធាតុ​ដែលនឹង​លេច​ឡើងនៅ​ក្នុងផ្ទៃ​ប្រព័ន្ធ ។ តម្លៃ​ដែលអាច​ទទួលយក​បានគឺ HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER ត្រូវមាន​ឯកសារ .desktop ដែលបាន​កំណត់​ត្រឹមត្រូវ កូនសោ​ដែល​រំពឹង​ទុក \"ធាតុ​ជំនួយ\", \"ធាតុ​មជ្ឈ​មណ្ឌល​ត្រួតពិនិត្យ\" និង\"ធាតុ​កម្មវិធី​គ្រប់គ្រង​កញ្ចប់\" ។"
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
-msgstr "នេះជា​ពាក្យបញ្ជា​ដែល​ត្រូវ​ប្រតិបត្តិ​នៅ​ពេល​ធាតុ​ម៉ឺនុយ \"បើកក្នុង​កម្មវិធី​គ្រប់គ្រង​ឯកសារ\" សកម្ម ។"
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
-msgstr "នេះ​ជា​ពាក្យបញ្ជា​ដែល​ត្រូវ​ប្រតិបត្តិ​នៅពេល​ធាតុ​ម៉ឺនុយ \"បើក​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ឯកសារ\" សកម្ម ។ FILE_URI គឺ​ត្រូវបាន​ជំនួស​ដោយ uri ដែល​ទាក់ទង​ទៅនឹង​ឈ្មោះ​ថត​របស់​ឯកសារ​ដែល​សកម្ម ។"
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "This is the command to execute when the \"Send To...\" menu item is activated."
-msgstr "នេះ​ជា​ពាក្យបញ្ជា​ដែលត្រូវ​ប្រតិបត្តិ​នៅពេល​ធាតុ​ម៉ឺនុយ \"ផ្ញើ​ទៅ​កាន់...\" សកម្ម ។"
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
-msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
-msgstr "នេះ​ជា​ពាក្យបញ្ជា​ដែល​ត្រូវ​ប្រតិបត្តិ​នៅពេល​ធាតុ​ម៉ឺនុយ \"ផ្ញើ​ទៅ​កាន់...\" សកម្ម ។ DIRNAME និង BASENAME ត្រូវបាន​ជំនួស​ដោយ​សមាសភាគ​ដែល​ទាក់ទង​របស់​ក្រឡា​ដែល​សកម្ម ។"
+msgid "User autostart program drop dir (within the home dir)"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
-msgid "This is the command to execute when the search entry is used."
-msgstr "នេះ​ជា​ពាក្យបញ្ជា​ដែលត្រូវ​ប្រតិបត្តិ​នៅពេល​ដែល​បាន​ប្រើ​ធាតុ​ស្វែងរក ។"
+msgid "command to uninstall packages"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
-msgstr "នេះ​ជា​ពាក្យបញ្ជា​ដែល​ត្រូវ​ប្រតិបត្តិ​នៅពេល​ដែលបាន​ប្រើ​ធាតុ​ស្វែងរក ។ SEARCH_STRING គឺ​ត្រូវបាន​ជំនួស​ដោយ​អត្ថបទ​ស្វែងរក​ដែល​បាន​បញ្ចូល ។"
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "User autostart program drop dir (within the home dir)"
-msgstr "អ្នក​ប្រើ​ចាប់ផ្ដើម​កម្មវិធី​ទម្លាក់​ថត​ដោយ​ស្វ័យប្រវត្តិ (នៅ​ក្នុង​ថតផ្ទះ)"
+msgid "command to upgrade packages"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
-msgid "command to uninstall packages"
-msgstr "ពាក្យបញ្ជា​ដើម្បី​លុប​កញ្ចប់"
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "ពាក្យបញ្ជា​ដើម្បី​លុប​កញ្ចប់ PACKAGE_NAME គឺ​ត្រូវបាន​ជំនួស​ដោយ​ឈ្មោះ​របស់​កញ្ចប់​នៅក្នុង​ពាក្យ​បញ្ជា"
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "command to upgrade packages"
-msgstr "ពាក្យបញ្ជា​ដើម្បី​ធ្វើ​ឲ្យ​កញ្ចប់​ប្រសើរ"
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "ពាក្យបញ្ជា​ដើម្បី​ធ្វើ​ឲ្យ​កញ្ចប់​ប្រសើរ PACKAGE_NAME ត្រូវបាន​ជំនួស​ដោយ​ឈ្មោះ​របស់​កញ្ចប់​នៅក្នុង​ពាក្យ​បញ្ជា"
+msgid "determines the limit of items in the file-area."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "មាន​បញ្ជី​ប្រភេទ​ឯកសារ​ដែល​អាច​អនុញ្ញាត (មិន​តាម​លំដាប់​ជាក់លាក់) ដើម្បី​បង្ហាញ​នៅក្នុង​ផ្ទៃ​ឯកសារ ។ តម្លៃ​ដែលអាច​ទទួល​យកបាន (មើល​កំណត់​ចំណាំ​សម្រាប់ /desktop/gnome/applications/main-menu/file-area/file_class) ៖ 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES] ។ RECENTLY_USED_APPS គឺជា​បញ្ជី​ដែល​បានប្រើ​ថ្មីៗ ។ (ដែល​បាន​បង្កើត​ភ្លាមៗ​ជាមួយ​នឹង​ម៉ឺនុយ​មេ ឬ កម្មវិធី​រុករក ) ។ USER_SPECIFIED_APPS គឺ​សមមូល​​នឹង \"កម្មវិធី​​សំណព្វ\" ។ RECENT_FILES គឺជា​បញ្ជី​ឯកសារ​ពី ~/. ដែល​បាន​ប្រើ​ថ្មីៗ ។"
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr "មាន​បញ្ជី​ឯកសារ (ដោយ​រួម​បញ្ចូល​ឯកសារ .desktop) ដែល​ត្រូវ​មិនរួម​បញ្ចូល​ពី​បញ្ជី \"កម្មវិធី​ដែល​បាន​ប្រើ​ថ្មីៗ\" និង \"ឯកសារ​ថ្មីៗ\""
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr "ធាតុ​មជ្ឈ​មណ្ឌល​ត្រួត​ពិនិត្យ ឯកសារ .desktop"
+msgid "determines which types of files to display in the file area"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
-msgstr "កំណត់​ព្រំដែន​ក្រឡា​នៅ​ក្នុង​ផ្ទៃ​ឯកសារ ។"
+msgid "if true, main menu is more anxious to close"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr "កំណត់​ព្រំដែន​ក្រឡា​នៅក្នុង​ផ្ទៃ​ឯកសារ ។ *ចំណាំ ៖ វា​មិនមាន​ឥទ្ធិពល​ដល់​ចំនួន​ក្រឡា​ទេ ប្រសិន​បើ​ថ្នាក់​ឯកសារ​គឺ USER_SPECIFIED_* ។"
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr "កំណត់​ក្បួនដោះ​ស្រាយ​ការ​រៀបចំ​ឡើងវិញ​ដែល​បាន​ប្រើនៅ​ពេល​ផ្លាស់ទី​ក្រឡា​នៅ​ជំវិញ​ម៉ឺនុយ​មេ"
+msgid "lock-down configuration of the file area"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
-msgid "determines which types of files to display in the file area"
-msgstr "កំណត់​ប្រភេទ​ឯកសារ​ណាមួយ​ដែល​ត្រូវ​បង្ហាញ​នៅក្នុង​ផ្ទៃ​ឯកសារ"
+msgid "lock-down status for the application browser link"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr "ធាតុ​ជំនួយ​ឯកសារ .desktop"
+msgid "lock-down status for the search area"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
-msgid "if true, main menu is more anxious to close"
-msgstr "បើ​ពិត នោះ​ម៉ឺនុយ​មេ​នឹង​បិទ​កាន់​តែ​លឿន"
+msgid "lock-down status for the status area"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
-msgstr "បើពិត នោះម៉ឺនុយមេនឹងបិទក្រោមលក្ខខណ្ឌបន្ថែមទាំងនេះ ៖ បានធ្វើឲ្យក្រឡាសកម្ម ការស្វែងរកសកម្ម"
+msgid "lock-down status for the system area"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
-msgid "lock-down configuration of the file area"
-msgstr "ការ​កំណត់​រចនាសម្ព័ន្ធ​ចាក់សោ​នៃផ្ទៃ​ឯកសារ"
+msgid "lock-down status for the user-specified apps section"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
-msgid "lock-down status for the application browser link"
-msgstr "ស្ថានភាព​ចាក់សោ​សម្រាប់តំណ​កម្មវិធី​រុករក​កម្មវិធី"
+msgid "lock-down status for the user-specified dirs section"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
-msgid "lock-down status for the search area"
-msgstr "ស្ថានភាព​ចាក់សោ​សម្រាប់​ផ្ទៃ​ស្វែងរក"
+msgid "lock-down status for the user-specified docs section"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
-msgid "lock-down status for the status area"
-msgstr "ស្ថានភាព​ចាក់សោ​សម្រាប់​ផ្ទៃ​ស្ថានភាព"
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
-msgid "lock-down status for the system area"
-msgstr "ស្ថានភាព​ចាក់សោ​សម្រាប់​ផ្ទៃ​ប្រព័ន្ធ"
+msgid "set to true if the link to the application browser should be visible and active."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr "ធាតុ​កម្មវិធី​គ្រប់គ្រង​កញ្ចប់ ឯកសារ .desktop"
+msgid "set to true if the search area should be visible and active."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "តម្លៃ​អាច​ទទួល​យក​បាន​ = ០ [SWAP], ១ [PUSH], ២ [PUSH_PULL] ។ស្វបបង្ហាញ​ថា​ពេល​ក្រឡាក្បឿង​ត្រូវ​បានអូស​ដាក់​លើ​ក្រឡាក្បឿង​ផ្សេងទៀត​ ពួកវា​ត្រូវ​តែ​ប្តូរ​ទីតាំង ។  PUSH បង្ហាញ​ពេល​ក្រឡាក្បឿង​, A, ត្រូវ​បាន​អូស​ដាក់​លើ​ក្រឡាក្បឿង​, B, ចំណុច​ទំនេរ​ត្រូវ​បាន​បង្កើ​តក្នុង​ទីតាំង​ក្រឡាក្បឿង​ A  ។ ក្រឡាក្បឿង​ B (ហើយ​គ្រប់​ក្រឡាក្បឿង​ទាំងអស់​បន្ទាប់​ពី​ B) ប្តូរ​ចុះ​ក្រោម​រហូត​ដល់​មាន​ចន្លោះទំនេរ​ថ្មី​មួយ​ត្រូវ​បាន​បំពេញ  ។ ប្រតិបត្តិការ​នេះ​កើត​ឡើង​ក្នុង​ករណី​ក្រឡាក្បឿង  A លេចឡើង មុន​ក្រឡាក្បឿង​ B ដើម្បី​អូស​ទម្លាក់​លើ​ប្រតិបត្តិ​ ។  PUSH_PULL ស្រដៀង​នឹង  PUSH លើកលែង​ពេល​ក្រឡាក្បឿង​ត្រូវ​បាន​ប្តូរ​ពួក​វា​ត្រូវ​បាន​រុញ​ទៅ​ក្នុង​ចន្លោះទំនេរ​ឬ ទាញវា​ពី​ទិសដៅផ្សេងទៀត​ អាស្រ័យ​លើ​យុទ្ធសាស្ត្រ​ដែល​មាន​ឥទ្ធិពល​នឹង​ចំនួន​នៃ​ក្រឡាក្បឿង​ ។​"
+msgid "set to true if the status area should be visible and active."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "តម្លៃ​ដែល​អាច​ទទួល​យកបាន = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS គឺជា​បញ្ជី​ដែលបាន​ប្រើ​ថ្មីៗ (ដែល​បាន​បង្កើត​ភ្លាមៗ​ជាមួយ​នឹង​ម៉ឺនុយ​មេ ឬ កម្មវិធី​រុករក​កម្មវិធី) ។ USER_SPECIFIED_APPS គឺ​សមមូល​នឹង \"កម្មវិធី​សំណព្វ\" ។ RECENT_FILES គឺជា​បញ្ជី​ឯកសារ ~/.​ដែល​បាន​ប្រើ​ថ្មីៗ ។"
+msgid "set to true if the system area should be visible and active."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr "បញ្ជី​ពាក្យបញ្ជា​ដែល​បាន​ធ្វើ​អាទិភាព​ដើម្បី​ចាក់​សោ​អេក្រង់"
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid "set to true if the link to the application browser should be visible and active."
-msgstr "កំណត់​ទៅ​ពិត ប្រសិន​បើ​តំណ​ទៅ​កាន់​កម្មវិធី​រុករក​កម្មវិធី​គួរតែ​ត្រូវ​មើល​ឃើញ និង សកម្ម ។"
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
-msgid "set to true if the search area should be visible and active."
-msgstr "កំណត់​ទៅ​ពិត ប្រសិន​បើ​ផ្ទៃ​ស្វែងរក​គួរតែ​ត្រូវ​មើល​ឃើញ និង សកម្ម ។"
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
-msgid "set to true if the status area should be visible and active."
-msgstr "កំណត់​ទៅ​ពិត ប្រសិន​បើ​ផ្ទៃ​ស្ថានភាព​គួរតែ​ត្រូវ​មើល​ឃើញ និង សកម្ម ។"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:45
-msgid "set to true if the system area should be visible and active."
-msgstr "កំណត់ទៅ​ពិត ប្រសិន​បើ​ផ្ទៃ​ប្រព័ន្ធ​គួរតែត្រូវ​​មើល​ឃើញ និង សកម្ម ។"
-
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr "បង្ហាញ ៖"
-
-#: ../main-menu/src/file-area-widget.c:182
-msgid "Favorite Applications"
-msgstr "កម្មវិធី​សំណព្វ"
-
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
-msgstr "កម្មវិធីដែល​បាន​ប្រើ​ថ្មីៗ"
-
-#: ../main-menu/src/file-area-widget.c:209
-msgid "Recent Documents"
-msgstr "ឯកសារ​ថ្មីៗ"
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr "កម្មវិធី​ច្រើន​ទៀត..."
-
-#: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr "ឯកសារ​ទាំងអស់​..."
-
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
+#: ../main-menu/src/hard-drive-status-tile.c:110
+#, fuzzy
+msgid "Hard _Drive"
 msgstr "ថាស​រឹង"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
-msgstr "%lluG"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
-msgstr "%lluM"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
-msgstr "%lluK"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
-msgstr "%llub"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
-msgstr "%s ទំនេរ / %s សរុប"
+msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+#, fuzzy
+msgid "Shutdown"
+msgstr "បង្ហាញ​កំណត់ហេតុ"
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr "ចាក់សោ​អេក្រង់"
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:531
+msgid "New Spreadsheet"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:536
+#, fuzzy
+msgid "New Document"
+msgstr "ឯកសារ​"
+
+#: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
-msgstr "ម៉ឺនុយ​មេ​របស់ GNOM"
-
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "ប្រព័ន្ធ"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "ស្ថានភាព"
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "កុំព្យួទ័រ​"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "ស្វែងរក ៖"
+msgstr ""
 
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
+#, fuzzy
 msgid "Network: None"
-msgstr "បណ្តាញ​ ៖ គ្មាន​"
+msgstr "របៀប​បណ្ដាញ"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
+#, fuzzy
 msgid "Click to configure network"
-msgstr "ចុច​ដើម្បី​កំណត់​រចនា​សម្ព័ន្ធ​បណ្ដាញ"
+msgstr "រាយ​ធាតុ​ដែល​បាន​កំណត់​រចនាសម្ព័ន្ធ"
 
-#: ../main-menu/src/network-status-tile.c:206
-#, c-format
+#: ../main-menu/src/network-status-tile.c:198
+#, fuzzy
+msgid "Networ_k: None"
+msgstr "របៀប​បណ្ដាញ"
+
+#: ../main-menu/src/network-status-tile.c:207
+#, fuzzy, c-format
 msgid "Connected to: %s"
-msgstr "បាន​តភ្ជាប់​ទៅ​កាន់  ៖ %s"
+msgstr "បាន​តភ្ជាប់​ទៅ"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
-msgstr "បណ្តាញ ៖ ឥតខ្សែ​"
+#: ../main-menu/src/network-status-tile.c:210
+#, fuzzy
+msgid "Networ_k: Wireless"
+msgstr "អាសយដ្ឋាន​បណ្ដាញ"
 
-#: ../main-menu/src/network-status-tile.c:214
-#, c-format
+#: ../main-menu/src/network-status-tile.c:215
+#, fuzzy, c-format
 msgid "Using ethernet (%s)"
-msgstr "កំពុង​ប្រើ​អ៊ីសឺរណិត (%s)"
+msgstr "កំពុង​ប្រើ​ម៉ាស៊ីន​បម្រើ %1"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
-msgstr "បណ្ដាញ ៖ មាន​ខ្សែ"
+#: ../main-menu/src/network-status-tile.c:219
+#, fuzzy
+msgid "Networ_k: Wired"
+msgstr "កាត​បណ្ដាញ"
 
-#: ../main-menu/src/network-status-tile.c:310
-#, c-format
+#: ../main-menu/src/network-status-tile.c:320
+#, fuzzy, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr "អ៊ីសឺរណិតឥតខ្សែ​ (%s)"
+msgstr "ការ​កំណត់​ឥតខ្សែ​បែប​ជំនាញ"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr "អ៊ីសឺរណិតខ្សែ (%s)"
+msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
-msgstr "%d ម.ប/វិ"
+msgstr ""
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "ដំឡើ​ងកម្មវិធី"
+#: ../main-menu/src/slab-window.glade.h:1
+#, fuzzy
+msgid "Applications"
+msgstr "កម្មវិធី ៖"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "ចេញ​ ..."
+#: ../main-menu/src/slab-window.glade.h:2
+#, fuzzy
+msgid "Computer"
+msgstr "កំពុង​គណនា"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "ចាក់សោ​អេក្រង់​ ..."
+#: ../main-menu/src/slab-window.glade.h:3
+#, fuzzy
+msgid "Documents"
+msgstr "ឯកសារ​"
 
+#: ../main-menu/src/slab-window.glade.h:4
+#, fuzzy
+msgid "Favorite Applications"
+msgstr "រក្សា​ទុក​ជម្រើស"
+
+#: ../main-menu/src/slab-window.glade.h:5
+#, fuzzy
+msgid "Favorite Documents"
+msgstr "ឯកសារ​របស់​ខ្ញុំ"
+
+#: ../main-menu/src/slab-window.glade.h:6
+#, fuzzy
+msgid "Favorite Places"
+msgstr "រក្សា​ទុក​ជម្រើស"
+
+#: ../main-menu/src/slab-window.glade.h:8
+#, fuzzy
+msgid "More Applications..."
+msgstr "ជម្រើស &LDAP..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+#, fuzzy
+msgid "More Documents..."
+msgstr "ឯកសារ​"
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:12
+#, fuzzy
+msgid "Recent Applications"
+msgstr "លំដាប់​កម្មវិធី"
+
+#: ../main-menu/src/slab-window.glade.h:13
+#, fuzzy
+msgid "Recent Documents"
+msgstr "ឯកសារ​"
+
+#: ../main-menu/src/slab-window.glade.h:14
+#, fuzzy
+msgid "Search:"
+msgstr "ស្វែងរក ៖"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "ស្ថានភាព"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "ប្រព័ន្ធ"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#, fuzzy
+msgid "Remove the current document from favorites"
+msgstr "យក​ធាតុ fstab ចេញ"
+
+#, fuzzy
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "រក្សា​ទុក​ជម្រើស"
+
+#, fuzzy
+#~ msgid "Install Software"
+#~ msgstr "ដំឡើង​កម្មវិធី​បង្កប់"
+
+#, fuzzy
+#~ msgid "Log Out ..."
+#~ msgstr "ចេញ"
+
+#~ msgid "Search"
+#~ msgstr "ស្វែងរក"

@@ -1,7 +1,7 @@
 /*
  * This file is part of libtile.
  *
- * Copyright (c) 2006 Novell, Inc.
+ * Copyright (c) 2006, 2007 Novell, Inc.
  *
  * Libtile is free software; you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free
@@ -32,6 +32,7 @@
 
 #include "slab-gnome-util.h"
 #include "gnome-utils.h"
+#include "libslab-utils.h"
 #include "recent-files.h"
 
 #define GCONF_SEND_TO_CMD_KEY       "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
@@ -48,20 +49,25 @@ static void load_image (DocumentTile *);
 
 static GtkWidget *create_header (const gchar *);
 static GtkWidget *create_subheader (const gchar *);
+static void update_user_list_menu_item (DocumentTile *);
 
 static void header_size_allocate_cb (GtkWidget *, GtkAllocation *, gpointer);
 
-static void open_with_default_trigger (Tile *, TileEvent *, TileAction *);
+static void open_with_default_trigger    (Tile *, TileEvent *, TileAction *);
 static void open_in_file_manager_trigger (Tile *, TileEvent *, TileAction *);
-static void rename_trigger (Tile *, TileEvent *, TileAction *);
-static void move_to_trash_trigger (Tile *, TileEvent *, TileAction *);
-static void delete_trigger (Tile *, TileEvent *, TileAction *);
-static void send_to_trigger (Tile *, TileEvent *, TileAction *);
+static void rename_trigger               (Tile *, TileEvent *, TileAction *);
+static void move_to_trash_trigger        (Tile *, TileEvent *, TileAction *);
+static void delete_trigger               (Tile *, TileEvent *, TileAction *);
+static void user_docs_trigger            (Tile *, TileEvent *, TileAction *);
+static void send_to_trigger              (Tile *, TileEvent *, TileAction *);
 
 static void rename_entry_activate_cb (GtkEntry *, gpointer);
 static gboolean rename_entry_key_release_cb (GtkWidget *, GdkEventKey *, gpointer);
 
 static void gconf_enable_delete_cb (GConfClient *, guint, GConfEntry *, gpointer);
+
+static void docs_store_monitor_cb (GnomeVFSMonitorHandle *, const gchar *, const gchar *,
+                                   GnomeVFSMonitorEventType, gpointer);
 
 typedef struct
 {
@@ -79,6 +85,9 @@ typedef struct
 	gboolean delete_enabled;
 	guint gconf_conn_id;
 
+	gboolean is_in_user_list;
+
+	GnomeVFSMonitorHandle *user_monitor;
 	MainMenuRecentMonitor *recent_monitor;
 } DocumentTilePrivate;
 
@@ -261,6 +270,22 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	menu_item = gtk_separator_menu_item_new ();
 	gtk_container_add (menu_ctnr, menu_item);
 
+	/* make "add/remove to favorites" action */
+
+	action = tile_action_new (TILE (this), user_docs_trigger, NULL, 0);
+	TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU] = action;
+
+	update_user_list_menu_item (this);
+
+	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* insert separator */
+
+	menu_item = gtk_separator_menu_item_new ();
+	gtk_container_add (menu_ctnr, menu_item);
+
 	/* make send to action */
 
 	/* Only allow Send To for local files, ideally this would use something
@@ -337,6 +362,9 @@ document_tile_private_setup (DocumentTile *tile)
 
 	g_object_unref (client);
 
+	priv->is_in_user_list = libslab_user_docs_store_has_uri (TILE (tile)->uri);
+
+	priv->user_monitor   = libslab_add_docs_monitor (docs_store_monitor_cb, tile);
 	priv->recent_monitor = main_menu_recent_monitor_new ();
 }
 
@@ -353,6 +381,9 @@ document_tile_init (DocumentTile *tile)
 	priv->image_is_broken = TRUE;
 	priv->delete_enabled = FALSE;
 	priv->gconf_conn_id = 0;
+	priv->is_in_user_list = FALSE;
+	priv->user_monitor = NULL;
+	priv->recent_monitor = NULL;
 }
 
 static void
@@ -375,6 +406,9 @@ document_tile_finalize (GObject *g_object)
 	g_object_unref (client);
 
 	g_object_unref (priv->recent_monitor);
+
+	if (priv->user_monitor)
+		gnome_vfs_monitor_cancel (priv->user_monitor);
 
 	(* G_OBJECT_CLASS (document_tile_parent_class)->finalize) (g_object);
 }
@@ -478,6 +512,21 @@ create_subheader (const gchar *desc)
 		&subheader->style->fg[GTK_STATE_INSENSITIVE]);
 
 	return subheader;
+}
+
+static void
+update_user_list_menu_item (DocumentTile *this)
+{
+	TileAction *action = TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU];
+	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
+
+	if (! action)
+		return;
+
+	if (priv->is_in_user_list)
+		tile_action_set_menu_item_label (action, _("Remove from Favorites"));
+	else
+		tile_action_set_menu_item_label (action, _("Add to Favorites"));
 }
 
 static void
@@ -762,6 +811,24 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 }
 
 static void
+user_docs_trigger (Tile *tile, TileEvent *event, TileAction *action)
+{
+	DocumentTile *this        = DOCUMENT_TILE             (tile);
+	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
+
+
+	if (priv->is_in_user_list)
+		libslab_remove_user_doc (tile->uri);
+	else
+		libslab_add_user_doc (
+			tile->uri, priv->mime_type, priv->modified,
+			gnome_vfs_mime_application_get_name (priv->default_app),
+			gnome_vfs_mime_application_get_exec (priv->default_app));
+
+	update_user_list_menu_item (this);
+}
+
+static void
 send_to_trigger (Tile *tile, TileEvent *event, TileAction *action)
 {
 	gchar *cmd;
@@ -804,11 +871,32 @@ send_to_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
 
 	if (error)
-		handle_g_error (&error, "error in %s", G_GNUC_FUNCTION );
+		handle_g_error (&error, "error in %s", G_STRFUNC);
 
 	g_free (cmd);
 	g_free (filename);
 	g_free (dirname);
 	g_free (basename);
 	g_strfreev (argv);
+}
+
+static void
+docs_store_monitor_cb (
+	GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
+	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+{
+	DocumentTile *this = DOCUMENT_TILE (user_data);
+	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
+
+	gboolean is_in_user_list_current;
+
+
+	is_in_user_list_current = libslab_user_docs_store_has_uri (TILE (this)->uri);
+
+	if (is_in_user_list_current == priv->is_in_user_list)
+		return;
+
+	priv->is_in_user_list = is_in_user_list_current;
+
+	update_user_list_menu_item (this);
 }

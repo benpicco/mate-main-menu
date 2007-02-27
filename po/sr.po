@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST2 (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
 "PO-Revision-Date: 2004-03-31 11:34+0200\n"
 "Last-Translator: Bojan Jovanovic <bojov@fon.bg.ac.yu>\n"
 "Language-Team: Serbian <i18n@suse.de>\n"
@@ -82,14 +82,14 @@ msgid "New Applications"
 msgstr "Redosled"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 #, fuzzy
 msgid "Filter"
 msgstr "Filter:"
 
 #  table header
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "&Grupe"
 
@@ -99,8 +99,7 @@ msgid "Application Actions"
 msgstr "Redosled"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
 #, fuzzy
 msgid "Control Center"
 msgstr "YaST2 Kontrolni Centar"
@@ -126,21 +125,188 @@ msgstr ""
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr ""
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr ""
 
-#: ../libslab/app-shell.c:702
+#. make start action
+#: ../libslab/application-tile.c:316
+#, fuzzy, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>Peč: </b>"
+
+#  popup heading
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "Pomoć"
+
+#: ../libslab/application-tile.c:342
+#, fuzzy
+msgid "Help Unavailable"
+msgstr "Nedostupno"
+
+#  Proposal for installation mode
+#: ../libslab/application-tile.c:381
+#, fuzzy
+msgid "Upgrade"
+msgstr "&Dogradnja"
+
+#: ../libslab/application-tile.c:390
+#, fuzzy
+msgid "Uninstall"
+msgstr "Instaliraj"
+
+#  translators: command line help text for remove action
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#, fuzzy
+msgid "Remove from Favorites"
+msgstr "Obrišite yvučnu kartu"
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr ""
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr ""
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr ""
+
+#: ../libslab/app-shell.c:740
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+
+#: ../libslab/app-shell.c:879
+msgid "Other"
+msgstr "ostali"
+
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+#, fuzzy
+msgid "<b>Open</b>"
+msgstr "<b>U konfliktu je sa: </b>"
+
+#. make rename action
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
+#, fuzzy
+msgid "Rename..."
+msgstr "&Zameni..."
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Konvertori"
+
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
+msgid "Delete"
+msgstr "Obriši"
+
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
+#, fuzzy
+msgid "Send To..."
+msgstr "Snimi kao..."
+
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr ""
+
+#: ../libslab/document-tile.c:192
+#, fuzzy, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>U konfliktu je sa: </b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr ""
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2388
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
 msgstr ""
 
 #  pushbutton label, find nis servers
@@ -150,96 +316,16 @@ msgstr ""
 msgid "Find Now"
 msgstr "&Traži"
 
-#. make start action
-#: ../libtile/application-tile.c:300
+#: ../libslab/system-tile.c:113
 #, fuzzy, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Peč: </b>"
-
-#  popup heading
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr "Pomoć"
-
-#: ../libtile/application-tile.c:326
-#, fuzzy
-msgid "Help Unavailable"
-msgstr "Nedostupno"
-
-#  Proposal for installation mode
-#: ../libtile/application-tile.c:365
-#, fuzzy
-msgid "Upgrade"
-msgstr "&Dogradnja"
-
-#: ../libtile/application-tile.c:374
-#, fuzzy
-msgid "Uninstall"
-msgstr "Instaliraj"
-
-#  translators: command line help text for remove action
-#: ../libtile/application-tile.c:769
-#, fuzzy
-msgid "Remove from Favorites"
-msgstr "Obrišite yvučnu kartu"
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr ""
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr ""
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr ""
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr ""
-
-#: ../libtile/document-tile.c:170
-#, fuzzy, c-format
-msgid "<b>Open with \"%s\"</b>"
+msgid "<b>Open %s</b>"
 msgstr "<b>U konfliktu je sa: </b>"
 
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr ""
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr ""
-
-#. make rename action
-#: ../libtile/document-tile.c:214
+#  translators: command line help text for remove action
+#: ../libslab/system-tile.c:126
 #, fuzzy
-msgid "Rename..."
-msgstr "&Zameni..."
-
-#. make move to trash action
-#: ../libtile/document-tile.c:227
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Konvertori"
-
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
-msgid "Delete"
-msgstr "Obriši"
-
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
-#, fuzzy
-msgid "Send To..."
-msgstr "Snimi kao..."
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr ""
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "_О програму"
+msgid "Remove from System Items"
+msgstr "Obrišite yvučnu kartu"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 #, fuzzy
@@ -247,7 +333,7 @@ msgid "Default menu and application browser"
 msgstr "Redosled"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr ""
 
@@ -259,8 +345,12 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "_О програму"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
@@ -279,202 +369,161 @@ msgstr ""
 msgid ".desktop file for the net config tool"
 msgstr ""
 
-#  progress stages
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-#, fuzzy
-msgid ".desktop files for \"Favorite Applications\""
-msgstr "Snimi opcije"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid "Location of the system-wide directory in which startup programs are found."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "command to uninstall packages"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "determines the limit of items in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr ""
+
 #: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "determines which types of files to display in the file area"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "if true, main menu is more anxious to close"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the application browser link"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the search area"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the status area"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the system area"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "lock-down status for the user-specified apps section"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "lock-down status for the user-specified dirs section"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "lock-down status for the user-specified docs section"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the status area should be visible and active."
 msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the system area should be visible and active."
 msgstr ""
 
-#  Headline above bar graph that displays current partition size
-#  Headline above bar graph that displays current partition size
-#: ../main-menu/src/file-area-widget.c:137
-#, fuzzy
-msgid "Show:"
-msgstr "Sada:"
-
-#  progress stages
-#: ../main-menu/src/file-area-widget.c:182
-#, fuzzy
-msgid "Favorite Applications"
-msgstr "Snimi opcije"
-
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
 msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:209
-#, fuzzy
-msgid "Recent Documents"
-msgstr "Dokument"
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
 msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:347
-#, fuzzy
-msgid "All Documents..."
-msgstr "Dokument"
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
 
 #  entry of bootloader menu - only a-z, A-Z, 0-9, _ and blank space
 #  are allowed, otherwise translartion won't be used
@@ -482,136 +531,234 @@ msgstr "Dokument"
 #  entry of bootloader menu - only a-z, A-Z, 0-9, _ and blank space
 #  are allowed, otherwise translartion won't be used
 #  try to keep short, may be shortened due to bootloader limitations
-#: ../main-menu/src/hard-drive-status-tile.c:103
+#: ../main-menu/src/hard-drive-status-tile.c:110
 #, fuzzy
-msgid "Hard Drive"
+msgid "Hard _Drive"
 msgstr "&Hard disk"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr ""
+
+#  Headline above bar graph that displays current partition size
+#  Headline above bar graph that displays current partition size
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+#, fuzzy
+msgid "Shutdown"
+msgstr "Sada:"
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:531
+msgid "New Spreadsheet"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:536
+#, fuzzy
+msgid "New Document"
+msgstr "Dokument"
+
+#: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "Sistem"
-
-#  table header: module status
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "Status"
-
-#: ../main-menu/src/main-menu-ui.c:557
-#, fuzzy
-msgid "Computer"
-msgstr "Računanje"
-
-#: ../main-menu/src/main-menu-ui.c:883
-#, fuzzy
-msgid "Search:"
-msgstr "P&retraži:"
-
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 #, fuzzy
 msgid "Network: None"
 msgstr "Mrežni kontroler"
 
 #  translators: help text for list subcommand (listen command line action)
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 #, fuzzy
 msgid "Click to configure network"
 msgstr "Izlistaj podešene zapise"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+#, fuzzy
+msgid "Networ_k: None"
+msgstr "Mrežni kontroler"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, fuzzy, c-format
 msgid "Connected to: %s"
 msgstr "Zakačen na Monitor"
 
 #  table header
-#: ../main-menu/src/network-status-tile.c:209
+#: ../main-menu/src/network-status-tile.c:210
 #, fuzzy
-msgid "Network: Wireless"
+msgid "Networ_k: Wireless"
 msgstr "&Port"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr ""
 
 #  Selection box item
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:219
 #, fuzzy
-msgid "Network: Wired"
+msgid "Networ_k: Wired"
 msgstr "Mrežna kartica"
 
 #  Wireless expert dialog caption
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, fuzzy, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Napredna bežična podešavanja"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr ""
 
-#  module method acton label
-#: ../main-menu/src/system-tile.c:128
+#: ../main-menu/src/slab-window.glade.h:1
 #, fuzzy
-msgid "Install Software"
-msgstr "Provera instaliranog software-a"
+msgid "Applications"
+msgstr "Програм:"
 
-#: ../main-menu/src/system-tile.c:135
+#: ../main-menu/src/slab-window.glade.h:2
 #, fuzzy
-msgid "Log Out ..."
-msgstr "Odjavi se"
+msgid "Computer"
+msgstr "Računanje"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
+#: ../main-menu/src/slab-window.glade.h:3
+#, fuzzy
+msgid "Documents"
+msgstr "XF86Documents"
+
+#  progress stages
+#: ../main-menu/src/slab-window.glade.h:4
+#, fuzzy
+msgid "Favorite Applications"
+msgstr "Snimi opcije"
+
+#: ../main-menu/src/slab-window.glade.h:5
+#, fuzzy
+msgid "Favorite Documents"
+msgstr "Dokument"
+
+#  progress stages
+#: ../main-menu/src/slab-window.glade.h:6
+#, fuzzy
+msgid "Favorite Places"
+msgstr "Snimi opcije"
+
+#  Menu Buton label
+#  Menu Buton label
+#: ../main-menu/src/slab-window.glade.h:8
+#, fuzzy
+msgid "More Applications..."
+msgstr "&LDAP Opcije..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+#, fuzzy
+msgid "More Documents..."
+msgstr "Dokument"
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
 msgstr ""
 
-#  Menu Buton label
-#  Menu Buton label
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:12
 #, fuzzy
-#~ msgid "All Applications..."
-#~ msgstr "&LDAP Opcije..."
+msgid "Recent Applications"
+msgstr "Redosled"
+
+#: ../main-menu/src/slab-window.glade.h:13
+#, fuzzy
+msgid "Recent Documents"
+msgstr "Dokument"
+
+#: ../main-menu/src/slab-window.glade.h:14
+#, fuzzy
+msgid "Search:"
+msgstr "P&retraži:"
+
+#  table header: module status
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "Status"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "Sistem"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#  translators: command line help text for remove action
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#, fuzzy
+msgid "Remove the current document from favorites"
+msgstr "Obrišite yvučnu kartu"
+
+#  progress stages
+#, fuzzy
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "Snimi opcije"
+
+#  module method acton label
+#, fuzzy
+#~ msgid "Install Software"
+#~ msgstr "Provera instaliranog software-a"
+
+#, fuzzy
+#~ msgid "Log Out ..."
+#~ msgstr "Odjavi se"
 
 #~ msgid "Search"
 #~ msgstr "Pretraži"

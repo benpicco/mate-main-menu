@@ -47,7 +47,8 @@ typedef struct {
 #define DOCUMENT_TILE_ACTION_RENAME               2
 #define DOCUMENT_TILE_ACTION_MOVE_TO_TRASH        3
 #define DOCUMENT_TILE_ACTION_DELETE               4
-#define DOCUMENT_TILE_ACTION_SEND_TO              5
+#define DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU     5
+#define DOCUMENT_TILE_ACTION_SEND_TO              6
 
 GType document_tile_get_type (void);
 

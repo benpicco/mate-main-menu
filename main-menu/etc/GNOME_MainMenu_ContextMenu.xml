@@ -1,7 +1,7 @@
 <Root>
   <popups>
     <popup name="button3">
-      <menuitem name="Main Menu Open Item" verb="MainMenuOpen" _label="Open Menu" pixtype="gtk" pixname="computer"/>
+      <menuitem name="Main Menu Open Item" verb="MainMenuOpen" _label="_Open Menu" pixtype="stock" pixname="gnome-fs-client"/>
       <menuitem name="Main Menu About Item" verb="MainMenuAbout" _label="_About" pixtype="stock" pixname="gnome-stock-about"/>
     </popup>
   </popups>

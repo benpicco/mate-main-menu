@@ -1,17 +1,20 @@
-# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
-# This file is distributed under the same license as the package.
+# Chinese message file for YaST2 (@memory@)
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Copyright (C) 2002 SuSE Linux AG.
+# Copyright (C) 2001 SuSE GmbH.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-11-02 14:21\n"
+"POT-Creation-Date: 2007-02-06 17:53+0100\n"
+"PO-Revision-Date: 2006-06-23 14:00\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -75,12 +78,12 @@ msgid "New Applications"
 msgstr "新应用程序"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "过滤"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "组"
 
@@ -89,8 +92,7 @@ msgid "Application Actions"
 msgstr "应用程序操作"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "控制中心"
 
@@ -115,16 +117,60 @@ msgstr "[更改桌面背景;background.desktop,添加打印机;gnome-cups-manage
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "如果为 true，则激活\"公共任务\"时将关闭控制中心"
 
-#: ../control-center/src/control-center.c:61
-#, fuzzy, c-format
+#: ../control-center/src/control-center.c:62
+#, c-format
 msgid "key not found [%s]\n"
-msgstr "文件未找到： {0}"
+msgstr "找到到键 [%s]\n"
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "公共任务"
 
-#: ../libslab/app-shell.c:702
+#. make start action
+#: ../libslab/application-tile.c:316
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>启动 %s</b>"
+
+#: ../libslab/application-tile.c:335
+#: ../main-menu/src/main-menu-migration.c:116
+#: ../main-menu/src/main-menu-migration.c:270
+msgid "Help"
+msgstr "帮助"
+
+#: ../libslab/application-tile.c:342
+msgid "Help Unavailable"
+msgstr "不提供帮助"
+
+#: ../libslab/application-tile.c:381
+msgid "Upgrade"
+msgstr "升级"
+
+#: ../libslab/application-tile.c:390
+msgid "Uninstall"
+msgstr "卸装"
+
+#: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "从\"收藏夹\"中除去"
+
+#: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "添加至\"收藏夹\""
+
+#: ../libslab/application-tile.c:769
+msgid "Remove from Startup Programs"
+msgstr "从启动程序中除去"
+
+#: ../libslab/application-tile.c:771
+msgid "Add to Startup Programs"
+msgstr "添加至启动程序"
+
+#: ../libslab/app-shell.c:740
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -135,97 +181,139 @@ msgstr ""
 "\n"
 " 您的过滤器“<b>%s</b>”不匹配任何项。</span>"
 
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "立即查找"
+#: ../libslab/app-shell.c:879
+msgid "Other"
+msgstr "其它"
 
-#. make start action
-#: ../libtile/application-tile.c:300
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>启动 %s</b>"
-
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr "帮助"
-
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr "不提供帮助"
-
-#: ../libtile/application-tile.c:365
-msgid "Upgrade"
-msgstr "升级"
-
-#: ../libtile/application-tile.c:374
-msgid "Uninstall"
-msgstr "卸装"
-
-#: ../libtile/application-tile.c:769
-msgid "Remove from Favorites"
-msgstr "从\"收藏夹\"中除去"
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr "添加至\"收藏夹\""
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr "从启动程序中除去"
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr "添加至启动程序"
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr "已编辑 %m/%d/%Y"
-
-#: ../libtile/document-tile.c:170
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>使用\"%s\"打开</b>"
-
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr "使用默认的应用程序打开"
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr "在文件管理器中打开"
+#. make open with default action
+#: ../libslab/directory-tile.c:163
+#, fuzzy
+msgid "<b>Open</b>"
+msgstr "<b>供应商：</b>"
 
 #. make rename action
-#: ../libtile/document-tile.c:214
+#: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
 msgid "Rename..."
 msgstr "重命名..."
 
 #. make move to trash action
-#: ../libtile/document-tile.c:227
+#: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
 msgid "Move to Trash"
-msgstr "移至回收站"
+msgstr "移动到废纸篓"
 
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
 msgid "Delete"
 msgstr "删除"
 
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
+#: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
+#: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
 msgid "Send To..."
 msgstr "发送到..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "打开菜单"
+#: ../libslab/document-tile.c:154
+msgid "Edited %m/%d/%Y"
+msgstr "已编辑 %m/%d/%Y"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "关于(_A)"
+#: ../libslab/document-tile.c:192
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>使用\"%s\"打开</b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr "使用默认的应用程序打开"
+
+#: ../libslab/document-tile.c:220
+msgid "Open in File Manager"
+msgstr "在文件管理器中打开"
+
+#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
+#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#, fuzzy, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "接口名称中有意外字符：“%s”"
+
+#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
+#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
+#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
+#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2187
+msgid "No valid bookmark file was be found in data dirs"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2388
+#, fuzzy, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "CA 目录已存在。"
+
+#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
+#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
+#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
+#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
+#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
+#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
+#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
+#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
+#: ../libslab/eggbookmarkfile.c:4053
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2772
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:2857
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3236
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "立即查找"
+
+#: ../libslab/system-tile.c:113
+#, fuzzy, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>使用\"%s\"打开</b>"
+
+#: ../libslab/system-tile.c:126
+#, fuzzy
+msgid "Remove from System Items"
+msgstr "从\"收藏夹\"中除去"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "默认菜单和应用程序浏览器"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME 主菜单"
 
@@ -237,9 +325,14 @@ msgstr "GNOME 主菜单工厂"
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "软件更新"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "关于()"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#, fuzzy
+msgid "_Open Menu"
+msgstr "打开菜单"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -258,299 +351,419 @@ msgid ".desktop file for the net config tool"
 msgstr "net 配置工具的 .desktop 文件"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr "\"收藏应用程序\"的 .desktop 文件"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr "应用程序浏览器的 .desktop 路径"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid "Location of the system-wide directory in which startup programs are found."
 msgstr "启动程序所在的系统范围目录的位置。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
 msgstr "启动程序所在的用户目录的位置。dir  路径不应是绝对路径，因为该关键字的值被追加到以下路径：~/."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr "系统区域项"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
 msgstr "系统范围的自动启动程序丢弃 dir"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr "将在\"系统\"区域显示的项的列表。这些值可能如下：HELP = 0、CONTROL_CENTER = 1、PACKAGE_MANAGER = 2、LOG_OUT = 3、LOCK_SCREEN = 4。HELP、CONTROL_CENTER 和 PACKAGE_MANAGER 需要在\"help_item\"、\"control_center_item\"和\"package_manager_item\"关键字中分别定义相应的 .desktop 文件。"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr "这是激活\"在文件管理器中打开\"菜单项时执行的命令。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr "这是激活\"在文件管理器中打开\"菜单项时执行的命令。FILE_URI 被替换为与激活文件的 dirname 对应的 uri。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr "这是激活\"发送到...\"菜单项时执行的命令。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr "这是激活\"发送到...\"菜单项时执行的命令。DIRNAME 和 BASENAME 被替换为激活碎片的对应组件。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "这是使用搜索项时执行的命令。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr "这是使用搜索项时执行的命令。SEARCH_STRING  被替换为输入的搜索文本。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
 msgstr "用户自动启动程序丢弃 dir（在主目录中）"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid "command to uninstall packages"
 msgstr "卸装包的命令"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "卸装包的命令，在此命令中，PACKAGE_NAME 被替换为包的名称。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
 msgstr "升级包的命令"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "升级包的命令，在此命令中，PACKAGE_NAME 被替换为包的名称。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "包含可在文件区域显示的文件类型的列表（无特别的顺序）。可能的值（另请参阅 /desktop/gnome/ applications/main-menu/file-area/file_class 的注释）如下：0 [USER_SPECIFIED_APPS]、1  [RECENTLY_USED_APPS]、2 [RECENT_FILES]。RECENTLY_USED_APPS 是最近使用的列表（用主菜单或应用程序浏览器进行例示）。USER_SPECIFIED_APPS 等价于\"收藏的应用程序\"。RECENT_FILES  是来自 ~/.recently-used 的文件列表。"
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr "包含要从\"最近使用过的应用程序\"和\"最近的文件\"列表中排除的文件列表（包括 .desktop 文件）。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr "控制中心项 .desktop 文件"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+#, fuzzy
+msgid "determines the limit of items in the file-area."
 msgstr "确定文件区域中碎片的限制。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr "确定文件区域中碎片的限制。*注意：如果 file-class 是 USER_SPECIFIED_，那么这不会影响碎片数目*。"
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr "确定将碎片在主菜单周围移动时所使用的重新排序算法"
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+#, fuzzy
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr "确定文件区域中碎片的限制。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
 msgstr "确定在文件区域显示的文件类型"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr "帮助项 .desktop 文件"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "if true, main menu is more anxious to close"
 msgstr "如果为 true，则主菜单更渴望关闭"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr "如果为 true，主菜单将在以下附加条件下关闭：碎片已激活，搜索已激活"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
 msgstr "文件区域的锁定配置"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the application browser link"
 msgstr "应用程序浏览器链接的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the search area"
 msgstr "搜索区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the status area"
 msgstr "状态区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the system area"
 msgstr "系统区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr "包管理器项 .desktop 文件"
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+#, fuzzy
+msgid "lock-down status for the user-specified apps section"
+msgstr "搜索区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "可能的值 = 0 [SWAP]、1 [PUSH]、2 [PUSH_PULL]。SWAP 指示当一个碎片被拖到另一个碎片上时，它们将交换位置。PUSH 指示当把一个碎片 A 拖到另一个碎片 B 上时，将在碎片 A 的位置创建一个空位。碎片 B（和 B 之后的所有碎片）依次向下移动，直至填满新的空位。如果在拖放操作之前碎片 A 显示在碎片 B 的前面，则此操作将回绕显示。PUSH_PULL 与 PUSH 类似，唯一的区别是：当碎片移动时，它们将被推到空位或者被反方向拉出来，这取决于哪种策略影响的碎片最少。"
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+#, fuzzy
+msgid "lock-down status for the user-specified dirs section"
+msgstr "搜索区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "可能的值 = 0 [USER_SPECIFIED_APPS]、1 [RECENTLY_USED_APPS]、2  [RECENT_FILES]。RECENTLY_USED_APPS 是最近使用过的列表（用主菜单或应用程序浏览器进行例示）。USER_SPECIFIED_APPS 等价于\"收藏的应用程序\"。RECENT_FILES  是来自 ~/.recently-used 的文件列表。"
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+#, fuzzy
+msgid "lock-down status for the user-specified docs section"
+msgstr "搜索区域的锁定状态"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr "锁定屏幕的命令的优先列表"
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr "如果应用程序浏览器的链接是可见和活动的，则设置为 true。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
 msgstr "如果搜索区域是可见和活动的，则设置为 true。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the status area should be visible and active."
 msgstr "如果状态区域是可见和活动的，则设置为 true。"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the system area should be visible and active."
 msgstr "如果系统区域是可见和活动的，则设置为 true。"
 
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr "显示："
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:182
-msgid "Favorite Applications"
-msgstr "收藏的应用程序"
+#: ../main-menu/etc/slab.schemas.in.in.h:42
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
-msgstr "最近使用过的应用程序"
+#: ../main-menu/etc/slab.schemas.in.in.h:43
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr ""
 
-#: ../main-menu/src/file-area-widget.c:209
-msgid "Recent Documents"
-msgstr "最近的文档"
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr "更多应用程序..."
-
-#: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr "所有文档..."
-
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
+#: ../main-menu/src/hard-drive-status-tile.c:110
+#, fuzzy
+msgid "Hard _Drive"
 msgstr "硬盘驱动器"
 
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s 可用空间/共 %s 可用空间 "
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:118
+#: ../main-menu/src/main-menu-migration.c:273
+msgid "Logout"
+msgstr "注销"
+
+#: ../main-menu/src/main-menu-migration.c:120
+#: ../main-menu/src/main-menu-migration.c:276
+msgid "Shutdown"
+msgstr "关机"
+
+#: ../main-menu/src/main-menu-migration.c:205
+msgid "Lock Screen"
+msgstr "锁定屏幕"
+
+#: ../main-menu/src/main-menu-migration.c:207
+msgid "gnome-lockscreen"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:531
+msgid "New Spreadsheet"
+msgstr ""
+
+#: ../main-menu/src/main-menu-migration.c:536
+#, fuzzy
+msgid "New Document"
+msgstr "文档"
+
+#: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
 msgstr "GNOME 主菜单"
 
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "系统"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "状态"
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "计算机"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr "搜索："
-
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
 msgstr "网络：无"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
 msgstr "单击配置网络"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+#, fuzzy
+msgid "Networ_k: None"
+msgstr "网络：无"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
 msgstr "连接到：%s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
+#: ../main-menu/src/network-status-tile.c:210
+#, fuzzy
+msgid "Networ_k: Wireless"
 msgstr "网络：无线"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "使用以太网 (%s)"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
+#: ../main-menu/src/network-status-tile.c:219
+#, fuzzy
+msgid "Networ_k: Wired"
 msgstr "网络：有线"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "无线以太网 (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "有线以太网 (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
 msgid "Unknown"
 msgstr "未知"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr "安装软件"
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "应用程序"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr "注销..."
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "计算机"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr "锁定屏幕..."
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "文档"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "收藏的应用程序"
+
+#: ../main-menu/src/slab-window.glade.h:5
+#, fuzzy
+msgid "Favorite Documents"
+msgstr "我的文档"
+
+#: ../main-menu/src/slab-window.glade.h:6
+#, fuzzy
+msgid "Favorite Places"
+msgstr "收藏的应用程序"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "更多应用程序..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+#, fuzzy
+msgid "More Documents..."
+msgstr "所有文档..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+#, fuzzy
+msgid "More Places..."
+msgstr "更多应用程序..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr ""
+
+#: ../main-menu/src/slab-window.glade.h:12
+#, fuzzy
+msgid "Recent Applications"
+msgstr "最近使用过的应用程序"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "最近的文档"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "搜索："
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "状态"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "系统"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#, fuzzy
+msgid "Remove the current document from favorites"
+msgstr "从\"收藏夹\"中除去"
+
+#~ msgid "Software Update"
+#~ msgstr "软件更新"
+
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "\"收藏应用程序\"的 .desktop 文件"
+
+#~ msgid "System area items"
+#~ msgstr "系统区域项"
+
+#~ msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr "将在\"系统\"区域显示的项的列表。这些值可能如下：HELP = 0、CONTROL_CENTER = 1、PACKAGE_MANAGER = 2、LOG_OUT = 3、LOCK_SCREEN = 4。HELP、CONTROL_CENTER 和 PACKAGE_MANAGER 需要在\"help_item\"、\"control_center_item\"和\"package_manager_item\"关键字中分别定义相应的 .desktop 文件。"
+
+#~ msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "包含可在文件区域显示的文件类型的列表（无特别的顺序）。可能的值（另请参阅 /desktop/gnome/ applications/main-menu/file-area/file_class 的注释）如下：0 [USER_SPECIFIED_APPS]、1  [RECENTLY_USED_APPS]、2 [RECENT_FILES]。RECENTLY_USED_APPS 是最近使用的列表（用主菜单或应用程序浏览器进行例示）。USER_SPECIFIED_APPS 等价于\"收藏的应用程序\"。RECENT_FILES  是来自 ~/.recently-used 的文件列表。"
+
+#~ msgid "control center item .desktop file"
+#~ msgstr "控制中心项 .desktop 文件"
+
+#~ msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr "确定文件区域中碎片的限制。*注意：如果 file-class 是 USER_SPECIFIED_，那么这不会影响碎片数目*。"
+
+#~ msgid "determines the reordering algorithm used when moving tiles around the main-menu"
+#~ msgstr "确定将碎片在主菜单周围移动时所使用的重新排序算法"
+
+#~ msgid "help item .desktop file"
+#~ msgstr "帮助项 .desktop 文件"
+
+#~ msgid "package manager item .desktop file"
+#~ msgstr "包管理器项 .desktop 文件"
+
+#~ msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
+#~ msgstr "可能的值 = 0 [SWAP]、1 [PUSH]、2 [PUSH_PULL]。SWAP 指示当一个碎片被拖到另一个碎片上时，它们将交换位置。PUSH 指示当把一个碎片 A 拖到另一个碎片 B 上时，将在碎片 A 的位置创建一个空位。碎片 B（和 B 之后的所有碎片）依次向下移动，直至填满新的空位。如果在拖放操作之前碎片 A 显示在碎片 B 的前面，则此操作将回绕显示。PUSH_PULL 与 PUSH 类似，唯一的区别是：当碎片移动时，它们将被推到空位或者被反方向拉出来，这取决于哪种策略影响的碎片最少。"
+
+#~ msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr "可能的值 = 0 [USER_SPECIFIED_APPS]、1 [RECENTLY_USED_APPS]、2  [RECENT_FILES]。RECENTLY_USED_APPS 是最近使用过的列表（用主菜单或应用程序浏览器进行例示）。USER_SPECIFIED_APPS 等价于\"收藏的应用程序\"。RECENT_FILES  是来自 ~/.recently-used 的文件列表。"
+
+#~ msgid "prioritized list of commands to lock the screen"
+#~ msgstr "锁定屏幕的命令的优先列表"
+
+#~ msgid "Show:"
+#~ msgstr "显示："
+
+#~ msgid "Install Software"
+#~ msgstr "安装软件"
+
+#~ msgid "Log Out ..."
+#~ msgstr "注销..."
+
+#~ msgid "Lock Screen ..."
+#~ msgstr "锁定屏幕..."
+
+#~ msgid "Number of days to be in New Applications category"
+#~ msgstr "\"新应用程序\"类别中的天数"
+
+#~ msgid "The number of days relative to current date that an application will be considered a New Application"
+#~ msgstr "距离当前日期的天数，即应用程序被认为是新应用程序的天数"
+
+#~ msgid "All Applications..."
+#~ msgstr "所有应用程序..."
+
+#~ msgid "Search"
+#~ msgstr "搜索"
