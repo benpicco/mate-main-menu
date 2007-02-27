@@ -66,6 +66,19 @@
 	Added a nautilus menu extension so that one can bookmark a document
 	with nautilus.
 
+	This update fixes/obsoletes a number of bugs:
+
+	* BGO #378793 - g-s-m is no longer opened by the disk space tile.
+	* BGO #382004 - PANEL_APPLET_EXPAND_MINOR added to panel applet flags.
+	* BGO #394372 - Ellipses removed.
+	* BGO #394377 - Recent/Favorite tables have been stacked to compact
+	                them.
+	* BGO #394384 - Places menu added.
+	* BGO #394411 - "More <items> ..." button positioning tied to bottom.
+	* BGO #394488 - Side panel rotation follows text rotation convention.
+	* BGO #394750 - Properly handle multi-monitor screens.
+	* BGO #394817 - Do not squash keyboard events on the panel button.
+
 2007-02-22  Scott Reeves  <sreeves@novell.com>
 	* libslab/slab-gnome-util.c
 	* libslab/app-shell.c
