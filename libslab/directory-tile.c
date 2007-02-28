@@ -188,35 +188,6 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 	gtk_container_add (menu_ctnr, menu_item);
 
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* make move to trash action */
-
-	action = tile_action_new (TILE (this), move_to_trash_trigger, _("Move to Trash"), 0);
-	TILE (this)->actions[DIRECTORY_TILE_ACTION_MOVE_TO_TRASH] = action;
-
-	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* make delete action */
-
-	if (priv->delete_enabled)
-	{
-		action = tile_action_new (TILE (this), delete_trigger, _("Delete"), 0);
-		TILE (this)->actions[DIRECTORY_TILE_ACTION_DELETE] = action;
-
-		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-		gtk_container_add (menu_ctnr, menu_item);
-	}
-
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_container_add (menu_ctnr, menu_item);
-
 	/* make send to action */
 
 	/* Only allow Send To for local files, ideally this would use something
@@ -241,6 +212,30 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 	TILE (this)->actions[DIRECTORY_TILE_ACTION_SEND_TO] = action;
 
 	gtk_container_add (menu_ctnr, menu_item);
+
+	/* insert separator */
+
+	menu_item = gtk_separator_menu_item_new ();
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* make move to trash action */
+
+	action = tile_action_new (TILE (this), move_to_trash_trigger, _("Move to Trash"), 0);
+	TILE (this)->actions[DIRECTORY_TILE_ACTION_MOVE_TO_TRASH] = action;
+
+	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* make delete action */
+
+	if (priv->delete_enabled)
+	{
+		action = tile_action_new (TILE (this), delete_trigger, _("Delete"), 0);
+		TILE (this)->actions[DIRECTORY_TILE_ACTION_DELETE] = action;
+
+		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		gtk_container_add (menu_ctnr, menu_item);
+	}
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 

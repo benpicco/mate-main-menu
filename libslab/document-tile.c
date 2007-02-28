@@ -211,11 +211,6 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	gtk_container_add (menu_ctnr, menu_item);
 
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_container_add (menu_ctnr, menu_item);
-
 	/* make open in nautilus action */
 
 	action = tile_action_new (TILE (this), open_in_file_manager_trigger,
@@ -239,51 +234,6 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	TILE (this)->actions[DOCUMENT_TILE_ACTION_RENAME] = action;
 
 	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* make move to trash action */
-
-	action = tile_action_new (TILE (this), move_to_trash_trigger, _("Move to Trash"), 0);
-	TILE (this)->actions[DOCUMENT_TILE_ACTION_MOVE_TO_TRASH] = action;
-
-	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* make delete action */
-
-	if (priv->delete_enabled)
-	{
-		action = tile_action_new (TILE (this), delete_trigger, _("Delete"), 0);
-		TILE (this)->actions[DOCUMENT_TILE_ACTION_DELETE] = action;
-
-		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-		gtk_container_add (menu_ctnr, menu_item);
-	}
-
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* make "add/remove to favorites" action */
-
-	action = tile_action_new (TILE (this), user_docs_trigger, NULL, 0);
-	TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU] = action;
-
-	update_user_list_menu_item (this);
-
-	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-
-	gtk_container_add (menu_ctnr, menu_item);
-
-	/* insert separator */
-
-	menu_item = gtk_separator_menu_item_new ();
 	gtk_container_add (menu_ctnr, menu_item);
 
 	/* make send to action */
@@ -310,6 +260,41 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	TILE (this)->actions[DOCUMENT_TILE_ACTION_SEND_TO] = action;
 
 	gtk_container_add (menu_ctnr, menu_item);
+
+	/* make "add/remove to favorites" action */
+
+	action = tile_action_new (TILE (this), user_docs_trigger, NULL, 0);
+	TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU] = action;
+
+	update_user_list_menu_item (this);
+
+	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* insert separator */
+
+	menu_item = gtk_separator_menu_item_new ();
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* make move to trash action */
+
+	action = tile_action_new (TILE (this), move_to_trash_trigger, _("Move to Trash"), 0);
+	TILE (this)->actions[DOCUMENT_TILE_ACTION_MOVE_TO_TRASH] = action;
+
+	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+	gtk_container_add (menu_ctnr, menu_item);
+
+	/* make delete action */
+
+	if (priv->delete_enabled)
+	{
+		action = tile_action_new (TILE (this), delete_trigger, _("Delete"), 0);
+		TILE (this)->actions[DOCUMENT_TILE_ACTION_DELETE] = action;
+
+		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		gtk_container_add (menu_ctnr, menu_item);
+	}
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
