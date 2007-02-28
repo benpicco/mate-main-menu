@@ -21,6 +21,7 @@
 #include "user-dirs-tile-table.h"
 
 #include <string.h>
+#include <glib/gi18n.h>
 
 #include "directory-tile.h"
 #include "libslab-utils.h"
@@ -145,10 +146,14 @@ update_store (LibSlabBookmarkFile *bm_file_old, LibSlabBookmarkFile *bm_file_new
 static GtkWidget *
 get_directory_tile (LibSlabBookmarkFile *bm_file, const gchar *uri)
 {
-	gchar *title;
+	gchar *title   = NULL;
 	gchar *path;
-	gchar *icon = NULL;
+	gchar *icon    = NULL;
 	gchar *uri_new = NULL;
+
+	gchar *buf;
+	gchar *tag_open_ptr  = NULL;
+	gchar *tag_close_ptr = NULL;
 
 	GtkWidget *tile;
 
@@ -182,13 +187,49 @@ get_directory_tile (LibSlabBookmarkFile *bm_file, const gchar *uri)
 		icon = "drive-harddisk";
 	else if (! strcmp (uri_new, "network:"))
 		icon = "network-workgroup";
+	else if (g_str_has_prefix (uri_new, "x-nautilus-search")) {
+		icon = "system-search";
+
+		path = g_build_filename (g_get_home_dir (), ".nautilus", "searches", & uri_new [21], NULL);
+
+		if (g_file_test (path, G_FILE_TEST_EXISTS)) {
+			g_file_get_contents (path, & buf, NULL, NULL);
+
+			if (buf) {
+				tag_open_ptr  = strstr (buf, "<text>");
+				tag_close_ptr = strstr (buf, "</text>");
+			}
+
+			if (tag_open_ptr && tag_close_ptr) {
+				tag_close_ptr [0] = '\0';
+
+				title = g_strdup_printf ("\"%s\"", & tag_open_ptr [6]);
+
+				tag_close_ptr [0] = 'a';
+			}
+			else
+				title = g_strdup (_("Search"));
+
+			g_free (buf);
+		}
+		else {
+			g_free (uri_new);
+			uri_new = NULL;
+		}
+
+		g_free (path);
+	}
 	else
 		/* do nothing */ ;
 
-	if (bm_file)
-		title = libslab_bookmark_file_get_title (bm_file, uri, NULL);
+	if (uri_new) {
+		if (! title && bm_file)
+			title = libslab_bookmark_file_get_title (bm_file, uri, NULL);
 
-	tile = directory_tile_new (uri_new, title, icon);
+		tile = directory_tile_new (uri_new, title, icon);
+	}
+	else
+		tile = NULL;
 
 	g_free (title);
 	g_free (uri_new);

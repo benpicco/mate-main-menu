@@ -3,6 +3,9 @@
 	* libslab/directory-tile.c:
 	Remove extra line separators in the context menu, BNC #240238.
 
+	* main-menu/src/user-dirs-tile-table.c:
+	Properly handle search bookmarks, BNC #246798.
+
 2007-02-26  Jim Krehl  <jimmyk@novell.com>
 	The commit merges in the "version-2" branch.  Many things have been
 	updated/changed for this version ...
