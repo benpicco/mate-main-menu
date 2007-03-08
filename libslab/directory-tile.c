@@ -148,6 +148,8 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 		NULL);
 
 	g_free (uri);
+	if (tooltip_text)
+		g_free (tooltip_text);
 
 	priv = DIRECTORY_TILE_GET_PRIVATE (this);
 	priv->basename    = g_strdup (basename);

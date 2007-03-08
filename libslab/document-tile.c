@@ -183,8 +183,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	document_tile_private_setup (this);
 
-	TILE (this)->actions = g_new0 (TileAction *, 6);
-	TILE (this)->n_actions = 6;
+	TILE (this)->actions = g_new0 (TileAction *, DOCUMENT_TILE_ACTION_NUM_OF_ACTIONS);
+	TILE (this)->n_actions = DOCUMENT_TILE_ACTION_NUM_OF_ACTIONS;
 
 	menu_ctnr = GTK_CONTAINER (TILE (this)->context_menu);
 

@@ -40,7 +40,6 @@ typedef struct {
 	GtkWidget *image;
 	GtkWidget *header;
 	GtkWidget *subheader;
-	gchar     *tooltip;
 } NameplateTile;
 
 typedef struct {

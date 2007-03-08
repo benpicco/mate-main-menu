@@ -396,10 +396,11 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	else
 		use_new_prefix = FALSE;
 
+	/* see if g-m-m is installed */
 	if(!use_new_prefix)
-		key = SLAB_USER_SPECIFIED_APPS_KEY;
+		key = SLAB_URGENT_CLOSE_KEY;
 	else
-		key = "/apps/main-menu/file-area/user_specified_apps";
+		key = "/apps/main-menu/urgent_close";
 
 	if ((list = get_slab_gconf_slist (key))) {
 		free_slab_gconf_slist_of_strings (list);
@@ -537,32 +538,35 @@ add_to_user_list (ApplicationTile *this)
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
 	GList *tiles;
 
-
 	tiles = libslab_get_user_app_uris ();
 	if (! g_list_find_custom (tiles, TILE (this)->uri, (GCompareFunc) libslab_strcmp)) {
-		tiles = g_list_append (tiles, TILE (this)->uri);
+		tiles = g_list_append (tiles, g_strdup (TILE (this)->uri));
 		libslab_save_app_uris (tiles);
 	}
 
 	priv->is_in_user_list = TRUE;
 
-	g_list_free (tiles);
+	if (tiles)
+		free_list_of_strings (tiles);
 }
 
 static void
 remove_from_user_list (ApplicationTile *this)
 {
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
-	GList *tiles;
-
+	GList *tiles, *item;
 
 	tiles = libslab_get_user_app_uris ();
-	tiles = g_list_remove_link (tiles, g_list_find_custom (tiles, TILE (this)->uri, (GCompareFunc) libslab_strcmp));
+	item = g_list_find_custom (tiles, TILE (this)->uri, (GCompareFunc) libslab_strcmp);
+	tiles = g_list_remove_link (tiles, item);
 	libslab_save_app_uris (tiles);
 
 	priv->is_in_user_list = FALSE;
 
-	g_list_free (tiles);
+	if (item)
+		free_list_of_strings (item);
+	if (tiles)
+		free_list_of_strings (tiles);
 }
 
 static void

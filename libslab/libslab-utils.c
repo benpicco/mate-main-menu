@@ -1001,6 +1001,8 @@ get_data_file_path (const gchar *filename, gboolean writeable)
 
 		if (g_file_test (path, G_FILE_TEST_EXISTS))
 			return path;
+
+		g_free (path);
 	}
 
 	sys_dirs = g_get_system_data_dirs ();

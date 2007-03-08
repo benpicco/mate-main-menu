@@ -249,6 +249,7 @@ main_menu_ui_new (PanelApplet *applet)
 
 	priv->main_menu_xml    = glade_xml_new (glade_xml_path, "slab-main-menu-window", NULL);
 	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
+	g_free (glade_xml_path);
 
 	create_panel_button      (this);
 	create_slab_window       (this);
@@ -1522,6 +1523,7 @@ slab_window_expose_cb (GtkWidget *widget, GdkEventExpose *event, gpointer user_d
 	cairo_set_source (cr, gradient);
 	cairo_fill_preserve (cr);
 
+	cairo_pattern_destroy (gradient);
 	cairo_destroy (cr);
 
 	return FALSE;

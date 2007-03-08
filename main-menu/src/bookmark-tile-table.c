@@ -254,6 +254,8 @@ update_monitor (BookmarkTileTable *this)
 
 		g_free (uri);
 	}
+	else
+		g_free (path);
 }
 
 static void

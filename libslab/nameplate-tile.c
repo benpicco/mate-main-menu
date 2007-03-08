@@ -117,8 +117,6 @@ nameplate_tile_constructor (GType type, guint n_param, GObjectConstructParam * p
 static void
 nameplate_tile_finalize (GObject * g_object)
 {
-	g_free (NAMEPLATE_TILE (g_object)->tooltip);
-
 	(*G_OBJECT_CLASS (nameplate_tile_parent_class)->finalize) (g_object);
 }
 
@@ -126,6 +124,7 @@ static void
 nameplate_tile_get_property (GObject * g_object, guint prop_id, GValue * value,
 	GParamSpec * param_spec)
 {
+	GtkTooltipsData *tooltip;
 	NameplateTile *np_tile = NAMEPLATE_TILE (g_object);
 
 	switch (prop_id)
@@ -142,7 +141,8 @@ nameplate_tile_get_property (GObject * g_object, guint prop_id, GValue * value,
 		g_value_set_object (value, np_tile->subheader);
 		break;
 	case PROP_NAMEPLATE_TOOLTIP:
-		g_value_set_string (value, np_tile->tooltip);
+		tooltip = gtk_tooltips_data_get (GTK_WIDGET (np_tile));
+		g_value_set_string (value, tooltip ? tooltip->tip_text : NULL);
 		break;
 
 	default:
@@ -158,8 +158,7 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 	NameplateTilePrivate *priv = NAMEPLATE_TILE_GET_PRIVATE (this);
 
 	GObject *widget_obj = NULL;
-	gchar   *tooltip    = NULL;
-
+	const gchar *tooltip = NULL;
 
 	switch (prop_id) {
 		case PROP_NAMEPLATE_IMAGE:
@@ -169,7 +168,7 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 			break;
 
 		case PROP_NAMEPLATE_TOOLTIP:
-			tooltip = g_value_dup_string (value);
+			tooltip = g_value_get_string (value);
 			break;
 
 		default:

@@ -1,3 +1,18 @@
+2007-03-08  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/bookmark-tile-table.c
+	* libslab/application-tile.c
+	* libslab/slab-gnome-util.c
+	* libslab/nameplate-tile.c
+	* libslab/slab-gnome-util.h
+	* libslab/nameplate-tile.h
+	* libslab/libslab-utils.c
+	* libslab/directory-tile.c
+	* libslab/document-tile.c
+	* libslab/document-tile.h:
+	Various memory leak and array bounds overwrite fixes.
+	Check properly for g-m-m with version-2 changes
+
 2007-02-28  Jim Krehl  <jimmyk@novell.com>
 	* libslab/document-tile.c
 	* libslab/directory-tile.c:
