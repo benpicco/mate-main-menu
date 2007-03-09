@@ -297,9 +297,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	/*Fixme - need to address the entire gconf key location issue */
 	/*Fixme - this is just a temporary stop gap                   */
 	gboolean use_new_prefix;
-	GSList *list;
-
-	GError *error = NULL;
+	gchar *testval;
 
 	if (! priv->desktop_item) {
 		priv->desktop_item = load_desktop_item_from_unknown (TILE (this)->uri);
@@ -398,12 +396,12 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 	/* see if g-m-m is installed */
 	if(!use_new_prefix)
-		key = SLAB_URGENT_CLOSE_KEY;
+		key = SLAB_APPLICATION_BROWSER_KEY;
 	else
-		key = "/apps/main-menu/urgent_close";
+		key = "/apps/main-menu/application_browser";
 
-	if ((list = get_slab_gconf_slist (key))) {
-		free_slab_gconf_slist_of_strings (list);
+	if ((testval = get_slab_gconf_string (key))) {
+		g_free (testval);
 		action = tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
 		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = action;
 
@@ -460,12 +458,6 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		actions [APPLICATION_TILE_ACTION_UNINSTALL_PACKAGE] = NULL;
 
 	priv->user_spec_monitor_handle = libslab_add_apps_monitor (apps_store_monitor_cb, this);
-
-	if (error) {
-		g_warning ("error monitoring %s [%s]\n", SLAB_USER_SPECIFIED_APPS_KEY, error->message);
-
-		g_error_free (error);
-	}
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 }
