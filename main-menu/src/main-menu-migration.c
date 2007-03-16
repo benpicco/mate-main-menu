@@ -29,21 +29,15 @@
 #include <glib/gstdio.h>
 #include <unistd.h>
 
-#include "libslab-utils.h"
-
-#if GLIB_CHECK_VERSION (2, 12, 0)
-#	define USE_G_BOOKMARK
-#else
-#	include "eggbookmarkfile.h"
+#if ! GLIB_CHECK_VERSION (2, 12, 0)
+#	include "bookmark-agent-libslab.h"
 #endif
 
-#define DEFAULT_USER_XDG_DIR     ".local/share"
-#define DEFAULT_GLOBAL_XDG_PATH  "/usr/local/share:/usr/share"
-#define TOP_CONFIG_DIR           PACKAGE
+#include "bookmark-agent.h"
+#include "libslab-utils.h"
+
 #define SYSTEM_BOOKMARK_FILENAME "system-items.xbel"
 #define APPS_BOOKMARK_FILENAME   "applications.xbel"
-#define DOCS_BOOKMARK_FILENAME   "documents.xbel"
-#define DIRS_BOOKMARK_FILENAME   "places.xbel"
 
 #define SYSTEM_ITEM_GCONF_KEY    "/desktop/gnome/applications/main-menu/system-area/system_item_list"
 #define HELP_ITEM_GCONF_KEY      "/desktop/gnome/applications/main-menu/system-area/help_item"
@@ -55,15 +49,12 @@
 
 #define LOGOUT_DESKTOP_ITEM      "gnome-session-kill.desktop"
 
-static gboolean get_main_menu_user_data_file_path (gchar **, const gchar *, gboolean);
-
 void
 migrate_system_gconf_to_bookmark_file ()
 {
-	gchar *bookmark_path;
-
-	LibSlabBookmarkFile  *bm_file;
-	gchar               **uris;
+	BookmarkAgent        *agent;
+	BookmarkStoreStatus   status;
+	BookmarkItem        **items;
 
 	gboolean need_migration;
 
@@ -74,6 +65,9 @@ migrate_system_gconf_to_bookmark_file ()
 	const gchar      *loc;
 	gchar            *uri;
 	const gchar      *name;
+
+	GBookmarkFile *bm_file;
+	gchar         *bm_path;
 
 	GList  *screensavers;
 	gchar  *exec_string;
@@ -87,245 +81,197 @@ migrate_system_gconf_to_bookmark_file ()
 	gint   i;
 
 
-	bookmark_path = libslab_get_system_item_store_path (TRUE);
+	agent = bookmark_agent_get_instance (BOOKMARK_STORE_SYSTEM);
+	g_object_get (G_OBJECT (agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & status, NULL);
 
-	if (g_file_test (bookmark_path, G_FILE_TEST_EXISTS)) {
-		bm_file = libslab_bookmark_file_new ();
+	if (status == BOOKMARK_STORE_USER) {
+		g_object_get (G_OBJECT (agent), BOOKMARK_AGENT_ITEMS_PROP, & items, NULL);
 
-		libslab_bookmark_file_load_from_file (bm_file, bookmark_path, & error);
-
-		if (error) {
-			libslab_handle_g_error (
-				& error, "%s: can't read system item store path [%s]\n",
-				G_STRFUNC, bookmark_path);
-		}
-		else {
-			uris = libslab_bookmark_file_get_uris (bm_file, NULL);
-
-			for (i = 0; uris && uris [i]; ++i) {
-				if (g_str_has_suffix (uris [i], "yelp.desktop"))
-					libslab_bookmark_file_set_title (bm_file, uris [i], _("Help"));
-				else if (g_str_has_suffix (uris [i], "gnome-session-logout.desktop"))
-					libslab_bookmark_file_set_title (bm_file, uris [i], _("Logout"));
-				else if (g_str_has_suffix (uris [i], "gnome-session-shutdown.desktop"))
-					libslab_bookmark_file_set_title (bm_file, uris [i], _("Shutdown"));
-				else
-					/* do nothing */ ;
+		for (i = 0; items && items [i]; ++i) {
+			if (g_str_has_suffix (items [i]->uri, "yelp.desktop") && ! items [i]->title) {
+				items [i]->title = g_strdup (_("Help"));
+				bookmark_agent_add_item (agent, items [i]);
 			}
-
-			libslab_bookmark_file_to_file (bm_file, bookmark_path, & error);
-
-			if (error)
-				libslab_handle_g_error (
-					& error, "%s: can't write system item store [%s]\n",
-					G_STRFUNC, bookmark_path);
-
-			g_strfreev (uris);
+			else if (g_str_has_suffix (items [i]->uri, "gnome-session-logout.desktop") && ! items [i]->title) {
+				items [i]->title = g_strdup (_("Logout"));
+				bookmark_agent_add_item (agent, items [i]);
+			}
+			else if (g_str_has_suffix (items [i]->uri, "gnome-session-shutdown.desktop")) {
+				items [i]->title = g_strdup (_("Shutdown"));
+				bookmark_agent_add_item (agent, items [i]);
+			}
 		}
-
-		libslab_bookmark_file_free (bm_file);
 
 		goto exit;
 	}
+	else if (status == BOOKMARK_STORE_DEFAULT_ONLY)
+		goto exit;
 
 	gconf_system_list = (GList *) libslab_get_gconf_value (SYSTEM_ITEM_GCONF_KEY);
 
-	if (gconf_system_list) {
-		need_migration = FALSE;
+	if (! gconf_system_list)
+		goto exit;
 
-		for (node_i = gconf_system_list, i = 0; ! need_migration && node_i; node_i = node_i->next, ++i)
-			need_migration |= ! (GPOINTER_TO_INT (node_i->data) == i);
+	need_migration = g_list_length (gconf_system_list) != 5;
 
-		if (need_migration) {
-			bm_file = libslab_bookmark_file_new ();
+	for (node_i = gconf_system_list, i = 0; ! need_migration && node_i; node_i = node_i->next, ++i)
+		need_migration |= ! (GPOINTER_TO_INT (node_i->data) == i);
 
-			for (node_i = gconf_system_list; node_i; node_i = node_i->next) {
-				system_tile_type = GPOINTER_TO_INT (node_i->data);
+	if (need_migration) {
+		bm_file = g_bookmark_file_new ();
 
-				ditem = NULL;
+		for (node_i = gconf_system_list; node_i; node_i = node_i->next) {
+			system_tile_type = GPOINTER_TO_INT (node_i->data);
 
-				if (system_tile_type == 0)
-					ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-						(gchar *) libslab_get_gconf_value (HELP_ITEM_GCONF_KEY));
-				else if (system_tile_type == 1)
-					ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-						(gchar *) libslab_get_gconf_value (CC_ITEM_GCONF_KEY));
-				else if (system_tile_type == 2)
-					ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-						(gchar *) libslab_get_gconf_value (PM_ITEM_GCONF_KEY));
-				else if (system_tile_type == 3) {
-					screensavers = libslab_get_gconf_value (LOCKSCREEN_GCONF_KEY);
+			ditem = NULL;
 
-					for (node_j = screensavers; node_j; node_j = node_j->next) {
-						exec_string = (gchar *) node_j->data;
+			if (system_tile_type == 0)
+				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_gconf_value (HELP_ITEM_GCONF_KEY));
+			else if (system_tile_type == 1)
+				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_gconf_value (CC_ITEM_GCONF_KEY));
+			else if (system_tile_type == 2)
+				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_gconf_value (PM_ITEM_GCONF_KEY));
+			else if (system_tile_type == 3) {
+				screensavers = libslab_get_gconf_value (LOCKSCREEN_GCONF_KEY);
 
-						g_shell_parse_argv (exec_string, NULL, & argv, NULL);
-			
-						cmd_path = g_find_program_in_path (argv [0]);
+				for (node_j = screensavers; node_j; node_j = node_j->next) {
+					exec_string = (gchar *) node_j->data;
 
-						if (cmd_path) {
-							ditem = gnome_desktop_item_new ();
+					g_shell_parse_argv (exec_string, NULL, & argv, NULL);
+		
+					cmd_path = g_find_program_in_path (argv [0]);
 
-							path = g_build_filename (
-								g_get_user_data_dir (), PACKAGE, "lockscreen.desktop", NULL);
+					if (cmd_path) {
+						ditem = gnome_desktop_item_new ();
 
-							gnome_desktop_item_set_location_file (ditem, path);
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_NAME, _("Lock Screen"));
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_ICON, _("gnome-lockscreen"));
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_EXEC, exec_string);
-							gnome_desktop_item_set_boolean (
-								ditem, GNOME_DESKTOP_ITEM_TERMINAL, FALSE);
-							gnome_desktop_item_set_entry_type (
-								ditem, GNOME_DESKTOP_ITEM_TYPE_APPLICATION);
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_ENCODING, "UTF-8");
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_CATEGORIES, "GNOME;Application;");
-							gnome_desktop_item_set_string (
-								ditem, GNOME_DESKTOP_ITEM_ONLY_SHOW_IN, "GNOME;");
+						path = g_build_filename (
+							g_get_user_data_dir (), PACKAGE, "lockscreen.desktop", NULL);
 
-							gnome_desktop_item_save (ditem, NULL, TRUE, NULL);
+						gnome_desktop_item_set_location_file (ditem, path);
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_NAME, _("Lock Screen"));
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_ICON, _("gnome-lockscreen"));
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_EXEC, exec_string);
+						gnome_desktop_item_set_boolean (
+							ditem, GNOME_DESKTOP_ITEM_TERMINAL, FALSE);
+						gnome_desktop_item_set_entry_type (
+							ditem, GNOME_DESKTOP_ITEM_TYPE_APPLICATION);
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_ENCODING, "UTF-8");
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_CATEGORIES, "GNOME;Application;");
+						gnome_desktop_item_set_string (
+							ditem, GNOME_DESKTOP_ITEM_ONLY_SHOW_IN, "GNOME;");
 
-							g_free (path);
+						gnome_desktop_item_save (ditem, NULL, TRUE, NULL);
 
-							break;
-						}
+						g_free (path);
 
-						g_strfreev (argv);
-						g_free (cmd_path);
+						break;
 					}
 
-					for (node_j = screensavers; node_j; node_j = node_j->next)
-						g_free (node_j->data);
-
-					g_list_free (screensavers);
+					g_strfreev (argv);
+					g_free (cmd_path);
 				}
-				else if (system_tile_type == 4)
-					ditem = libslab_gnome_desktop_item_new_from_unknown_id (LOGOUT_DESKTOP_ITEM);
+
+				for (node_j = screensavers; node_j; node_j = node_j->next)
+					g_free (node_j->data);
+
+				g_list_free (screensavers);
+			}
+			else if (system_tile_type == 4)
+				ditem = libslab_gnome_desktop_item_new_from_unknown_id (LOGOUT_DESKTOP_ITEM);
+			else
+				ditem = NULL;
+
+			if (ditem) {
+				loc = gnome_desktop_item_get_location (ditem);
+
+				if (g_path_is_absolute (loc))
+					uri = g_filename_to_uri (loc, NULL, NULL);
 				else
-					ditem = NULL;
+					uri = g_strdup (loc);
+			}
+			else
+				uri = NULL;
 
-				if (ditem) {
-					loc = gnome_desktop_item_get_location (ditem);
+			if (uri) {
+				g_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
+				g_bookmark_file_add_application (
+					bm_file, uri,
+					gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
+					gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
 
-					if (g_path_is_absolute (loc))
-						uri = g_filename_to_uri (loc, NULL, NULL);
-					else
-						uri = g_strdup (loc);
-				}
-				else
-					uri = NULL;
+				name = gnome_desktop_item_get_string (ditem, GNOME_DESKTOP_ITEM_NAME);
 
-				if (uri) {
-					libslab_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
-					libslab_bookmark_file_add_application (
-						bm_file, uri,
-						gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
-						gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
-
-					name = gnome_desktop_item_get_string (ditem, GNOME_DESKTOP_ITEM_NAME);
-
-					if (! strcmp (name, "Yelp"))
-						libslab_bookmark_file_set_title (bm_file, uri, _("Help"));
-
-					if (! strcmp (name, "Session Logout Dialog"))
-						libslab_bookmark_file_set_title (bm_file, uri, _("Logout"));
-
-					if (! strcmp (name, "System Shutdown Dialog"))
-						libslab_bookmark_file_set_title (bm_file, uri, _("Shutdown"));
-				}
-
-				g_free (uri);
-
-				if (ditem)
-					gnome_desktop_item_unref (ditem);
+				if (! strcmp (name, "Yelp"))
+					g_bookmark_file_set_title (bm_file, uri, _("Help"));
+				else if (! strcmp (name, "Session Logout Dialog"))
+					g_bookmark_file_set_title (bm_file, uri, _("Logout"));
+				else if (! strcmp (name, "System Shutdown Dialog"))
+					g_bookmark_file_set_title (bm_file, uri, _("Shutdown"));
 			}
 
-			libslab_bookmark_file_to_file (bm_file, bookmark_path, & error);
+			g_free (uri);
 
-			if (error)
-				libslab_handle_g_error (
-					& error,
-					"%s: cannot save migrated system item list [%s]",
-					G_STRFUNC, bookmark_path);
-
-			libslab_bookmark_file_free (bm_file);
+			if (ditem)
+				gnome_desktop_item_unref (ditem);
 		}
+
+		bm_path = g_build_filename (g_get_user_data_dir (), PACKAGE, SYSTEM_BOOKMARK_FILENAME, NULL);
+
+		if (! g_bookmark_file_to_file (bm_file, bm_path, & error))
+			libslab_handle_g_error (& error, "%s: cannot save store [%s]", G_STRFUNC, bm_path);
+
+		g_free (bm_path);
+		g_bookmark_file_free (bm_file);
 	}
 
 	g_list_free (gconf_system_list);
 
 exit:
 
-	g_free (bookmark_path);
+	g_object_unref (agent);
 }
 
 void
 migrate_user_apps_gconf_to_bookmark_file ()
 {
-	gchar *bookmark_path;
-	gchar *bookmark_path_cp_dest;
-
-	gchar *contents;
-
-	gboolean need_migration;
+	BookmarkAgent *agent;
+	BookmarkStoreStatus status;
 
 	GList *user_apps_list;
-
-#ifdef USE_G_BOOKMARK
-	GBookmarkFile *bm_file;
-#else
-	EggBookmarkFile *bm_file;
-#endif
 
 	GnomeDesktopItem *ditem;
 	const gchar      *loc;
 	gchar            *uri;
+
+	GBookmarkFile *bm_file;
+	gchar         *bm_path;
 
 	GError *error = NULL;
 
 	GList *node;
 
 
-	need_migration = ! get_main_menu_user_data_file_path (& bookmark_path, APPS_BOOKMARK_FILENAME, TRUE);
+	agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_APPS);
+	g_object_get (G_OBJECT (agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & status, NULL);
+	g_object_unref (G_OBJECT (agent));
 
-	if (! need_migration)
-		goto exit;
+	if (status == BOOKMARK_STORE_USER || status == BOOKMARK_STORE_DEFAULT_ONLY)
+		return;
 
 	user_apps_list = (GList *) libslab_get_gconf_value (USER_APPS_GCONF_KEY);
 
-	if (! user_apps_list) {
-		bookmark_path         = libslab_get_user_apps_store_path (FALSE);
-		bookmark_path_cp_dest = libslab_get_user_apps_store_path (TRUE);
+	if (! user_apps_list)
+		return;
 
-		g_file_get_contents (bookmark_path, & contents, NULL, & error);
-
-		if (error)
-			libslab_handle_g_error (
-				& error, "%s: can't read user apps store path [%s]\n",
-				G_STRFUNC, bookmark_path);
-		else
-			g_file_set_contents (bookmark_path_cp_dest, contents, -1, & error);
-
-		if (error)
-			libslab_handle_g_error (
-				& error, "%s: can't save user apps store path [%s]\n",
-				G_STRFUNC, bookmark_path_cp_dest);
-
-		g_free (contents);
-		g_free (bookmark_path_cp_dest);
-
-		goto exit;
-	}
-
-#ifdef USE_G_BOOKMARK
 	bm_file = g_bookmark_file_new ();
-#else
-	bm_file = egg_bookmark_file_new ();
-#endif
 
 	for (node = user_apps_list; node; node = node->next) {
 		ditem = libslab_gnome_desktop_item_new_from_unknown_id ((gchar *) node->data);
@@ -342,50 +288,29 @@ migrate_user_apps_gconf_to_bookmark_file ()
 			uri = NULL;
 
 		if (uri) {
-#ifdef USE_G_BOOKMARK
 			g_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
 			g_bookmark_file_add_application (
 				bm_file, uri,
 				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
 				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
-#else
-			egg_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
-			egg_bookmark_file_add_application (
-				bm_file, uri,
-				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
-				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
-#endif
 		}
 
 		g_free (uri);
 
 		if (ditem)
 			gnome_desktop_item_unref (ditem);
+
+		g_free (node->data);
 	}
 
-#ifdef USE_G_BOOKMARK
-	g_bookmark_file_to_file (bm_file, bookmark_path, & error);
-#else
-	egg_bookmark_file_to_file (bm_file, bookmark_path, & error);
-#endif
+	bm_path = g_build_filename (g_get_user_data_dir (), PACKAGE, APPS_BOOKMARK_FILENAME, NULL);
 
-	if (error)
-		libslab_handle_g_error (
-			& error,
-			"%s: cannot save migrated user apps list [%s]",
-			G_STRFUNC, bookmark_path);
+	if (! g_bookmark_file_to_file (bm_file, bm_path, & error))
+		libslab_handle_g_error (& error, "%s: cannot save store [%s]", G_STRFUNC, bm_path);
 
-#ifdef USE_G_BOOKMARK
+	g_free (bm_path);
 	g_bookmark_file_free (bm_file);
-#else
-	egg_bookmark_file_free (bm_file);
-#endif
-
 	g_list_free (user_apps_list);
-
-exit:
-
-	g_free (bookmark_path);
 }
 
 void
@@ -448,142 +373,4 @@ migrate_showable_file_types ()
 exit:
 
 	g_free (mig_lock_path);
-}
-
-static gboolean
-get_main_menu_user_data_file_path (gchar **path_out, const gchar *filename, gboolean user_only)
-{
-	GList *user_dirs   = NULL;
-	GList *global_dirs = NULL;
-
-	GList *potential_user_dirs = NULL;
-
-	gchar **dirs;
-	gchar  *path;
-	gchar  *dir;
-
-	gboolean need_mkdir;
-	gboolean user_file_exists = FALSE;
-
-	GList *node;
-	gint   i;
-
-
-	path = (gchar *) g_getenv ("XDG_DATA_HOME");
-
-	if (path && g_file_test (path, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR)) {
-		dir = g_build_filename (path, TOP_CONFIG_DIR, NULL);
-
-		if (g_file_test (path, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-			user_dirs = g_list_append (user_dirs, dir);
-
-		potential_user_dirs = g_list_append (potential_user_dirs, g_strdup (dir));
-	}
-
-	path = g_build_filename (g_get_home_dir (), DEFAULT_USER_XDG_DIR, NULL);
-	dir  = g_build_filename (path, TOP_CONFIG_DIR, NULL);
-
-	if (g_file_test (path, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-		user_dirs = g_list_append (user_dirs, dir);
-
-	potential_user_dirs = g_list_append (potential_user_dirs, g_strdup (dir));
-
-	g_free (path);
-
-	if (! user_only) {
-		dirs = g_strsplit (g_getenv ("XDG_DATA_DIRS"), ":", 0);
-
-		if (! dirs [0]) {
-			g_strfreev (dirs);
-			dirs = g_strsplit (DEFAULT_GLOBAL_XDG_PATH, ":", 0);
-		}
-
-		for (i = 0; dirs [i]; ++i) {
-			if (g_file_test (dirs [i], G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR)) {
-				path = g_build_filename (dirs [i], TOP_CONFIG_DIR, NULL);
-				global_dirs = g_list_append (global_dirs, path);
-			}
-		}
-
-		g_strfreev (dirs);
-	}
-
-	path = NULL;
-
-	for (node = user_dirs; ! path && node; node = node->next) {
-		dir = (gchar *) node->data;
-
-		if (filename) {
-			path = g_build_filename (dir, filename, NULL);
-
-			if (! g_file_test (path, G_FILE_TEST_EXISTS)) {
-				g_free (path);
-				path = NULL;
-			}
-			else
-				user_file_exists = TRUE;
-		}
-		else
-			if (g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-				path = g_strdup (dir);
-	}
-
-	for (node = global_dirs; ! path && node; node = node->next) {
-		dir = (gchar *) node->data;
-
-		if (filename) {
-			path = g_build_filename (dir, filename, NULL);
-
-			if (! g_file_test (path, G_FILE_TEST_EXISTS)) {
-				g_free (path);
-				path = NULL;
-			}
-		}
-		else
-			if (g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-				path = g_strdup (dir);
-	}
-
-	if (! path) {
-		dir = NULL;
-
-		need_mkdir = TRUE;
-
-		for (node = user_dirs; need_mkdir && node; node = node->next) {
-			dir = (gchar *) node->data;
-
-			if (g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-				need_mkdir = FALSE;
-		}
-
-		if (need_mkdir) {
-			if (user_dirs)
-				dir = (gchar *) user_dirs->data;
-			else
-				dir = (gchar *) potential_user_dirs->data;
-
-			g_mkdir_with_parents (dir, 0700);
-		}
-
-		if (filename)
-			path = g_build_filename (dir, filename, NULL);
-		else
-			path = g_strdup (dir);
-	}
-
-	for (node = user_dirs; node; node = node->next)
-		g_free (node->data);
-	g_list_free (user_dirs);
-
-	for (node = potential_user_dirs; node; node = node->next)
-		g_free (node->data);
-	g_list_free (potential_user_dirs);
-
-	for (node = global_dirs; node; node = node->next)
-		g_free (node->data);
-	g_list_free (global_dirs);
-
-	*path_out = path;
-
-	return user_file_exists;
 }

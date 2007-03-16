@@ -1,3 +1,47 @@
+2007-03-16  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/user-apps-tile-table.c
+	* main-menu/src/user-apps-tile-table.h
+	* main-menu/src/system-tile-table.c
+	* main-menu/src/system-tile-table.h
+	* main-menu/src/user-docs-tile-table.c
+	* main-menu/src/user-docs-tile-table.h
+	* main-menu/src/user-dirs-tile-table.c
+	* main-menu/src/user-dirs-tile-table.h
+	* main-menu/src/recent-apps-tile-table.c
+	* main-menu/src/recent-apps-tile-table.h
+	* main-menu/src/bookmark-tile-table.c
+	* main-menu/src/bookmark-tile-table.h
+	* main-menu/src/recent-docs-tile-table.c
+	* main-menu/src/recent-docs-tile-table.h
+	* main-menu/src/tile-table.c 
+	* main-menu/src/tile-table.h:
+	Simplified the TileTable object to make it more generic.  Stop loading
+	tiles after the table limit has been reached, this is to prevent delays
+	associated with large ~/.recently-used{,.xbel} files.  Made the
+	TileTable more responsive to user changes, instead of waiting for those
+	changes to be written to the file system.
+
+	* main-menu/src/main-menu-migration.c
+	* main-menu/etc/documents.xbel
+	* libslab/application-tile.c
+	* libslab/libslab-utils.c
+	* libslab/libslab-utils.h
+	* libslab/libslab-bookmarkfile.c
+	* libslab/system-tile.c
+	* libslab/libslab-bookmarkfile.h
+	* libslab/eggbookmarkfile.c
+	* libslab/eggbookmarkfile.h
+	* libslab/bookmark-agent.c
+	* libslab/bookmark-agent.h
+	* libslab/document-tile.c
+	* libslab/bookmark-agent-libslab.h:
+	Created a BookmarkAgent class to manage various bookmark stores, i.e.
+	XBEL stores, ~/.recently-used, and ~/.gtk-bookmarks.  Now all bookmark
+	store manipulation is centralized and coordinated.  The rank of a
+	bookmark is now independent of serialized order.  Now the bookmark
+	group is used to store it's placement within a table.
+
 2007-03-15  Scott Reeves  <sreeves@novell.com>
 	* libslab/slab-section.c
 	* libslab/app-shell.c:

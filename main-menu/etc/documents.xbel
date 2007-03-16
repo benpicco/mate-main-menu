@@ -7,6 +7,9 @@
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/vnd.oasis.opendocument.spreadsheet"/>
+        <bookmark:groups>
+          <bookmark:group>rank-0</bookmark:group>
+        </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="OpenOffice.org Calc" exec="oocalc %U" timestamp="1171584528" count="1"/>
         </bookmark:applications>
@@ -17,6 +20,9 @@
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/vnd.oasis.opendocument.text"/>
+        <bookmark:groups>
+          <bookmark:group>rank-1</bookmark:group>
+        </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="OpenOffice.org Writer" exec="oowriter %U" timestamp="1171584528" count="1"/>
         </bookmark:applications>

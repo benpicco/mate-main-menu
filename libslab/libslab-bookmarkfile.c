@@ -1,4 +1,4 @@
-/* eggbookmarkfile.c: parsing and building desktop bookmarks
+/* gbookmarkfile.c: parsing and building desktop bookmarks
  *
  * Copyright (C) 2005-2006 Emmanuele Bassi
  *
@@ -17,9 +17,9 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
+
+#include "libslab-bookmarkfile.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,17 +31,11 @@
 #include <stdarg.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/time.h>
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
 #endif
-
 #include <glib.h>
-#include <glib/gstdio.h>
-#include <glib/gmarkup.h>
 #include <glib/gi18n.h>
-
-#include "eggbookmarkfile.h"
 
 /* XBEL 1.0 standard entities */
 #define XBEL_VERSION		"1.0"
@@ -74,12 +68,6 @@
 #define XBEL_YES_VALUE		"yes"
 #define XBEL_NO_VALUE		"no"
 
-/* date and times inside XBEL entities should be expressed using ISO 8601
- * formats; we use the extended date and time format, relative to UTC
- */
-#define ISO_8601_FORMAT "%Y-%m-%dT%H:%M:%SZ" /* strftime(3) format */
-#define ISO_8601_LEN 	21
-
 /* Desktop bookmark spec entities */
 #define BOOKMARK_METADATA_OWNER 	"http://freedesktop.org"
 
@@ -101,10 +89,10 @@
 #define BOOKMARK_TYPE_ATTRIBUTE 	"type"
 
 /* Shared MIME Info entities */
-#define MIME_NAMESPACE_NAME	"mime"
-#define MIME_NAMESPACE_URI	"http://www.freedesktop.org/standards/shared-mime-info"
-#define MIME_TYPE_ELEMENT	"mime-type"
-#define MIME_TYPE_ATTRIBUTE	"type"
+#define MIME_NAMESPACE_NAME 		"mime"
+#define MIME_NAMESPACE_URI 		"http://www.freedesktop.org/standards/shared-mime-info"
+#define MIME_TYPE_ELEMENT 		"mime-type"
+#define MIME_TYPE_ATTRIBUTE 		"type"
 
 
 typedef struct _BookmarkAppInfo  BookmarkAppInfo;
@@ -151,7 +139,7 @@ struct _BookmarkItem
   BookmarkMetadata *metadata;
 };
 
-struct _EggBookmarkFile
+struct _LibSlabBookmarkFile
 {
   gchar *title;
   gchar *description;
@@ -184,228 +172,32 @@ enum
   STATE_FINISHED
 };
 
-#ifdef DO_DEBUG
-/* readable names for parser stata; keep synced with the enum above */
-static const gchar *stata[] = {
-  "started",
-  "root",
-  "bookmark",
-  "title",
-  "desc",
-  "info",
-  "metadata",
-  "applications",
-  "application",
-  "groups",
-  "group",
-  "mime",
-  "icon",
-  "finished",
-  NULL
-};
-#endif
-
-#ifdef DO_PROFILE
-/* add here sections you wish to profile */
-static struct {
-  const gchar *section;
-  GTimer *timer;
-  gboolean started;
-} benchmarks[] = {
-  { "load_from_file",     NULL, 0 },
-  { "load_from_data",     NULL, 0 },
-  { "parse_data",         NULL, 0 },
-  { "is_element_full",    NULL, 0 },
-  { "parse_bookmark",     NULL, 0 },
-  { "timestamp-to-iso",   NULL, 0 },
-  { "timestamp-from-iso", NULL, 0 },
-  { "parse_mime",         NULL, 0 },
-  { "parse_application",  NULL, 0 },
-  { "build_item",         NULL, 0 },
-  { "add-item",           NULL, 0 },
-};
-
-static gint n_benchmarks = G_N_ELEMENTS (benchmarks);
-
-G_LOCK_DEFINE (n_depth);
-static gint n_depth = 0;
-
-G_LOCK_DEFINE (main_timer);
-static GTimer *main_timer = NULL;
-
-static void do_profile_start   (const gchar *section, const gchar *fmt, ...);
-static void do_profile_end     (const gchar *section, const gchar *fmt, ...);
-static void do_profile_vprintf (const gchar *section, const gchar *fmt, va_list args);
-
-static void
-do_profile_start (const gchar *section,
-		  const gchar *fmt,
-		  ...)
-{
-  gint i;
-
-  g_assert (section != NULL);
-  
-  for (i = 0; i < n_benchmarks; i++)
-    if (0 == strcmp (section, benchmarks[i].section))
-      {
-        if (!benchmarks[i].started)
-          {
-            va_list args;
-            
-            benchmarks[i].started = TRUE;
-	    benchmarks[i].timer = g_timer_new ();
-
-            if (!main_timer)
-              {
-                G_LOCK (main_timer);
-                main_timer = g_timer_new ();
-                G_UNLOCK (main_timer);
-              }
-
-            va_start (args, fmt);
-            do_profile_vprintf (section, fmt, args);
-            va_end (args);
-        
-            G_LOCK (n_depth);
-            n_depth += 1;
-            G_UNLOCK (n_depth);
-          }
-        else
-          g_error ("E: Benchmark for section '%s' already started.\n",
-                   section);
-
-        break;
-      }
-}
-
-static void
-do_profile_end (const gchar *section,
-                const gchar *fmt,
-                ...)
-{
-  gint i;
-
-  g_assert (section != NULL);
-  
-  for (i = 0; i < n_benchmarks; i++)
-    if (0 == strcmp (section, benchmarks[i].section))
-      {
-        if (benchmarks[i].started)
-          {
-            va_list args;
-
-	    g_timer_stop (benchmarks[i].timer);
-            benchmarks[i].started = FALSE;
-
-	    va_start (args, fmt);
-	    do_profile_vprintf (section, fmt, args);
-	    va_end (args);
-	    
-	    g_timer_destroy (benchmarks[i].timer);
-	    benchmarks[i].timer = NULL;
-            
-            if (n_depth > 0)
-              {
-                G_LOCK (n_depth);
-                n_depth -= 1;
-                G_UNLOCK (n_depth);
-                
-                if (n_depth == 0)
-                  {
-                    G_LOCK (main_timer);
-                    g_timer_destroy (main_timer);
-                    G_UNLOCK (main_timer);
-                  }
-              }
-            else
-              g_warning ("W: You've screwed up with depth levels.\n");
-          }
-        else
-          g_error ("E: Benchmark for section '%s' not started.\n",
-                   section);
-        
-        break;
-      }
-}
-
-static void
-do_profile_vprintf (const gchar *section,
-                    const gchar *fmt,
-                    va_list      args)
-{
-  gint i;
- 
-  g_assert (section);
-  
-  if (n_depth < 0)
-    {
-      g_warning ("W: You've screwed up with depth levels.\n");
-      
-      G_LOCK (n_depth);
-      n_depth = 0;
-      G_UNLOCK (n_depth);
-    }
-  
-  fprintf (stderr, "P:"); /* make parsing for profile messages easier */
-  for (i = 0; i < n_depth; i++)
-    fputc (' ', stderr);
-  
-  for (i = 0; i < n_benchmarks; i++)
-    if (0 == strcmp (section, benchmarks[i].section))
-      {
-        gdouble sec, total;
-        
-        total = g_timer_elapsed (main_timer, NULL);
-        
-	if (benchmarks[i].started)
-          {
-            fprintf (stderr, "[%15.20s:000.000000 (%03.6f)] - ",
-                             benchmarks[i].section,
-			     total);
-            break;
-          }
-        
-        sec = g_timer_elapsed (benchmarks[i].timer, NULL);
-        
-        fprintf (stderr, "[%15.20s:%03.6f (%03.6f)] - ",
-                         benchmarks[i].section,
-                         sec,
-                         total);
-        
-        break;
-      }
-  
-  g_vfprintf (stderr, fmt, args);
-  
-  fputc ('\n', stderr);
-}
-#endif /* DO_PROFILE */
-
-static void          egg_bookmark_file_init        (EggBookmarkFile  *bookmark);
-static void          egg_bookmark_file_clear       (EggBookmarkFile  *bookmark);
-static gboolean      egg_bookmark_file_parse       (EggBookmarkFile  *bookmark,
-						    const gchar      *buffer,
-						    gsize             length,
-						    GError          **error);
-static gchar *       egg_bookmark_file_dump        (EggBookmarkFile  *bookmark,
-						    gsize            *length,
-						    GError          **error);
-static BookmarkItem *egg_bookmark_file_lookup_item (EggBookmarkFile  *bookmark,
-						    const gchar      *uri);
-static void          egg_bookmark_file_add_item    (EggBookmarkFile  *bookmark,
-						    BookmarkItem     *item,
-						    GError          **error);
+static void          libslab_bookmark_file_init        (LibSlabBookmarkFile  *bookmark);
+static void          libslab_bookmark_file_clear       (LibSlabBookmarkFile  *bookmark);
+static gboolean      libslab_bookmark_file_parse       (LibSlabBookmarkFile  *bookmark,
+						  const gchar    *buffer,
+						  gsize           length,
+						  GError        **error);
+static gchar *       libslab_bookmark_file_dump        (LibSlabBookmarkFile  *bookmark,
+						  gsize          *length,
+						  GError        **error);
+static BookmarkItem *libslab_bookmark_file_lookup_item (LibSlabBookmarkFile  *bookmark,
+						  const gchar    *uri);
+static void          libslab_bookmark_file_add_item    (LibSlabBookmarkFile  *bookmark,
+						  BookmarkItem   *item,
+						  GError        **error);
 						       
 static time_t  timestamp_from_iso8601 (const gchar *iso_date);
 static gchar * timestamp_to_iso8601   (time_t       timestamp);
+static time_t mktime_utc (struct tm *tm);
+static gboolean libslab_time_val_from_iso8601 (const gchar *iso_date, GTimeVal    *time_);
+static gchar * libslab_time_val_to_iso8601  (GTimeVal *time_);
 
 /********************************
- * BookmarkAppInfo           *
+ * BookmarkAppInfo              *
  *                              *
  * Application metadata storage *
  ********************************/
-
 static BookmarkAppInfo *
 bookmark_app_info_new (const gchar *name)
 {
@@ -442,21 +234,33 @@ static gchar *
 bookmark_app_info_dump (BookmarkAppInfo *app_info)
 {
   gchar *retval;
+  gchar *name, *exec;
+
+  g_assert (app_info != NULL);
+
+  if (app_info->count == 0)
+    return NULL;
+
+  name = g_markup_escape_text (app_info->name, -1);
+  exec = g_markup_escape_text (app_info->exec, -1);
  
   retval = g_strdup_printf ("          <%s:%s %s=\"%s\" %s=\"%s\" %s=\"%ld\" %s=\"%u\"/>\n",
                             BOOKMARK_NAMESPACE_NAME,
                             BOOKMARK_APPLICATION_ELEMENT,
-                            BOOKMARK_NAME_ATTRIBUTE, app_info->name,
-                            BOOKMARK_EXEC_ATTRIBUTE, app_info->exec,
+                            BOOKMARK_NAME_ATTRIBUTE, name,
+                            BOOKMARK_EXEC_ATTRIBUTE, exec,
                             BOOKMARK_TIMESTAMP_ATTRIBUTE, (time_t) app_info->stamp,
                             BOOKMARK_COUNT_ATTRIBUTE, app_info->count);
+
+  g_free (name);
+  g_free (exec);
 
   return retval;
 }
 
 
 /***********************
- * BookmarkMetadata *
+ * BookmarkMetadata    *
  *                     *
  * Metadata storage    *
  ***********************/
@@ -557,8 +361,9 @@ bookmark_metadata_dump (BookmarkMetadata *metadata)
       
       for (l = g_list_last (metadata->groups); l != NULL; l = l->prev)
         {
-          gchar *group_name = (gchar *) l->data;
-          
+          gchar *group_name;
+
+	  group_name = g_markup_escape_text ((gchar *) l->data, -1);
           g_string_append_printf (retval,
           			  "          <%s:%s>%s</%s:%s>\n",
           			  BOOKMARK_NAMESPACE_NAME,
@@ -566,6 +371,7 @@ bookmark_metadata_dump (BookmarkMetadata *metadata)
           			  group_name,
           			  BOOKMARK_NAMESPACE_NAME,
           			  BOOKMARK_GROUP_ELEMENT);
+	  g_free (group_name);
         }
       
       /* close groups container */
@@ -637,7 +443,7 @@ bookmark_metadata_dump (BookmarkMetadata *metadata)
 }
 
 /******************************************************
- * BookmarkItem                                    *
+ * BookmarkItem                                       *
  *                                                    *
  * Storage for a single bookmark item inside the list *
  ******************************************************/
@@ -696,7 +502,7 @@ bookmark_item_dump (BookmarkItem *item)
    */
   if (!item->metadata || !item->metadata->applications)
     {
-      g_warning ("Item for URI '%s' has no registered application: skipping.\n", item->uri);
+      g_warning ("Item for URI '%s' has no registered applications: skipping.\n", item->uri);
       return NULL;
     }
   
@@ -706,22 +512,7 @@ bookmark_item_dump (BookmarkItem *item)
   modified = timestamp_to_iso8601 (item->modified);
   visited = timestamp_to_iso8601 (item->visited);
 
-  escaped_uri = g_markup_escape_text (item->uri, strlen (item->uri));
-  
-#ifdef DO_DEBUG
-  g_print ("(in %s)\n"
-	   "item = '%s' ->\n"
-	   "  {\n"
-	   "    added:    '%s' (%ld),\n"
-	   "    modified: '%s' (%ld),\n"
-	   "    visited:  '%s' (%ld)\n"
-	   "  }\n",
-	   G_STRFUNC,
-	   item->uri,
-	   added, item->added,
-	   modified, item->modified,
-	   visited, item->visited);
-#endif /* DO_DEBUG */
+  escaped_uri = g_markup_escape_text (item->uri, -1);
   
   g_string_append_printf (retval,
                           "  <%s %s=\"%s\" %s=\"%s\" %s=\"%s\" %s=\"%s\">\n",
@@ -739,7 +530,7 @@ bookmark_item_dump (BookmarkItem *item)
     {
       gchar *escaped_title;
       
-      escaped_title = g_markup_escape_text (item->title, strlen (item->title));
+      escaped_title = g_markup_escape_text (item->title, -1);
       g_string_append_printf (retval,
     			      "    <%s>%s</%s>\n",
     			      XBEL_TITLE_ELEMENT,
@@ -752,11 +543,11 @@ bookmark_item_dump (BookmarkItem *item)
     {
       gchar *escaped_desc;
       
-      escaped_desc = g_markup_escape_text (item->description, strlen (item->description));
+      escaped_desc = g_markup_escape_text (item->description, -1);
       g_string_append_printf (retval,
     			      "    <%s>%s</%s>\n",
     			      XBEL_DESC_ELEMENT,
-    			      item->description,
+    			      escaped_desc,
     			      XBEL_DESC_ELEMENT);
       g_free (escaped_desc);
     }
@@ -798,11 +589,11 @@ bookmark_item_lookup_app_info (BookmarkItem *item,
 }
 
 /*************************
- *    EggBookmarkFile    *
+ *    LibSlabBookmarkFile    *
  *************************/
  
 static void
-egg_bookmark_file_init (EggBookmarkFile *bookmark)
+libslab_bookmark_file_init (LibSlabBookmarkFile *bookmark)
 {
   bookmark->title = NULL;
   bookmark->description = NULL;
@@ -815,7 +606,7 @@ egg_bookmark_file_init (EggBookmarkFile *bookmark)
 }
 
 static void
-egg_bookmark_file_clear (EggBookmarkFile *bookmark)
+libslab_bookmark_file_clear (LibSlabBookmarkFile *bookmark)
 {
   g_free (bookmark->title);
   g_free (bookmark->description);
@@ -844,7 +635,7 @@ struct _ParseData
   
   GHashTable *namespaces;
   
-  EggBookmarkFile *bookmark_file;
+  LibSlabBookmarkFile *bookmark_file;
   BookmarkItem *current_item;
 };
 
@@ -936,23 +727,8 @@ parse_bookmark_element (GMarkupParseContext  *context,
   if (visited)
     item->visited = timestamp_from_iso8601 (visited);
 
-#ifdef DO_DEBUG
-  g_print ("(in %s)\n"
-	   "item = '%s' ->\n"
-	   "  {\n"
-	   "    added:    '%s' (%ld),\n"
-	   "    modified: '%s' (%ld),\n"
-	   "    visited:  '%s' (%ld)\n"
-	   "  }\n",
-	   G_STRFUNC,
-	   item->uri,
-	   added, item->added,
-	   modified, item->modified,
-	   visited, item->visited);
-#endif /* DO_DEBUG */
-  
   add_error = NULL;
-  egg_bookmark_file_add_item (parse_data->bookmark_file,
+  libslab_bookmark_file_add_item (parse_data->bookmark_file,
   			      item,
   			      &add_error);
   if (add_error)
@@ -1196,12 +972,6 @@ map_namespace_to_name (ParseData    *parse_data,
           
           namespace_name = g_strdup (p);
           namespace_uri = g_strdup (attribute_values[i]);
-#ifdef DO_DEBUG
-	  g_print ("D: (%s) namespace_name: %s - namespace_uri: %s\n",
-		   G_STRFUNC,
-		   namespace_name,
-		   namespace_uri);
-#endif
           
           g_hash_table_replace (parse_data->namespaces,
                                 namespace_name,
@@ -1223,9 +993,8 @@ is_element_full (ParseData   *parse_data,
                  const gchar *element,
                  const gchar  sep)
 {
-  gchar *ns_uri, *ns_name;
-  gchar *element_name, *resolved;
-  gchar *p, *s;
+  gchar *ns_uri, *ns_name, *s, *resolved;
+  const gchar *p, *element_name;
   gboolean retval;
  
   g_assert (parse_data != NULL);
@@ -1243,17 +1012,19 @@ is_element_full (ParseData   *parse_data,
    * namespace has been set, just do a plain comparison between @full_element
    * and @element.
    */
-  p = g_utf8_strchr (element_full, -1, ':');
+  p = strchr (element_full, ':');
   if (p)
-    ns_name = g_strndup (element_full, p - element_full);
+    {
+      ns_name = g_strndup (element_full, p - element_full);
+      element_name = g_utf8_next_char (p);
+    }
   else
-    ns_name = g_strdup ("default");
+    {
+      ns_name = g_strdup ("default");
+      element_name = element_full;
+    }
   
-#if DO_DEBUG
-  g_print ("ns_name: %s - ", ns_name);
-#endif
-  
-  ns_uri = g_strdup (g_hash_table_lookup (parse_data->namespaces, ns_name));
+  ns_uri = g_hash_table_lookup (parse_data->namespaces, ns_name);  
   if (!ns_uri)
     {
       /* no default namespace found */
@@ -1261,30 +1032,12 @@ is_element_full (ParseData   *parse_data,
       
       return (0 == strcmp (element_full, element));
     }
-#if DO_DEBUG
-  g_print ("ns_uri: %s\n", ns_uri);
-#endif
-  
-  p = g_utf8_next_char (p);
-  element_name = g_strdup (p);
   
   resolved = g_strdup_printf ("%s%c%s", ns_uri, sep, element_name);
   s = g_strdup_printf ("%s%c%s", namespace, sep, element);
   retval = (0 == strcmp (resolved, s));
-
-#ifdef DO_DEBUG
-  g_print ("D: full: '%s' - resolved: '%s'\n"
-           "D: compare: '%s'\n"
-	   "D: result: '%s'\n",
-	   element_full,
-	   resolved,
-	   s,
-	   (retval ? "<true>" : "<false>"));
-#endif
   
   g_free (ns_name);
-  g_free (ns_uri);
-  g_free (element_name);
   g_free (resolved);
   g_free (s);
   
@@ -1304,12 +1057,6 @@ start_element_raw_cb (GMarkupParseContext *context,
 {
   ParseData *parse_data = (ParseData *) user_data;
 
-#ifdef DO_DEBUG
-  g_print ("* state: %.15s\t element: %s\n",
-  	   stata[parse_data->state],
-  	   element_name);
-#endif
-  
   /* we must check for namespace declarations first
    * 
    * XXX - we could speed up things by checking for namespace declarations
@@ -1322,7 +1069,18 @@ start_element_raw_cb (GMarkupParseContext *context,
     {
     case STATE_STARTED:
       if (IS_ELEMENT (parse_data, element_name, XBEL_ROOT_ELEMENT))
-        parse_data->state = STATE_ROOT;   
+        {
+          const gchar *attr;
+          gint i;
+          
+          i = 0;
+          for (attr = attribute_names[i]; attr; attr = attribute_names[++i])
+            {
+              if ((IS_ATTRIBUTE (attr, XBEL_VERSION_ATTRIBUTE)) &&
+                  (0 == strcmp (attribute_values[i], XBEL_VERSION)))
+                parse_data->state = STATE_ROOT;
+            }
+	}
       else
         g_set_error (error, G_MARKUP_ERROR,
 		     G_MARKUP_ERROR_INVALID_CONTENT,
@@ -1402,6 +1160,20 @@ start_element_raw_cb (GMarkupParseContext *context,
         parse_data->state = STATE_GROUPS;
       else if (IS_ELEMENT_NS (parse_data, element_name, BOOKMARK_NAMESPACE_URI, BOOKMARK_PRIVATE_ELEMENT))
         parse_data->current_item->metadata->is_private = TRUE;
+      else if (IS_ELEMENT_NS (parse_data, element_name, BOOKMARK_NAMESPACE_URI, BOOKMARK_ICON_ELEMENT))
+        {
+          GError *inner_error = NULL;
+          
+	  parse_data->state = STATE_ICON;
+          
+          parse_icon_element (context,
+          		      parse_data,
+          		      attribute_names,
+          		      attribute_values,
+          		      &inner_error);
+          if (inner_error)
+            g_propagate_error (error, inner_error);
+        }
       else if (IS_ELEMENT_NS (parse_data, element_name, MIME_NAMESPACE_URI, MIME_TYPE_ELEMENT))
         {
           GError *inner_error = NULL;
@@ -1453,14 +1225,12 @@ start_element_raw_cb (GMarkupParseContext *context,
         	     G_MARKUP_ERROR_INVALID_CONTENT,
         	     _("Unexpected tag '%s', tag '%s' expected"),
         	     element_name,
-        	     BOOKMARK_APPLICATION_ELEMENT);
+        	     BOOKMARK_GROUP_ELEMENT);
       break;
     case STATE_ICON:
       if (IS_ELEMENT_NS (parse_data, element_name, BOOKMARK_NAMESPACE_URI, BOOKMARK_ICON_ELEMENT))
         {
           GError *inner_error = NULL;
-          
-          parse_data->state = STATE_ICON;
           
           parse_icon_element (context,
           		      parse_data,
@@ -1478,14 +1248,7 @@ start_element_raw_cb (GMarkupParseContext *context,
         	     XBEL_METADATA_ELEMENT);
       break;
     default:
-#ifdef DO_DEBUG
-      g_set_error (error, G_MARKUP_ERROR,
-		   G_MARKUP_ERROR_INVALID_CONTENT,
-          	   "Invalid state '%s'",
-          	   stata[parse_data->state]);
-#else
       g_assert_not_reached ();
-#endif
       break;
     }
 }
@@ -1497,12 +1260,6 @@ end_element_raw_cb (GMarkupParseContext *context,
                     GError             **error)
 {
   ParseData *parse_data = (ParseData *) user_data;
-
-#ifdef DO_DEBUG
-  g_print ("* state: %.15s\t element: %s\n",
-  	   stata[parse_data->state],
-  	   element_name);
-#endif
   
   if (IS_ELEMENT (parse_data, element_name, XBEL_ROOT_ELEMENT))
     parse_data->state = STATE_FINISHED;
@@ -1601,50 +1358,24 @@ text_raw_cb (GMarkupParseContext *context,
     case STATE_ICON:
       break;
     default:
-#ifdef DO_DEBUG
-      g_warning ("* invalid state '%s'", stata[parse_data->state]);
-#else
       g_assert_not_reached ();
-#endif
       break;
     }
   
   g_free (payload);
 }
 
-#ifdef DO_DEBUG 
-static void
-error_cb (GMarkupParseContext *context,
-          GError              *error,
-          gpointer             user_data)
-{
-  ParseData *parse_data = (ParseData *) user_data;
-  
-  g_warning ("* error:\n"
-             "*  state: '%s'\n"
-             "*  current_item: '%s'\n"
-             "* error message: %s\n",
-             stata[parse_data->state],
-             (parse_data->current_item ? parse_data->current_item->uri : "<null>"),
-             error->message);
-}
-#endif
-
-static GMarkupParser markup_parser =
+static const GMarkupParser markup_parser =
 {
   start_element_raw_cb, /* start_element */
   end_element_raw_cb,   /* end_element */
   text_raw_cb,          /* text */
   NULL,                 /* passthrough */
-#ifdef DO_DEBUG
-  error_cb              /* error */
-#else
   NULL
-#endif
 };
 
 static gboolean
-egg_bookmark_file_parse (EggBookmarkFile  *bookmark,
+libslab_bookmark_file_parse (LibSlabBookmarkFile  *bookmark,
 			 const gchar      *buffer,
 			 gsize             length,
 			 GError          **error)
@@ -1662,10 +1393,6 @@ egg_bookmark_file_parse (EggBookmarkFile  *bookmark,
   if (length == -1)
     length = strlen (buffer);
 
-#ifdef DO_PROFILE
-  do_profile_start ("parse_data", "start parsing data");
-#endif
-  
   parse_data = parse_data_new ();
   parse_data->bookmark_file = bookmark;
   
@@ -1682,10 +1409,7 @@ egg_bookmark_file_parse (EggBookmarkFile  *bookmark,
   if (!retval)
     {
       g_propagate_error (error, parse_error);
-
-#ifdef DO_PROFILE
-      do_profile_end ("parse_data", "error while parsing data");
-#endif
+      
       return FALSE;
     }
   
@@ -1694,27 +1418,19 @@ egg_bookmark_file_parse (EggBookmarkFile  *bookmark,
   if (!retval)
     {
       g_propagate_error (error, end_error);
-
-#ifdef DO_PROFILE
-      do_profile_end ("parse_data", "error while releasing parser context");
-#endif
       
       return FALSE;
     }
   
   g_markup_parse_context_free (context);
   
-#ifdef DO_PROFILE
-      do_profile_end ("parse_data", "done parsing data");
-#endif
-  
   return TRUE;
 }
 
 static gchar *
-egg_bookmark_file_dump (EggBookmarkFile  *bookmark,
-			gsize            *length,
-			GError          **error)
+libslab_bookmark_file_dump (LibSlabBookmarkFile  *bookmark,
+		      gsize          *length,
+		      GError        **error)
 {
   GString *retval;
   GList *l;
@@ -1810,143 +1526,189 @@ out:
 static gchar *
 timestamp_to_iso8601 (time_t timestamp)
 {
-  gchar *retval;
+  GTimeVal stamp;
 
   if (timestamp == (time_t) -1)
-    timestamp = time (NULL);
+    g_get_current_time (&stamp);
+  else
+    {
+      stamp.tv_sec = timestamp;
+      stamp.tv_usec = 0;
+    }
 
-  retval = g_new0 (gchar, ISO_8601_LEN + 1);
-	
-  strftime (retval, ISO_8601_LEN,
-	    ISO_8601_FORMAT,
-	    gmtime (&timestamp));
-  
-  return retval;
+  return libslab_time_val_to_iso8601 (&stamp);
 }
 
-#ifndef HAVE_TIMEGM
-/* used to compute the day of the year */
-static const int days_before[] =
+static time_t
+timestamp_from_iso8601 (const gchar *iso_date)
 {
-  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
-};
-#endif /* HAVE_TIMEGM */
+  GTimeVal stamp;
 
+  if (!libslab_time_val_from_iso8601 (iso_date, &stamp))
+    return (time_t) -1;
+
+  return (time_t) stamp.tv_sec;
+}
+
+/* converts a broken down date representation, relative to UTC, to
+ * a timestamp; it uses timegm() if it's available.
+ */
 static time_t
 mktime_utc (struct tm *tm)
 {
   time_t retval;
+  
+#ifndef HAVE_TIMEGM
+  static const gint days_before[] =
+  {
+    0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
+  };
+#endif
 
-#ifdef HAVE_TIMEGM
-  retval = timegm (tm);
-#else
+#ifndef HAVE_TIMEGM
   if (tm->tm_mon < 0 || tm->tm_mon > 11)
     return (time_t) -1;
 
   retval = (tm->tm_year - 70) * 365;
   retval += (tm->tm_year - 68) / 4;
-  retval += days_before[tm->tm_mon] + tm->tm_mday;
+  retval += days_before[tm->tm_mon] + tm->tm_mday - 1;
   
-  if (tm->tm_year % 4 == 2 && tm->tm_mon < 2)
-    retval--;
+  if (tm->tm_year % 4 == 0 && tm->tm_mon < 2)
+    retval -= 1;
   
   retval = ((((retval * 24) + tm->tm_hour) * 60) + tm->tm_min) * 60 + tm->tm_sec;
-#endif /* HAVE_TIMEGM */
+#else
+  retval = timegm (tm);
+#endif /* !HAVE_TIMEGM */
   
   return retval;
 }
 
-/* converts back an ISO 8601 compliant string to a Unix timestamp.
- * WARNING: the returned timestamp is relative to UTC; you must
- * convert it to the user's timezone before displaying it.
+/**
+ * g_time_val_from_iso8601:
+ * @iso_date: a ISO 8601 encoded date string
+ * @time_: a #GTimeVal
  *
- * taken from libsoup/soup-date.c
+ * Converts a string containing an ISO 8601 encoded date and time
+ * to a #GTimeVal and puts it into @time_.
+ *
+ * Return value: %TRUE if the conversion was successful.
+ *
+ * Since: 2.12
  */
-static time_t
-timestamp_from_iso8601 (const gchar *iso_date)
+static gboolean
+libslab_time_val_from_iso8601 (const gchar *iso_date,
+			 GTimeVal    *time_)
 {
   struct tm tm;
   long val;
-  time_t retval;
+
+  g_return_val_if_fail (iso_date != NULL, FALSE);
+  g_return_val_if_fail (time_ != NULL, FALSE);
 
   val = strtoul (iso_date, (char **)&iso_date, 10);
   if (*iso_date == '-')
     {
-      // YYYY-MM-DD
+      /* YYYY-MM-DD */
       tm.tm_year = val - 1900;
       iso_date++;
       tm.tm_mon = strtoul (iso_date, (char **)&iso_date, 10) - 1;
       
       if (*iso_date++ != '-')
-       	return (time_t) -1;
+       	return FALSE;
       
       tm.tm_mday = strtoul (iso_date, (char **)&iso_date, 10);
     }
   else
     {
-      // YYYYMMDD
+      /* YYYYMMDD */
       tm.tm_mday = val % 100;
       tm.tm_mon = (val % 10000) / 100 - 1;
       tm.tm_year = val / 10000 - 1900;
     }
 
   if (*iso_date++ != 'T')
-    return (time_t) -1;
+    return FALSE;
   
   val = strtoul (iso_date, (char **)&iso_date, 10);
   if (*iso_date == ':')
     {
-      // hh:mm:ss
+      /* hh:mm:ss */
       tm.tm_hour = val;
       iso_date++;
       tm.tm_min = strtoul (iso_date, (char **)&iso_date, 10);
       
       if (*iso_date++ != ':')
-	return (time_t) -1;
+        return FALSE;
       
       tm.tm_sec = strtoul (iso_date, (char **)&iso_date, 10);
     }
   else
     {
-      // hhmmss
+      /* hhmmss */
       tm.tm_sec = val % 100;
       tm.tm_min = (val % 10000) / 100;
       tm.tm_hour = val / 10000;
     }
 
-  retval = mktime_utc (&tm);
+  time_->tv_sec = mktime_utc (&tm);
+  time_->tv_usec = 1;
   
   if (*iso_date == '.')
-    strtoul (iso_date + 1, (char **)&iso_date, 10);
+    time_->tv_usec = strtoul (iso_date + 1, (char **)&iso_date, 10);
     
   if (*iso_date == '+' || *iso_date == '-')
     {
       gint sign = (*iso_date == '+') ? -1 : 1;
       
-      val = strtoul (iso_date + 1, (char **)&iso_date, 10);
+      val = 60 * strtoul (iso_date + 1, (char **)&iso_date, 10);
       
       if (*iso_date == ':')
 	val = 60 * val + strtoul (iso_date + 1, NULL, 10);
       else
         val = 60 * (val / 100) + (val % 100);
 
-      retval += sign * val;
+      time_->tv_sec += (time_t) (val * sign);
     }
 
+  return TRUE;
+}
+
+/**
+ * g_time_val_to_iso8601:
+ * @time_: a #GTimeVal
+ * 
+ * Converts @time_ into a ISO 8601 encoded string, relative to the
+ * Coordinated Universal Time (UTC).
+ *
+ * Return value: a newly allocated string containing a ISO 8601 date
+ *
+ * Since: 2.12
+ */
+static gchar *
+libslab_time_val_to_iso8601 (GTimeVal *time_)
+{
+  gchar *retval;
+
+  g_return_val_if_fail (time_->tv_usec >= 0 && time_->tv_usec < G_USEC_PER_SEC, NULL);
+
+#define ISO_8601_LEN 	21
+#define ISO_8601_FORMAT "%Y-%m-%dT%H:%M:%SZ"
+  retval = g_new0 (gchar, ISO_8601_LEN + 1);
+  
+  strftime (retval, ISO_8601_LEN,
+	    ISO_8601_FORMAT,
+	    gmtime (&(time_->tv_sec)));
+  
   return retval;
 }
 
 
 
 GQuark
-egg_bookmark_file_error_quark (void)
+libslab_bookmark_file_error_quark (void)
 {
-  static GQuark error_quark = 0;
-
-  if (G_UNLIKELY (error_quark == 0))
-    error_quark = g_quark_from_static_string ("egg-bookmark-file-error-quark");
-
-  return error_quark;
+  return g_quark_from_static_string ("egg-bookmark-file-error-quark");
 }
 
 
@@ -1956,69 +1718,69 @@ egg_bookmark_file_error_quark (void)
  ********************/
 
 /**
- * egg_bookmark_file_new:
+ * libslab_bookmark_file_new:
  *
- * Creates a new empty #EggBookmarkFile object.
+ * Creates a new empty #LibSlabBookmarkFile object.
  *
- * Use egg_bookmark_file_load_from_file(), egg_bookmark_file_load_from_data()
- * or egg_bookmark_file_load_from_data_dirs() to read an existing bookmark
+ * Use libslab_bookmark_file_load_from_file(), libslab_bookmark_file_load_from_data()
+ * or libslab_bookmark_file_load_from_data_dirs() to read an existing bookmark
  * file.
  *
- * Return value: an empty #EggBookmarkFile
+ * Return value: an empty #LibSlabBookmarkFile
  *
  * Since: 2.12
  */
-EggBookmarkFile *
-egg_bookmark_file_new (void)
+LibSlabBookmarkFile *
+libslab_bookmark_file_new (void)
 {
-  EggBookmarkFile *bookmark;
+  LibSlabBookmarkFile *bookmark;
   
-  bookmark = g_new (EggBookmarkFile, 1);
+  bookmark = g_new (LibSlabBookmarkFile, 1);
   
-  egg_bookmark_file_init (bookmark);
+  libslab_bookmark_file_init (bookmark);
   
   return bookmark;
 }
 
 /**
- * egg_bookmark_file_free:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_free:
+ * @bookmark: a #LibSlabBookmarkFile
  *
- * Frees a #EggBookmarkFile.
+ * Frees a #LibSlabBookmarkFile.
  *
  * Since: 2.12
  */
 void
-egg_bookmark_file_free (EggBookmarkFile *bookmark)
+libslab_bookmark_file_free (LibSlabBookmarkFile *bookmark)
 {
   if (!bookmark)
     return;
   
-  egg_bookmark_file_clear (bookmark);
+  libslab_bookmark_file_clear (bookmark);
   
   g_free (bookmark);  
 }
 
 /**
- * egg_bookmark_file_load_from_data:
- * @bookmark: an empty #EggBookmarkFile struct
+ * libslab_bookmark_file_load_from_data:
+ * @bookmark: an empty #LibSlabBookmarkFile struct
  * @data: desktop bookmarks loaded in memory
  * @length: the length of @data in bytes
  * @error: return location for a #GError, or %NULL
  *
- * Loads a bookmark file from memory into an empty #EggBookmarkFile
+ * Loads a bookmark file from memory into an empty #LibSlabBookmarkFile
  * structure.  If the object cannot be created then @error is set to a
- * #EggBookmarkFileError.
+ * #LibSlabBookmarkFileError.
  *
  * Return value: %TRUE if a desktop bookmark could be loaded.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_load_from_data (EggBookmarkFile  *bookmark,
-				  const gchar      *data,
-				  gsize             length,
-				  GError          **error)
+libslab_bookmark_file_load_from_data (LibSlabBookmarkFile  *bookmark,
+				const gchar    *data,
+				gsize           length,
+				GError        **error)
 {
   GError *parse_error;
   gboolean retval;
@@ -2030,54 +1792,42 @@ egg_bookmark_file_load_from_data (EggBookmarkFile  *bookmark,
   if (length == (gsize) -1)
     length = strlen (data);
 
-#ifdef DO_PROFILE
-  do_profile_start ("load_from_data", "start loading from data");
-#endif
-  
   if (bookmark->items)
     {
-      egg_bookmark_file_clear (bookmark);
-      egg_bookmark_file_init (bookmark);
+      libslab_bookmark_file_clear (bookmark);
+      libslab_bookmark_file_init (bookmark);
     }
   
   parse_error = NULL;
-  retval = egg_bookmark_file_parse (bookmark, data, length, &parse_error);
+  retval = libslab_bookmark_file_parse (bookmark, data, length, &parse_error);
   if (!retval)
     {
       g_propagate_error (error, parse_error);
       
-#ifdef DO_PROFILE
-      do_profile_end ("load_from_data", "error while loading from data");
-#endif
-      
       return FALSE;
     }
-  
-#ifdef DO_PROFILE
-  do_profile_end ("load_from_data", "done loading from data");
-#endif
   
   return TRUE;
 }
 
 /**
- * egg_bookmark_file_load_from_file:
- * @bookmark: an empty #EggBookmarkFile struct
+ * libslab_bookmark_file_load_from_file:
+ * @bookmark: an empty #LibSlabBookmarkFile struct
  * @filename: the path of a filename to load, in the GLib file name encoding
  * @error: return location for a #GError, or %NULL
  *
- * Loads a desktop bookmark file into an empty #EggBookmarkFile structure.
+ * Loads a desktop bookmark file into an empty #LibSlabBookmarkFile structure.
  * If the file could not be loaded then @error is set to either a #GFileError
- * or #EggBookmarkFileError.
+ * or #LibSlabBookmarkFileError.
  *
  * Return value: %TRUE if a desktop bookmark file could be loaded
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_load_from_file (EggBookmarkFile  *bookmark,
-				  const gchar      *filename,
-				  GError          **error)
+libslab_bookmark_file_load_from_file (LibSlabBookmarkFile  *bookmark,
+				const gchar    *filename,
+				GError        **error)
 {
   gchar *buffer;
   gsize len;
@@ -2086,10 +1836,6 @@ egg_bookmark_file_load_from_file (EggBookmarkFile  *bookmark,
 	
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (filename != NULL, FALSE);
-
-#ifdef DO_PROFILE
-  do_profile_start ("load_from_file", "start loading from file '%s'", filename);
-#endif
 
   read_error = NULL;
   g_file_get_contents (filename, &buffer, &len, &read_error);
@@ -2101,10 +1847,10 @@ egg_bookmark_file_load_from_file (EggBookmarkFile  *bookmark,
     }
   
   read_error = NULL;
-  retval = egg_bookmark_file_load_from_data (bookmark,
-					     buffer,
-					     len,
-					     &read_error);
+  retval = libslab_bookmark_file_load_from_data (bookmark,
+					   buffer,
+					   len,
+					   &read_error);
   if (read_error)
     {
       g_propagate_error (error, read_error);
@@ -2115,10 +1861,6 @@ egg_bookmark_file_load_from_file (EggBookmarkFile  *bookmark,
     }
 
   g_free (buffer);
-
-#ifdef DO_PROFILE
-  do_profile_end ("load_from_file", "done loading from file '%s'", filename);
-#endif
 
   return retval;
 }
@@ -2182,9 +1924,9 @@ find_file_in_data_dirs (const gchar   *file,
 
   if (!path)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-                   EGG_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND,
-                   _("No valid bookmark file was be found in data dirs"));
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+                   LIBSLAB_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND,
+                   _("No valid bookmark file found in data dirs"));
       
       return NULL;
     }
@@ -2194,8 +1936,8 @@ find_file_in_data_dirs (const gchar   *file,
 
 
 /**
- * egg_bookmark_file_load_from_data_dirs:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_load_from_data_dirs:
+ * @bookmark: a #LibSlabBookmarkFile
  * @file: a relative path to a filename to open and parse
  * @full_path: return location for a string containing the full path
  *   of the file, or %NULL
@@ -2205,17 +1947,17 @@ find_file_in_data_dirs (const gchar   *file,
  * paths returned from g_get_user_data_dir() and g_get_system_data_dirs(), 
  * loads the file into @bookmark and returns the file's full path in 
  * @full_path.  If the file could not be loaded then an %error is
- * set to either a #GFileError or #GBookmarkFileError.
+ * set to either a #GFileError or #LibSlabBookmarkFileError.
  *
  * Return value: %TRUE if a key file could be loaded, %FALSE othewise
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_load_from_data_dirs (EggBookmarkFile  *bookmark,
-				       const gchar      *file,
-				       gchar           **full_path,
-				       GError          **error)
+libslab_bookmark_file_load_from_data_dirs (LibSlabBookmarkFile  *bookmark,
+				     const gchar    *file,
+				     gchar         **full_path,
+				     GError        **error)
 {
   GError *file_error = NULL;
   gchar **all_data_dirs, **data_dirs;
@@ -2254,9 +1996,9 @@ egg_bookmark_file_load_from_data_dirs (EggBookmarkFile  *bookmark,
  	  break;
         }
 
-      found_file = egg_bookmark_file_load_from_file (bookmark,
-      						     output_path,
-      						     &file_error);
+      found_file = libslab_bookmark_file_load_from_file (bookmark,
+      						   output_path,
+      						   &file_error);
       if (file_error)
         {
 	  g_propagate_error (error, file_error);
@@ -2276,29 +2018,29 @@ egg_bookmark_file_load_from_data_dirs (EggBookmarkFile  *bookmark,
 
 
 /**
- * egg_bookmark_file_to_data:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_to_data:
+ * @bookmark: a #LibSlabBookmarkFile
  * @length: return location for the length of the returned string, or %NULL
  * @error: return location for a #GError, or %NULL
  *
  * This function outputs @bookmark as a string.
  *
  * Return value: a newly allocated string holding
- *   the contents of the #EggBookmarkFile
+ *   the contents of the #LibSlabBookmarkFile
  *
  * Since: 2.12
  */
 gchar *
-egg_bookmark_file_to_data (EggBookmarkFile  *bookmark,
-			   gsize            *length,
-			   GError          **error)
+libslab_bookmark_file_to_data (LibSlabBookmarkFile  *bookmark,
+			 gsize          *length,
+			 GError        **error)
 {
   GError *write_error = NULL;
   gchar *retval;
   
   g_return_val_if_fail (bookmark != NULL, NULL);
   
-  retval = egg_bookmark_file_dump (bookmark, length, &write_error);
+  retval = libslab_bookmark_file_dump (bookmark, length, &write_error);
   if (write_error)
     {
       g_propagate_error (error, write_error);
@@ -2310,8 +2052,8 @@ egg_bookmark_file_to_data (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_to_file:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_to_file:
+ * @bookmark: a #LibSlabBookmarkFile
  * @filename: path of the output file
  * @error: return location for a #GError, or %NULL
  *
@@ -2323,9 +2065,9 @@ egg_bookmark_file_to_data (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_to_file (EggBookmarkFile  *bookmark,
-			   const gchar      *filename,
-			   GError          **error)
+libslab_bookmark_file_to_file (LibSlabBookmarkFile  *bookmark,
+			 const gchar    *filename,
+			 GError        **error)
 {
   gchar *data;
   GError *data_error, *write_error;
@@ -2336,7 +2078,7 @@ egg_bookmark_file_to_file (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (filename != NULL, FALSE);
   
   data_error = NULL;
-  data = egg_bookmark_file_to_data (bookmark, &len, &data_error);
+  data = libslab_bookmark_file_to_data (bookmark, &len, &data_error);
   if (data_error)
     {
       g_propagate_error (error, data_error);
@@ -2361,19 +2103,19 @@ egg_bookmark_file_to_file (EggBookmarkFile  *bookmark,
 }
 
 static BookmarkItem *
-egg_bookmark_file_lookup_item (EggBookmarkFile *bookmark,
-			       const gchar     *uri)
+libslab_bookmark_file_lookup_item (LibSlabBookmarkFile *bookmark,
+			     const gchar   *uri)
 {
-  g_assert (bookmark != NULL);
+  g_assert (bookmark != NULL && uri != NULL);
   
   return g_hash_table_lookup (bookmark->items_by_uri, uri);
 }
 
 /* this function adds a new item to the list */
 static void
-egg_bookmark_file_add_item (EggBookmarkFile  *bookmark,
-			    BookmarkItem  *item,
-			    GError          **error)
+libslab_bookmark_file_add_item (LibSlabBookmarkFile  *bookmark,
+			  BookmarkItem   *item,
+			  GError        **error)
 {
   g_assert (bookmark != NULL);
   g_assert (item != NULL);
@@ -2381,10 +2123,10 @@ egg_bookmark_file_add_item (EggBookmarkFile  *bookmark,
   /* this should never happen; and if it does, then we are
    * screwing up something big time.
    */
-  if (G_UNLIKELY (egg_bookmark_file_has_item (bookmark, item->uri)))
+  if (G_UNLIKELY (libslab_bookmark_file_has_item (bookmark, item->uri)))
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_DUPLICATE_URI,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_URI,
 		   _("A bookmark for URI '%s' already exists"),
 		   item->uri);
       return;
@@ -2404,45 +2146,49 @@ egg_bookmark_file_add_item (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_remove_item:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_remove_item:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Removes the bookmark for @uri from the bookmark file @bookmark.
  *
+ * Return value: %TRUE if the bookmark was removed successfully.
+ * 
  * Since: 2.12
  */
-void
-egg_bookmark_file_remove_item (EggBookmarkFile  *bookmark,
-			       const gchar      *uri,
-			       GError          **error)
+gboolean
+libslab_bookmark_file_remove_item (LibSlabBookmarkFile  *bookmark,
+			     const gchar    *uri,
+			     GError        **error)
 {
   BookmarkItem *item;
   
-  g_return_if_fail (bookmark != NULL);
-  g_return_if_fail (uri != NULL);
+  g_return_val_if_fail (bookmark != NULL, FALSE);
+  g_return_val_if_fail (uri != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
-      return;	 
+      return FALSE;
     }
 
   bookmark->items = g_list_remove (bookmark->items, item);
   g_hash_table_remove (bookmark->items_by_uri, item->uri);  
   
   bookmark_item_free (item);
+
+  return TRUE;
 }
 
 /**
- * egg_bookmark_file_has_item:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_has_item:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  *
  * Looks whether the desktop bookmark has an item with its URI set to @uri.
@@ -2452,8 +2198,8 @@ egg_bookmark_file_remove_item (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_has_item (EggBookmarkFile *bookmark,
-			    const gchar     *uri)
+libslab_bookmark_file_has_item (LibSlabBookmarkFile *bookmark,
+			  const gchar   *uri)
 {
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
@@ -2462,8 +2208,8 @@ egg_bookmark_file_has_item (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_uris:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_uris:
+ * @bookmark: a #LibSlabBookmarkFile
  * @length: return location for the number of returned URIs, or %NULL
  *
  * Returns all URIs of the bookmarks in the bookmark file @bookmark.
@@ -2476,8 +2222,8 @@ egg_bookmark_file_has_item (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 gchar **
-egg_bookmark_file_get_uris (EggBookmarkFile *bookmark,
-			    gsize           *length)
+libslab_bookmark_file_get_uris (LibSlabBookmarkFile *bookmark,
+			  gsize         *length)
 {
   GList *l;
   gchar **uris;
@@ -2488,9 +2234,7 @@ egg_bookmark_file_get_uris (EggBookmarkFile *bookmark,
   n_items = g_list_length (bookmark->items); 
   uris = g_new0 (gchar *, n_items + 1);
   
-  for (l = g_list_last (bookmark->items), i = 0;
-       l != NULL;
-       l = l->prev)
+  for (l = g_list_last (bookmark->items), i = 0; l != NULL; l = l->prev)
     {
       BookmarkItem *item = (BookmarkItem *) l->data;
       
@@ -2507,8 +2251,8 @@ egg_bookmark_file_get_uris (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_title:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_title:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI or %NULL
  * @title: a UTF-8 encoded string
  *
@@ -2522,42 +2266,38 @@ egg_bookmark_file_get_uris (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_title (EggBookmarkFile *bookmark,
-			     const gchar     *uri,
-			     const gchar     *title)
+libslab_bookmark_file_set_title (LibSlabBookmarkFile *bookmark,
+			   const gchar   *uri,
+			   const gchar   *title)
 {
   g_return_if_fail (bookmark != NULL);
   
   if (!uri)
     {
       g_free (bookmark->title);
-      
-      if (title && title[0] != '\0')
-        bookmark->title = g_strdup (title);
+      bookmark->title = g_strdup (title);
     }
   else
     {
       BookmarkItem *item;
       
-      item = egg_bookmark_file_lookup_item (bookmark, uri);
+      item = libslab_bookmark_file_lookup_item (bookmark, uri);
       if (!item)
         {
           item = bookmark_item_new (uri);
-          egg_bookmark_file_add_item (bookmark, item, NULL);
+          libslab_bookmark_file_add_item (bookmark, item, NULL);
         }
       
       g_free (item->title);
-      
-      if (title && title[0] != '\0')
-        item->title = g_strdup (title);
+      item->title = g_strdup (title);
       
       item->modified = time (NULL);
     }
 }
 
 /**
- * egg_bookmark_file_get_title:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_title:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI or %NULL
  * @error: return location for a #GError, or %NULL
  *
@@ -2566,7 +2306,7 @@ egg_bookmark_file_set_title (EggBookmarkFile *bookmark,
  * If @uri is %NULL, the title of @bookmark is returned.
  *
  * In the event the URI cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a newly allocated string or %NULL if the specified
  *   URI cannot be found.
@@ -2574,9 +2314,9 @@ egg_bookmark_file_set_title (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 gchar *
-egg_bookmark_file_get_title (EggBookmarkFile  *bookmark,
-			     const gchar      *uri,
-			     GError          **error)
+libslab_bookmark_file_get_title (LibSlabBookmarkFile  *bookmark,
+			   const gchar    *uri,
+			   GError        **error)
 {
   BookmarkItem *item;
   
@@ -2585,11 +2325,11 @@ egg_bookmark_file_get_title (EggBookmarkFile  *bookmark,
   if (!uri)
     return g_strdup (bookmark->title);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return NULL;
@@ -2599,8 +2339,8 @@ egg_bookmark_file_get_title (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_description:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_description:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI or %NULL
  * @description: a string
  *
@@ -2613,49 +2353,45 @@ egg_bookmark_file_get_title (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_description (EggBookmarkFile *bookmark,
-				   const gchar     *uri,
-				   const gchar     *description)
+libslab_bookmark_file_set_description (LibSlabBookmarkFile *bookmark,
+				 const gchar   *uri,
+				 const gchar   *description)
 {
   g_return_if_fail (bookmark != NULL);
 
   if (!uri)
     {
-      g_free (bookmark->description);
-      
-      if (description && description[0] != '\0')
-        bookmark->description = g_strdup (description);
+      g_free (bookmark->description); 
+      bookmark->description = g_strdup (description);
     }
   else
     {
       BookmarkItem *item;
       
-      item = egg_bookmark_file_lookup_item (bookmark, uri);
+      item = libslab_bookmark_file_lookup_item (bookmark, uri);
       if (!item)
         {
           item = bookmark_item_new (uri);
-          egg_bookmark_file_add_item (bookmark, item, NULL);
+          libslab_bookmark_file_add_item (bookmark, item, NULL);
         }
       
       g_free (item->description);
-      
-      if (description && description[0] != '\0')
-        item->description = g_strdup (description);
+      item->description = g_strdup (description);
       
       item->modified = time (NULL);
     }
 }
 
 /**
- * egg_bookmark_file_get_description:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_description:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Retrieves the description of the bookmark for @uri.
  *
  * In the event the URI cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a newly allocated string or %NULL if the specified
  *   URI cannot be found.
@@ -2663,9 +2399,9 @@ egg_bookmark_file_set_description (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 gchar *
-egg_bookmark_file_get_description (EggBookmarkFile  *bookmark,
-				   const gchar      *uri,
-				   GError          **error)
+libslab_bookmark_file_get_description (LibSlabBookmarkFile  *bookmark,
+				 const gchar    *uri,
+				 GError        **error)
 {
   BookmarkItem *item;
   
@@ -2674,11 +2410,11 @@ egg_bookmark_file_get_description (EggBookmarkFile  *bookmark,
   if (!uri)
     return g_strdup (bookmark->description);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return NULL;
@@ -2688,8 +2424,8 @@ egg_bookmark_file_get_description (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_mime_type:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_mime_type:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @mime_type: a MIME type
  *
@@ -2700,9 +2436,9 @@ egg_bookmark_file_get_description (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_mime_type (EggBookmarkFile *bookmark,
-				 const gchar     *uri,
-				 const gchar     *mime_type)
+libslab_bookmark_file_set_mime_type (LibSlabBookmarkFile *bookmark,
+			       const gchar   *uri,
+			       const gchar   *mime_type)
 {
   BookmarkItem *item;
   
@@ -2710,11 +2446,11 @@ egg_bookmark_file_set_mime_type (EggBookmarkFile *bookmark,
   g_return_if_fail (uri != NULL);
   g_return_if_fail (mime_type != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (!item->metadata)
@@ -2728,17 +2464,17 @@ egg_bookmark_file_set_mime_type (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_mime_type:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_mime_type:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Retrieves the MIME type of the resource pointed by @uri.
  *
  * In the event the URI cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
  * event that the MIME type cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE.
  *
  * Return value: a newly allocated string or %NULL if the specified
  *   URI cannot be found.
@@ -2746,20 +2482,20 @@ egg_bookmark_file_set_mime_type (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 gchar *
-egg_bookmark_file_get_mime_type (EggBookmarkFile  *bookmark,
-				 const gchar      *uri,
-				 GError          **error)
+libslab_bookmark_file_get_mime_type (LibSlabBookmarkFile  *bookmark,
+			       const gchar    *uri,
+			       GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, NULL);
   g_return_val_if_fail (uri != NULL, NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return NULL;
@@ -2767,8 +2503,8 @@ egg_bookmark_file_get_mime_type (EggBookmarkFile  *bookmark,
   
   if (!item->metadata)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE,
 		   _("No MIME type defined in the bookmark for URI '%s'"),
 		   uri);
       return NULL;
@@ -2778,8 +2514,8 @@ egg_bookmark_file_get_mime_type (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_is_private:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_is_private:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @is_private: %TRUE if the bookmark should be marked as private
  *
@@ -2790,20 +2526,20 @@ egg_bookmark_file_get_mime_type (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_is_private (EggBookmarkFile *bookmark,
-				  const gchar     *uri,
-				  gboolean         is_private)
+libslab_bookmark_file_set_is_private (LibSlabBookmarkFile *bookmark,
+				const gchar   *uri,
+				gboolean       is_private)
 {
   BookmarkItem *item;
   
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (!item->metadata)
@@ -2814,37 +2550,37 @@ egg_bookmark_file_set_is_private (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_is_private:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_is_private:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Gets whether the private flag of the bookmark for @uri is set.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
  * event that the private flag cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE.
  *
  * Return value: %TRUE if the private flag is set, %FALSE otherwise.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_get_is_private (EggBookmarkFile  *bookmark,
-				  const gchar      *uri,
-				  GError          **error)
+libslab_bookmark_file_get_is_private (LibSlabBookmarkFile  *bookmark,
+				const gchar    *uri,
+				GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;
@@ -2852,8 +2588,8 @@ egg_bookmark_file_get_is_private (EggBookmarkFile  *bookmark,
   
   if (!item->metadata)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE,
 		   _("No private flag has been defined in bookmark for URI '%s'"),
 		    uri);
       return FALSE;
@@ -2863,8 +2599,8 @@ egg_bookmark_file_get_is_private (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_added:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_added:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @added: a timestamp or -1 to use the current time
  *
@@ -2875,20 +2611,20 @@ egg_bookmark_file_get_is_private (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_added (EggBookmarkFile *bookmark,
-			     const gchar     *uri,
-			     time_t           added)
+libslab_bookmark_file_set_added (LibSlabBookmarkFile *bookmark,
+			   const gchar   *uri,
+			   time_t         added)
 {
   BookmarkItem *item;
   
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
 
   if (added == (time_t) -1)
@@ -2899,35 +2635,35 @@ egg_bookmark_file_set_added (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_added:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_added:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Gets the time the bookmark for @uri was added to @bookmark
  *
  * In the event the URI cannot be found, -1 is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a timestamp
  *
  * Since: 2.12
  */
 time_t
-egg_bookmark_file_get_added (EggBookmarkFile  *bookmark,
-			     const gchar      *uri,
-			     GError          **error)
+libslab_bookmark_file_get_added (LibSlabBookmarkFile  *bookmark,
+			   const gchar    *uri,
+			   GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, (time_t) -1);
   g_return_val_if_fail (uri != NULL, (time_t) -1);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return (time_t) -1;
@@ -2937,8 +2673,8 @@ egg_bookmark_file_get_added (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_modified:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_modified:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @modified: a timestamp or -1 to use the current time
  *
@@ -2947,27 +2683,27 @@ egg_bookmark_file_get_added (EggBookmarkFile  *bookmark,
  * If no bookmark for @uri is found then it is created.
  *
  * The "modified" time should only be set when the bookmark's meta-data
- * was actually changed.  Every function of #EggBookmarkFile that
+ * was actually changed.  Every function of #LibSlabBookmarkFile that
  * modifies a bookmark also changes the modification time, except for
- * egg_bookmark_file_set_visited().
+ * libslab_bookmark_file_set_visited().
  *
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_modified (EggBookmarkFile *bookmark,
-				const gchar     *uri,
-				time_t           modified)
+libslab_bookmark_file_set_modified (LibSlabBookmarkFile *bookmark,
+			      const gchar   *uri,
+			      time_t         modified)
 {
   BookmarkItem *item;
   
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (modified == (time_t) -1)
@@ -2977,35 +2713,35 @@ egg_bookmark_file_set_modified (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_modified:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_modified:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Gets the time when the bookmark for @uri was last modified.
  *
  * In the event the URI cannot be found, -1 is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a timestamp
  *
  * Since: 2.12
  */
 time_t
-egg_bookmark_file_get_modified (EggBookmarkFile  *bookmark,
-				const gchar      *uri,
-				GError          **error)
+libslab_bookmark_file_get_modified (LibSlabBookmarkFile  *bookmark,
+			      const gchar    *uri,
+			      GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, (time_t) -1);
   g_return_val_if_fail (uri != NULL, (time_t) -1);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return (time_t) -1;
@@ -3015,8 +2751,8 @@ egg_bookmark_file_get_modified (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_visited:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_visited:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @visited: a timestamp or -1 to use the current time
  *
@@ -3025,28 +2761,28 @@ egg_bookmark_file_get_modified (EggBookmarkFile  *bookmark,
  * If no bookmark for @uri is found then it is created.
  *
  * The "visited" time should only be set if the bookmark was launched, 
- * either using the command line retrieved by egg_bookmark_file_get_app_info()
+ * either using the command line retrieved by libslab_bookmark_file_get_app_info()
  * or by the default application for the bookmark's MIME type, retrieved
- * using egg_bookmark_file_get_mime_type().  Changing the "visited" time
+ * using libslab_bookmark_file_get_mime_type().  Changing the "visited" time
  * does not affect the "modified" time.
  *
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_visited (EggBookmarkFile *bookmark,
-			       const gchar     *uri,
-			       time_t           visited)
+libslab_bookmark_file_set_visited (LibSlabBookmarkFile *bookmark,
+			     const gchar   *uri,
+			     time_t         visited)
 {
   BookmarkItem *item;
   
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
 
   if (visited == (time_t) -1)
@@ -3056,35 +2792,35 @@ egg_bookmark_file_set_visited (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_visited:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_visited:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @error: return location for a #GError, or %NULL
  *
  * Gets the time the bookmark for @uri was last visited.
  *
  * In the event the URI cannot be found, -1 is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a timestamp.
  *
  * Since: 2.12
  */
 time_t
-egg_bookmark_file_get_visited (EggBookmarkFile  *bookmark,
-			       const gchar      *uri,
-			       GError          **error)
+libslab_bookmark_file_get_visited (LibSlabBookmarkFile  *bookmark,
+			     const gchar    *uri,
+			     GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, (time_t) -1);
   g_return_val_if_fail (uri != NULL, (time_t) -1);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return (time_t) -1;
@@ -3094,8 +2830,8 @@ egg_bookmark_file_get_visited (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_has_group:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_has_group:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @group: the group name to be searched
  * @error: return location for a #GError, or %NULL
@@ -3104,17 +2840,17 @@ egg_bookmark_file_get_visited (EggBookmarkFile  *bookmark,
  * the bookmark for @uri belongs to.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: %TRUE if @group was found.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_has_group (EggBookmarkFile  *bookmark,
-			     const gchar      *uri,
-			     const gchar      *group,
-			     GError          **error)
+libslab_bookmark_file_has_group (LibSlabBookmarkFile  *bookmark,
+			   const gchar    *uri,
+			   const gchar    *group,
+			   GError        **error)
 {
   BookmarkItem *item;
   GList *l;
@@ -3122,11 +2858,11 @@ egg_bookmark_file_has_group (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;
@@ -3146,8 +2882,8 @@ egg_bookmark_file_has_group (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_add_group:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_add_group:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @group: the group name to be added
  *
@@ -3159,9 +2895,9 @@ egg_bookmark_file_has_group (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_add_group (EggBookmarkFile *bookmark,
-			     const gchar     *uri,
-			     const gchar     *group)
+libslab_bookmark_file_add_group (LibSlabBookmarkFile *bookmark,
+			   const gchar   *uri,
+			   const gchar   *group)
 {
   BookmarkItem *item;
   
@@ -3169,17 +2905,17 @@ egg_bookmark_file_add_group (EggBookmarkFile *bookmark,
   g_return_if_fail (uri != NULL);
   g_return_if_fail (group != NULL && group[0] != '\0');
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (!item->metadata)
     item->metadata = bookmark_metadata_new ();
   
-  if (!egg_bookmark_file_has_group (bookmark, uri, group, NULL))
+  if (!libslab_bookmark_file_has_group (bookmark, uri, group, NULL))
     {
       item->metadata->groups = g_list_prepend (item->metadata->groups,
                                                g_strdup (group));
@@ -3189,8 +2925,8 @@ egg_bookmark_file_add_group (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_remove_group:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_remove_group:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @group: the group name to be removed
  * @error: return location for a #GError, or %NULL
@@ -3199,19 +2935,19 @@ egg_bookmark_file_add_group (EggBookmarkFile *bookmark,
  * for @uri belongs to.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  * In the event no group was defined, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE.
  *
  * Return value: %TRUE if @group was successfully removed.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
-				const gchar      *uri,
-				const gchar      *group,
-				GError          **error)
+libslab_bookmark_file_remove_group (LibSlabBookmarkFile  *bookmark,
+			      const gchar    *uri,
+			      const gchar    *group,
+			      GError        **error)
 {
   BookmarkItem *item;
   GList *l;
@@ -3219,11 +2955,11 @@ egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;
@@ -3231,8 +2967,8 @@ egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
   
   if (!item->metadata)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-                   EGG_BOOKMARK_FILE_ERROR_INVALID_VALUE,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+                   LIBSLAB_BOOKMARK_FILE_ERROR_INVALID_VALUE,
                    _("No groups set in bookmark for URI '%s'"),
                    uri);
       return FALSE;
@@ -3243,7 +2979,8 @@ egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
       if (strcmp (l->data, group) == 0)
         {
           item->metadata->groups = g_list_remove_link (item->metadata->groups, l);
-          g_list_free_1 (l);
+          g_free (l->data);
+	  g_list_free_1 (l);
           
           item->modified = time (NULL);          
           
@@ -3255,8 +2992,8 @@ egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_groups:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_groups:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: an item's URI
  * @groups: an array of group names, or %NULL to remove all groups
  * @length: number of group name values in @groups
@@ -3269,10 +3006,10 @@ egg_bookmark_file_remove_group (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_groups (EggBookmarkFile  *bookmark,
-			      const gchar      *uri,
-			      const gchar     **groups,
-			      gsize             length)
+libslab_bookmark_file_set_groups (LibSlabBookmarkFile  *bookmark,
+			    const gchar    *uri,
+			    const gchar   **groups,
+			    gsize           length)
 {
   BookmarkItem *item;
   gsize i;
@@ -3281,11 +3018,11 @@ egg_bookmark_file_set_groups (EggBookmarkFile  *bookmark,
   g_return_if_fail (uri != NULL);
   g_return_if_fail (groups != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (!item->metadata)
@@ -3311,8 +3048,8 @@ egg_bookmark_file_set_groups (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_groups:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_groups:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @length: return location for the length of the returned string, or %NULL
  * @error: return location for a #GError, or %NULL
@@ -3320,19 +3057,21 @@ egg_bookmark_file_set_groups (EggBookmarkFile  *bookmark,
  * Retrieves the list of group names of the bookmark for @uri.
  *
  * In the event the URI cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * The returned array is %NULL terminated, so @length may optionally
  * be %NULL.
  *
  * Return value: a newly allocated %NULL-terminated array of group names.
  *   Use g_strfreev() to free it.
+ *
+ * Since: 2.12
  */
 gchar **
-egg_bookmark_file_get_groups (EggBookmarkFile  *bookmark,
-			      const gchar      *uri,
-			      gsize            *length,
-			      GError          **error)
+libslab_bookmark_file_get_groups (LibSlabBookmarkFile  *bookmark,
+			    const gchar    *uri,
+			    gsize          *length,
+			    GError        **error)
 {
   BookmarkItem *item;
   GList *l;
@@ -3342,11 +3081,11 @@ egg_bookmark_file_get_groups (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (bookmark != NULL, NULL);
   g_return_val_if_fail (uri != NULL, NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return NULL;
@@ -3381,8 +3120,8 @@ egg_bookmark_file_get_groups (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_add_application:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_add_application:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @name: the name of the application registering the bookmark
  *   or %NULL
@@ -3392,7 +3131,7 @@ egg_bookmark_file_get_groups (EggBookmarkFile  *bookmark,
  * applications that have registered a bookmark for @uri into
  * @bookmark.
  *
- * Every bookmark inside a #EggBookmarkFile must have at least an
+ * Every bookmark inside a #LibSlabBookmarkFile must have at least an
  * application registered.  Each application must provide a name, a
  * command line useful for launching the bookmark, the number of times
  * the bookmark has been registered by the application and the last
@@ -3414,10 +3153,10 @@ egg_bookmark_file_get_groups (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_add_application (EggBookmarkFile *bookmark,
-				   const gchar     *uri,
-				   const gchar     *name,
-				   const gchar     *exec)
+libslab_bookmark_file_add_application (LibSlabBookmarkFile *bookmark,
+				 const gchar   *uri,
+				 const gchar   *name,
+				 const gchar   *exec)
 {
   BookmarkItem *item;
   gchar *app_name, *app_exec;
@@ -3425,11 +3164,11 @@ egg_bookmark_file_add_application (EggBookmarkFile *bookmark,
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (name && name[0] != '\0')
@@ -3442,20 +3181,20 @@ egg_bookmark_file_add_application (EggBookmarkFile *bookmark,
   else
     app_exec = g_strjoin (" ", g_get_prgname(), "%u", NULL);
 
-  egg_bookmark_file_set_app_info (bookmark, uri,
-                                  app_name,
-                                  app_exec,
-                                  -1,
-                                  (time_t) -1,
-                                  NULL);
+  libslab_bookmark_file_set_app_info (bookmark, uri,
+                                app_name,
+                                app_exec,
+                                -1,
+                                (time_t) -1,
+                                NULL);
   
   g_free (app_exec);
   g_free (app_name);
 }
 
 /**
- * egg_bookmark_file_remove_application:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_remove_application:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @name: the name of the application
  * @error: return location for a #GError or %NULL
@@ -3464,20 +3203,20 @@ egg_bookmark_file_add_application (EggBookmarkFile *bookmark,
  * that have registered a bookmark for @uri inside @bookmark.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  * In the event that no application with name @app_name has registered
  * a bookmark for @uri,  %FALSE is returned and error is set to
- * #EGG_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.
+ * #LIBSLAB_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.
  *
  * Return value: %TRUE if the application was successfully removed.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_remove_application (EggBookmarkFile  *bookmark,
-				      const gchar      *uri,
-				      const gchar      *name,
-				      GError          **error)
+libslab_bookmark_file_remove_application (LibSlabBookmarkFile  *bookmark,
+				    const gchar    *uri,
+				    const gchar    *name,
+				    GError        **error)
 {
   GError *set_error;
   gboolean retval;
@@ -3487,12 +3226,12 @@ egg_bookmark_file_remove_application (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (name != NULL, FALSE);
   
   set_error = NULL;
-  retval = egg_bookmark_file_set_app_info (bookmark, uri,
-  					   name,
-  					   NULL,
-	  				   0,
-  					   (time_t) -1,
-  					   &set_error);
+  retval = libslab_bookmark_file_set_app_info (bookmark, uri,
+  					 name,
+  					 "",
+	  				 0,
+  					 (time_t) -1,
+  					 &set_error);
   if (set_error)
     {
       g_propagate_error (error, set_error);
@@ -3504,8 +3243,8 @@ egg_bookmark_file_remove_application (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_has_application:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_has_application:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @name: the name of the application
  * @error: return location for a #GError or %NULL
@@ -3514,17 +3253,17 @@ egg_bookmark_file_remove_application (EggBookmarkFile  *bookmark,
  * registered by application @name.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: %TRUE if the application @name was found
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
-				   const gchar      *uri,
-				   const gchar      *name,
-				   GError          **error)
+libslab_bookmark_file_has_application (LibSlabBookmarkFile  *bookmark,
+				 const gchar    *uri,
+				 const gchar    *name,
+				 GError        **error)
 {
   BookmarkItem *item;
   
@@ -3532,11 +3271,11 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (uri != NULL, FALSE);
   g_return_val_if_fail (name != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;
@@ -3546,8 +3285,8 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_set_app_info:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_app_info:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @name: an application's name
  * @exec: an application's command line
@@ -3559,8 +3298,8 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
  * applications that have registered a bookmark for @uri inside
  * @bookmark.
  *
- * You should rarely use this function; use egg_bookmark_file_add_application()
- * and egg_bookmark_file_remove_application() instead.
+ * You should rarely use this function; use libslab_bookmark_file_add_application()
+ * and libslab_bookmark_file_remove_application() instead.
  *
  * @name can be any UTF-8 encoded string used to identify an
  * application.
@@ -3568,7 +3307,7 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
  * be expanded as the local file name retrieved from the bookmark's
  * URI; "%u", which will be expanded as the bookmark's URI.
  * The expansion is done automatically when retrieving the stored
- * command line using the egg_bookmark_file_get_app_info() function.
+ * command line using the libslab_bookmark_file_get_app_info() function.
  * @count is the number of times the application has registered the
  * bookmark; if is < 0, the current registration count will be increased
  * by one, if is 0, the application with @name will be removed from
@@ -3578,10 +3317,10 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
  *
  * If you try to remove an application by setting its registration count to
  * zero, and no bookmark for @uri is found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND; similarly,
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND; similarly,
  * in the event that no application @name has registered a bookmark
  * for @uri,  %FALSE is returned and error is set to
- * #EGG_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.  Otherwise, if no bookmark
+ * #LIBSLAB_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.  Otherwise, if no bookmark
  * for @uri is found, one is created.
  *
  * Return value: %TRUE if the application's meta-data was successfully
@@ -3590,13 +3329,13 @@ egg_bookmark_file_has_application (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_set_app_info (EggBookmarkFile  *bookmark,
-				const gchar      *uri,
-				const gchar      *name,
-				const gchar      *exec,
-				gint              count,
-				time_t            stamp,
-				GError          **error)
+libslab_bookmark_file_set_app_info (LibSlabBookmarkFile  *bookmark,
+			      const gchar    *uri,
+			      const gchar    *name,
+			      const gchar    *exec,
+			      gint            count,
+			      time_t          stamp,
+			      GError        **error)
 {
   BookmarkItem *item;
   BookmarkAppInfo *ai;
@@ -3606,13 +3345,13 @@ egg_bookmark_file_set_app_info (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (name != NULL, FALSE);
   g_return_val_if_fail (exec != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       if (count == 0)
         {
-          g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		       EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+          g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		       LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		       _("No bookmark found for URI '%s'"),
 		       uri);
 	  return FALSE;
@@ -3620,7 +3359,7 @@ egg_bookmark_file_set_app_info (EggBookmarkFile  *bookmark,
       else
         {
           item = bookmark_item_new (uri);
-	  egg_bookmark_file_add_item (bookmark, item, NULL);
+	  libslab_bookmark_file_add_item (bookmark, item, NULL);
 	}
     }
   
@@ -3629,8 +3368,8 @@ egg_bookmark_file_set_app_info (EggBookmarkFile  *bookmark,
     {
       if (count == 0)
         {
-          g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		       EGG_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED,
+          g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		       LIBSLAB_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED,
 		       _("No application with name '%s' registered a bookmark for '%s'"),
 		       name,
 		       uri);
@@ -3649,7 +3388,8 @@ egg_bookmark_file_set_app_info (EggBookmarkFile  *bookmark,
     {
       item->metadata->applications = g_list_remove (item->metadata->applications, ai);
       g_hash_table_remove (item->metadata->apps_by_name, ai->name);
-          
+      bookmark_app_info_free (ai);
+
       item->modified = time (NULL);
           
       return TRUE;
@@ -3695,14 +3435,16 @@ expand_exec_line (const gchar *exec_fmt,
      ch = *exec_fmt++;
      switch (ch)
        {
+       case '\0':
+	 goto out;
        case 'u':
-         g_string_append_printf (exec, "%s", uri);
+         g_string_append (exec, uri);
          break;
        case 'f':
          {
-         gchar *file = g_filename_from_uri (uri, NULL, NULL);
-         g_string_append_printf (exec, "%s", file);
-         g_free (file);
+	   gchar *file = g_filename_from_uri (uri, NULL, NULL);
+	   g_string_append (exec, file);
+	   g_free (file);
          }
          break;
        case '%':
@@ -3712,74 +3454,75 @@ expand_exec_line (const gchar *exec_fmt,
        }
    }
    
+ out:
   return g_string_free (exec, FALSE);
 }
 
 /**
- * egg_bookmark_file_get_app_info:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_app_info:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
- * @app_name: an application's name
- * @app_exec: location for the command line of the application, or %NULL
+ * @name: an application's name
+ * @exec: location for the command line of the application, or %NULL
  * @count: return location for the registration count, or %NULL
  * @stamp: return location for the last registration time, or %NULL
  * @error: return location for a #GError, or %NULL
  *
  * Gets the registration informations of @app_name for the bookmark for
- * @uri.  See egg_bookmark_file_set_app_info() for more informations about
+ * @uri.  See libslab_bookmark_file_set_app_info() for more informations about
  * the returned data.
  *
  * The string returned in @app_exec must be freed.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.  In the
  * event that no application with name @app_name has registered a bookmark
  * for @uri,  %FALSE is returned and error is set to
- * #EGG_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.
+ * #LIBSLAB_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED.
  *
  * Return value: %TRUE on success.
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_get_app_info (EggBookmarkFile  *bookmark,
-				const gchar      *uri,
-				const gchar      *app_name,
-				gchar           **app_exec,
-				guint            *count,
-				time_t           *stamp,
-				GError          **error)
+libslab_bookmark_file_get_app_info (LibSlabBookmarkFile  *bookmark,
+			      const gchar    *uri,
+			      const gchar    *name,
+			      gchar         **exec,
+			      guint          *count,
+			      time_t         *stamp,
+			      GError        **error)
 {
   BookmarkItem *item;
   BookmarkAppInfo *ai;
   
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
-  g_return_val_if_fail (app_name != NULL, FALSE);
+  g_return_val_if_fail (name != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;
     }
   
-  ai = bookmark_item_lookup_app_info (item, app_name);
+  ai = bookmark_item_lookup_app_info (item, name);
   if (!ai)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED,
 		   _("No application with name '%s' registered a bookmark for '%s'"),
-		   app_name,
+		   name,
 		   uri);
       return FALSE;
     }
   
-  if (app_exec)
-    *app_exec = expand_exec_line (ai->exec, uri);
+  if (exec)
+    *exec = expand_exec_line (ai->exec, uri);
   
   if (count)
     *count = ai->count;
@@ -3791,8 +3534,8 @@ egg_bookmark_file_get_app_info (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_applications:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_applications:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @length: return location of the length of the returned list, or %NULL
  * @error: return location for a #GError, or %NULL
@@ -3801,7 +3544,7 @@ egg_bookmark_file_get_app_info (EggBookmarkFile  *bookmark,
  * bookmark for @uri.
  * 
  * In the event the URI cannot be found, %NULL is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: a newly allocated %NULL-terminated array of strings.
  *   Use g_strfreev() to free it.
@@ -3809,10 +3552,10 @@ egg_bookmark_file_get_app_info (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 gchar **
-egg_bookmark_file_get_applications (EggBookmarkFile  *bookmark,
-				    const gchar	     *uri,
-				    gsize            *length,
-				    GError          **error)
+libslab_bookmark_file_get_applications (LibSlabBookmarkFile  *bookmark,
+				  const gchar    *uri,
+				  gsize          *length,
+				  GError        **error)
 {
   BookmarkItem *item;
   GList *l;
@@ -3822,11 +3565,11 @@ egg_bookmark_file_get_applications (EggBookmarkFile  *bookmark,
   g_return_val_if_fail (bookmark != NULL, NULL);
   g_return_val_if_fail (uri != NULL, NULL);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return NULL;
@@ -3865,8 +3608,8 @@ egg_bookmark_file_get_applications (EggBookmarkFile  *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_size:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_size:
+ * @bookmark: a #LibSlabBookmarkFile
  * 
  * Gets the number of bookmarks inside @bookmark.
  * 
@@ -3875,7 +3618,7 @@ egg_bookmark_file_get_applications (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 gint
-egg_bookmark_file_get_size (EggBookmarkFile *bookmark)
+libslab_bookmark_file_get_size (LibSlabBookmarkFile *bookmark)
 {
   g_return_val_if_fail (bookmark != NULL, 0);
 
@@ -3883,39 +3626,40 @@ egg_bookmark_file_get_size (EggBookmarkFile *bookmark)
 }
 
 /**
- * egg_bookmark_file_move_item:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_move_item:
+ * @bookmark: a #LibSlabBookmarkFile
  * @old_uri: a valid URI
- * @new_uri: a valid URI, or %NULL to remove the item
+ * @new_uri: a valid URI, or %NULL
  * @error: return location for a #GError or %NULL
  *
- * Changes the URI of a bookmark item from @old_uri to @new_uri.  Any existing
- * bookmark for @new_uri will be overwritten.
+ * Changes the URI of a bookmark item from @old_uri to @new_uri.  Any
+ * existing bookmark for @new_uri will be overwritten.  If @new_uri is
+ * %NULL, then the bookmark is removed.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: %TRUE if the URI was successfully changed
  *
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_move_item (EggBookmarkFile  *bookmark,
-			     const gchar      *old_uri,
-			     const gchar      *new_uri,
-			     GError          **error)
+libslab_bookmark_file_move_item (LibSlabBookmarkFile  *bookmark,
+			   const gchar    *old_uri,
+			   const gchar    *new_uri,
+			   GError        **error)
 {
   BookmarkItem *item;
   GError *remove_error;
   
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (old_uri != NULL, FALSE);
-  
-  item = egg_bookmark_file_lookup_item (bookmark, old_uri);
+
+  item = libslab_bookmark_file_lookup_item (bookmark, old_uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   old_uri);
       return FALSE;
@@ -3923,20 +3667,10 @@ egg_bookmark_file_move_item (EggBookmarkFile  *bookmark,
 
   if (new_uri && new_uri[0] != '\0')
     {
-      if (egg_bookmark_file_has_item (bookmark, new_uri))
+      if (libslab_bookmark_file_has_item (bookmark, new_uri))
         {
-#if 0
-          /* should we abort and notify the user that he's going to
-           * overwrite another bookmark, or is this too high-level
-           * for us?
-           */
-          g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-                       EGG_BOOKMARK_FILE_ERROR_DUPLICATE_URI,
-                       "There already is an item with URI '%s'", new_uri);
-          return FALSE;
-#endif
           remove_error = NULL;
-          egg_bookmark_file_remove_item (bookmark, new_uri, &remove_error);
+          libslab_bookmark_file_remove_item (bookmark, new_uri, &remove_error);
           if (remove_error)
             {
               g_propagate_error (error, remove_error);
@@ -3944,31 +3678,35 @@ egg_bookmark_file_move_item (EggBookmarkFile  *bookmark,
               return FALSE;
             }
         }
+
+      g_hash_table_steal (bookmark->items_by_uri, item->uri);
       
       g_free (item->uri);
       item->uri = g_strdup (new_uri);
       item->modified = time (NULL);
-      
+
+      g_hash_table_replace (bookmark->items_by_uri, item->uri, item);
+
       return TRUE;
     }
   else
     {
       remove_error = NULL;
-      egg_bookmark_file_remove_item (bookmark, old_uri, &remove_error);
+      libslab_bookmark_file_remove_item (bookmark, old_uri, &remove_error);
       if (remove_error)
         {
           g_propagate_error (error, remove_error);
           
           return FALSE;
         }
+
+      return TRUE;
     }
-  
-  return FALSE;
 }
 
 /**
- * egg_bookmark_file_set_icon:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_set_icon:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @href: the URI of the icon for the bookmark, or %NULL
  * @mime_type: the MIME type of the icon for the bookmark
@@ -3981,21 +3719,21 @@ egg_bookmark_file_move_item (EggBookmarkFile  *bookmark,
  * Since: 2.12
  */
 void
-egg_bookmark_file_set_icon (EggBookmarkFile *bookmark,
-			    const gchar     *uri,
-			    const gchar     *href,
-			    const gchar     *mime_type)
+libslab_bookmark_file_set_icon (LibSlabBookmarkFile *bookmark,
+			  const gchar   *uri,
+			  const gchar   *href,
+			  const gchar   *mime_type)
 {
   BookmarkItem *item;
   
   g_return_if_fail (bookmark != NULL);
   g_return_if_fail (uri != NULL);
 
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
       item = bookmark_item_new (uri);
-      egg_bookmark_file_add_item (bookmark, item, NULL);
+      libslab_bookmark_file_add_item (bookmark, item, NULL);
     }
   
   if (!item->metadata)
@@ -4004,8 +3742,7 @@ egg_bookmark_file_set_icon (EggBookmarkFile *bookmark,
   g_free (item->metadata->icon_href);
   g_free (item->metadata->icon_mime);
   
-  if (href && href[0] != '\0')
-    item->metadata->icon_href = g_strdup (href);
+  item->metadata->icon_href = g_strdup (href);
   
   if (mime_type && mime_type[0] != '\0')
     item->metadata->icon_mime = g_strdup (mime_type);
@@ -4016,8 +3753,8 @@ egg_bookmark_file_set_icon (EggBookmarkFile *bookmark,
 }
 
 /**
- * egg_bookmark_file_get_icon:
- * @bookmark: a #EggBookmarkFile
+ * libslab_bookmark_file_get_icon:
+ * @bookmark: a #LibSlabBookmarkFile
  * @uri: a valid URI
  * @href: return location for the icon's location or %NULL
  * @mime_type: return location for the icon's MIME type or %NULL
@@ -4026,7 +3763,7 @@ egg_bookmark_file_set_icon (EggBookmarkFile *bookmark,
  * Gets the icon of the bookmark for @uri.
  *
  * In the event the URI cannot be found, %FALSE is returned and
- * @error is set to #EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
+ * @error is set to #LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND.
  *
  * Return value: %TRUE if the icon for the bookmark for the URI was found.
  *   You should free the returned strings.
@@ -4034,22 +3771,22 @@ egg_bookmark_file_set_icon (EggBookmarkFile *bookmark,
  * Since: 2.12
  */
 gboolean
-egg_bookmark_file_get_icon (EggBookmarkFile  *bookmark,
-			    const gchar      *uri,
-			    gchar           **href,
-			    gchar           **mime_type,
-			    GError          **error)
+libslab_bookmark_file_get_icon (LibSlabBookmarkFile  *bookmark,
+			  const gchar    *uri,
+			  gchar         **href,
+			  gchar         **mime_type,
+			  GError        **error)
 {
   BookmarkItem *item;
   
   g_return_val_if_fail (bookmark != NULL, FALSE);
   g_return_val_if_fail (uri != NULL, FALSE);
   
-  item = egg_bookmark_file_lookup_item (bookmark, uri);
+  item = libslab_bookmark_file_lookup_item (bookmark, uri);
   if (!item)
     {
-      g_set_error (error, EGG_BOOKMARK_FILE_ERROR,
-		   EGG_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
+      g_set_error (error, LIBSLAB_BOOKMARK_FILE_ERROR,
+		   LIBSLAB_BOOKMARK_FILE_ERROR_URI_NOT_FOUND,
 		   _("No bookmark found for URI '%s'"),
 		   uri);
       return FALSE;

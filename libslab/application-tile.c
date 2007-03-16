@@ -25,10 +25,11 @@
 #include <glib/gfileutils.h>
 #include <glib/gstdio.h>
 #include <gconf/gconf-client.h>
+#include <unistd.h>
 
 #include "slab-gnome-util.h"
 #include "libslab-utils.h"
-
+#include "bookmark-agent.h"
 #include "themed-icon.h"
 
 G_DEFINE_TYPE (ApplicationTile, application_tile, NAMEPLATE_TILE_TYPE)
@@ -66,13 +67,10 @@ static gboolean verify_package_management_command (const gchar *);
 static void run_package_management_command (ApplicationTile *, gchar *);
 
 static void update_user_list_menu_item (ApplicationTile *);
+static void agent_notify_cb (GObject *, GParamSpec *, gpointer);
 
 static StartupStatus get_desktop_item_startup_status (GnomeDesktopItem *);
 static void          update_startup_menu_item (ApplicationTile *);
-
-static void apps_store_monitor_cb (
-	GnomeVFSMonitorHandle *, const gchar *,
-	const gchar *, GnomeVFSMonitorEventType, gpointer);
 
 typedef struct {
 	GnomeDesktopItem *desktop_item;
@@ -82,10 +80,12 @@ typedef struct {
 	GtkIconSize  image_size;
 
 	gboolean show_generic_name;
-	gboolean is_in_user_list;
 	StartupStatus startup_status;
 
-	GnomeVFSMonitorHandle *user_spec_monitor_handle;
+	BookmarkAgent       *agent;
+	BookmarkStoreStatus  agent_status;
+	gboolean             is_bookmarked;
+	gulong               notify_signal_id;
 } ApplicationTilePrivate;
 
 #define APPLICATION_TILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), APPLICATION_TILE_TYPE, ApplicationTilePrivate))
@@ -177,9 +177,10 @@ application_tile_init (ApplicationTile *tile)
 	priv->image_id        = NULL;
 	priv->image_is_broken = TRUE;
 
-	priv->is_in_user_list = FALSE;
-
-	priv->user_spec_monitor_handle = NULL;
+	priv->agent            = NULL;
+	priv->agent_status     = BOOKMARK_STORE_ABSENT;
+	priv->is_bookmarked    = FALSE;
+	priv->notify_signal_id = 0;
 
 	tile->name = tile->description = tile->gconf_prefix = NULL;
 }
@@ -212,8 +213,10 @@ application_tile_finalize (GObject *g_object)
 		priv->image_id = NULL;
 	}
 
-	if (priv->user_spec_monitor_handle)
-		gnome_vfs_monitor_cancel (priv->user_spec_monitor_handle);
+	if (priv->notify_signal_id)
+		g_signal_handler_disconnect (priv->agent, priv->notify_signal_id);
+
+	g_object_unref (G_OBJECT (priv->agent));
 
 	G_OBJECT_CLASS (application_tile_parent_class)->finalize (g_object);
 }
@@ -297,7 +300,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	/*Fixme - need to address the entire gconf key location issue */
 	/*Fixme - this is just a temporary stop gap                   */
 	gboolean use_new_prefix;
-	gchar *testval;
+
 
 	if (! priv->desktop_item) {
 		priv->desktop_item = load_desktop_item_from_unknown (TILE (this)->uri);
@@ -339,7 +342,12 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		"gconf-prefix",            gconf_prefix,
 		NULL);
 
-	priv->is_in_user_list = libslab_user_apps_store_has_uri (TILE (this)->uri);
+	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_APPS);
+	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
+
+	priv->notify_signal_id = g_signal_connect (
+		G_OBJECT (priv->agent), "notify", G_CALLBACK (agent_notify_cb), this);
+
 	priv->startup_status  = get_desktop_item_startup_status (priv->desktop_item);
 
 	actions = g_new0 (TileAction *, 6);
@@ -389,30 +397,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 
 /* make "add/remove to favorites" action */
 
-	if (this->gconf_prefix && !g_str_has_prefix (this->gconf_prefix, "/desktop/"))
-		use_new_prefix = TRUE;
-	else
-		use_new_prefix = FALSE;
-
-	/* see if g-m-m is installed */
-	if(!use_new_prefix)
-		key = SLAB_APPLICATION_BROWSER_KEY;
-	else
-		key = "/apps/main-menu/application_browser";
-
-	if ((testval = get_slab_gconf_string (key))) {
-		g_free (testval);
-		action = tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
-		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = action;
-
-		update_user_list_menu_item (this);
-
-		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-
-		gtk_container_add (menu_ctnr, menu_item);
-
-	} else
-		actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = NULL;
+	update_user_list_menu_item (this);
 
 /* make "add/remove to startup" action */
 
@@ -428,6 +413,11 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	}
 
 /* make upgrade action */
+
+	if (this->gconf_prefix && ! g_str_has_prefix (this->gconf_prefix, "/desktop/"))
+		use_new_prefix = TRUE;
+	else
+		use_new_prefix = FALSE;
 
 	if(!use_new_prefix)
 		key = SLAB_UPGRADE_PACKAGE_KEY;
@@ -456,8 +446,6 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		gtk_container_add (menu_ctnr, menu_item);
 	} else
 		actions [APPLICATION_TILE_ACTION_UNINSTALL_PACKAGE] = NULL;
-
-	priv->user_spec_monitor_handle = libslab_add_apps_monitor (apps_store_monitor_cb, this);
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 }
@@ -516,7 +504,7 @@ user_apps_trigger (Tile *tile, TileEvent *event, TileAction *action)
 	ApplicationTile *this = APPLICATION_TILE (tile);
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
 
-	if (priv->is_in_user_list)
+	if (priv->is_bookmarked)
 		remove_from_user_list (this);
 	else
 		add_to_user_list (this);
@@ -528,37 +516,28 @@ static void
 add_to_user_list (ApplicationTile *this)
 {
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
-	GList *tiles;
 
-	tiles = libslab_get_user_app_uris ();
-	if (! g_list_find_custom (tiles, TILE (this)->uri, (GCompareFunc) libslab_strcmp)) {
-		tiles = g_list_append (tiles, g_strdup (TILE (this)->uri));
-		libslab_save_app_uris (tiles);
-	}
+	BookmarkItem *item;
 
-	priv->is_in_user_list = TRUE;
 
-	if (tiles)
-		free_list_of_strings (tiles);
+	item = g_new0 (BookmarkItem, 1);
+	item->uri       = TILE (this)->uri;
+	item->mime_type = "application/x-desktop";
+
+	bookmark_agent_add_item (priv->agent, item);
+	g_free (item);
+
+	priv->is_bookmarked = TRUE;
 }
 
 static void
 remove_from_user_list (ApplicationTile *this)
 {
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
-	GList *tiles, *item;
 
-	tiles = libslab_get_user_app_uris ();
-	item = g_list_find_custom (tiles, TILE (this)->uri, (GCompareFunc) libslab_strcmp);
-	tiles = g_list_remove_link (tiles, item);
-	libslab_save_app_uris (tiles);
+	bookmark_agent_remove_item (priv->agent, TILE (this)->uri);
 
-	priv->is_in_user_list = FALSE;
-
-	if (item)
-		free_list_of_strings (item);
-	if (tiles)
-		free_list_of_strings (tiles);
+	priv->is_bookmarked = FALSE;
 }
 
 static void
@@ -752,16 +731,54 @@ application_tile_get_desktop_item (ApplicationTile *tile)
 static void
 update_user_list_menu_item (ApplicationTile *this)
 {
-	TileAction *action = TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU];
 	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
 
-	if (!action)
+	TileAction *action;
+	GtkWidget  *item;
+
+
+	if (priv->agent_status == BOOKMARK_STORE_ABSENT) {
+		if (TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU])
+			g_object_unref (TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU]);
+
+		TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] = NULL;
+	}
+	else if (! TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU]) {
+		TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU] =
+			tile_action_new (TILE (this), user_apps_trigger, NULL, 0);
+
+		tile_action_set_menu_item_label (
+			TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU], "blah");
+
+		item = GTK_WIDGET (tile_action_get_menu_item (
+			TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU]));
+		gtk_menu_shell_insert (GTK_MENU_SHELL (TILE (this)->context_menu), item, 4);
+
+		gtk_widget_show_all (item);
+	}
+	else
+		/* do nothing */ ;
+
+	action = TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU];
+
+	if (! action)
 		return;
 
-	if (priv->is_in_user_list)
+	priv->is_bookmarked = bookmark_agent_has_item (priv->agent, TILE (this)->uri);
+
+	if (priv->is_bookmarked)
 		tile_action_set_menu_item_label (action, _("Remove from Favorites"));
 	else
 		tile_action_set_menu_item_label (action, _("Add to Favorites"));
+
+	item = GTK_WIDGET (tile_action_get_menu_item (action));
+
+	if (! GTK_IS_MENU_ITEM (item))
+		return;
+
+	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
+
+	gtk_widget_set_sensitive (item, (priv->agent_status != BOOKMARK_STORE_DEFAULT_ONLY));
 }
 
 static StartupStatus
@@ -849,22 +866,7 @@ header_size_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_
 }
 
 static void
-apps_store_monitor_cb (
-	GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
-	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+agent_notify_cb (GObject *g_obj, GParamSpec *pspec, gpointer user_data)
 {
-	ApplicationTile *this = APPLICATION_TILE (user_data);
-	ApplicationTilePrivate *priv = APPLICATION_TILE_GET_PRIVATE (this);
-
-	gboolean is_in_user_list_current;
-
-
-	is_in_user_list_current = libslab_user_apps_store_has_uri (TILE (this)->uri);
-
-	if (is_in_user_list_current == priv->is_in_user_list)
-		return;
-
-	priv->is_in_user_list = is_in_user_list_current;
-
-	update_user_list_menu_item (this);
+	update_user_list_menu_item (APPLICATION_TILE (user_data));
 }

@@ -23,6 +23,9 @@
 
 #include <gtk/gtk.h>
 
+#include "tile.h"
+#include "bookmark-agent.h"
+
 G_BEGIN_DECLS
 
 #define TILE_TABLE_TYPE         (tile_table_get_type ())
@@ -32,48 +35,30 @@ G_BEGIN_DECLS
 #define IS_TILE_TABLE_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), TILE_TABLE_TYPE))
 #define TILE_TABLE_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TILE_TABLE_TYPE, TileTableClass))
 
-#define TILE_TABLE_UPDATE_SIGNAL    "update"
-#define TILE_TABLE_URI_ADDED_SIGNAL "uri-added"
-
 #define TILE_TABLE_TILES_PROP   "tile-list"
-#define TILE_TABLE_REORDER_PROP "tile-reordering-priority"
 #define TILE_TABLE_LIMIT_PROP   "item-limit"
+#define TILE_TABLE_REORDER_PROP "reorderable"
+#define TILE_TABLE_MODIFY_PROP  "modifiable"
 
 typedef struct {
 	GtkTable gtk_table;
 } TileTable;
 
 typedef struct {
-	guint32 time;
-
-	GList *tiles;
-} TileTableUpdateEvent;
-
-typedef struct {
-	guint32 time;
-
-	gchar *uri;
-} TileTableURIAddedEvent;
-
-typedef struct {
 	GtkTableClass gtk_table_class;
-
-	void (* reload)    (TileTable *);
-	void (* update)    (TileTable *, TileTableUpdateEvent *);
-	void (* uri_added) (TileTable *, TileTableURIAddedEvent *);
 } TileTableClass;
 
-typedef enum {
-	TILE_TABLE_REORDERING_SWAP,
-	TILE_TABLE_REORDERING_PUSH,
-	TILE_TABLE_REORDERING_PUSH_PULL,
-	TILE_TABLE_REORDERING_NONE
-} TileTableReorderingPriority;
+typedef Tile         * (* ItemToTileFunc) (BookmarkItem *, gpointer);
+typedef BookmarkItem * (* URIToItemFunc)  (const gchar *, gpointer);
 
 GType tile_table_get_type (void);
 
-void tile_table_reload    (TileTable *this);
-void tile_table_uri_added (TileTable *this, const gchar *uri, guint32 time);
+GtkWidget *tile_table_new     (BookmarkAgent *agent, gint limit, gint n_cols,
+                               gboolean reorderable, gboolean modifiable,
+                               ItemToTileFunc itt, gpointer data_itt,
+                               URIToItemFunc uti, gpointer data_uti);
+void       tile_table_reload  (TileTable *this);
+void       tile_table_add_uri (TileTable *this, const gchar *uri);
 
 G_END_DECLS
 

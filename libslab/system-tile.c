@@ -26,6 +26,7 @@
 #include <gconf/gconf-client.h>
 #include <libgnomeui/gnome-client.h>
 
+#include "bookmark-agent.h"
 #include "slab-gnome-util.h"
 #include "libslab-utils.h"
 
@@ -40,8 +41,15 @@ static GtkWidget *create_header (const gchar *);
 static void open_trigger   (Tile *, TileEvent *, TileAction *);
 static void remove_trigger (Tile *, TileEvent *, TileAction *);
 
+static void update_user_list_menu_item (SystemTile *);
+static void agent_notify_cb (GObject *, GParamSpec *, gpointer);
+
 typedef struct {
 	GnomeDesktopItem *desktop_item;
+
+	BookmarkAgent       *agent;
+	BookmarkStoreStatus  agent_status;
+	gulong               notify_signal_id;
 	
 	gchar    *image_id;
 	gboolean  image_is_broken;
@@ -102,6 +110,13 @@ system_tile_new (const gchar *desktop_item_id, const gchar *title)
 		"nameplate-header",    header,
 		"nameplate-subheader", NULL,
 		NULL);
+	priv = PRIVATE (this);
+
+	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_SYSTEM);
+	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
+
+	priv->notify_signal_id = g_signal_connect (
+		G_OBJECT (priv->agent), "notify", G_CALLBACK (agent_notify_cb), this);
 
 	actions = g_new0 (TileAction *, 2);
 
@@ -134,7 +149,8 @@ system_tile_new (const gchar *desktop_item_id, const gchar *title)
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
-	priv = PRIVATE (this);
+	update_user_list_menu_item (this);
+
 	priv->desktop_item = desktop_item;
 	priv->image_id = g_strdup (image_id);
 
@@ -176,6 +192,10 @@ system_tile_init (SystemTile *this)
 	priv->desktop_item    = NULL;
 	priv->image_id        = NULL;
 	priv->image_is_broken = TRUE;
+
+	priv->agent            = NULL;
+	priv->agent_status     = BOOKMARK_STORE_ABSENT;
+	priv->notify_signal_id = 0;
 }
 
 static void
@@ -185,6 +205,9 @@ system_tile_finalize (GObject *g_obj)
 
 	g_free (priv->image_id);
 	gnome_desktop_item_unref (priv->desktop_item);
+
+	if (priv->notify_signal_id)
+		g_signal_handler_disconnect (priv->agent, priv->notify_signal_id);
 
 	G_OBJECT_CLASS (system_tile_parent_class)->finalize (g_obj);
 }
@@ -229,5 +252,35 @@ open_trigger (Tile *this, TileEvent *event, TileAction *action)
 static void
 remove_trigger (Tile *this, TileEvent *event, TileAction *action)
 {
-	libslab_remove_system_item (this->uri);
+	bookmark_agent_remove_item (PRIVATE (this)->agent, this->uri);
+}
+
+static void
+update_user_list_menu_item (SystemTile *this)
+{
+	SystemTilePrivate *priv = PRIVATE (this);
+
+	TileAction *action;
+	GtkWidget  *item;
+
+
+	action = TILE (this)->actions [SYSTEM_TILE_ACTION_REMOVE];
+
+	if (! action)
+		return;
+
+	item = GTK_WIDGET (tile_action_get_menu_item (action));
+
+	if (! GTK_IS_MENU_ITEM (item))
+		return;
+
+	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
+
+	gtk_widget_set_sensitive (item, (priv->agent_status != BOOKMARK_STORE_DEFAULT_ONLY));
+}
+
+static void
+agent_notify_cb (GObject *g_obj, GParamSpec *pspec, gpointer user_data)
+{
+	update_user_list_menu_item (SYSTEM_TILE (user_data));
 }

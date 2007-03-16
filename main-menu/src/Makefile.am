@@ -18,13 +18,6 @@ main_menu_SOURCES =							\
 	main-menu-ui.c			main-menu-ui.h			\
 	main-menu-migration.c		main-menu-migration.h		\
 	tile-table.c			tile-table.h			\
-	bookmark-tile-table.c		bookmark-tile-table.h		\
-	user-apps-tile-table.c		user-apps-tile-table.h		\
-	recent-apps-tile-table.c	recent-apps-tile-table.h	\
-	user-docs-tile-table.c		user-docs-tile-table.h		\
-	recent-docs-tile-table.c	recent-docs-tile-table.h	\
-	user-dirs-tile-table.c		user-dirs-tile-table.h		\
-	system-tile-table.c		system-tile-table.h		\
 	hard-drive-status-tile.c	hard-drive-status-tile.h	\
 	network-status-tile.c		network-status-tile.h		\
 	network-status-agent.c		network-status-agent.h		\

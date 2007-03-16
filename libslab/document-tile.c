@@ -33,7 +33,7 @@
 #include "slab-gnome-util.h"
 #include "gnome-utils.h"
 #include "libslab-utils.h"
-#include "recent-files.h"
+#include "bookmark-agent.h"
 
 #define GCONF_SEND_TO_CMD_KEY       "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
 #define GCONF_ENABLE_DELETE_KEY_DIR "/apps/nautilus/preferences"
@@ -66,29 +66,28 @@ static gboolean rename_entry_key_release_cb (GtkWidget *, GdkEventKey *, gpointe
 
 static void gconf_enable_delete_cb (GConfClient *, guint, GConfEntry *, gpointer);
 
-static void docs_store_monitor_cb (GnomeVFSMonitorHandle *, const gchar *, const gchar *,
-                                   GnomeVFSMonitorEventType, gpointer);
+static void agent_notify_cb (GObject *, GParamSpec *, gpointer);
 
 typedef struct
 {
 	gchar *basename;
 	gchar *mime_type;
 	time_t modified;
-	
+
 	GnomeVFSMimeApplication *default_app;
-	
+
 	GtkBin *header_bin;
-	
+
 	gboolean renaming;
 	gboolean image_is_broken;
-	
+
 	gboolean delete_enabled;
 	guint gconf_conn_id;
 
-	gboolean is_in_user_list;
-
-	GnomeVFSMonitorHandle *user_monitor;
-	MainMenuRecentMonitor *recent_monitor;
+	BookmarkAgent       *agent;
+	BookmarkStoreStatus  store_status;
+	gboolean             is_bookmarked;
+	gulong               notify_signal_id;
 } DocumentTilePrivate;
 
 static GnomeThumbnailFactory *thumbnail_factory = NULL;
@@ -183,8 +182,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	document_tile_private_setup (this);
 
-	TILE (this)->actions = g_new0 (TileAction *, DOCUMENT_TILE_ACTION_NUM_OF_ACTIONS);
-	TILE (this)->n_actions = DOCUMENT_TILE_ACTION_NUM_OF_ACTIONS;
+	TILE (this)->actions = g_new0 (TileAction *, 7);
+	TILE (this)->n_actions = 7;
 
 	menu_ctnr = GTK_CONTAINER (TILE (this)->context_menu);
 
@@ -313,18 +312,19 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 }
 
 static void
-document_tile_private_setup (DocumentTile *tile)
+document_tile_private_setup (DocumentTile *this)
 {
-	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
+	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
 
 	GnomeVFSResult result;
 	GnomeVFSFileInfo *info;
 
 	GConfClient *client;
 
+
 	info = gnome_vfs_file_info_new ();
 
-	result = gnome_vfs_get_file_info (TILE (tile)->uri, info,
+	result = gnome_vfs_get_file_info (TILE (this)->uri, info,
 		GNOME_VFS_FILE_INFO_GET_MIME_TYPE | GNOME_VFS_FILE_INFO_FORCE_FAST_MIME_TYPE);
 
 	if (result == GNOME_VFS_OK)
@@ -343,14 +343,14 @@ document_tile_private_setup (DocumentTile *tile)
 
 	gconf_client_add_dir (client, GCONF_ENABLE_DELETE_KEY_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
 	priv->gconf_conn_id =
-		connect_gconf_notify (GCONF_ENABLE_DELETE_KEY, gconf_enable_delete_cb, tile);
+		connect_gconf_notify (GCONF_ENABLE_DELETE_KEY, gconf_enable_delete_cb, this);
 
 	g_object_unref (client);
 
-	priv->is_in_user_list = libslab_user_docs_store_has_uri (TILE (tile)->uri);
+	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_DOCS);
 
-	priv->user_monitor   = libslab_add_docs_monitor (docs_store_monitor_cb, tile);
-	priv->recent_monitor = main_menu_recent_monitor_new ();
+	priv->notify_signal_id = g_signal_connect (
+		G_OBJECT (priv->agent), "notify", G_CALLBACK (agent_notify_cb), this);
 }
 
 static void
@@ -358,17 +358,24 @@ document_tile_init (DocumentTile *tile)
 {
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
-	priv->basename = NULL;
-	priv->mime_type = NULL;
-	priv->default_app = NULL;
-	priv->header_bin = NULL;
-	priv->renaming = FALSE;
-	priv->image_is_broken = TRUE;
-	priv->delete_enabled = FALSE;
-	priv->gconf_conn_id = 0;
-	priv->is_in_user_list = FALSE;
-	priv->user_monitor = NULL;
-	priv->recent_monitor = NULL;
+	priv->basename         = NULL;
+	priv->mime_type        = NULL;
+	priv->modified         = 0;
+
+	priv->default_app      = NULL;
+
+	priv->header_bin       = NULL;
+
+	priv->renaming         = FALSE;
+	priv->image_is_broken  = TRUE;
+
+	priv->delete_enabled   = FALSE;
+	priv->gconf_conn_id    = 0;
+
+	priv->agent            = NULL;
+	priv->store_status     = BOOKMARK_STORE_DEFAULT;
+	priv->is_bookmarked    = FALSE;
+	priv->notify_signal_id = 0;
 }
 
 static void
@@ -383,6 +390,11 @@ document_tile_finalize (GObject *g_object)
 
 	gnome_vfs_mime_application_free (priv->default_app);
 
+	if (priv->notify_signal_id)
+		g_signal_handler_disconnect (priv->agent, priv->notify_signal_id);
+
+	g_object_unref (G_OBJECT (priv->agent));
+
 	client = gconf_client_get_default ();
 
 	gconf_client_notify_remove (client, priv->gconf_conn_id);
@@ -390,12 +402,7 @@ document_tile_finalize (GObject *g_object)
 
 	g_object_unref (client);
 
-	g_object_unref (priv->recent_monitor);
-
-	if (priv->user_monitor)
-		gnome_vfs_monitor_cancel (priv->user_monitor);
-
-	(* G_OBJECT_CLASS (document_tile_parent_class)->finalize) (g_object);
+	G_OBJECT_CLASS (document_tile_parent_class)->finalize (g_object);
 }
 
 static void
@@ -502,16 +509,32 @@ create_subheader (const gchar *desc)
 static void
 update_user_list_menu_item (DocumentTile *this)
 {
-	TileAction *action = TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU];
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
+
+	TileAction  *action;
+	GtkMenuItem *item;
+
+
+	action = TILE (this)->actions [DOCUMENT_TILE_ACTION_UPDATE_MAIN_MENU];
 
 	if (! action)
 		return;
 
-	if (priv->is_in_user_list)
+	priv->is_bookmarked = bookmark_agent_has_item (priv->agent, TILE (this)->uri);
+
+	if (priv->is_bookmarked)
 		tile_action_set_menu_item_label (action, _("Remove from Favorites"));
 	else
 		tile_action_set_menu_item_label (action, _("Add to Favorites"));
+
+	item = tile_action_get_menu_item (action);
+
+	if (! GTK_IS_MENU_ITEM (item))
+		return;
+
+	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->store_status, NULL);
+
+	gtk_widget_set_sensitive (GTK_WIDGET (item), (priv->store_status != BOOKMARK_STORE_DEFAULT_ONLY));
 }
 
 static void
@@ -556,7 +579,7 @@ rename_entry_activate_cb (GtkEntry *entry, gpointer user_data)
 	dst_uri_str = gnome_vfs_uri_to_string (dst_uri, GNOME_VFS_URI_HIDE_NONE);
 
 	if (retval == GNOME_VFS_OK) {
-		main_menu_rename_recent_file (priv->recent_monitor, TILE (tile)->uri, dst_uri_str);
+		bookmark_agent_move_item (priv->agent, TILE (tile)->uri, dst_uri_str);
 
 		g_free (priv->basename);
 		priv->basename = g_strdup (gtk_entry_get_text (entry));
@@ -752,7 +775,7 @@ move_to_trash_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		GNOME_VFS_XFER_ERROR_MODE_ABORT, GNOME_VFS_XFER_OVERWRITE_MODE_REPLACE, NULL, NULL);
 
 	if (retval == GNOME_VFS_OK)
-		main_menu_remove_recent_file (priv->recent_monitor, TILE (tile)->uri);
+		bookmark_agent_remove_item (priv->agent, TILE (tile)->uri);
 	else {
 		trash_uri_str = gnome_vfs_uri_to_string (trash_uri, GNOME_VFS_URI_HIDE_NONE);
 
@@ -787,7 +810,7 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		GNOME_VFS_XFER_REMOVESOURCE, NULL, NULL);
 
 	if (retval == GNOME_VFS_OK)
-		main_menu_remove_recent_file (priv->recent_monitor, TILE (tile)->uri);
+		bookmark_agent_remove_item (priv->agent, TILE (tile)->uri);
 	else
 		g_warning ("unable to delete [%s]\n", TILE (tile)->uri);
 
@@ -801,14 +824,22 @@ user_docs_trigger (Tile *tile, TileEvent *event, TileAction *action)
 	DocumentTile *this        = DOCUMENT_TILE             (tile);
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
 
+	BookmarkItem *item;
 
-	if (priv->is_in_user_list)
-		libslab_remove_user_doc (tile->uri);
-	else
-		libslab_add_user_doc (
-			tile->uri, priv->mime_type, priv->modified,
-			gnome_vfs_mime_application_get_name (priv->default_app),
-			gnome_vfs_mime_application_get_exec (priv->default_app));
+
+	if (priv->is_bookmarked)
+		bookmark_agent_remove_item (priv->agent, tile->uri);
+	else {
+		item = g_new0 (BookmarkItem, 1);
+		item->uri       = tile->uri;
+		item->mime_type = priv->mime_type;
+		item->mtime     = priv->modified;
+		item->app_name  = (gchar *) gnome_vfs_mime_application_get_name (priv->default_app);
+		item->app_exec  = (gchar *) gnome_vfs_mime_application_get_exec (priv->default_app);
+
+		bookmark_agent_add_item (priv->agent, item);
+		g_free (item);
+	}
 
 	update_user_list_menu_item (this);
 }
@@ -866,22 +897,7 @@ send_to_trigger (Tile *tile, TileEvent *event, TileAction *action)
 }
 
 static void
-docs_store_monitor_cb (
-	GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
-	const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+agent_notify_cb (GObject *g_obj, GParamSpec *pspec, gpointer user_data)
 {
-	DocumentTile *this = DOCUMENT_TILE (user_data);
-	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
-
-	gboolean is_in_user_list_current;
-
-
-	is_in_user_list_current = libslab_user_docs_store_has_uri (TILE (this)->uri);
-
-	if (is_in_user_list_current == priv->is_in_user_list)
-		return;
-
-	priv->is_in_user_list = is_in_user_list_current;
-
-	update_user_list_menu_item (this);
+	update_user_list_menu_item (DOCUMENT_TILE (user_data));
 }
