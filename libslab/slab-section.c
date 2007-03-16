@@ -26,7 +26,6 @@
 G_DEFINE_TYPE (SlabSection, slab_section, GTK_TYPE_VBOX)
 
 static void slab_section_finalize (GObject *);
-gboolean slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data);
 
 static void slab_section_class_init (SlabSectionClass * slab_section_class)
 {
@@ -85,6 +84,7 @@ slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user
 	}
 }
 
+/*
 gboolean
 slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
@@ -94,6 +94,7 @@ slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer 
 
 	return FALSE;
 }
+*/
 
 void
 slab_section_set_selected (SlabSection * section, gboolean selected)
@@ -122,6 +123,7 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 {
 	SlabSection *section;
 	GtkWidget *align;
+	gchar * widget_theming_name;
 
 	section = g_object_new (SLAB_SECTION_TYPE, NULL);
 	gtk_box_set_homogeneous (GTK_BOX (section), FALSE);
@@ -134,10 +136,12 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	{
 	case Style1:
 		gtk_alignment_set_padding (GTK_ALIGNMENT (align), 0, 0, 0, 0);
+		widget_theming_name = "slab_section_style1";
 		break;
 	case Style2:
 		gtk_alignment_set_padding (GTK_ALIGNMENT (align), SLAB_TOP_PADDING,
 			SLAB_BOTTOM_PADDING, SLAB_LEFT_PADDING, 0);
+		widget_theming_name = "slab_section_style2";
 		break;
 	default:
 		g_assert_not_reached ();
@@ -151,6 +155,7 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	gtk_label_set_use_markup (GTK_LABEL (section->title), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (section->title), 0.0, 0.5);
 
+	gtk_widget_set_name (GTK_WIDGET (section), widget_theming_name);
 	g_signal_connect (G_OBJECT (section), "style-set", G_CALLBACK (slab_section_style_set),
 		NULL);
 

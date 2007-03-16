@@ -120,6 +120,7 @@ create_main_window (AppShellData * app_data, const gchar * app_name, const gchar
 {
 	GtkWidget *main_app = gnome_app_new (app_name, title);
 	app_data->main_gnome_app = main_app;
+	gtk_widget_set_name (main_app, app_name);
 	/* gtk_window_set_default_size(GTK_WINDOW(main_app), width, height); */
 	gtk_window_set_icon_name (GTK_WINDOW (main_app), window_icon);
 	gnome_app_set_contents (GNOME_APP (main_app), app_data->shell);

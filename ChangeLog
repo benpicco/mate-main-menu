@@ -1,3 +1,8 @@
+2007-03-15  Scott Reeves  <sreeves@novell.com>
+	* libslab/slab-section.c
+	* libslab/app-shell.c:
+	Fix for BNC#250415 - name some widgets to allow for custom theming
+
 2007-03-08  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* main-menu/src/bookmark-tile-table.c
