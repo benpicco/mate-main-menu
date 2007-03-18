@@ -61,17 +61,20 @@
 #define FILE_MGR_OPEN_GCONF_KEY    ROOT_GCONF_DIR "/file-area/file_mgr_open_cmd"
 #define APP_BLACKLIST_GCONF_KEY    ROOT_GCONF_DIR "/file-area/file_blacklist"
 
-#define LOCKDOWN_GCONF_DIR          ROOT_GCONF_DIR "/lock-down"
-#define MORE_LINK_VIS_GCONF_KEY     LOCKDOWN_GCONF_DIR "/application_browser_link_visible"
-#define SEARCH_VIS_GCONF_KEY        LOCKDOWN_GCONF_DIR "/search_area_visible"
-#define STATUS_VIS_GCONF_KEY        LOCKDOWN_GCONF_DIR "/status_area_visible"
-#define SYSTEM_VIS_GCONF_KEY        LOCKDOWN_GCONF_DIR "/system_area_visible"
-#define SHOWABLE_TYPES_GCONF_KEY    LOCKDOWN_GCONF_DIR "/showable_file_types"
-#define MODIFIABLE_SYSTEM_GCONF_KEY LOCKDOWN_GCONF_DIR "/user_modifiable_system_area"
-#define MODIFIABLE_APPS_GCONF_KEY   LOCKDOWN_GCONF_DIR "/user_modifiable_apps"
-#define MODIFIABLE_DOCS_GCONF_KEY   LOCKDOWN_GCONF_DIR "/user_modifiable_docs"
-#define MODIFIABLE_DIRS_GCONF_KEY   LOCKDOWN_GCONF_DIR "/user_modifiable_dirs"
-#define DISABLE_TERMINAL_GCONF_KEY  "/desktop/gnome/lockdown/disable_command_line"
+#define LOCKDOWN_GCONF_DIR           ROOT_GCONF_DIR "/lock-down"
+#define MORE_LINK_VIS_GCONF_KEY      LOCKDOWN_GCONF_DIR "/application_browser_link_visible"
+#define SEARCH_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/search_area_visible"
+#define STATUS_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/status_area_visible"
+#define SYSTEM_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/system_area_visible"
+#define SHOWABLE_TYPES_GCONF_KEY     LOCKDOWN_GCONF_DIR "/showable_file_types"
+#define MODIFIABLE_SYSTEM_GCONF_KEY  LOCKDOWN_GCONF_DIR "/user_modifiable_system_area"
+#define MODIFIABLE_APPS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_apps"
+#define MODIFIABLE_DOCS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_docs"
+#define MODIFIABLE_DIRS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_dirs"
+#define DISABLE_TERMINAL_GCONF_KEY   "/desktop/gnome/lockdown/disable_command_line"
+#define PANEL_LOCKDOWN_GCONF_DIR     "/apps/panel/global"
+#define DISABLE_LOGOUT_GCONF_KEY     PANEL_LOCKDOWN_GCONF_DIR "/disable_log_out"
+#define DISABLE_LOCKSCREEN_GCONF_KEY PANEL_LOCKDOWN_GCONF_DIR "/disable_lock_screen"
 
 G_DEFINE_TYPE (MainMenuUI, main_menu_ui, G_TYPE_OBJECT)
 
@@ -125,6 +128,8 @@ typedef struct {
 	guint modifiable_docs_gconf_mntr_id;
 	guint modifiable_dirs_gconf_mntr_id;
 	guint disable_term_gconf_mntr_id;
+	guint disable_logout_gconf_mntr_id;
+	guint disable_lockscreen_gconf_mntr_id;
 
 	gboolean ptr_is_grabbed;
 	gboolean kbd_is_grabbed;
@@ -377,6 +382,8 @@ main_menu_ui_init (MainMenuUI *this)
 	priv->modifiable_docs_gconf_mntr_id              = 0;
 	priv->modifiable_dirs_gconf_mntr_id              = 0;
 	priv->disable_term_gconf_mntr_id                 = 0;
+	priv->disable_logout_gconf_mntr_id               = 0;
+	priv->disable_lockscreen_gconf_mntr_id           = 0;
 
 	priv->ptr_is_grabbed                             = FALSE;
 	priv->kbd_is_grabbed                             = FALSE;
@@ -386,6 +393,8 @@ static void
 main_menu_ui_finalize (GObject *g_obj)
 {
 	MainMenuUIPrivate *priv = PRIVATE (g_obj);
+
+	GConfClient *client;
 
 	gint i;
 
@@ -412,6 +421,12 @@ main_menu_ui_finalize (GObject *g_obj)
 	libslab_gconf_notify_remove (priv->modifiable_docs_gconf_mntr_id);
 	libslab_gconf_notify_remove (priv->modifiable_dirs_gconf_mntr_id);
 	libslab_gconf_notify_remove (priv->disable_term_gconf_mntr_id);
+	libslab_gconf_notify_remove (priv->disable_logout_gconf_mntr_id);
+	libslab_gconf_notify_remove (priv->disable_lockscreen_gconf_mntr_id);
+
+	client  = gconf_client_get_default ();
+	gconf_client_remove_dir (client, PANEL_LOCKDOWN_GCONF_DIR, NULL);
+	g_object_unref (client);
 
 	for (i = 0; i < BOOKMARK_STORE_N_TYPES; ++i)
 		g_object_unref (priv->bm_agents [i]);
@@ -860,6 +875,12 @@ setup_lock_down (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
+	GConfClient *client;
+
+	client = gconf_client_get_default ();
+	gconf_client_add_dir (client, PANEL_LOCKDOWN_GCONF_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
+	g_object_unref (client);
+
 	priv->more_link_vis_gconf_mntr_id = libslab_gconf_notify_add (
 		MORE_LINK_VIS_GCONF_KEY, lockdown_notify_cb, this);
 	priv->search_vis_gconf_mntr_id = libslab_gconf_notify_add (
@@ -880,6 +901,10 @@ setup_lock_down (MainMenuUI *this)
 		MODIFIABLE_DIRS_GCONF_KEY, lockdown_notify_cb, this);
 	priv->disable_term_gconf_mntr_id = libslab_gconf_notify_add (
 		DISABLE_TERMINAL_GCONF_KEY, lockdown_notify_cb, this);
+	priv->disable_logout_gconf_mntr_id = libslab_gconf_notify_add (
+		DISABLE_LOGOUT_GCONF_KEY, lockdown_notify_cb, this);
+	priv->disable_lockscreen_gconf_mntr_id = libslab_gconf_notify_add (
+		DISABLE_LOCKSCREEN_GCONF_KEY, lockdown_notify_cb, this);
 }
 
 static Tile *
@@ -1002,6 +1027,9 @@ app_is_in_blacklist (const gchar *uri)
 	GList *blacklist;
 
 	gboolean disable_term;
+	gboolean disable_logout;
+	gboolean disable_lockscreen;
+
 	gboolean blacklisted;
 
 	GList *node;
@@ -1009,6 +1037,18 @@ app_is_in_blacklist (const gchar *uri)
 
 	disable_term = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_TERMINAL_GCONF_KEY));
 	blacklisted  = disable_term && libslab_desktop_item_is_a_terminal (uri);
+
+	if (blacklisted)
+		return TRUE;
+
+	disable_logout = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_LOGOUT_GCONF_KEY));
+	blacklisted    = disable_logout && libslab_desktop_item_is_logout (uri);
+
+	if (blacklisted)
+		return TRUE;
+
+	disable_lockscreen = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_LOCKSCREEN_GCONF_KEY));
+	blacklisted        = disable_lockscreen && libslab_desktop_item_is_lockscreen (uri);
 
 	if (blacklisted)
 		return TRUE;

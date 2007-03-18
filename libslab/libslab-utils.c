@@ -470,6 +470,44 @@ libslab_desktop_item_is_a_terminal (const gchar *uri)
 	return is_terminal;
 }
 
+gboolean
+libslab_desktop_item_is_logout (const gchar *uri)
+{
+	GnomeDesktopItem *d_item;
+	gboolean is_logout = FALSE;
+
+
+	d_item = libslab_gnome_desktop_item_new_from_unknown_id (uri);
+
+	if (! d_item)
+		return FALSE;
+
+	is_logout = strstr ("Logout", gnome_desktop_item_get_string (d_item, GNOME_DESKTOP_ITEM_NAME)) != NULL;
+
+	gnome_desktop_item_unref (d_item);
+
+	return is_logout;
+}
+
+gboolean
+libslab_desktop_item_is_lockscreen (const gchar *uri)
+{
+	GnomeDesktopItem *d_item;
+	gboolean is_logout = FALSE;
+
+
+	d_item = libslab_gnome_desktop_item_new_from_unknown_id (uri);
+
+	if (! d_item)
+		return FALSE;
+
+	is_logout = strstr ("Lock Screen", gnome_desktop_item_get_string (d_item, GNOME_DESKTOP_ITEM_NAME)) != NULL;
+
+	gnome_desktop_item_unref (d_item);
+
+	return is_logout;
+}
+
 gchar *
 libslab_string_replace_once (const gchar *string, const gchar *key, const gchar *value)
 {

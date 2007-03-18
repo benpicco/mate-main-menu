@@ -22,6 +22,8 @@ guint             libslab_gconf_notify_add (const gchar *key, GConfClientNotifyF
 void              libslab_gconf_notify_remove (guint conn_id);
 void              libslab_handle_g_error (GError **error, const gchar *msg_format, ...);
 gboolean          libslab_desktop_item_is_a_terminal (const gchar *uri);
+gboolean          libslab_desktop_item_is_logout (const gchar *uri);
+gboolean          libslab_desktop_item_is_lockscreen (const gchar *uri);
 gchar            *libslab_string_replace_once (const gchar *string, const gchar *key, const gchar *value);
 void              libslab_spawn_command (const gchar *cmd);
 
