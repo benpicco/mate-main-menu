@@ -425,7 +425,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		key = "/apps/main-menu/upgrade_package_command";
 
 	if (verify_package_management_command (key)) {
-		action = tile_action_new (TILE (this), upgrade_trigger, _("Upgrade"), 0);
+		action = tile_action_new (TILE (this), upgrade_trigger, _("Upgrade"), TILE_ACTION_OPENS_NEW_WINDOW);
 		actions [APPLICATION_TILE_ACTION_UPGRADE_PACKAGE] = action;
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 		gtk_container_add (menu_ctnr, menu_item);
@@ -440,7 +440,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		key = "/apps/main-menu/uninstall_package_command";
 
 	if (verify_package_management_command (key)) {
-		action = tile_action_new (TILE (this), uninstall_trigger, _("Uninstall"), 0);
+		action = tile_action_new (TILE (this), uninstall_trigger, _("Uninstall"), TILE_ACTION_OPENS_NEW_WINDOW);
 		actions [APPLICATION_TILE_ACTION_UNINSTALL_PACKAGE] = action;
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 		gtk_container_add (menu_ctnr, menu_item);

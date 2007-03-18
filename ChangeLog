@@ -5,6 +5,9 @@
 	Make the menu abide by /apps/panel/global/disable_{log_out,lock_screen}
 	in gconf.
 
+	* libslab/application-tile.c:
+	Set the Upgrade/Uninstall action flags appropriately.
+
 2007-03-16  Jim Krehl  <jimmyk@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* main-menu/src/user-apps-tile-table.c
