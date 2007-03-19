@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-02 12:23+0100\n"
-"PO-Revision-Date: 2007-03-02 12:22+0100\n"
+"POT-Creation-Date: 2007-03-19 11:56+0100\n"
+"PO-Revision-Date: 2007-03-19 10:55+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -160,46 +160,45 @@ msgid "Common Tasks"
 msgstr "Vanliga uppgifter"
 
 #. make start action
-#: ../libslab/application-tile.c:356
+#: ../libslab/application-tile.c:362
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Starta %s</b>"
 
-#: ../libslab/application-tile.c:375
-#: ../main-menu/src/main-menu-migration.c:107
-#: ../main-menu/src/main-menu-migration.c:232
+#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:92
+#: ../main-menu/src/main-menu-migration.c:213
 msgid "Help"
 msgstr "Hjälp"
 
-#: ../libslab/application-tile.c:439
+#: ../libslab/application-tile.c:428
 msgid "Upgrade"
 msgstr "Uppdatera"
 
-#: ../libslab/application-tile.c:454
+#: ../libslab/application-tile.c:443
 msgid "Uninstall"
 msgstr "Avinstallera"
 
-#: ../libslab/application-tile.c:766 ../libslab/document-tile.c:512
+#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Ta bort från favoriter"
 
-#: ../libslab/application-tile.c:768 ../libslab/document-tile.c:514
+#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Lägg till i favoriter"
 
-#: ../libslab/application-tile.c:844
+#: ../libslab/application-tile.c:857
 msgid "Remove from Startup Programs"
 msgstr "Ta bort från uppstartsprogram"
 
-#: ../libslab/application-tile.c:846
+#: ../libslab/application-tile.c:859
 msgid "Add to Startup Programs"
 msgstr "Lägg till i uppstartsprogram"
 
-#: ../libslab/app-shell.c:746
+#: ../libslab/app-shell.c:747
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -210,114 +209,151 @@ msgstr ""
 "\n"
 " Ditt filter \"<b>%s</b>\" matchar inga objekt.</span>"
 
-#: ../libslab/app-shell.c:891
+#: ../libslab/app-shell.c:892
 msgid "Other"
 msgstr "Övriga"
 
+#: ../libslab/bookmark-agent.c:1036
+msgid "New Spreadsheet"
+msgstr "Nytt kalkylark"
+
+#: ../libslab/bookmark-agent.c:1038
+msgid "New Document"
+msgstr "Nytt dokument"
+
+#: ../libslab/bookmark-agent.c:1079
+msgid "Home"
+msgstr "Hem"
+
+#: ../libslab/bookmark-agent.c:1095
+msgid "File System"
+msgstr "Filsystem"
+
+#: ../libslab/bookmark-agent.c:1099
+msgid "Network Servers"
+msgstr "Nätverksservrar"
+
+#: ../libslab/bookmark-agent.c:1128
+msgid "Search"
+msgstr "Sök"
+
 #. make open with default action
-#: ../libslab/directory-tile.c:166
+#: ../libslab/directory-tile.c:168
 msgid "<b>Open</b>"
 msgstr "<b>Öppna</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:185 ../libslab/document-tile.c:233
+#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
 msgid "Rename..."
 msgstr "Byt namn..."
 
-#: ../libslab/directory-tile.c:199 ../libslab/directory-tile.c:208
-#: ../libslab/document-tile.c:247 ../libslab/document-tile.c:256
+#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
+#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
 msgid "Send To..."
 msgstr "Skicka till..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:223 ../libslab/document-tile.c:282
+#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
-#: ../libslab/directory-tile.c:233 ../libslab/directory-tile.c:446
-#: ../libslab/document-tile.c:292 ../libslab/document-tile.c:616
+#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
 msgid "Delete"
 msgstr "Ta bort"
 
-#: ../libslab/document-tile.c:154
+#: ../libslab/document-tile.c:153
 msgid "Edited %m/%d/%Y"
 msgstr "Redigerad %Y-%m-%d"
 
-#: ../libslab/document-tile.c:194
+#: ../libslab/document-tile.c:193
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Öppna med \"%s\"</b>"
 
-#: ../libslab/document-tile.c:206
+#: ../libslab/document-tile.c:205
 msgid "Open with Default Application"
 msgstr "Öppna med standardprogrammet"
 
-#: ../libslab/document-tile.c:217
+#: ../libslab/document-tile.c:216
 msgid "Open in File Manager"
 msgstr "Öppna i filhanterare"
 
-#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
-#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
 msgstr "Oväntat attribut \"%s\" för elementet \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
-#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
 msgstr "Attributet \"%s\" för elementet \"%s\" hittades inte"
 
-#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
-#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
 msgstr "Oväntad tagg \"%s\", taggen \"%s\" förväntades"
 
-#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
-#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
 msgstr "Oväntad tagg \"%s\" i \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:2187
-msgid "No valid bookmark file was be found in data dirs"
+#: ../libslab/libslab-bookmarkfile.c:1929
+msgid "No valid bookmark file found in data dirs"
 msgstr "Ingen giltig bokmärkesfil hittades i datakatalogerna"
 
-#: ../libslab/eggbookmarkfile.c:2388
+#: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
 msgstr "Ett bokmärke för URI \"%s\" finns redan"
 
-#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
-#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
-#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
-#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
-#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
-#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
-#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
-#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
-#: ../libslab/eggbookmarkfile.c:4053
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
 msgstr "Inget bokmärke hittades för URI \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:2772
+#: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
 msgstr "Ingen MIME-typ definierad i bokmärket för URI \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:2857
+#: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
 msgstr "Ingen privat flagga har definierats i bokmärket för URI \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:3236
+#: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
 msgstr "Inga grupper inställda i bokmärket för URI \"%s\""
 
-#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
 msgstr ""
@@ -327,12 +363,12 @@ msgstr ""
 msgid "Find Now"
 msgstr "Sök nu"
 
-#: ../libslab/system-tile.c:113
+#: ../libslab/system-tile.c:128
 #, c-format
 msgid "<b>Open %s</b>"
 msgstr "<b>Öppna %s</b>"
 
-#: ../libslab/system-tile.c:126
+#: ../libslab/system-tile.c:141
 msgid "Remove from System Items"
 msgstr "Ta bort från systemobjekt"
 
@@ -341,7 +377,7 @@ msgid "Default menu and application browser"
 msgstr "Standardmeny och programbläddrare"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:1864 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2100 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME:s huvudmeny"
 
@@ -633,25 +669,25 @@ msgstr "%llu byte"
 msgid "%s Free / %s Total"
 msgstr "%s ledigt / %s totalt"
 
-#: ../main-menu/src/main-menu-migration.c:109
-#: ../main-menu/src/main-menu-migration.c:235
+#: ../main-menu/src/main-menu-migration.c:96
+#: ../main-menu/src/main-menu-migration.c:215
 msgid "Logout"
 msgstr "Logga ut"
 
-#: ../main-menu/src/main-menu-migration.c:111
-#: ../main-menu/src/main-menu-migration.c:238
+#: ../main-menu/src/main-menu-migration.c:100
+#: ../main-menu/src/main-menu-migration.c:217
 msgid "Shutdown"
 msgstr "Stäng av"
 
-#: ../main-menu/src/main-menu-migration.c:174
+#: ../main-menu/src/main-menu-migration.c:155
 msgid "Lock Screen"
 msgstr "Lås skärmen"
 
-#: ../main-menu/src/main-menu-migration.c:176
+#: ../main-menu/src/main-menu-migration.c:157
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:1865
+#: ../main-menu/src/main-menu-ui.c:2101
 msgid "The GNOME Main Menu"
 msgstr "GNOME-huvudmenyn"
 
@@ -765,18 +801,6 @@ msgstr "Status"
 #: ../main-menu/src/slab-window.glade.h:16
 msgid "System"
 msgstr "System"
-
-#: ../main-menu/src/user-dirs-tile-table.c:211
-msgid "Search"
-msgstr "Sök"
-
-#: ../main-menu/src/user-docs-tile-table.c:164
-msgid "New Spreadsheet"
-msgstr "Nytt kalkylark"
-
-#: ../main-menu/src/user-docs-tile-table.c:166
-msgid "New Document"
-msgstr "Nytt dokument"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
