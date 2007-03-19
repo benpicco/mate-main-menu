@@ -8,10 +8,11 @@ control-center/etc/control-center.schemas.in
 control-center/src/control-center.c
 libslab/application-tile.c
 libslab/app-shell.c
+libslab/bookmark-agent.c
 libslab/directory-tile.c
 libslab/document-tile.c
-libslab/eggbookmarkfile.c
 libslab/egg-recent-item.c
+libslab/libslab-bookmarkfile.c
 libslab/search-bar.c
 libslab/system-tile.c
 main-menu/etc/GNOME_MainMenu.server.in.in
@@ -23,6 +24,4 @@ main-menu/src/main-menu-migration.c
 main-menu/src/main-menu-ui.c
 main-menu/src/network-status-tile.c
 main-menu/src/slab-window.glade
-main-menu/src/user-dirs-tile-table.c
-main-menu/src/user-docs-tile-table.c
 nautilus-main-menu/nautilus-main-menu.c
