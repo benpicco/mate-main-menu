@@ -155,6 +155,7 @@ relayout_tables (AppResizer * widget, gint num_cols)
 		launcher_list = g_list_reverse (launcher_list);	/* Fixme - ugly hack because table stores prepend */
 		resize_table (table, num_cols, launcher_list);
 		relayout_table (table, launcher_list);
+		g_list_free (launcher_list);
 	}
 }
 
@@ -168,9 +169,10 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 		if (resizer->cached_element_width == -1)
 		{
 			GtkTable *table = GTK_TABLE (resizer->cached_tables_list->data);
-			GtkWidget *table_element =
-				GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (table))->
-				data);
+			GList *children = gtk_container_get_children (GTK_CONTAINER (table));
+			GtkWidget *table_element = GTK_WIDGET (children->data);
+			g_list_free (children);
+
 			resizer->cached_element_width = table_element->allocation.width;
 			resizer->cached_table_spacing = gtk_table_get_default_col_spacing (table);
 		}

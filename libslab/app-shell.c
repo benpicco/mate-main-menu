@@ -787,11 +787,15 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 {
 	GtkWidget *hbox;
 	GtkTable *table;
+	GList *children;
 
 	g_assert (GTK_IS_HBOX (section->contents));
 	hbox = GTK_WIDGET (section->contents);
 
-	table = gtk_container_get_children (GTK_CONTAINER (hbox))->data;
+	children = gtk_container_get_children (GTK_CONTAINER (hbox));
+	table = children->data;
+	g_list_free (children);
+
 	/* Make sure our implementation has not changed and it's still a GtkTable */
 	g_assert (GTK_IS_TABLE (table));
 
@@ -799,6 +803,7 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 
 	app_resizer_layout_table_default (APP_RESIZER (app_data->category_layout), table,
 		launcher_list);
+	
 }
 
 gboolean

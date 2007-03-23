@@ -1,3 +1,9 @@
+2007-03-23  Jim Krehl  <jimmyk@novell.com>
+	* libslab/app-resizer.c
+	* libslab/search-context-picker.c
+	* libslab/app-shell.c:
+	Applied patch from Larry Ewing to fix some memory leaks, BNC #244456.
+
 2007-03-18  Jim Krehl  <jimmyk@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* libslab/libslab-utils.c

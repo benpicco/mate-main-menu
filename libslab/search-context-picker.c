@@ -149,7 +149,8 @@ nld_search_context_picker_add_context (NldSearchContextPicker * picker, const ch
 	NldSearchContextPickerPrivate *priv = NLD_SEARCH_CONTEXT_PICKER_GET_PRIVATE (picker);
 	GtkWidget *item = gtk_image_menu_item_new_with_label (label);
 	GtkWidget *image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
-	gboolean first = (gtk_container_get_children (GTK_CONTAINER (priv->menu)) == NULL);
+	GList *children = gtk_container_get_children (GTK_CONTAINER (priv->menu));
+	gboolean first = children == NULL;
 
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
 	g_object_set_data (G_OBJECT (item), "NldSearchContextPicker:context_id",
@@ -158,8 +159,10 @@ nld_search_context_picker_add_context (NldSearchContextPicker * picker, const ch
 	gtk_widget_show_all (item);
 
 	gtk_container_add (GTK_CONTAINER (priv->menu), item);
-	if (first)
+	if (first) {
 		item_activated (GTK_MENU_ITEM (item), picker);
+		g_list_free (children);
+	}
 }
 
 int
@@ -192,6 +195,7 @@ nld_search_context_picker_set_context (NldSearchContextPicker * picker, int cont
 
 		children = children->next;
 	}
+	g_list_free (children);
 
 	priv->cur_context = -1;
 	g_signal_emit (picker, signals[CONTEXT_CHANGED], 0);
