@@ -4,6 +4,12 @@
 	* libslab/app-shell.c:
 	Applied patch from Larry Ewing to fix some memory leaks, BNC #244456.
 
+	* main-menu/etc/empty.ods
+	* main-menu/etc/Makefile.am
+	* libslab/bookmark-agent.c:
+	Applied patch from Larry Ewing to create valid, empty .ods file, BNC
+	#249188.
+
 2007-03-18  Jim Krehl  <jimmyk@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* libslab/libslab-utils.c

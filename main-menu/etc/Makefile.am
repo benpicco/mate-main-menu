@@ -14,7 +14,7 @@ desktop_DATA = gnome-screensaver-lock.desktop gnome-session-kill.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 bookmarkdir = $(datadir)/gnome-main-menu
-bookmark_DATA = applications.xbel documents.xbel system-items.xbel places.xbel
+bookmark_DATA = applications.xbel documents.xbel system-items.xbel places.xbel empty.ods
 
 $(server_DATA).in: $(server_DATA).in.in
 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
