@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD.pot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-06 04:58+0100\n"
-"PO-Revision-Date: 2006-12-13 09:39+0530\n"
-"Last-Translator: norbu <nor_den@hotmail.com>\n"
+"POT-Creation-Date: 2007-03-19 03:38+0000\n"
+"PO-Revision-Date: 2007-03-26 02:56+0530\n"
+"Last-Translator: yangka <yanang_ka@hotmail.com>\n"
 "Language-Team: zongkha <pgeyeleg@dit.gov.bt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -81,12 +81,12 @@ msgid "New Applications"
 msgstr "གློག་རིམ་གསརཔ་ཚུ་"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Filter"
 msgstr "ཚགས་མ་"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "སྡེ་ཚན་"
 
@@ -95,7 +95,7 @@ msgid "Application Actions"
 msgstr "གློག་རིམ་བྱ་བ་ཚུ་"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
+#: ../control-center/src/control-center.c:164
 msgid "Control Center"
 msgstr "ཚད་འཛིན་ལྟེ་བ་"
 
@@ -120,16 +120,58 @@ msgstr "[ཌེཀསི་ཊོཔ་རྒྱབ་གཞི་སོར་ ;
 msgid "if true, the control-center will close when a \"Common Task\" is activated"
 msgstr "བདེན་པ་ཨིན་པ་ཅིན་  ཚད་འཛིན་ལྟེབ་འདི་  \"Common Task\" འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ ཁ་བསྡམ་འོང་"
 
-#: ../control-center/src/control-center.c:61
+#: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
 msgstr "ལྡེ་མིག་མ་འཐོབ་ [%s]\n"
 
-#: ../control-center/src/control-center.c:146
+#: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
 msgstr "མཐུན་མོང་ལས་ཀ་"
 
-#: ../libslab/app-shell.c:707
+#. make start action
+#: ../libslab/application-tile.c:362
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>%s འགོ་བཙུགས་</b>"
+
+#: ../libslab/application-tile.c:381
+#: ../main-menu/src/main-menu-migration.c:92
+#: ../main-menu/src/main-menu-migration.c:213
+msgid "Help"
+msgstr "གྲོགས་རམ་"
+
+#: ../libslab/application-tile.c:428
+msgid "Upgrade"
+msgstr "ཡར་བསྐྱེད་"
+
+#: ../libslab/application-tile.c:443
+msgid "Uninstall"
+msgstr "གཞི་བཙུགས་མ་འབད་"
+
+#: ../libslab/application-tile.c:770
+#: ../libslab/document-tile.c:526
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "དགའ་མི་ཚུ་ལས་རྩ་བསྐྲད་གཏང་"
+
+#: ../libslab/application-tile.c:772
+#: ../libslab/document-tile.c:528
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "དགའ་མི་ཚུ་ལུ་ཁ་སྐོང་རྐྱབས་"
+
+#: ../libslab/application-tile.c:857
+msgid "Remove from Startup Programs"
+msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལས་རྩ་བསྐྲད་གཏང་"
+
+#: ../libslab/application-tile.c:859
+msgid "Add to Startup Programs"
+msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལུ་ཁ་སྐོང་རྐྱབས་"
+
+#: ../libslab/app-shell.c:747
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -140,99 +182,185 @@ msgstr ""
 "\n"
 " ཁྱོད་ཀྱི་ཚགས་མ་ \"<b>%s</b>\" རྣམ་གྲངས་ག་དང་ཡང་མི་མཐུན་པས།</span>"
 
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "ད་ལྟོ་འཚོལ་"
+#: ../libslab/app-shell.c:892
+msgid "Other"
+msgstr "གཞན།"
 
-#. make start action
-#: ../libslab/application-tile.c:310
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>%s འགོ་བཙུགས་</b>"
+#: ../libslab/bookmark-agent.c:1036
+msgid "New Spreadsheet"
+msgstr "ཤོག་ཁྲམ་གསརཔ།"
 
-#: ../libslab/application-tile.c:329
-msgid "Help"
-msgstr "གྲོགས་རམ་"
+#: ../libslab/bookmark-agent.c:1038
+msgid "New Document"
+msgstr "ཡིག་ཆ་གསརཔ།"
 
-#: ../libslab/application-tile.c:336
-msgid "Help Unavailable"
-msgstr "གྲོགས་རམ་འཐོབ་ཚུགསཔ་མེདཔ་"
+#: ../libslab/bookmark-agent.c:1079
+msgid "Home"
+msgstr "ཁྱིམ།"
 
-#: ../libslab/application-tile.c:375
-msgid "Upgrade"
-msgstr "ཡར་བསྐྱེད་"
+#: ../libslab/bookmark-agent.c:1095
+msgid "File System"
+msgstr "ཡིག་སྣོད་རིམ་ལུགས།"
 
-#: ../libslab/application-tile.c:384
-msgid "Uninstall"
-msgstr "གཞི་བཙུགས་མ་འབད་"
+#: ../libslab/bookmark-agent.c:1099
+msgid "Network Servers"
+msgstr "ཡོངས་འབྲེལ་སར་བར་ཚུ།"
 
-#: ../libslab/application-tile.c:781
-msgid "Remove from Favorites"
-msgstr "དགའ་མི་ཚུ་ལས་རྩ་བསྐྲད་གཏང་"
+#: ../libslab/bookmark-agent.c:1128
+msgid "Search"
+msgstr "འཚོལ་ཞིབ།"
 
-#: ../libslab/application-tile.c:783
-msgid "Add to Favorites"
-msgstr "དགའ་མི་ཚུ་ལུ་ཁ་སྐོང་རྐྱབས་"
+#. make open with default action
+#: ../libslab/directory-tile.c:168
+msgid "<b>Open</b>"
+msgstr "<b>ཁ་ཕྱེ་</b>"
 
-#: ../libslab/application-tile.c:838
-msgid "Remove from Startup Programs"
-msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལས་རྩ་བསྐྲད་གཏང་"
+#. make rename action
+#: ../libslab/directory-tile.c:187
+#: ../libslab/document-tile.c:232
+msgid "Rename..."
+msgstr "བསྐྱར་མིང་བཏགས་"
 
-#: ../libslab/application-tile.c:840
-msgid "Add to Startup Programs"
-msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལུ་ཁ་སྐོང་རྐྱབས་"
+#: ../libslab/directory-tile.c:201
+#: ../libslab/directory-tile.c:210
+#: ../libslab/document-tile.c:246
+#: ../libslab/document-tile.c:255
+msgid "Send To..."
+msgstr "ལུ་གཏང་"
 
-#: ../libslab/document-tile.c:145
+#. make move to trash action
+#: ../libslab/directory-tile.c:225
+#: ../libslab/document-tile.c:281
+msgid "Move to Trash"
+msgstr "ཕྱགས་ཧོད་ནང་སྤོ་"
+
+#: ../libslab/directory-tile.c:235
+#: ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:291
+#: ../libslab/document-tile.c:639
+msgid "Delete"
+msgstr "བཏོན་གཏང་"
+
+#: ../libslab/document-tile.c:153
 msgid "Edited %m/%d/%Y"
 msgstr "%m/%d/%Y ཞུན་དག་འབད་ཡོད་"
 
-#: ../libslab/document-tile.c:183
+#: ../libslab/document-tile.c:193
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>\"%s\" དང་གཅིག་ཁར་ཁ་ཕྱེ་</b>"
 
-#: ../libslab/document-tile.c:195
+#: ../libslab/document-tile.c:205
 msgid "Open with Default Application"
 msgstr "སྔོན་སྒྲིག་གློག་རིམ་དང་གཅིག་ཁར་ཁ་ཕྱེ་"
 
-#: ../libslab/document-tile.c:211
+#: ../libslab/document-tile.c:216
 msgid "Open in File Manager"
 msgstr "ཡིག་སྣོད་འཛིན་སྐྱོང་པ་ནང་ཁ་ཕྱེ་"
 
-#. make rename action
-#: ../libslab/document-tile.c:227
-msgid "Rename..."
-msgstr "བསྐྱར་མིང་བཏགས་"
+#: ../libslab/libslab-bookmarkfile.c:700
+#: ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856
+#: ../libslab/libslab-bookmarkfile.c:903
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "རྒྱུ་རྗས་ཀྱི་དོན་ལུ་ '%s' རེ་བ་མེད་པའི་ཁྱད་ཆོས། '%s'"
 
-#. make move to trash action
-#: ../libslab/document-tile.c:240
-msgid "Move to Trash"
-msgstr "ཕྱགས་ཧོད་ནང་སྤོ་"
+#: ../libslab/libslab-bookmarkfile.c:711
+#: ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798
+#: ../libslab/libslab-bookmarkfile.c:914
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr "རྒྱུ་རྫས་ཀྱི་ '%s' ཁྱད་ཆོས་ '%s' འཚོལ་མ་ཐོབ།"
 
-#: ../libslab/document-tile.c:250
-#: ../libslab/document-tile.c:580
-msgid "Delete"
-msgstr "བཏོན་གཏང་"
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr "རེ་བ་མེད་པའི་ངོ་རྟགས '%s', རེ་བ་བསྐྲེད་པའི་ '%s' ངོ་རྟགས།"
 
-#: ../libslab/document-tile.c:270
-#: ../libslab/document-tile.c:279
-msgid "Send To..."
-msgstr "ལུ་གཏང་"
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr "ནང་ན་ '%s' རེ་བ་མ་བསྐྱེད་པའི་ངོ་རྟགས '%s'"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "དཀར་ཆག་ཁ་ཕྱེ་"
+#: ../libslab/libslab-bookmarkfile.c:1929
+msgid "No valid bookmark file found in data dirs"
+msgstr "གནས་སྡུད་སྣོད་ཐོ་ཚུ་ནང་ནུས་ཅན་དེབ་རྟགས་ཡིག་སྣོད་ཐོབ་མེདཔ།"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "སྐོར་ལས་(_A)"
+#: ../libslab/libslab-bookmarkfile.c:2130
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "ཡུ་ཨར་ཨེལསི་དེབ་རྟགས་ཅིག་ '%s' ཧེ་མ་ལས་གནས་ཡོདཔ།"
+
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr "ཡུ་ཨར་ཨེལ་དོན་ལུ་དེབ་རྟགས་འཚོལ་ཐོབ་མེདཔ།'%s'"
+
+#: ../libslab/libslab-bookmarkfile.c:2508
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr "ཡུ་ཨར་ཨེལ་དོན་ལུ་དེབ་རྟགས་ནང་ཨེམ་ཨའི་ཨེམ་ཨི་དབྱེ་བ་ངེས་འཛིན་འབད་མེདཔ། '%s'"
+
+#: ../libslab/libslab-bookmarkfile.c:2593
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr "ཡུ་ཨར་ཨའི་དོན་ལུ་དེབ་རྟགས་ནང་སྒེར་དོན་ཟུར་རྟགས་ངེས་འཛིན་འབད་མེདཔ། '%s'"
+
+#: ../libslab/libslab-bookmarkfile.c:2972
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr "ཡུ་ཨར་ཨའི་དོན་ལུ་དེབ་རྟགས་ནང་སྡེ་ཚན་ཚུ་གཞི་སྒྲིག་འབད་མེདཔ།'%s'"
+
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr "དོན་ལུ་དེབ་རྟགས་ཅིག་'%s'གློག་རིམ་དང་གཅིག་ཁར་ཐོ་འགོད་འབད་མེདཔ།'%s'"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "ད་ལྟོ་འཚོལ་"
+
+#: ../libslab/system-tile.c:128
+#, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>ཁ་ཕྱེ་ %s</b>"
+
+#: ../libslab/system-tile.c:141
+msgid "Remove from System Items"
+msgstr "རིམ་ལུགས་རྣམ་གྲངས་ཚུ་ལས་རྩ་བསྐྲད་གཏང་།"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "སྔོན་སྒྲིག་དཀར་ཆག་དང་གློག་རིམ་བརའུ་ཟར་"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:2100
+#: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "ཇི་ནོམ་དཀར་ཆག་གཙོ་བོ་"
 
@@ -241,13 +369,16 @@ msgid "GNOME Main Menu Factory"
 msgstr "ཇི་ནོམ་ དཀར་ཆག་གཙོ་བོ་འཕྲུལ་ཁང་"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
-#: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "དཀར་ཆག་གཙོ་བོ་"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "མཉེན་ཆས་དུས་མཐུན་བཟོ་ནི་"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "སྐོར་ལས་(_A)"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "དཀར་ཆག་ཁ་ཕྱེ།(_O)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -266,241 +397,199 @@ msgid ".desktop file for the net config tool"
 msgstr ".desktop ཡིག་སྣོད་ ནེཊི་ཀོན་ཕིག་ལག་ཆས་ཀྱི་དོན་ལུ་"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr ".desktop ཡིག་སྣོད་ཚུ་  \"Favorite Applications\" གི་དོན་ལུ་"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr ".desktop འགྲུལ་ལམ་ཚུ་ གློག་རིམ་བརའུ་ཟར་གྱི་དོན་ལུ་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the system-wide directory in which startup programs are found."
-msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་འཐོབ་ཡོད་མི་ རིམ་ལུགས་ཡོངས་ཀྱི་སྣོད་ཐོ་འདི་གི་གནས་ཁོངས།"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
-msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་འཐོབ་ཡོད་མི་ ལག་ལེན་པའི་སྣོད་ཐོ་འདི་གི་གནས་ཁོངས། སྣོད་ཐོའི་འགྲུལ་ལམ་འདི་ ཡང་དག་མེན་དགོ་  འ་ནི་ལྡ་མིག་འདི་གི་གནས་གོང་འདི་ འ་ནི་འགྲུལ་ལམ་འདི་ལུ་འཇུག་བསྣོན་འབད་ཡོདཔ་ལས་: ~/."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr "རིམ་ལུགས་མངའ་ཁོངས་རྣམ་གྲངས་ཚུ་"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "System-wide autostart program drop dir"
-msgstr "རིམ་ལུགས་ཡོངས་ཀྱི་ རང་བཞིན་འགོ་བཙུགས་ལས་རིམ་བཀོག་བཞག་སྣོད་ཐོ་"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr "རིམ་ལུགས་མངའ་ཁོངས་འདི་ནང་ལུ་འབྱུང་མི་ རྣམ་གྲངས་འདི་ཚུ་གི་ཐོ་ཡིག།  སྲིད་པའི་གནས་གོང་ཚུ་ HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER དང་ PACKAGE_MANAGER ལུ་འོས་ལྡན་ .desktop ཡིག་སྣོད་  \"help_item\", \"control_center_item\"  དང་\"package_manager_item\" ལྡེ་མིག་ཚུ་ནང་ རིམ་བཞིན་ངེས་འཛིན་འབད་ཡོད་མི་དགོཔ་ཨིན།"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 msgstr "འ་ནི་འདི་  \"Open in File Manager\" དཀར་ཆག་རྣམ་གྲངས་འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 msgstr "འ་ནི་འདི་  \"Open in File Manager\" དཀར་ཆག་རྣམ་གྲངས་འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན། FILE_URI འདི་ ཤུགས་ལྡན་བཟོ་ཡོད་པའི་ཡིག་སྣོད་འདི་གི་སྣོད་ཐོ་མིང་འདི་ལུ་ ཆ་མཉམ་པའི་ཡུ་ཨར་ཨའི་ཅིག་གིས་ཚབ་བཙུགས་ཡོདཔ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "This is the command to execute when the \"Send To...\" menu item is activated."
 msgstr "འ་ནི་འདི་ \"Send To...\" དཀར་ཆག་རྣམ་གྲངས་འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
 msgstr "འ་ནི་འདི་ \"Send To...\" དཀར་ཆག་རྣམ་གྲངས་འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན། DIRNAME དང་ BASENAME ཚུ་ ཤུགས་ལྡན་བཟོ་ཡོད་པའི་ཊ་ཡིལ་འདི་གི་ཆ་མཉམ་པའི་ཆ་ཤས་འདི་གིས་ཚབ་བཙུགས་ཡོདཔ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the search entry is used."
 msgstr "འ་ནི་འདི་ འཚོལ་ཞིབ་ཐོ་བཀོད་འདི་ལག་ལེན་འཐབ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
 msgstr "འ་ནི་འདི་ འཚོལ་ཞིབ་ཐོ་བཀོད་འདི་ལག་ལེན་འཐབ་ཡོད་པའི་སྐབས་ ལག་ལེན་འཐབ་ནི་གི་བརྡ་བཀོད་ཨིན། SEARCH_STRING འདི་ ཐོ་བཀོད་འབད་ཡོད་པའི་འཚོལ་ཞིབ་ཚིག་ཡིག་གིས་ཚབ་བཙུགས་ཡོདཔ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "User autostart program drop dir (within the home dir)"
-msgstr "ལག་ལེན་པའི་རང་བཞིན་འགོ་བཙུགས་ལས་རིམ་ བཀོག་བཞག་སྣོད་ཐོ་ (ཁྱིམ་སྣོད་ཐོ་གི་ནང་འཁོད་)"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "command to uninstall packages"
 msgstr "ཐུམ་སྒྲིལ་ཚུ་གཞི་བཙུགས་མི་འབད་ནིའི་དོན་ལས་བརྡ་བཀོད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "ཐུམ་སྒྲིལ་ཚུ་གཞི་བཙུགས་མི་འབད་ནིའི་དོན་ལས་ བརྡ་བཀོད་  PACKAGE_NAME འདི་ བརྡ་བཀོད་ནང་གི་ཐུམ་སྒྲིལ་འདི་གི་མིང་འདི་གིས་ཚབ་བཙུགས་ཡོད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "command to upgrade packages"
 msgstr "ཐུམ་སྒྲིལ་ཚུ་ཡར་བསྐྱེད་འབད་ནིའི་དོན་ལས་བརྡ་བཀོད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 msgstr "ཐུམ་སྒྲིལ་ཚུ་ཡར་བསྐྱེད་འབད་ནིའི་དོན་ལས་བརྡ་བཀོད་  PACKAGE_NAME འདི་ བརྡ་བཀོད་ནང་གི་ཐུམ་སྒྲིལ་འདི་གི་མིང་འདི་གིས་ཚབ་བཙུགས་ཡོད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་སྟོན་ནིའི་དོན་ལས་ ཆོག་པའི་ཡིག་སྣོད་དབྱེ་བ་ཚུ་གི་ཐོ་ཡིག་(བྱེ་བྲག་གོ་རིམ་ནང་མེན་པར་) འདི་ཡོདཔ་ཨིན། སྲིད་པའི་གནས་གོང་ཚུ་(/desktop/gnome/applications/main-menu/file-area/file_class གི་དོན་ལུ་ དྲན་འཛིན་ཚུ་ཡང་བལྟ་): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS འདི་ འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་མི་(དཀར་ཆག་གཙོ་བོ་ཡང་ན་གློག་རིམ་བརའུ་ཟར་འདི་དང་འཕྲལ་མྱུར་འབད་ཡོད་མི་)གི་ཐོ་ཡིག་ཨིན།  USER_SPECIFIED_APPS འདི་ \"Favorite Applications\" ལུ་འདྲ་མཉམ་ཨིན།  RECENT_FILES འདི་ ~/. འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་མི་ལས་ ཡིག་སྣོད་ཚུ་གི་ཐོ་ཡིག་ཨིན།"
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr "ཡིག་སྣོད་མངའ་ཁོངས་འདི་ནང་སྟོན་བཅུག་པའི་ཡིག་སྣོད་ཐིག་ཁྲམ་ཚུ་གི་(བྱེ་བྲག་གི་གོ་རིམ་ནང་མེནམ)ཐོ་ཡིག་འདི་ཡོདཔ། སྲིད་པའི་གནས་གོང་ཚུ་ ༠ - ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་སྟོན་ནི་ཡང་ན་ \"Favorite\" གློག་རིམ་ཚུའི་ཐིག་ཁྲམ་   - ད་ལྟོའི་ལག་ལེན་འཐབ་ཡོད་མི་གློག་རིམ་ཚུའི་ཐིག་ཁྲམ་ཚུ་སྟོན་ནི་  ༢ - ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་འདི་སྟོན་ནི་ཡང་ན་\"Favorite\" ཡིག་ཆ་ཚུའི་ཐིག་ཁྲམ་ཚུ་  ༣ - ད་ལྟོ་ལག་ལེན་འཐབ་ཡོད་མི་ཡིག་ཆ་ཚུའི་ཐིག་ཁྲམ་འདི་སྟོན་ནི་  ༤ - ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་ \"Favorite\" སྣོད་ཐོ་ཚུ་སྟོན་ནི་ཡང་ན་ \"Places\" ཐིག་ཁྲམ་དང་  ༥ - ད་ལྟོ་ལག་ལེན་འཐབ་ཡོད་མི་སྣོད་ཐོ་ཚུ་ཡང་ན་ \"Places\" ཐིག་ཁྲམ་འདི་སྟོན་ནི་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr " \"Recently Used Applications\" དང་ \"Recent Files\" ཐོ་ཡིག་ཚུ་གི་གྲངས་ལས་བཏོན་གཏང་ནིའི་ཡིག་སྣོད་ཚུ་( .desktop ཡིག་སྣོད་ཚུ་གྲངས་སུ་བཙུགས་ཏེ་) གི་ཐོ་ཡིག་ཡོདཔ་ཨིན་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr "ཚད་འཛིན་ལྟེ་བ་རྣམ་གྲངས་  .desktop ཡིག་སྣོད་"
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "determines the limit of items in the file-area."
+msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་ རྣམ་གྲངས་ཚུ་གི་ཚད་འདི་གཏན་འབེབས་བཟོཝ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
-msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་ ཊ་ཡིལསི་གི་ཚད་འདི་གཏན་འབེབས་བཟོཝ་ཨིན།"
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr "ཡིག་སྣོད་མངའ་ཁོངས་འདི་ནང་རྣམ་གྲངས་ཚུ་གི་ཚད་འདི་གཏན་འབེེབས་བཟོཝ་ཨིན།  དགའ་མི་རྣམ་གྲངས་ཚུ་གི་ཨང་འདི་ཚད་མེདཔ་ཨིན།  ཚད་འདི་གིས་ད་ལྟོའི་རྣམ་གྲངས་ཚུ་གི་ཨང་ལུ་འཇུག་སྤྱོད་འབདཝ་ཨིན་ དེ་འབདཝ་ལས་ ད་ལྟོའི་རྣམ་གྲངས་ཚུ་གང་ཨང་བཀྲམ་སྟོན་འབད་ཡོད་མི་འདི་ དགའ་མི་རྣམ་གྲངས་ཚུ་གི་ཨང་ ཡོངས་བསྡོམས་རྣམ་གྲངས་ཚུའི་མང་མཐའ་ལུ་ཚད་བཅད་མཚམས་ཡོདཔ་ཨིན། དགའ་མི་རྣམ་གྲངས་ཚུ་གི་ཨང་འདི་ད་ལྟོའི་རྣམ་གྲངས་ཚའུ་ཉུང་མཐའ་ལས་ ཡོངས་བསྡོམ་རྣམ་གྲངས་ཚུའུ་མང་མཐའ་ལྷག་ན་ཅིན་བཅད་མཚམས་འདི་སྣང་མེད་བཞག་ཡོདཔ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་ ཊ་ཡིལསི་གི་ཚད་འདི་གཏན་འབེབས་བཟོ་ཨིན། *དྲན་འཛིན་: འདི་གིས་ ཡིག་སྣོད་-དབྱེ་རིགས་འདི་ USER_SPECIFIED_ ཨིན་པ་ཅིན་ ཊ་ཡིལསི་གི་གྲངས་འདི་མི་གནོད་*"
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ཀྱི་དབྱེ་ཚན་་\"recent\"འད་ནང་རྣམ་གྲངས་ཚུ་གི་ཨང་ཉུང་མཐའ་འདི་གཏན་འབེབས་བཟོཝ་ཨིན།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr "ཊ་ཡིལ་ཚུ་ དཀར་ཆག་-གཙོ་བོ་འདི་མཐའ་སྐོར་ཏེ་སྤོ་བའི་སྐབས་ ལག་ལེན་འཐབ་ཡོད་པའི་ གོ་རིམ་བསྐྱར་སྒྲིག་ཨཱལ་གོ་རི་དམ་འདི་གཏན་འབེབས་བཟོཝ་ཨིན་"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
 msgstr "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་ ཡིག་སྣོད་ཀྱི་དབྱེ་བ་ག་འདི་ཚུ་བཀྲམ་སྟོན་འབད་ནི་ཨིན་ན་ གཏན་འབེབས་བཟོཝ་ཨིན་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr "གྲོགས་རམ་རྣམ་གྲངས་ .desktop ཡིག་སྣོད་"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "if true, main menu is more anxious to close"
 msgstr "བདེན་པ་ཨིན་པ་ཅིན་ དཀར་ཆག་གཙོ་བོ་འདི་ ཁ་བསྡམ་ནིའི་དོན་ལས་ ཧེང་བཀལ་སེམས་འཚབ་ཨིན་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
 msgstr "བདེན་པ་ཨིན་པ་ཅིན་ དཀར་ཆག་གཙོ་བོ་འདི་ འ་ནི་ཁ་སྐོང་གནས་སྟངས་ཚུ་གི་འོག་ལུ་ ཁ་བསྡམ་འོང་: ཊ་ཡིལ་འདི་ཤུགས་ལྡན་བཟོ་འོང་ འཚོལ་ཞིབ་ཤུགས་ལྡན་བཟོ་འོང་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid "lock-down configuration of the file area"
 msgstr "ཡིག་སྣོད་མངའ་ཁོངས་འདི་གི་རིམ་སྒྲིག་ལྡེ་མིག་རྐྱབས་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down status for the application browser link"
 msgstr "གློག་རིམ་བརའུ་ཟར་འབྲེལ་ལམ་འདི་གི་དོན་ལུ་ གནས་ཚད་ལྡེ་མིག་རྐྱབས་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the search area"
 msgstr "འཚོལ་ཞིབ་མངའ་ཁོངས་ཀྱི་དོནལུ་ གནས་ཚད་ལྡེ་མིག་རྐྱབས་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the status area"
 msgstr "གནས་ཚད་མངའ་ཁོངས་འདི་གི་དོན་ལུ་ གནས་ཚད་ལྡེ་མིག་རྐྱབས་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the system area"
 msgstr "རིམ་ལུགས་མངའ་ཁོངས་ཀྱི་དོན་ལུ་ གནས་ཚད་ལྡེ་མིག་རྐྱབས་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr "ཐུམ་སྒྲིལ་འཛིན་སྐྱོང་པ་རྣམ་གྲངས་ .desktop ཡིག་སྣོད་"
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the user-specified apps section"
+msgstr "ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་གློག་རིམ་དབྱེ་ཚན་དོན་ལུ་གནས་ཚད་ལོཀ་ཌའུན་འབད།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr "སྲིན་པའི་གནས་གོང་ཚུ་ = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]  SWAP གིས་ ཊ་ཡིལ་ཅིག་ ཊ་ཡིལ་གཞན་མི་ཅིག་བརྒྱུད་དེ་འདྲུད་པའི་སྐབས་ འདི་ཚུ་གིས་གནས་ས་བརྗེ་སོར་འབདདགོཔ་སྦེ་བརྡ་སྟོན་འབདཝ་ཨིན། PUSH གིས་ ཊི་ཡིལ་ A འདི་གཞན་མི་ཊ་ཡིལ་ B ལུ་འདྲུད་པའི་སྐབས་ ས་ཁོངས་སྟོངམ་འདི་ ཊ་ཡིལ་ A གི་ས་སྒོ་ནང་གསར་བསྐྲུན་འབདཝ་ཨིན། ཊ་ཡིལ་ B (དང་ཊ་ཡིལ་ B གི་ཤུལ་མའི་ཊ་ཡིལ་ཚུ་ཆ་མཉམ་) བར་སྟོང་སྟོངམ་འདི་བཀང་མ་ཚར་ཚུན་ མར་བཤུད། འ་ནི་བཀོལ་སྤྱོད་འདི་གིས་ འདྲུད་དང་བཀོག་བཞག་བཀོལ་སྤྱོད་པའི་གོང་ལུ་ ཊ་ཡིལ་ A འདི་ ཊ་ཡིལ་ B གི་གདོང་ཁར་འབྱུངམ་ཨིན།  PUSH_PULL འདི་ PUSH ལུ་ ཊ་ཡིལ་ཚུ་སོར་ཡོད་པའི་སྐབས་ ཊ་ཡིལ་ཚུ་གི་ཉུང་མཐའ་གྲངས་འདི་ལུ་གནོད་མི་ཐབས་འཇུས་འདི་དང་འཁྲིལ་ཏེ་ འདི་ཚུ་ཡང་ཅིན་བར་སྟོང་སྟོངམ་ནང་ལུ་འཕུལ་ནི་དང་ ཡང་ན་ཁ་ཕྱོགས་གཞན་མི་ལས་འཐེན་ཡོད་མི་མ་གཏོགས་ ཆ་འདྲ་བ་ཨིན།"
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the user-specified dirs section"
+msgstr "ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་སྣོད་ཐོ་ཚུའི་དབྱེ་ཚན་གྱི་དོན་ལུ་གནས་ཚད་ལོཀ་ཌའུན་འབད།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr "སྲིད་པའི་གནས་གོང་ཚུ་ = ༠ [USER_SPECIFIED_APPS], ༡ [RECENTLY_USED_APPS], ༢ [RECENT_FILES]. RECENTLY_USED_APPS འདི་ འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་པའི་(དཀར་ཆག་གཙོ་བོ་ཡང་ན་གློག་རིམ་བརའུ་ཟར་འདི་དང་གཅིག་ཁར་འཕྲལ་མྱུར་འབད་ཡོདཔ་) ཐོ་ཡིག་ཨིན།  USER_SPECIFIED_APPS འདི་  \"Favorite Applications\" ལུ་འདྲ་མཉམ་ཨིན། RECENT_FILES འདི་  ~/. འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་མི་ལས་ཡིག་སྣོད་ཚུ་གི་ཐོ་ཡིག་ཨིན།"
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the user-specified docs section"
+msgstr "ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་ཡིག་ཆ་ཚུའི་དབྱེ་ཚན་གྱི་དོན་ལུ་གནས་ཚད་ལེཀ་ཌའུན་འབད།"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr "གསལ་གཞི་འདི་ལྡེ་མིག་རྐྱབས་ནིའི་དོན་ལས་ བརྡ་བཀོད་ཚུ་གི་དཙོ་རིམ་བཟོ་ཡོད་པའི་ཐོ་ཡིག་"
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "སྲིད་པའི་གནས་གོང་ཚུ་ = ༠ [གློག་རིམ་ཚུ]  ༡ [ཡིག་ཆ་ཚུ་]  ༢ [ས་གནས་ཚུ]"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "set to true if the link to the application browser should be visible and active."
 msgstr "གློག་རིམ་བརའུ་ཟར་ལུའི་འབྲེལ་ལམ་འདི་ མཐོང་ཚུགསཔ་དང་ཤུགས་ལྡན་ཨིན་དགོ་པ་ཅིན་ བདེན་པ་ལུ་གཞི་སྒྲིག་འབད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:43
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "set to true if the search area should be visible and active."
 msgstr "འཚོལ་ཞིབ་མངའ་ཁོངས་འདི་མཐོང་ཚུགསཔ་དང་ཤུགས་ལྡན་ཨིན་དགོ་པ་ཅིན་ བདེན་པ་ལུ་གཞི་སྒྲིག་འབད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:44
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the status area should be visible and active."
 msgstr "གནས་ཚད་མངའ་ཁོངས་འདི་མཐོང་ཚུགསཔ་དང་ཤུགས་ལྡན་ཨིན་དགོ་པ་ཅིན་ བདེན་པ་ལུ་གཞི་སྒྲིག་འབད་"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:45
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the system area should be visible and active."
 msgstr "རིམ་ལུགས་མངའ་ཁོངས་འདི་ མཐོང་ཚུགསཔ་དང་ཤུགས་ལྡན་ཨིན་དགོ་པ་ཅིན་ བདེན་པ་ལུ་གཞི་སྒྲིག་འབད་"
 
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Sho_w:"
-msgstr "སྟོན་:(_w)"
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr "ལག་ལེན་འདི་ལུ་རིམ་ལུགས་རྣམ་གྲངས་ཚུ་གི་ཐོ་ཡིག་འདི་ལེགས་བཅོས་འབད་བཅུག་པ་ཅིན་བདེན་པ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../main-menu/src/file-area-widget.c:186
-msgid "Favorite Applications"
-msgstr "དགའ་མི་གློག་རིམ་ཚུ་"
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr "ལག་ལེན་པ་འདི་ལུ་ལག་ལེན་པའི་གསལ་བདོ་འབད་ཡོད་མི་ཡང་ན་ \"Favorite\" གློག་རིམ་ཚུ་གི་ཐོ་ཡིག་འདི་ལེགས་བཅོས་འབད་བཅུག་པ་ཅིན་བདེན་པ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../main-menu/src/file-area-widget.c:203
-msgid "Recently Used Applications"
-msgstr "འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་པའི་གློག་རིམ་ཚུ་"
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr "ལག་ལེན་པ་འདི་ལུ་ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་ཡང་ན་ \"Favorite\" སྣོད་ཐོ་ཚུ་ཡང་ན་ \"Places\"གི་ཐོ་ཡིག་འདི་ལེགས་བཅོས་འབད་བཅུག་པ་ཅིན་བདེན་པ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../main-menu/src/file-area-widget.c:213
-msgid "Recent Documents"
-msgstr "འཕྲལ་གྱི་ཡིག་ཆ་ཚུ་"
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr "ལག་ལེན་པ་འདི་ལུ་ལག་ལེན་པའི་གསལ་བཀོད་འབད་ཡོད་མི་ཡང་ན་ \"Favorite\" ཡིག་ཆ་ཚུ་གི་ཐོ་ཡིག་འདི་ལེགས་བཅོས་འབད་བཅུག་པ་ཅིན་བདེན་པ་ལུ་གཞི་སྒྲིག་འབད།"
 
-#: ../main-menu/src/file-area-widget.c:347
-msgid "More _Applications..."
-msgstr "གློག་རིམ་ཧེང་བཀལ་(_A)"
-
-#: ../main-menu/src/file-area-widget.c:351
-msgid "_All Documents..."
-msgstr "ཡིག་ཆ་ཚུ་ཆ་མཉམ་(_A)"
-
-#: ../main-menu/src/hard-drive-status-tile.c:106
+#: ../main-menu/src/hard-drive-status-tile.c:110
 msgid "Hard _Drive"
 msgstr "ཧརཌི་ཌའིབ་(_D)"
 
-#: ../main-menu/src/hard-drive-status-tile.c:341
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:343
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:368
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s བར་སྟོང་ / %s བསྡོམས་"
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:96
+#: ../main-menu/src/main-menu-migration.c:215
+msgid "Logout"
+msgstr "ཕྱིར་བསྐྱོད།"
+
+#: ../main-menu/src/main-menu-migration.c:100
+#: ../main-menu/src/main-menu-migration.c:217
+msgid "Shutdown"
+msgstr "སྒོ་བསྡམ་ནི།"
+
+#: ../main-menu/src/main-menu-migration.c:155
+msgid "Lock Screen"
+msgstr "གསལ་གཞི་ལྡེ་མིག་རྐྱབས།"
+
+#: ../main-menu/src/main-menu-migration.c:157
+msgid "gnome-lockscreen"
+msgstr "ཇི་ནོམ་-གསལ་གཞི་བསྡམ་བཞག"
+
+#: ../main-menu/src/main-menu-ui.c:2101
 msgid "The GNOME Main Menu"
 msgstr "ཇི་ནོམ་དཀར་ཆག་གཙོ་བོ་འདི་"
-
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "རིམ་ལུགས་"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "གནས་ཚད་"
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "གློག་རིག་"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "_Search:"
-msgstr "འཚོལ་ཞིབ་:(_S)"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -553,27 +642,193 @@ msgstr "མ་ཤེསཔ་"
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:103
-msgid "_Help"
-msgstr "གྲོགས་རམ་(_H)"
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "གློག་རིམ་ཚུ་"
 
-#: ../main-menu/src/system-tile.c:117
-msgid "_Control Center"
-msgstr "ཚད་འཛིན་ལྟེ་བ་(_C)"
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "གློག་རིག་"
 
-#: ../main-menu/src/system-tile.c:131
-msgid "I_nstall Software"
-msgstr "མཉེན་ཆས་གཞི་བཙུགས་འབད་(_n)"
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "གྱི་ཡིག་ཆ་ཚུ་"
 
-#: ../main-menu/src/system-tile.c:138
-msgid "Log _Out ..."
-msgstr "ཕྱིར་བསྐྱོད་(_O)"
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "དགའ་མི་གློག་རིམ་ཚུ་"
 
-#: ../main-menu/src/system-tile.c:145
-msgid "_Lock Screen ..."
-msgstr "གསལ་གཞི་ལྡེ་མིག་རྐྱབས་(_L)"
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "ཡིག་ཆ་དགའ་མི་ཚུ་"
 
-#: ../main-menu/src/system-tile.c:161
-msgid "_Unknown"
-msgstr "མ་ཤེསཔ་(_U)"
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "ས་གནས་དགའ་མི་ཚུ་"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "གློག་རིམ་ཧེང་བཀལ་་་"
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "ཡིག་ཆ་ཚུ་ཧེང་བཀེལ་་་"
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "ས་གནས་ཚུ་ཧེང་བཀལ་་་"
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "ས་གནས་ཚུ།"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "ད་ལྟོའི་གློག་རིམ་ཚུ་"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "འཕྲལ་གྱི་ཡིག་ཆ་ཚུ་"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "འཚོལ་ཞིབ་"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "གནས་ཚད་"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "རིམ་ལུགས་"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr "ད་ལྟོའི་གསར་བཙུགས་འབད་མི་ཚུ་དགའ་མི་ཚུ་ལུ་ཁ་སྐོང་འབད།"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr "ད་ལྟོའི་ཡིག་ཆ་ཚུ་དགའ་མི་ཚུ་ལུ་ཁ་སྐོང་འབད།"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+msgid "Remove the current document from favorites"
+msgstr "དགའ་མི་ཚུ་ལས་ད་ལྟོའི་ཡིག་ཆ་ཚུ་རྩ་བསྐྲད་གཏང་།"
+
+#~ msgid "Help Unavailable"
+#~ msgstr "གྲོགས་རམ་འཐོབ་ཚུགསཔ་མེདཔ་"
+#~ msgid "Software Update"
+#~ msgstr "མཉེན་ཆས་དུས་མཐུན་བཟོ་ནི་"
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr ".desktop ཡིག་སྣོད་ཚུ་  \"Favorite Applications\" གི་དོན་ལུ་"
+#~ msgid ""
+#~ "Location of the system-wide directory in which startup programs are found."
+#~ msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་འཐོབ་ཡོད་མི་ རིམ་ལུགས་ཡོངས་ཀྱི་སྣོད་ཐོ་འདི་གི་གནས་ཁོངས།"
+#~ msgid ""
+#~ "Location of the user directory in which startup programs are found. The "
+#~ "dir path should not be absolute, as the value of this key is appended to "
+#~ "this path: ~/."
+#~ msgstr ""
+#~ "འགོ་བཙུགས་ལས་རིམ་ཚུ་འཐོབ་ཡོད་མི་ ལག་ལེན་པའི་སྣོད་ཐོ་འདི་གི་གནས་ཁོངས། སྣོད་ཐོའི་འགྲུལ་ལམ་འདི་ ཡང་"
+#~ "དག་མེན་དགོ་  འ་ནི་ལྡ་མིག་འདི་གི་གནས་གོང་འདི་ འ་ནི་འགྲུལ་ལམ་འདི་ལུ་འཇུག་བསྣོན་འབད་ཡོདཔ་ལས་: "
+#~ "~/."
+#~ msgid "System area items"
+#~ msgstr "རིམ་ལུགས་མངའ་ཁོངས་རྣམ་གྲངས་ཚུ་"
+#~ msgid "System-wide autostart program drop dir"
+#~ msgstr "རིམ་ལུགས་ཡོངས་ཀྱི་ རང་བཞིན་འགོ་བཙུགས་ལས་རིམ་བཀོག་བཞག་སྣོད་ཐོ་"
+#~ msgid ""
+#~ "The list of the items which will appear in the System area. Possible "
+#~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
+#~ "3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the "
+#~ "have the appropriate .desktop files defined in the, respectively, "
+#~ "\"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr ""
+#~ "རིམ་ལུགས་མངའ་ཁོངས་འདི་ནང་ལུ་འབྱུང་མི་ རྣམ་གྲངས་འདི་ཚུ་གི་ཐོ་ཡིག།  སྲིད་པའི་གནས་གོང་ཚུ་ HELP = "
+#~ "0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. "
+#~ "HELP, CONTROL_CENTER དང་ PACKAGE_MANAGER ལུ་འོས་ལྡན་ .desktop ཡིག་སྣོད་  "
+#~ "\"help_item\", \"control_center_item\"  དང་\"package_manager_item\" ལྡེ་མིག་"
+#~ "ཚུ་ནང་ རིམ་བཞིན་ངེས་འཛིན་འབད་ཡོད་མི་དགོཔ་ཨིན།"
+#~ msgid "User autostart program drop dir (within the home dir)"
+#~ msgstr "ལག་ལེན་པའི་རང་བཞིན་འགོ་བཙུགས་ལས་རིམ་ བཀོག་བཞག་སྣོད་ཐོ་ (ཁྱིམ་སྣོད་ཐོ་གི་ནང་འཁོད་)"
+#~ msgid ""
+#~ "contains the list (in no particular order) of allowable file types to "
+#~ "show in the file area. possible values (see also the note for /desktop/"
+#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
+#~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
+#~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
+#~ "to \"Favorite Applications\". RECENT_FILES is the list of files from ~/."
+#~ "recently-used."
+#~ msgstr ""
+#~ "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་སྟོན་ནིའི་དོན་ལས་ ཆོག་པའི་ཡིག་སྣོད་དབྱེ་བ་ཚུ་གི་ཐོ་ཡིག་(བྱེ་བྲག་གོ་རིམ་ནང་"
+#~ "མེན་པར་) འདི་ཡོདཔ་ཨིན། སྲིད་པའི་གནས་གོང་ཚུ་(/desktop/gnome/applications/main-menu/"
+#~ "file-area/file_class གི་དོན་ལུ་ དྲན་འཛིན་ཚུ་ཡང་བལྟ་): 0 [USER_SPECIFIED_APPS], 1 "
+#~ "[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS འདི་ འཕྲལ་ཁམ་ལག་"
+#~ "ལེན་འཐབ་ཡོད་མི་(དཀར་ཆག་གཙོ་བོ་ཡང་ན་གློག་རིམ་བརའུ་ཟར་འདི་དང་འཕྲལ་མྱུར་འབད་ཡོད་མི་)གི་ཐོ་ཡིག་"
+#~ "ཨིན།  USER_SPECIFIED_APPS འདི་ \"Favorite Applications\" ལུ་འདྲ་མཉམ་ཨིན།  "
+#~ "RECENT_FILES འདི་ ~/. འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་མི་ལས་ ཡིག་སྣོད་ཚུ་གི་ཐོ་ཡིག་ཨིན།"
+#~ msgid "control center item .desktop file"
+#~ msgstr "ཚད་འཛིན་ལྟེ་བ་རྣམ་གྲངས་  .desktop ཡིག་སྣོད་"
+#~ msgid ""
+#~ "determines the limit of tiles in the file-area. *Note: this does not "
+#~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr ""
+#~ "ཡིག་སྣོད་མངའ་ཁོངས་ནང་ལུ་ ཊ་ཡིལསི་གི་ཚད་འདི་གཏན་འབེབས་བཟོ་ཨིན། *དྲན་འཛིན་: འདི་གིས་ ཡིག་སྣོད་-"
+#~ "དབྱེ་རིགས་འདི་ USER_SPECIFIED_ ཨིན་པ་ཅིན་ ཊ་ཡིལསི་གི་གྲངས་འདི་མི་གནོད་*"
+#~ msgid ""
+#~ "determines the reordering algorithm used when moving tiles around the "
+#~ "main-menu"
+#~ msgstr ""
+#~ "ཊ་ཡིལ་ཚུ་ དཀར་ཆག་-གཙོ་བོ་འདི་མཐའ་སྐོར་ཏེ་སྤོ་བའི་སྐབས་ ལག་ལེན་འཐབ་ཡོད་པའི་ གོ་རིམ་བསྐྱར་སྒྲིག་"
+#~ "ཨཱལ་གོ་རི་དམ་འདི་གཏན་འབེབས་བཟོཝ་ཨིན་"
+#~ msgid "help item .desktop file"
+#~ msgstr "གྲོགས་རམ་རྣམ་གྲངས་ .desktop ཡིག་སྣོད་"
+#~ msgid "package manager item .desktop file"
+#~ msgstr "ཐུམ་སྒྲིལ་འཛིན་སྐྱོང་པ་རྣམ་གྲངས་ .desktop ཡིག་སྣོད་"
+#~ msgid ""
+#~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+#~ "when a tile is dragged onto another tile they should simply swap "
+#~ "position. PUSH indicates that when a tile, A, is dragged onto another "
+#~ "tile, B, a vacant spot is created in tile A's place. tile B (and all "
+#~ "tiles after B) shift down until the new vacant space is filled. this "
+#~ "operation wraps around in the case that tile A appears before tile B "
+#~ "prior to the drag and drop operation. PUSH_PULL is similar to PUSH except "
+#~ "that when tiles are shifted they are either pushed into the vacant spaced "
+#~ "or pulled from the other direction, depending on which strategy affects "
+#~ "the least number of tiles."
+#~ msgstr ""
+#~ "སྲིན་པའི་གནས་གོང་ཚུ་ = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]  SWAP གིས་ ཊ་ཡིལ་ཅིག་ ཊ་"
+#~ "ཡིལ་གཞན་མི་ཅིག་བརྒྱུད་དེ་འདྲུད་པའི་སྐབས་ འདི་ཚུ་གིས་གནས་ས་བརྗེ་སོར་འབདདགོཔ་སྦེ་བརྡ་སྟོན་འབདཝ་ཨིན། "
+#~ "PUSH གིས་ ཊི་ཡིལ་ A འདི་གཞན་མི་ཊ་ཡིལ་ B ལུ་འདྲུད་པའི་སྐབས་ ས་ཁོངས་སྟོངམ་འདི་ ཊ་ཡིལ་ A གི་ས་"
+#~ "སྒོ་ནང་གསར་བསྐྲུན་འབདཝ་ཨིན། ཊ་ཡིལ་ B (དང་ཊ་ཡིལ་ B གི་ཤུལ་མའི་ཊ་ཡིལ་ཚུ་ཆ་མཉམ་) བར་སྟོང་"
+#~ "སྟོངམ་འདི་བཀང་མ་ཚར་ཚུན་ མར་བཤུད། འ་ནི་བཀོལ་སྤྱོད་འདི་གིས་ འདྲུད་དང་བཀོག་བཞག་བཀོལ་སྤྱོད་པའི་གོང་"
+#~ "ལུ་ ཊ་ཡིལ་ A འདི་ ཊ་ཡིལ་ B གི་གདོང་ཁར་འབྱུངམ་ཨིན།  PUSH_PULL འདི་ PUSH ལུ་ ཊ་ཡིལ་ཚུ་སོར་"
+#~ "ཡོད་པའི་སྐབས་ ཊ་ཡིལ་ཚུ་གི་ཉུང་མཐའ་གྲངས་འདི་ལུ་གནོད་མི་ཐབས་འཇུས་འདི་དང་འཁྲིལ་ཏེ་ འདི་ཚུ་ཡང་ཅིན་"
+#~ "བར་སྟོང་སྟོངམ་ནང་ལུ་འཕུལ་ནི་དང་ ཡང་ན་ཁ་ཕྱོགས་གཞན་མི་ལས་འཐེན་ཡོད་མི་མ་གཏོགས་ ཆ་འདྲ་བ་ཨིན།"
+#~ msgid ""
+#~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+#~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+#~ "(instantiated with the main-menu or the application-browser). "
+#~ "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". "
+#~ "RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr ""
+#~ "སྲིད་པའི་གནས་གོང་ཚུ་ = ༠ [USER_SPECIFIED_APPS], ༡ [RECENTLY_USED_APPS], ༢ "
+#~ "[RECENT_FILES]. RECENTLY_USED_APPS འདི་ འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་པའི་(དཀར་ཆག་གཙོ་"
+#~ "བོ་ཡང་ན་གློག་རིམ་བརའུ་ཟར་འདི་དང་གཅིག་ཁར་འཕྲལ་མྱུར་འབད་ཡོདཔ་) ཐོ་ཡིག་ཨིན།  "
+#~ "USER_SPECIFIED_APPS འདི་  \"Favorite Applications\" ལུ་འདྲ་མཉམ་ཨིན། "
+#~ "RECENT_FILES འདི་  ~/. འཕྲལ་ཁམ་ལག་ལེན་འཐབ་ཡོད་མི་ལས་ཡིག་སྣོད་ཚུ་གི་ཐོ་ཡིག་ཨིན།"
+#~ msgid "prioritized list of commands to lock the screen"
+#~ msgstr "གསལ་གཞི་འདི་ལྡེ་མིག་རྐྱབས་ནིའི་དོན་ལས་ བརྡ་བཀོད་ཚུ་གི་དཙོ་རིམ་བཟོ་ཡོད་པའི་ཐོ་ཡིག་"
+#~ msgid "Sho_w:"
+#~ msgstr "སྟོན་:(_w)"
+#~ msgid "_Help"
+#~ msgstr "གྲོགས་རམ་(_H)"
+#~ msgid "_Control Center"
+#~ msgstr "ཚད་འཛིན་ལྟེ་བ་(_C)"
+#~ msgid "I_nstall Software"
+#~ msgstr "མཉེན་ཆས་གཞི་བཙུགས་འབད་(_n)"
+#~ msgid "Log _Out ..."
+#~ msgstr "ཕྱིར་བསྐྱོད་(_O)"
+#~ msgid "_Unknown"
+#~ msgstr "མ་ཤེསཔ་(_U)"
 
