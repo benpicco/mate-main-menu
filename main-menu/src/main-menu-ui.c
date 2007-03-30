@@ -35,7 +35,6 @@
 #include <gdk/gdkx.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
-#include <glibtop/mountlist.h>
 
 #include "tile.h"
 #include "application-tile.h"
