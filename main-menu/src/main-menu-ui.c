@@ -35,6 +35,7 @@
 #include <gdk/gdkx.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
+#include <glibtop/mountlist.h>
 
 #include "tile.h"
 #include "application-tile.h"
@@ -115,6 +116,9 @@ typedef struct {
 	GtkWidget *system_section;
 
 	BookmarkAgent *bm_agents [BOOKMARK_STORE_N_TYPES];
+
+	GnomeVFSVolumeMonitor *volume_mon;
+	GList                 *mounts;
 
 	guint search_cmd_gconf_mntr_id;
 	guint current_page_gconf_mntr_id;
@@ -208,6 +212,7 @@ static void     search_tomboy_bindkey_cb          (gchar *, gpointer);
 static gboolean grabbing_window_event_cb          (GtkWidget *, GdkEvent *, gpointer);
 static void     user_app_agent_notify_cb          (GObject *, GParamSpec *, gpointer);
 static void     user_doc_agent_notify_cb          (GObject *, GParamSpec *, gpointer);
+static void     volume_monitor_mount_cb           (GnomeVFSVolumeMonitor *, GnomeVFSVolume *, gpointer);
 
 static GdkFilterReturn slab_gdk_message_filter (GdkXEvent *, GdkEvent *, gpointer);
 
@@ -370,6 +375,8 @@ main_menu_ui_init (MainMenuUI *this)
 	priv->status_section                             = NULL;
 	priv->system_section                             = NULL;
 
+	priv->volume_mon                                 = NULL;
+
 	priv->search_cmd_gconf_mntr_id                   = 0;
 	priv->current_page_gconf_mntr_id                 = 0;
 	priv->more_link_vis_gconf_mntr_id                = 0;
@@ -430,6 +437,10 @@ main_menu_ui_finalize (GObject *g_obj)
 
 	for (i = 0; i < BOOKMARK_STORE_N_TYPES; ++i)
 		g_object_unref (priv->bm_agents [i]);
+
+	g_list_foreach (priv->mounts, (GFunc) gnome_vfs_volume_unref, NULL);
+	g_list_free (priv->mounts);
+	gnome_vfs_volume_monitor_unref (priv->volume_mon);
 
 	G_OBJECT_CLASS (main_menu_ui_parent_class)->finalize (g_obj);
 }
@@ -771,6 +782,12 @@ create_rct_docs_section (MainMenuUI *this)
 		item_to_recent_doc_tile, this, NULL, NULL));
 
 	gtk_container_add (ctnr, GTK_WIDGET (priv->file_tables [RCNT_DOCS_TABLE]));
+
+	priv->volume_mon = gnome_vfs_get_volume_monitor ();
+	priv->mounts = gnome_vfs_volume_monitor_get_mounted_volumes (priv->volume_mon);
+
+	g_signal_connect (priv->volume_mon, "volume_mounted", G_CALLBACK (volume_monitor_mount_cb), this);
+	g_signal_connect (priv->volume_mon, "volume_unmounted", G_CALLBACK (volume_monitor_mount_cb), this);
 }
 
 static void
@@ -947,6 +964,35 @@ static Tile *
 item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 {
 	MainMenuUIPrivate *priv = PRIVATE (data);
+
+	GnomeVFSVolume *vol;
+	gboolean        is_nfs = FALSE;
+	GnomeVFSURI    *gvfs_uri;
+	gboolean        is_local = TRUE;
+
+	GList *node;
+
+
+	if (! g_str_has_prefix (item->uri, "file://"))
+		return NULL;
+
+	for (node = priv->mounts; ! is_nfs && node; node = node->next) {
+		vol = (GnomeVFSVolume *) node->data;
+
+		is_nfs =
+			((gnome_vfs_volume_get_device_type (vol) == GNOME_VFS_DEVICE_TYPE_NFS) &&
+			g_str_has_prefix (item->uri, gnome_vfs_volume_get_activation_uri (vol)));
+	}
+
+	if (is_nfs)
+		return NULL;
+
+	gvfs_uri = gnome_vfs_uri_new (item->uri);
+	is_local = gnome_vfs_uri_is_local (gvfs_uri);
+	gnome_vfs_uri_unref (gvfs_uri);
+
+	if (! is_local)
+		return NULL;
 
 	if (bookmark_agent_has_item (priv->bm_agents [BOOKMARK_STORE_USER_DOCS], item->uri))
 		return NULL;
@@ -2219,4 +2265,14 @@ static void
 user_doc_agent_notify_cb (GObject *g_obj, GParamSpec *pspec, gpointer user_data)
 {
 	tile_table_reload (PRIVATE (user_data)->file_tables [RCNT_DOCS_TABLE]);
+}
+
+static void
+volume_monitor_mount_cb (GnomeVFSVolumeMonitor *mon, GnomeVFSVolume *vol, gpointer data)
+{
+	MainMenuUIPrivate *priv = PRIVATE (data);
+
+	g_list_foreach (priv->mounts, (GFunc) gnome_vfs_volume_unref, NULL);
+	g_list_free (priv->mounts);
+	priv->mounts = gnome_vfs_volume_monitor_get_mounted_volumes (mon);
 }

@@ -583,11 +583,13 @@ update_items (BookmarkAgent *this)
 {
 	BookmarkAgentPrivate *priv = PRIVATE (this);
 
-	gchar    **uris         = NULL;
-	gchar    **uris_ordered = NULL;
-	gsize      n_uris       = 0;
-	gint       rank         = -1;
-	gboolean   needs_update = FALSE;
+	gchar    **uris            = NULL;
+	gchar    **uris_ordered    = NULL;
+	gsize      n_uris          = 0;
+	gint       rank            = -1;
+	gint       rank_corr       = -1;
+	gboolean   needs_update    = FALSE;
+	gboolean   store_corrupted = FALSE;
 
 	gint i;
 
@@ -602,10 +604,20 @@ update_items (BookmarkAgent *this)
 		if (rank < 0 || rank >= n_uris)
 			rank = i;
 
-		if (uris_ordered [rank])
+		if (uris_ordered [rank]) {
+			store_corrupted = TRUE;
+			rank_corr = rank;
+
+			for (rank = 0; rank < n_uris; ++rank)
+				if (! uris_ordered [rank])
+					break;
+
 			g_warning (
-				"store corruption - multiple uris with same rank: [%s] rank = %d, [%s] [%s]",
-				priv->store_path, rank, uris_ordered [rank], uris [i]);
+				"store corruption [%s] - multiple uris with same rank (%d): [%s] [%s], moving latter to %d",
+				priv->store_path, rank_corr, uris_ordered [rank_corr], uris [i], rank);
+		}
+
+		set_rank (this, uris [i], rank);
 
 		uris_ordered [rank] = uris [i];
 	}
@@ -640,6 +652,9 @@ update_items (BookmarkAgent *this)
 
 		g_object_notify (G_OBJECT (this), BOOKMARK_AGENT_ITEMS_PROP);
 	}
+
+	if (store_corrupted)
+		save_store (this);
 
 	g_strfreev (uris);
 	g_free (uris_ordered);
@@ -898,8 +913,9 @@ static gchar *
 find_package_data_file (const gchar *filename)
 {
 	const gchar * const *dirs = NULL;
-	gchar    *path = NULL;
+	gchar               *path = NULL;
 	gint                 i;
+
 
 	dirs = g_get_system_data_dirs ();
 	

@@ -67,6 +67,7 @@ migrate_system_gconf_to_bookmark_file ()
 	const gchar      *name;
 
 	GBookmarkFile *bm_file;
+	gchar         *bm_dir;
 	gchar         *bm_path;
 
 	GList  *screensavers;
@@ -118,6 +119,9 @@ migrate_system_gconf_to_bookmark_file ()
 		need_migration |= ! (GPOINTER_TO_INT (node_i->data) == i);
 
 	if (need_migration) {
+		bm_dir  = g_build_filename (g_get_user_data_dir (), PACKAGE, NULL);
+		g_mkdir_with_parents (bm_dir, 0700);
+
 		bm_file = g_bookmark_file_new ();
 
 		for (node_i = gconf_system_list; node_i; node_i = node_i->next) {
@@ -223,11 +227,12 @@ migrate_system_gconf_to_bookmark_file ()
 				gnome_desktop_item_unref (ditem);
 		}
 
-		bm_path = g_build_filename (g_get_user_data_dir (), PACKAGE, SYSTEM_BOOKMARK_FILENAME, NULL);
+		bm_path = g_build_filename (bm_dir, SYSTEM_BOOKMARK_FILENAME, NULL);
 
 		if (! g_bookmark_file_to_file (bm_file, bm_path, & error))
 			libslab_handle_g_error (& error, "%s: cannot save store [%s]", G_STRFUNC, bm_path);
 
+		g_free (bm_dir);
 		g_free (bm_path);
 		g_bookmark_file_free (bm_file);
 	}
@@ -252,6 +257,7 @@ migrate_user_apps_gconf_to_bookmark_file ()
 	gchar            *uri;
 
 	GBookmarkFile *bm_file;
+	gchar         *bm_dir;
 	gchar         *bm_path;
 
 	GError *error = NULL;
@@ -303,11 +309,15 @@ migrate_user_apps_gconf_to_bookmark_file ()
 		g_free (node->data);
 	}
 
-	bm_path = g_build_filename (g_get_user_data_dir (), PACKAGE, APPS_BOOKMARK_FILENAME, NULL);
+	bm_dir  = g_build_filename (g_get_user_data_dir (), PACKAGE, NULL);
+	bm_path = g_build_filename (bm_dir, APPS_BOOKMARK_FILENAME, NULL);
+
+	g_mkdir_with_parents (bm_dir, 0700);
 
 	if (! g_bookmark_file_to_file (bm_file, bm_path, & error))
 		libslab_handle_g_error (& error, "%s: cannot save store [%s]", G_STRFUNC, bm_path);
 
+	g_free (bm_dir);
 	g_free (bm_path);
 	g_bookmark_file_free (bm_file);
 	g_list_free (user_apps_list);

@@ -1,3 +1,19 @@
+2007-03-29  Jim Krehl  <jimmyk@novell.com>
+	* main-menu/src/main-menu-ui.c:
+	Only make tiles for local files until remote files can be handled
+	without blocking.
+
+	* main-menu/src/main-menu-migration.c:
+	Ensure local data exists before creating files.
+
+	* main-menu/etc/applications.xbel
+	* main-menu/etc/places.xbel
+	* main-menu/etc/system-items.xbel:
+	Include ranking info in the .xbel file.
+
+	* libslab/bookmark-agent.c:
+	Fix (instead of ignore) corrupted .xbel files.
+
 2007-03-23  Jim Krehl  <jimmyk@novell.com>
 	* libslab/app-resizer.c
 	* libslab/search-context-picker.c
