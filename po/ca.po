@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-28 07:26+0200\n"
-"PO-Revision-Date: 2007-03-21 22:18+0100\n"
+"POT-Creation-Date: 2007-04-02 00:25+0200\n"
+"PO-Revision-Date: 2007-04-02 00:26+0200\n"
 "Last-Translator: Sílvia Miranda <silvia.gnome@gmail.com>\n"
 "Language-Team: Catalan <gnome@softcatala.net>\n"
 "MIME-Version: 1.0\n"
@@ -169,8 +169,8 @@ msgstr "Tasques comunes"
 msgid "<b>Start %s</b>"
 msgstr "<b>Inici %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:92
-#: ../main-menu/src/main-menu-migration.c:213
+#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ajuda"
 
@@ -218,27 +218,27 @@ msgstr ""
 msgid "Other"
 msgstr "Altres"
 
-#: ../libslab/bookmark-agent.c:1051
+#: ../libslab/bookmark-agent.c:1067
 msgid "New Spreadsheet"
 msgstr "Full de càlcul nou"
 
-#: ../libslab/bookmark-agent.c:1055
+#: ../libslab/bookmark-agent.c:1071
 msgid "New Document"
 msgstr "Document nou"
 
-#: ../libslab/bookmark-agent.c:1105
+#: ../libslab/bookmark-agent.c:1121
 msgid "Home"
 msgstr "Carpeta d'inici"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1137
 msgid "File System"
 msgstr "Sistema de fitxers"
 
-#: ../libslab/bookmark-agent.c:1125
+#: ../libslab/bookmark-agent.c:1141
 msgid "Network Servers"
 msgstr "Servidors de xarxa"
 
-#: ../libslab/bookmark-agent.c:1154
+#: ../libslab/bookmark-agent.c:1170
 msgid "Search"
 msgstr "Cerca:"
 
@@ -383,7 +383,7 @@ msgid "Default menu and application browser"
 msgstr "Menú i navegador d'aplicacions per defecte"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2100 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menú principal del GNOME"
 
@@ -546,7 +546,9 @@ msgstr ""
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "determina el límit de mosaics que hi ha a l'àrea de fitxer"
+msgstr ""
+"determina el nombre mínim d'elements que apareixen a la secció «Usats "
+"recentment» de l'àrea de fitxers"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
@@ -681,25 +683,25 @@ msgstr "%llub"
 msgid "%s Free / %s Total"
 msgstr "%s lliures / %s totals"
 
-#: ../main-menu/src/main-menu-migration.c:96
-#: ../main-menu/src/main-menu-migration.c:215
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
 msgid "Logout"
 msgstr "Surt"
 
-#: ../main-menu/src/main-menu-migration.c:100
-#: ../main-menu/src/main-menu-migration.c:217
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
 msgid "Shutdown"
 msgstr "Atura"
 
-#: ../main-menu/src/main-menu-migration.c:155
+#: ../main-menu/src/main-menu-migration.c:159
 msgid "Lock Screen"
 msgstr "Bloca la pantalla"
 
-#: ../main-menu/src/main-menu-migration.c:157
+#: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2101
+#: ../main-menu/src/main-menu-ui.c:2146
 msgid "The GNOME Main Menu"
 msgstr "El menú principal del GNOME"
 
