@@ -6,14 +6,15 @@
 # Novell Language <language@novell.com>, 2006.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+# Damien Durand <splinux@fedoraproject.org>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-10 11:22+0100\n"
-"PO-Revision-Date: 2007-03-06 20:03+0100\n"
-"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
+"POT-Creation-Date: 2007-04-07 08:37+0200\n"
+"PO-Revision-Date: 2007-04-05 23:53+0100\n"
+"Last-Translator: Damien Durand <splinux@fedoraproject.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -165,46 +166,45 @@ msgid "Common Tasks"
 msgstr "Tâches courantes"
 
 #. make start action
-#: ../libslab/application-tile.c:354
+#: ../libslab/application-tile.c:362
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Démarrer %s</b>"
 
-#: ../libslab/application-tile.c:373
-#: ../main-menu/src/main-menu-migration.c:107
-#: ../main-menu/src/main-menu-migration.c:232
+#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Aide"
 
-#: ../libslab/application-tile.c:438
+#: ../libslab/application-tile.c:428
 msgid "Upgrade"
 msgstr "Mettre à niveau"
 
-#: ../libslab/application-tile.c:453
+#: ../libslab/application-tile.c:443
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: ../libslab/application-tile.c:762 ../libslab/document-tile.c:512
+#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Retirer des favoris"
 
-#: ../libslab/application-tile.c:764 ../libslab/document-tile.c:514
+#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Ajouter aux favoris"
 
-#: ../libslab/application-tile.c:840
+#: ../libslab/application-tile.c:857
 msgid "Remove from Startup Programs"
 msgstr "Retirer des programmes de démarrage"
 
-#: ../libslab/application-tile.c:842
+#: ../libslab/application-tile.c:859
 msgid "Add to Startup Programs"
 msgstr "Ajouter aux programmes de démarrage"
 
-#: ../libslab/app-shell.c:746
+#: ../libslab/app-shell.c:747
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -215,9 +215,33 @@ msgstr ""
 "\n"
 " Le filtre « <b>%s</b> » ne correspond à aucun élément.</span>"
 
-#: ../libslab/app-shell.c:891
+#: ../libslab/app-shell.c:897
 msgid "Other"
 msgstr "Autre"
+
+#: ../libslab/bookmark-agent.c:1067
+msgid "New Spreadsheet"
+msgstr "Nouveau classeur"
+
+#: ../libslab/bookmark-agent.c:1071
+msgid "New Document"
+msgstr "Nouveau document"
+
+#: ../libslab/bookmark-agent.c:1121
+msgid "Home"
+msgstr "Dossier personnel"
+
+#: ../libslab/bookmark-agent.c:1137
+msgid "File System"
+msgstr "Système de fichiers"
+
+#: ../libslab/bookmark-agent.c:1141
+msgid "Network Servers"
+msgstr "Serveurs réseau"
+
+#: ../libslab/bookmark-agent.c:1170
+msgid "Search"
+msgstr "Recherche"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:168
@@ -225,106 +249,119 @@ msgid "<b>Open</b>"
 msgstr "<b>Ouvrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:233
+#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
 msgid "Rename..."
 msgstr "Renommer..."
 
 #: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:247 ../libslab/document-tile.c:256
+#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
 msgid "Send To..."
 msgstr "Envoyer à..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:282
+#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
 msgid "Move to Trash"
 msgstr "Mettre à la corbeille"
 
 #: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:292 ../libslab/document-tile.c:616
+#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
 msgid "Delete"
 msgstr "Supprimer"
 
-#: ../libslab/document-tile.c:154
+#: ../libslab/document-tile.c:153
 msgid "Edited %m/%d/%Y"
 msgstr "Modifié le %m/%d/%Y"
 
-#: ../libslab/document-tile.c:194
+#: ../libslab/document-tile.c:193
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Ouvrir avec « %s »</b>"
 
-#: ../libslab/document-tile.c:206
+#: ../libslab/document-tile.c:205
 msgid "Open with Default Application"
 msgstr "Ouvrir avec l'application par défaut"
 
-#: ../libslab/document-tile.c:217
+#: ../libslab/document-tile.c:216
 msgid "Open in File Manager"
 msgstr "Ouvrir dans le gestionnaire de fichiers"
 
-#: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
-#: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
+#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
 msgstr "Attribut « %s » inattendu pour l'élément « %s »"
 
-#: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
-#: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
+#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
 msgstr "Attribut « %s » de l'élément « %s » non trouvé"
 
-#: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
-#: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
 msgstr "Balise « %s » inattendue, balise attendue « %s »"
 
-#: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
-#: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
 msgstr "Balise « %s » inattendue dans « %s »"
 
-#: ../libslab/eggbookmarkfile.c:2187
-msgid "No valid bookmark file was be found in data dirs"
+#: ../libslab/libslab-bookmarkfile.c:1929
+msgid "No valid bookmark file found in data dirs"
 msgstr ""
-"Aucun fichier de marque-pages valide n'a été trouvé dans vos répertoires de "
+"Aucun fichier de marque-pages valide n'a été trouvé dans les répertoires de "
 "données"
 
-#: ../libslab/eggbookmarkfile.c:2388
+#: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
 msgstr "Un marque-page pour l'URI « %s » existe déjà"
 
-#: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
-#: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
-#: ../libslab/eggbookmarkfile.c:2848 ../libslab/eggbookmarkfile.c:2931
-#: ../libslab/eggbookmarkfile.c:3009 ../libslab/eggbookmarkfile.c:3088
-#: ../libslab/eggbookmarkfile.c:3130 ../libslab/eggbookmarkfile.c:3227
-#: ../libslab/eggbookmarkfile.c:3350 ../libslab/eggbookmarkfile.c:3540
-#: ../libslab/eggbookmarkfile.c:3616 ../libslab/eggbookmarkfile.c:3765
-#: ../libslab/eggbookmarkfile.c:3830 ../libslab/eggbookmarkfile.c:3919
-#: ../libslab/eggbookmarkfile.c:4053
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
 msgstr "Aucun marque-page trouvé pour l'URI « %s »"
 
-#: ../libslab/eggbookmarkfile.c:2772
+#: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Aucun type MIME définit dans le marque-page pour l'URI « %s »"
+msgstr "Aucun type MIME défini dans le marque-page pour l'URI « %s »"
 
-#: ../libslab/eggbookmarkfile.c:2857
+#: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
 msgstr "Aucun drapeau privé a été défini dans le marque-page pour l'URI « %s »"
 
-#: ../libslab/eggbookmarkfile.c:3236
+#: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr "Aucun groupe définit dans le marque-page pour l'URI « %s »"
+msgstr "Aucun groupe défini dans le marque-page pour l'URI « %s »"
 
-#: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
 msgstr ""
@@ -334,12 +371,12 @@ msgstr ""
 msgid "Find Now"
 msgstr "Rechercher maintenant"
 
-#: ../libslab/system-tile.c:113
+#: ../libslab/system-tile.c:128
 #, c-format
 msgid "<b>Open %s</b>"
 msgstr "<b>Ouvrir « %s »</b>"
 
-#: ../libslab/system-tile.c:126
+#: ../libslab/system-tile.c:141
 msgid "Remove from System Items"
 msgstr "Retirer des éléments système"
 
@@ -348,7 +385,7 @@ msgid "Default menu and application browser"
 msgstr "Menu et explorateur d'applications par défaut"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:1866 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
@@ -471,7 +508,7 @@ msgid ""
 "or \"Places\" table."
 msgstr ""
 "Contient la liste (sans ordre particulier) des tables de fichiers autorisées "
-"à l'affichage dans la zone de fichier. Les valeurs possibles sont, 1 - "
+"à l'affichage dans la zone de fichiers. Les valeurs possibles sont, 1 - "
 "affiche la table des applications récemment utilisées, 2 - affiche la table "
 "des documents « Favoris » ou indiqués par l'utilisateur, 3 - affiche la "
 "table des documents récemment utilisés, 4 - affiche la table des répertoires "
@@ -563,7 +600,7 @@ msgstr ""
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified docs section"
 msgstr ""
-"État du vérouillage de la section des documents définis par l'utilisateur"
+"État du verrouillage de la section des documents définis par l'utilisateur"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
@@ -648,25 +685,25 @@ msgstr "%llub"
 msgid "%s Free / %s Total"
 msgstr "%s libres / %s au total"
 
-#: ../main-menu/src/main-menu-migration.c:109
-#: ../main-menu/src/main-menu-migration.c:235
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
 msgid "Logout"
 msgstr "Se déconnecter"
 
-#: ../main-menu/src/main-menu-migration.c:111
-#: ../main-menu/src/main-menu-migration.c:238
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
 msgid "Shutdown"
 msgstr "Éteindre"
 
-#: ../main-menu/src/main-menu-migration.c:174
+#: ../main-menu/src/main-menu-migration.c:159
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-#: ../main-menu/src/main-menu-migration.c:176
+#: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:1867
+#: ../main-menu/src/main-menu-ui.c:2146
 msgid "The GNOME Main Menu"
 msgstr "Le menu principal de GNOME"
 
@@ -780,18 +817,6 @@ msgstr "État"
 #: ../main-menu/src/slab-window.glade.h:16
 msgid "System"
 msgstr "Système"
-
-#: ../main-menu/src/user-dirs-tile-table.c:211
-msgid "Search"
-msgstr "Recherche"
-
-#: ../main-menu/src/user-docs-tile-table.c:164
-msgid "New Spreadsheet"
-msgstr "Nouveau classeur"
-
-#: ../main-menu/src/user-docs-tile-table.c:166
-msgid "New Document"
-msgstr "Nouveau document"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
