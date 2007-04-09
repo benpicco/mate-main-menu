@@ -2,9 +2,35 @@ INCLUDES =					\
 	$(LIBSLAB_CFLAGS)			\
 	$(WARN_CFLAGS)
 
+HEADER_FILES=					\
+	$(BUILT_SOURCES)			\
+	app-resizer.h				\
+	app-shell.h				\
+	app-shell-startup.h			\
+	application-tile.h			\
+	directory-tile.h			\
+	document-tile.h				\
+	gnome-utils.h				\
+	nameplate-tile.h			\
+	search-bar.h				\
+	search-context-picker.h			\
+	search-entry.h				\
+	shell-window.h				\
+	slab-gnome-util.h			\
+	slab-section.h				\
+	system-tile.h				\
+	tile.h
+
+if ENABLE_DYNAMIC_LIBSLAB
 lib_LTLIBRARIES = libslab.la
+SOURCE_HEADER_FILES=
+else
+noinst_LTLIBRARIES = libslab.la
+SOURCE_HEADER_FILES=$(HEADER_FILES)
+endif
 
 libslab_la_SOURCES =				\
+	$(SOURCE_HEADER_FILES)			\
 	$(MARSHAL_GENERATED)			\
 	app-resizer.c				\
 	app-shell.c				\
@@ -40,32 +66,17 @@ libslab_la_SOURCES =				\
 	tile-action.c				\
 	tile.c
 
+if ENABLE_DYNAMIC_LIBSLAB
 libslab_includedir = $(includedir)/slab
-libslab_include_HEADERS =			\
-	$(BUILT_SOURCES)			\
-	app-resizer.h				\
-	app-shell.h				\
-	app-shell-startup.h			\
-	application-tile.h			\
-	directory-tile.h			\
-	document-tile.h				\
-	gnome-utils.h				\
-	nameplate-tile.h			\
-	search-bar.h				\
-	search-context-picker.h			\
-	search-entry.h				\
-	shell-window.h				\
-	slab-gnome-util.h			\
-	slab-section.h				\
-	system-tile.h				\
-	tile.h
+libslab_include_HEADERS = $(HEADER_FILES)
+endif
 
-libslab_la_LIBADD =				\
-	$(LIBSLAB_LIBS)
+libslab_la_LIBADD = $(LIBSLAB_LIBS)
 
+if ENABLE_DYNAMIC_LIBSLAB
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libslab.pc
-
+endif
 
 search-entry-watermark.h: search-entry-watermark.svg
 	echo '#define SEARCH_ENTRY_WATERMARK_SVG "\' > $@; \
