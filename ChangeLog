@@ -1,3 +1,9 @@
+2007-05-08  Scott Reeves  <sreeves@novell.com>
+	* control-center/
+	* main-menu/etc/gnome-*.desktop:
+	Actually remove control-center dir.
+	Add proper categories to .desktop files
+
 2007-04-09  Scott Reeves  <sreeves@novell.com>
 	* configure.in
 	* main-menu/etc/system-items.xbel

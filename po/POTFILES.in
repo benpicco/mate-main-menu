@@ -3,9 +3,6 @@
 application-browser/etc/application-browser.desktop.in.in
 application-browser/etc/application-browser.schemas.in
 application-browser/src/application-browser.c
-control-center/etc/control-center.desktop.in.in
-control-center/etc/control-center.schemas.in
-control-center/src/control-center.c
 libslab/application-tile.c
 libslab/app-shell.c
 libslab/bookmark-agent.c
@@ -18,6 +15,7 @@ libslab/system-tile.c
 main-menu/etc/GNOME_MainMenu.server.in.in
 main-menu/etc/GNOME_MainMenu_ContextMenu.xml
 main-menu/etc/gnome-screensaver-lock.desktop
+main-menu/etc/gnome-session-kill.desktop
 main-menu/etc/slab.schemas.in.in
 main-menu/src/hard-drive-status-tile.c
 main-menu/src/main-menu-migration.c
