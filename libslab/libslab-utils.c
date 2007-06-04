@@ -292,7 +292,9 @@ libslab_get_gconf_value (const gchar *key)
 	}
 
 	g_object_unref (client);
-	gconf_value_free (value);
+
+	if (value)
+		gconf_value_free (value);
 
 	return retval;
 }

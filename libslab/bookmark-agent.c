@@ -759,7 +759,7 @@ load_xbel_store (BookmarkAgent *this)
 
 		libslab_handle_g_error (
 			& error, "%s: couldn't load bookmark file [%s]\n",
-			G_STRFUNC, priv->store_path);
+			G_STRFUNC, priv->store_path ? priv->store_path : "NULL");
 
 		return;
 	}
