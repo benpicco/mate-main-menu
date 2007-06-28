@@ -1,3 +1,4 @@
+# translation of gnome-main-menu.HEAD.es.po to Español
 # Spanish message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002, 2003 SuSE Linux AG.
@@ -8,14 +9,15 @@
 # Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
 # Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# Jorge Gonzalez <jorgegonz@svn.gnome.org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 03:34+0100\n"
-"PO-Revision-Date: 2007-06-07 23:00+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2007-06-08 03:35+0100\n"
+"PO-Revision-Date: 2007-06-28 11:44+0200\n"
+"Last-Translator: Jorge Gonzalez <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -471,7 +473,9 @@ msgstr ""
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "determina el número mínimo de elementos en la sección «recientes» del área de archivos."
+msgstr ""
+"determina el número mínimo de elementos en la sección «recientes» del área "
+"de archivos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
@@ -511,19 +515,19 @@ msgstr "estado de bloqueo para el área de sistema"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the user-specified apps section"
-msgstr ""
+msgstr "estado de bloqueo para la sección de aplicaciones especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified dirs section"
-msgstr ""
+msgstr "estado de bloqueo para la sección de directorios especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified docs section"
-msgstr ""
+msgstr "estado de bloqueo para la sección de documentos especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "valores posibles = 0 [Aplicaciones], 1 [Documentos], 2 [Lugares]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid ""
@@ -553,25 +557,25 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the user is allowed to modify the list of system items."
-msgstr ""
+msgstr "establezca el valor true si se permite al usuario modificar la lista de elementos del sistema."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
-msgstr ""
+msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o aplicaciones «Favoritas»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
-msgstr ""
+msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o directorios «Favoritos» o «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
-msgstr ""
+msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o documentos «Favoritos»."
 
 # clients/inst_source.ycp:185
 # clients/inst_source.ycp:162
@@ -620,7 +624,7 @@ msgstr "Bloquear pantalla"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
-msgstr ""
+msgstr "gnome-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2146
 msgid "The GNOME Main Menu"
