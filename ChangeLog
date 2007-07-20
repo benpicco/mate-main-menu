@@ -1,3 +1,7 @@
+2007-07-20  Raivis Dejus  <orvils@gmail.com>
+
+        * configure.in: Added Latvian Translation.
+
 2005-06-04  Jim Krehl  <jimmyk@novell.com>
 	* libslab/libslab-utils.c
 	* libslab/bookmark-agent.c:
