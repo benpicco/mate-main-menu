@@ -1,175 +1,207 @@
-# Copyright (C) 2007 SuSE Linux Products GmbH, Nuernberg
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
 # This file is distributed under the same license as the package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: base\n"
+"Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-06 17:53+0100\n"
-"PO-Revision-Date: 2006-11-03 14:26\n"
+"PO-Revision-Date: 2006-11-03 12:03\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
-msgstr ""
+msgstr "Isikhangeli Senkqubo"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 #: ../control-center/etc/control-center.schemas.in.h:2
 msgid "Exit shell on add or remove action performed"
 msgstr ""
+"Phuma kwitoliki yemiyalelo efakelweyo okanye shenxisa inyathelo elenziweyo"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 #: ../control-center/etc/control-center.schemas.in.h:3
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "Phuma kwitoliki yemiyalelo ekuncedo ngenyathelo elenziweyo"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 #: ../control-center/etc/control-center.schemas.in.h:4
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "Phuma kwitoliki yemiyalelo ekuncedo ngenyathelo elenziweyo"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 #: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
 msgstr ""
+"Phuma kwitoliki yemiyalelo efakelweyo okanye shenxisa inyathelo elenziweyo"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr ""
+msgstr "Igama lefayili leefayili zolwazi olusesikrinini esezikhona"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 #: ../control-center/etc/control-center.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
 msgstr ""
+"Kwalathwa ukuba ingaba kufuneka kuvalwe itoliki yemiyalelo xa kusenziwa "
+"inyathelo loncedo na"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 #: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
 msgstr ""
+"Kwalathwa ukuba ingaba kufuneka kuvalwe itoliki yemiyalelo xa kusenziwa "
+"inyathelo loncedo na"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
-msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
 msgstr ""
+"Kwalathwa ukuba ingaba kufuneka kuvalwe itoliki yemiyalelo xa kusenziwa "
+"inyathelo loncedo na"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
-msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
 msgstr ""
+"Kwalathwa ukuba ingaba kufuneka kuvalwe itoliki yemiyalelo xa kusenziwa "
+"inyathelo loncedo na"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
-msgstr ""
+msgstr "Elona nani likhulu Leenkqubo Ezintsha"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
 msgstr ""
+"Elona nani likhulu leenkqubo ezinokuboniswa kuluhlu Lweenkqubo  Ezintsha"
 
 #: ../application-browser/src/application-browser.c:85
-#, fuzzy
 msgid "New Applications"
-msgstr "Ukuhlohla &okutsha"
+msgstr "Iinkqubo Ezintsha"
 
 #: ../application-browser/src/application-browser.c:90
 #: ../control-center/src/control-center.c:160
 msgid "Filter"
-msgstr ""
+msgstr "Isihluzi"
 
 #: ../application-browser/src/application-browser.c:90
 #: ../control-center/src/control-center.c:160
 msgid "Groups"
-msgstr ""
+msgstr "Amaqela"
 
 #: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
-msgstr ""
+msgstr "Amanyathelo Enkqubo"
 
 #: ../control-center/etc/control-center.desktop.in.in.h:1
 #: ../control-center/src/control-center.c:164
-#, fuzzy
 msgid "Control Center"
-msgstr "Iziko Lolawulo yeYaST2"
+msgstr "Iziko Lolawulo"
 
 #: ../control-center/etc/control-center.schemas.in.h:1
 msgid "Close the control-center when a task is activated"
-msgstr ""
+msgstr "Vala iziko lolawulo xa kusenziwa kukusebenziseka komsebenzi"
 
 #: ../control-center/etc/control-center.schemas.in.h:10
 msgid "Task names and associated .desktop files"
-msgstr ""
+msgstr "Amagama emisebenzi neefayili ezikulwazi olusesikrinini olunxulumeneyo"
 
 #: ../control-center/etc/control-center.schemas.in.h:11
-msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
+msgid ""
+"The task name to be displayed in the control-center (thus needing to be "
+"translated) followed by a \";\" separator then the filename of an "
+"associated .desktop file to launch for that task."
 msgstr ""
+"Igama lomsebenzi elifanele ukuboniswa kwiziko lolawulo (elifanele  "
+"ukuguqulwa ke ngoko ngokulandelwa\";\" sisahlukanisi kulandele igama "
+"lefayili elinxulumene nefayili ekulwazi olusesikrinini lokwazisa ukundulula "
+"ukwenzela loo msebenzi."
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgid ""
+"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
+"desktop]"
 msgstr ""
+"[Guqula Okungasemva Kulwazi Olusesikrinini;background.desktop,Fakela "
+"Isishicileli;gnome-cups-manager.desktop,Yenza ubumbeko loMsebenzi "
+"wothungelwano;YaST2/lan.desktop,Guqula Igama lokugqithisa;gnome-passwd."
+"desktop,Fakela Umsebenzisi;YaST2/users.desktop,Vula Imimiselo Yolawulo;YaST."
+"desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid "if true, the control-center will close when a \"Common Task\" is activated"
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
 msgstr ""
+"Ukuba yinyaniso, iziko lolawulo liya kuvala xa \"Umsebenzi Oqhelekileyo\" "
+"usenziwa ukuba usebenze"
 
 #: ../control-center/src/control-center.c:62
 #, c-format
 msgid "key not found [%s]\n"
-msgstr ""
+msgstr "alifunyenwanga iqhosha [%s]\n"
 
 #: ../control-center/src/control-center.c:160
 msgid "Common Tasks"
-msgstr ""
+msgstr "Imisebenzi Eqhelekileyo"
 
 #. make start action
 #: ../libslab/application-tile.c:316
 #, c-format
 msgid "<b>Start %s</b>"
-msgstr ""
+msgstr "<b>Qalisa %s</b>"
 
 #: ../libslab/application-tile.c:335
 #: ../main-menu/src/main-menu-migration.c:116
 #: ../main-menu/src/main-menu-migration.c:270
 msgid "Help"
-msgstr "&Nceda"
+msgstr "Uncedo"
 
 #: ../libslab/application-tile.c:342
-#, fuzzy
 msgid "Help Unavailable"
-msgstr "Akukho"
+msgstr "Uncedo Alufumaneki"
 
 #: ../libslab/application-tile.c:381
 msgid "Upgrade"
-msgstr ""
+msgstr "Nyusa ibanga"
 
 #: ../libslab/application-tile.c:390
 msgid "Uninstall"
-msgstr ""
+msgstr "Yeka ukuhlohla"
 
 #: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
-msgstr ""
+msgstr "Shenxisa Kwizinqumli"
 
 #: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
-msgstr ""
+msgstr "Fakela Izinqumli"
 
 #: ../libslab/application-tile.c:769
 msgid "Remove from Startup Programs"
-msgstr ""
+msgstr "Shenxisa Kwiinkqubo Zokuqalisa"
 
 #: ../libslab/application-tile.c:771
 msgid "Add to Startup Programs"
-msgstr ""
+msgstr "Fakela Kwiinkqubo Zokuqalisa"
 
 #: ../libslab/app-shell.c:740
 #, c-format
@@ -178,87 +210,89 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
+"<ubukhulu bethuba=\"bukhulu\"><b>Akukho lungqinelwano lufunyenweyo.</b> </"
+"ithuba><ithuba>\n"
+"\n"
+"  Isihluzi sakho \"<b>%s</b>\" asingqinelani nawo nawaphi amanqaku.</span>"
 
 #: ../libslab/app-shell.c:879
-#, fuzzy
 msgid "Other"
-msgstr "&Ezinye"
+msgstr "Okunye"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:163
 msgid "<b>Open</b>"
-msgstr ""
+msgstr "<b>Vula</b>"
 
 #. make rename action
 #: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
 msgid "Rename..."
-msgstr ""
+msgstr "Phinda unike igama..."
 
 #. make move to trash action
 #: ../libslab/directory-tile.c:195 ../libslab/document-tile.c:249
 msgid "Move to Trash"
-msgstr ""
+msgstr "Yisa Enkunkumeni"
 
 #: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:448
 #: ../libslab/document-tile.c:259 ../libslab/document-tile.c:629
-#, fuzzy
 msgid "Delete"
-msgstr "Ci&ma"
+msgstr "Cima "
 
 #: ../libslab/directory-tile.c:225 ../libslab/directory-tile.c:234
 #: ../libslab/document-tile.c:295 ../libslab/document-tile.c:304
 msgid "Send To..."
-msgstr ""
+msgstr "Thumela Ku..."
 
 #: ../libslab/document-tile.c:154
 msgid "Edited %m/%d/%Y"
-msgstr ""
+msgstr "Kuhlelwe i- %m/%d/%Y"
 
 #: ../libslab/document-tile.c:192
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
-msgstr ""
+msgstr "<b>Vula nge- \"%s\"</b>"
 
 #: ../libslab/document-tile.c:204
 msgid "Open with Default Application"
-msgstr ""
+msgstr "Vula Ngenkqubo Ehlala Ikhona"
 
 #: ../libslab/document-tile.c:220
 msgid "Open in File Manager"
-msgstr ""
+msgstr "Vula Kumlawuli Weefayili"
 
 #: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
 #: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr ""
+msgstr "Ukubalela okungalindelekanga '%s' esiqalelo '%s'"
 
 #: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
 #: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr ""
+msgstr "Ukubalela '%s' kwesiqalelo '%s' akufunyanwanga"
 
 #: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
 #: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr ""
+msgstr "i-tag engalindelekanga '%s', i-tag '%s' elindelekileyo"
 
 #: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
 #: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr ""
+msgstr "i-tag engalindelekanga '%s', ngaphakathi '%s'"
 
 #: ../libslab/eggbookmarkfile.c:2187
 msgid "No valid bookmark file was be found in data dirs"
-msgstr ""
+msgstr "Akukho fayili ye-bookmark esebenzayo ebekufanele ifunyanwe kwi-drs yedata"
 
 #: ../libslab/eggbookmarkfile.c:2388
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr ""
+msgstr "i-bookmark ye-URI '%s' sele ikhona"
 
 #: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
 #: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
@@ -271,340 +305,426 @@ msgstr ""
 #: ../libslab/eggbookmarkfile.c:4053
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr ""
+msgstr "Akukho bookmark ifunyanelwe i-URI '%s'"
 
 #: ../libslab/eggbookmarkfile.c:2772
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr ""
+msgstr "Akukho hlobo lwe-MIME luchazwe kwi-bookmark nge-URI '%s'"
 
 #: ../libslab/eggbookmarkfile.c:2857
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr ""
+msgstr "Akukho flegi yabucala echaziweyo kwi-bookmark ye-URI '%s'"
 
 #: ../libslab/eggbookmarkfile.c:3236
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr ""
+msgstr "Akukho maqela asetiweyo kwi-bookmark ye-URI '%s'"
 
 #: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr ""
+msgstr "Akukho aplikeshini enegama '%s' ebhaliswe kwi-bookmark ka '%s'"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
-msgstr ""
+msgstr "Fumana Ngoku"
 
 #: ../libslab/system-tile.c:113
-#, c-format
 msgid "<b>Open %s</b>"
-msgstr ""
+msgstr "<b>Vula %s</b>"
 
 #: ../libslab/system-tile.c:126
 msgid "Remove from System Items"
-msgstr ""
+msgstr "Shenxisa kwiZinto zeSixokelelwano"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr ""
+msgstr "Imenyu ehlala ikhona nesikhangeli senkqubo"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
-msgstr ""
+msgstr "Imenyu Engundoqo ye-GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr ""
+msgstr "Ifektri Yemenyu Engundoqo ye-GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
-msgstr ""
+msgstr "Imenyu Engundoqo"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
-msgstr ""
+msgstr "_Malunga"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
-msgstr ""
+msgstr "_Vula iMenyu"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr ""
+"Ifayili yolwazi olusesikrinini ukwenzela ukusebenziseka kweixhobo_zomsebenzi "
+"wothungelwano we-YaST"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr ""
+msgstr "ifayili yolwazi olusesikrinini ukwenzela isikhangeli seefayili"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
 msgstr ""
+"Ifayili yolwazi olusesikrinini ukwenzela iqokobhe lesikrini sesixokelelwano "
+"se-gnome"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
 msgstr ""
+"Ifayili yolwazi olusesikrinini ukwenzela isixhobo sobumbeko lothungelwano"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop path for the application browser"
 msgstr ""
+".indlela yothungelwano yolwazi olusesikrinini ukwenzela isikhangeli senkqubo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
-msgid "Location of the system-wide directory in which startup programs are found."
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
 msgstr ""
+"Indawo yokuhlala uvimba weefayili wesixokelelwano esibanzi apho iinkqubo "
+"zokuqalisa zifunyanwa khona."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
+msgid ""
+"Location of the user directory in which startup programs are found. The dir "
+"path should not be absolute, as the value of this key is appended to this "
+"path: ~/."
 msgstr ""
+"Indawo yokuhlala uvimba weefayili zomsebenzisi apho iinkqubo zokuqalisa "
+"zifunyanwa khona. Indlela yothungelwano kavimba weefayili asiyiyo "
+"engathelekisekiyo, njengoko ixabiso leli qhosha lihlonyelwe kule ndlela "
+"yothungelwano: ~/."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
-msgstr ""
+msgstr "Uvimba weefayili oyekisayo wenkqubo yokuqalisa ebanzi yesixokelelwano"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
 msgstr ""
+"Lo ngumyalelo wokuqhuba xa kusenziwa ukusebenza kwenqaku lemenyu ethi\"Vula "
+"Umlawuli Weefayili\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
 msgstr ""
+"Lo ngumyalelo wokuqhuba xa kusenziwa ukusebenza kwenqaku lemenyu ethi\"Vula "
+"Umlawuli Weefayili\". IFAYILI_yeURL isuswe endaweni ngokubeka i-uri "
+"ehambelana negama likavimba weefayili wefayili eyenziwe yasebenza."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
 msgstr ""
+"Lo ngumyalelo wokuqhuba xa inqaku lemenyu elithi\"Thumela Ku...\" lisenziwa "
+"ukuba lisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
 msgstr ""
+"Lo ngumyalelo wokuqhuba xa inqaku lemenyu elithi\"Thumela Ku...\" lisenziwa "
+"ukuba lisebenze. IGAMA LIKAVIMBAWEFAYILI kananjalo IGAMALESISEKO asuswa "
+"ngokubeka iinxalenye ezihambelanayo zethayili ukuba zisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
-msgstr ""
+msgstr "Lo ngumyalelo wokuqhuba xa kusetyenziswa ungeniso lozingelo."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
 msgstr ""
+"Lo ngumyalelo wokuqhuba xa kusetyenziswa ungeniso lozingelo. UMTYA_WOZINGELO "
+"ususwa ngokubeka isiqendu sozingelo esingeniswayo."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
 msgstr ""
+"Uvimba weefayili oyekisayo wenkqubo yomsebenzisi yokuqalisa ngokuzenzekela "
+"(phakathi kukavimba weefayili zasekhaya)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
-#, fuzzy
 msgid "command to uninstall packages"
-msgstr "Kusilele ukuhlohla imibekelelo efunekayo."
+msgstr "umyalelo wokuyeka ukuhlohla imibekelelo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
 msgstr ""
+"umyalelo wokuyeka ukuhlohla imibekelelo, IGAMA_LOMBEKELELO lisuswa ngokubeka "
+"igama lombekelelo kumyalelo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
-msgstr ""
+msgstr "umyalelo wonyusa ibanga lemibekelelo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
-msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
 msgstr ""
+"umyalelo wokunyusa ibanga lemibekelelo, IGAMA_LOMBEKELELO lisuswa ngokubeka "
+"igama lombekelelo kumyalelo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
-msgstr ""
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr "iqulethe uluhlu (hayi ngendlela ethile) yeetheyibhile zefayili ezivumelekayo ukubonisa kwindawo yefayili. uncedo elinokwenzeka: 0 - ubonisa umsebenzisi obaluliweyo okanye \"Othandwayo \" itheyibhile yee-aplikeshini, 1 - ubonisa itheyibhile yee-aplikeshini esetyenziswe kutsha nje, 2 - ubonisa umsebenzisi obaluliweyo okanye \"Othandwayo\" itheyibhile yexwebhu, 3 - ubonisa itheyibhile yamaxwebhu esetyenziswe kutsha nje, 4 - ubonisa umsebenzisi obaluliweyo wo \"Othandwayo\"  vimba beefayili okanye \"Iindawo\" itheyibhile, kunye 5 - ubonisa oovimba abasetyenziswe kutsha nje  okanye \"Iindawo\" itheyibhile."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
+"kuqulethe uludwe lweefayili (kubandakanywa iifayili zolwazi olusesikrinini) "
+"olufanele ukukhutshelwa ngaphandle \"Kweenkqubo Ezisandula Ukusetyenziswa\" "
+"ngokunjalo izindwe \"Zeefayili Ezisandula Ukusetyenziswa\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines the limit of items in the file-area."
-msgstr ""
+msgstr "kubonisa umnyino wezinto kwindawo yefayili."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
-msgstr ""
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr "kubonisa umnyino wezinto kwindawo yefayili. Inombolo yeinto ezithandwayo alinyinwanga. Oku kunyina kubhekisela kwinani lezinto zakutsha nje, umz. Inombolo yezinto zakutsha nje ezibonisweyo zinyinwe kwizinto_zizonke_kobona bukhulu - inombolo yezinto ezithandayo. Ukuba inombolo yezinto ezithandwayo zigqitha izinto_zizonke_obona bukhulu -  izinto_zakutsha nje_zincinci kunolu nyino ligatyiwe."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid "determines the minimum number of items in the \"recent\" section of the file-area."
-msgstr ""
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr "imisa ubuncinane benombolo yezinto kwi \"kutsha nje\" candelo lendawo yefayili."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
-msgstr ""
+msgstr "kubonisa ukuba zeziphi iintlobo zeefayili eziboniswa kwindawo yefayili"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "if true, main menu is more anxious to close"
-msgstr ""
+msgstr "ukuba yinyaniso, imenyu engundoqo ixhalabe ngakumbi ukuvala"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
 msgstr ""
+"ukuba yinyaniso, imenyu engundoqo iza kuvala phantsi kwezi meko "
+"ezifakelweyo: ithayili yenziwa ukuba isebenze, uzingelo lwenziwa ukuba "
+"lusebenze"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
-msgstr ""
+msgstr "tshixela ubumbeko lwendawo yefayili"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the application browser link"
-msgstr ""
+msgstr "tshixela isimo ukwenzela unxulumano lwesikhangeli senkqubo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the search area"
-msgstr ""
+msgstr "tshixela isimo sendawo yozingelo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the status area"
-msgstr ""
+msgstr "tshixela isimo sendawo yesimo"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the system area"
-msgstr ""
+msgstr "tshixela isimo sendawo yesixokelelwano"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "lock-down status for the user-specified apps section"
-msgstr ""
+msgstr "tshixa isimo somsebenzisi  obaluliweyo wecandelo le-apps"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "lock-down status for the user-specified dirs section"
-msgstr ""
+msgstr "tshixa isimo somsebenzisi  obaluliweyo wecandelo loovimaba befayili"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "lock-down status for the user-specified docs section"
-msgstr ""
+msgstr "tshixa isimo somsebenzisi  obaluliweyo wecandelo lamaxwebhu"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "amaxabiso asebenzayo = 0 [ii-Aplikeshini], 1 [Amaxwebhu], 2 [Iindawo]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
-msgid "set to true if the link to the application browser should be visible and active."
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
 msgstr ""
+"kumiselwe kokuyinyaniso xa unxulumano kwisikhangeli senkqubo kufuneka "
+"sibonwe ngamehlo kwaye sisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
 msgstr ""
+"kumiselwe kokuyinyaniso ukuba indawo yozingelo kufuneka ibonwe ngamehlo "
+"kwaye zisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid "set to true if the status area should be visible and active."
 msgstr ""
+"kumiselwe kokuyinyaniso ukuba indawo yesimo kufuneka ibonwe ngamehlo kwaye "
+"zisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid "set to true if the system area should be visible and active."
 msgstr ""
+"kumiselwe kokuyinyaniso ukuba indawo yesixokelelwano kufuneka ibonwe "
+"ngamehlo kwaye zisebenze."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr "seta ku-inyani ukuba umsebenzisi uvunyelwe ukulungisa uluhlu lomsebenzisi obaluliweyo okanye  \"Ethandwayo\" ii-aplikeshini."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr "seta ku-inyani ukuba umsebenzisi uvunyelwe ukulungisa uluhlu lomsebenzisi obaluliweyo okanye  \"Ethandwayo\"oovimba befayili okanye \"Iindawo\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr "seta ku-inyani ukuba umsebenzisi uvunyelwe ukulungisa uluhlu lomsebenzisi obaluliweyo okanye  \"Ethandwayo\" amaxwebhu."
 
 #: ../main-menu/src/hard-drive-status-tile.c:110
 msgid "Hard _Drive"
-msgstr ""
+msgstr "Okungaphaka kwiqokobhe _Lekhompyutha"
 
 #: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
-msgstr ""
+msgstr "%lluG"
 
 #: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
-msgstr ""
+msgstr "%lluM"
 
 #: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
-msgstr ""
+msgstr "%lluK"
 
 #: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
-msgstr ""
+msgstr "%llub"
 
 #: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
-msgstr ""
+msgstr "%s Okukhululekileyo / %s Isixa esipheleleyo"
 
 #: ../main-menu/src/main-menu-migration.c:118
 #: ../main-menu/src/main-menu-migration.c:273
 msgid "Logout"
-msgstr ""
+msgstr "Mka"
 
 #: ../main-menu/src/main-menu-migration.c:120
 #: ../main-menu/src/main-menu-migration.c:276
 msgid "Shutdown"
-msgstr ""
+msgstr "Vala"
 
 #: ../main-menu/src/main-menu-migration.c:205
 msgid "Lock Screen"
-msgstr ""
+msgstr "Isikrini Esitshixwayo"
 
 #: ../main-menu/src/main-menu-migration.c:207
 msgid "gnome-lockscreen"
-msgstr ""
+msgstr "i-gnome-yesikrini esixiweyo"
 
 #: ../main-menu/src/main-menu-migration.c:531
 msgid "New Spreadsheet"
-msgstr ""
+msgstr "i-Spreadsheet Esitsha"
 
 #: ../main-menu/src/main-menu-migration.c:536
 msgid "New Document"
-msgstr ""
+msgstr "Uxwebhu Olutsha"
 
 #: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
-msgstr ""
+msgstr "Imenyu Engundoqo ye-GNOME"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
-msgstr ""
+msgstr "Umsebenzi wothungelwano: Akukho"
 
 #: ../main-menu/src/network-status-tile.c:94
 #: ../main-menu/src/network-status-tile.c:199
-#, fuzzy
 msgid "Click to configure network"
-msgstr "Akukabikho lubumbeko."
+msgstr "Nqomfa ukwenza ubumbeko lomsebenzi wothungelwano"
 
 #: ../main-menu/src/network-status-tile.c:198
 msgid "Networ_k: None"
-msgstr ""
+msgstr "Inethiwekh_i: Akukho"
 
 #: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
-msgstr ""
+msgstr "Dibanisa kwi: %s"
 
 #: ../main-menu/src/network-status-tile.c:210
 msgid "Networ_k: Wireless"
-msgstr ""
+msgstr "Inethiwekh_i: Akukho zingcingo"
 
 #: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
-msgstr ""
+msgstr "Kusetyenziswa uthungelwano lwe-ether (%s)"
 
 #: ../main-menu/src/network-status-tile.c:219
-#, fuzzy
 msgid "Networ_k: Wired"
-msgstr "ikhadi yothungelwano ngomsebenzi"
+msgstr "Inethiwekh_i: Okuneengcingo"
 
 #: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr ""
+msgstr "Uthungelwano lwe-Ether Olungenazingcingo (%s)"
 
 #: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr ""
+msgstr "Uthungelwano lwe-Ether Oluneengcingo (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
@@ -614,81 +734,196 @@ msgstr "Akwaziwa"
 #: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
-msgstr ""
+msgstr "%d Mb/s"
 
 #: ../main-menu/src/slab-window.glade.h:1
-#, fuzzy
 msgid "Applications"
-msgstr "Ukuhlohla &okutsha"
+msgstr "Iinkqubo"
 
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
-msgstr ""
+msgstr "Ikhompyutha"
 
 #: ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
-msgstr ""
+msgstr "Amaxwebhu"
 
 #: ../main-menu/src/slab-window.glade.h:4
-#, fuzzy
 msgid "Favorite Applications"
-msgstr "Ukuhlohla &okutsha"
+msgstr "Iinkqubo Zezinqumli"
 
 #: ../main-menu/src/slab-window.glade.h:5
 msgid "Favorite Documents"
-msgstr ""
+msgstr "Amaxwebhu Athandwayo"
 
 #: ../main-menu/src/slab-window.glade.h:6
 msgid "Favorite Places"
-msgstr ""
+msgstr "Iindawo Ezithandwayo"
 
 #: ../main-menu/src/slab-window.glade.h:8
-#, fuzzy
 msgid "More Applications..."
-msgstr "Ukuhlohla &okutsha"
+msgstr "Iinkqubo Ezithe Chatha..."
 
 #: ../main-menu/src/slab-window.glade.h:9
 msgid "More Documents..."
-msgstr ""
+msgstr "Amaxwebhu Angaphezulu..."
 
 #: ../main-menu/src/slab-window.glade.h:10
 msgid "More Places..."
-msgstr ""
+msgstr "Iindawo Ezingaphezulu..."
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
-msgstr ""
+msgstr "Iindawo"
 
 #: ../main-menu/src/slab-window.glade.h:12
-#, fuzzy
 msgid "Recent Applications"
-msgstr "Ukuhlohla &okutsha"
+msgstr "Iinkqubo Zakutsha nje"
 
 #: ../main-menu/src/slab-window.glade.h:13
 msgid "Recent Documents"
-msgstr ""
+msgstr "Amaxwebhu Akutshanje"
 
 #: ../main-menu/src/slab-window.glade.h:14
 msgid "Search:"
-msgstr ""
+msgstr "Zingela:"
 
 #: ../main-menu/src/slab-window.glade.h:15
 msgid "Status"
-msgstr ""
+msgstr "Isimo"
 
 #: ../main-menu/src/slab-window.glade.h:16
 msgid "System"
-msgstr ""
+msgstr "Isixokelelwano"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "Faka umqali wakutsha nje kwabathandwayo"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Add the current document to favorites"
-msgstr ""
+msgstr "Faka uxwebhu lakutsha nje kwabathandwayo"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:134
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
-msgstr ""
+msgstr "Shenxisa uxwebhu lwakutsha nje ukusuka kwabathandwayo"
+
+#~ msgid "Software Update"
+#~ msgstr "Uhlaziyo Lokungaphakathi Ekhompyutheni"
+
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "iifayili zolwazi olusesikrinini ukwenzela \"Iinkqubo Zezinqumli\""
+
+#~ msgid "System area items"
+#~ msgstr "Amanqaku endawo yesixokelelwano"
+
+#~ msgid ""
+#~ "The list of the items which will appear in the System area. Possible "
+#~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
+#~ "3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the "
+#~ "have the appropriate .desktop files defined in the, respectively, "
+#~ "\"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr ""
+#~ "Uludwe lwamanqaku oluya kuvela kwindawo Yesixokelelwano. Amaxabiso "
+#~ "anokuba khona ngala UNCEDO = 0, IZIKO LOLAWULO = 1, UMLAWULI_WOMBEKELELO "
+#~ "= 2, MKA_ = 3,  TSHIXA_ISIKRINI = 4. UNCEDO, IZIKO_ LOKULAWULA kananjalo "
+#~ "UMLAWULI_WOMBEKELEL ufuna ukuba neefayili ezifanelekileyo zolwazi "
+#~ "oluseskikrinini oluchazwa, ngokokulandelelana kwalo, ngale ndlela,"
+#~ "\"inqaku_loncedo\",  \"inqaku_leziko_lolawulo\" kananjalo amaqhosha"
+#~ "\"enqaku_lolawulo_lombekelelo\"."
+
+#~ msgid ""
+#~ "contains the list (in no particular order) of allowable file types to "
+#~ "show in the file area. possible values (see also the note for /desktop/"
+#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
+#~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
+#~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
+#~ "to \"Favorite Applications\". RECENT_FILES is the list of files from ~/."
+#~ "recently-used."
+#~ msgstr ""
+#~ "kuqulethe uludwe (ingengalo ulandelelwano oluthile) lweentlobo zeefayili "
+#~ "ezivumelekileyo ukubonisa amaxabiso anokubakho endawo yefayili (jonga "
+#~ "ngokunjalo inqaku ngolwazi olusesikrinini/i-gnome/iinkqubo/imenyu "
+#~ "engundoqo/indawo yefayili/udidi_lwefayili): 0 "
+#~ "[IINKQUBO_EZIXELWE_KUMSEBENZISI], 1  [IINKQUBO "
+#~ "_EZISANDULA_UKUSETYENZISWA], 2 [IIFAYILI_ZAKUTSHANJE]. "
+#~ "IINKQUBO_EZISANDULA_UKUSETYENZISWA luludwe olusandula ukusetyenziswa "
+#~ "(olwenziwe lwaba lolwangoku ngemenyu engundoqo okanye ngesikhangeli "
+#~ "senkqubo).  IINKQUBO_EZIXELWE_KUMSEBENZISI ilingana\"Neenkqubo Ezizinqumli"
+#~ "\". IIFAYILI_ZAKUTSHANJE  luludwe lweefayili oluvela ~/.kolusandula "
+#~ "ukusetyenziswa."
+
+#~ msgid "control center item .desktop file"
+#~ msgstr "inqaku leziko lolawulo .ifayili yolwazi olusesikrinini"
+
+#~ msgid ""
+#~ "determines the limit of tiles in the file-area. *Note: this does not "
+#~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr ""
+#~ "kubonisa umnyino weethayili kwindawo yefayili. *Qaphela: oku "
+#~ "akulichaphazeli inani leethayili ukuba udidi lwefayili "
+#~ "IXELIWE_KUMSEBENZIZI_*."
+
+#~ msgid ""
+#~ "determines the reordering algorithm used when moving tiles around the "
+#~ "main-menu"
+#~ msgstr ""
+#~ "kubonisa ukulandelalaniswa ngokutsha kwesisombululi sengxaki "
+#~ "esisetyenziswa xa kususwa iithayili ezikufutshane kwimenyu"
+
+#~ msgid "help item .desktop file"
+#~ msgstr "inqaku loncedo .ifayili yolwazi olusesikrinini"
+
+#~ msgid "package manager item .desktop file"
+#~ msgstr "inqaku lomlawuli wombekelelo .ifayili yolwazi olusesikrinini"
+
+#~ msgid ""
+#~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+#~ "when a tile is dragged onto another tile they should simply swap "
+#~ "position. PUSH indicates that when a tile, A, is dragged onto another "
+#~ "tile, B, a vacant spot is created in tile A's place. tile B (and all "
+#~ "tiles after B) shift down until the new vacant space is filled. this "
+#~ "operation wraps around in the case that tile A appears before tile B "
+#~ "prior to the drag and drop operation. PUSH_PULL is similar to PUSH except "
+#~ "that when tiles are shifted they are either pushed into the vacant spaced "
+#~ "or pulled from the other direction, depending on which strategy affects "
+#~ "the least number of tiles."
+#~ msgstr ""
+#~ "amaxabiso anokubakho = 0 [UTSHINTSHISELWANO], 1 [TYHALA], 2 "
+#~ "[TYHALA_TSALA]. UTSHINTSHISELWANO lubonisa ukuba xa ithayili itsalelwa "
+#~ "kwenye ithayili kufuneka zitshintshiselane ngendawo qha.  u-TYHALA "
+#~ "walatha ukuba xa ithayili, A itsalelwa kwenye ithayili, B kudaleka ibala "
+#~ "kwithayili kwindawo ye-A.ithayili engu B (nazo zonke iithayili emva kuka-"
+#~ "B)  bhekelisela ezantsi de kuzale isithuba esitsha esingenanto. esi senzo "
+#~ "siqhubela kumgca olandelayo ngohlobo lukanobumba evela ngalo ithayili "
+#~ "engu-A phambi kukathayili B phambi kwesenzo sikarhuqa uze uyeke. "
+#~ "TYHALA_TSALA iyelele ku-TYHALA ngaphandle kokuba xa iithayili "
+#~ "zibhekeliswa mhlawumbi zityhalelwa kwisithuba esingenanto okanye "
+#~ "zitsalelwe ukusuka kwenye indawo yentsingiselo, kuxhomekeke ekubeni "
+#~ "loluphi uhlobo lobucule oluchaphazela elona nani lincinci leethayili."
+
+#~ msgid ""
+#~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+#~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+#~ "(instantiated with the main-menu or the application-browser). "
+#~ "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". "
+#~ "RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr ""
+#~ "Amaxabiso anokuba khona = 0 [IINKQUBO_EZIXELWE_KUMSEBENZISI], 1  "
+#~ "[IINKQUBO _EZISANDULA_UKUSETYENZISWA], 2 [IIFAYILI_ZAKUTSHANJE]. "
+#~ "IINKQUBO_EZISANDULA_UKUSETYENZISWA luludwe olusandula ukusetyenziswa "
+#~ "(olwenziwe lwaba lolwangoku ngemenyu engundoqo okanye ngesikhangeli "
+#~ "senkqubo).  IINKQUBO_EZIXELWE_KUMSEBENZISI ilingana\"Neenkqubo Ezizinqumli"
+#~ "\". IIFAYILI_ZAKUTSHANJE  luludwe lweefayili oluvela ~/.kolusandula "
+#~ "ukusetyenziswa."
+
+#~ msgid "prioritized list of commands to lock the screen"
+#~ msgstr "uludwe oluhlelwe ngokokubaluleka lwemiyalelo yokutshixa isikrini"
+
+#~ msgid "Install Software"
+#~ msgstr "Hlohla Okubangaphakathi Ekhompyutheni"
+
+#~ msgid "Log Out ..."
+#~ msgstr "Mka..."

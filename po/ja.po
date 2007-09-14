@@ -40,7 +40,8 @@ msgstr "起動アクションの実行時にシェルを終了する"
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 #: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "アップグレードまたはアンインストールアクションの実行時にシェルを終了する"
+msgstr ""
+"アップグレードまたはアンインストールアクションの実行時にシェルを終了する"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
@@ -58,20 +59,28 @@ msgstr "起動アクションが実行される際にシェルを終了するか
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 #: ../control-center/etc/control-center.schemas.in.h:8
-msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
 msgstr "追加または削除アクションが実行される際にシェルを終了するかどうかを示す"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 #: ../control-center/etc/control-center.schemas.in.h:9
-msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
-msgstr "アップグレードまたはアンインストールアクションが実行される際にシェルを終了するかどうかを示す"
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+"アップグレードまたはアンインストールアクションが実行される際にシェルを終了す"
+"るかどうかを示す"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
 msgstr "新しいアプリケーションの最大数"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
 msgstr "新しいアプリケーションカテゴリに表示されるアプリケーションの最大数"
 
 #: ../application-browser/src/application-browser.c:85
@@ -106,17 +115,33 @@ msgid "Task names and associated .desktop files"
 msgstr "タスク名と関連する.desktopファイル"
 
 #: ../control-center/etc/control-center.schemas.in.h:11
-msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
-msgstr "コントロールセンタに表示されるタスク名(変換の必要あり)の後には「;」という区切り文字、そのタスクを起動する関連.desktopファイルのファイル名が順に続きます。"
+msgid ""
+"The task name to be displayed in the control-center (thus needing to be "
+"translated) followed by a \";\" separator then the filename of an "
+"associated .desktop file to launch for that task."
+msgstr ""
+"コントロールセンタに表示されるタスク名(変換の必要あり)の後には「;」という区切"
+"り文字、そのタスクを起動する関連.desktopファイルのファイル名が順に続きます。"
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
-msgstr "[デスクトップの背景の変更;background.desktop,プリンタの追加;gnome-cups-manager.desktop,ネットワークの設定;YaST2/lan.desktop,パスワードの変更;gnome-passwd.desktop,ユーザの追加;YaST2/users.desktop,管理者設定を開く;YaST.desktop]"
+msgid ""
+"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
+"desktop]"
+msgstr ""
+"[デスクトップの背景の変更;background.desktop,プリンタの追加;gnome-cups-"
+"manager.desktop,ネットワークの設定;YaST2/lan.desktop,パスワードの変更;gnome-"
+"passwd.desktop,ユーザの追加;YaST2/users.desktop,管理者設定を開く;YaST."
+"desktop]"
 
 #: ../control-center/etc/control-center.schemas.in.h:14
-msgid "if true, the control-center will close when a \"Common Task\" is activated"
-msgstr "TRUEの場合、コントロールセンタは「共通タスク」が有効化されたときに終了します。"
+msgid ""
+"if true, the control-center will close when a \"Common Task\" is activated"
+msgstr ""
+"TRUEの場合、コントロールセンタは「共通タスク」が有効化されたときに終了しま"
+"す。"
 
 #: ../control-center/src/control-center.c:62
 #, c-format
@@ -178,7 +203,8 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
-"<span size=\"large\"><b>該当するものが見つかりませんでした。</b> </span><span>\n"
+"<span size=\"large\"><b>該当するものが見つかりませんでした。</b> </"
+"span><span>\n"
 "\n"
 " あなたのフィルター \"<b>%s</b>\" はどのアイテムにも該当しません。</span>"
 
@@ -188,9 +214,8 @@ msgstr "その他"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:163
-#, fuzzy
 msgid "<b>Open</b>"
-msgstr "<b>ベンダ:</b>"
+msgstr "<b>開く</b>"
 
 #. make rename action
 #: ../libslab/directory-tile.c:182 ../libslab/document-tile.c:236
@@ -231,36 +256,36 @@ msgstr "ファイルマネージャで開く "
 
 #: ../libslab/eggbookmarkfile.c:909 ../libslab/eggbookmarkfile.c:1001
 #: ../libslab/eggbookmarkfile.c:1080 ../libslab/eggbookmarkfile.c:1127
-#, fuzzy, c-format
+#, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "インタフェース名:「%s」に予期しない文字があります"
+msgstr "予期しない属性「%s」が要素「%s」にあります"
 
 #: ../libslab/eggbookmarkfile.c:920 ../libslab/eggbookmarkfile.c:1012
 #: ../libslab/eggbookmarkfile.c:1022 ../libslab/eggbookmarkfile.c:1138
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr ""
+msgstr "属性「%s」が要素「%s」にありません"
 
 #: ../libslab/eggbookmarkfile.c:1329 ../libslab/eggbookmarkfile.c:1394
 #: ../libslab/eggbookmarkfile.c:1444 ../libslab/eggbookmarkfile.c:1454
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr ""
+msgstr "予期しないタグ「%s」があります、タグ「%s」が予定されています"
 
 #: ../libslab/eggbookmarkfile.c:1354 ../libslab/eggbookmarkfile.c:1368
 #: ../libslab/eggbookmarkfile.c:1422 ../libslab/eggbookmarkfile.c:1476
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr ""
+msgstr "予期しないタグ「%s」が「%s」内にあります"
 
 #: ../libslab/eggbookmarkfile.c:2187
 msgid "No valid bookmark file was be found in data dirs"
-msgstr ""
+msgstr "データディレクトリに有効なブックマークファイルが見つかりません"
 
 #: ../libslab/eggbookmarkfile.c:2388
-#, fuzzy, c-format
+#, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr "CAディレクトリはすでに存在しています。"
+msgstr "URI「%s」のブックマークはすでに存在しています"
 
 #: ../libslab/eggbookmarkfile.c:2432 ../libslab/eggbookmarkfile.c:2593
 #: ../libslab/eggbookmarkfile.c:2682 ../libslab/eggbookmarkfile.c:2763
@@ -273,41 +298,42 @@ msgstr "CAディレクトリはすでに存在しています。"
 #: ../libslab/eggbookmarkfile.c:4053
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr ""
+msgstr "URI「%s」のブックマークが見つかりません"
 
 #: ../libslab/eggbookmarkfile.c:2772
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr ""
+msgstr "URI「%s」のブックマークにMIMEタイプが定義されていません"
 
 #: ../libslab/eggbookmarkfile.c:2857
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr ""
+msgstr "URI「%s」のブックマークにプライベートフラグが定義されていません"
 
 #: ../libslab/eggbookmarkfile.c:3236
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr ""
+msgstr "URI「%s」のブックマークにグループが設定されていません"
 
 #: ../libslab/eggbookmarkfile.c:3634 ../libslab/eggbookmarkfile.c:3775
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
 msgstr ""
+"「%s」と言う名前のアプリケーションが「%s」のブックマークには登録されていませ"
+"ん"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "今すぐ検索"
 
 #: ../libslab/system-tile.c:113
-#, fuzzy, c-format
+#, c-format
 msgid "<b>Open %s</b>"
-msgstr "<b>「%s」で開く</b>"
+msgstr "<b>%sを開く</b>"
 
 #: ../libslab/system-tile.c:126
-#, fuzzy
 msgid "Remove from System Items"
-msgstr "お気に入りからの削除"
+msgstr "ファイルシステムから削除"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
@@ -331,9 +357,8 @@ msgid "_About"
 msgstr "について(&A)"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-#, fuzzy
 msgid "_Open Menu"
-msgstr "オープンメニュー "
+msgstr "メニューを開く(_O)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -356,40 +381,66 @@ msgid ".desktop path for the application browser"
 msgstr "アプリケーションブラウザ用の.desktopパス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
-msgid "Location of the system-wide directory in which startup programs are found."
+msgid ""
+"Location of the system-wide directory in which startup programs are found."
 msgstr "起動プログラムが配置されているシステム全体のディレクトリの場所"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
-msgstr "起動プログラムが配置されているユーザディレクトリの場所。 このキーの値が次のパスに追加されるのでディレクトリパスは絶対パスである必要はありません: ~/."
+msgid ""
+"Location of the user directory in which startup programs are found. The dir "
+"path should not be absolute, as the value of this key is appended to this "
+"path: ~/."
+msgstr ""
+"起動プログラムが配置されているユーザディレクトリの場所。 このキーの値が次のパ"
+"スに追加されるのでディレクトリパスは絶対パスである必要はありません: ~/."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid "System-wide autostart program drop dir"
 msgstr "システムワイド自動起動プログラムドロップディレクトリ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
-msgstr "このコマンドは、「ファイルマネージャで開く」メニュー項目が有効な場合に実行します。"
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+"このコマンドは、「ファイルマネージャで開く」メニュー項目が有効な場合に実行し"
+"ます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
-msgstr "このコマンドは「ファイルマネージャで開く」メニュー項目が有効な場合に実行します。 FILE_URIは有効ファイルのディレクトリ名に該当するURIに置き換えられます。"
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"このコマンドは「ファイルマネージャで開く」メニュー項目が有効な場合に実行しま"
+"す。 FILE_URIは有効ファイルのディレクトリ名に該当するURIに置き換えられます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
 msgstr "このコマンドは、「送信先」メニュー項目が有効な場合に実行します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
-msgstr "このコマンドは、「送信先」メニュー項目が有効な場合に実行します。DIRNAMEとBASENAMEは、有効タイルの該当するコンポーネントに置き換えられます。"
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"このコマンドは、「送信先」メニュー項目が有効な場合に実行します。DIRNAMEと"
+"BASENAMEは、有効タイルの該当するコンポーネントに置き換えられます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "This is the command to execute when the search entry is used."
 msgstr "これは検索エントリを使用する際に実行するコマンドです。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
-msgstr "これは検索エントリを使用する際に実行するコマンドです。 SEARCH_STRINGは入力した検索テキストに置き換えられます。"
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+"これは検索エントリを使用する際に実行するコマンドです。 SEARCH_STRINGは入力し"
+"た検索テキストに置き換えられます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "User autostart program drop dir (within the home dir)"
@@ -400,38 +451,74 @@ msgid "command to uninstall packages"
 msgstr "パッケージをアンインストールするコマンド"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "パッケージをアンインストールするコマンドのPACKAGE_NAMEは、コマンドではパッケージ名に置き換えられます。 "
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"パッケージをアンインストールするコマンドのPACKAGE_NAMEは、コマンドではパッ"
+"ケージ名に置き換えられます。 "
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "command to upgrade packages"
 msgstr "パッケージをアップグレードするコマンド"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
-msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "パッケージをアップグレードするコマンドのPACKAGE_NAMEは、コマンドではパッケージ名に置き換えられます。"
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"パッケージをアップグレードするコマンドのPACKAGE_NAMEは、コマンドではパッケー"
+"ジ名に置き換えられます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
 msgstr ""
+"には、ファイルエリアを表示するための許容できるファイルテーブルのリスト(順番は"
+"無作為)が含まれています。値は次の通りです: 0 - ユーザ指定または「お気に入り」"
+"のアプリケーションテーブルを表示します、1 - 最近使われたアプリケーションテー"
+"ブルを表示します、2 - ユーザ指定または「お気に入り」のドキュメントテーブルを"
+"表示します、3 - 最近使われたドキュメントテーブルを表示します、4 - ユーザ指定"
+"の「お気に入り」ディレクトリまたは「場所」テーブルを表示します、5 - 最近使わ"
+"れたディレクトリまたは「場所」テーブルを表示します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr "「最近使用されたアプリケーション」と「最近のファイル」リストから削除されるファイルのリスト(.desktopファイルを含む)を含みます。"
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"「最近使用されたアプリケーション」と「最近のファイル」リストから削除される"
+"ファイルのリスト(.desktopファイルを含む)を含みます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-#, fuzzy
 msgid "determines the limit of items in the file-area."
-msgstr "ファイルエリアのタイル数の制限を指定します。"
+msgstr "ファイルエリア中の項目数の制限値を決定します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
 msgstr ""
+"ファイルエリア中の項目数の制限値を決定します。 お気に入りの項目数は制限されて"
+"いません。 この制限値は、最近使用した項目数を制限します。つまり、表示される最"
+"近使用した項目数が、「max_total_items - お気に入り項目数」に制限されます。 お"
+"気に入り項目数が「max_total_items -  min_recent_items」を超えた場合、この制限"
+"値は無視されます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-#, fuzzy
-msgid "determines the minimum number of items in the \"recent\" section of the file-area."
-msgstr "ファイルエリアのタイル数の制限を指定します。"
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr "ファイルエリアの「recent」セクションの最小項目数を決定します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "determines which types of files to display in the file area"
@@ -442,8 +529,12 @@ msgid "if true, main menu is more anxious to close"
 msgstr "TRUEの場合、メインメニューは閉じられます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
-msgstr "TRUEの場合、メインメニューは次の追加条件の下で閉じられます: タイルと検索が有効である場合"
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+"TRUEの場合、メインメニューは次の追加条件の下で閉じられます: タイルと検索が有"
+"効である場合"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down configuration of the file area"
@@ -466,27 +557,28 @@ msgid "lock-down status for the system area"
 msgstr "システムエリアのロックダウンステータス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
-#, fuzzy
 msgid "lock-down status for the user-specified apps section"
-msgstr "検索エリアのロックダウンステータス"
+msgstr "ユーザ指定のappsセクションのロックダウンステータス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
-#, fuzzy
 msgid "lock-down status for the user-specified dirs section"
-msgstr "検索エリアのロックダウンステータス"
+msgstr "ユーザ指定のdirsセクションのロックダウンステータス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
-#, fuzzy
 msgid "lock-down status for the user-specified docs section"
-msgstr "検索エリアのロックダウンステータス"
+msgstr "ユーザ指定のdocsセクションのロックダウンステータス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "可能な値 = 0 [アプリケーション]、1 [ドキュメント]、2 [場所]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
-msgid "set to true if the link to the application browser should be visible and active."
-msgstr "アプリケーションブラウザへのリンクが表示されていて有効な場合はTRUEに設定されます。"
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+"アプリケーションブラウザへのリンクが表示されていて有効な場合はTRUEに設定され"
+"ます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the search area should be visible and active."
@@ -501,21 +593,32 @@ msgid "set to true if the system area should be visible and active."
 msgstr "システムエリアが表示されていて有効な場合はTRUEに設定されます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
 msgstr ""
+"ユーザ指定または「お気に入り」のアプリケーションリストの変更を許可する場合は"
+"trueを設定します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
 msgstr ""
+"ユーザ指定または「お気に入り」のディレクトリまたは「場所」リストの変更を許可"
+"する場合はtrueを設定します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:43
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
 msgstr ""
+"ユーザ指定または「お気に入り」のドキュメントリストの変更を許可する場合はtrue"
+"を設定します。"
 
 #: ../main-menu/src/hard-drive-status-tile.c:110
-#, fuzzy
 msgid "Hard _Drive"
-msgstr "ハードドライブ"
+msgstr "ハードドライブ(_D)"
 
 #: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
@@ -550,7 +653,7 @@ msgstr "ログアウト"
 #: ../main-menu/src/main-menu-migration.c:120
 #: ../main-menu/src/main-menu-migration.c:276
 msgid "Shutdown"
-msgstr "停止する"
+msgstr "シャットダウン"
 
 #: ../main-menu/src/main-menu-migration.c:205
 msgid "Lock Screen"
@@ -558,16 +661,15 @@ msgstr "画面のロック"
 
 #: ../main-menu/src/main-menu-migration.c:207
 msgid "gnome-lockscreen"
-msgstr ""
+msgstr "gnome-lockscreen"
 
 #: ../main-menu/src/main-menu-migration.c:531
 msgid "New Spreadsheet"
-msgstr ""
+msgstr "新しいスプレッドシート"
 
 #: ../main-menu/src/main-menu-migration.c:536
-#, fuzzy
 msgid "New Document"
-msgstr "ドキュメント"
+msgstr "新しいドキュメント"
 
 #: ../main-menu/src/main-menu-ui.c:1561
 msgid "The GNOME Main Menu"
@@ -583,9 +685,8 @@ msgid "Click to configure network"
 msgstr "クリックしてネットワークを設定する"
 
 #: ../main-menu/src/network-status-tile.c:198
-#, fuzzy
 msgid "Networ_k: None"
-msgstr "ネットワーク: なし"
+msgstr "ネットワーク(_K):なし"
 
 #: ../main-menu/src/network-status-tile.c:207
 #, c-format
@@ -593,9 +694,8 @@ msgid "Connected to: %s"
 msgstr "接続先: %s"
 
 #: ../main-menu/src/network-status-tile.c:210
-#, fuzzy
 msgid "Networ_k: Wireless"
-msgstr "ネットワーク: ワイヤレス"
+msgstr "ネットワーク(_K): ワイヤレス"
 
 #: ../main-menu/src/network-status-tile.c:215
 #, c-format
@@ -603,9 +703,8 @@ msgid "Using ethernet (%s)"
 msgstr "イーサネットの使用 (%s)"
 
 #: ../main-menu/src/network-status-tile.c:219
-#, fuzzy
 msgid "Networ_k: Wired"
-msgstr "ネットワーク: 有線"
+msgstr "ネットワーク(_K): 有線"
 
 #: ../main-menu/src/network-status-tile.c:320
 #, c-format
@@ -644,35 +743,30 @@ msgid "Favorite Applications"
 msgstr "お気に入りのアプリケーション"
 
 #: ../main-menu/src/slab-window.glade.h:5
-#, fuzzy
 msgid "Favorite Documents"
-msgstr "My Documents"
+msgstr "お気に入りのドキュメント"
 
 #: ../main-menu/src/slab-window.glade.h:6
-#, fuzzy
 msgid "Favorite Places"
-msgstr "お気に入りのアプリケーション"
+msgstr "お気に入りの場所"
 
 #: ../main-menu/src/slab-window.glade.h:8
 msgid "More Applications..."
 msgstr "他のアプリケーション..."
 
 #: ../main-menu/src/slab-window.glade.h:9
-#, fuzzy
 msgid "More Documents..."
-msgstr "すべてのドキュメント..."
+msgstr "他のドキュメント..."
 
 #: ../main-menu/src/slab-window.glade.h:10
-#, fuzzy
 msgid "More Places..."
-msgstr "他のアプリケーション..."
+msgstr "他の場所..."
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
-msgstr ""
+msgstr "場所"
 
 #: ../main-menu/src/slab-window.glade.h:12
-#, fuzzy
 msgid "Recent Applications"
 msgstr "最近使用したアプリケーション"
 
@@ -694,17 +788,16 @@ msgstr "システム"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "お気に入りに現在のランチャを追加"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Add the current document to favorites"
-msgstr ""
+msgstr "お気に入りに現在のドキュメントを追加"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:134
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
-#, fuzzy
 msgid "Remove the current document from favorites"
-msgstr "お気に入りからの削除"
+msgstr "お気に入りから現在のドキュメントを削除"
 
 #~ msgid "Software Update"
 #~ msgstr "ソフトウェアのアップデート"
@@ -715,20 +808,53 @@ msgstr "お気に入りからの削除"
 #~ msgid "System area items"
 #~ msgstr "システムエリアの項目"
 
-#~ msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-#~ msgstr "システムエリアに表示される項目のリスト。 有効値は、HELP = 0、CONTROL_CENTER = 1、PACKAGE_MANAGER = 2、LOG_OUT = 3、LOCK_SCREEN = 4になります。HELP、CONTROL_CENTERおよびPACKAGE_MANAGERには、適切な.desktopファイルがそれぞれ「help_item」、「control_center_item」、「package_manager_item」キーで定義される必要があります。"
+#~ msgid ""
+#~ "The list of the items which will appear in the System area. Possible "
+#~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
+#~ "3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the "
+#~ "have the appropriate .desktop files defined in the, respectively, "
+#~ "\"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ msgstr ""
+#~ "システムエリアに表示される項目のリスト。 有効値は、HELP = 0、"
+#~ "CONTROL_CENTER = 1、PACKAGE_MANAGER = 2、LOG_OUT = 3、LOCK_SCREEN = 4にな"
+#~ "ります。HELP、CONTROL_CENTERおよびPACKAGE_MANAGERには、適切な.desktopファ"
+#~ "イルがそれぞれ「help_item」、「control_center_item」、"
+#~ "「package_manager_item」キーで定義される必要があります。"
 
-#~ msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-#~ msgstr "ファイルエリアに表示される実行可能なファイルタイプのリスト(特定の順序ではない)を含みます。有効値は以下の通りです(/desktop/gnome/ applications/main-menu/file-area/file_classの注意も参照）: 0［USER_SPECIFIED_APPS］、1［RECENTLY_USED_APPS］、2［RECENT_FILES］。RECENTLY_USED_APPSは最近使用されたリストです(メインメニューまたはアプリケーションブラウザにより初期化済み)。  USER_SPECIFIED_APPSは、「お気に入りのアプリケーション」と同等です。RECENT_FILESは、~/.recently usedからのファイルのリストです。"
+#~ msgid ""
+#~ "contains the list (in no particular order) of allowable file types to "
+#~ "show in the file area. possible values (see also the note for /desktop/"
+#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
+#~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
+#~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
+#~ "to \"Favorite Applications\". RECENT_FILES is the list of files from ~/."
+#~ "recently-used."
+#~ msgstr ""
+#~ "ファイルエリアに表示される実行可能なファイルタイプのリスト(特定の順序では"
+#~ "ない)を含みます。有効値は以下の通りです(/desktop/gnome/ applications/main-"
+#~ "menu/file-area/file_classの注意も参照）: 0［USER_SPECIFIED_APPS］、1"
+#~ "［RECENTLY_USED_APPS］、2［RECENT_FILES］。RECENTLY_USED_APPSは最近使用さ"
+#~ "れたリストです(メインメニューまたはアプリケーションブラウザにより初期化済"
+#~ "み)。  USER_SPECIFIED_APPSは、「お気に入りのアプリケーション」と同等です。"
+#~ "RECENT_FILESは、~/.recently usedからのファイルのリストです。"
 
 #~ msgid "control center item .desktop file"
 #~ msgstr "コントロールセンタ項目.desktopファイル"
 
-#~ msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-#~ msgstr "ファイルエリアのタイル数の制限を指定します。 *注意: ファイルクラスがUSER_SPECIFIED_*の場合は、タイル数は影響を受けません。"
+#~ msgid ""
+#~ "determines the limit of tiles in the file-area. *Note: this does not "
+#~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
+#~ msgstr ""
+#~ "ファイルエリアのタイル数の制限を指定します。 *注意: ファイルクラスが"
+#~ "USER_SPECIFIED_*の場合は、タイル数は影響を受けません。"
 
-#~ msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-#~ msgstr "メインメニューの前後にタイルを移動する際に使用されるアルゴリズムの順序付けを指定します。"
+#~ msgid ""
+#~ "determines the reordering algorithm used when moving tiles around the "
+#~ "main-menu"
+#~ msgstr ""
+#~ "メインメニューの前後にタイルを移動する際に使用されるアルゴリズムの順序付け"
+#~ "を指定します。"
 
 #~ msgid "help item .desktop file"
 #~ msgstr "ヘルプ項目.desktopファイル"
@@ -736,17 +862,42 @@ msgstr "お気に入りからの削除"
 #~ msgid "package manager item .desktop file"
 #~ msgstr "パッケージマネージャ項目.desktopファイル"
 
-#~ msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-#~ msgstr "有効値= 0［SWAP］、1［PUSH］、2［PUSH_PULL］。 SWAPはタイルを別のタイルにドラッグする際に、位置が交換されることを示します。.  PUSHは、タイルAを別のタイルBにドラッグすると、空き場所がAの場所に作成されます。タイルB (およびB以降のすべてのタイル)は新しい空きスペースが一杯になるまで移動します。タイルAがタイルBの前に表示されてからドラッグ&ドロップすると、この操作はラップされます。. タイルが移動される際に、タイルの最小数に影響するストラテジに応じて空きスペースに押し入るか、別の方向から引っ張られる以外は、PUSH_PULLはPUSHと同様です。"
+#~ msgid ""
+#~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
+#~ "when a tile is dragged onto another tile they should simply swap "
+#~ "position. PUSH indicates that when a tile, A, is dragged onto another "
+#~ "tile, B, a vacant spot is created in tile A's place. tile B (and all "
+#~ "tiles after B) shift down until the new vacant space is filled. this "
+#~ "operation wraps around in the case that tile A appears before tile B "
+#~ "prior to the drag and drop operation. PUSH_PULL is similar to PUSH except "
+#~ "that when tiles are shifted they are either pushed into the vacant spaced "
+#~ "or pulled from the other direction, depending on which strategy affects "
+#~ "the least number of tiles."
+#~ msgstr ""
+#~ "有効値= 0［SWAP］、1［PUSH］、2［PUSH_PULL］。 SWAPはタイルを別のタイルに"
+#~ "ドラッグする際に、位置が交換されることを示します。.  PUSHは、タイルAを別の"
+#~ "タイルBにドラッグすると、空き場所がAの場所に作成されます。タイルB (およびB"
+#~ "以降のすべてのタイル)は新しい空きスペースが一杯になるまで移動します。タイ"
+#~ "ルAがタイルBの前に表示されてからドラッグ&ドロップすると、この操作はラップ"
+#~ "されます。. タイルが移動される際に、タイルの最小数に影響するストラテジに応"
+#~ "じて空きスペースに押し入るか、別の方向から引っ張られる以外は、PUSH_PULLは"
+#~ "PUSHと同様です。"
 
-#~ msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-#~ msgstr "有効値= 0［USER_SPECIFIED_APPS］、1［RECENTLY_USED_APPS］、2［RECENT_FILES］。 RECENTLY_USED_APPSは最近使用されたリストです(メインメニューまたはアプリケーションブラウザにより証明済み)。USER_SPECIFIED_APPSは、「お気に入りのアプリケーション」と同等です。 RECENT_FILESは、~/.recently usedからのファイルのリストです。"
+#~ msgid ""
+#~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
+#~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
+#~ "(instantiated with the main-menu or the application-browser). "
+#~ "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". "
+#~ "RECENT_FILES is the list of files from ~/.recently-used."
+#~ msgstr ""
+#~ "有効値= 0［USER_SPECIFIED_APPS］、1［RECENTLY_USED_APPS］、2"
+#~ "［RECENT_FILES］。 RECENTLY_USED_APPSは最近使用されたリストです(メインメ"
+#~ "ニューまたはアプリケーションブラウザにより証明済み)。USER_SPECIFIED_APPS"
+#~ "は、「お気に入りのアプリケーション」と同等です。 RECENT_FILESは、~/."
+#~ "recently usedからのファイルのリストです。"
 
 #~ msgid "prioritized list of commands to lock the screen"
 #~ msgstr "画面をロックするコマンドの優先度リスト"
-
-#~ msgid "Show:"
-#~ msgstr "表示:"
 
 #~ msgid "Install Software"
 #~ msgstr "ソフトウェアのインストール"
@@ -754,14 +905,15 @@ msgstr "お気に入りからの削除"
 #~ msgid "Log Out ..."
 #~ msgstr "ログアウト..."
 
-#~ msgid "Lock Screen ..."
-#~ msgstr "画面のロック..."
-
 #~ msgid "Number of days to be in New Applications category"
 #~ msgstr "新しいアプリケーションカテゴリに含める日数 "
 
-#~ msgid "The number of days relative to current date that an application will be considered a New Application"
-#~ msgstr "アプリケーションが新しいアプリケーションと見なされる現在の日付に関連した日数"
+#~ msgid ""
+#~ "The number of days relative to current date that an application will be "
+#~ "considered a New Application"
+#~ msgstr ""
+#~ "アプリケーションが新しいアプリケーションと見なされる現在の日付に関連した日"
+#~ "数"
 
 #~ msgid "All Applications..."
 #~ msgstr "すべてのアプリケーション..."
