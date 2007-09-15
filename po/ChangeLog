@@ -1,3 +1,11 @@
+2007-09-16  Vincent Untz  <vuntz@gnome.org>
+
+	* af.po, ar.po, bn.po, ca.po, cs.po, da.po, de.po, en_GB.po, en_US.po,
+	es.po, et.po, fi.po, fr.po, gu.po, hi.po, hu.po, it.po, ja.po, ko.po,
+	mr.po, nb.po, nl.po, pl.po, pt.po, ru.po, sk.po, ta.po, vi.po, xh.po,
+	zh_CN.po, zh_TW.po, zu.po: revert to revision 338 of svn, before
+	Novell commit.
+
 2007-09-15  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
 
 	* gl.po: Galician translation reverted in the behalf of Ignacio Casal
