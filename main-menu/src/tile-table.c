@@ -179,9 +179,11 @@ tile_table_add_uri (TileTable *this, const gchar *uri)
 	BookmarkItem *item;
 
 
-	item = priv->create_item_func (uri, priv->item_func_data);
-	bookmark_agent_add_item (priv->agent, item);
-	bookmark_item_free (item);
+	if (priv->create_item_func) {
+		item = priv->create_item_func (uri, priv->item_func_data);
+		bookmark_agent_add_item (priv->agent, item);
+		bookmark_item_free (item);
+	}
 }
 
 static void
