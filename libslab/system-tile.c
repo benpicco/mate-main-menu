@@ -88,15 +88,7 @@ system_tile_new (const gchar *desktop_item_id, const gchar *title)
 		image_id = g_strdup (gnome_desktop_item_get_localestring (desktop_item, "Icon"));
 		uri      = g_strdup (gnome_desktop_item_get_location (desktop_item));
 
-		if (! libslab_strcmp (title, "Help"))
-			header_txt = g_strdup (_("Help"));
-		if (! libslab_strcmp (title, "Lock Screen"))
-			header_txt = g_strdup (_("Lock Screen"));
-		if (! libslab_strcmp (title, "Logout"))
-			header_txt = g_strdup (_("Logout"));
-		if (! libslab_strcmp (title, "Shutdown"))
-			header_txt = g_strdup (_("Shutdown"));
-		else if (title)
+		if (title)
 			header_txt = g_strdup (title);
 		else
 			header_txt = g_strdup (
