@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-08 03:35+0100\n"
-"PO-Revision-Date: 2007-06-28 11:44+0200\n"
-"Last-Translator: Jorge Gonzalez <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2007-09-15 23:21+0100\n"
+"PO-Revision-Date: 2007-09-16 10:52+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,7 +107,8 @@ msgstr "Acciones sobre las aplicaciones"
 msgid "<b>Start %s</b>"
 msgstr "<b>Iniciar %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:381 ../libslab/system-tile.c:92
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ayuda"
@@ -148,10 +149,9 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
-"<span size=\"large\"><b>No se han encontrado coincidencias.</b> </"
-"span><span>\n"
+"<span size=\"large\"><b>No se han encontrado coincidencias.</b> </span><span>\n"
 "\n"
-" El filtro \"<b>%s</b>\" no coincide con ningún elemento.</span>"
+"El filtro «<b>%s</b>»no coincide con ningún elemento.</span>"
 
 #: ../libslab/app-shell.c:897
 msgid "Other"
@@ -163,7 +163,7 @@ msgstr "Hoja de cálculo nueva"
 
 #: ../libslab/bookmark-agent.c:1071
 msgid "New Document"
-msgstr "Nuevo documento"
+msgstr "Documento nuevo"
 
 #: ../libslab/bookmark-agent.c:1121
 msgid "Home"
@@ -209,7 +209,7 @@ msgstr "Borrar"
 
 #: ../libslab/document-tile.c:153
 msgid "Edited %m/%d/%Y"
-msgstr "Fecha de edición: %m/%d/%Y"
+msgstr "Fecha de edición: %d/%m/%Y"
 
 #: ../libslab/document-tile.c:193
 #, c-format
@@ -218,7 +218,7 @@ msgstr "<b>Abrir con \"%s\"</b>"
 
 #: ../libslab/document-tile.c:205
 msgid "Open with Default Application"
-msgstr "Abrir con aplicación por defecto"
+msgstr "Abrir con la aplicación predeterminada"
 
 #: ../libslab/document-tile.c:216
 msgid "Open in File Manager"
@@ -259,7 +259,7 @@ msgstr "No se encontró un archivo de marcadores válido en los directorios de d
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr "Ya existe un marcador para el URI %s"
+msgstr "Ya existe un marcador para el URI «%s»"
 
 #: ../libslab/libslab-bookmarkfile.c:2176
 #: ../libslab/libslab-bookmarkfile.c:2333
@@ -285,12 +285,12 @@ msgstr "No se encontró un marcador para el URI «%s»"
 #: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "No hay un tipo MIME definido en el marcador para la URI «%s»"
+msgstr "No hay un tipo MIME definido en el marcador para el URI «%s»"
 
 #: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "No se ha definido una bandera privada en el marcador para la URI «%s»"
+msgstr "No se ha definido una bandera privada en el marcador para el URI «%s»"
 
 #: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
@@ -310,12 +310,26 @@ msgstr "Ninguna aplicación con el nombre «%s» registró un marcador para «%s
 msgid "Find Now"
 msgstr "Buscar ahora"
 
-#: ../libslab/system-tile.c:128
+#: ../libslab/system-tile.c:94 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Bloquear la pantalla"
+
+#: ../libslab/system-tile.c:96 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Salir de la sesión"
+
+#: ../libslab/system-tile.c:98 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Apagar"
+
+#: ../libslab/system-tile.c:136
 #, c-format
 msgid "<b>Open %s</b>"
 msgstr "<b>Abrir %s</b>"
 
-#: ../libslab/system-tile.c:141
+#: ../libslab/system-tile.c:149
 msgid "Remove from System Items"
 msgstr "Eliminar de los iconos del sistema"
 
@@ -330,7 +344,7 @@ msgstr "Menú principal de GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr "Menú principal de GNOME de fábrica"
+msgstr "Factoría del menú principal de GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
@@ -350,11 +364,11 @@ msgstr "Archivo .desktop para la utilidad network_devices de YaST2"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr "Archivo .desktop para el navegador de archivos"
+msgstr "Archivo .desktop para el gestor de archivos"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
-msgstr "Archivo .desktop para el monitor de sistema gnome"
+msgstr "Archivo .desktop para el monitor del sistema de GNOME"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -362,7 +376,7 @@ msgstr "Archivo .desktop para la herramienta de configuración de red"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop path for the application browser"
-msgstr "Vía de archivo .desktop para el navegador de aplicaciones"
+msgstr "Ruta de archivo .desktop para el navegador de aplicaciones"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ""
@@ -370,7 +384,7 @@ msgid ""
 "is activated."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Abrir en el gestor de archivos\"."
+"«Abrir en el gestor de archivos»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
@@ -379,7 +393,7 @@ msgid ""
 "of the activated file."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Abrir en el gestor de archivos\". FILE_URI se sustituye con un uri "
+"«Abrir en el gestor de archivos». FILE_URI se sustituye con un URI "
 "correspondiente al nombre de directorio del archivo activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
@@ -388,7 +402,7 @@ msgid ""
 "activated."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Enviar a...\"."
+"«Enviar a...»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -397,7 +411,7 @@ msgid ""
 "components of the activated tile."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"\"Enviar a...\". DIRNAME y BASENAME se sustituyen por los componentes "
+"«Enviar a...». DIRNAME y BASENAME se sustituyen por los componentes "
 "correspondientes del elemento activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
@@ -453,8 +467,8 @@ msgid ""
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 "contiene la lista de archivos (incluidos los archivos .desktop) que deben "
-"excluirse de las listas \"Aplicaciones utilizadas recientemente\" y "
-"\"Archivos recientes\""
+"excluirse de las listas «Aplicaciones recientes» y "
+"«Archivos recientes»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "determines the limit of items in the file-area."
@@ -468,6 +482,11 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
+"determina el límite de elementos en el área de archivos. El número de elementos favoritos no "
+"está limitado. Este límite se aplica al número de elementos recientes, por ejemplo, el "
+"número de elementos recientes mostrados está limitado a max_total_items; el número de "
+"elementos favoritos. Si el número de elementos favoritos excede max_total_items; "
+"se ignorará el límite de min_recent_items."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
@@ -515,7 +534,9 @@ msgstr "estado de bloqueo para el área de sistema"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the user-specified apps section"
-msgstr "estado de bloqueo para la sección de aplicaciones especificadas por el usuario"
+msgstr ""
+"estado de bloqueo para la sección de aplicaciones especificadas por el "
+"usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified dirs section"
@@ -557,25 +578,33 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the user is allowed to modify the list of system items."
-msgstr "establezca el valor true si se permite al usuario modificar la lista de elementos del sistema."
+msgstr ""
+"establezca el valor true si se permite al usuario modificar la lista de "
+"elementos del sistema."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
-msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o aplicaciones «Favoritas»."
+msgstr ""
+"establezca el valor a true si se permite al usuario modificar la lista de "
+"especificadas por el usuario o aplicaciones «Favoritas»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
-msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o directorios «Favoritos» o «Lugares»."
+msgstr ""
+"establezca el valor a true si se permite al usuario modificar la lista de "
+"especificadas por el usuario o directorios «Favoritos» o «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
-msgstr "establezca el valor a true si se permite al usuario modificar la lista de especificadas por el usuario o documentos «Favoritos»."
+msgstr ""
+"establezca el valor a true si se permite al usuario modificar la lista de "
+"especificadas por el usuario o documentos «Favoritos»."
 
 # clients/inst_source.ycp:185
 # clients/inst_source.ycp:162
@@ -607,20 +636,6 @@ msgstr "%llub"
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "Disponible: %s / Total: %s"
-
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Fin de sesión"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Apagar"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Bloquear pantalla"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
@@ -703,7 +718,7 @@ msgstr "Aplicaciones"
 
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
-msgstr "Ordenador"
+msgstr "Equipo"
 
 #: ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
@@ -742,7 +757,7 @@ msgstr "Lugares"
 
 #: ../main-menu/src/slab-window.glade.h:12
 msgid "Recent Applications"
-msgstr "Aplicaciones utilizadas recientemente"
+msgstr "Aplicaciones recientes"
 
 #: ../main-menu/src/slab-window.glade.h:13
 msgid "Recent Documents"
