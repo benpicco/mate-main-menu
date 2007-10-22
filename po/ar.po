@@ -1,70 +1,68 @@
+# translation of gnome-main-menu.HEAD.po to Arabic
 # Arabic translations for PACKAGE package.
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2006.
 #
+# Automatically generated, 2006.
+# Abdulaziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-14 18:23+0100\n"
-"PO-Revision-Date: 2006-11-25 13:18+0100\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"POT-Creation-Date: 2007-10-22 23:21+0100\n"
+"PO-Revision-Date: 2007-10-14 06:16+0300\n"
+"Last-Translator: Abdulaziz AlSharif <a.a-a.s@hotmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
-#, fuzzy
 msgid "Application Browser"
-msgstr "متصفّح الانترنت"
+msgstr "متصفّح التطبيقات"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
-#: ../control-center/etc/control-center.schemas.in.h:2
 #, fuzzy
 msgid "Exit shell on add or remove action performed"
-msgstr "خروج قصف على اضافة او الغاء العمل المنجز"
+msgstr "أنهي الصدفة عند إضافة أو إزالة الإجراء المنجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
-#: ../control-center/etc/control-center.schemas.in.h:3
 #, fuzzy
 msgid "Exit shell on help action performed"
-msgstr "خروج قصف على العمل المنجز مساعدة"
+msgstr "أنهي الصدفة عند إجراء مساعدة منجزة"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
-#: ../control-center/etc/control-center.schemas.in.h:4
 #, fuzzy
 msgid "Exit shell on start action performed"
-msgstr "الخروج على شل عمل يقوم البداية"
+msgstr "أنهي الصدفة عند بدء إجراء منجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
-#: ../control-center/etc/control-center.schemas.in.h:5
 #, fuzzy
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "خروج قصف على ترقية أو إمسح العمل المنجز"
+msgstr "أنهي الصدفة عند ترقية أو إلغاء تثبيت إجراء منجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 #, fuzzy
 msgid "Filename of existing .desktop files"
-msgstr "تنميق المل_فات الموجودة"
+msgstr "اسم ملف لملفات سطح المكتب الموجودة"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
-#: ../control-center/etc/control-center.schemas.in.h:6
 #, fuzzy
 msgid "Indicates whether to close the shell when a help action is performed"
 msgstr "الى بقفل قصف عندما يساعد العمل المنجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
-#: ../control-center/etc/control-center.schemas.in.h:7
 #, fuzzy
 msgid "Indicates whether to close the shell when a start action is performed"
 msgstr "الى بقفل قصف عند بداية العمل المنجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
-#: ../control-center/etc/control-center.schemas.in.h:8
 #, fuzzy
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
@@ -72,7 +70,6 @@ msgid ""
 msgstr "الى بقفل قصف عند اضافة او الغاء العمل المنجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
-#: ../control-center/etc/control-center.schemas.in.h:9
 #, fuzzy
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
@@ -80,245 +77,163 @@ msgid ""
 msgstr "الى بقفل قصف عند ترقية أو إمسح العمل المنجز"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
-#, fuzzy
 msgid "Max number of New Applications"
-msgstr "العدد القصوي لأفعال إلغاءات الأفعال"
+msgstr "العدد الأقصى للتطبيقات الحديثة"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-#, fuzzy
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr "الحد الاقصى لعدد الطلبات التي سيتم عرضها في الطلبات الجديدة الفئة"
+msgstr "العدد الأقصى للتطبيقات التي ستعرض في فئة التطبيقات الحديثة"
 
 #: ../application-browser/src/application-browser.c:85
-#, fuzzy
 msgid "New Applications"
-msgstr "التطبيقات ال_حديثة:"
+msgstr "التطبيقات الحديثة"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:160
-#, fuzzy
 msgid "Filter"
-msgstr "مرشح"
+msgstr "رشّح"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:160
-#, fuzzy
 msgid "Groups"
 msgstr "المجموعات"
 
 #: ../application-browser/src/application-browser.c:90
-#, fuzzy
 msgid "Application Actions"
-msgstr "أفعال الحاسوب"
-
-#: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:164
-#, fuzzy
-msgid "Control Center"
-msgstr "مركز تحكم جنوم"
-
-#: ../control-center/etc/control-center.schemas.in.h:1
-#, fuzzy
-msgid "Close the control-center when a task is activated"
-msgstr "اغلاق مركز للمراقبة عند مهمتها تفعيل"
-
-#: ../control-center/etc/control-center.schemas.in.h:10
-#, fuzzy
-msgid "Task names and associated .desktop files"
-msgstr "وترتبط اسماء مهمة. ملفات مكتبي"
-
-#: ../control-center/etc/control-center.schemas.in.h:11
-#, fuzzy
-msgid ""
-"The task name to be displayed in the control-center (thus needing to be "
-"translated) followed by a \";\" separator then the filename of an "
-"associated .desktop file to launch for that task."
-msgstr ""
-"المهمة اسم المعرض في مركز رقابة (وبالتالي تحتاج الى ترجمة) يليه /. / فاصلة "
-"ثم اسم الملف فبها. الملف على مكتبي لتنفيذ هذه المهمة."
-
-#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
-#: ../control-center/etc/control-center.schemas.in.h:13
-#, fuzzy
-msgid ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
-"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
-"desktop]"
-msgstr ""
-"[تغيير الخلفية النظريه. يضاف background.desktopالطابعه. التمثال - الكؤوس - "
-"manager.desktop ، كونفيغوريالشبكه. Yast2/lan.desktop تغيير كلمة السر. - "
-"تمثال passwd.desktop تضاف مستعمل. Yast2/users.desktop مدير الاماكن المفتوحه. "
-"Yast.desktop]"
-
-#: ../control-center/etc/control-center.schemas.in.h:14
-#, fuzzy
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
-msgstr ""
-"إذا كان صحيحا أن مركز السيطرة ستغلق عند نوفمبر المهمة المشتركة / تفعيلة"
-
-#: ../control-center/src/control-center.c:62
-#, fuzzy, c-format
-msgid "key not found [%s]\n"
-msgstr "المفتاح %s غير موجود في الإعدادات"
-
-#: ../control-center/src/control-center.c:160
-#, fuzzy
-msgid "Common Tasks"
-msgstr "المهام ال_فائت موعدها:"
+msgstr "إجراءات التطبيقات"
 
 #. make start action
 #: ../libslab/application-tile.c:362
-#, fuzzy, c-format
+#, c-format
 msgid "<b>Start %s</b>"
-msgstr "إبدأ"
+msgstr "<b>ابدأ %s</b>"
 
 #: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
-#, fuzzy
 msgid "Help"
 msgstr "مساعدة"
 
 #: ../libslab/application-tile.c:428
-#, fuzzy
 msgid "Upgrade"
 msgstr "ترقية"
 
 #: ../libslab/application-tile.c:443
-#, fuzzy
 msgid "Uninstall"
-msgstr "أمسح"
+msgstr "إلغاء التثبيت"
 
 #: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
-#, fuzzy
 msgid "Remove from Favorites"
-msgstr "_حذف من شريط الأدوات"
+msgstr "أزل من المفضلات"
 
 #: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
-#, fuzzy
 msgid "Add to Favorites"
-msgstr "مُرفق للإضافة."
+msgstr "أضف إلى المفضلات"
 
 #: ../libslab/application-tile.c:857
-#, fuzzy
 msgid "Remove from Startup Programs"
-msgstr "حذف من هذا الموضوع."
+msgstr "أزل من برامج بدء التشغيل"
 
 #: ../libslab/application-tile.c:859
-#, fuzzy
 msgid "Add to Startup Programs"
-msgstr "نقر لإضافة مهمّة"
+msgstr "أضف إلى برامج بدء التشغيل"
 
 #: ../libslab/app-shell.c:747
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
-"<spanSize=\"large\"> <b>لا مباريات وجد. </b></span> <span>/ ن / ان انتخابكم "
-"مرشح / <b>٪ او </b>/ لا يتناسب مع اي بند من البنود. </span>"
+"<span size=\"large\"><b>لا يوجد تطابق.</b> </span><span>\n"
+"\n"
+" مرشحّك \"<b>%s</b>\" لم يطابق أي عنصر.</span>"
 
 #: ../libslab/app-shell.c:897
 msgid "Other"
-msgstr ""
+msgstr "آخر"
 
 #: ../libslab/bookmark-agent.c:1067
 msgid "New Spreadsheet"
-msgstr ""
+msgstr "جدول ممتد جديد"
 
 #: ../libslab/bookmark-agent.c:1071
-#, fuzzy
 msgid "New Document"
-msgstr "المستندات الحديثة"
+msgstr "مستند جديد"
 
 #: ../libslab/bookmark-agent.c:1121
 msgid "Home"
-msgstr ""
+msgstr "المنزل"
 
 #: ../libslab/bookmark-agent.c:1137
-#, fuzzy
 msgid "File System"
-msgstr "نظام"
+msgstr "نظام الملفات"
 
 #: ../libslab/bookmark-agent.c:1141
-#, fuzzy
 msgid "Network Servers"
-msgstr "الواجهة اللّاسلكيّة"
+msgstr "خوادم الشبكة"
 
 #: ../libslab/bookmark-agent.c:1170
-#, fuzzy
 msgid "Search"
-msgstr "_بحث:"
+msgstr "ابحث"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:168
-#, fuzzy
+#, c-format
 msgid "<b>Open</b>"
-msgstr "الفتح بـاستخدام"
+msgstr "<b>افتح</b>"
 
 #. make rename action
 #: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
-#, fuzzy
 msgid "Rename..."
-msgstr "اعد تسمية..."
+msgstr "أعد تسمية..."
 
 #: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
 #: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
-#, fuzzy
 msgid "Send To..."
-msgstr "إرسال إلى:"
+msgstr "أرسل إلى..."
 
 #. make move to trash action
 #: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
-#, fuzzy
 msgid "Move to Trash"
-msgstr "نقل إلى سلّة المهملات"
+msgstr "انقل إلى المهملات"
 
 #: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
 #: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
-#, fuzzy
 msgid "Delete"
-msgstr "حذف"
+msgstr "احذف"
 
 #: ../libslab/document-tile.c:153
-#, fuzzy
 msgid "Edited %m/%d/%Y"
-msgstr "احفظ البحث المحرر"
+msgstr "حرره %m/%d/%Y"
 
 #: ../libslab/document-tile.c:193
-#, fuzzy, c-format
+#, c-format
 msgid "<b>Open with \"%s\"</b>"
-msgstr "الفتح بـاستخدام"
+msgstr "<b>افتح بواسطة \"%s\"</b>"
 
 #: ../libslab/document-tile.c:205
-#, fuzzy
 msgid "Open with Default Application"
-msgstr "افتح ب_تطبيق آخر..."
+msgstr "افتح بواسطة التطبيق الافتراضي"
 
 #: ../libslab/document-tile.c:216
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "اظهر الدليل في مدير الملفات"
+msgstr "افتح في مدير الملفات"
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr ""
+msgstr "خاصية غير متوقعة '%s' للعنصر '%s"
 
 #: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
 #: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr ""
+msgstr "خاصية '%s' للعنصر '%s' غير موجودة"
 
 #: ../libslab/libslab-bookmarkfile.c:1087
 #: ../libslab/libslab-bookmarkfile.c:1152
@@ -334,16 +249,17 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr ""
+msgstr "وسّم غير متوقع '%s' داخل '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
 msgid "No valid bookmark file found in data dirs"
-msgstr ""
+msgstr "لا توجد علامة صالحة في أدلة البيانات"
 
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr ""
+msgstr "علامة الرابط '%s' موجودة مسبقاً"
 
 #: ../libslab/libslab-bookmarkfile.c:2176
 #: ../libslab/libslab-bookmarkfile.c:2333
@@ -364,7 +280,7 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr ""
+msgstr "لا توجد علامة للرابط '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
@@ -385,53 +301,46 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr ""
+msgstr "لا يوجد تطبيق باسم '%s' مسجل كعلامة لـٍ '%s'"
 
 #: ../libslab/search-bar.c:255
-#, fuzzy
 msgid "Find Now"
-msgstr "_بحث الآن"
+msgstr "ابحث الآن"
 
 #: ../libslab/system-tile.c:128
-#, fuzzy, c-format
+#, c-format
 msgid "<b>Open %s</b>"
-msgstr "الفتح بـاستخدام"
+msgstr "<b>افتح %s</b>"
 
 #: ../libslab/system-tile.c:141
-#, fuzzy
+#, c-format
 msgid "Remove from System Items"
-msgstr "_حذف من شريط الأدوات"
+msgstr "أزل من عناصر النظام"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
-#, fuzzy
 msgid "Default menu and application browser"
-msgstr "تقصير القائمة وتطبيق متصفح"
+msgstr "القائمة الافتراضية ومتصفح التطبيقات"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
-#, fuzzy
 msgid "GNOME Main Menu"
-msgstr "قائمة جنوم الرّئيسيّة"
+msgstr "قائمة جنوم الرئيسية"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-#, fuzzy
 msgid "GNOME Main Menu Factory"
-msgstr "مصنع محرر HTML لجينوم"
+msgstr "مصنع قائمة جنوم الرئيسية"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
-#, fuzzy
 msgid "Main Menu"
 msgstr "القائمة الرئيسية"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-#, fuzzy
 msgid "_About"
-msgstr "_حول"
+msgstr "ح_ول"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-#, fuzzy
 msgid "_Open Menu"
-msgstr "مخطط القائمة"
+msgstr "اف_تح قائمة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 #, fuzzy
@@ -508,9 +417,8 @@ msgstr ""
 "دخول النص."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-#, fuzzy
 msgid "command to uninstall packages"
-msgstr "أمر الجس الذي سينفّذ"
+msgstr "أمر إزالة الحزم"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 #, fuzzy
@@ -520,9 +428,8 @@ msgid ""
 msgstr "أمسح القيادة الى مجموعات ، package_name يحل محله اسم مجموعة في القيادة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-#, fuzzy
 msgid "command to upgrade packages"
-msgstr "أمر الجس الذي سينفّذ"
+msgstr "أمر ترقية الحزم"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 #, fuzzy
@@ -552,9 +459,8 @@ msgstr ""
 "تطبيقات / و / الأخيرة الملفات / قوائم"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
-#, fuzzy
 msgid "determines the limit of items in the file-area."
-msgstr "يقرر الحد من البلاط في ملف المنطقة."
+msgstr "يحدّد الحد للعناصر في منطقة الملف."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid ""
@@ -570,12 +476,11 @@ msgstr ""
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "يقرر الحد من البلاط في ملف المنطقة."
+msgstr "يقرر الحد الأدنى من العناصر في قسم  المنطقة."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-#, fuzzy
 msgid "determines which types of files to display in the file area"
-msgstr "تحدد انواع الملفات عرض الملف في المنطقة"
+msgstr "تحدد أنواع الملفات عرض الملف في المنطقة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 #, fuzzy
@@ -592,48 +497,40 @@ msgstr ""
 "البحث"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-#, fuzzy
 msgid "lock-down configuration of the file area"
-msgstr "بإغلاق ملف تشكيل منطقة"
+msgstr "تشكيل حالة الإقفال لمنطقة الملف"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
-#, fuzzy
 msgid "lock-down status for the application browser link"
-msgstr "بإغلاق مركز لتطبيق متصفح صلة"
+msgstr "حالة الإقفال لوصلة تصفح التطبيق"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
-#, fuzzy
 msgid "lock-down status for the search area"
-msgstr "بإغلاق مركز البحث المنطقة"
+msgstr "حالة الإقفال لمنطقة البحث"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-#, fuzzy
 msgid "lock-down status for the status area"
-msgstr "بإغلاق مركز مركز المنطقة"
+msgstr "حالة الإقفال لمنطقة الحالة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
-#, fuzzy
 msgid "lock-down status for the system area"
-msgstr "بإغلاق مركز لنظام المنطقة"
+msgstr "حالة الإقفال لمنطقة النظام"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
-#, fuzzy
 msgid "lock-down status for the user-specified apps section"
-msgstr "بإغلاق مركز البحث المنطقة"
+msgstr "حالة الإقفال لقسم تطبيقات المستخدم المخصصة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
-#, fuzzy
 msgid "lock-down status for the user-specified dirs section"
-msgstr "بإغلاق مركز البحث المنطقة"
+msgstr "حالة الإقفال لقسم أدلة المستخدم المخصصة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
-#, fuzzy
 msgid "lock-down status for the user-specified docs section"
-msgstr "بإغلاق مركز البحث المنطقة"
+msgstr "حالة الإقفال لقسم مستندات المستخدم المخصصة"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "القيم المحتملة = 0 [تطبيقات], 1 [مستندات], 2 [أماكن]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 #, fuzzy
@@ -681,9 +578,8 @@ msgid ""
 msgstr ""
 
 #: ../main-menu/src/hard-drive-status-tile.c:110
-#, fuzzy
 msgid "Hard _Drive"
-msgstr "السواقة مفتوحة"
+msgstr "محرك الأقراص الصلبة"
 
 #: ../main-menu/src/hard-drive-status-tile.c:345
 #, fuzzy, c-format
@@ -706,152 +602,135 @@ msgid "%llub"
 msgstr "لوب ٪"
 
 #: ../main-menu/src/hard-drive-status-tile.c:372
-#, fuzzy, c-format
+#, c-format
 msgid "%s Free / %s Total"
-msgstr "مجموع الصفحات"
+msgstr "%s حر / %s المجموع"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
 msgid "Logout"
-msgstr ""
+msgstr "سجّل الخروج"
 
 #: ../main-menu/src/main-menu-migration.c:101
 #: ../main-menu/src/main-menu-migration.c:221
 msgid "Shutdown"
-msgstr ""
+msgstr "أوقف التشغيل"
 
 #: ../main-menu/src/main-menu-migration.c:159
-#, fuzzy
 msgid "Lock Screen"
-msgstr "إقفل الشاشة"
+msgstr "أقفل الشاشة"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
-msgstr ""
+msgstr "مقفل شاشة جنوم"
 
 #: ../main-menu/src/main-menu-ui.c:2146
-#, fuzzy
 msgid "The GNOME Main Menu"
-msgstr "قائمة جنوم الرّئيسيّة"
+msgstr "قائمة جنوم الرئيسية"
 
 #: ../main-menu/src/network-status-tile.c:91
-#, fuzzy
 msgid "Network: None"
-msgstr "<small><i>لا شيء</i></small>"
+msgstr "شبكة: بلا"
 
 #: ../main-menu/src/network-status-tile.c:94
 #: ../main-menu/src/network-status-tile.c:199
-#, fuzzy
 msgid "Click to configure network"
-msgstr "إذهب إلى موقع الشبكة"
+msgstr "انقر لضبط الشبكة"
 
 #: ../main-menu/src/network-status-tile.c:198
-#, fuzzy
 msgid "Networ_k: None"
-msgstr "<small><i>لا شيء</i></small>"
+msgstr "ش_بكة: بلا"
 
 #: ../main-menu/src/network-status-tile.c:207
-#, fuzzy, c-format
+#, c-format
 msgid "Connected to: %s"
-msgstr "مسجل ل %s"
+msgstr "متصل بـ: %s"
 
 #: ../main-menu/src/network-status-tile.c:210
-#, fuzzy
 msgid "Networ_k: Wireless"
-msgstr "الواجهة اللّاسلكيّة"
+msgstr "ش_بكة:لاسلكي"
 
 #: ../main-menu/src/network-status-tile.c:215
-#, fuzzy, c-format
+#, c-format
 msgid "Using ethernet (%s)"
-msgstr "واجهة إيثرنت"
+msgstr "استخدام الإيثرنت (%s)"
 
 #: ../main-menu/src/network-status-tile.c:219
-#, fuzzy
 msgid "Networ_k: Wired"
-msgstr "Networ_k : مثير"
+msgstr "ش_بكة: سِلكي"
 
 #: ../main-menu/src/network-status-tile.c:320
-#, fuzzy, c-format
+#, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr "واجهة إيثرنت"
+msgstr "إيثرنت لاسلكي (%s)"
 
 #: ../main-menu/src/network-status-tile.c:325
-#, fuzzy, c-format
+#, c-format
 msgid "Wired Ethernet (%s)"
-msgstr "واجهة إيثرنت"
+msgstr "إيثرنت سلكي (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
-#, fuzzy
+#, c-format
 msgid "Unknown"
 msgstr "مجهول"
 
 #: ../main-menu/src/network-status-tile.c:337
-#, fuzzy, c-format
+#, c-format
 msgid "%d Mb/s"
-msgstr "مب"
+msgstr "%d مب/ث"
 
 #: ../main-menu/src/slab-window.glade.h:1
-#, fuzzy
 msgid "Applications"
-msgstr "التطبيقات ال_حديثة:"
+msgstr "التطبيقات"
 
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "الحاسوب"
 
 #: ../main-menu/src/slab-window.glade.h:3
-#, fuzzy
 msgid "Documents"
-msgstr "المستندات الحديثة"
+msgstr "المستندات"
 
 #: ../main-menu/src/slab-window.glade.h:4
-#, fuzzy
 msgid "Favorite Applications"
-msgstr "التطبيقات ال_حديثة:"
+msgstr "التطبيقات المفضلة"
 
 #: ../main-menu/src/slab-window.glade.h:5
-#, fuzzy
 msgid "Favorite Documents"
-msgstr "المستندات الحديثة"
+msgstr "المستندات المفضلة"
 
 #: ../main-menu/src/slab-window.glade.h:6
-#, fuzzy
 msgid "Favorite Places"
-msgstr "التطبيقات ال_حديثة:"
+msgstr "الأماكن المفضلة"
 
 #: ../main-menu/src/slab-window.glade.h:8
-#, fuzzy
 msgid "More Applications..."
-msgstr "التطبيقات ال_حديثة:"
+msgstr "المزيد من التطبيقات..."
 
 #: ../main-menu/src/slab-window.glade.h:9
-#, fuzzy
 msgid "More Documents..."
-msgstr "جميع المستندات"
+msgstr "المزيد من المستندات..."
 
 #: ../main-menu/src/slab-window.glade.h:10
-#, fuzzy
 msgid "More Places..."
-msgstr "التطبيقات ال_حديثة:"
+msgstr "المزيد من الأماكن..."
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
-msgstr ""
+msgstr "الأماكن"
 
 #: ../main-menu/src/slab-window.glade.h:12
-#, fuzzy
 msgid "Recent Applications"
-msgstr "فتح محفوظة مستخدمة مؤخرا"
+msgstr "التطبيقات الحديثة"
 
 #: ../main-menu/src/slab-window.glade.h:13
 msgid "Recent Documents"
 msgstr "المستندات الحديثة"
 
 #: ../main-menu/src/slab-window.glade.h:14
-#, fuzzy
 msgid "Search:"
-msgstr "_بحث:"
+msgstr "ابحث:"
 
 #: ../main-menu/src/slab-window.glade.h:15
 msgid "Status"
@@ -859,176 +738,56 @@ msgstr "الحالة"
 
 #: ../main-menu/src/slab-window.glade.h:16
 msgid "System"
-msgstr "نظام"
+msgstr "النظام"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "أضف المُطْلِق الحالي إلى المفضلات"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Add the current document to favorites"
-msgstr ""
+msgstr "أضف المستند الحالي إلى المفضلات"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:134
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
-#, fuzzy
 msgid "Remove the current document from favorites"
-msgstr "_حذف من شريط الأدوات"
+msgstr "أزل المستند الحالي من المفضلات"
 
-#, fuzzy
-#~ msgid "Software Update"
-#~ msgstr "التحديث التالي:"
+#~ msgid "Control Center"
+#~ msgstr "مركز التحكم"
 
-#, fuzzy
-#~ msgid ".desktop files for \"Favorite Applications\""
-#~ msgstr ". ملفات مكتبيه / تطبيقات المفضل /"
+#~ msgid "Close the control-center when a task is activated"
+#~ msgstr "أغلق مركز التحكم عند تنشيط مهمة"
 
-#, fuzzy
-#~ msgid "System area items"
-#~ msgstr "حذف أيّ عناصر"
+#~ msgid "Task names and associated .desktop files"
+#~ msgstr "أسماء المهام وملفات سطح المكتب المرتبطة"
 
 #, fuzzy
 #~ msgid ""
-#~ "The list of the items which will appear in the System area. Possible "
-#~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
-#~ "3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the "
-#~ "have the appropriate .desktop files defined in the, respectively, "
-#~ "\"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
+#~ "The task name to be displayed in the control-center (thus needing to be "
+#~ "translated) followed by a \";\" separator then the filename of an "
+#~ "associated .desktop file to launch for that task."
 #~ msgstr ""
-#~ "قائمة المواد التي سوف تظهر في النظام.القيم لا يمكن المساعدة = 0 ، "
-#~ "control_center package_manager = 1 = 2 = 3 log_out lock_screen = 4.مساعدة "
-#~ "control_center package_manager ، والحاجة الى ان يكون مناسبا. مكتبي في "
-#~ "ملفات محددة ، على التوالى / help_item / ،/ Control_center_item / و / "
-#~ "package_manager_item / مفاتيح."
+#~ "اسم المهمة  المعروض في مركز التحكم (وبالتالي تحتاج إلى ترجمة) يليه /. / "
+#~ "فاصل ثم اسم الملف فيها. الملف على مكتبي لتنفيذ هذه المهمة."
 
 #, fuzzy
 #~ msgid ""
-#~ "contains the list (in no particular order) of allowable file types to "
-#~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
-#~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
-#~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
-#~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
-#~ "to \"Favorite Applications\". RECENT_FILES is the list of files from ~/."
-#~ "recently-used."
+#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
+#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
+#~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
+#~ "YaST.desktop]"
 #~ msgstr ""
-#~ "وتتضمن القائمة (لا سيما النظام) من الانواع المسموح الملف تظهر في الملف."
-#~ "القيم الممكنة (انظر أيضا ملاحظه لل/ مكتبي / التمثال / الطلبات / الرئيسي "
-#~ "للقائمة (ملف - منطقة / file_class : 0] user_specified_apps [1] "
-#~ "recently_used_apps [2] recent_files].Recently_used_apps هي قائمة "
-#~ "المستخدمة مؤخرا) مثل مع الخطوط الرئيسية القائمة أو تطبيق للمتصفح)."
-#~ "User_specified_apps يعادل / المفضل التطبيقات /.Recent_files هي قائمة من "
-#~ "الملفات ~ /. استخدمت مؤخرا."
+#~ "[غيّر خلفية سطح المكتب;الخلفية.سطح المكتب,أضف طابعة;gnome-cups-manager."
+#~ "desktop,اضبط الشبكة;YaST2/lan.desktop,غيّر كلمة السر;gnome-passwd.desktop,"
+#~ "أضف مستخدم;YaST2/users.desktop,افتح إعدادات المدير;YaST.desktop]"
 
-#, fuzzy
-#~ msgid "control center item .desktop file"
-#~ msgstr "مركز مراقبة الاعمال. الملف مكتبي"
-
-#, fuzzy
 #~ msgid ""
-#~ "determines the limit of tiles in the file-area. *Note: this does not "
-#~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
-#~ msgstr ""
-#~ "يقرر الحد من البلاط في ملف المنطقة.* ملاحظه : لا يؤثر هذا على عدد من "
-#~ "البلاط اذا الملف هو الدرجة user_specified_ *"
+#~ "if true, the control-center will close when a \"Common Task\" is activated"
+#~ msgstr "إذا كان صحيحاً ، مركز التحكم سيغلق عند تنشيط مهمة شائعة"
 
-#, fuzzy
-#~ msgid ""
-#~ "determines the reordering algorithm used when moving tiles around the "
-#~ "main-menu"
-#~ msgstr "يقرر اعادة ترتيب القاعده عندما كانت تسير نحو البلاط الرئيسي للقائمة"
+#~ msgid "key not found [%s]\n"
+#~ msgstr "المفتاح غير موجود [%s]\n"
 
-#, fuzzy
-#~ msgid "help item .desktop file"
-#~ msgstr "تمديد ملف سطح المكتب لإيبفني."
-
-#, fuzzy
-#~ msgid "package manager item .desktop file"
-#~ msgstr "مدير مجموعة الاعمال. الملف مكتبي"
-
-#, fuzzy
-#~ msgid ""
-#~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
-#~ "when a tile is dragged onto another tile they should simply swap "
-#~ "position. PUSH indicates that when a tile, A, is dragged onto another "
-#~ "tile, B, a vacant spot is created in tile A's place. tile B (and all "
-#~ "tiles after B) shift down until the new vacant space is filled. this "
-#~ "operation wraps around in the case that tile A appears before tile B "
-#~ "prior to the drag and drop operation. PUSH_PULL is similar to PUSH except "
-#~ "that when tiles are shifted they are either pushed into the vacant spaced "
-#~ "or pulled from the other direction, depending on which strategy affects "
-#~ "the least number of tiles."
-#~ msgstr ""
-#~ "ممكن القيم = 0] تبادل [1] دفع [2] push_pull].التبادل الى انه عندما تجر "
-#~ "على بلاطة آخر بلاط انها مجرد تبادل المواقف.دفع ذلك الى حين بلاطة ، وتجر "
-#~ "على اخر بلاطة وباءبقعة شاغرة ينشأ في اي مكان في بلاطة.بلاطة ب) وبعد كل "
-#~ "البلاط ب) التحول الى وضع جديد يملأ المساحه الشاغره.أغطية حول هذه العملية "
-#~ "في الحاله التي يمثل امامها اي بلاطة بلاطة ب السابقة للجر ، وترك العملية."
-#~ "Push_pull كما دفع إلا عندما انتقل البلاط هي التي دفعت اما شاغرة في سطرين "
-#~ "او سحبت من الاتجاه الآخرتعتمد الاستراتيجيه التي تؤثر على اقل عدد من "
-#~ "البلاط."
-
-#, fuzzy
-#~ msgid ""
-#~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-#~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
-#~ "(instantiated with the main-menu or the application-browser). "
-#~ "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". "
-#~ "RECENT_FILES is the list of files from ~/.recently-used."
-#~ msgstr ""
-#~ "ممكن القيم = 0] user_specified_apps [1] recently_used_apps [2] "
-#~ "recent_files].Recently_used_apps هي قائمة المستخدمة مؤخرا) مثل مع الخطوط "
-#~ "الرئيسية القائمة أو تطبيق للمتصفح).User_specified_apps يعادل / المفضل "
-#~ "التطبيقات /.Recent_files هي قائمة من الملفات ~ /. استخدمت مؤخرا."
-
-#, fuzzy
-#~ msgid "prioritized list of commands to lock the screen"
-#~ msgstr "قائمة اولويات الاوامر لقفل الشاشه"
-
-#, fuzzy
-#~ msgid "Sho_w:"
-#~ msgstr "عرض كل المواضيع"
-
-#~ msgid "_Help"
-#~ msgstr "م_ساعدة"
-
-#, fuzzy
-#~ msgid "_Control Center"
-#~ msgstr "مركز تحكم جنوم"
-
-#, fuzzy
-#~ msgid "I_nstall Software"
-#~ msgstr "أدوات لتطوير البرمجيات"
-
-#, fuzzy
-#~ msgid "Log _Out ..."
-#~ msgstr "اخرج"
-
-#~ msgid "_Unknown"
-#~ msgstr "_مجهول"
-
-#, fuzzy
-#~ msgid "Help Unavailable"
-#~ msgstr "غير متوفّر مؤقتا"
-
-#, fuzzy
-#~ msgid ""
-#~ "Location of the system-wide directory in which startup programs are found."
-#~ msgstr "موقع على نطاق المنظومه في دليل بدء اي برامج موجودة."
-
-#, fuzzy
-#~ msgid ""
-#~ "Location of the user directory in which startup programs are found. The "
-#~ "dir path should not be absolute, as the value of this key is appended to "
-#~ "this path: ~/."
-#~ msgstr ""
-#~ "موقع دليل المستعمل في بدء اي برامج موجودة.دير الطريق لا ينبغي ان يكون "
-#~ "مطلقا ، لأن قيمة هذا المفتاح هو الطريق الى هذا المرفق : ~ /."
-
-#, fuzzy
-#~ msgid "System-wide autostart program drop dir"
-#~ msgstr "نظام تشغيل تلقائي على نطاق برنامج الدراسه دير"
-
-#, fuzzy
-#~ msgid "User autostart program drop dir (within the home dir)"
-#~ msgstr "المستعمل تشغيل تلقائي برنامج الدراسه دير) دير داخل المنزل)"
+#~ msgid "Common Tasks"
+#~ msgstr "المهام الشائعة"
