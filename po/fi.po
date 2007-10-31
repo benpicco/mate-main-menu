@@ -1,21 +1,19 @@
-# translation of gnome-main-menu.fi.po to
-# translation of fi.po to
+# translation of gnome-main-menu.fi.po to Finnish
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Finnish message file for YaST2 (@memory@).
 # Copyright (C) 2003 SuSE Linux AG.
 #
-#
 # Michael Hintsala <mhintsa@fi.ibm.com>, 2003. 2001.
 # Jyri Palokangas <jmp@netti.fi>, 2006.
-# Ilkka Tuohela <hile@iki.fi>, 2006.
+# Ilkka Tuohela <hile@iki.fi>, 2006-2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 19:14+0300\n"
+"POT-Creation-Date: 2007-10-31 17:55+0300\n"
 "PO-Revision-Date: 2006-06-29 11:08+0300\n"
 "Last-Translator: Jyri Palokangas <jmp@netti.fi>\n"
-"Language-Team:  <en@li.org>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -284,7 +282,7 @@ msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty MIME-tyyppiä"
 #: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty yksityinen-lippua" 
+msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty yksityinen-lippua"
 
 #: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
@@ -516,7 +514,7 @@ msgstr "käyttäjän määrittelemien asiakirjojen osion lukitsemisen tila"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "mahdolliset arvot: 0 (sovellukset), 1 (asiakirjat), 2 (sijainnit)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid ""
@@ -545,8 +543,9 @@ msgstr "aseta todeksi, jos käyttäjä saa muokata järjestelmäluetteloa."
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
-msgstr "aseta todeksi, jos käyttäjä saa muokata käyttäjän määrittelemiä- "
-"tai suosikkisovelluksia."
+msgstr ""
+"aseta todeksi, jos käyttäjä saa muokata käyttäjän määrittelemiä- tai "
+"suosikkisovelluksia."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
