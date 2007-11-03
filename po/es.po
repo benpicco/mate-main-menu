@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-15 23:21+0100\n"
-"PO-Revision-Date: 2007-09-16 10:52+0200\n"
+"POT-Creation-Date: 2007-09-16 09:54+0100\n"
+"PO-Revision-Date: 2007-11-03 15:01+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,8 +107,7 @@ msgstr "Acciones sobre las aplicaciones"
 msgid "<b>Start %s</b>"
 msgstr "<b>Iniciar %s</b>"
 
-#: ../libslab/application-tile.c:381 ../libslab/system-tile.c:92
-#: ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ayuda"
@@ -149,7 +148,8 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
-"<span size=\"large\"><b>No se han encontrado coincidencias.</b> </span><span>\n"
+"<span size=\"large\"><b>No se han encontrado coincidencias.</b> </"
+"span><span>\n"
 "\n"
 "El filtro «<b>%s</b>»no coincide con ningún elemento.</span>"
 
@@ -310,26 +310,12 @@ msgstr "Ninguna aplicación con el nombre «%s» registró un marcador para «%s
 msgid "Find Now"
 msgstr "Buscar ahora"
 
-#: ../libslab/system-tile.c:94 ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Bloquear la pantalla"
-
-#: ../libslab/system-tile.c:96 ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Salir de la sesión"
-
-#: ../libslab/system-tile.c:98 ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Apagar"
-
-#: ../libslab/system-tile.c:136
+#: ../libslab/system-tile.c:128
 #, c-format
 msgid "<b>Open %s</b>"
 msgstr "<b>Abrir %s</b>"
 
-#: ../libslab/system-tile.c:149
+#: ../libslab/system-tile.c:141
 msgid "Remove from System Items"
 msgstr "Eliminar de los iconos del sistema"
 
@@ -460,6 +446,13 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
+"contiene una lista (sin ningún orden particular) de tablas de archivos disponibles que mostrar "
+"en el área de archivo. Los valores posibles son: 0, muestra las aplicaciones especificados por el usuario o la "
+"tabla de aplicaciones «Favoritas», 1, muestra la tabla de aplicaciones usadas recientemente, 2, "
+"muestra los documentos especificados por el usuario o documentos «Favoritos», 3, muestra la "
+"tabla de documentos usados recientemente, 4, muestra los directorios especificados como «Favoritos» "
+"por el usuario o la tabla de «Lugares», y 5, muestra la tabla de directorios usados recientemente o "
+"tabla «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -467,8 +460,7 @@ msgid ""
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 "contiene la lista de archivos (incluidos los archivos .desktop) que deben "
-"excluirse de las listas «Aplicaciones recientes» y "
-"«Archivos recientes»."
+"excluirse de las listas «Aplicaciones recientes» y «Archivos recientes»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "determines the limit of items in the file-area."
@@ -482,11 +474,12 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
-"determina el límite de elementos en el área de archivos. El número de elementos favoritos no "
-"está limitado. Este límite se aplica al número de elementos recientes, por ejemplo, el "
-"número de elementos recientes mostrados está limitado a max_total_items; el número de "
-"elementos favoritos. Si el número de elementos favoritos excede max_total_items; "
-"se ignorará el límite de min_recent_items."
+"determina el límite de elementos en el área de archivos. El número de "
+"elementos favoritos no está limitado. Este límite se aplica al número de "
+"elementos recientes, por ejemplo, el número de elementos recientes mostrados "
+"está limitado a max_total_items; el número de elementos favoritos. Si el "
+"número de elementos favoritos excede max_total_items; se ignorará el límite "
+"de min_recent_items."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
@@ -636,6 +629,20 @@ msgstr "%llub"
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "Disponible: %s / Total: %s"
+
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Salir de la sesión"
+
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Apagar"
+
+#: ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Bloquear la pantalla"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
