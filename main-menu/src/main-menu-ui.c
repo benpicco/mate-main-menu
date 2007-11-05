@@ -1093,7 +1093,9 @@ app_is_in_blacklist (const gchar *uri)
 		return TRUE;
 
 	disable_lockscreen = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_LOCKSCREEN_GCONF_KEY));
-	blacklisted        = disable_lockscreen && libslab_desktop_item_is_lockscreen (uri);
+	/* Dont allow lock screen if root - same as gnome-panel */
+	blacklisted = libslab_desktop_item_is_lockscreen (uri) &&
+		( (geteuid () == 0) || disable_lockscreen );
 
 	if (blacklisted)
 		return TRUE;
