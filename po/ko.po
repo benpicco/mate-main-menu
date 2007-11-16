@@ -4,18 +4,21 @@
 # Copyright (C) 2000, 2001 SuSE GmbH.
 # Hwang, Sang-Jin <violiet@suse.de>
 # Young-Ho Cha <ganadist@gmail.com>, 2006
+# Namhyung Kim <namhyung@gmail.com>, 2007
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-09 23:59+0900\n"
-"PO-Revision-Date: 2007-02-10 00:02+0900\n"
-"Last-Translator: Young-Ho Cha <ganadist@gmail.com>\n"
+"POT-Creation-Date: 2007-09-15 23:21+0100\n"
+"PO-Revision-Date: 2007-11-16 20:26+0900\n"
+"Last-Translator: Namhyung Kim<namhyung@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0;"
 
 #  frame
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
@@ -24,52 +27,46 @@ msgid "Application Browser"
 msgstr "프로그램 찾아보기"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
-#: ../control-center/etc/control-center.schemas.in.h:2
 msgid "Exit shell on add or remove action performed"
-msgstr ""
+msgstr "더하기/지우기 동작을 수행한 쉘 끝냄"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
-#: ../control-center/etc/control-center.schemas.in.h:3
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "도움말 동작을 수행한 쉘 끝냄"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
-#: ../control-center/etc/control-center.schemas.in.h:4
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "시작 동작을 수행한 쉘 끝냄"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
-#: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
+msgstr "업그레이드 혹은 설치 제거 동작을 수행한 쉘 끝냄"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr ""
+msgstr "기존 .desktop 파일의 이름"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
-#: ../control-center/etc/control-center.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "도움말 동작이 수행될 때 쉘이 끝나면 알림"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
-#: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
+msgstr "시작 동작이 수행될 때 쉘이 끝나면 알림"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
-#: ../control-center/etc/control-center.schemas.in.h:8
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
 msgstr ""
+"더하기/지우기 동작이 수행될 때 쉘이 끝나면 알림"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
-#: ../control-center/etc/control-center.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
 msgstr ""
+"업그레이드/설치 제거 동작이 수행될 때 쉘이 끝나면 알림"
 
 #  frame
 #: ../application-browser/etc/application-browser.schemas.in.h:10
@@ -81,6 +78,7 @@ msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
 msgstr ""
+"새 프로그램 분류에 표시될 프로그램의 최대 개수"
 
 #  frame
 #: ../application-browser/src/application-browser.c:85
@@ -89,66 +87,61 @@ msgstr "새 프로그램"
 
 #  label for text field showing the filter (e.g. *.bak)
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:160
 msgid "Filter"
-msgstr "거르개"
+msgstr "필터"
 
 #  table header
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:160
 msgid "Groups"
 msgstr "그룹"
 
 #  frame
 #: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
-msgstr ""
+msgstr "프로그램 동작"
 
-#  Heading for NCurses Control Center
-#: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:164
-msgid "Control Center"
-msgstr "제어판"
-
-#: ../control-center/etc/control-center.schemas.in.h:1
-msgid "Close the control-center when a task is activated"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:10
-msgid "Task names and associated .desktop files"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:11
-msgid ""
-"The task name to be displayed in the control-center (thus needing to be "
-"translated) followed by a \";\" separator then the filename of an "
-"associated .desktop file to launch for that task."
-msgstr ""
-
-#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
-#: ../control-center/etc/control-center.schemas.in.h:13
-msgid ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
-"desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
-"desktop]"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:14
-msgid ""
-"if true, the control-center will close when a \"Common Task\" is activated"
-msgstr ""
-
-#: ../control-center/src/control-center.c:62
+#  part of the patch description
+#. make start action
+#: ../libslab/application-tile.c:362
 #, c-format
-msgid "key not found [%s]\n"
-msgstr ""
+msgid "<b>Start %s</b>"
+msgstr "<b>%s 시작</b>"
 
-#: ../control-center/src/control-center.c:160
-msgid "Common Tasks"
-msgstr "보통 작업"
+#: ../libslab/application-tile.c:381 ../libslab/system-tile.c:92
+#: ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
+msgid "Help"
+msgstr "도움말"
 
-#: ../libslab/app-shell.c:741
+#: ../libslab/application-tile.c:428
+msgid "Upgrade"
+msgstr "업그레이드"
+
+#: ../libslab/application-tile.c:443
+msgid "Uninstall"
+msgstr "설치 취소"
+
+#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "자주 쓰는 프로그램에서 지우기"
+
+#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "자주 쓰는 프로그램에 더하기"
+
+#: ../libslab/application-tile.c:857
+msgid "Remove from Startup Programs"
+msgstr "시작 프로그램에서 지우기"
+
+#: ../libslab/application-tile.c:859
+msgid "Add to Startup Programs"
+msgstr "시작 프로그램에 더하기"
+
+#: ../libslab/app-shell.c:747
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -157,96 +150,189 @@ msgid ""
 msgstr ""
 "<span size=\"large\"><b>일치하는 것이 없습니다.</b> </span><span>\n"
 "\n"
-" \"<b>%s</b>\" 거르개와 일치하는 항목이 아무것도 없습니다.</span>"
+" \"<b>%s</b>\" 필터와 일치하는 항목이 아무것도 없습니다.</span>"
 
-#: ../libslab/app-shell.c:880
+#: ../libslab/app-shell.c:897
 msgid "Other"
-msgstr "그 외"
+msgstr "기타"
+
+#: ../libslab/bookmark-agent.c:1067
+msgid "New Spreadsheet"
+msgstr "새 스프레드시트"
+
+#: ../libslab/bookmark-agent.c:1071
+msgid "New Document"
+msgstr "새 문서"
+
+#: ../libslab/bookmark-agent.c:1121
+msgid "Home"
+msgstr "홈"
+
+#: ../libslab/bookmark-agent.c:1137
+msgid "File System"
+msgstr "파일 시스템"
+
+# src/isdn/ip.ycp:70 src/isdn/ip.ycp:99 src/provider/details.ycp:45
+# src/provider/details.ycp:95 src/provider/details.ycp:121
+#  table header
+#: ../libslab/bookmark-agent.c:1141
+msgid "Network Servers"
+msgstr "네트워크 서버"
+
+#: ../libslab/bookmark-agent.c:1170
+msgid "Search"
+msgstr "찾기"
+
+#  part of the package description
+#. make open with default action
+#: ../libslab/directory-tile.c:168
+msgid "<b>Open</b>"
+msgstr "<b>열기</b>"
+
+#. make rename action
+#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+msgid "Rename..."
+msgstr "이름 바꾸기..."
+
+#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
+#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+msgid "Send To..."
+msgstr "보내기..."
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+msgid "Move to Trash"
+msgstr "휴지통에 버리기"
+
+#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
+#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+msgid "Delete"
+msgstr "지우기"
+
+#: ../libslab/document-tile.c:153
+msgid "Edited %m/%d/%Y"
+msgstr "%Y/%m/%d에 고쳐짐"
+
+#  part of the package description
+#: ../libslab/document-tile.c:193
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>\"%s\"(으)로 열기 </b>"
+
+#: ../libslab/document-tile.c:205
+msgid "Open with Default Application"
+msgstr "기본 프로그램으로 열기"
+
+#: ../libslab/document-tile.c:216
+msgid "Open in File Manager"
+msgstr "파일 관리자로 열기"
+
+#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "'%s' 속성을 알 수 없음 ('%s' 원소)"
+
+#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr "'%s' 속성을 '%s' 원소 내에서 찾을 수 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr "알 수 없는 태그: '%s', '%s' 태그 필요"
+
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr "알 수 없는 '%s' 태그가 '%s' 내에 있음"
+
+#: ../libslab/libslab-bookmarkfile.c:1929
+msgid "No valid bookmark file found in data dirs"
+msgstr "데이터 디렉토리 내에서 올바른 책갈피 파일을 찾을 수 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:2130
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "URI '%s'에 대한 책갈피가 이미 존재함"
+
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr "URI '%s'에 대한 책갈피를 찾을 수 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:2508
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr "URI '%s'에 대한 책갈피 내에 정의된 MIME 형식이 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:2593
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr "URI '%s'에 대한 책갈피 내에 정의된 개인 플래그가 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:2972
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr "URI '%s'에 대한 책갈피 내에 그룹 설정이 없음"
+
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr "'%s'에 대한 책갈피에 '%s'(이)라는 이름의 프로그램이 없음"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "지금 찾기"
 
-#  part of the patch description
-#. make start action
-#: ../libslab/application-tile.c:351
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>%s 시작</b>"
+#: ../libslab/system-tile.c:94 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "화면 잠그기"
 
-#: ../libslab/application-tile.c:370
-msgid "Help"
-msgstr "도움말"
+#: ../libslab/system-tile.c:96 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "로그아웃"
 
-#: ../libslab/application-tile.c:429
-msgid "Upgrade"
-msgstr "업그레이드"
-
-#: ../libslab/application-tile.c:444
-msgid "Uninstall"
-msgstr "설치 취소"
-
-#: ../libslab/application-tile.c:831
-msgid "Remove from Favorites"
-msgstr "자주 쓰는 프로그램에서 지우기"
-
-#: ../libslab/application-tile.c:833
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
-msgid "Add to Favorites"
-msgstr "자주 쓰는 프로그램에 더하기"
-
-#: ../libslab/application-tile.c:909
-msgid "Remove from Startup Programs"
-msgstr "시작 프로그램에서 지우기"
-
-#: ../libslab/application-tile.c:911
-msgid "Add to Startup Programs"
-msgstr "시작 프로그램에 더하기"
-
-#: ../libslab/document-tile.c:145
-msgid "Edited %m/%d/%Y"
-msgstr "%Y/%m/%d에 고쳐짐"
+#: ../libslab/system-tile.c:98 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "컴퓨터 끄기"
 
 #  part of the package description
-#: ../libslab/document-tile.c:183
+#: ../libslab/system-tile.c:136
 #, c-format
-msgid "<b>Open with \"%s\"</b>"
+msgid "<b>Open %s</b>"
 msgstr "<b>\"%s\"(으)로 열기 </b>"
 
-#: ../libslab/document-tile.c:195
-msgid "Open with Default Application"
-msgstr "기본 프로그램으로 열기"
-
-#: ../libslab/document-tile.c:211
-msgid "Open in File Manager"
-msgstr "파일 관리자로 열기"
-
-#. make rename action
-#: ../libslab/document-tile.c:227
-msgid "Rename..."
-msgstr "이름 바꾸기..."
-
-#. make move to trash action
-#: ../libslab/document-tile.c:240
-msgid "Move to Trash"
-msgstr "휴지통에 버리기"
-
-#: ../libslab/document-tile.c:250 ../libslab/document-tile.c:580
-msgid "Delete"
-msgstr "지우기"
-
-#: ../libslab/document-tile.c:270 ../libslab/document-tile.c:279
-msgid "Send To..."
-msgstr "보내기..."
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr "메뉴 열기"
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr "정보(_A)"
+#: ../libslab/system-tile.c:149
+msgid "Remove from System Items"
+msgstr "시스템 항목에서 지우기"
 
 #  frame
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
@@ -254,7 +340,7 @@ msgid "Default menu and application browser"
 msgstr "기본 메뉴와 프로그램 찾아보기"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "그놈 기본 메뉴"
 
@@ -263,13 +349,16 @@ msgid "GNOME Main Menu Factory"
 msgstr "그놈 기본 메뉴 팩토리"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
-#: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "기본 메뉴"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr "소프트웨어 업데이트"
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "정보(_A)"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "메뉴 열기(_O)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -287,285 +376,263 @@ msgstr "그놈 시스템 감시기의 .desktop 파일"
 msgid ".desktop file for the net config tool"
 msgstr "네트워크 설정 도구의 .desktop 파일"
 
-#  progress stages
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr "\"자주 쓰는 프로그램\"의 .desktop 파일"
-
-#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr "프로그램 찾아보기의 .desktop 경로"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "System area items"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid ""
-"The list of the items which will appear in the System area. Possible values "
-"are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, "
-"LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have "
-"the appropriate .desktop files defined in the, respectively, \"help_item\", "
-"\"control_center_item\" and \"package_manager_item\" keys."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:9
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
+"이것은 \"파일 관리자로 열기\" 메뉴 항목이 활성화된 경우에 실행할 명령입니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
+"이것은 \"파일 관리자로 열기\" 메뉴 항목이 활성화된 경우에 실행할 명령입니다. "
+"FILE_URI는 활성화된 파일의 디렉토리 이름에 해당하는 URI로 대체됩니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
 msgstr ""
+"이것은 \"보내기...\" 메뉴 항목이 활성화된 경우에 실행할 명령입니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
+"이것은 \"보내기...\" 메뉴 항목이 활성화된 경우에 실행할 명령입니다. "
+"DIRNAME과 BASENAME은 활성화된 파일의 해당 요소로 대체됩니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the search entry is used."
-msgstr ""
+msgstr "이것은 찾기 항목이 사용되는 경우에 실행할 명령입니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
+"이것은 찾기 항목이 사용되는 경우에 실행할 명령입니다. "
+"SEARCH_STRING은 입력된 텍스트로 대체됩니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "command to uninstall packages"
-msgstr ""
+msgstr "설치한 꾸러미를 지우는 명령"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr ""
+msgstr "설치한 꾸러미를 지우는 명령입니다. PACKAGE_NAME은 명령 내에서 꾸러미의 이름으로 대체됩니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "command to upgrade packages"
-msgstr ""
+msgstr "꾸러미를 업그레이드하는 명령"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
+"꾸러미를 업그레이드하는 명령입니다. PACKAGE_NAME은 명령 내에서 "
+"꾸러미의 이름으로 대체됩니다."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
-"contains the list (in no particular order) of allowable file types to show "
-"in the file area. possible values (see also the note for /desktop/gnome/"
-"applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
-"[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
-"recently used (instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
 msgstr ""
+"파일 영역에 보여질 허용된 파일 테이블의 목록을 포함합니다. (순서 없음) "
+"여기에는 다음과 같은 값들이 올 수 있습니다: 0 - 사용자 지정 혹은 \"자주 사용하는\" "
+"프로그램 테이블 보기, 1 - 최근에 사용된 프로그램 테이블 보기, 2 - 사용자 지정 혹은 "
+"\"자주 참조하는\" 문서 테이블 보기, 3 - 최근에 사용된 문서 테이블 보기, 4 - 사용자 지정 "
+"혹은 \"자주 가는\" 위치 테이블 보기, 5 - 최근에 가 본 폴더 혹은 위치 테이블 보기."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
+"\"최근 사용된 프로그램\"과 \"최근 파일\" 목록에서 제외될 파일의 목록을 포함합니다 "
+"(.desktop 파일 포함)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "determines the limit of items in the file-area."
+msgstr "파일 영역 내에 들어갈 항목의 최대 개수를 결정합니다."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+"파일 영역 내의 항목의 개수를 제한하기 위해 사용됩니다. 자주 사용하는 항목에는 "
+"개수 제한이 없습니다. 이 값은 최근에 사용된 항목에만 적용됩니다. 즉, "
+"표시될 최근 항목의 수는 'max_total_items - 자주 사용하는 항목의 수'가 됩니다. "
+"만약 자주 사용하는 항목의 수가 max_total_items - min_recent_items 보다 크면 "
+"이 값은 무시됩니다."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr ""
+"파일 영역의 \"최근 문서\" 부분에 들어갈 항목의 최소 개수를 결정합니다."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "control center item .desktop file"
-msgstr ""
+msgid "determines which types of files to display in the file area"
+msgstr "파일 영역 내에 표시될 파일의 종류를 결정합니다"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-msgid "determines the limit of tiles in the file-area."
+msgid "if true, main menu is more anxious to close"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid ""
-"determines the limit of tiles in the file-area. *Note: this does not affect "
-"the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid ""
-"determines the reordering algorithm used when moving tiles around the main-"
-"menu"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "determines which types of files to display in the file area"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "help item .desktop file"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "if true, main menu is more anxious to close"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
 msgstr ""
+"참이면, 메인 메뉴가 다음과 같은 추가적인 조건 하에서 닫힐 것입니다: "
+"타일이 활성화됨, 찾기가 활성화됨"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "lock-down configuration of the file area"
+msgstr "파일 영역 설정 잠금"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "lock-down status for the application browser link"
+msgstr "프로그램 찾아보기 링크 상태 잠금"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the search area"
+msgstr "찾기 영역 상태 잠금"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "lock-down status for the status area"
+msgstr "상태 영역 상태 잠금"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down status for the system area"
+msgstr "시스템 영역 상태 잠금"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
-msgid "lock-down configuration of the file area"
-msgstr ""
+msgid "lock-down status for the user-specified apps section"
+msgstr "사용자 지정 프로그램 영역 상태 잠금"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "lock-down status for the application browser link"
-msgstr ""
+msgid "lock-down status for the user-specified dirs section"
+msgstr "사용자 지정 폴더 영역 상태 잠금"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
-msgid "lock-down status for the search area"
-msgstr ""
+msgid "lock-down status for the user-specified docs section"
+msgstr "사용자 지정 문서 영역 상태 잠금"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid "lock-down status for the status area"
-msgstr ""
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "가능한 값 = 0 [프로그램], 1 [문서], 2 [위치]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
-msgid "lock-down status for the system area"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:34
-msgid "package manager item .desktop file"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:35
-msgid ""
-"possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
-"when a tile is dragged onto another tile they should simply swap position. "
-"PUSH indicates that when a tile, A, is dragged onto another tile, B, a "
-"vacant spot is created in tile A's place. tile B (and all tiles after B) "
-"shift down until the new vacant space is filled. this operation wraps around "
-"in the case that tile A appears before tile B prior to the drag and drop "
-"operation. PUSH_PULL is similar to PUSH except that when tiles are shifted "
-"they are either pushed into the vacant spaced or pulled from the other "
-"direction, depending on which strategy affects the least number of tiles."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:36
-msgid ""
-"possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-"[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
-"(instantiated with the main-menu or the application-browser). "
-"USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES "
-"is the list of files from ~/.recently-used."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:37
-msgid "prioritized list of commands to lock the screen"
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
+"프로그램 찾아보기에 대한 링크가 보이고 활성화되어 있으면 참으로 설정하세요."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "set to true if the search area should be visible and active."
+msgstr "찾기 영역이 보이고 활성화 되어 있으면 참으로 설정하세요."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "set to true if the status area should be visible and active."
+msgstr "상태 영역이 보이고 활성화 되어 있으면 참으로 설정하세요."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "set to true if the system area should be visible and active."
+msgstr "시스템 영역이 보이고 활성화 되어 있으면 참으로 설정하세요."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr "사용자가 시스템 항목의 목록을 수정할 수 있으면 참으로 설정하세요."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+"사용자가 사용자 지정 프로그램 혹은 자주 쓰는 프로그램의 목록을 "
+"수정할 수 있으면 참으로 설정하세요."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "set to true if the search area should be visible and active."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
 msgstr ""
+"사용자가 사용자 지정 폴더 혹은 자주 가는 폴더 및 \"위치\"의 목록을 "
+"수정할 수 있으면 참으로 설정하세요."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "set to true if the status area should be visible and active."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
 msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "set to true if the system area should be visible and active."
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Sho_w:"
-msgstr "보기(_W):"
-
-#  progress stages
-#: ../main-menu/src/file-area-widget.c:186
-msgid "Favorite Applications"
-msgstr "자주 쓰는 프로그램"
-
-#: ../main-menu/src/file-area-widget.c:203
-msgid "Recently Used Applications"
-msgstr "최근 사용한 프로그램"
-
-#: ../main-menu/src/file-area-widget.c:213
-msgid "Recent Documents"
-msgstr "최근 사용한 문서"
-
-#  Menu Buton label
-#: ../main-menu/src/file-area-widget.c:347
-msgid "More _Applications..."
-msgstr "더 많은 프로그램(_A)..."
-
-#: ../main-menu/src/file-area-widget.c:351
-msgid "_All Documents..."
-msgstr "전체 문서(_A)..."
+"사용자가 사용자 지정 문서 혹은 자주 참조하는 문서의 목록을 "
+"수정할 수 있으면 참으로 설정하세요."
 
 #  entry of bootloader menu - only a-z, A-Z, 0-9, _ and blank space
 #  are allowed, otherwise translartion won't be used
 #  try to keep short, may be shortened due to bootloader limitations
-#: ../main-menu/src/hard-drive-status-tile.c:106
+#: ../main-menu/src/hard-drive-status-tile.c:110
 msgid "Hard _Drive"
 msgstr "하드 드라이브(_D)"
 
-#: ../main-menu/src/hard-drive-status-tile.c:341
+#: ../main-menu/src/hard-drive-status-tile.c:345
 #, c-format
 msgid "%lluG"
 msgstr "%lluG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:343
+#: ../main-menu/src/hard-drive-status-tile.c:347
 #, c-format
 msgid "%lluM"
 msgstr "%lluM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:349
 #, c-format
 msgid "%lluK"
 msgstr "%lluK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:351
 #, c-format
 msgid "%llub"
 msgstr "%llub"
 
-#: ../main-menu/src/hard-drive-status-tile.c:368
+#: ../main-menu/src/hard-drive-status-tile.c:372
 #, c-format
 msgid "%s Free / %s Total"
 msgstr "%s 남음/ 전체 %s"
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:161
+msgid "gnome-lockscreen"
+msgstr "gnome-lockscreen"
+
+#: ../main-menu/src/main-menu-ui.c:2146
 msgid "The GNOME Main Menu"
 msgstr "그놈 기본 메뉴"
-
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr "시스템"
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr "상태"
-
-# src/config/routing.y2cc:11
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr "컴퓨터"
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "_Search:"
-msgstr "찾기(_S):"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -595,7 +662,7 @@ msgstr "네트워크(_K): 무선"
 #: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
-msgstr "네트워크 사용중 (%s)"
+msgstr "이더넷 사용 (%s)"
 
 #  Selection box item
 #: ../main-menu/src/network-status-tile.c:219
@@ -626,39 +693,118 @@ msgstr "알 수 없음"
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/system-tile.c:103
-msgid "_Help"
-msgstr "도움말(_H)"
+#  frame
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "프로그램"
 
-#  Heading for NCurses Control Center
-#: ../main-menu/src/system-tile.c:117
-msgid "_Control Center"
-msgstr "제어판(_C)"
+# src/config/routing.y2cc:11
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "컴퓨터"
 
-#: ../main-menu/src/system-tile.c:131
-msgid "I_nstall Software"
-msgstr "소프트웨어 설치(_N)"
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "문서"
 
-#  combo box item
-#: ../main-menu/src/system-tile.c:138
-msgid "Log _Out ..."
-msgstr "로그아웃(_O)..."
+#  progress stages
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "자주 쓰는 프로그램"
 
-#: ../main-menu/src/system-tile.c:145
-msgid "_Lock Screen ..."
-msgstr "화면 잠그기(_L)..."
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "자주 참조하는 문서"
 
-#: ../main-menu/src/system-tile.c:161
-msgid "_Unknown"
-msgstr "알 수 없음(_U)"
+#  progress stages
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "자주 가는 위치"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:122
+#  Menu Buton label
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "더 많은 프로그램..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "더 많은 문서..."
+
+#  Menu Buton label
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "더 많은 위치..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "위치"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "최근 사용한 프로그램"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "최근 사용한 문서"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "찾기:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "상태"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "시스템"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
 msgid "Add the current launcher to favorites"
-msgstr "현재 실행기를 즐겨찾기에 더합니다"
+msgstr "현재 실행 아이콘을 즐겨찾기에 더합니다"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:127
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Add the current document to favorites"
 msgstr "현재 문서를 즐겨찾기에 더합니다"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+msgid "Remove the current document from favorites"
+msgstr "현재 문서를 즐겨찾기에서 지웁니다"
+
+#  Heading for NCurses Control Center
+#~ msgid "Control Center"
+#~ msgstr "제어판"
+
+#~ msgid "Common Tasks"
+#~ msgstr "보통 작업"
+
+#~ msgid "Software Update"
+#~ msgstr "소프트웨어 업데이트"
+
+#  progress stages
+#~ msgid ".desktop files for \"Favorite Applications\""
+#~ msgstr "\"자주 쓰는 프로그램\"의 .desktop 파일"
+
+#~ msgid "Sho_w:"
+#~ msgstr "보기(_W):"
+
+#~ msgid "_Help"
+#~ msgstr "도움말(_H)"
+
+#  Heading for NCurses Control Center
+#~ msgid "_Control Center"
+#~ msgstr "제어판(_C)"
+
+#~ msgid "I_nstall Software"
+#~ msgstr "소프트웨어 설치(_N)"
+
+#  combo box item
+#~ msgid "Log _Out ..."
+#~ msgstr "로그아웃(_O)..."
+
+#~ msgid "_Unknown"
+#~ msgstr "알 수 없음(_U)"
 
 #~ msgid "Help Unavailable"
 #~ msgstr "도움말이 없습니다"
