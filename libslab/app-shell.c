@@ -65,6 +65,7 @@ static gboolean main_keypress_callback (GtkWidget * widget, GdkEventKey * event,
 	AppShellData * app_data);
 static gboolean main_delete_callback (GtkWidget * widget, GdkEvent * event,
 	AppShellData * app_data);
+static void application_launcher_clear_search_bar (AppShellData * app_data);
 static void launch_selected_app (AppShellData * app_data);
 static void generate_potential_apps (gpointer catdata, gpointer user_data);
 
@@ -94,6 +95,8 @@ hide_shell (AppShellData * app_data)
 	gtk_window_get_position (GTK_WINDOW (app_data->main_gnome_app),
 		&app_data->main_gnome_app_window_x, &app_data->main_gnome_app_window_y);
 	/* printf("x:%d, y:%d\n", app_data->main_gnome_app_window_x, app_data->main_gnome_app_window_y); */
+	/* clear the search bar now so reshowing is fast and flicker free - BNC#283186 */
+	application_launcher_clear_search_bar (app_data);
 	gtk_widget_hide (app_data->main_gnome_app);
 }
 
@@ -1289,6 +1292,16 @@ application_launcher_compare (gconstpointer a, gconstpointer b)
 		g_assert_not_reached ();
 	}
 	return g_ascii_strcasecmp (val1, val2);
+}
+
+static void
+application_launcher_clear_search_bar (AppShellData * app_data)
+{
+	SlabSection *section = SLAB_SECTION (app_data->filter_section);
+	NldSearchBar *search_bar;
+	g_assert (NLD_IS_SEARCH_BAR (section->contents));
+	search_bar = NLD_SEARCH_BAR (section->contents);
+	nld_search_bar_set_text (search_bar, "", TRUE);
 }
 
 /*

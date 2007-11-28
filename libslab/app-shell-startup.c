@@ -44,7 +44,6 @@ apss_new_instance_cb (BonoboApplication * app, gint argc, char *argv[], gpointer
 	g_object_get (app_data->main_gnome_app, "visible", &visible, NULL);
 	if (!visible)
 	{
-		nld_search_bar_set_text (search_bar, "", TRUE);
 		show_shell (app_data);
 	}
 
