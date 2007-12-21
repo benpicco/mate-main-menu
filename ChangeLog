@@ -1,4 +1,8 @@
 2007-12-21  Scott Reeves  <sreeves@novell.com>
+	* configure.in:
+	bump rev
+
+2007-12-21  Scott Reeves  <sreeves@novell.com>
 	* configure.in
 	* main-menu/src/hard-drive-status-tile.c
 	* main-menu/src/main-menu-ui.c
