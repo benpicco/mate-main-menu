@@ -22,6 +22,7 @@
 
 #include <glib/gi18n.h>
 #include <string.h>
+#include <eel/eel-alert-dialog.h>
 #include <libgnomeui/gnome-icon-lookup.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <unistd.h>
@@ -33,6 +34,7 @@
 #define GCONF_SEND_TO_CMD_KEY       "/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd"
 #define GCONF_ENABLE_DELETE_KEY_DIR "/apps/nautilus/preferences"
 #define GCONF_ENABLE_DELETE_KEY     GCONF_ENABLE_DELETE_KEY_DIR "/enable_delete"
+#define GCONF_CONFIRM_DELETE_KEY    GCONF_ENABLE_DELETE_KEY_DIR "/confirm_trash"
 
 G_DEFINE_TYPE (DirectoryTile, directory_tile, NAMEPLATE_TILE_TYPE)
 
@@ -558,11 +560,37 @@ move_to_trash_trigger (Tile *tile, TileEvent *event, TileAction *action)
 static void
 delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 {
+	gchar     *prompt;
+	GtkDialog *confirm_dialog;
+	gint       result;
+
 	GnomeVFSURI *src_uri;
 	GList *list = NULL;
 
 	GnomeVFSResult retval;
 
+
+	if (GPOINTER_TO_INT (libslab_get_gconf_value (GCONF_CONFIRM_DELETE_KEY))) {
+		prompt = g_strdup_printf (
+			_("Are you sure you want to permanently delete \"%s\"?"),
+			DIRECTORY_TILE_GET_PRIVATE (tile)->basename);
+
+		confirm_dialog = GTK_DIALOG (eel_alert_dialog_new (
+			NULL, 0, GTK_MESSAGE_WARNING, GTK_BUTTONS_NONE,
+			prompt, _("If you delete an item, it is permanently lost.")));
+							
+		gtk_dialog_add_button (confirm_dialog, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+		gtk_dialog_add_button (confirm_dialog, GTK_STOCK_DELETE, GTK_RESPONSE_YES);
+		gtk_dialog_set_default_response (GTK_DIALOG (confirm_dialog), GTK_RESPONSE_YES);
+
+		result = gtk_dialog_run (confirm_dialog);
+
+		gtk_widget_destroy (GTK_WIDGET (confirm_dialog));
+		g_free (prompt);
+
+		if (result != GTK_RESPONSE_YES)
+			return;
+	}
 
 	src_uri = gnome_vfs_uri_new (TILE (tile)->uri);
 
@@ -644,5 +672,5 @@ static void
 disown_spawned_child (gpointer user_data)
 {
 	setsid  ();
-	setpgid (0, 0);
+	setpgrp ();
 }

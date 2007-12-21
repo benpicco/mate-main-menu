@@ -148,41 +148,54 @@ load_desktop_item_from_gconf_key (const gchar * key)
 }
 
 GnomeDesktopItem *
-load_desktop_item_from_unknown (const gchar * id)
+load_desktop_item_from_unknown (const gchar *id)
 {
 	GnomeDesktopItem *item;
-	GError *error;
+	gchar            *basename;
 
-	error = NULL;
+	GError *error = NULL;
+
 
 	item = gnome_desktop_item_new_from_uri (id, 0, &error);
 
-	if (!error)
+	if (! error)
 		return item;
-	else
-	{
+	else {
 		g_error_free (error);
 		error = NULL;
 	}
 
 	item = gnome_desktop_item_new_from_file (id, 0, &error);
 
-	if (!error)
+	if (! error)
 		return item;
-	else
-	{
+	else {
 		g_error_free (error);
 		error = NULL;
 	}
 
 	item = gnome_desktop_item_new_from_basename (id, 0, &error);
 
-	if (!error)
+	if (! error)
 		return item;
-	else
-	{
+	else {
 		g_error_free (error);
 		error = NULL;
+	}
+
+	basename = g_strrstr (id, "/");
+
+	if (basename) {
+		basename++;
+
+		item = gnome_desktop_item_new_from_basename (basename, 0, &error);
+
+		if (! error)
+			return item;
+		else {
+			g_error_free (error);
+			error = NULL;
+		}
 	}
 
 	return NULL;

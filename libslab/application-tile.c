@@ -150,11 +150,18 @@ application_tile_new_full (const gchar *desktop_item_id,
 
 	desktop_item = load_desktop_item_from_unknown (desktop_item_id);
 
-	if (desktop_item)
+	if (
+		desktop_item &&
+		gnome_desktop_item_get_entry_type (desktop_item) == GNOME_DESKTOP_ITEM_TYPE_APPLICATION
+	)
 		uri = gnome_desktop_item_get_location (desktop_item);
 
-	if (! desktop_item || ! uri)
+	if (! uri) {
+		if (desktop_item)
+			gnome_desktop_item_unref (desktop_item);
+
 		return NULL;
+	}
 
 	this = g_object_new (APPLICATION_TILE_TYPE, "tile-uri", uri, NULL);
 	priv = APPLICATION_TILE_GET_PRIVATE (this);

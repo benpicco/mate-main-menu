@@ -1008,10 +1008,30 @@ item_to_dir_tile (BookmarkItem *item, gpointer data)
 static Tile *
 item_to_system_tile (BookmarkItem *item, gpointer data)
 {
+	Tile  *tile;
+	gchar *basename;
+
+
 	if (app_is_in_blacklist (item->uri))
 		return NULL;
 
-	return TILE (system_tile_new (item->uri, item->title));
+	tile = TILE (system_tile_new (item->uri, item->title));
+
+	if (tile)
+		return tile;
+
+	basename = g_strrstr (item->uri, "/");
+	if (basename)
+		basename++;
+	else
+		basename = item->uri;
+
+	if (! libslab_strcmp (basename, "control-center.desktop"))
+		tile = TILE (system_tile_new ("gnomecc.desktop", item->title));
+	else if (! libslab_strcmp (basename, "zen-installer.desktop"))
+		tile = TILE (system_tile_new ("package-manager.desktop", item->title));
+
+	return tile;
 }
 
 static BookmarkItem *
@@ -1607,8 +1627,6 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 	GtkToggleButton *toggle = GTK_TOGGLE_BUTTON (button);
 
 	DoubleClickDetector *detector;
-	GTimeVal t_curr;
-	guint32  t_curr_ms;
 
 	gboolean visible;
 
@@ -1616,14 +1634,11 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 	detector = DOUBLE_CLICK_DETECTOR (
 		g_object_get_data (G_OBJECT (toggle), "double-click-detector"));
 
-	g_get_current_time (& t_curr);
-	t_curr_ms = 1000 * t_curr.tv_sec + t_curr.tv_usec / 1000;
-
 	visible = GTK_WIDGET_VISIBLE (priv->slab_window);
 
-	if (! double_click_detector_is_double_click (detector, t_curr_ms, TRUE)) {
+	if (! double_click_detector_is_double_click (detector, gtk_get_current_event_time (), TRUE)) {
 		if (! visible)
-			gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), t_curr_ms);
+			gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), gtk_get_current_event_time ());
 		else
 			gtk_widget_hide (priv->slab_window);
 

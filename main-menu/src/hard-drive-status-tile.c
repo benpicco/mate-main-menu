@@ -40,7 +40,7 @@
 #define TIMEOUT_KEY_DIR "/apps/procman"
 #define TIMEOUT_KEY     "/apps/procman/disks_interval"
 
-#define FILE_BROWSER_GCONF_KEY "/desktop/gnome/applications/main-menu/file_browser"
+#define SYSTEM_MONITOR_GCONF_KEY "/desktop/gnome/applications/main-menu/system_monitor"
 
 G_DEFINE_TYPE (HardDriveStatusTile, hard_drive_status_tile, NAMEPLATE_TILE_TYPE)
 
@@ -459,7 +459,7 @@ open_hard_drive_tile (Tile * tile, TileEvent * event, TileAction * action)
 	gchar *fb_ditem_id;
 	
 
-	fb_ditem_id = (gchar *) libslab_get_gconf_value (FILE_BROWSER_GCONF_KEY);
+	fb_ditem_id = (gchar *) libslab_get_gconf_value (SYSTEM_MONITOR_GCONF_KEY);
 
 	if (! fb_ditem_id)
 		fb_ditem_id = g_strdup ("nautilus.desktop");

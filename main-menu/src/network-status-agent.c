@@ -35,6 +35,8 @@ typedef struct
 {
 	DBusGConnection *nm_conn;
 	DBusGProxy *nm_proxy;
+
+	guint state_curr;
 } NetworkStatusAgentPrivate;
 
 #define NETWORK_STATUS_AGENT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), NETWORK_STATUS_AGENT_TYPE, NetworkStatusAgentPrivate))
@@ -88,6 +90,7 @@ network_status_agent_init (NetworkStatusAgent * agent)
 
 	priv->nm_conn = NULL;
 	priv->nm_proxy = NULL;
+	priv->state_curr = 0;
 }
 
 NetworkStatusAgent *
@@ -324,8 +327,15 @@ nm_get_device_info (NetworkStatusAgent * agent, DBusGProxy * device)
 static void
 nm_state_change_cb (DBusGProxy * proxy, guint state, gpointer user_data)
 {
-	g_signal_emit (NETWORK_STATUS_AGENT (user_data),
-		network_status_agent_signals[STATUS_CHANGED], 0);
+	NetworkStatusAgent        *this = NETWORK_STATUS_AGENT (user_data);
+	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (this);
+
+	if (priv->state_curr == state)
+		return;
+
+	priv->state_curr = state;
+
+	g_signal_emit (this, network_status_agent_signals [STATUS_CHANGED], 0);
 }
 
 static DBusHandlerResult
@@ -460,4 +470,3 @@ gtop_get_first_active_device_info ()
 	g_strfreev (networks);
 	return info;
 }
-

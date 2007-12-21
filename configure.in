@@ -38,7 +38,7 @@ PKG_CHECK_MODULES(GLADE, libglade-2.0)
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
 
-PKG_CHECK_MODULES(LIBSLAB, [ $COMMON_MODULES gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango ])
+PKG_CHECK_MODULES(LIBSLAB, [ $COMMON_MODULES gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango eel-2.0 ])
 
 AC_SUBST(LIBSLAB_CFLAGS)
 AC_SUBST(LIBSLAB_LIBS)

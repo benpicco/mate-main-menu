@@ -1,3 +1,16 @@
+2007-12-21  Scott Reeves  <sreeves@novell.com>
+	* configure.in
+	* main-menu/src/hard-drive-status-tile.c
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/network-status-agent.c
+	* libslab/application-tile.c
+	* libslab/slab-gnome-util.c
+	* libslab/libslab-utils.c
+	* libslab/directory-tile.c
+	* libslab/bookmark-agent.c
+	* libslab/document-tile.c:
+	Merge in changes (rev 353-361) from openSUSE10.3 branch
+
 2007-11-28  Scott Reeves  <sreeves@novell.com>
 	* libslab/app-shell-startup.c
 	* libslab/app-shell.c:
