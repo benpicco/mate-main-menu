@@ -1,4 +1,4 @@
-# translation of gnome-main-menu.HEAD.es.po to Español
+# translation of gnome-main-menu.HEAD.po to Español
 # Spanish message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002, 2003 SuSE Linux AG.
@@ -12,12 +12,12 @@
 # Jorge Gonzalez <jorgegonz@svn.gnome.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.HEAD.es\n"
+"Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-16 09:54+0100\n"
-"PO-Revision-Date: 2007-11-03 15:01+0100\n"
+"POT-Creation-Date: 2007-12-21 17:38+0000\n"
+"PO-Revision-Date: 2007-12-30 01:15+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"Language-Team: Español <<gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,46 +102,46 @@ msgid "Application Actions"
 msgstr "Acciones sobre las aplicaciones"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:369
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Iniciar %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ayuda"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:435
 msgid "Upgrade"
 msgstr "Actualizar"
 
 # clients/online_update.ycp:46
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:450
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:528
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Eliminar de favoritos"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:530
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Añadir a favoritos"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:864
 msgid "Remove from Startup Programs"
 msgstr "Eliminar de programas de inicio"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:866
 msgid "Add to Startup Programs"
 msgstr "Añadir a programas de inicio"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -153,74 +153,83 @@ msgstr ""
 "\n"
 "El filtro «<b>%s</b>»no coincide con ningún elemento.</span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "Otro"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1034
 msgid "New Spreadsheet"
 msgstr "Hoja de cálculo nueva"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1038
 msgid "New Document"
 msgstr "Documento nuevo"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1088
 msgid "Home"
 msgstr "Inicio"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1104
 msgid "File System"
 msgstr "Sistema de archivos"
 
 # include/network/lan/address.ycp:40
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1108
 msgid "Network Servers"
 msgstr "Servidores de red"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1137
 msgid "Search"
 msgstr "Buscar"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:170
 msgid "<b>Open</b>"
 msgstr "<b>Abrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:234
 msgid "Rename..."
-msgstr "Renombrar..."
+msgstr "Renombrar…"
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:248 ../libslab/document-tile.c:257
 msgid "Send To..."
-msgstr "Enviar a..."
+msgstr "Enviar a…"
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:283
 msgid "Move to Trash"
 msgstr "Mover a la Papelera"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:293 ../libslab/document-tile.c:641
 msgid "Delete"
 msgstr "Borrar"
 
-#: ../libslab/document-tile.c:153
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:813
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "¿Está seguro de que quiere borrar permanentemente «%s»?"
+
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:817
+msgid "If you delete an item, it is permanently lost."
+msgstr "Si borra un elemento se pierde para siempre."
+
+#: ../libslab/document-tile.c:155
 msgid "Edited %m/%d/%Y"
 msgstr "Fecha de edición: %d/%m/%Y"
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/document-tile.c:195
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Abrir con \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:207
 msgid "Open with Default Application"
 msgstr "Abrir con la aplicación predeterminada"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:218
 msgid "Open in File Manager"
 msgstr "Abrir en el gestor de archivos"
 
@@ -324,7 +333,7 @@ msgid "Default menu and application browser"
 msgstr "Menú por defecto y navegador de aplicaciones"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2162 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -388,7 +397,7 @@ msgid ""
 "activated."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"«Enviar a...»."
+"«Enviar a…»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -397,7 +406,7 @@ msgid ""
 "components of the activated tile."
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"«Enviar a...». DIRNAME y BASENAME se sustituyen por los componentes "
+"«Enviar a…». DIRNAME y BASENAME se sustituyen por los componentes "
 "correspondientes del elemento activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
@@ -446,13 +455,15 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
-"contiene una lista (sin ningún orden particular) de tablas de archivos disponibles que mostrar "
-"en el área de archivo. Los valores posibles son: 0, muestra las aplicaciones especificados por el usuario o la "
-"tabla de aplicaciones «Favoritas», 1, muestra la tabla de aplicaciones usadas recientemente, 2, "
-"muestra los documentos especificados por el usuario o documentos «Favoritos», 3, muestra la "
-"tabla de documentos usados recientemente, 4, muestra los directorios especificados como «Favoritos» "
-"por el usuario o la tabla de «Lugares», y 5, muestra la tabla de directorios usados recientemente o "
-"tabla «Lugares»."
+"contiene una lista (sin ningún orden particular) de tablas de archivos "
+"disponibles que mostrar en el área de archivo. Los valores posibles son: 0, "
+"muestra las aplicaciones especificados por el usuario o la tabla de "
+"aplicaciones «Favoritas», 1, muestra la tabla de aplicaciones usadas "
+"recientemente, 2, muestra los documentos especificados por el usuario o "
+"documentos «Favoritos», 3, muestra la tabla de documentos usados "
+"recientemente, 4, muestra los directorios especificados como «Favoritos» por "
+"el usuario o la tabla de «Lugares», y 5, muestra la tabla de directorios "
+"usados recientemente o tabla «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -648,7 +659,7 @@ msgstr "Bloquear la pantalla"
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2163
 msgid "The GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -748,15 +759,15 @@ msgstr "Lugares favoritos"
 
 #: ../main-menu/src/slab-window.glade.h:8
 msgid "More Applications..."
-msgstr "Más aplicaciones..."
+msgstr "Más aplicaciones…"
 
 #: ../main-menu/src/slab-window.glade.h:9
 msgid "More Documents..."
-msgstr "Más documentos..."
+msgstr "Más documentos…"
 
 #: ../main-menu/src/slab-window.glade.h:10
 msgid "More Places..."
-msgstr "Más lugares..."
+msgstr "Más lugares…"
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
