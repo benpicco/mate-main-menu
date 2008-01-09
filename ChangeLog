@@ -1,3 +1,8 @@
+2007-01-09  Scott Reeves  <sreeves@novell.com>
+	* configure.in
+	* po/LINGUAS:
+	Patch from Christian Persch for bgo #394815
+
 2007-12-21  Scott Reeves  <sreeves@novell.com>
 	* configure.in:
 	bump rev

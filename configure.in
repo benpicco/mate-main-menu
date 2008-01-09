@@ -1,4 +1,4 @@
-AC_INIT([gnome-main-menu], [0.9.9], [])
+AC_INIT([gnome-main-menu], [0.9.9], [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu])
 
 AC_CONFIG_SRCDIR([.])
 AC_CONFIG_HEADERS([config.h])
@@ -22,9 +22,8 @@ dnl ==============================================
 GETTEXT_PACKAGE=gnome-main-menu
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
-ALL_LINGUAS="af ar bg bn br bs ca cs cy da de dz el en_CA en_GB en_IGID en_US es et fi fr gl gu he hi hr hu id it ja ka km ko lo lt lv mk mr nb nl oc pa pl pt_BR pt ro ru sk sl sr sv ta tr uk vi xh zh_CN zh_TW zu"
 
-IT_PROG_INTLTOOL([0.34])
+IT_PROG_INTLTOOL([0.35.0])
 AM_GLIB_GNU_GETTEXT
 
 dnl ==============================================
@@ -121,7 +120,7 @@ dnl ==============================================
 
 GTK_DOC_CHECK(1.0)
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 application-browser/etc/Makefile
 application-browser/src/Makefile
@@ -133,3 +132,5 @@ nautilus-main-menu/Makefile
 patch/Makefile
 po/Makefile.in
 ])
+
+AC_OUTPUT
