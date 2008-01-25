@@ -21,13 +21,8 @@
 #include "hard-drive-status-tile.h"
 
 #include <string.h>
-#include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
+#include <sys/statvfs.h>
 #include <glib/gi18n.h>
-#include <glibtop/fsusage.h>
-#include <libhal.h>
-#include <libhal-storage.h>
 #include <gconf/gconf-client.h>
 
 #include "slab-gnome-util.h"
@@ -59,14 +54,11 @@ static void tile_show_event_cb (GtkWidget *, gpointer);
 
 typedef struct
 {
-	LibHalContext *hal_context;
-	DBusConnection *dbus_connection;
-	
 	GConfClient *gconf;
 	
-	guint64 capacity_bytes;
-	guint64 available_bytes;
-	
+	gdouble capacity_bytes;
+	gdouble available_bytes;	
+
 	guint timeout_notify;
 	
 	guint update_timeout;
@@ -105,9 +97,9 @@ hard_drive_status_tile_new ()
 	char *name;
 
 	image = gtk_image_new ();
-	slab_load_image (GTK_IMAGE (image), GTK_ICON_SIZE_BUTTON, "gnome-dev-harddisk");
+	slab_load_image (GTK_IMAGE (image), GTK_ICON_SIZE_BUTTON, "utilities-system-monitor");
 
-	name = g_strdup (_("Hard _Drive"));
+	name = g_strdup (_("_System Monitor"));
 
 	header = gtk_label_new (name);
 	gtk_label_set_use_underline (GTK_LABEL (header), TRUE);
@@ -148,51 +140,6 @@ static void
 hard_drive_status_tile_init (HardDriveStatusTile * tile)
 {
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (tile);
-	DBusError error;
-
-	priv->hal_context = libhal_ctx_new ();
-
-	if (!priv->hal_context)
-		return;
-
-	dbus_error_init (&error);
-	priv->dbus_connection = dbus_bus_get (DBUS_BUS_SYSTEM, &error);
-
-	dbus_connection_set_exit_on_disconnect (priv->dbus_connection, FALSE);
-
-	if (dbus_error_is_set (&error))
-	{
-		g_warning ("error (%s): [%s]\n", error.name, error.message);
-
-		dbus_error_free (&error);
-
-		priv->hal_context = NULL;
-		priv->dbus_connection = NULL;
-
-		return;
-	}
-
-	dbus_error_free (&error);
-
-	dbus_connection_setup_with_g_main (priv->dbus_connection, g_main_context_default ());
-
-	libhal_ctx_set_dbus_connection (priv->hal_context, priv->dbus_connection);
-
-	dbus_error_init (&error);
-	libhal_ctx_init (priv->hal_context, &error);
-
-	if (dbus_error_is_set (&error))
-	{
-		g_warning ("error (%s): [%s]\n", error.name, error.message);
-
-		dbus_error_free (&error);
-
-		priv->hal_context = NULL;
-
-		return;
-	}
-
-	dbus_error_free (&error);
 
 	priv->gconf = gconf_client_get_default ();
 	gconf_client_add_dir (priv->gconf, TIMEOUT_KEY_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
@@ -201,8 +148,6 @@ hard_drive_status_tile_init (HardDriveStatusTile * tile)
 static void
 hard_drive_status_tile_finalize (GObject * g_object)
 {
-/*	if (data->hal_context)
-		libhal_ctx_free (data->hal_context); */
 	/* FIXME */
 	(*G_OBJECT_CLASS (hard_drive_status_tile_parent_class)->finalize) (g_object);
 }
@@ -242,113 +187,35 @@ hard_drive_status_tile_activated (Tile * tile, TileEvent * event)
 		tile_trigger_action_with_time (tile, tile->default_action, event->time);
 }
 
-static GList *
-get_pertinent_devices (LibHalContext * hal_context)
-{
-	GList *devices;
-
-	gchar **udis;
-	gint n_udis;
-
-	LibHalVolume *vol;
-	gchar *mount_point;
-
-	DBusError error;
-
-	gint i;
-
-	if (!hal_context)
-		return NULL;
-
-	dbus_error_init (&error);
-	udis = libhal_find_device_by_capability (hal_context, "volume", &n_udis, &error);
-
-	if (dbus_error_is_set (&error))
-	{
-		g_warning ("error (%s): [%s]\n", error.name, error.message);
-
-		dbus_error_free (&error);
-
-		return NULL;
-	}
-
-	dbus_error_free (&error);
-
-	devices = NULL;
-
-	for (i = 0; i < n_udis; ++i)
-	{
-		vol = libhal_volume_from_udi (hal_context, udis[i]);
-
-		if (libhal_volume_is_mounted (vol) && !libhal_volume_is_disc (vol))
-		{
-			mount_point = g_strdup (libhal_volume_get_mount_point (vol));
-			devices = g_list_append (devices, mount_point);
-		}
-
-		libhal_volume_free (vol);
-	}
-
-	libhal_free_string_array (udis);
-
-	return devices;
-}
-
 static void
 compute_usage (HardDriveStatusTile * tile)
 {
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (tile);
+	struct statvfs s;
 
-	GList *devices;
-	glibtop_fsusage fs_usage;
-
-	GList *node;
-
-	if (!priv->hal_context)
+	if (statvfs (g_get_home_dir (), &s) != 0) {
+		priv->available_bytes = 0;
+		priv->capacity_bytes = 0;
 		return;
-
-	devices = get_pertinent_devices (priv->hal_context);
-
-	priv->capacity_bytes = 0;
-	priv->available_bytes = 0;
-
-	for (node = devices; node; node = node->next)
-	{
-		if (node->data)
-		{
-			glibtop_get_fsusage (&fs_usage, (gchar *) node->data);
-
-			priv->available_bytes += fs_usage.bfree * fs_usage.block_size;
-			priv->capacity_bytes += fs_usage.blocks * fs_usage.block_size;
-
-			g_free (node->data);
-		}
 	}
 
-	g_list_free (devices);
+	priv->available_bytes = (gdouble)s.f_frsize * s.f_bavail;
+	priv->capacity_bytes = (gdouble)s.f_frsize * s.f_blocks;
 }
 
 static gchar *
-size_bytes_to_string (guint64 size)
+size_bytes_to_string (gdouble size)
 {
 	gchar *size_string;
-	unsigned long long size_bytes;
 
-/* FIXME:  this is just a work around for gcc warnings about %lu not big enough
- * to hold guint64 on 32bit machines.  on 64bit machines, however, gcc warns
- * that %llu is too big for guint64.  ho-hum.
- */
-
-	size_bytes = (unsigned long long) size;
-
-	if (size_bytes > GIGA)
-		size_string = g_strdup_printf (_("%lluG"), size_bytes / GIGA);
-	else if (size_bytes > MEGA)
-		size_string = g_strdup_printf (_("%lluM"), size_bytes / MEGA);
-	else if (size_bytes > KILO)
-		size_string = g_strdup_printf (_("%lluK"), size_bytes / KILO);
+	if (size > GIGA)
+		size_string = g_strdup_printf (_("%.1fG"), size / GIGA);
+	else if (size > MEGA)
+		size_string = g_strdup_printf (_("%.1fM"), size / MEGA);
+	else if (size > KILO)
+		size_string = g_strdup_printf (_("%.1fK"), size / KILO);
 	else
-		size_string = g_strdup_printf (_("%llub"), size_bytes);
+		size_string = g_strdup_printf (_("%.1fb"), size);
 
 	return size_string;
 }
@@ -369,7 +236,7 @@ update_tile (HardDriveStatusTile * tile)
 	available = size_bytes_to_string (priv->available_bytes);
 	capacity = size_bytes_to_string (priv->capacity_bytes);
 
-	markup = g_strdup_printf (_("%s Free / %s Total"), available, capacity);
+	markup = g_strdup_printf (_("Home: %s Free / %s"), available, capacity);
 
 	gtk_label_set_text (GTK_LABEL (NAMEPLATE_TILE (tile)->subheader), markup);
 
@@ -462,7 +329,7 @@ open_hard_drive_tile (Tile * tile, TileEvent * event, TileAction * action)
 	fb_ditem_id = (gchar *) libslab_get_gconf_value (SYSTEM_MONITOR_GCONF_KEY);
 
 	if (! fb_ditem_id)
-		fb_ditem_id = g_strdup ("nautilus.desktop");
+		fb_ditem_id = g_strdup ("gnome-system-monitor.desktop");
 
 	ditem = libslab_gnome_desktop_item_new_from_unknown_id (fb_ditem_id);
 

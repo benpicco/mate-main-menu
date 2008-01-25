@@ -1,4 +1,11 @@
-2007-01-09  Scott Reeves  <sreeves@novell.com>
+2008-01-25  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/hard-drive-status-tile.c:
+	Patch from Magnus Boman and Federico Mena Quintero for
+	BNC#332418 and BNC#152846 (show correct free space and
+	title for hard drive tile ).
+
+2008-01-09  Scott Reeves  <sreeves@novell.com>
 	* configure.in
 	* po/LINGUAS:
 	Patch from Christian Persch for bgo #394815

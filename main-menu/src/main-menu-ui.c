@@ -685,8 +685,6 @@ create_status_section (MainMenuUI *this)
 	tile = hard_drive_status_tile_new ();
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_DND, & icon_width, NULL);
-	gtk_widget_set_size_request (tile, 6 * icon_width, -1);
-
 	g_signal_connect (
 		G_OBJECT (tile), "tile-action-triggered",
 		G_CALLBACK (tile_action_triggered_cb), this);
