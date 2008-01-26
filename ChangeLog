@@ -1,4 +1,11 @@
 2008-01-25  Scott Reeves  <sreeves@novell.com>
+	* configure.in
+	* libslab/document-tile.c
+	* libslab/libslab.pc.in:
+	Patch from Andreas Hanke for BNC#258361 - dependencies
+	Patch from JPR for BNC#236463 - better date info
+
+2008-01-25  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* main-menu/src/hard-drive-status-tile.c:
 	Patch from Magnus Boman and Federico Mena Quintero for
