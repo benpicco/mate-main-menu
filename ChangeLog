@@ -1,3 +1,8 @@
+2008-01-29  Scott Reeves  <sreeves@novell.com>
+	* libslab/bookmark-agent.c:
+	Fix BNC#349604 Labeled Bookmarks.
+	Based on patch from Ivan Zlatev.
+
 2008-01-25  Scott Reeves  <sreeves@novell.com>
 	* configure.in
 	* libslab/document-tile.c

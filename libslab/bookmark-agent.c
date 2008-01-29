@@ -590,6 +590,7 @@ update_items (BookmarkAgent *this)
 	gint       rank_corr       = -1;
 	gboolean   needs_update    = FALSE;
 	gboolean   store_corrupted = FALSE;
+	gchar     *new_title, *old_title;
 
 	gint i;
 
@@ -625,9 +626,23 @@ update_items (BookmarkAgent *this)
 	if (priv->n_items != n_uris)
 		needs_update = TRUE;
 
-	for (i = 0; ! needs_update && uris_ordered && uris_ordered [i]; ++i)
-		if (strcmp (priv->items [i]->uri, uris_ordered [i]))
+	for (i = 0; ! needs_update && uris_ordered && uris_ordered [i]; ++i) {
+		if (priv->type == BOOKMARK_STORE_USER_DIRS) {
+			new_title = g_bookmark_file_get_title (priv->store, uris_ordered [i], NULL);
+			old_title = priv->items [i]->title;
+			if (!new_title && !old_title) {
+				if (strcmp (priv->items [i]->uri, uris_ordered [i]))
+					needs_update = TRUE;
+			}
+			else if ((new_title && !old_title) || (!new_title && old_title))
+				needs_update = TRUE;
+			else if (strcmp (old_title, new_title))
+				needs_update = TRUE;
+			g_free (new_title);
+		}
+		else if (strcmp (priv->items [i]->uri, uris_ordered [i]))
 			needs_update = TRUE;
+	}
 
 	if (needs_update) {
 		for (i = 0; priv->items && priv->items [i]; ++i)
@@ -777,12 +792,11 @@ load_places_store (BookmarkAgent *this)
 
 	gchar **uris;
 	gchar **groups;
-	gchar **folders = NULL;
+	gchar **bookmarks = NULL;
+	
+	gchar  *buf, *label, *uri;
 
-	gchar  *buf;
-
-	gint i, j;
-
+	gint i, j, bookmark_len;
 
 	load_xbel_store (this);
 
@@ -807,18 +821,30 @@ load_places_store (BookmarkAgent *this)
 	g_file_get_contents (priv->gtk_store_path, & buf, NULL, NULL);
 
 	if (buf) {
-		folders = g_strsplit (buf, "\n", -1);
+		bookmarks = g_strsplit (buf, "\n", -1);
 		g_free (buf);
 	}
 
-	for (i = 0; folders && folders [i]; ++i) {
-		if (strlen (folders [i]) > 0) {
-			g_bookmark_file_add_group (priv->store, folders [i], "gtk-bookmarks");
-			priv->create_item (this, folders [i]);
+	for (i = 0; bookmarks && bookmarks [i]; ++i) {
+		bookmark_len = strlen (bookmarks [i]);
+		if (bookmark_len > 0) {
+			label = strstr (bookmarks[i], " ");
+			if (label != NULL)
+				uri = g_strndup (bookmarks [i], bookmark_len - strlen (label));
+			else
+				uri = bookmarks [i];
+			g_bookmark_file_add_group (priv->store, uri, "gtk-bookmarks");
+			priv->create_item (this, uri);
+			if (label != NULL) {
+				label++;
+				if (strlen (label) > 0)
+					g_bookmark_file_set_title (priv->store, uri, label);
+				g_free (uri);
+			}
 		}
 	}
 
-	g_strfreev (folders);
+	g_strfreev (bookmarks);
 }
 
 static void
