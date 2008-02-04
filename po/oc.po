@@ -146,7 +146,7 @@ msgstr ""
 
 #: ../libslab/bookmark-agent.c:1038
 msgid "New Document"
-msgstr "Novèl document"
+msgstr "Document novèl"
 
 #: ../libslab/bookmark-agent.c:1088
 msgid "Home"
