@@ -1,0 +1,736 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GNOME\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-07 22:11+0100\n"
+"PO-Revision-Date: 2008-02-05 11:15-0800\n"
+"Last-Translator: Zabeeh khan <Zabeehkhan@gmail.com>\n"
+"Language-Team: Pashto <pakhtosoft@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Pashto, Pushto\n"
+"X-Poedit-Country: AFGHANISTAN\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:93
+msgid "Application Browser"
+msgstr "کاريال لټونی"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+msgid "Exit shell on add or remove action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+msgid "Exit shell on help action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+msgid "Exit shell on start action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "دوتنو دوتنه نوم .desktop د شته"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "د نويو کاريالونو ټولوجګه شمېر"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:85
+msgid "New Applications"
+msgstr "نوي کاريالونه"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Filter"
+msgstr "چاڼ"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Groups"
+msgstr "ډلې"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Application Actions"
+msgstr "کاريال چارونه"
+
+#. make start action
+#: ../libslab/application-tile.c:369
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>پېلول %s</b>"
+
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
+msgid "Help"
+msgstr "مرسته"
+
+#: ../libslab/application-tile.c:435
+msgid "Upgrade"
+msgstr "پوړجګول"
+
+#: ../libslab/application-tile.c:450
+msgid "Uninstall"
+msgstr "نالګول"
+
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "له خواپورو نه ړنګول"
+
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "خواپورو ته زياتول"
+
+#: ../libslab/application-tile.c:864
+msgid "Remove from Startup Programs"
+msgstr "له پېلنګ کړنلارو نه ړنګول"
+
+#: ../libslab/application-tile.c:866
+msgid "Add to Startup Programs"
+msgstr "پېلنګ کړنلارو ته زياتول"
+
+#: ../libslab/app-shell.c:750
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>پرتلې ونه موندل شوې</b> </span><span>\n"
+"\n"
+" .هېڅ توکو سره تړاو نه لري \"<b>%s</b>\" ستاسو چاڼ</span>"
+
+#: ../libslab/app-shell.c:900
+msgid "Other"
+msgstr "نور"
+
+#: ../libslab/bookmark-agent.c:1060
+msgid "New Spreadsheet"
+msgstr "نوې وېړه پاڼه"
+
+#: ../libslab/bookmark-agent.c:1064
+msgid "New Document"
+msgstr "نوی لاسوند"
+
+#: ../libslab/bookmark-agent.c:1114
+msgid "Home"
+msgstr "کور"
+
+#: ../libslab/bookmark-agent.c:1130
+msgid "File System"
+msgstr "دوتنه غونډال"
+
+#: ../libslab/bookmark-agent.c:1134
+msgid "Network Servers"
+msgstr "ځال پالنګرونه"
+
+#: ../libslab/bookmark-agent.c:1163
+msgid "Search"
+msgstr "پلټون"
+
+#. make open with default action
+#: ../libslab/directory-tile.c:170
+msgid "<b>Open</b>"
+msgstr "<b>پرانيستل</b>"
+
+#. make rename action
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+msgid "Rename..."
+msgstr "...بيانومول"
+
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+msgid "Send To..."
+msgstr "...ته لېږل"
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+msgid "Move to Trash"
+msgstr "دبلي ته لېږل"
+
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
+msgid "Delete"
+msgstr "ړنګول"
+
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr ""
+
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+msgid "If you delete an item, it is permanently lost."
+msgstr ""
+
+#: ../libslab/document-tile.c:189
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>کښې پرانيستل \"%s\"</b>"
+
+#: ../libslab/document-tile.c:201
+msgid "Open with Default Application"
+msgstr "په تلوال کاريال کښې پرانيستل"
+
+#: ../libslab/document-tile.c:212
+msgid "Open in File Manager"
+msgstr "دوتنه سمبالګر کښې پرانيستل"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr "؟"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "%l:%M %p نن"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "%l:%M %p پرون"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %l:%M %p"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%b %d %l:%M %p"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%b %d %Y"
+
+#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:1929
+msgid "No valid bookmark file found in data dirs"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:2130
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr "لپاره ليکنښه ونه موندل شوه URI '%s' د"
+
+#: ../libslab/libslab-bookmarkfile.c:2508
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:2593
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:2972
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr ""
+
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr ""
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "دستي لټول"
+
+#: ../libslab/system-tile.c:128
+#, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>پرانيستل %s</b>"
+
+#: ../libslab/system-tile.c:141
+msgid "Remove from System Items"
+msgstr "له غونډال توکو نه ړنګول"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "د غورنۍ او کاريال تلواله لټونی"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
+msgid "GNOME Main Menu"
+msgstr "د جنومي اره غورنۍ"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "د جنومي ارې غورنۍ فېکټري"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "اره غورنۍ"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "په اړه_"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "غورنۍ پرانيستل_"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr "دوتنه .desktop د دوتنه لټوني لپاره"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "دوتنه .desktop د جنومي-غونډال-څارن لپاره"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr "دوتنه .desktop د ځال ساز توکي لپاره"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop path for the application browser"
+msgstr "يونلور .desktop د کاريال لټوني لپاره"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid "command to uninstall packages"
+msgstr "د بنډلونو نالګولو لپاره بولۍ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid "command to upgrade packages"
+msgstr "د بنډلونو پوړجګولو لپاره بولۍ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "determines the limit of items in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "determines which types of files to display in the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "if true, main menu is more anxious to close"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "lock-down configuration of the file area"
+msgstr "د دوتنه سيمې سازونه کولپول"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "lock-down status for the application browser link"
+msgstr "د کاريال لټوني پېوند لپاره انکړ کولپول"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the search area"
+msgstr "د پلټون سيمې لپاره انکړ کولپول"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "lock-down status for the status area"
+msgstr "د انکړ سيمې لپاره انکړ کولپول"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down status for the system area"
+msgstr "د غونډال سيمې لپاره انکړ کولپول"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the user-specified apps section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the user-specified dirs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the user-specified docs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "set to true if the search area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "set to true if the status area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "set to true if the system area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "غونډال څارن_"
+
+#: ../main-menu/src/hard-drive-status-tile.c:212
+#, c-format
+msgid "%.1fG"
+msgstr "%.1fG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:214
+#, c-format
+msgid "%.1fM"
+msgstr "%.1fM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:216
+#, c-format
+msgid "%.1fK"
+msgstr "%.1fK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:218
+#, c-format
+msgid "%.1fb"
+msgstr "%.1fb"
+
+#: ../main-menu/src/hard-drive-status-tile.c:239
+#, c-format
+msgid "Home: %s Free / %s"
+msgstr "%s / %s کور: پاتې"
+
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "وتون"
+
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "ګلول"
+
+#: ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "پرده کولپول"
+
+#: ../main-menu/src/main-menu-migration.c:161
+msgid "gnome-lockscreen"
+msgstr "جنومي-پرده کولپول"
+
+#: ../main-menu/src/main-menu-ui.c:2161
+msgid "The GNOME Main Menu"
+msgstr "د جنومي اره غورنۍ"
+
+#: ../main-menu/src/network-status-tile.c:91
+msgid "Network: None"
+msgstr "ځال: هېڅ"
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:199
+msgid "Click to configure network"
+msgstr "د ځال سازولو لپاره کېکاږﺉ"
+
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "ځا_ل: هېڅ"
+
+#: ../main-menu/src/network-status-tile.c:207
+#, c-format
+msgid "Connected to: %s"
+msgstr "%s :سره پېوند شوی"
+
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "ځا_ل: بېسيمه"
+
+#: ../main-menu/src/network-status-tile.c:215
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "(%s) ايترنېټ کاروي"
+
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "ځا_ل: سیم پېوسته"
+
+#: ../main-menu/src/network-status-tile.c:320
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "(%s) بېسيمه ايترنېټ"
+
+#: ../main-menu/src/network-status-tile.c:325
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "(%s) سيم پېوسته ايترنېټ"
+
+#: ../main-menu/src/network-status-tile.c:329
+#: ../main-menu/src/network-status-tile.c:339
+msgid "Unknown"
+msgstr "ناپېژندلی"
+
+#: ../main-menu/src/network-status-tile.c:337
+#, c-format
+msgid "%d Mb/s"
+msgstr "م ب/س %d"
+
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "کاريالونه"
+
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "سولګر"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "لاسوندونه"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "خواپوري کاريالونه"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "خواپوري لاسوندونه"
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "خواپوري ځايونه"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "...نور کاريالونه"
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "...نور لاسوندونه"
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "...نور ځايونه"
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "ځايونه"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "اوسني کاريالونه"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "اوسني لاسوندونه"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr ":پلټون"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "انکړ"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "غونډال"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr "اوسنی پېلوونکی خواپورو ته زياتول"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr "اوسنی لاسوند خواپورو ته زياتول"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+msgid "Remove the current document from favorites"
+msgstr "اوسنی لاسوند له خواپورو نه ړنګول"
