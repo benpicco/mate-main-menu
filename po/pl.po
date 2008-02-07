@@ -4,17 +4,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-29 16:44+0200\n"
-"PO-Revision-Date: 2007-06-29 16:11+0100\n"
+"POT-Creation-Date: 2008-02-07 21:29+0100\n"
+"PO-Revision-Date: 2008-02-07 15:34+0100\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
-"Language-Team: Polish <i18n@suse.de>\n"
+"Language-Team: Tomasz Dominikowski (Aviary.pl) <dominikowski@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -98,45 +100,45 @@ msgid "Application Actions"
 msgstr "Czynności aplikacji"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:369
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Uruchom %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Pomoc"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:435
 msgid "Upgrade"
 msgstr "Aktualizuj"
 
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:450
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Usuń z Ulubionych"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Dodaj do Ulubionych"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:864
 msgid "Remove from Startup Programs"
 msgstr "Usuń z programów startowych"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:866
 msgid "Add to Startup Programs"
 msgstr "Dodaj do programów startowych"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -147,75 +149,109 @@ msgstr ""
 "\n"
 " Filtr \"<b>%s</b>\" nie pasuje do żadnych elementów.</span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "Inne"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
 msgstr "Nowy arkusz kalkulacyjny"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Nowy dokument"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
 msgstr "Folder domowy"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "System plików"
 
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
 msgstr "Serwery sieciowe"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Postęp wyszukiwania"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:170
+#, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Otwórz</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Zmień nazwę..."
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
 msgid "Send To..."
 msgstr "Wyślij do..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
 msgstr "Wyrzuć do śmietnika"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Usuń"
 
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "Zmienione %d.%m.%Y"
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Na pewno trwale usunąć \"%s\"?"
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+msgid "If you delete an item, it is permanently lost."
+msgstr "Usunięcie elementu spowoduje jego bezpowrotną utratę."
+
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Otwórz w \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
 msgstr "Otwórz w domyślnej aplikacji"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
 msgstr "Otwórz w menedżerze plików"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%R"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "Dzisiaj o %R"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "Wczoraj o %R"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %R"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%d %b %R"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%d %b %Y"
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
@@ -246,6 +282,7 @@ msgid "Unexpected tag '%s' inside '%s'"
 msgstr "Nieoczekiwany znacznik \"%s\" wewnątrz \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
 msgid "No valid bookmark file found in data dirs"
 msgstr "Nie odnaleziono poprawnego pliku zakładek w katalogach danych"
 
@@ -306,6 +343,7 @@ msgid "<b>Open %s</b>"
 msgstr "<b>Otwórz \"%s\"</b>"
 
 #: ../libslab/system-tile.c:141
+#, c-format
 msgid "Remove from System Items"
 msgstr "Usuń z elementów systemowych"
 
@@ -314,7 +352,7 @@ msgid "Default menu and application browser"
 msgstr "Domyślna przeglądarka menu i aplikacji"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Główne menu GNOME"
 
@@ -580,34 +618,34 @@ msgstr ""
 "ustawione na \"true\", jeśli użytkownik może modyfikować listę \"Ulubionych"
 "\" dokumentów lub dokumentów określonych przez użytkownika"
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "_Dysk twardy"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "Monitor _systemu"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr "%lluG"
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr "%lluM"
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr "%lluK"
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr "%llub"
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s wolne / %s całkowitej pojemności"
+msgid "Home: %s Free / %s"
+msgstr "Foldery domowy: %s wolne / %s"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -627,7 +665,7 @@ msgstr "Zablokuj ekran"
 msgid "gnome-lockscreen"
 msgstr "Zablokuj ekran"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "Główne menu GNOME"
 
@@ -674,6 +712,7 @@ msgstr "Ethernet przewodowy (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
+#, c-format
 msgid "Unknown"
 msgstr "Nieznane"
 
@@ -754,6 +793,24 @@ msgstr "Dodaj bieżący dokument do ulubionych"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Usuń bieżący dokument z ulubionych"
+
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "Zmienione %d.%m.%Y"
+
+#~ msgid "Hard _Drive"
+#~ msgstr "_Dysk twardy"
+
+#~ msgid "%lluG"
+#~ msgstr "%lluG"
+
+#~ msgid "%lluM"
+#~ msgstr "%lluM"
+
+#~ msgid "%lluK"
+#~ msgstr "%lluK"
+
+#~ msgid "%llub"
+#~ msgstr "%llub"
 
 #~ msgid "Control Center"
 #~ msgstr "Centrum sterowania"
