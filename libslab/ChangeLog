@@ -1,3 +1,8 @@
+2008-02-08  Federico Mena Quintero  <federico@novell.com>
+
+	* Makefile.am (libslab_la_LDFLAGS): Specify libtool versioning
+	info.  Copied from libgnomeui/libgnomeui/Makefile.am.
+
 2007-09-16  Andre Klapper  <a9016009@gmx.de>
 
 	* system-tile.c: revert to svn revision 339 (=before

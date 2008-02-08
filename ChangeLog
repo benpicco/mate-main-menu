@@ -1,3 +1,10 @@
+2008-02-08  Federico Mena Quintero  <federico@novell.com>
+
+	* configure.in (libslab_major_version libslab_minor_version
+	libslab_micro_version libslab_interface_age): New m4 defines so
+	that we can have proper versioning with libtool.  This is copied
+	from libgnomeui/configure.in.
+
 2008-01-29  Scott Reeves  <sreeves@novell.com>
 	* libslab/bookmark-agent.c:
 	Fix BNC#349604 Labeled Bookmarks.
