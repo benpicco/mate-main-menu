@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-07 21:29+0100\n"
-"PO-Revision-Date: 2008-02-07 15:34+0100\n"
+"POT-Creation-Date: 2008-02-16 15:02+0100\n"
+"PO-Revision-Date: 2008-02-14 18:05+0100\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
 "Language-Team: Tomasz Dominikowski (Aviary.pl) <dominikowski@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr "Serwery sieciowe"
 
 #: ../libslab/bookmark-agent.c:1163
 msgid "Search"
-msgstr "Postęp wyszukiwania"
+msgstr "Wyszukiwanie"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:170
@@ -196,7 +196,7 @@ msgstr "Wyślij do..."
 #. make move to trash action
 #: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
-msgstr "Wyrzuć do śmietnika"
+msgstr "Przenieś do kosza"
 
 #: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
 #: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
@@ -415,7 +415,7 @@ msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
 msgstr ""
-"Polecenie, które ma być wykonane przy uaktywnieniu opcji menu \"Wyślijdo..."
+"Polecenie, które ma być wykonane przy uaktywnieniu opcji menu \"Wyślij do..."
 "\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
@@ -424,7 +424,7 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Polecenie, które ma być wykonane przy uaktywnieniu opcji menu \"Wyślijdo..."
+"Polecenie, które ma być wykonane przy uaktywnieniu opcji menu \"Wyślij do..."
 "\".  DIRNAME i BASENAME są zastępowane przez odpowiednie składniki "
 "aktywowanej części."
 
@@ -676,7 +676,7 @@ msgstr "Sieć: brak"
 #: ../main-menu/src/network-status-tile.c:94
 #: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
-msgstr "Kliknij, by skonfigurować sieć"
+msgstr "Należy kliknąć, aby skonfigurować sieć"
 
 #: ../main-menu/src/network-status-tile.c:198
 msgid "Networ_k: None"
