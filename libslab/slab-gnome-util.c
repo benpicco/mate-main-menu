@@ -41,8 +41,12 @@ get_slab_gconf_bool (const gchar * key)
 	value = gconf_client_get_bool (gconf_client, key, &error);
 
 	g_object_unref (gconf_client);
+
 	if (error)
+	{
 		g_warning ("error accessing %s [%s]\n", key, error->message);
+		g_error_free (error);
+	}
 
 	return value;
 }
@@ -62,7 +66,10 @@ get_slab_gconf_int (const gchar * key)
 
 	g_object_unref (gconf_client);
 	if (error)
+	{
 		g_warning ("error accessing %s [%s]\n", key, error->message);
+		g_error_free (error);
+	}
 
 	return value;
 }
@@ -82,7 +89,10 @@ get_slab_gconf_string (const gchar * key)
 
 	g_object_unref (gconf_client);
 	if (error)
+	{
 		g_warning ("error accessing %s [%s]\n", key, error->message);
+		g_error_free (error);
+	}
 
 	return value;
 }
@@ -90,22 +100,16 @@ get_slab_gconf_string (const gchar * key)
 void
 free_list_of_strings (GList * string_list)
 {
-	GList * temp;
-
 	g_assert (string_list != NULL);
-	for(temp = string_list; temp; temp = temp->next)
-		g_free (temp->data);
+	g_list_foreach (string_list, (GFunc) g_free, NULL);
 	g_list_free (string_list);
 }
 
 void
 free_slab_gconf_slist_of_strings (GSList * string_list)
 {
-	GSList * temp;
-
 	g_assert (string_list != NULL);
-	for(temp = string_list; temp; temp = temp->next)
-		g_free (temp->data);
+	g_slist_foreach (string_list, (GFunc) g_free, NULL);
 	g_slist_free (string_list);
 }
 
@@ -204,12 +208,11 @@ load_desktop_item_from_unknown (const gchar *id)
 gchar *
 get_package_name_from_desktop_item (GnomeDesktopItem * desktop_item)
 {
-	gchar **argv;
+	gchar *argv[6];
 	gchar *package_name;
 	gint retval;
 	GError *error;
 
-	argv = g_new (gchar *, 6);
 	argv[0] = "rpm";
 	argv[1] = "-qf";
 	argv[2] = "--qf";
@@ -223,14 +226,11 @@ get_package_name_from_desktop_item (GnomeDesktopItem * desktop_item)
 			&retval, &error))
 	{
 		g_warning ("error: [%s]\n", error->message);
+		g_error_free (error);
 		retval = -1;
 	}
 
 	g_free (argv[4]);
-	g_free (argv);
-
-	if (error)
-		g_error_free (error);
 
 	if (!retval)
 		return package_name;

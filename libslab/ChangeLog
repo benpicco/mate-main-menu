@@ -1,3 +1,11 @@
+2008-02-17  Jens Granseuer  <jensgr@gmx.net>
+
+	* slab-gnome-util.c: (get_slab_gconf_bool), (get_slab_gconf_int),
+	(get_slab_gconf_string), (free_list_of_strings),
+	(free_slab_gconf_slist_of_strings),
+	(get_package_name_from_desktop_item): fix a few leaks and don't
+	open-code g_(s)list_foreach
+
 2008-02-08  Federico Mena Quintero  <federico@novell.com>
 
 	* Makefile.am (libslab_la_LDFLAGS): Specify libtool versioning
