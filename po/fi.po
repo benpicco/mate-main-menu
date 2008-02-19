@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-31 17:55+0300\n"
+"POT-Creation-Date: 2008-02-19 08:59+0300\n"
 "PO-Revision-Date: 2006-06-29 11:08+0300\n"
 "Last-Translator: Jyri Palokangas <jmp@netti.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -95,45 +95,45 @@ msgid "Application Actions"
 msgstr "Sovelluksien toiminnot"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:369
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Käynnistä %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ohje"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:435
 msgid "Upgrade"
 msgstr "Päivitä"
 
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:450
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Poista suosikeista"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Lisää suosikkeihin"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:864
 msgid "Remove from Startup Programs"
 msgstr "Poista käynnistys-valikosta"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:866
 msgid "Add to Startup Programs"
 msgstr "Lisää käynnistys-valikkoon"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -144,76 +144,109 @@ msgstr ""
 "\n"
 " Suodattimesi \"<b>%s</b>\" ei vastaa mitään kohtaa.</span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "Muu"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
 msgstr "Uusi laskentataulukko"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Uusi asiakirja"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
 msgstr "Kotikansio"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "Tiedostojärjestelmä"
 
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
 msgstr "Verkkopalvelimet"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Etsi"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:170
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Avaa</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Uudelleen nimeä..."
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
 msgid "Send To..."
 msgstr "Lähetä..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Poista"
 
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "Muokattu %m/%d/%Y"
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Haluatko varmasti poistaa kohteen \"%s\" pysyvästi?"
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+msgid "If you delete an item, it is permanently lost."
+msgstr "Jos poistat kohdan, se hukataan pysyvästi."
+
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Avaa ohjelmalla \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
 msgstr "Avaa oletus sovelluksella"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
 msgstr "Avaa tiedostonhallinnassa"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%H.%M"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "Tänään %H.%M"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "Eilen %H.%M"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %H.%M"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%bkuun %d. %H.%M"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%b %d. %Y"
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
@@ -314,7 +347,7 @@ msgid "Default menu and application browser"
 msgstr "Oletusvalikon ja sovellusten selain"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
@@ -559,34 +592,34 @@ msgid ""
 "\"Favorite\" documents."
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "Kiinto_levy"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "_Järjestelmän tarkkailu"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr "%lluG"
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr "%lluM"
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr "%lluK"
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr "%llub"
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s Vapaana / %s Yhteensä"
+msgid "Home: %s Free / %s"
+msgstr "Kotihakemisto: %s vapaana / %s yhteensä"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -606,7 +639,7 @@ msgstr "Lukitse näyttö"
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
@@ -734,6 +767,24 @@ msgstr "Lisää nykyinen asiakirjan suosikkeihin"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Poista nykyinen asiakirja suosikeista"
+
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "Muokattu %m/%d/%Y"
+
+#~ msgid "Hard _Drive"
+#~ msgstr "Kiinto_levy"
+
+#~ msgid "%lluG"
+#~ msgstr "%lluG"
+
+#~ msgid "%lluM"
+#~ msgstr "%lluM"
+
+#~ msgid "%lluK"
+#~ msgstr "%lluK"
+
+#~ msgid "%llub"
+#~ msgstr "%llub"
 
 #~ msgid "Control Center"
 #~ msgstr "Ohjauskeskus"
