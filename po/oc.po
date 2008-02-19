@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-27 13:28+0100\n"
+"POT-Creation-Date: 2008-02-19 20:23+0100\n"
 "PO-Revision-Date: 2007-12-27 13:34+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -108,13 +108,13 @@ msgstr "Metre a jorn"
 msgid "Uninstall"
 msgstr "Desinstallar"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr ""
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:530
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
@@ -140,27 +140,27 @@ msgstr ""
 msgid "Other"
 msgstr "Autre"
 
-#: ../libslab/bookmark-agent.c:1034
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
 msgstr ""
 
-#: ../libslab/bookmark-agent.c:1038
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Document novèl"
 
-#: ../libslab/bookmark-agent.c:1088
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
 msgstr "Ostal"
 
-#: ../libslab/bookmark-agent.c:1104
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "Sistèma de fichièrs"
 
-#: ../libslab/bookmark-agent.c:1108
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
 msgstr "Servidors ret"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Recercar"
 
@@ -171,49 +171,73 @@ msgid "<b>Open</b>"
 msgstr "<b>Dobrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:234
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Renommar..."
 
 #: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:248 ../libslab/document-tile.c:257
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
 msgid "Send To..."
 msgstr "Enviar a..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:283
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
 msgstr "Desplaçar dins la banasta"
 
 #: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:293 ../libslab/document-tile.c:641
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Suprimir"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:813
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Sètz segur que volètz suprimir per totjon \"%s\" ?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:817
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
 msgid "If you delete an item, it is permanently lost."
 msgstr ""
 
-#: ../libslab/document-tile.c:155
-msgid "Edited %m/%d/%Y"
-msgstr ""
-
-#: ../libslab/document-tile.c:195
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Dobrir amb \"%s\"</b>"
 
-#: ../libslab/document-tile.c:207
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
 msgstr ""
 
-#: ../libslab/document-tile.c:218
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
+msgstr ""
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr ""
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
 msgstr ""
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
@@ -315,7 +339,7 @@ msgid "Default menu and application browser"
 msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2162 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menut principal de GNOME"
 
@@ -537,34 +561,34 @@ msgid ""
 "\"Favorite\" documents."
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "_Disc dur"
-
-#: ../main-menu/src/hard-drive-status-tile.c:345
-#, c-format
-msgid "%lluG"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluM"
+msgid "%.1fG"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluK"
+msgid "%.1fM"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%llub"
+msgid "%.1fK"
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s liure / %s en tot"
+msgid "%.1fb"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:239
+#, c-format
+msgid "Home: %s Free / %s"
+msgstr "Repertòri personal : %s liure / %s"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -584,7 +608,7 @@ msgstr "Varrolhar l'ecran"
 msgid "gnome-lockscreen"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:2163
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "Lo menut principal de GNOME"
 
@@ -713,3 +737,5 @@ msgstr ""
 msgid "Remove the current document from favorites"
 msgstr ""
 
+#~ msgid "Hard _Drive"
+#~ msgstr "_Disc dur"
