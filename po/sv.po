@@ -1,15 +1,15 @@
 # Swedish translation for gnome-main-menu.
-# Copyright (C) 2001-2007 Free Software Foundation, Inc.
+# Copyright (C) 2001-2008 Free Software Foundation, Inc.
 # Mattias Newzella <newzella@linux.nu>, 2001.
 # Gudmund Areskoug <fta@algonet.se>, 2001.
-# Daniel Nylander <po@danielnylander.se>, 2007.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-28 20:19+0100\n"
-"PO-Revision-Date: 2007-12-28 20:20+0100\n"
+"POT-Creation-Date: 2008-02-22 12:42+0100\n"
+"PO-Revision-Date: 2008-02-22 12:44+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -103,14 +103,14 @@ msgid "Uninstall"
 msgstr "Avinstallera"
 
 #: ../libslab/application-tile.c:777
-#: ../libslab/document-tile.c:528
+#: ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Ta bort från favoriter"
 
 #: ../libslab/application-tile.c:779
-#: ../libslab/document-tile.c:530
+#: ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
@@ -139,27 +139,27 @@ msgstr ""
 msgid "Other"
 msgstr "Övriga"
 
-#: ../libslab/bookmark-agent.c:1034
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
 msgstr "Nytt kalkylblad"
 
-#: ../libslab/bookmark-agent.c:1038
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Nytt dokument"
 
-#: ../libslab/bookmark-agent.c:1088
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
 msgstr "Hem"
 
-#: ../libslab/bookmark-agent.c:1104
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "Filsystem"
 
-#: ../libslab/bookmark-agent.c:1108
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
 msgstr "Nätverksservrar"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Sök"
 
@@ -171,57 +171,81 @@ msgstr "<b>Öppna</b>"
 
 #. make rename action
 #: ../libslab/directory-tile.c:189
-#: ../libslab/document-tile.c:234
+#: ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Byt namn..."
 
 #: ../libslab/directory-tile.c:203
 #: ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:248
-#: ../libslab/document-tile.c:257
+#: ../libslab/document-tile.c:242
+#: ../libslab/document-tile.c:251
 msgid "Send To..."
 msgstr "Skicka till..."
 
 #. make move to trash action
 #: ../libslab/directory-tile.c:227
-#: ../libslab/document-tile.c:283
+#: ../libslab/document-tile.c:277
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
 #: ../libslab/directory-tile.c:237
 #: ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:293
-#: ../libslab/document-tile.c:641
+#: ../libslab/document-tile.c:287
+#: ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Ta bort"
 
 #: ../libslab/directory-tile.c:575
-#: ../libslab/document-tile.c:813
+#: ../libslab/document-tile.c:1022
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
 
 #: ../libslab/directory-tile.c:580
-#: ../libslab/document-tile.c:817
+#: ../libslab/document-tile.c:1026
 msgid "If you delete an item, it is permanently lost."
 msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
 
-#: ../libslab/document-tile.c:155
-msgid "Edited %m/%d/%Y"
-msgstr "Redigerade %Y-%m-%d"
-
-#: ../libslab/document-tile.c:195
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Öppna med \"%s\"</b>"
 
-#: ../libslab/document-tile.c:207
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
 msgstr "Öppna med standardprogrammet"
 
-#: ../libslab/document-tile.c:218
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
 msgstr "Öppna i filhanterare"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%H.%M"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "Idag %H.%M"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "Igår %H.%M"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %H.%M"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%d %b %H.%M"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%d %b %Y"
 
 #: ../libslab/libslab-bookmarkfile.c:700
 #: ../libslab/libslab-bookmarkfile.c:777
@@ -326,7 +350,7 @@ msgid "Default menu and application browser"
 msgstr "Standardbläddrare för menyer och program"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2162
+#: ../main-menu/src/main-menu-ui.c:2160
 #: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME-huvudmeny"
@@ -507,34 +531,34 @@ msgstr "ställ in till sant om användaren ska tillåtas att redigera listan öv
 msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
 msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över användardefinierade eller \"Favorit\"-dokument."
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "Hår_ddisk"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "_Systemövervakare"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr "%lluG"
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr "%lluM"
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr "%lluK"
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr "%llub"
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s ledigt / %s totalt"
+msgid "Home: %s Free / %s"
+msgstr "Hem: %s ledigt / %s"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -554,7 +578,7 @@ msgstr "Lås skärmen"
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2163
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "Huvudmenyn i GNOME"
 
@@ -683,6 +707,18 @@ msgstr "Lägg till det aktuella dokumentet till favoriter"
 msgid "Remove the current document from favorites"
 msgstr "Ta bort det aktuella dokumentet från favoriter"
 
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "Redigerade %Y-%m-%d"
+#~ msgid "Hard _Drive"
+#~ msgstr "Hår_ddisk"
+#~ msgid "%lluG"
+#~ msgstr "%lluG"
+#~ msgid "%lluM"
+#~ msgstr "%lluM"
+#~ msgid "%lluK"
+#~ msgstr "%lluK"
+#~ msgid "%llub"
+#~ msgstr "%llub"
 #~ msgid "Control Center"
 #~ msgstr "Kontrollcenter"
 #~ msgid "Close the control-center when a task is activated"
