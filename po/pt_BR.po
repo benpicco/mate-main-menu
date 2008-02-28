@@ -5,14 +5,15 @@
 # Amadeu A. Barbosa Junior <amadeu@gmail.com>, 2007.
 # Pedro de Medeiros <pedrovmm@gmail.com>, 2007.
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2007.
+# Og Maciel <ogmaciel@gnome.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-21 23:12-0300\n"
-"PO-Revision-Date: 2007-07-21 23:21-0300\n"
-"Last-Translator: Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>\n"
+"POT-Creation-Date: 2008-02-27 23:47-0300\n"
+"PO-Revision-Date: 2008-02-27 23:47-0300\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,45 +99,45 @@ msgid "Application Actions"
 msgstr "Ações de Aplicações"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:369
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Iniciar %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ajuda"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:435
 msgid "Upgrade"
 msgstr "Atualizar"
 
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:450
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Remover dos Favoritos"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Adicionar aos Favoritos"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:864
 msgid "Remove from Startup Programs"
 msgstr "Remover dos Programas de Inicialização"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:866
 msgid "Add to Startup Programs"
 msgstr "Adicionar aos Programas de Inicialização"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -148,87 +149,121 @@ msgstr ""
 "\n"
 " Seu filtro \"<b>%s</b>\" não corresponde a nenhum item.</span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "Outros"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
 msgstr "Nova Planilha Eletrônica"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Novo Documento"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
-msgstr "Início"
+msgstr "Pasta pessoal"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "Sistema de Arquivos"
 
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
 msgstr "Servidores de Rede"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Pesquisar"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:170
+#, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Abrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Renomear..."
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
 msgid "Send To..."
 msgstr "Enviar para..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
 msgstr "Mover para a Lixeira"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "Editado em %d/%m/%Y"
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Você tem certeza de que deseja permanentemente excluir \"%s\"?"
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+msgid "If you delete an item, it is permanently lost."
+msgstr "Se você excluir um item, ele será perdido permanentemente."
+
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Abrir com \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
 msgstr "Abrir com a aplicação padrão"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
 msgstr "Abrir no gerenciador de arquivos"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%k:%M"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "Hoje às %k:%M"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "Ontem às %k:%M"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %k:%M"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%d de %b às %k:%M"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%d de %b de %Y"
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Atributo '%s' não esperado para o elemento '%s'"
+msgstr "Atributo \"%s\" não esperado para o elemento \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
 #: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr "Atributo '%s' do elemento '%s' não encontrado"
+msgstr "Atributo \"%s\" do elemento \"%s\" não encontrado"
 
 #: ../libslab/libslab-bookmarkfile.c:1087
 #: ../libslab/libslab-bookmarkfile.c:1152
@@ -236,7 +271,7 @@ msgstr "Atributo '%s' do elemento '%s' não encontrado"
 #: ../libslab/libslab-bookmarkfile.c:1226
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Marca '%s' não esperada, esperando marca '%s'"
+msgstr "Marca \"%s\" não esperada, esperando marca \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:1112
 #: ../libslab/libslab-bookmarkfile.c:1126
@@ -244,16 +279,17 @@ msgstr "Marca '%s' não esperada, esperando marca '%s'"
 #: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Marca '%s' não esperada dentro de '%s'"
+msgstr "Marca \"%s\" não esperada dentro de \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
 msgid "No valid bookmark file found in data dirs"
 msgstr "Nenhum marcador válido localizado nos diretórios de dados"
 
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr "Um marcador para a URI '%s' já existe"
+msgstr "Um marcador para a URI \"%s\" já existe"
 
 #: ../libslab/libslab-bookmarkfile.c:2176
 #: ../libslab/libslab-bookmarkfile.c:2333
@@ -274,29 +310,29 @@ msgstr "Um marcador para a URI '%s' já existe"
 #: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr "Não foi encontrado marcador para a URI '%s'"
+msgstr "Não foi encontrado marcador para a URI \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Tipo MIME não definido no marcador para a URI '%s'"
+msgstr "Tipo MIME não definido no marcador para a URI \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
 msgstr ""
-"Nenhum sinalizador de privacidade foi definido no marcador para a URI '%s'"
+"Nenhum sinalizador de privacidade foi definido no marcador para a URI \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr "Não foi configurado nenhum grupo para o marcador da URI '%s'"
+msgstr "Não foi configurado nenhum grupo para o marcador da URI \"%s\""
 
 #: ../libslab/libslab-bookmarkfile.c:3373
 #: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "Nenhuma aplicação com nome '%s' registrou um marcador para '%s'"
+msgstr "Nenhuma aplicação com nome \"%s\" registrou um marcador para \"%s\""
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -308,6 +344,7 @@ msgid "<b>Open %s</b>"
 msgstr "<b>Abrir com \"%s\"</b>"
 
 #: ../libslab/system-tile.c:141
+#, c-format
 msgid "Remove from System Items"
 msgstr "Remover dos Itens de Sistema"
 
@@ -316,7 +353,7 @@ msgid "Default menu and application browser"
 msgstr "Navegador de aplicações e menu padrão"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menu Principal do GNOME"
 
@@ -588,34 +625,34 @@ msgstr ""
 "definir como verdadeiro para permitir ao usuário modificar a lista de "
 "documentos definidos pelo usuário ou de documentos \"Favoritos\"."
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "_Disco Rígido"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "Monitor do _Sistema"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr "%lluG"
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr "%lluM"
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr "%lluK"
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr "%llub"
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s Livre / %s Total"
+msgid "Home: %s Free / %s"
+msgstr "Pasta pessoal: %s Disponível / %s"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -635,7 +672,7 @@ msgstr "_Travar Tela..."
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "O Menu Principal do GNOME"
 
@@ -682,6 +719,7 @@ msgstr "Ethernet Com Fio (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
+#, c-format
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -762,6 +800,24 @@ msgstr "Adicione o documento atual aos favoritos"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Remova o documento atual dos favoritos"
+
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "Editado em %d/%m/%Y"
+
+#~ msgid "Hard _Drive"
+#~ msgstr "_Disco Rígido"
+
+#~ msgid "%lluG"
+#~ msgstr "%lluG"
+
+#~ msgid "%lluM"
+#~ msgstr "%lluM"
+
+#~ msgid "%lluK"
+#~ msgstr "%lluK"
+
+#~ msgid "%llub"
+#~ msgstr "%llub"
 
 #~ msgid "Control Center"
 #~ msgstr "Centro de Controle"
