@@ -1,0 +1,19 @@
+=============
+Version 0.9.9
+=============
+
+  Released: 2008-03-05
+
+  * Initial public upstream release.
+
+  The gnome-main-menu consists mainly of three utilities.  A gnome-panel applet
+  that is the main interface providing access to your favorite and recently
+  used applications, documents and places. Also access to system status and
+  common actions such as searching and logout / shutdown.
+
+  Access to other applications is made via the application-browser – providing
+  interactive searching of the entire list of your applications, ordered for
+  display by their menu categories.
+
+  These higher level components as well as the shell in the gnome-control-center
+  all use the common pieces provided by the libslab library

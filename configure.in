@@ -1,27 +1,15 @@
-AC_PREREQ(2.54)
+AC_INIT([gnome-main-menu], [0.9.9], [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu])
 
-# These version numbers are for gnome-main-menu and libslab.  The interface/binary age is for libslab.
-# Making releases:
-#   LIBSLAB_VERSION += 1;
-#   LIBSLAB_INTERFACE_AGE += 1;
-#   LIBSLAB_BINARY_AGE += 1;
-# if any functions have been added, set LIBSLAB_INTERFACE_AGE to 0.
-# if backwards compatibility has been broken,
-# set LIBSLAB_BINARY_AGE and LIBSLAB_INTERFACE_AGE to 0.
-#
-m4_define([libslab_major_version], [0])
-m4_define([libslab_minor_version], [9])
-m4_define([libslab_micro_version], [9])
-m4_define([libslab_interface_age], [0])
+# Before making a release, the LT_VERSION string should be modified.
+# The string is of the form C:R:A.
+# - If interfaces have been changed or added, but binary compatibility has
+#   been preserved, change to C+1:0:A+1
+# - If binary compatibility has been broken (eg removed or changed interfaces)
+#   change to C+1:0:0
+# - If the interface is the same as the previous version, change to C:R+1:A
 
-dnl libtool versioning from libgnomeui
-m4_define([libslab_current], [m4_eval(100 * libslab_minor_version + libslab_micro_version - libslab_interface_age)])
-m4_define([libslab_binary_age], [m4_eval(100 * libslab_minor_version + libslab_micro_version)])
-m4_define([libslab_revision], [libslab_interface_age])
-m4_define([libslab_age], [m4_eval(libslab_binary_age - libslab_interface_age)])
-m4_define([libslab_version], [libslab_major_version().libslab_minor_version().libslab_micro_version()])
-
-AC_INIT([gnome-main-menu], [libslab_version], [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu])
+LT_VERSION=0:0:0
+AC_SUBST(LT_VERSION)
 
 AC_CONFIG_SRCDIR([.])
 AC_CONFIG_HEADERS([config.h])
@@ -30,14 +18,6 @@ AM_INIT_AUTOMAKE([1.9 tar-ustar])
 AM_MAINTAINER_MODE
 
 AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
-
-dnl libtool versioning from libgnomeui
-LIBSLAB_CURRENT=libslab_current
-LIBSLAB_REVISION=libslab_revision
-LIBSLAB_AGE=libslab_age
-AC_SUBST(LIBSLAB_CURRENT)
-AC_SUBST(LIBSLAB_REVISION)
-AC_SUBST(LIBSLAB_AGE)
 
 GNOME_COMPILE_WARNINGS
 

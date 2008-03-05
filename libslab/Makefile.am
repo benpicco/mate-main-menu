@@ -74,7 +74,7 @@ endif
 libslab_la_LIBADD = $(LIBSLAB_LIBS)
 
 libslab_la_LDFLAGS = \
-	-version-info $(LIBSLAB_CURRENT):$(LIBSLAB_REVISION):$(LIBSLAB_AGE)
+	-version-info $(LT_VERSION)
 
 if ENABLE_DYNAMIC_LIBSLAB
 pkgconfigdir = $(libdir)/pkgconfig

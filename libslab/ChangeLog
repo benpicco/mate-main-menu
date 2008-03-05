@@ -1,3 +1,5 @@
+==================== 0.9.9 ====================
+
 2008-02-17  Jens Granseuer  <jensgr@gmx.net>
 
 	* slab-gnome-util.c: (get_slab_gconf_bool), (get_slab_gconf_int),
