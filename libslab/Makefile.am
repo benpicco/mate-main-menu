@@ -69,12 +69,11 @@ libslab_la_SOURCES =				\
 if ENABLE_DYNAMIC_LIBSLAB
 libslab_includedir = $(includedir)/slab
 libslab_include_HEADERS = $(HEADER_FILES)
+libslab_la_LDFLAGS = \
+	-version-info $(LT_VERSION)
 endif
 
 libslab_la_LIBADD = $(LIBSLAB_LIBS)
-
-libslab_la_LDFLAGS = \
-	-version-info $(LT_VERSION)
 
 if ENABLE_DYNAMIC_LIBSLAB
 pkgconfigdir = $(libdir)/pkgconfig
