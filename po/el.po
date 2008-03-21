@@ -1,21 +1,27 @@
+# translation of el.po to Greek
 # Greek message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002 SuSE Linux AG.
 # Copyright (C) 2001 SuSE GmbH.
-# Bill Giannakopoulos <BillG@hellug.gr>, 2001.
 #
+# Bill Giannakopoulos <BillG@hellug.gr>, 2001.
+# Giannis Katsampirhs <giannis1_86@hotmail.com>, 2008.
+# Kostas Papadimas <pkst@gnome.org>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 03:34+0100\n"
-"PO-Revision-Date: 2007-11-03 12:57+0200\n"
-"Last-Translator: Bill Giannakopoulos <BillG@hellug.gr>\n"
-"Language-Team: Greek <i18n@suse.de>\n"
+"POT-Creation-Date: 2008-03-21 10:22+0200\n"
+"PO-Revision-Date: 2008-03-21 10:24+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -25,42 +31,48 @@ msgstr "Περιηγητής Εφαρμογών"
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
 msgstr ""
+"Έξοδος από το κέλυφος στην προσθήκη ή στην αφαίρεση της εκτελεσμένης "
+"ενέργειας"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "Τερματισμός του κελύφους στην εκτελεσμένη ενέργεια βοήθειας"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "Τερματισμός του κελύφους στην εκτελεσμένη ενέργεια έναρξης"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
+msgstr "Τερματισμός του κελύφους στην εκτελεσμένη ενέργεια ενημέρωσης ή απομάκρυνσης"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr ""
+msgstr "Όνομα για τα τρέχοντα αρχεία .desktop"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "Δείχνει αν θα τερματίζεται το κέλυφος όταν μια ενέργεια βοήθειας εκτελείται"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
+msgstr "Δείχνει αν θα τερματίζεται το κέλυφος όταν μία αρχική ενέργεια εκτελείται"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
 msgstr ""
+"Δείχνει αν θα τερματίζεται το κέλυφος όταν μια ενέργεια προσθήκης ή "
+"αφαίρεσης εκτελείται"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
 msgstr ""
+"Δείχνει αν θα τερματίζεται το κέλυφος όταν μια ενέργεια ενημέρωσης ή "
+"απομάκρυνσης εκτελείται"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
@@ -71,10 +83,12 @@ msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
 msgstr ""
+"Ο μέγιστος αριθμός των εφαρμογών που θα εμφανίζονται στην κατηγορία Νέες "
+"εφαρμογές"
 
 #: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
-msgstr "Νέες Εφαρμογές"
+msgstr "Νέες εφαρμογές"
 
 #: ../application-browser/src/application-browser.c:90
 msgid "Filter"
@@ -86,138 +100,174 @@ msgstr "Ομάδες"
 
 #: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
-msgstr "Ενέργειες Εφαρμογής"
+msgstr "Ενέργειες εφαρμογής"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:369
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Έναρξη %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:435
 msgid "Upgrade"
 msgstr "Αναβάθμιση"
 
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:450
 msgid "Uninstall"
 msgstr "Απεγκατάσταση"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
-msgstr "Αφαίρεση από τα Αγαπημένα"
+msgstr "Αφαίρεση από τα αγαπημένα"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
-msgstr "Προσθήκη στα Αγαπημένα"
+msgstr "Προσθήκη στα αγαπημένα"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:864
 msgid "Remove from Startup Programs"
 msgstr "Απενεργοποίηση εκτέλεσης κατά την εκκίνηση του συστήματος"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:866
 msgid "Add to Startup Programs"
 msgstr "Εκτέλεση κατά την εκκίνηση του συστήματος"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr "<span·size=\"large\"><b>Δεν βρέθηκαν αποτελέσματα.</b>·</span><span>\n"
+msgstr ""
+"<span·size=\"large\"><b>Δεν βρέθηκαν αποτελέσματα.</b>·</span><span>\n"
 "\n"
-"·Το φίλτρο που ορίσατε·\"<b>%s</b>\" δεν ταιριάζει με κανένα αντικείμενο.</span>"
+"·Το φίλτρο που ορίσατε·\"<b>%s</b>\" δεν ταιριάζει με κανένα αντικείμενο.</"
+"span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "Άλλο"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1060
 msgid "New Spreadsheet"
-msgstr "Νέο Λογιστικό Φύλλο"
+msgstr "Νέο λογιστικό φύλλο"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1064
 msgid "New Document"
 msgstr "Νέο Έγγραφο Κειμένου"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1114
 msgid "Home"
-msgstr "Αρχικός Κατάλογος"
+msgstr "Αρχικός κατάλογος"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1130
 msgid "File System"
 msgstr "Σύστημα Αρχείων"
 
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1134
 msgid "Network Servers"
-msgstr "Διακομιστές Δικτύου"
+msgstr "Διακομιστές δικτύου"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1163
 msgid "Search"
 msgstr "Αναζήτηση"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:170
+#, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Άνοιγμα</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
 msgid "Rename..."
 msgstr "Μετονομασία..."
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
 msgid "Send To..."
-msgstr "Αποστολή Σε..."
+msgstr "Αποστολή σε..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
 msgid "Move to Trash"
-msgstr "Μετακίνηση στα Απορρίματα"
+msgstr "Μετακίνηση στα απορρίμματα"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "Τροποποιήθηκε %m/%d/%Y"
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Είστε βέβαιος ότι θέλετε να διαγράψετε μόνιμα το \"%s\";"
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+msgid "If you delete an item, it is permanently lost."
+msgstr "Αν διαγράψετε ένα αντικείμενο, αυτό χάνεται μόνιμα."
+
+#: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Άνοιγμα με \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
-msgstr "Άνοιγμα με την Προκαθορισμένη Εφαρμογή"
+msgstr "Άνοιγμα με την προκαθορισμένη εφαρμογή"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:212
 msgid "Open in File Manager"
-msgstr "Άνοιγμα στον Διαχειριστή Αρχείων"
+msgstr "Άνοιγμα στον διαχειριστή αρχείων"
+
+#: ../libslab/document-tile.c:633
+msgid "?"
+msgstr ";"
+
+#: ../libslab/document-tile.c:640
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#: ../libslab/document-tile.c:648
+msgid "Today %l:%M %p"
+msgstr "Σήμερα %l:%M %p"
+
+#: ../libslab/document-tile.c:658
+msgid "Yesterday %l:%M %p"
+msgstr "Χθες %l:%M %p"
+
+#: ../libslab/document-tile.c:670
+msgid "%a %l:%M %p"
+msgstr "%a %l:%M %p"
+
+#: ../libslab/document-tile.c:678
+msgid "%b %d %l:%M %p"
+msgstr "%b %d %l:%M %p"
+
+#: ../libslab/document-tile.c:680
+msgid "%b %d %Y"
+msgstr "%b %d %Y"
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr ""
+msgstr "Μη προβλεπόμενο χαρακτηριστικό '%s' για το στοιχείο '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
 #: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr ""
+msgstr "Δεν βρέθηκε το χαρακτηριστικό '%s' του στοιχείου '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:1087
 #: ../libslab/libslab-bookmarkfile.c:1152
@@ -225,7 +275,7 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:1226
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr ""
+msgstr "μη προβλεπόμενη ετικέτα '%s', αναμενόταν η ετικέτα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:1112
 #: ../libslab/libslab-bookmarkfile.c:1126
@@ -233,16 +283,17 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr ""
+msgstr "Μη προβλεπόμενη ετικέτα '%s' στο '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
 msgid "No valid bookmark file found in data dirs"
-msgstr ""
+msgstr "Βρέθηκε μη έγκυρο αρχείο σελιδοδείκτη στους καταλόγους των δεδομένων"
 
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr ""
+msgstr "Υπάρχει ήδη ένας σελιδοδείκτης για την ιστοσελίδα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:2176
 #: ../libslab/libslab-bookmarkfile.c:2333
@@ -263,28 +314,32 @@ msgstr ""
 #: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr ""
+msgstr "Δεν βρέθηκε σελιδοδείκτης για την ιστοσελίδα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr ""
+msgstr "Κανένας τύπος mime δεν καθορίστηκε στο σελιδοδείκτη για την ιστοσελίδα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
 msgstr ""
+"Καμιά προσωπική σημαία δεν έχει καθοριστεί στο σελιδοδείκτη για την "
+"ιστοσελίδα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr ""
+msgstr "Δεν καθορίστηκαν ομάδες στο σελιδοδείκτη για την ιστοσελίδα '%s'"
 
 #: ../libslab/libslab-bookmarkfile.c:3373
 #: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
 msgstr ""
+"Καμία εφαρμογή με όνομα '%s' δεν ενημέρωσε ένα σελιδοδείκτη για την "
+"ιστοσελίδα '%s'"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -296,6 +351,7 @@ msgid "<b>Open %s</b>"
 msgstr "<b>Άνοιγμα %s</b>"
 
 #: ../libslab/system-tile.c:141
+#, c-format
 msgid "Remove from System Items"
 msgstr "Αφαίρεση από τις Εφαρμογές Συστήματος"
 
@@ -304,17 +360,17 @@ msgid "Default menu and application browser"
 msgstr "Προκαθορισμένο μενού και περιηγητής εφαρμογών"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
-msgstr "Κεντρικό Μενού GNOME"
+msgstr "Κεντρικό μενού GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr ""
+msgstr "Εργοστάσιο κύριου μενού του Gnome"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
-msgstr "Κεντρικό Μενου"
+msgstr "Κεντρικό μενού"
 
 #: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
@@ -326,29 +382,31 @@ msgstr "Άν_οιγμα του μενού"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
-msgstr ""
+msgstr "Το αρχείο .desktop για το εργαλείο YaST2 των συσκευών δικτύου"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr ""
+msgstr "Το αρχείο .desktop για τον περιηγητή αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
-msgstr ""
+msgstr "Το αρχείο .desktop για την παρακολούθηση συστήματος του Gnome"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
-msgstr ""
+msgstr "Το αρχείο .desktop για το εργαλείο ρυθμίσεων δικτύου"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop path for the application browser"
-msgstr ""
+msgstr "Το μονοπάτι .desktop για τον περιηγητή εφαρμογών"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
+"Αυτή είναι η εντολή εκτέλεσης όταν το αντικείμενο μενού \"Άνοιγμα στο "
+"διαχειριστή αρχείων\" είναι ενεργοποιημένο."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
@@ -356,12 +414,17 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
+"Αυτή είναι η εντολή εκτέλεσης όταν το αντικείμενο μενού \"Άνοιγμα στο "
+"διαχειριστή αρχείων\" είναι ενεργοποιημένο. Η σελίδα αρχείων αντικαθίσταται "
+"με μια σελίδα σχετική με το όνομα του καταλόγου του ενεργοποιημένου αρχείου."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
 msgstr ""
+"Αυτή είναι η εντολή εκτέλεσης όταν το αντικείμενο μενού \"Αποστολή σε\" "
+"είναι ενεργοποιημένο."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -369,36 +432,46 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
+"Αυτή είναι η εντολή εκτέλεσης όταν το αντικείμενο μενού \"Αποστολή σε\" "
+"είναι ενεργοποιημένο. Το όνομα καταλόγου και το βασικό όνομα αντικαθίστανται "
+"με σχετικά περιεχόμενα της ενεργοποιημένης παράθεσης."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the search entry is used."
-msgstr ""
+msgstr "Αυτή είναι η εντολή εκτέλεσης όταν η είσοδος αναζήτησης χρησιμοποιείται."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
+"Αυτή είναι η εντολή εκτέλεσης όταν η είσοδος αναζήτησης χρησιμοποιείται. Το "
+"αλφαριθμητικό αναζήτησης αντικαθίσταται με το κείμενο αναζήτησης ποιυ "
+"εισάγεται."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid "command to uninstall packages"
-msgstr ""
+msgstr "εντολή για απομάκρυνση πακέτων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
+"εντολή για απομάκρυνση πακέτων, το όνομα του πακέτου αντικαθίσταται με το "
+"όνομα του πακέτου στην εντολή"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid "command to upgrade packages"
-msgstr ""
+msgstr "εντολή για ενημέρωση πακέτων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
+"εντολή για ενημέρωση πακέτων, το όνομα πακέτου αντικαθίσταται με το όνομα "
+"του πακέτου στην εντολή"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
@@ -410,16 +483,26 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
+"περιέχει τη λίστα (με μη συγκεκριμένη σειρά) των προσβάσιμων πινάκων αρχείων "
+"προς εμφάνιση στην περιοχή αρχείων. πιθανές τιμές: 0 - προβολή του "
+"καθορισμένου από το χρήστη ή \"Αγαπημένο\" πίνακα εφαρμογών, 1 - προβολή του "
+"πίνακα πρόσφατα χρησιμοποιημένων εφαρμογών, 2 - 3 - προβολή του πίνακα "
+"πρόσφατα χρησιμοποιημένων αρχείων, 4 -  προβολή του καθορισμένου από το "
+"χρήστη των \"Αγαπημένο\" καταλόγων ή  πίνακα \"Τοποθεσίες\" και, 5 - προβολή "
+"των πρόσφατα χρησιμοποιημένων καταλόγων ή του πίνακα \"Τοποθεσίες\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
+"περιέχει τη λίστα (συμπεριλαμβανομένων των αρχείων .desktop) που θα εξαχθεί "
+"από τις λίστες \"Πρόσφατα χρησιμοποιημένες εφαρμογές\" και \"Πρόσφατα αρχεία"
+"\""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid "determines the limit of items in the file-area."
-msgstr ""
+msgstr "καθορίζει το όριο των αντικειμένων στην περιοχή αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid ""
@@ -429,131 +512,158 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
+"καθορίζει το όριο των αντικειμένων στην περιοχή αρχείων. Ο αριθμός των "
+"αγαπημένων αντικειμένων είναι απεριόριστος. Το όριο εφαρμόζεται στον αριθμό "
+"των πρόσφατων αντικειμένων, π.χ. ο αριθμός των πρόσφατων αντικειμένων που θα "
+"εμφανιστούν είναι περιορισμένος στο μέγιστο αριθμό αντικειμένων - ο αριθμός "
+"των αγαπημένων αντικειμένων. Αν ο αριθμός των αγαπημένων αντικειμένων "
+"ξεπερνά το μέγιστο αριθμό αντικειμένων - τα ελάχιστα πρόσφατα αντικείμενα "
+"που αυτό το όριο παραβλέπεται."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
 msgstr ""
+"καθορίζει τον ελάχιστο αριθμό των αντικειμένων στον τομέα \"recent\" της "
+"περιοχής αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
-msgstr ""
+msgstr "καθορίζει ποιοι τύποι αρχείων θα εμφανιστούν στην περιοχή των αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "if true, main menu is more anxious to close"
-msgstr ""
+msgstr "αν είναι αληθής, το κύριο μενού είναι πιο δύκολο να τερματίσει"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
 msgstr ""
+"αν είναι αληθής, το κύριο μενού θα τερματιστεί κάτω από αυτές τις πρόσθετες "
+"συνθήκες: η παράθεση και η αναζήτηση είναι ενεργοποιημένες"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid "lock-down configuration of the file area"
-msgstr ""
+msgstr "Ρυθμίσεις κλειδώματος της περιοχής αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down status for the application browser link"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για το σύνδεσμο του περιηγητή εφαρμογών"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the search area"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για την περιοχή αναζήτησης"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the status area"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για την περιοχή κατάστασης"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the system area"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για την περιοχή συστήματος"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the user-specified apps section"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για τον καθορισμένο από το χρήστη τομέα εφαρμογών "
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified dirs section"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για τον καθορισμένο από το χρήστη τομέα καταλόγων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified docs section"
-msgstr ""
+msgstr "Κατάσταση κλειδώματος για τον καθορισμένο από το χρήστη τομέα αρχείων"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr ""
+msgstr "πιθανές τιμές 0 [Εφαρμογές], 1[Αρχεία], 2[Τοποθεσίες]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
+"καθορισμός ως αληθής αν ο σύνδεσμος του περιηγητή της εφαρμογής θα είναι "
+"ορατός και ενεργοποιημένος."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid "set to true if the search area should be visible and active."
 msgstr ""
+"καθορισμός ως αληθής αν η περιοχή αναζήτησης θα είναι ορατή και "
+"ενεργοποιημένη."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the status area should be visible and active."
 msgstr ""
+"καθορισμός ως αληθής αν η περιοχή κατάστασης θα είναι ορατή και "
+"ενεργοποιημένη."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the system area should be visible and active."
 msgstr ""
+"καθορισμός ως αληθής αν η περιοχή συστήματος θα είναι ορατή και "
+"ενεργοποιημένη."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
+"καθορισμός ως αληθής αν ο χρήστης έχει την άδεια να μεταβάλλει τη λίστα των "
+"αντικειμένων του συστήματος."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
+"καθορισμός ως αληθής αν ο χρήστης έχει την άδεια να μεταβάλλει τη λίστα των "
+"καθορισμένων από τον χρήστη εφαρμογών \"Αγαπημένα\""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
+"καθορισμός ως αληθής αν ο χρήστης έχει την άδεια να μεταβάλλει τη λίστα των "
+"καθορισμένων από τον χρήστη ή τα \"Αγαπημένα\" ή τις \"Τοποθεσίες\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
 msgstr ""
+"καθορισμός ως αληθής αν ο χρήστης έχει την άδεια να μεταβάλλει τη λίστα των "
+"καθορισμένων από τον χρήστη των αρχείων \"Αγαπημένα\""
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "Σκληρός _Δίσκος"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "Παρακολούθηση _συστήματος"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr ""
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr ""
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr ""
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr ""
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s Ελεύθερα / %s Σύνολο"
+msgid "Home: %s Free / %s"
+msgstr "Αρχικός κατάλογος: %s Ελεύθερα / %s"
 
 #: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
@@ -571,9 +681,9 @@ msgstr "Κλείδωμα Οθόνης"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
-msgstr ""
+msgstr "Οθόνη κλειδώματος του Gnome"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2161
 msgid "The GNOME Main Menu"
 msgstr "Το Κεντρικό Μενού του GNOME"
 
@@ -620,13 +730,14 @@ msgstr "Ενσύρματο Δίκτυο (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
+#, c-format
 msgid "Unknown"
 msgstr "Άγνωστο"
 
 #: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
-msgstr ""
+msgstr "%d Mb/s"
 
 #: ../main-menu/src/slab-window.glade.h:1
 msgid "Applications"
@@ -643,24 +754,24 @@ msgstr "Έγγραφα"
 #  progress stages
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
-msgstr "Αγαπημένες Εφαρμογές"
+msgstr "Αγαπημένες εφαρμογές"
 
 #: ../main-menu/src/slab-window.glade.h:5
 msgid "Favorite Documents"
-msgstr "Αγαπημένα Έγγραφα"
+msgstr "Αγαπημένα έγγραφα"
 
 #  progress stages
 #: ../main-menu/src/slab-window.glade.h:6
 msgid "Favorite Places"
-msgstr "Αγαπημένες Τοποθεσίες"
+msgstr "Αγαπημένες τοποθεσίες"
 
 #: ../main-menu/src/slab-window.glade.h:8
 msgid "More Applications..."
-msgstr "Περισσότερες Εφαρμογές..."
+msgstr "Περισσότερες εφαρμογές..."
 
 #: ../main-menu/src/slab-window.glade.h:9
 msgid "More Documents..."
-msgstr "Περισσότερα Έγγραφα..."
+msgstr "Περισσότερα έγγραφα..."
 
 #: ../main-menu/src/slab-window.glade.h:10
 msgid "More Places..."
@@ -672,11 +783,11 @@ msgstr "Τοποθεσίες"
 
 #: ../main-menu/src/slab-window.glade.h:12
 msgid "Recent Applications"
-msgstr "Πρόσφατες Εφαρμογές"
+msgstr "Πρόσφατες εφαρμογές"
 
 #: ../main-menu/src/slab-window.glade.h:13
 msgid "Recent Documents"
-msgstr "Πρόσφατα Έγγραφα"
+msgstr "Πρόσφατα έγγραφα"
 
 #: ../main-menu/src/slab-window.glade.h:14
 msgid "Search:"
@@ -696,34 +807,10 @@ msgstr "Προσθήκη του τρέχοντος εκκινητή στα αγ�
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Add the current document to favorites"
-msgstr "Προσθήκη του τρέχοντος εγγραφού στα αγαπημένα"
+msgstr "Προσθήκη του τρέχοντος έγγραφου στα αγαπημένα"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:134
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Αφαίρεση του παρόντος εγγράφου από τα αγαπημένα"
 
-#, fuzzy
-#~ msgid "Control Center"
-#~ msgstr "YaST2 Κέντρο Ελέγχου"
-
-#, fuzzy
-#~ msgid "Common Tasks"
-#~ msgstr "Κοινόχρηστο Όνομα"
-
-#, fuzzy
-#~ msgid "Help Unavailable"
-#~ msgstr "Μη-διαθέσιμη"
-
-#  progress stages
-#, fuzzy
-#~ msgid ".desktop files for \"Favorite Applications\""
-#~ msgstr "Αποθήκευση επιλογών"
-
-#, fuzzy
-#~ msgid "Install Software"
-#~ msgstr "Εγκατάσταση firmware"
-
-#, fuzzy
-#~ msgid "Log Out ..."
-#~ msgstr "Αποσύνδεση"
