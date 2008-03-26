@@ -56,7 +56,8 @@
 #define USER_DOCS_STORE_FILE_NAME "documents.xbel"
 #define USER_DIRS_STORE_FILE_NAME "places.xbel"
 #define SYSTEM_STORE_FILE_NAME    "system-items.xbel"
-#define CALC_TEMPLATE_FILE_NAME   "empty.ods"
+#define CALC_TEMPLATE_FILE_NAME   "empty.ots"
+#define WRITER_TEMPLATE_FILE_NAME "empty.ott"
 
 #define GTK_BOOKMARKS_FILE ".gtk-bookmarks"
 
@@ -1057,11 +1058,13 @@ create_doc_item (BookmarkAgent *this, const gchar *uri)
 		dir = g_build_filename (g_get_home_dir (), "Documents", NULL);
 
 		if (! strcmp (uri, "BLANK_SPREADSHEET")) {
-			file = g_strconcat (_("New Spreadsheet"), ".ods", NULL);
+			file = g_strconcat (_("New Spreadsheet"), ".ots", NULL);
 			template = find_package_data_file (CALC_TEMPLATE_FILE_NAME);
 		}
-		else
-			file = g_strconcat (_("New Document"), ".odt", NULL);
+		else {
+			file = g_strconcat (_("New Document"), ".ott", NULL);
+			template = find_package_data_file (WRITER_TEMPLATE_FILE_NAME);
+		}
 
 		path = g_build_filename (dir, file, NULL);
 

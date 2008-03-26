@@ -1,3 +1,11 @@
+2008-03-26  Scott Reeves  <sreeves@novell.com>
+	* main-menu/etc/empty.ods
+	* main-menu/etc/empty.ots
+	* main-menu/etc/empty.ott
+	* main-menu/etc/Makefile.am
+	* libslab/bookmark-agent.c:
+	Fix for BNC#366732 - use better template files.
+
 2008-03-05  Scott Reeves  <sreeves@novell.com>
 	* configure.in: post release bump to 0.9.10
 
