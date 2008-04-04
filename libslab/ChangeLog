@@ -1,3 +1,27 @@
+2008-04-04  Federico Mena Quintero  <federico@novell.com>
+
+	* libslab-utils.c (libslab_checkpoint_init): New public function;
+	initializes a checkpoint file.
+	(libslab_checkpoint): New public function to add checkpoints to
+	the code for profiling purposes.
+	(libslab_thumbnail_factory_preinit): New public function to queue
+	the initialization of the thumbnail factory in an idle handler.
+	With this we can create the thumbnail factory between the applet
+	hitting the main loop initially and the user activating the
+	Computer menu.
+	(libslab_thumbnail_factory_get): New public function.
+
+	* bookmark-agent.c (bookmark_agent_update_from_bookmark_file): New
+	public function; allows the caller to update a BookmarkAgent
+	explicitly from a given GBookmarkFile.  This makes the
+	BookmarkAgent not monitor the recent-files store on its own, to
+	give more control to the caller.
+
+	* document-tile.c (document_tile_new): Don't call load_image()
+	here; it already gets done in document_tile_style_set().
+	(load_image): Use libslab_thumbnail_factory_get() to use the
+	global thumbnail factory, instead of one of our own.
+
 2008-03-10  Rodrigo Moya <rodrigo@gnome-db.org>
 
 	* Makefile.am: only set libtool versioning when building dynamic lib.

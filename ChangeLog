@@ -1,3 +1,42 @@
+2008-04-04  Federico Mena Quintero  <federico@novell.com>
+
+	* main-menu/src/main-menu-ui.c: Monitor the recent-files store on
+	our own, and update the BookmarkAgents for recent-docs and
+	recent-apps from a single GBookmarkFile.  This prevents each agent
+	from loading the recent-files on its own.
+
+	* main-menu/src/main-menu-ui.c: Don't load the recent-files store
+	at startup, but do it in an idle.  This makes the applet start up
+	more quickly, and then we can effectively use the idle time
+	between the applet hitting the main loop initially and the user
+	activating the Computer menu.
+
+	* main-menu/src/main-menu-ui.c: Throttle updates to the
+	recent-files store if it changes frequently, to avoid CPU churn
+	when an app updates ~/.recently-used.xbel many times in rapid
+	succession.
+
+	* main-menu/src/main-menu.c (main_menu_applet_init): Preinit the
+	global thumbnail factory here; it will get loaded in an idle
+	handler after the applet hits the main loop.
+
+2008-04-04  Magnus Boman  <captain.magnus@gmail.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=350662 - Improve
+	startup time by loading tile tables only once.
+
+	* main-menu/src/main-menu-ui.c (apply_lockdown_settings): Reload
+	the recent-documents table here.
+	(main_menu_ui_new): Don't call update_limits() here; it gets
+	called already in apply_lockdown_settings().
+
+	* main-menu/src/tile-table.c (tile_table_new): Don't reload the
+	tile table immediately here.
+
+2008-04-04  Scott Reeves  <sreeves@novell.com>
+
+	* Update to NetworkManager 0.7 APIs.
+
 2008-03-26  Scott Reeves  <sreeves@novell.com>
 	* main-menu/etc/empty.ods
 	* main-menu/etc/empty.ots
