@@ -129,9 +129,11 @@ tile_table_reload (TileTable *this)
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_ITEMS_PROP, & items, NULL);
 
 	for (i = 0, n_tiles = 0; (priv->limit < 0 || n_tiles < priv->limit) && items && items [i]; ++i) {
+		libslab_checkpoint ("tile_table_reload(): trying to create tile for %s", items[i]->uri);
 		tile = GTK_WIDGET (priv->create_tile_func (items [i], priv->tile_func_data));
 
 		if (tile) {
+			libslab_checkpoint ("tile_table_reload(): success!");
 			tiles = g_list_append (tiles, tile);
 			++n_tiles;
 		}
