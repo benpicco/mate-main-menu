@@ -22,6 +22,7 @@
 
 #include "tile.h"
 #include "nameplate-tile.h"
+#include "libslab-utils.h"
 
 G_DEFINE_TYPE (TileTable, tile_table, GTK_TYPE_TABLE)
 
@@ -135,10 +136,14 @@ tile_table_reload (TileTable *this)
 		}
 	}
 
+	libslab_checkpoint ("tile_table_reload(): created %d tiles", n_tiles);
+
 	for (node = priv->tiles; node; node = node->next)
 		gtk_widget_destroy (GTK_WIDGET (node->data));
 
 	g_list_free (priv->tiles);
+
+	libslab_checkpoint ("tile_table_reload(): destroyed old tiles");
 
 	priv->tiles = NULL;
 
@@ -163,6 +168,8 @@ tile_table_reload (TileTable *this)
 	}
 
 	g_list_free (tiles);
+
+	libslab_checkpoint ("tile_table_reload(): updating bins");
 
 	update_bins (this, priv->tiles);
 
