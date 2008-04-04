@@ -310,8 +310,6 @@ main_menu_ui_new (PanelApplet *applet)
 
 	libslab_checkpoint ("main_menu_ui_new(): bind_beagle_search_key");
 	bind_beagle_search_key  (this);
-	libslab_checkpoint ("main_menu_ui_new(): update_limits");
-	update_limits           (this);
 	libslab_checkpoint ("main_menu_ui_new(): select_page");
 	select_page             (this);
 	libslab_checkpoint ("main_menu_ui_new(): apply_lockdown_settings");
@@ -1554,6 +1552,7 @@ apply_lockdown_settings (MainMenuUI *this)
 	tile_table_reload (priv->file_tables [USER_APPS_TABLE]);
 	tile_table_reload (priv->file_tables [RCNT_APPS_TABLE]);
 	tile_table_reload (priv->file_tables [USER_DOCS_TABLE]);
+	tile_table_reload (priv->file_tables [RCNT_DOCS_TABLE]);
 	tile_table_reload (priv->file_tables [USER_DIRS_TABLE]);
 
 	update_limits (this);

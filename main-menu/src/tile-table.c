@@ -101,8 +101,6 @@ tile_table_new (BookmarkAgent *agent, gint limit, gint n_cols,
 	priv->create_item_func = uti_func;
 	priv->item_func_data   = data_uti;
 
-	tile_table_reload (TILE_TABLE (this));
-
 	g_signal_connect (
 		G_OBJECT (priv->agent), "notify::" BOOKMARK_AGENT_ITEMS_PROP,
 		G_CALLBACK (agent_notify_cb), this);
