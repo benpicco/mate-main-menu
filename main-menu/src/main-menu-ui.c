@@ -277,25 +277,44 @@ main_menu_ui_new (PanelApplet *applet)
 	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
 	g_free (glade_xml_path);
 
+	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
 	create_panel_button      (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_slab_window");
 	create_slab_window       (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_search_section");
 	create_search_section    (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_file_section");
 	create_file_section      (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_user_apps_section");
 	create_user_apps_section (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_rct_apps_section");
 	create_rct_apps_section  (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_user_docs_section");
 	create_user_docs_section (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_rct_docs_section");
 	create_rct_docs_section  (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_user_dirs_section");
 	create_user_dirs_section (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_system_section");
 	create_system_section    (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_status_section");
 	create_status_section    (this);
+	libslab_checkpoint ("main_menu_ui_new(): create_more_buttons");
 	create_more_buttons      (this);
+	libslab_checkpoint ("main_menu_ui_new(): setup_file_tables");
 	setup_file_tables        (this);
+	libslab_checkpoint ("main_menu_ui_new(): setup_lock_down");
 	setup_lock_down          (this);
 
+	libslab_checkpoint ("main_menu_ui_new(): bind_beagle_search_key");
 	bind_beagle_search_key  (this);
+	libslab_checkpoint ("main_menu_ui_new(): update_limits");
 	update_limits           (this);
+	libslab_checkpoint ("main_menu_ui_new(): select_page");
 	select_page             (this);
+	libslab_checkpoint ("main_menu_ui_new(): apply_lockdown_settings");
 	apply_lockdown_settings (this);
 
 	return this;
