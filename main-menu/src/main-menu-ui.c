@@ -1509,6 +1509,7 @@ apply_lockdown_settings (MainMenuUI *this)
 	GList *node;
 	gint   i;
 
+	libslab_checkpoint ("apply_lockdown_settings(): start");
 
 	more_link_visible   = GPOINTER_TO_INT (libslab_get_gconf_value (MORE_LINK_VIS_GCONF_KEY));
 	status_area_visible = GPOINTER_TO_INT (libslab_get_gconf_value (STATUS_VIS_GCONF_KEY));
@@ -1548,14 +1549,28 @@ apply_lockdown_settings (MainMenuUI *this)
 	for (i = 0; i < 5; ++i)
 		set_table_section_visible (this, priv->file_tables [i]);
 
+	libslab_checkpoint ("apply_lockdown_settings(): loading sys_table");
 	tile_table_reload (priv->sys_table);
+
+	libslab_checkpoint ("apply_lockdown_settings(): loading user_apps_table");
 	tile_table_reload (priv->file_tables [USER_APPS_TABLE]);
+
+	libslab_checkpoint ("apply_lockdown_settings(): loading rcnt_apps_table");
 	tile_table_reload (priv->file_tables [RCNT_APPS_TABLE]);
+
+	libslab_checkpoint ("apply_lockdown_settings(): loading user_docs_table");
 	tile_table_reload (priv->file_tables [USER_DOCS_TABLE]);
+
+	libslab_checkpoint ("apply_lockdown_settings(): loading rcnt_docs_table");
 	tile_table_reload (priv->file_tables [RCNT_DOCS_TABLE]);
+
+	libslab_checkpoint ("apply_lockdown_settings(): loading user_dirs_table");
 	tile_table_reload (priv->file_tables [USER_DIRS_TABLE]);
 
+	libslab_checkpoint ("apply_lockdown_settings(): update_limits");
 	update_limits (this);
+
+	libslab_checkpoint ("apply_lockdown_settings(): end");
 }
 
 static void
