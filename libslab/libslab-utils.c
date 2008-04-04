@@ -571,6 +571,45 @@ libslab_spawn_command (const gchar *cmd)
 	g_strfreev (argv);
 }
 
+static guint thumbnail_factory_idle_id;
+static GnomeThumbnailFactory *thumbnail_factory;
+
+static void
+create_thumbnail_factory (void)
+{
+	g_assert (thumbnail_factory == NULL);
+
+	thumbnail_factory = gnome_thumbnail_factory_new (GNOME_THUMBNAIL_SIZE_NORMAL);
+}
+
+static gboolean
+init_thumbnail_factory_idle_cb (gpointer data)
+{
+	create_thumbnail_factory ();
+	thumbnail_factory_idle_id = 0;
+	return FALSE;
+}
+
+void
+libslab_thumbnail_factory_preinit (void)
+{
+	thumbnail_factory_idle_id = g_idle_add (init_thumbnail_factory_idle_cb, NULL);
+}
+
+GnomeThumbnailFactory *
+libslab_thumbnail_factory_get (void)
+{
+	if (thumbnail_factory_idle_id != 0) {
+		g_source_remove (thumbnail_factory_idle_id);
+		thumbnail_factory_idle_id = 0;
+
+		create_thumbnail_factory ();
+	}
+
+	g_assert (thumbnail_factory != NULL);
+	return thumbnail_factory;
+}
+
 void
 libslab_checkpoint_init (const char *checkpoint_config_file_basename,
 			 const char *checkpoint_file_basename)
