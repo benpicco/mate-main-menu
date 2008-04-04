@@ -354,6 +354,7 @@ make_items_from_bookmark_file (BookmarkAgent *this, GBookmarkFile *store)
 			item->mtime     = g_bookmark_file_get_modified  (store, uris [i], NULL);
 
 			items_ordered = g_list_insert_sorted (items_ordered, item, recent_item_mru_comp_func);
+			/* FIXME: g_list_insert_sorted() is evil.  Sort this at the end. */
 		}
 	}
 
