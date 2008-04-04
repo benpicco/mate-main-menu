@@ -577,9 +577,12 @@ static GnomeThumbnailFactory *thumbnail_factory;
 static void
 create_thumbnail_factory (void)
 {
-	g_assert (thumbnail_factory == NULL);
+	libslab_checkpoint ("create_thumbnail_factory(): start");
 
+	g_assert (thumbnail_factory == NULL);
 	thumbnail_factory = gnome_thumbnail_factory_new (GNOME_THUMBNAIL_SIZE_NORMAL);
+
+	libslab_checkpoint ("create_thumbnail_factory(): end");
 }
 
 static gboolean
