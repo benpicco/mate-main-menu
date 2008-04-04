@@ -322,6 +322,81 @@ bookmark_agent_reorder_items (BookmarkAgent *this, const gchar **uris)
 	save_store (this);
 }
 
+static GList *
+make_items_from_bookmark_file (BookmarkAgent *this, GBookmarkFile *store)
+{
+	BookmarkAgentPrivate *priv = PRIVATE (this);
+	gchar **uris;
+	gint i;
+	GList *items_ordered;
+
+	if (!store)
+		return NULL;
+
+	uris = g_bookmark_file_get_uris (store, NULL);
+	items_ordered = NULL;
+
+	for (i = 0; uris && uris [i]; ++i) {
+		gboolean include;
+
+		if (priv->type == BOOKMARK_STORE_RECENT_APPS)
+			include = g_bookmark_file_has_group (store, uris [i], "recently-used-apps", NULL);
+		else
+			include = ! g_bookmark_file_get_is_private (store, uris [i], NULL);
+
+		if (include) {
+			BookmarkItem *item;
+
+			item = g_new0 (BookmarkItem, 1);
+
+			item->uri       = g_strdup (uris [i]);
+			item->mime_type = g_bookmark_file_get_mime_type (store, uris [i], NULL);
+			item->mtime     = g_bookmark_file_get_modified  (store, uris [i], NULL);
+
+			items_ordered = g_list_insert_sorted (items_ordered, item, recent_item_mru_comp_func);
+		}
+	}
+
+	g_strfreev (uris);
+	g_bookmark_file_free (store);
+
+	return items_ordered;
+}
+
+void
+bookmark_agent_update_from_bookmark_file (BookmarkAgent *this, GBookmarkFile *store)
+{
+	BookmarkAgentPrivate *priv;
+	GList *items_ordered;
+	GList  *node;
+
+	g_return_if_fail (IS_BOOKMARK_AGENT (this));
+
+	priv = PRIVATE (this);
+
+	libslab_checkpoint ("bookmark_agent_update_from_bookmark_file(): start updating");
+
+	items_ordered = make_items_from_bookmark_file (this, store);
+
+	g_bookmark_file_free (priv->store);
+	priv->store = g_bookmark_file_new ();
+
+	for (node = items_ordered; node; node = node->next) {
+		BookmarkItem *item;
+
+		item = (BookmarkItem *) node->data;
+
+		g_bookmark_file_set_mime_type (priv->store, item->uri, item->mime_type);
+		g_bookmark_file_set_modified  (priv->store, item->uri, item->mtime);
+
+		bookmark_item_free (item);
+	}
+
+	g_list_free (items_ordered);
+
+	libslab_checkpoint ("bookmark_agent_update_from_bookmark_file(): end updating");
+}
+
 void
 bookmark_item_free (BookmarkItem *item)
 {
@@ -918,6 +993,8 @@ load_recent_store (BookmarkAgent *this)
 
 		bookmark_item_free (item);
 	}
+
+	/* FIXME: free items_ordered! */
 
 	libslab_checkpoint ("load_recent_store(): end processing items from %s", priv->store_path);
 }
