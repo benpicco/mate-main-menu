@@ -767,9 +767,17 @@ load_xbel_store (BookmarkAgent *this)
 	GError *error = NULL;
 
 	gint i;
+	gboolean success;
 
+	if (!priv->store_path)
+		success = FALSE;
+	else {
+		libslab_checkpoint ("load_xbel_store(): start loading %s", priv->store_path);
+		success = g_bookmark_file_load_from_file (priv->store, priv->store_path, & error);
+		libslab_checkpoint ("load_xbel_store(): end loading %s", priv->store_path);
+	}
 
-	if (! (priv->store_path && g_bookmark_file_load_from_file (priv->store, priv->store_path, & error))) {
+	if (!success) {
 		g_bookmark_file_free (priv->store);
 		priv->store = g_bookmark_file_new ();
 
@@ -780,10 +788,14 @@ load_xbel_store (BookmarkAgent *this)
 		return;
 	}
 
+	libslab_checkpoint ("load_xbel_store(): start creating items from %s", priv->store_path);
+
 	uris = g_bookmark_file_get_uris (priv->store, NULL);
 
 	for (i = 0; uris && uris [i]; ++i)
 		priv->create_item (this, uris [i]);
+
+	libslab_checkpoint ("load_xbel_store(): end creating items from %s", priv->store_path);
 }
 
 static void
@@ -867,8 +879,12 @@ load_recent_store (BookmarkAgent *this)
 
 
 	store = g_bookmark_file_new ();
-	g_bookmark_file_load_from_file (store, priv->store_path, NULL);
 
+	libslab_checkpoint ("load_recent_store(): start loading %s", priv->store_path);
+	g_bookmark_file_load_from_file (store, priv->store_path, NULL);
+	libslab_checkpoint ("load_recent_store(): end loading %s", priv->store_path);
+
+	libslab_checkpoint ("load_recent_store(): start processing items from %s", priv->store_path);
 	uris = g_bookmark_file_get_uris (store, NULL);
 
 	for (i = 0; uris && uris [i]; ++i) {
@@ -902,6 +918,8 @@ load_recent_store (BookmarkAgent *this)
 
 		bookmark_item_free (item);
 	}
+
+	libslab_checkpoint ("load_recent_store(): end processing items from %s", priv->store_path);
 }
 
 static gchar *
