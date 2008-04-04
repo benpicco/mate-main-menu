@@ -393,6 +393,7 @@ bookmark_agent_update_from_bookmark_file (BookmarkAgent *this, GBookmarkFile *st
 
 	g_list_free (items_ordered);
 
+	libslab_checkpoint ("bookmark_agent_update_from_bookmark_file(): updating internal items");
 	update_items (this);
 
 	libslab_checkpoint ("bookmark_agent_update_from_bookmark_file(): end updating");
