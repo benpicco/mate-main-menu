@@ -644,4 +644,5 @@ libslab_checkpoint (const char *format, ...)
 	va_end (args);
 
 	fputs ("\n", checkpoint_file);
+	fflush (checkpoint_file);
 }
