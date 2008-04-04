@@ -5,11 +5,18 @@
 #endif
 
 #include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <time.h>
+#include <sys/stat.h>
+#include <sys/time.h>
 #include <gconf/gconf-value.h>
 #include <libgnome/gnome-url.h>
 
 #define DESKTOP_ITEM_TERMINAL_EMULATOR_FLAG "TerminalEmulator"
 #define ALTERNATE_DOCPATH_KEY               "DocPath"
+
+static FILE *checkpoint_file;
 
 gboolean
 libslab_gtk_image_set_by_id (GtkImage *image, const gchar *id)
@@ -561,4 +568,70 @@ libslab_spawn_command (const gchar *cmd)
 		libslab_handle_g_error (& error, "%s: error spawning [%s]", G_STRFUNC, cmd);
 
 	g_strfreev (argv);
+}
+
+void
+libslab_checkpoint_init (const char *checkpoint_config_file_basename,
+			 const char *checkpoint_file_basename)
+{
+	char *filename;
+	struct stat st;
+	int result;
+	time_t t;
+	struct tm tm;
+	char *checkpoint_full_basename;
+
+	g_return_if_fail (checkpoint_config_file_basename != NULL);
+	g_return_if_fail (checkpoint_file_basename != NULL);
+
+	filename = g_build_filename (g_get_home_dir (), checkpoint_config_file_basename, NULL);
+
+	result = stat (filename, &st);
+	g_free (filename);
+
+	if (!result)
+		return;
+
+	t = time (NULL);
+	tm = *localtime (&t);
+
+	checkpoint_full_basename = g_strdup_printf ("%s-%04d-%02d-%02d-%02d-%02d-%02d.checkpoint",
+						    checkpoint_file_basename,
+						    tm.tm_year + 1900,
+						    tm.tm_mon + 1,
+						    tm.tm_mday,
+						    tm.tm_hour,
+						    tm.tm_min,
+						    tm.tm_sec);
+
+	filename = g_build_filename (g_get_home_dir (), checkpoint_full_basename, NULL);
+	g_free (checkpoint_full_basename);
+
+	checkpoint_file = fopen (filename, "w");
+	g_free (filename);
+}
+
+void
+libslab_checkpoint (const char *format, ...)
+{
+	va_list args;
+	struct timeval tv;
+	struct tm tm;
+
+	if (!checkpoint_file)
+		return;
+
+	gettimeofday (&tv, NULL);
+	tm = *localtime (&tv.tv_sec);
+
+	fprintf (checkpoint_file,
+		 "%02d:%02d:%02d.%04d - ",
+		 tm.tm_hour,
+		 tm.tm_min,
+		 tm.tm_sec,
+		 (int) (tv.tv_usec / 100));
+
+	va_start (args, format);
+	vfprintf (checkpoint_file, format, args);
+	va_end (args);
 }

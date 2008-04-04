@@ -27,6 +27,9 @@ gboolean          libslab_desktop_item_is_lockscreen (const gchar *uri);
 gchar            *libslab_string_replace_once (const gchar *string, const gchar *key, const gchar *value);
 void              libslab_spawn_command (const gchar *cmd);
 
+void libslab_checkpoint_init (const char *checkpoint_config_file_basename, const char *checkpoint_file_basename);
+void libslab_checkpoint (const char *format, ...);
+
 G_END_DECLS
 
 #endif
