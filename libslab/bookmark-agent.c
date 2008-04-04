@@ -122,9 +122,7 @@ static void set_rank     (BookmarkAgent *, const gchar *, gint);
 
 static void load_xbel_store          (BookmarkAgent *);
 static void load_places_store        (BookmarkAgent *);
-static void load_recent_store        (BookmarkAgent *);
 static void update_user_spec_path    (BookmarkAgent *);
-static void update_recent_store_path (BookmarkAgent *);
 static void save_xbel_store          (BookmarkAgent *);
 static void create_app_item          (BookmarkAgent *, const gchar *);
 static void create_doc_item          (BookmarkAgent *, const gchar *);
@@ -543,13 +541,6 @@ bookmark_agent_new (BookmarkStoreType type)
 			priv->store_path = g_build_filename (g_get_home_dir (), ".recently-used", NULL);
 #endif
 
-			gnome_vfs_monitor_add (
-				& priv->store_monitor, priv->store_path,
-				GNOME_VFS_MONITOR_FILE, store_monitor_cb, this);
-
-			priv->update_path = update_recent_store_path;
-			priv->load_store  = load_recent_store;
-
 			break;
 
 		case BOOKMARK_STORE_SYSTEM:
@@ -650,8 +641,11 @@ update_agent (BookmarkAgent *this)
 {
 	BookmarkAgentPrivate *priv = PRIVATE (this);
 
-	priv->update_path (this);
-	priv->load_store  (this);
+	if (priv->update_path)
+		priv->update_path (this);
+
+	if (priv->load_store)
+		priv->load_store (this);
 
 	update_items (this);
 }
@@ -937,70 +931,6 @@ load_places_store (BookmarkAgent *this)
 	g_strfreev (bookmarks);
 }
 
-static void
-load_recent_store (BookmarkAgent *this)
-{
-	BookmarkAgentPrivate *priv = PRIVATE (this);
-
-	GBookmarkFile *store;
-
-	gchar **uris          = NULL;
-	GList  *items_ordered = NULL;
-
-	BookmarkItem *item;
-
-	gboolean include;
-
-	gint    i;
-	GList  *node;
-
-
-	store = g_bookmark_file_new ();
-
-	libslab_checkpoint ("load_recent_store(): start loading %s", priv->store_path);
-	g_bookmark_file_load_from_file (store, priv->store_path, NULL);
-	libslab_checkpoint ("load_recent_store(): end loading %s", priv->store_path);
-
-	libslab_checkpoint ("load_recent_store(): start processing items from %s", priv->store_path);
-	uris = g_bookmark_file_get_uris (store, NULL);
-
-	for (i = 0; uris && uris [i]; ++i) {
-		if (priv->type == BOOKMARK_STORE_RECENT_APPS)
-			include = g_bookmark_file_has_group (store, uris [i], "recently-used-apps", NULL);
-		else
-			include = ! g_bookmark_file_get_is_private (store, uris [i], NULL);
-
-		if (include) {
-			item = g_new0 (BookmarkItem, 1);
-
-			item->uri       = g_strdup (uris [i]);
-			item->mime_type = g_bookmark_file_get_mime_type (store, uris [i], NULL);
-			item->mtime     = g_bookmark_file_get_modified  (store, uris [i], NULL);
-
-			items_ordered = g_list_insert_sorted (items_ordered, item, recent_item_mru_comp_func);
-		}
-	}
-
-	g_strfreev (uris);
-	g_bookmark_file_free (store);
-
-	g_bookmark_file_free (priv->store);
-	priv->store = g_bookmark_file_new ();
-
-	for (node = items_ordered; node; node = node->next) {
-		item = (BookmarkItem *) node->data;
-
-		g_bookmark_file_set_mime_type (priv->store, item->uri, item->mime_type);
-		g_bookmark_file_set_modified  (priv->store, item->uri, item->mtime);
-
-		bookmark_item_free (item);
-	}
-
-	/* FIXME: free items_ordered! */
-
-	libslab_checkpoint ("load_recent_store(): end processing items from %s", priv->store_path);
-}
-
 static gchar *
 find_package_data_file (const gchar *filename)
 {
@@ -1079,25 +1009,6 @@ update_user_spec_path (BookmarkAgent *this)
 	}
 	else
 		g_free (path);
-}
-
-static void
-update_recent_store_path (BookmarkAgent *this)
-{
-	BookmarkAgentPrivate *priv = PRIVATE (this);
-
-	BookmarkStoreStatus status;
-
-
-	if (g_file_test (priv->store_path, G_FILE_TEST_EXISTS))
-		status = BOOKMARK_STORE_USER;
-	else
-		status = BOOKMARK_STORE_USER;
-
-	if (priv->status != status) {
-		priv->status = status;
-		g_object_notify (G_OBJECT (this), BOOKMARK_AGENT_STORE_STATUS_PROP);
-	}
 }
 
 static void

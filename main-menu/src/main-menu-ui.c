@@ -1723,6 +1723,11 @@ load_recently_used_store (void)
 
 	filename = get_recently_used_store_filename ();
 
+	/* FIXME: if we can't load the store, do we need to hide the
+	 * recently-used sections in the GUI?  If so, do that in the caller(s)
+	 * of this function, not here.
+	 */
+
 	libslab_checkpoint ("main-menu-ui.c: load_recently_used_store(): start loading %s", filename);
 	g_bookmark_file_load_from_file (store, filename, NULL); /* NULL-GError */
 	libslab_checkpoint ("main-menu-ui.c: load_recently_used_store(): end loading %s", filename);
