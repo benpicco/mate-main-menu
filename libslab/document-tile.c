@@ -295,8 +295,6 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
-	load_image (this);
-
 	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
 	if (basename)
 	  atk_object_set_name (accessible, basename);
