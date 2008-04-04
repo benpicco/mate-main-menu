@@ -1625,14 +1625,8 @@ apply_lockdown_settings (MainMenuUI *this)
 	libslab_checkpoint ("apply_lockdown_settings(): loading user_apps_table");
 	tile_table_reload (priv->file_tables [USER_APPS_TABLE]);
 
-	libslab_checkpoint ("apply_lockdown_settings(): loading rcnt_apps_table");
-	tile_table_reload (priv->file_tables [RCNT_APPS_TABLE]);
-
 	libslab_checkpoint ("apply_lockdown_settings(): loading user_docs_table");
 	tile_table_reload (priv->file_tables [USER_DOCS_TABLE]);
-
-	libslab_checkpoint ("apply_lockdown_settings(): loading rcnt_docs_table");
-	tile_table_reload (priv->file_tables [RCNT_DOCS_TABLE]);
 
 	libslab_checkpoint ("apply_lockdown_settings(): loading user_dirs_table");
 	tile_table_reload (priv->file_tables [USER_DIRS_TABLE]);
