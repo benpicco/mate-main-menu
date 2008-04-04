@@ -590,7 +590,7 @@ libslab_checkpoint_init (const char *checkpoint_config_file_basename,
 	result = stat (filename, &st);
 	g_free (filename);
 
-	if (!result)
+	if (result != 0)
 		return;
 
 	t = time (NULL);
