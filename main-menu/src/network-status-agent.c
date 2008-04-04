@@ -21,7 +21,12 @@
 #include "network-status-agent.h"
 
 #include <string.h>
+#include <libnm-glib/nm-client.h>
 #include <NetworkManager.h>
+#include <libnm-glib/nm-device-802-11-wireless.h>
+#include <libnm-glib/nm-device-802-3-ethernet.h>
+#include <nm-utils.h>
+#include <arpa/inet.h>
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
@@ -33,9 +38,7 @@
 
 typedef struct
 {
-	DBusGConnection *nm_conn;
-	DBusGProxy *nm_proxy;
-
+	NMClient * nm_client;
 	guint state_curr;
 } NetworkStatusAgentPrivate;
 
@@ -46,13 +49,9 @@ static void network_status_agent_dispose (GObject *);
 static void init_nm_connection (NetworkStatusAgent *);
 
 static NetworkStatusInfo *nm_get_first_active_device_info (NetworkStatusAgent *);
-static GList *nm_get_devices (NetworkStatusAgent *);
-static NetworkStatusInfo *nm_get_device_info (NetworkStatusAgent *, DBusGProxy *);
+static NetworkStatusInfo *nm_get_device_info (NetworkStatusAgent *, NMDevice *);
 
-static void nm_state_change_cb (DBusGProxy *, guint, gpointer);
-static DBusHandlerResult nm_message_filter (DBusConnection *, DBusMessage *, gpointer);
-
-static gboolean string_is_valid_dbus_path (const gchar *);
+static void nm_state_change_cb (NMDevice *device, NMDeviceState state, gpointer user_data);
 
 static NetworkStatusInfo *gtop_get_first_active_device_info (void);
 
@@ -88,8 +87,7 @@ network_status_agent_init (NetworkStatusAgent * agent)
 
 	agent->nm_present = FALSE;
 
-	priv->nm_conn = NULL;
-	priv->nm_proxy = NULL;
+	priv->nm_client = NULL;
 	priv->state_curr = 0;
 }
 
@@ -105,7 +103,7 @@ network_status_agent_get_first_active_device_info (NetworkStatusAgent * agent)
 	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (agent);
 	NetworkStatusInfo *info = NULL;
 
-	if (!priv->nm_conn)
+	if (!priv->nm_client)
 		init_nm_connection (agent);
 
 	if (agent->nm_present)
@@ -119,7 +117,9 @@ network_status_agent_get_first_active_device_info (NetworkStatusAgent * agent)
 static void
 network_status_agent_dispose (GObject * obj)
 {
-	/* FIXME */
+	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (obj);
+	if (priv->nm_client)
+		g_object_unref (priv->nm_client);
 }
 
 static void
@@ -127,44 +127,18 @@ init_nm_connection (NetworkStatusAgent * agent)
 {
 	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (agent);
 
-	GError *error = NULL;
+	priv->nm_client = nm_client_new();
 
-	priv->nm_conn = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
-
-	if (!priv->nm_conn)
+	if (!priv->nm_client)
 	{
-		handle_g_error (&error, "%s: dbus_g_bus_get () failed", G_STRFUNC);
+		g_log (G_LOG_DOMAIN, G_LOG_LEVEL_WARNING, "nm_client_new failed");
 
-		agent->nm_present = FALSE;
-
-		return;
-	}
-
-	if (!dbus_bus_name_has_owner (dbus_g_connection_get_connection (priv->nm_conn),
-			NM_DBUS_SERVICE, NULL))
-	{
 		agent->nm_present = FALSE;
 
 		return;
 	}
 
 	agent->nm_present = TRUE;
-
-	dbus_connection_set_exit_on_disconnect (dbus_g_connection_get_connection (priv->nm_conn),
-		FALSE);
-
-	priv->nm_proxy =
-		dbus_g_proxy_new_for_name (priv->nm_conn, NM_DBUS_SERVICE, NM_DBUS_PATH,
-		NM_DBUS_INTERFACE);
-
-	dbus_g_proxy_add_signal (priv->nm_proxy, NM_DBUS_SIGNAL_STATE_CHANGE, G_TYPE_UINT,
-		G_TYPE_INVALID);
-
-	dbus_g_proxy_connect_signal (priv->nm_proxy, NM_DBUS_SIGNAL_STATE_CHANGE,
-		G_CALLBACK (nm_state_change_cb), agent, NULL);
-
-	dbus_connection_add_filter (dbus_g_connection_get_connection (priv->nm_conn),
-		nm_message_filter, agent, NULL);
 }
 
 static NetworkStatusInfo *
@@ -174,22 +148,27 @@ nm_get_first_active_device_info (NetworkStatusAgent * agent)
 
 	NetworkStatusInfo *info = NULL;
 
-	GList *devices;
-	GList *node;
+	GSList *devices;
+	GSList *node;
 
-	if (!priv->nm_conn)
+	if (!priv->nm_client)
 		return NULL;
 
-	devices = nm_get_devices (agent);
+	devices = nm_client_get_devices (priv->nm_client);
 
 	for (node = devices; node; node = node->next)
 	{
-		info = nm_get_device_info (agent, (DBusGProxy *) node->data);
+		info = nm_get_device_info (agent, NM_DEVICE (node->data));
 
 		if (info)
 		{
 			if (info->active)
+			{
+				NMDevice * nm_device;
+				nm_device = NM_DEVICE (node->data);
+				g_signal_connect (nm_device, "state-changed", G_CALLBACK (nm_state_change_cb), agent);
 				break;
+			}
 
 			g_object_unref (info);
 
@@ -197,135 +176,92 @@ nm_get_first_active_device_info (NetworkStatusAgent * agent)
 		}
 	}
 
-	/* FIXME: free contents of devices ? */
-	g_list_free (devices);
+	//the NM internal code does not free these. g_slist_foreach (devices, (GFunc) g_object_unref, NULL);
+	g_slist_free (devices);
 
 	return info;
 }
 
-static GList *
-nm_get_devices (NetworkStatusAgent * agent)
+static gchar *
+ip4_address_as_string (guint32 ip)
 {
-	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (agent);
+	struct in_addr tmp_addr;
+	gchar *ip_string;
 
-	GPtrArray *ptr_array;
-	gint i;
+	tmp_addr.s_addr = ip;
+	ip_string = inet_ntoa (tmp_addr);
 
-	GList *devices = NULL;
-
-	DBusGProxy *proxy;
-
-	GError *error = NULL;
-
-	dbus_g_proxy_call (priv->nm_proxy, "getDevices", &error, G_TYPE_INVALID,
-		dbus_g_type_get_collection ("GPtrArray", DBUS_TYPE_G_PROXY), &ptr_array,
-		G_TYPE_INVALID);
-
-	if (error)
-	{
-		handle_g_error (&error, "%s: calling \"getDevices\" failed", G_STRFUNC);
-
-		return NULL;
-	}
-
-	for (i = 0; i < ptr_array->len; i++)
-	{
-		proxy = (DBusGProxy *) g_ptr_array_index (ptr_array, i);
-
-		devices = g_list_append (devices, proxy);
-	}
-	g_ptr_array_free (ptr_array, TRUE);
-
-	return devices;
+	return g_strdup (ip_string);
 }
 
 static NetworkStatusInfo *
-nm_get_device_info (NetworkStatusAgent * agent, DBusGProxy * device)
+nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 {
-	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (agent);
 	NetworkStatusInfo *info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
+	GArray *array;
 
-	DBusGProxy *proxy;
-	gchar *network_path = NULL;
+	info->iface = nm_device_get_iface (device);
+	info->driver = nm_device_get_driver (device);
+	info->active = (nm_device_get_state (device) == NM_DEVICE_STATE_ACTIVATED) ? TRUE : FALSE;
+	if (! info->active)
+		return info;
+	NMIP4Config * cfg = nm_device_get_ip4_config (device);
+	if(! cfg)
+		return info;
+	info->ip4_addr = ip4_address_as_string (nm_ip4_config_get_address (cfg));
+	info->subnet_mask = ip4_address_as_string (nm_ip4_config_get_netmask (cfg));
+	info->broadcast = ip4_address_as_string (nm_ip4_config_get_broadcast (cfg));
+	info->route = ip4_address_as_string (nm_ip4_config_get_gateway (cfg));
 
-	GError *error = NULL;
-
-	proxy = dbus_g_proxy_new_for_name (priv->nm_conn, NM_DBUS_SERVICE,
-		dbus_g_proxy_get_path (device), NM_DBUS_INTERFACE_DEVICES);
-
-	dbus_g_proxy_call (proxy, "getProperties", &error, G_TYPE_INVALID,
-		DBUS_TYPE_G_PROXY, NULL,
-		G_TYPE_STRING, &info->iface,
-		G_TYPE_UINT, &info->type,
-		G_TYPE_STRING, NULL,
-		G_TYPE_BOOLEAN, &info->active,
-		G_TYPE_UINT, NULL,
-		G_TYPE_STRING, &info->ip4_addr,
-		G_TYPE_STRING, &info->subnet_mask,
-		G_TYPE_STRING, &info->broadcast,
-		G_TYPE_STRING, &info->hw_addr,
-		G_TYPE_STRING, &info->route,
-		G_TYPE_STRING, &info->primary_dns,
-		G_TYPE_STRING, &info->secondary_dns,
-		G_TYPE_INT, NULL,
-		G_TYPE_INT, NULL,
-		G_TYPE_BOOLEAN, NULL,
-		G_TYPE_INT, &info->speed_mbs,
-		G_TYPE_UINT, NULL,
-		G_TYPE_UINT, NULL,
-		G_TYPE_STRING, &network_path,
-		G_TYPE_STRV, NULL,
-		G_TYPE_INVALID);
-
-	if (error)
+	info->primary_dns = NULL;
+	info->secondary_dns = NULL;
+	array = nm_ip4_config_get_nameservers (cfg);
+	if (array)
 	{
-		handle_g_error (&error, "%s: calling \"getProperties\" (A) failed", G_STRFUNC);
-
-		g_free (network_path);
-		g_object_unref (info);
-
-		return NULL;
+		if (array->len > 0)
+			info->primary_dns = ip4_address_as_string (g_array_index (array, guint32, 0));
+		if (array->len > 1)
+			info->secondary_dns = ip4_address_as_string (g_array_index (array, guint32, 1));
 	}
+	g_array_free (array, TRUE);
 
-	if (info->active)
+	g_object_unref (cfg);
+
+	if (NM_IS_DEVICE_802_11_WIRELESS(device))
 	{
-		dbus_g_proxy_call (proxy, "getDriver", &error, G_TYPE_INVALID, G_TYPE_STRING,
-			&info->driver, G_TYPE_INVALID);
+		GSList *iter;
+		GSList *aps;
+		info->type = DEVICE_TYPE_802_11_WIRELESS;
 
-		if (error)
-			handle_g_error (&error, "%s: calling \"getDriver\" failed", G_STRFUNC);
-
-		if (info->type == DEVICE_TYPE_802_11_WIRELESS
-			&& string_is_valid_dbus_path (network_path))
+		info->speed_mbs = nm_device_802_11_wireless_get_bitrate (NM_DEVICE_802_11_WIRELESS(device));
+		info->hw_addr = g_strdup (nm_device_802_11_wireless_get_hw_address (NM_DEVICE_802_11_WIRELESS(device)));
+		aps = nm_device_802_11_wireless_get_access_points (NM_DEVICE_802_11_WIRELESS(device));
+		for (iter = aps; iter; iter = iter->next)
 		{
-			proxy = dbus_g_proxy_new_for_name (priv->nm_conn, NM_DBUS_SERVICE,
-				network_path, NM_DBUS_INTERFACE_DEVICES);
-
-			dbus_g_proxy_call (proxy, "getProperties", &error, G_TYPE_INVALID,
-				DBUS_TYPE_G_PROXY, NULL,
-				G_TYPE_STRING, &info->essid,
-				G_TYPE_STRING, NULL,
-				G_TYPE_INT, NULL,
-				G_TYPE_DOUBLE, NULL,
-				G_TYPE_INT, NULL,
-				G_TYPE_BOOLEAN, NULL,
-				G_TYPE_INT, NULL,
-				G_TYPE_BOOLEAN, NULL,
-				G_TYPE_INVALID);
+			const GByteArray * ssid;
+			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (iter->data));
+			if (ssid)
+				info->essid = g_strdup (nm_utils_escape_ssid (ssid->data, ssid->len));
+			else
+				info->essid = g_strdup ("(none)");
+			break; //fixme - we only show one for now
 		}
 
-		if (error)
-			handle_g_error (&error, "%s: calling \"getProperties\" (B) failed",
-				G_STRFUNC);
+		g_slist_foreach (aps, (GFunc) g_object_unref, NULL);
+		g_slist_free (aps);
 	}
-
-	g_free (network_path);
+	else if (NM_IS_DEVICE_802_3_ETHERNET (device))
+	{
+		info->type = DEVICE_TYPE_802_3_ETHERNET;
+		info->speed_mbs = nm_device_802_3_ethernet_get_speed (NM_DEVICE_802_3_ETHERNET(device));
+		info->hw_addr = nm_device_802_3_ethernet_get_hw_address (NM_DEVICE_802_3_ETHERNET(device));
+	}
 
 	return info;
 }
 
 static void
-nm_state_change_cb (DBusGProxy * proxy, guint state, gpointer user_data)
+nm_state_change_cb (NMDevice *device, NMDeviceState state, gpointer user_data)
 {
 	NetworkStatusAgent        *this = NETWORK_STATUS_AGENT (user_data);
 	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (this);
@@ -336,75 +272,6 @@ nm_state_change_cb (DBusGProxy * proxy, guint state, gpointer user_data)
 	priv->state_curr = state;
 
 	g_signal_emit (this, network_status_agent_signals [STATUS_CHANGED], 0);
-}
-
-static DBusHandlerResult
-nm_message_filter (DBusConnection * nm_conn, DBusMessage * msg, gpointer user_data)
-{
-	if ((dbus_message_is_signal (msg, DBUS_INTERFACE_LOCAL, "Disconnected")
-			&& !strcmp (dbus_message_get_path (msg), DBUS_PATH_LOCAL))
-		|| dbus_message_is_signal (msg, DBUS_INTERFACE_DBUS, "NameOwnerChanged"))
-	{
-		init_nm_connection (NETWORK_STATUS_AGENT (user_data));
-
-		return DBUS_HANDLER_RESULT_HANDLED;
-	}
-
-	return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
-}
-
-/*
- * This macro and function are copied from dbus-marshal-validate.c
- */
-
-#define VALID_NAME_CHARACTER(c) (	\
-	((c) >= '0' && (c) <= '9') ||	\
-	((c) >= 'A' && (c) <= 'Z') ||	\
-	((c) >= 'a' && (c) <= 'z') ||	\
-	((c) == '_')			\
-)
-
-static gboolean
-string_is_valid_dbus_path (const gchar * str)
-{
-	const gchar *s;
-	const gchar *end;
-	const gchar *last_slash;
-
-	gint len;
-
-	len = strlen (str);
-
-	s = str;
-	end = s + len;
-
-	if (*s != '/')
-		return FALSE;
-	last_slash = s;
-	++s;
-
-	while (s != end)
-	{
-		if (*s == '/')
-		{
-			if ((s - last_slash) < 2)
-				return FALSE;	/* no empty path components allowed */
-
-			last_slash = s;
-		}
-		else
-		{
-			if (!VALID_NAME_CHARACTER (*s))
-				return FALSE;
-		}
-
-		++s;
-	}
-
-	if ((end - last_slash) < 2 && len > 1)
-		return FALSE;	/* trailing slash not allowed unless the string is "/" */
-
-	return TRUE;
 }
 
 #define CHECK_FLAG(flags, offset) (((flags) & (1 << (offset))) ? TRUE : FALSE)
@@ -470,3 +337,4 @@ gtop_get_first_active_device_info ()
 	g_strfreev (networks);
 	return info;
 }
+
