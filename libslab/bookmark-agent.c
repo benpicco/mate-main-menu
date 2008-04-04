@@ -358,7 +358,6 @@ make_items_from_bookmark_file (BookmarkAgent *this, GBookmarkFile *store)
 	items_ordered = g_list_sort (items_ordered, recent_item_mru_comp_func);
 
 	g_strfreev (uris);
-	g_bookmark_file_free (store);
 
 	return items_ordered;
 }
