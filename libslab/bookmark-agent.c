@@ -739,7 +739,11 @@ update_items (BookmarkAgent *this)
 			g_bookmark_file_get_icon (priv->store, uris_ordered [i], & priv->items [i]->icon, NULL, NULL);
 		}
 
-		g_object_notify (G_OBJECT (this), BOOKMARK_AGENT_ITEMS_PROP);
+		/* Since the bookmark store for recently-used items is updated by the caller of BookmarkAgent,
+		 * we don't emit notifications in that case.  The caller will know when to update itself.
+		 */
+		if (!TYPE_IS_RECENT (priv->type))
+			g_object_notify (G_OBJECT (this), BOOKMARK_AGENT_ITEMS_PROP);
 	}
 
 	if (store_corrupted)
