@@ -137,6 +137,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	
 	gchar *filename;
 	gchar *tooltip_text;
+
+	libslab_checkpoint ("document_tile_new(): start");
   
 	uri = g_strdup (in_uri);
 
@@ -293,7 +295,9 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
+	libslab_checkpoint ("document_tile_new(): start loading image");
 	load_image (this);
+	libslab_checkpoint ("document_tile_new(): end loading image");
 
 	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
 	if (basename)
@@ -303,6 +307,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	g_free (basename);
 	g_free (time_str);
+
+	libslab_checkpoint ("document_tile_new(): end");
 
 	return GTK_WIDGET (this);
 }
