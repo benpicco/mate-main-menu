@@ -1719,6 +1719,83 @@ exit:
 	xmlFreeDoc (doc);
 }
 
+static GBookmarkFile *
+load_recently_used_store (void)
+{
+	GBookmarkFile *store;
+	char *filename;
+
+	store = g_bookmark_file_new ();
+
+	filename = get_recently_used_store_filename ();
+
+	libslab_checkpoint ("main-menu-ui.c: load_recently_used_store(): start loading %s", filename);
+	g_bookmark_file_load_from_file (store, filename, NULL); /* NULL-GError */
+	libslab_checkpoint ("main-menu-ui.c: load_recently_used_store(): end loading %s", filename);
+
+	g_free (filename);
+
+	return store;
+}
+
+/* Updates the bookmark agents for the recently-used apps and documents, by reading the
+ * recently-used store.
+ */
+static void
+update_recently_used_bookmark_agents (MainMenuUI *this)
+{
+	MainMenuUIPrivate *priv = PRIVATE (this);
+	GBookmarkFile *store;
+
+	store = load_recently_used_store ();
+
+	bookmark_agent_update_from_bookmark_file (priv->bm_agents[BOOKMARK_STORE_RECENT_APPS], store);
+	bookmark_agent_update_from_bookmark_file (priv->bm_agents[BOOKMARK_STORE_RECENT_DOCS], store);
+
+	g_bookmark_file_free (store);
+}
+
+/* Updates the recently-used tile tables from their corresponding bookmark agents */
+static void
+update_recently_used_tables (MainMenuUI *this)
+{
+	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	tile_table_reload (priv->file_tables[RCNT_APPS_TABLE]);
+	tile_table_reload (priv->file_tables[RCNT_DOCS_TABLE]);
+}
+
+/* If the recently-used store has changed since the last time we updated from
+ * it, this updates our view of the store and the corresponding sections in the
+ * slab_window.
+ */
+static void
+update_recently_used_sections (MainMenuUI *this)
+{
+	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	if (priv->recently_used_store_has_changed) {
+		update_recently_used_bookmark_agents (this);
+		update_recently_used_tables (this);
+
+		priv->recently_used_store_has_changed = FALSE;
+	}
+
+	if (!priv->recently_used_store_monitor)
+		setup_recently_used_store_monitor (this); /* for if we couldn't create the monitor the first time */
+}
+
+/* Updates the slab_window's sections that need updating and presents the window */
+static void
+present_slab_window (MainMenuUI *this)
+{
+	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	update_recently_used_sections (this);
+
+	gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), gtk_get_current_event_time ());
+}
+
 static void
 panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 {
@@ -1739,7 +1816,7 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 
 	if (! double_click_detector_is_double_click (detector, gtk_get_current_event_time (), TRUE)) {
 		if (! visible)
-			gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), gtk_get_current_event_time ());
+			present_slab_window (this);
 		else
 			gtk_widget_hide (priv->slab_window);
 
