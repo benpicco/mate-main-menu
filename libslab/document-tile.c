@@ -295,9 +295,7 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
-	libslab_checkpoint ("document_tile_new(): start loading image");
 	load_image (this);
-	libslab_checkpoint ("document_tile_new(): end loading image");
 
 	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
 	if (basename)
@@ -424,6 +422,8 @@ load_image (DocumentTile *tile)
 	gchar *icon_id = NULL;
 	gboolean free_icon_id = TRUE;
 
+	libslab_checkpoint ("document-tile.c: load_image(): start for %s", TILE (tile)->uri);
+
 	if (! priv->mime_type || ! strstr (TILE (tile)->uri, "file://")) {
 		icon_id = "gnome-fs-regular";
 		free_icon_id = FALSE;
@@ -473,6 +473,8 @@ exit:
 
 	if (free_icon_id && icon_id)
 		g_free (icon_id);
+
+	libslab_checkpoint ("document-tile.c: load_image(): end");
 }
 
 /* Next function taken from e-data-server-util.c in evolution-data-server */
