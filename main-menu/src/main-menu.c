@@ -77,6 +77,8 @@ main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data
 	libslab_checkpoint ("Showing all widgets in applet");
 	gtk_widget_show_all (GTK_WIDGET (applet));
 
+	libslab_thumbnail_factory_preinit ();
+
 	libslab_checkpoint ("Finished initializing applet");
 	return TRUE;
 }
