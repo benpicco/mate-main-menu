@@ -167,7 +167,7 @@ static void create_more_buttons      (MainMenuUI *);
 static void setup_file_tables        (MainMenuUI *);
 static void setup_bookmark_agents    (MainMenuUI *);
 static void setup_lock_down          (MainMenuUI *);
-static void setup_recently_used_store_monitor (MainMenuUI *this);
+static void setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup);
 static void update_recently_used_sections (MainMenuUI *this);
 
 static void       select_page                (MainMenuUI *);
@@ -290,7 +290,7 @@ main_menu_ui_new (PanelApplet *applet)
 	g_free (glade_xml_path);
 
 	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
-	setup_recently_used_store_monitor (this);
+	setup_recently_used_store_monitor (this, TRUE);
 	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
@@ -987,7 +987,7 @@ recently_used_throttle_timeout_cb (gpointer data)
 #define RECENTLY_USED_STORE_THROTTLE_SECONDS 2
 
 static void
-setup_recently_used_throttle_timeout (MainMenuUI *this)
+setup_recently_used_throttle_timeout (MainMenuUI *this, gboolean is_startup)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
@@ -998,10 +998,16 @@ setup_recently_used_throttle_timeout (MainMenuUI *this)
 	 * when Nautilus or EOG are asked to open a bunch of files at the same
 	 * time.  So, we throttle our updates to the recently-used store to
 	 * avoid re-reading the store more times than needed.
+	 *
+	 * Additionally, we do this in an idle during startup, not a timeout,
+	 * so that the Computer menu will be up to date as soon as possible.
 	 */
-	priv->recently_used_throttle_timeout_id = g_timeout_add_seconds (RECENTLY_USED_STORE_THROTTLE_SECONDS,
-									 recently_used_throttle_timeout_cb,
-									 this);
+	if (is_startup)
+		priv->recently_used_throttle_timeout_id = g_idle_add (recently_used_throttle_timeout_cb, this);
+	else
+		priv->recently_used_throttle_timeout_id = g_timeout_add_seconds (RECENTLY_USED_STORE_THROTTLE_SECONDS,
+										 recently_used_throttle_timeout_cb,
+										 this);
 }
 
 /* Called from GnomeVFSMonitor when the recently-used store changes.  We'll note
@@ -1018,14 +1024,14 @@ static void recently_used_store_monitor_changed_cb (GnomeVFSMonitorHandle *handl
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
 	priv->recently_used_store_has_changed = TRUE;
-	setup_recently_used_throttle_timeout (this);
+	setup_recently_used_throttle_timeout (this, FALSE);
 }
 
 /* Creates a GnomeVFSMonitor for the recently-used store, so we can be informed
  * when the store changes.
  */
 static void
-setup_recently_used_store_monitor (MainMenuUI *this)
+setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 	char *filename;
@@ -1046,7 +1052,7 @@ setup_recently_used_store_monitor (MainMenuUI *this)
 
 	g_free (uri);
 
-	setup_recently_used_throttle_timeout (this);
+	setup_recently_used_throttle_timeout (this, is_startup);
 }
 
 static Tile *
@@ -1824,7 +1830,7 @@ update_recently_used_sections (MainMenuUI *this)
 	}
 
 	if (!priv->recently_used_store_monitor)
-		setup_recently_used_store_monitor (this); /* for if we couldn't create the monitor the first time */
+		setup_recently_used_store_monitor (this, FALSE); /* for if we couldn't create the monitor the first time */
 
 	libslab_checkpoint ("main-menu-ui.c: update_recently_used_sections() end");
 }
