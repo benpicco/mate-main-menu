@@ -36,6 +36,11 @@
 #include <libgnomevfs/gnome-vfs.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
 
+#include <gtk/gtkversion.h>
+#if GTK_CHECK_VERSION (2, 10, 0)
+#	define USE_GTK_RECENT_MANAGER
+#endif
+
 #include "tile.h"
 #include "application-tile.h"
 #include "document-tile.h"
@@ -119,6 +124,8 @@ typedef struct {
 	GnomeVFSVolumeMonitor *volume_mon;
 	GList                 *mounts;
 
+	GnomeVFSMonitorHandle *recently_used_store_monitor;
+
 	guint search_cmd_gconf_mntr_id;
 	guint current_page_gconf_mntr_id;
 	guint more_link_vis_gconf_mntr_id;
@@ -136,6 +143,8 @@ typedef struct {
 
 	gboolean ptr_is_grabbed;
 	gboolean kbd_is_grabbed;
+
+	guint recently_used_store_has_changed : 1;
 } MainMenuUIPrivate;
 
 #define PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), MAIN_MENU_UI_TYPE, MainMenuUIPrivate))
@@ -157,6 +166,7 @@ static void create_more_buttons      (MainMenuUI *);
 static void setup_file_tables        (MainMenuUI *);
 static void setup_bookmark_agents    (MainMenuUI *);
 static void setup_lock_down          (MainMenuUI *);
+static void setup_recently_used_store_monitor (MainMenuUI *this);
 
 static void       select_page                (MainMenuUI *);
 static void       update_limits              (MainMenuUI *);
@@ -277,6 +287,8 @@ main_menu_ui_new (PanelApplet *applet)
 	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
 	g_free (glade_xml_path);
 
+	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
+	setup_recently_used_store_monitor (this);
 	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
@@ -421,6 +433,8 @@ main_menu_ui_finalize (GObject *g_obj)
 
 	gint i;
 
+	if (priv->recently_used_store_monitor)
+		gnome_vfs_monitor_cancel (priv->recently_used_store_monitor);
 
 	for (i = 0; i < 4; ++i) {
 		g_object_unref (G_OBJECT (g_object_get_data (
@@ -936,6 +950,62 @@ setup_lock_down (MainMenuUI *this)
 		DISABLE_LOGOUT_GCONF_KEY, lockdown_notify_cb, this);
 	priv->disable_lockscreen_gconf_mntr_id = libslab_gconf_notify_add (
 		DISABLE_LOCKSCREEN_GCONF_KEY, lockdown_notify_cb, this);
+}
+
+static char *
+get_recently_used_store_filename (void)
+{
+	const char *basename;
+
+#ifdef USE_GTK_RECENT_MANAGER
+	basename = ".recently-used.xbel";
+#else
+	basename = ".recently-used";
+#endif
+
+	return g_build_filename (g_get_home_dir (), basename, NULL);
+}
+
+/* Called from GnomeVFSMonitor when the recently-used store changes.  We'll note
+ * this in a flag, and we'll check that flag later, when it is necessary to have
+ * an up-to-date view of the recently-used store.
+ */
+static void recently_used_store_monitor_changed_cb (GnomeVFSMonitorHandle *handle,
+						    const gchar *monitor_uri,
+						    const gchar *info_uri,
+						    GnomeVFSMonitorEventType event_type,
+						    gpointer data)
+{
+	MainMenuUI *this = MAIN_MENU_UI (data);
+	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	priv->recently_used_store_has_changed = TRUE;
+}
+
+/* Creates a GnomeVFSMonitor for the recently-used store, so we can be informed
+ * when the store changes.
+ */
+static void
+setup_recently_used_store_monitor (MainMenuUI *this)
+{
+	MainMenuUIPrivate *priv = PRIVATE (this);
+	char *filename;
+	char *uri;
+
+	priv->recently_used_store_has_changed = TRUE; /* ensure the store gets read the first time we need it */
+
+	filename = get_recently_used_store_filename ();
+	uri = g_strconcat ("file://", filename, NULL);
+	g_free (filename);
+
+	if (gnome_vfs_monitor_add (&priv->recently_used_store_monitor,
+				   uri,
+				   GNOME_VFS_MONITOR_FILE,
+				   recently_used_store_monitor_changed_cb,
+				   this) != GNOME_VFS_OK)
+		priv->recently_used_store_monitor = NULL;
+
+	g_free (uri);
 }
 
 static Tile *
