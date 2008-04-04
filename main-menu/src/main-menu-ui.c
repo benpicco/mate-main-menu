@@ -1055,7 +1055,9 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 	gboolean        is_local = TRUE;
 
 	GList *node;
+	Tile *tile;
 
+	libslab_checkpoint ("item_to_recent_doc_tile(): start");
 
 	if (! g_str_has_prefix (item->uri, "file://"))
 		return NULL;
@@ -1081,7 +1083,13 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 	if (bookmark_agent_has_item (priv->bm_agents [BOOKMARK_STORE_USER_DOCS], item->uri))
 		return NULL;
 
-	return TILE (document_tile_new (item->uri, item->mime_type, item->mtime));
+	libslab_checkpoint ("item_to_recent_doc_tile(): will call document_tile_new()");
+
+	tile = TILE (document_tile_new (item->uri, item->mime_type, item->mtime));
+
+	libslab_checkpoint ("item_to_recent_doc_tile(): end");
+	
+	return tile;
 }
 
 static Tile *
