@@ -94,8 +94,6 @@ typedef struct
 	gulong               notify_signal_id;
 } DocumentTilePrivate;
 
-static GnomeThumbnailFactory *thumbnail_factory = NULL;
-
 #define DOCUMENT_TILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), DOCUMENT_TILE_TYPE, DocumentTilePrivate))
 
 static void document_tile_class_init (DocumentTileClass *this_class)
@@ -419,6 +417,7 @@ load_image (DocumentTile *tile)
 
 	gchar *icon_id = NULL;
 	gboolean free_icon_id = TRUE;
+	GnomeThumbnailFactory *thumbnail_factory;
 
 	libslab_checkpoint ("document-tile.c: load_image(): start for %s", TILE (tile)->uri);
 
@@ -429,8 +428,7 @@ load_image (DocumentTile *tile)
 		goto exit;
 	}
 
-	if (! thumbnail_factory)
-		thumbnail_factory = gnome_thumbnail_factory_new (GNOME_THUMBNAIL_SIZE_NORMAL);
+	thumbnail_factory = libslab_thumbnail_factory_get ();
 
 	thumb_path = gnome_thumbnail_factory_lookup (thumbnail_factory, TILE (tile)->uri, priv->modified);
 
