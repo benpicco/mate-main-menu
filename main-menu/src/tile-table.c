@@ -124,6 +124,7 @@ tile_table_reload (TileTable *this)
 	GList *node;
 	gint   i;
 
+	libslab_checkpoint ("tile_table_reload(): start reloading");
 
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_ITEMS_PROP, & items, NULL);
 
@@ -170,10 +171,12 @@ tile_table_reload (TileTable *this)
 	g_list_free (tiles);
 
 	libslab_checkpoint ("tile_table_reload(): updating bins");
-
 	update_bins (this, priv->tiles);
 
+	libslab_checkpoint ("tile_table_reload(): notifying about tile table update");
 	g_object_notify (G_OBJECT (this), TILE_TABLE_TILES_PROP);
+
+	libslab_checkpoint ("tile_table_reload(): end reloading");
 }
 
 void
