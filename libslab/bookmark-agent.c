@@ -298,6 +298,8 @@ bookmark_agent_remove_item (BookmarkAgent *this, const gchar *uri)
 				if (rank_i > rank)
 					set_rank (this, uris [i], rank_i - 1);
 			}
+
+			g_strfreev (uris);
 		}
 
 		save_store (this);
@@ -871,6 +873,8 @@ load_xbel_store (BookmarkAgent *this)
 
 	for (i = 0; uris && uris [i]; ++i)
 		priv->create_item (this, uris [i]);
+
+	g_strfreev (uris);
 
 	libslab_checkpoint ("load_xbel_store(): end creating items from %s", priv->store_path);
 }

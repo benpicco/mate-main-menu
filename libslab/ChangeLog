@@ -1,3 +1,9 @@
+2008-04-08  Federico Mena Quintero  <federico@novell.com>
+
+	* bookmark-agent.c (bookmark_agent_remove_item): Free the uris we
+	got from the GBookmarkFile.
+	(load_xbel_store): Likewise.
+
 2008-04-04  Federico Mena Quintero  <federico@novell.com>
 
 	* libslab-utils.c (libslab_checkpoint_init): New public function;
