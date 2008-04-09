@@ -1,3 +1,8 @@
+2008-04-09  Federico Mena Quintero  <federico@novell.com>
+
+	* bookmark-agent.c (create_doc_item): Don't leak the template
+	filename.
+
 2008-04-08  Federico Mena Quintero  <federico@novell.com>
 
 	* bookmark-agent.c (bookmark_agent_remove_item): Free the uris we

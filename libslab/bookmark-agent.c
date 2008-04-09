@@ -1094,7 +1094,6 @@ create_doc_item (BookmarkAgent *this, const gchar *uri)
 					g_file_set_contents (path, contents, length, NULL);
 
 				g_free (contents);
-				g_free (template);
 			}
 			else
 				fclose (g_fopen (path, "w"));
@@ -1105,6 +1104,7 @@ create_doc_item (BookmarkAgent *this, const gchar *uri)
 		g_free (dir);
 		g_free (file);
 		g_free (path);
+		g_free (template);
 	}
 
 	if (! uri_new)
