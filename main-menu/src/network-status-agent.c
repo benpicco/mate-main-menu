@@ -118,8 +118,10 @@ static void
 network_status_agent_dispose (GObject * obj)
 {
 	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (obj);
-	if (priv->nm_client)
+	if (priv->nm_client) {
 		g_object_unref (priv->nm_client);
+		priv->nm_client = NULL;
+	}
 }
 
 static void

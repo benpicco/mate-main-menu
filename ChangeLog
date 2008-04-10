@@ -1,3 +1,9 @@
+2008-04-10  Federico Mena Quintero  <federico@novell.com>
+
+	* main-menu/src/network-status-agent.c
+	(network_status_agent_dispose): NULL out the nm_client, since
+	::dispose() can be called multiple times.
+
 2008-04-04  Federico Mena Quintero  <federico@novell.com>
 
 	* main-menu/src/main-menu-ui.c: Monitor the recent-files store on
