@@ -1,3 +1,20 @@
+2008-04-11  Tambet Ingo  <tambet@gmail.com>
+
+	Adapt the API changes of libnm-glib.
+
+	See https://bugzilla.novell.com/show_bug.cgi?id=377019 for the
+	request to update to this API.
+
+	* main-menu/src/network-status-agent.c 
+	(nm_get_first_active_device_info): nm_client_get_devices() now
+	returns a 'const GPtrArray', update.
+	(nm_get_device_info): The device properties returned from libnm-glib
+	have been changed to constants, update.
+	To allow notifications for all NMObject property changes, the
+	"state-changed" signal is removed from NMDevice and replaced by a
+	generic "notify::" signal.
+	(nm_state_change_cb): Update the signature, ask for the state.
+
 2008-04-10  Federico Mena Quintero  <federico@novell.com>
 
 	* main-menu/src/network-status-agent.c

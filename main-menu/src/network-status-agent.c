@@ -51,7 +51,7 @@ static void init_nm_connection (NetworkStatusAgent *);
 static NetworkStatusInfo *nm_get_first_active_device_info (NetworkStatusAgent *);
 static NetworkStatusInfo *nm_get_device_info (NetworkStatusAgent *, NMDevice *);
 
-static void nm_state_change_cb (NMDevice *device, NMDeviceState state, gpointer user_data);
+static void nm_state_change_cb (NMDevice *device, GParamSpec *pspec, gpointer user_data);
 
 static NetworkStatusInfo *gtop_get_first_active_device_info (void);
 
@@ -150,25 +150,26 @@ nm_get_first_active_device_info (NetworkStatusAgent * agent)
 
 	NetworkStatusInfo *info = NULL;
 
-	GSList *devices;
-	GSList *node;
+	const GPtrArray *devices;
+	gint i;
 
 	if (!priv->nm_client)
 		return NULL;
 
 	devices = nm_client_get_devices (priv->nm_client);
 
-	for (node = devices; node; node = node->next)
+	for (i = 0; devices && i < devices->len; i++)
 	{
-		info = nm_get_device_info (agent, NM_DEVICE (node->data));
+		NMDevice *nm_device;
+
+		nm_device = NM_DEVICE (g_ptr_array_index (devices, i));
+		info = nm_get_device_info (agent, nm_device);
 
 		if (info)
 		{
 			if (info->active)
 			{
-				NMDevice * nm_device;
-				nm_device = NM_DEVICE (node->data);
-				g_signal_connect (nm_device, "state-changed", G_CALLBACK (nm_state_change_cb), agent);
+				g_signal_connect (nm_device, "notify::state", G_CALLBACK (nm_state_change_cb), agent);
 				break;
 			}
 
@@ -177,9 +178,6 @@ nm_get_first_active_device_info (NetworkStatusAgent * agent)
 			info = NULL;
 		}
 	}
-
-	//the NM internal code does not free these. g_slist_foreach (devices, (GFunc) g_object_unref, NULL);
-	g_slist_free (devices);
 
 	return info;
 }
@@ -200,10 +198,10 @@ static NetworkStatusInfo *
 nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 {
 	NetworkStatusInfo *info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
-	GArray *array;
+	const GArray *array;
 
-	info->iface = nm_device_get_iface (device);
-	info->driver = nm_device_get_driver (device);
+	info->iface = g_strdup (nm_device_get_iface (device));
+	info->driver = g_strdup (nm_device_get_driver (device));
 	info->active = (nm_device_get_state (device) == NM_DEVICE_STATE_ACTIVATED) ? TRUE : FALSE;
 	if (! info->active)
 		return info;
@@ -225,48 +223,45 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 		if (array->len > 1)
 			info->secondary_dns = ip4_address_as_string (g_array_index (array, guint32, 1));
 	}
-	g_array_free (array, TRUE);
-
-	g_object_unref (cfg);
 
 	if (NM_IS_DEVICE_802_11_WIRELESS(device))
 	{
-		GSList *iter;
-		GSList *aps;
+		const GPtrArray *aps;
+		gint i;
 		info->type = DEVICE_TYPE_802_11_WIRELESS;
 
 		info->speed_mbs = nm_device_802_11_wireless_get_bitrate (NM_DEVICE_802_11_WIRELESS(device));
 		info->hw_addr = g_strdup (nm_device_802_11_wireless_get_hw_address (NM_DEVICE_802_11_WIRELESS(device)));
 		aps = nm_device_802_11_wireless_get_access_points (NM_DEVICE_802_11_WIRELESS(device));
-		for (iter = aps; iter; iter = iter->next)
+		for (i = 0; aps && i < aps->len; i++)
 		{
 			const GByteArray * ssid;
-			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (iter->data));
+			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (g_ptr_array_index (aps, i)));
 			if (ssid)
 				info->essid = g_strdup (nm_utils_escape_ssid (ssid->data, ssid->len));
 			else
 				info->essid = g_strdup ("(none)");
 			break; //fixme - we only show one for now
 		}
-
-		g_slist_foreach (aps, (GFunc) g_object_unref, NULL);
-		g_slist_free (aps);
 	}
 	else if (NM_IS_DEVICE_802_3_ETHERNET (device))
 	{
 		info->type = DEVICE_TYPE_802_3_ETHERNET;
 		info->speed_mbs = nm_device_802_3_ethernet_get_speed (NM_DEVICE_802_3_ETHERNET(device));
-		info->hw_addr = nm_device_802_3_ethernet_get_hw_address (NM_DEVICE_802_3_ETHERNET(device));
+		info->hw_addr = g_strdup (nm_device_802_3_ethernet_get_hw_address (NM_DEVICE_802_3_ETHERNET(device)));
 	}
 
 	return info;
 }
 
 static void
-nm_state_change_cb (NMDevice *device, NMDeviceState state, gpointer user_data)
+nm_state_change_cb (NMDevice *device, GParamSpec *pspec, gpointer user_data)
 {
 	NetworkStatusAgent        *this = NETWORK_STATUS_AGENT (user_data);
 	NetworkStatusAgentPrivate *priv = NETWORK_STATUS_AGENT_GET_PRIVATE (this);
+	NMDeviceState              state;
+
+	state = nm_device_get_state (device);
 
 	if (priv->state_curr == state)
 		return;
