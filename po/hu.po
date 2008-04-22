@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-main-menu.hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-26 00:35+0000\n"
-"PO-Revision-Date: 2008-04-22 13:37+0200\n"
+"PO-Revision-Date: 2008-04-22 13:42+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgid ""
 msgstr ""
 "<span size=\"large\"><b>Nincs találat.</b> </span><span>\n"
 "\n"
-" A megadott keresés: \"<b>%s</b>\", eredménytelen.</span>"
+" A megadott keresés: „<b>%s</b>”, eredménytelen.</span>"
 
 #: ../libslab/app-shell.c:900
 msgid "Other"
@@ -211,7 +211,7 @@ msgstr "Ha töröl egy elemet, az véglegesen elvész."
 #: ../libslab/document-tile.c:189
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Megnyitás ezzel: \"%s\"</b>"
+msgstr "<b>Megnyitás ezzel: „%s”</b>"
 
 #: ../libslab/document-tile.c:201
 msgid "Open with Default Application"
@@ -253,13 +253,13 @@ msgstr "%Y %b. %d"
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
 #, c-format
 msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Váratlan attribútum (\"%s\") a(z) \"%s\" elemhez"
+msgstr "Váratlan attribútum („%s”) a(z) „%s ”elemhez"
 
 #: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
 #: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
 #, c-format
 msgid "Attribute '%s' of element '%s' not found"
-msgstr "A(z) \"$2%s\" elem \"$1%s\" attribútuma nem található"
+msgstr "A(z) „$2%s ”elem „$1%s ”attribútuma nem található"
 
 #: ../libslab/libslab-bookmarkfile.c:1087
 #: ../libslab/libslab-bookmarkfile.c:1152
@@ -267,7 +267,7 @@ msgstr "A(z) \"$2%s\" elem \"$1%s\" attribútuma nem található"
 #: ../libslab/libslab-bookmarkfile.c:1226
 #, c-format
 msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Váratlan címke (\"%s\") a várt \"%s\" helyett"
+msgstr "Váratlan címke („%s”) a várt „%s ”helyett"
 
 #: ../libslab/libslab-bookmarkfile.c:1112
 #: ../libslab/libslab-bookmarkfile.c:1126
@@ -275,7 +275,7 @@ msgstr "Váratlan címke (\"%s\") a várt \"%s\" helyett"
 #: ../libslab/libslab-bookmarkfile.c:1246
 #, c-format
 msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Váratlan címke (\"%s\") a következőn belül: \"%s\""
+msgstr "Váratlan címke („%s”) a következőn belül: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:1929
 msgid "No valid bookmark file found in data dirs"
@@ -284,7 +284,7 @@ msgstr "Nem található érvényes könyvjelzőfájl az adatkönyvtárakban"
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
 msgid "A bookmark for URI '%s' already exists"
-msgstr "Már létezik könyvjelző a következő URI címhez: \"%s\""
+msgstr "Már létezik könyvjelző a következő URI címhez: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:2176
 #: ../libslab/libslab-bookmarkfile.c:2333
@@ -305,28 +305,28 @@ msgstr "Már létezik könyvjelző a következő URI címhez: \"%s\""
 #: ../libslab/libslab-bookmarkfile.c:3790
 #, c-format
 msgid "No bookmark found for URI '%s'"
-msgstr "Nem található könyvjelző a következő URI címhez: \"%s\""
+msgstr "Nem található könyvjelző a következő URI címhez: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:2508
 #, c-format
 msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Nincs MIME típus meghatározva a következő URI könyvjelzőjéhez: \"%s\""
+msgstr "Nincs MIME típus meghatározva a következő URI könyvjelzőjéhez: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:2593
 #, c-format
 msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "Nincs magán jelző meghatározva a következő URI könyvjelzőjéhez: \"%s\""
+msgstr "Nincs magán jelző meghatározva a következő URI könyvjelzőjéhez: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:2972
 #, c-format
 msgid "No groups set in bookmark for URI '%s'"
-msgstr "Nincsenek csoportok beállítva a következő URI könyvjelzőjéhez: \"%s\""
+msgstr "Nincsenek csoportok beállítva a következő URI könyvjelzőjéhez: „%s”"
 
 #: ../libslab/libslab-bookmarkfile.c:3373
 #: ../libslab/libslab-bookmarkfile.c:3518
 #, c-format
 msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "Nincs \"%s\" nevű alkalmazás regisztrálva a következő könyvjelzőjéhez: \"%s\""
+msgstr "Nincs „%s ”nevű alkalmazás regisztrálva a következő könyvjelzőjéhez: „%s”"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -391,7 +391,7 @@ msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a \"Megnyitás a fájlkezelőben\" menüelem "
+"Ez a parancs kerül végrehajtásra a „Megnyitás a fájlkezelőben ”menüelem "
 "aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
@@ -400,7 +400,7 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a \"Megnyitás a fájlkezelőben\" menüelem "
+"Ez a parancs kerül végrehajtásra a „Megnyitás a fájlkezelőben ”menüelem "
 "aktiválásakor. A FILE_URI helyére az aktivált fájl könyvtárnevének megfelelő "
 "URI kerül."
 
@@ -408,7 +408,7 @@ msgstr ""
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr "Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor."
+msgstr "Ez a parancs kerül végrehajtásra a „Küldés... ”menüelem aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -416,7 +416,7 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a \"Küldés...\" menüelem aktiválásakor. A "
+"Ez a parancs kerül végrehajtásra a „Küldés... ”menüelem aktiválásakor. A "
 "DIRNAME és BASENAME helyére az aktivált cím megfelelő összetevői kerülnek."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
@@ -466,12 +466,12 @@ msgid ""
 "or \"Places\" table."
 msgstr ""
 "A fájlterületen megjelenítendő fájltáblák listája. A lehetséges értékek: 0 - "
-"a felhasználó által megadott vagy \"Kedvenc\" alkalmazások tábla "
+"a felhasználó által megadott vagy „Kedvenc ”alkalmazások tábla "
 "megjelenítése, 1 - a legutóbb használt alkalmazások tábla megjelenítése, 2 - "
-"a felhasználó által megadott vagy \"Kedvenc\" dokumentumok tábla "
+"a felhasználó által megadott vagy „Kedvenc ”dokumentumok tábla "
 "megjelenítése, 3 - a legutóbb használt dokumentumok tábla megjelenítése, 4 - "
-"a felhasználó által megadott vagy \"Kedvenc\" könyvtárak vagy a \"Helyek\" "
-"tábla megjelenítése és 5 - a legutóbb használt könyvtárak vagy a \"Helyek\" "
+"a felhasználó által megadott vagy „Kedvenc ”könyvtárak vagy a „Helyek ”"
+"tábla megjelenítése és 5 - a legutóbb használt könyvtárak vagy a „Helyek ”"
 "tábla megjelenítése."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
@@ -479,7 +479,7 @@ msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
-"A \"Legutóbb használt alkalmazások\" és a \"Legutóbbi fájlok\" listákból "
+"A „Legutóbb használt alkalmazások ”és a „Legutóbbi fájlok ”listákból "
 "kihagyandó fájlok listája (a .desktop fájlok is)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
@@ -504,7 +504,7 @@ msgstr ""
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "megadja az elemek legkisebb számát a fájlterület \"legutóbbi\" szakaszában."
+msgstr "megadja az elemek legkisebb számát a fájlterület „legutóbbi ”szakaszában."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
@@ -590,7 +590,7 @@ msgid ""
 "\"Favorite\" applications."
 msgstr ""
 "Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy \"Kedvenc\" alkalmazások listájának módosítása."
+"megadott vagy „Kedvenc ”alkalmazások listájának módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
@@ -598,7 +598,7 @@ msgid ""
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
 "Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy \"Kedvenc\" könyvtárak, illetve a \"Helyek\" listájának "
+"megadott vagy „Kedvenc ”könyvtárak, illetve a „Helyek ”listájának "
 "módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
@@ -607,7 +607,7 @@ msgid ""
 "\"Favorite\" documents."
 msgstr ""
 "Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy \"Kedvenc\" dokumentumok listájának módosítása."
+"megadott vagy „Kedvenc ”dokumentumok listájának módosítása."
 
 #: ../main-menu/src/hard-drive-status-tile.c:102
 msgid "_System Monitor"
