@@ -596,7 +596,8 @@ init_thumbnail_factory_idle_cb (gpointer data)
 void
 libslab_thumbnail_factory_preinit (void)
 {
-	thumbnail_factory_idle_id = g_idle_add (init_thumbnail_factory_idle_cb, NULL);
+	if (thumbnail_factory_idle_id != 0)
+		thumbnail_factory_idle_id = g_idle_add (init_thumbnail_factory_idle_cb, NULL);
 }
 
 GnomeThumbnailFactory *

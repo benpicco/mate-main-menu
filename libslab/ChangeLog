@@ -1,3 +1,13 @@
+2008-04-23  Federico Mena Quintero  <federico@novell.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=380339 - Crash when
+	there are two main-menu applets.
+
+	* libslab-utils.c (libslab_thumbnail_factory_preinit): Check if
+	the idle handler is already set up, so we don't try to initialize
+	the factory twice if there is more than one main-menu applet
+	(e.g. for multiple monitors).
+
 2008-04-09  Federico Mena Quintero  <federico@novell.com>
 
 	* bookmark-agent.c (create_doc_item): Don't leak the template
