@@ -1,5 +1,11 @@
 2008-04-23  Federico Mena Quintero  <federico@novell.com>
 
+	* libslab-utils.c (create_thumbnail_factory): Continue the fix for
+	the last bug; when a second instance of the applet gets added, it
+	will want to initialize the thumbnail factory again.
+
+2008-04-23  Federico Mena Quintero  <federico@novell.com>
+
 	https://bugzilla.novell.com/show_bug.cgi?id=380339 - Crash when
 	there are two main-menu applets.
 

@@ -577,9 +577,14 @@ static GnomeThumbnailFactory *thumbnail_factory;
 static void
 create_thumbnail_factory (void)
 {
+	/* The thumbnail_factory may already have been created by an applet
+	 * instance that was launched before the current one.
+	 */
+	if (thumbnail_factory != NULL)
+		return;
+
 	libslab_checkpoint ("create_thumbnail_factory(): start");
 
-	g_assert (thumbnail_factory == NULL);
 	thumbnail_factory = gnome_thumbnail_factory_new (GNOME_THUMBNAIL_SIZE_NORMAL);
 
 	libslab_checkpoint ("create_thumbnail_factory(): end");
@@ -596,8 +601,7 @@ init_thumbnail_factory_idle_cb (gpointer data)
 void
 libslab_thumbnail_factory_preinit (void)
 {
-	if (thumbnail_factory_idle_id == 0)
-		thumbnail_factory_idle_id = g_idle_add (init_thumbnail_factory_idle_cb, NULL);
+	thumbnail_factory_idle_id = g_idle_add (init_thumbnail_factory_idle_cb, NULL);
 }
 
 GnomeThumbnailFactory *
