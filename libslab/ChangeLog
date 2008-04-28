@@ -1,3 +1,7 @@
+2008-04-28  Scott Reeves  <sreeves@novell.com>
+	* bookmark-agent.c:
+	Fix for BNC#308998 - missing translation in menu
+
 2008-04-23  Federico Mena Quintero  <federico@novell.com>
 
 	* libslab-utils.c (create_thumbnail_factory): Continue the fix for

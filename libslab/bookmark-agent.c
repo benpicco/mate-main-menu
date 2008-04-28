@@ -1041,6 +1041,7 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 
 	GnomeDesktopItem *ditem;
 	gchar *uri_new = NULL;
+	gchar *name;
 
 
 	ditem = libslab_gnome_desktop_item_new_from_unknown_id (uri);
@@ -1053,9 +1054,18 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 	if (! uri_new)
 		return;
 
-	if (libslab_strcmp (uri, uri_new)) {
+	name = g_bookmark_file_get_title (priv->store, uri, NULL);
+	if (! libslab_strcmp (name, "Help"))
+		g_bookmark_file_set_title (priv->store, uri, _("Help"));
+	else if (! libslab_strcmp (name, "Lock Screen"))
+		g_bookmark_file_set_title (priv->store, uri, _("Lock Screen"));
+	else if (! libslab_strcmp (name, "Logout"))
+		g_bookmark_file_set_title (priv->store, uri, _("Logout"));
+	else if (! libslab_strcmp (name, "Shutdown"))
+		g_bookmark_file_set_title (priv->store, uri, _("Shutdown"));
+
+	if (libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
-	}
 }
 
 static void
@@ -1137,11 +1147,13 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 	}
 	else if (! strcmp (uri, "DOCUMENTS")) {
 		path = g_build_filename (g_get_home_dir (), "Documents", NULL);
+		name = _("Documents");
 		uri_new = g_filename_to_uri (path, NULL, NULL);
 		g_free (path);
 	}
 	else if (! strcmp (uri, "DESKTOP")) {
 		path = g_build_filename (g_get_home_dir (), "Desktop", NULL);
+		name = _("Desktop");
 		uri_new = g_filename_to_uri (path, NULL, NULL);
 		icon = "gnome-fs-desktop";
 		g_free (path);
