@@ -14,12 +14,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-26 00:35+0000\n"
-"PO-Revision-Date: 2008-01-27 13:52+0100\n"
+"POT-Creation-Date: 2008-04-28 23:43+0000\n"
+"PO-Revision-Date: 2008-05-04 21:40+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type:  text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
@@ -43,7 +43,8 @@ msgstr "Salir de la shell al llevar a cabo acción de inicio"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "Salir de la shell al llevar a cabo acción de actualización o desinstalación"
+msgstr ""
+"Salir de la shell al llevar a cabo acción de actualización o desinstalación"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
@@ -55,7 +56,8 @@ msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de ayuda"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr "Indica si se debe cerrar la shell al llevar a cabo una acción de inicio"
+msgstr ""
+"Indica si se debe cerrar la shell al llevar a cabo una acción de inicio"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 msgid ""
@@ -107,7 +109,8 @@ msgstr "Acciones sobre las aplicaciones"
 msgid "<b>Start %s</b>"
 msgstr "<b>Iniciar %s</b>"
 
-#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:388 ../libslab/bookmark-agent.c:1059
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ayuda"
@@ -121,13 +124,13 @@ msgstr "Actualizar"
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
+#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:741
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Eliminar de favoritos"
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
+#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:743
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
@@ -157,33 +160,56 @@ msgstr ""
 msgid "Other"
 msgstr "Otro"
 
-#: ../libslab/bookmark-agent.c:1034
+#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Bloquear la pantalla"
+
+#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Salir de la sesión"
+
+#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Apagar"
+
+#: ../libslab/bookmark-agent.c:1089
 msgid "New Spreadsheet"
 msgstr "Hoja de cálculo nueva"
 
-#: ../libslab/bookmark-agent.c:1038
+#: ../libslab/bookmark-agent.c:1093
 msgid "New Document"
 msgstr "Documento nuevo"
 
-#: ../libslab/bookmark-agent.c:1088
+#: ../libslab/bookmark-agent.c:1145
 msgid "Home"
 msgstr "Inicio"
 
-#: ../libslab/bookmark-agent.c:1104
+#: ../libslab/bookmark-agent.c:1150 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Documentos"
+
+#: ../libslab/bookmark-agent.c:1156
+msgid "Desktop"
+msgstr "Escritorio"
+
+#: ../libslab/bookmark-agent.c:1163
 msgid "File System"
 msgstr "Sistema de archivos"
 
 # include/network/lan/address.ycp:40
-#: ../libslab/bookmark-agent.c:1108
+#: ../libslab/bookmark-agent.c:1167
 msgid "Network Servers"
 msgstr "Servidores de red"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Buscar"
 
 #. make open with default action
 #: ../libslab/directory-tile.c:170
+#, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Abrir</b>"
 
@@ -203,16 +229,16 @@ msgid "Move to Trash"
 msgstr "Mover a la Papelera"
 
 #: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
+#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:854
 msgid "Delete"
 msgstr "Borrar"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1026
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "¿Está seguro de que quiere borrar permanentemente «%s»?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1030
 msgid "If you delete an item, it is permanently lost."
 msgstr "Si borra un elemento se pierde para siempre."
 
@@ -229,31 +255,31 @@ msgstr "Abrir con la aplicación predeterminada"
 msgid "Open in File Manager"
 msgstr "Abrir en el gestor de archivos"
 
-#: ../libslab/document-tile.c:633
+#: ../libslab/document-tile.c:637
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:640
+#: ../libslab/document-tile.c:644
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
-#: ../libslab/document-tile.c:648
+#: ../libslab/document-tile.c:652
 msgid "Today %l:%M %p"
 msgstr "Hoy %H:%M"
 
-#: ../libslab/document-tile.c:658
+#: ../libslab/document-tile.c:662
 msgid "Yesterday %l:%M %p"
 msgstr "Ayer %H:%M"
 
-#: ../libslab/document-tile.c:670
+#: ../libslab/document-tile.c:674
 msgid "%a %l:%M %p"
 msgstr "%a %H:%M"
 
-#: ../libslab/document-tile.c:678
+#: ../libslab/document-tile.c:682
 msgid "%b %d %l:%M %p"
 msgstr "%d %b %H:%M"
 
-#: ../libslab/document-tile.c:680
+#: ../libslab/document-tile.c:684
 msgid "%b %d %Y"
 msgstr "%d %b %Y"
 
@@ -286,8 +312,10 @@ msgid "Unexpected tag '%s' inside '%s'"
 msgstr "Etiqueta «%s» inesperada dentro de «%s»"
 
 #: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
 msgid "No valid bookmark file found in data dirs"
-msgstr "No se encontró un archivo de marcadores válido en los directorios de datos"
+msgstr ""
+"No se encontró un archivo de marcadores válido en los directorios de datos"
 
 #: ../libslab/libslab-bookmarkfile.c:2130
 #, c-format
@@ -349,6 +377,7 @@ msgid "<b>Open %s</b>"
 msgstr "<b>Abrir %s</b>"
 
 #: ../libslab/system-tile.c:141
+#, c-format
 msgid "Remove from System Items"
 msgstr "Eliminar de los iconos del sistema"
 
@@ -357,7 +386,7 @@ msgid "Default menu and application browser"
 msgstr "Menú por defecto y navegador de aplicaciones"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2390 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -402,8 +431,8 @@ msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"«Abrir en el gestor de archivos»."
+"Éste es el comando que se debe ejecutar al activar el elemento de menú «Abrir "
+"en el gestor de archivos»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
@@ -411,9 +440,9 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"Éste es el comando que se debe ejecutar al activar el elemento de menú "
-"«Abrir en el gestor de archivos». FILE_URI se sustituye con un URI "
-"correspondiente al nombre de directorio del archivo activado."
+"Éste es el comando que se debe ejecutar al activar el elemento de menú «Abrir "
+"en el gestor de archivos». FILE_URI se sustituye con un URI correspondiente "
+"al nombre de directorio del archivo activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -435,7 +464,8 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid "This is the command to execute when the search entry is used."
-msgstr "Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda."
+msgstr ""
+"Éste es el comando que se debe ejecutar al utilizar la entrada de búsqueda."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid ""
@@ -521,12 +551,13 @@ msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
 msgstr ""
-"determina el número mínimo de elementos en la sección «recientes» del área "
-"de archivos."
+"determina el número mínimo de elementos en la sección «recientes» del área de "
+"archivos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines which types of files to display in the file area"
-msgstr "determina los tipos de archivos que deben aparecer en el área de archivos"
+msgstr ""
+"determina los tipos de archivos que deben aparecer en el área de archivos"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "if true, main menu is more anxious to close"
@@ -568,11 +599,13 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified dirs section"
-msgstr "estado de bloqueo para la sección de directorios especificadas por el usuario"
+msgstr ""
+"estado de bloqueo para la sección de directorios especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified docs section"
-msgstr "estado de bloqueo para la sección de documentos especificadas por el usuario"
+msgstr ""
+"estado de bloqueo para la sección de documentos especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
@@ -663,25 +696,11 @@ msgstr "%.1fb"
 msgid "Home: %s Free / %s"
 msgstr "Carpeta personal: %s Disponible / %s"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Salir de la sesión"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Apagar"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Bloquear la pantalla"
-
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2161
+#: ../main-menu/src/main-menu-ui.c:2391
 msgid "The GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -744,6 +763,7 @@ msgstr "Conexión ethernet fija (%s)"
 
 #: ../main-menu/src/network-status-tile.c:329
 #: ../main-menu/src/network-status-tile.c:339
+#, c-format
 msgid "Unknown"
 msgstr "Desconocido"
 
@@ -759,10 +779,6 @@ msgstr "Aplicaciones"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Equipo"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Documentos"
 
 #
 # include/lilo/ui.ycp:818
@@ -828,4 +844,3 @@ msgstr "Añadir el documento actual a favoritos"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Eliminar de favoritos el documento actual"
-
