@@ -363,6 +363,19 @@ tile_show_event_cb (GtkWidget * widget, gpointer user_data)
 	update_tile (tile);
 }
 
+void
+network_tile_update_status (GtkWidget * widget)
+{
+	NetworkStatusTile *tile = NETWORK_STATUS_TILE (widget);
+	NetworkStatusTilePrivate *priv = NETWORK_STATUS_TILE_GET_PRIVATE (tile);
+
+	if (priv->agent->nm_present)
+		return;
+
+	refresh_status (tile);
+	update_tile (tile);
+}
+
 static void
 status_changed_cb (NetworkStatusAgent * agent, gpointer user_data)
 {

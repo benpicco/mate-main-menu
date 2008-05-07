@@ -1,3 +1,20 @@
+2008-05-07  Magnus Boman  <captain.magnus@gmail.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=262334 -
+	Show the correct status in the network status tile even if
+	NetworkManager is not running.
+
+	* main-menu/src/main-menu-ui.c (create_status_section): Remember
+	our network_status widget in the MainMenuUIPrivate.
+	(present_slab_window): Update the network tile.
+
+	* main-menu/src/network-status-tile.c (network_tile_update_status):
+	New function.
+
+	* main-menu/src/network-status-agent.c (init_nm_connection):
+	Handle the case where we obtained a NM client object, but NM is
+	not running.
+
 2008-04-11  Tambet Ingo  <tambet@gmail.com>
 
 	Adapt the API changes of libnm-glib.

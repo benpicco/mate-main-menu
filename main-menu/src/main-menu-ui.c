@@ -100,6 +100,7 @@ typedef struct {
 
 	GtkWidget *search_section;
 	GtkWidget *search_entry;
+	GtkWidget *network_status;
 
 	GtkNotebook *file_section;
 	GtkWidget   *page_selectors    [3];
@@ -404,6 +405,7 @@ main_menu_ui_init (MainMenuUI *this)
 
 	priv->status_section                             = NULL;
 	priv->system_section                             = NULL;
+	priv->network_status                             = NULL;
 
 	priv->volume_mon                                 = NULL;
 
@@ -730,15 +732,15 @@ create_status_section (MainMenuUI *this)
 
 	ctnr = GTK_CONTAINER (glade_xml_get_widget (
 		priv->main_menu_xml, "network-status-container"));
-	tile = network_status_tile_new ();
+	priv->network_status = network_status_tile_new ();
 
-	gtk_widget_set_size_request (tile, 6 * icon_width, -1);
+	gtk_widget_set_size_request (priv->network_status, 6 * icon_width, -1);
 
 	g_signal_connect (
-		G_OBJECT (tile), "tile-action-triggered",
+		G_OBJECT (priv->network_status), "tile-action-triggered",
 		G_CALLBACK (tile_action_triggered_cb), this);
 
-	gtk_container_add   (ctnr, tile);
+	gtk_container_add   (ctnr, priv->network_status);
 	gtk_widget_show_all (GTK_WIDGET (ctnr));
 
 	priv->status_section = glade_xml_get_widget (
@@ -1840,6 +1842,8 @@ static void
 present_slab_window (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	network_tile_update_status (priv->network_status);
 
 	update_recently_used_sections (this);
 

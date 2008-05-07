@@ -48,5 +48,7 @@ GType network_status_tile_get_type (void);
 
 GtkWidget *network_status_tile_new (void);
 
+void network_tile_update_status (GtkWidget * widget);
+
 G_END_DECLS
 #endif

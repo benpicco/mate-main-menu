@@ -131,7 +131,7 @@ init_nm_connection (NetworkStatusAgent * agent)
 
 	priv->nm_client = nm_client_new();
 
-	if (!priv->nm_client)
+	if (!(priv->nm_client && nm_client_get_manager_running (priv->nm_client)))
 	{
 		g_log (G_LOG_DOMAIN, G_LOG_LEVEL_WARNING, "nm_client_new failed");
 
