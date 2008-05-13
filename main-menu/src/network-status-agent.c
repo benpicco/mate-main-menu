@@ -235,23 +235,23 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 
 	if (NM_IS_DEVICE_802_11_WIRELESS(device))
 	{
-		const GPtrArray *aps;
-		gint i;
-		info->type = DEVICE_TYPE_802_11_WIRELESS;
+		NMAccessPoint * activeap = NULL;
+		const GByteArray * ssid;
 
+		info->type = DEVICE_TYPE_802_11_WIRELESS;
 		info->speed_mbs = nm_device_802_11_wireless_get_bitrate (NM_DEVICE_802_11_WIRELESS(device));
 		info->hw_addr = g_strdup (nm_device_802_11_wireless_get_hw_address (NM_DEVICE_802_11_WIRELESS(device)));
-		aps = nm_device_802_11_wireless_get_access_points (NM_DEVICE_802_11_WIRELESS(device));
-		for (i = 0; aps && i < aps->len; i++)
+
+		activeap = nm_device_802_11_wireless_get_active_access_point (NM_DEVICE_802_11_WIRELESS(device));
+		if (activeap)
 		{
-			const GByteArray * ssid;
-			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (g_ptr_array_index (aps, i)));
+			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (activeap));
 			if (ssid)
 				info->essid = g_strdup (nm_utils_escape_ssid (ssid->data, ssid->len));
-			else
-				info->essid = g_strdup ("(none)");
-			break; //fixme - we only show one for now
 		}
+
+		if (! info->essid)
+			info->essid = g_strdup ("(none)");
 	}
 	else if (NM_IS_DEVICE_802_3_ETHERNET (device))
 	{

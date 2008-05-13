@@ -1,3 +1,12 @@
+2008-05-09  Magnus Boman  <captain.magnus@gmail.com>
+
+        https://bugzilla.novell.com/show_bug.cgi?id=375639
+        Display active ap instead of the first ap in the list.
+
+        * main-menu/src/network-status-agent.c (nm_get_device_info):
+        Make sure we show ssid from an active ap by using
+        nm_device_802_11_wireless_get_active_access_point.
+
 2008-05-13  Scott Reeves  <sreeves@novell.com>
 	* main-menu/etc/applications.xbel:
 	Fix for BNC#388785 - use banshee-1 as favorite.
