@@ -1,4 +1,13 @@
+2008-05-09  Magnus Boman  <captain.magnus@gmail.com>
+
+        https://bugzilla.novell.com/show_bug.cgi?id=224885 -
+        Don't display both generic name and description if they are the same.
+
+        * libslab/application-tile.c (application_tile_setup): Set subheader
+        to NULL if description is the same as generic name.
+
 2008-04-28  Scott Reeves  <sreeves@novell.com>
+
 	* bookmark-agent.c:
 	Fix for BNC#308998 - missing translation in menu
 

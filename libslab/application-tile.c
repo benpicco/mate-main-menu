@@ -330,7 +330,7 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 	  atk_object_set_description (accessible, desc);
 
 	header    = create_header    (name);
-	if (desc && priv->show_generic_name)  /*if no GenericName then just show and center the Name */
+	if (desc && priv->show_generic_name && strcmp(name, desc) != 0)  /*if no GenericName then just show and center the Name */
 		subheader = create_subheader (desc);
 	else
 		subheader = NULL;
