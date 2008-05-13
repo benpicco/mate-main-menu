@@ -1,4 +1,11 @@
 2008-05-13  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* libslab/bookmark-agent.c
+	* libslab/document-tile.c
+	* libslab/document-tile.h:
+	Show icon when thumbnail is blank - BNC#381617, BNC#373783
+
+2008-05-13  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/network-status-agent.c (nm_get_device_info):
 	Finish the fix for NM API breakage. (remove old calls)
 

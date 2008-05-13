@@ -84,6 +84,7 @@ typedef struct
 
 	gboolean renaming;
 	gboolean image_is_broken;
+	gchar * force_icon_name;  //show an icon instead of a thumbnail
 
 	gboolean delete_enabled;
 	guint gconf_conn_id;
@@ -106,6 +107,19 @@ static void document_tile_class_init (DocumentTileClass *this_class)
 	widget_class->style_set = document_tile_style_set;
 
 	g_type_class_add_private (this_class, sizeof (DocumentTilePrivate));
+}
+
+//Use a specific icon instead of a thumbnail.
+GtkWidget *
+document_tile_new_force_icon (const gchar *in_uri, const gchar *mime_type, time_t modified, const gchar *icon)
+{
+	DocumentTile *this;
+	DocumentTilePrivate *priv;
+	
+	this = (DocumentTile *) document_tile_new (in_uri, mime_type, modified);
+	priv = DOCUMENT_TILE_GET_PRIVATE (this);
+	priv->force_icon_name = g_strdup (icon);
+	return GTK_WIDGET (this);
 }
 
 GtkWidget *
@@ -364,6 +378,7 @@ document_tile_init (DocumentTile *tile)
 
 	priv->renaming         = FALSE;
 	priv->image_is_broken  = TRUE;
+	priv->force_icon_name  = NULL;
 
 	priv->delete_enabled   = FALSE;
 	priv->gconf_conn_id    = 0;
@@ -383,6 +398,7 @@ document_tile_finalize (GObject *g_object)
 
 	g_free (priv->basename);
 	g_free (priv->mime_type);
+	g_free (priv->force_icon_name);
 
 	gnome_vfs_mime_application_free (priv->default_app);
 
@@ -421,8 +437,11 @@ load_image (DocumentTile *tile)
 
 	libslab_checkpoint ("document-tile.c: load_image(): start for %s", TILE (tile)->uri);
 
-	if (! priv->mime_type || ! strstr (TILE (tile)->uri, "file://")) {
-		icon_id = "gnome-fs-regular";
+	if (priv->force_icon_name || ! priv->mime_type || ! strstr (TILE (tile)->uri, "file://")) {
+		if (priv->force_icon_name)
+			icon_id = priv->force_icon_name;
+		else
+			icon_id = "gnome-fs-regular";
 		free_icon_id = FALSE;
 
 		goto exit;

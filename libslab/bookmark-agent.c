@@ -1086,10 +1086,12 @@ create_doc_item (BookmarkAgent *this, const gchar *uri)
 		dir = g_build_filename (g_get_home_dir (), "Documents", NULL);
 
 		if (! strcmp (uri, "BLANK_SPREADSHEET")) {
+			g_bookmark_file_set_title (priv->store, uri, "BLANK_SPREADSHEET");
 			file = g_strconcat (_("New Spreadsheet"), ".ots", NULL);
 			template = find_package_data_file (CALC_TEMPLATE_FILE_NAME);
 		}
 		else {
+			g_bookmark_file_set_title (priv->store, uri, "BLANK_DOCUMENT");
 			file = g_strconcat (_("New Document"), ".ott", NULL);
 			template = find_package_data_file (WRITER_TEMPLATE_FILE_NAME);
 		}

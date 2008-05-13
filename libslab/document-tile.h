@@ -55,6 +55,9 @@ GType document_tile_get_type (void);
 
 GtkWidget *document_tile_new (const gchar *uri, const gchar *mime_type, time_t modified);
 
+//If you want to show a icon instead of a thumbnail
+GtkWidget *document_tile_new_force_icon (const gchar *uri, const gchar *mime_type, time_t modified, const gchar *icon);
+
 G_END_DECLS
 
 #endif
