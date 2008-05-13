@@ -224,11 +224,6 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 		info->broadcast = ip4_address_as_string (bcast);
 	}
 
-	info->ip4_addr = ip4_address_as_string (nm_ip4_config_get_address (cfg));
-	info->subnet_mask = ip4_address_as_string (nm_ip4_config_get_netmask (cfg));
-	info->broadcast = ip4_address_as_string (nm_ip4_config_get_broadcast (cfg));
-	info->route = ip4_address_as_string (nm_ip4_config_get_gateway (cfg));
-
 	info->primary_dns = NULL;
 	info->secondary_dns = NULL;
 	array = nm_ip4_config_get_nameservers (cfg);

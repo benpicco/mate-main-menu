@@ -1,3 +1,7 @@
+2008-05-13  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/network-status-agent.c (nm_get_device_info):
+	Finish the fix for NM API breakage. (remove old calls)
+
 2008-05-12  Tambet Ingo  <tambet@gmail.com>
 
 	* main-menu/src/network-status-agent.c (nm_get_device_info):
