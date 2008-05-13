@@ -1,3 +1,12 @@
+2008-05-09  Magnus Boman  <captain.magnus@gmail.com>
+
+        https://bugzilla.novell.com/show_bug.cgi?id=372206
+        Add notification for NM state even if there's no active interface.
+
+        * main-menu/src/network-status-agent.c (nm_get_first_active_device_info):
+	Add state change notification callbacks for interfaces until we
+	find an active device.
+
 2008-05-13  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* libslab/bookmark-agent.c

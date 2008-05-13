@@ -168,11 +168,9 @@ nm_get_first_active_device_info (NetworkStatusAgent * agent)
 
 		if (info)
 		{
+			g_signal_connect (nm_device, "notify::state", G_CALLBACK (nm_state_change_cb), agent);
 			if (info->active)
-			{
-				g_signal_connect (nm_device, "notify::state", G_CALLBACK (nm_state_change_cb), agent);
 				break;
-			}
 
 			g_object_unref (info);
 
