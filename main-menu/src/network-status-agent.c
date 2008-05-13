@@ -25,6 +25,7 @@
 #include <NetworkManager.h>
 #include <libnm-glib/nm-device-802-11-wireless.h>
 #include <libnm-glib/nm-device-802-3-ethernet.h>
+#include <nm-setting-ip4-config.h>
 #include <nm-utils.h>
 #include <arpa/inet.h>
 #include <dbus/dbus.h>
@@ -199,6 +200,8 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 {
 	NetworkStatusInfo *info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
 	const GArray *array;
+	NMSettingIP4Address *def_addr;
+	guint32 hostmask, network, bcast;
 
 	info->iface = g_strdup (nm_device_get_iface (device));
 	info->driver = g_strdup (nm_device_get_driver (device));
@@ -208,6 +211,19 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 	NMIP4Config * cfg = nm_device_get_ip4_config (device);
 	if(! cfg)
 		return info;
+
+	def_addr = nm_ip4_config_get_addresses (cfg);
+	if (def_addr) {
+		info->ip4_addr = ip4_address_as_string (def_addr->address);
+		info->subnet_mask = ip4_address_as_string (def_addr->netmask);
+		info->route = ip4_address_as_string (def_addr->gateway);
+
+		network = ntohl (def_addr->address) & ntohl (def_addr->netmask);
+		hostmask = ~ntohl (def_addr->netmask);
+		bcast = htonl (network | hostmask);
+		info->broadcast = ip4_address_as_string (bcast);
+	}
+
 	info->ip4_addr = ip4_address_as_string (nm_ip4_config_get_address (cfg));
 	info->subnet_mask = ip4_address_as_string (nm_ip4_config_get_netmask (cfg));
 	info->broadcast = ip4_address_as_string (nm_ip4_config_get_broadcast (cfg));
