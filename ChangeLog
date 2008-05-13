@@ -1,3 +1,7 @@
+2008-05-13  Scott Reeves  <sreeves@novell.com>
+	* main-menu/etc/applications.xbel:
+	Fix for BNC#388785 - use banshee-1 as favorite.
+
 2008-05-09  Magnus Boman  <captain.magnus@gmail.com>
 
         https://bugzilla.novell.com/show_bug.cgi?id=372206
