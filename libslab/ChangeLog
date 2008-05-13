@@ -1,3 +1,8 @@
+2008-05-13  Federico Mena Quintero  <federico@novell.com>
+
+	* application-tile.c (application_tile_setup): Ensure that name
+	and desc are non-NULL before comparing them.
+
 2008-05-09  Magnus Boman  <captain.magnus@gmail.com>
 
         https://bugzilla.novell.com/show_bug.cgi?id=224885 -
