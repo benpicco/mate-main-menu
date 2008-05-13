@@ -1,4 +1,30 @@
 =============
+Version 0.9.10
+=============
+
+  Released: 2008-05-13
+
+  * Features / Fixes
+    - Startup performance improvements (Federico Mena Quintero, Magnus Boman)
+    - Update to NetworkManager 0.7 (Scott Reeves)
+    - Update to match NM 0.7 API changes (Federico Mena Quintero, Tambet Ingo, Scott Reeves)
+    - Better network notification and status handling (Magnus Boman)
+    - Use banshee-1 in main-menu (Scott Reeves)
+    - New document templates (Scott Reeves)
+    - Fix crash when 2 main-menu applets (Federico Mena Quintero)
+    - Fix missing translations.
+    - Makefile work (Rodrigo Moya)
+    - Dont display Name and GenericName if they are the same (Federico Mena Quintero, Magnus Boman)
+
+  * Translations
+    - Petr Kovar - Updated Czech translation by Adrian Gunis
+    - Jorge Gonzalez - Updated Spanish translation
+    - Gabor Kelemen - hu.po: Translation updated
+    - Kostas Papadimas - Updated  Greek translation by Giannis Katsampiris.
+    - Gil Forcada - Updated Catalan translation by Joan Duran.
+    - Philip Withnall - Updated British English translation.
+
+=============
 Version 0.9.9
 =============
 

@@ -1,3 +1,5 @@
+==================== 0.9.10 ====================
+
 2008-05-13  Federico Mena Quintero  <federico@novell.com>
 
 	* application-tile.c (application_tile_setup): Ensure that name
