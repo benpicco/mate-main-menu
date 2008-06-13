@@ -1,3 +1,13 @@
+2008-06-13  Federico Mena Quintero  <federico@novell.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=336735 - On
+	multiscreen setups, the slab window may appear ona the wrong
+	screen.
+
+	* main-menu/src/main-menu-ui.c (present_slab_window): Set the
+	screen of the slab_window to the same screen as the one for the
+	applet widget.
+
 2008-05-13  Scott Reeves  <sreeves@novell.com>
 	* configure.in: post release bump to 0.9.11
 

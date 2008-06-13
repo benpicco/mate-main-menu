@@ -1857,6 +1857,7 @@ present_slab_window (MainMenuUI *this)
 
 	update_recently_used_sections (this);
 
+	gtk_window_set_screen (GTK_WINDOW (priv->slab_window), gtk_widget_get_screen (GTK_WIDGET (priv->panel_applet)));
 	gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), gtk_get_current_event_time ());
 }
 
