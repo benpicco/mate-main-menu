@@ -1,557 +1,775 @@
-# Vietnamese translation for YaST2 (@memory@).
-# Copyright © 2006 SUSE Linux Products GmbH.
-# Copyright © 2005, 2006 Gnome i18n Project for Vietnamese.
-# Phan Vĩnh Thịnh <teppi82@gmail.com>, 2006.
-# Clytie Siddall <clytie@riverland.net.au>, 2005, 2006.
+# Vietnamese translation for GNOME Main Menu.
+# Copyright © 2008 GNOME i18n Project for Vietnamese.
+# Clytie Siddall <clytie@riverland.net.au>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: YaST (@memory@)\n"
+"Project-Id-Version: gnome-main-menu 0.9.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 12:18-0600\n"
-"PO-Revision-Date: 2006-07-12 07:32+0200\n"
-"Last-Translator: Phan Vĩnh Thịnh <teppi82@gmail.com>\n"
-"Language-Team: Vietnamese <i18n@suse.de>\n"
+"POT-Creation-Date: 2008-06-15 04:03+0000\n"
+"PO-Revision-Date: 2008-06-15 22:41+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.7b3\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
 msgid "Application Browser"
-msgstr ""
+msgstr "Trình duyệt Ứng dụng"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
-#: ../control-center/etc/control-center.schemas.in.h:2
 msgid "Exit shell on add or remove action performed"
-msgstr ""
+msgstr "Thoát khỏi trình bao khi thực hiện hành vi thêm hoặc gỡ bỏ"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
-#: ../control-center/etc/control-center.schemas.in.h:3
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "Thoát khỏi trình bao khi gọi trợ giúp"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
-#: ../control-center/etc/control-center.schemas.in.h:4
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "Thoát khỏi trình bao khi khởi chạy ứng dụng"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
-#: ../control-center/etc/control-center.schemas.in.h:5
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
+msgstr "Thoát khỏi trình bao khi nâng cấp hoặc huỷ cài đặt"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr ""
+msgstr "Tên tập tin của tập tin .desktop đã có"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
-#: ../control-center/etc/control-center.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "Cho biết có nên đóng trình bao khi gọi trợ giúp hay không"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
-#: ../control-center/etc/control-center.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
+msgstr "Cho biết có nên đóng trình bao khi khởi chạy ứng dụng hay không"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
-#: ../control-center/etc/control-center.schemas.in.h:8
-msgid "Indicates whether to close the shell when an add or remove action is performed"
-msgstr ""
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr "Cho biết có nên đóng trình bao khi thêm hoặc gỡ gì hay không"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
-#: ../control-center/etc/control-center.schemas.in.h:9
-msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
-msgstr ""
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr "Cho biết có nên đóng trình bao khi nâng cấp hoặc huỷ cài đặt không"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
-msgstr ""
+msgstr "Số tối đa các ứng dụng mới"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
 msgstr ""
+"Số tối đa các ứng dụng sẽ được hiển thị trong phân loại Ứng dụng mới"
 
 #: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
-msgstr ""
+msgstr "Ứng dụng mới"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
 msgid "Filter"
-msgstr ""
+msgstr "Lọc"
 
 #: ../application-browser/src/application-browser.c:90
-#: ../control-center/src/control-center.c:146
 msgid "Groups"
-msgstr ""
+msgstr "Nhóm"
 
 #: ../application-browser/src/application-browser.c:90
 msgid "Application Actions"
-msgstr ""
+msgstr "Hành vi ứng dụng"
 
-#: ../control-center/etc/control-center.desktop.in.in.h:1
-#: ../control-center/src/control-center.c:150
-#: ../main-menu/src/system-tile.c:114
-msgid "Control Center"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:1
-msgid "Close the control-center when a task is activated"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:10
-msgid "Task names and associated .desktop files"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:11
-msgid "The task name to be displayed in the control-center (thus needing to be translated) followed by a \";\" separator then the filename of an associated .desktop file to launch for that task."
-msgstr ""
-
-#. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
-#: ../control-center/etc/control-center.schemas.in.h:13
-msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
-msgstr ""
-
-#: ../control-center/etc/control-center.schemas.in.h:14
-msgid "if true, the control-center will close when a \"Common Task\" is activated"
-msgstr ""
-
-#: ../control-center/src/control-center.c:61
+#: ../libslab/application-tile.c:372
 #, c-format
-msgid "key not found [%s]\n"
-msgstr ""
+#. make start action
+msgid "<b>Start %s</b>"
+msgstr "<b>Khởi chạy %s</b>"
 
-#: ../control-center/src/control-center.c:146
-msgid "Common Tasks"
-msgstr ""
+#: ../libslab/application-tile.c:391
+#: ../libslab/bookmark-agent.c:1059
+#: ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
+msgid "Help"
+msgstr "Trợ giúp"
 
-#: ../libslab/app-shell.c:702
+#: ../libslab/application-tile.c:438
+msgid "Upgrade"
+msgstr "Nâng cấp"
+
+#: ../libslab/application-tile.c:453
+msgid "Uninstall"
+msgstr "Huỷ cài đặt"
+
+#: ../libslab/application-tile.c:780
+#: ../libslab/document-tile.c:760
+#: ../nautilus-main-menu/nautilus-main-menu.c:133
+#: ../nautilus-main-menu/nautilus-main-menu.c:138
+msgid "Remove from Favorites"
+msgstr "Gỡ khỏi Yêu thích"
+
+#: ../libslab/application-tile.c:782
+#: ../libslab/document-tile.c:762
+#: ../nautilus-main-menu/nautilus-main-menu.c:123
+#: ../nautilus-main-menu/nautilus-main-menu.c:128
+msgid "Add to Favorites"
+msgstr "Thêm vào Yêu thích"
+
+#: ../libslab/application-tile.c:867
+msgid "Remove from Startup Programs"
+msgstr "Gỡ khỏi Chương trình Khởi động"
+
+#: ../libslab/application-tile.c:869
+msgid "Add to Startup Programs"
+msgstr "Thêm vào Chương trình Khởi động"
+
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
+"<span size=\"large\"><b>Không tìm thấy.</b> </span><span>\n"
+"\n"
+" Tiêu chuẩn lọc \"<b>%s</b>\" của bạn không trả về kết quả nào.</span>"
+
+#: ../libslab/app-shell.c:900
+msgid "Other"
+msgstr "Khác"
+
+#: ../libslab/bookmark-agent.c:1061
+#: ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Khoá màn hình"
+
+#: ../libslab/bookmark-agent.c:1063
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#: ../libslab/bookmark-agent.c:1065
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Tắt máy"
+
+#: ../libslab/bookmark-agent.c:1090
+msgid "New Spreadsheet"
+msgstr "Bảng tính mới"
+
+#: ../libslab/bookmark-agent.c:1095
+msgid "New Document"
+msgstr "Tài liệu mới"
+
+#: ../libslab/bookmark-agent.c:1147
+msgid "Home"
+msgstr "Nhà"
+
+#: ../libslab/bookmark-agent.c:1152
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Tài liệu"
+
+#: ../libslab/bookmark-agent.c:1158
+msgid "Desktop"
+msgstr "Màn hình làm việc"
+
+#: ../libslab/bookmark-agent.c:1165
+msgid "File System"
+msgstr "Hệ thống tập tin"
+
+#: ../libslab/bookmark-agent.c:1169
+msgid "Network Servers"
+msgstr "Máy phục vụ mạng"
+
+#: ../libslab/bookmark-agent.c:1198
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: ../libslab/directory-tile.c:170
+#, c-format
+#. make open with default action
+msgid "<b>Open</b>"
+msgstr "<b>Mở</b>"
+
+#: ../libslab/directory-tile.c:189
+#: ../libslab/document-tile.c:242
+#. make rename action
+msgid "Rename..."
+msgstr "Thay tên..."
+
+#: ../libslab/directory-tile.c:203
+#: ../libslab/directory-tile.c:212
+#: ../libslab/document-tile.c:256
+#: ../libslab/document-tile.c:265
+msgid "Send To..."
+msgstr "Gửi đi..."
+
+#: ../libslab/directory-tile.c:227
+#: ../libslab/document-tile.c:291
+#. make move to trash action
+msgid "Move to Trash"
+msgstr "Chuyển vào Sọt rác"
+
+#: ../libslab/directory-tile.c:237
+#: ../libslab/directory-tile.c:450
+#: ../libslab/document-tile.c:301
+#: ../libslab/document-tile.c:873
+msgid "Delete"
+msgstr "Xoá"
+
+#: ../libslab/directory-tile.c:575
+#: ../libslab/document-tile.c:1045
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "Bạn có chắc muốn xoá hoàn toàn « %s » không?"
+
+#: ../libslab/directory-tile.c:580
+#: ../libslab/document-tile.c:1049
+msgid "If you delete an item, it is permanently lost."
+msgstr "Nếu bạn xoá một mục, nó sẽ bị mất hoàn toàn."
+
+#: ../libslab/document-tile.c:203
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>Mở bằng \"%s\"</b>"
+
+#: ../libslab/document-tile.c:215
+msgid "Open with Default Application"
+msgstr "Mở bằng ứng dụng mặc định"
+
+#: ../libslab/document-tile.c:226
+msgid "Open in File Manager"
+msgstr "Mở trong Trình quản lý tập tin"
+
+#: ../libslab/document-tile.c:656
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:663
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#: ../libslab/document-tile.c:671
+msgid "Today %l:%M %p"
+msgstr "Hôm nay %l:%M %p"
+
+#: ../libslab/document-tile.c:681
+msgid "Yesterday %l:%M %p"
+msgstr "Hôm qua %l:%M %p"
+
+#: ../libslab/document-tile.c:693
+msgid "%a %l:%M %p"
+msgstr "%a %l:%M %p"
+
+#: ../libslab/document-tile.c:701
+msgid "%b %d %l:%M %p"
+msgstr "%d %b %l:%M %p"
+
+#: ../libslab/document-tile.c:703
+msgid "%b %d %Y"
+msgstr "%d %b %Y"
+
+#: ../libslab/libslab-bookmarkfile.c:700
+#: ../libslab/libslab-bookmarkfile.c:777
+#: ../libslab/libslab-bookmarkfile.c:856
+#: ../libslab/libslab-bookmarkfile.c:903
+#, c-format
+msgid "Unexpected attribute '%s' for element '%s'"
+msgstr "Gặp thuộc tính bất thường « %s » cho phần tử « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:711
+#: ../libslab/libslab-bookmarkfile.c:788
+#: ../libslab/libslab-bookmarkfile.c:798
+#: ../libslab/libslab-bookmarkfile.c:914
+#, c-format
+msgid "Attribute '%s' of element '%s' not found"
+msgstr "Không tìm thấy thuộc tính « %s » của phần tử « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:1087
+#: ../libslab/libslab-bookmarkfile.c:1152
+#: ../libslab/libslab-bookmarkfile.c:1216
+#: ../libslab/libslab-bookmarkfile.c:1226
+#, c-format
+msgid "Unexpected tag '%s', tag '%s' expected"
+msgstr "Gặp thẻ bất thường « %s », còn mong đợi thẻ « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:1112
+#: ../libslab/libslab-bookmarkfile.c:1126
+#: ../libslab/libslab-bookmarkfile.c:1194
+#: ../libslab/libslab-bookmarkfile.c:1246
+#, c-format
+msgid "Unexpected tag '%s' inside '%s'"
+msgstr "Gặp thẻ bất thường « %s » bên trong « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:1929
+#, c-format
+msgid "No valid bookmark file found in data dirs"
+msgstr "Không tìm thấy tập tin liên kết lưu hợp lệ trong các thư mục dữ liệu"
+
+#: ../libslab/libslab-bookmarkfile.c:2130
+#, c-format
+msgid "A bookmark for URI '%s' already exists"
+msgstr "Một liên kết lưu đã tồn tại cho URI « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:2176
+#: ../libslab/libslab-bookmarkfile.c:2333
+#: ../libslab/libslab-bookmarkfile.c:2418
+#: ../libslab/libslab-bookmarkfile.c:2499
+#: ../libslab/libslab-bookmarkfile.c:2584
+#: ../libslab/libslab-bookmarkfile.c:2667
+#: ../libslab/libslab-bookmarkfile.c:2745
+#: ../libslab/libslab-bookmarkfile.c:2824
+#: ../libslab/libslab-bookmarkfile.c:2866
+#: ../libslab/libslab-bookmarkfile.c:2963
+#: ../libslab/libslab-bookmarkfile.c:3089
+#: ../libslab/libslab-bookmarkfile.c:3279
+#: ../libslab/libslab-bookmarkfile.c:3355
+#: ../libslab/libslab-bookmarkfile.c:3508
+#: ../libslab/libslab-bookmarkfile.c:3573
+#: ../libslab/libslab-bookmarkfile.c:3663
+#: ../libslab/libslab-bookmarkfile.c:3790
+#, c-format
+msgid "No bookmark found for URI '%s'"
+msgstr "Không tìm thấy liên kết lưu cho URI « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:2508
+#, c-format
+msgid "No MIME type defined in the bookmark for URI '%s'"
+msgstr "Không có kiểu MIME nào được xác định trong liên kết lưu cho URI « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:2593
+#, c-format
+msgid "No private flag has been defined in bookmark for URI '%s'"
+msgstr "Không có cờ riêng nào được xác định trong liên kết lưu cho URI « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:2972
+#, c-format
+msgid "No groups set in bookmark for URI '%s'"
+msgstr "Không có nhóm được đặt trong liên kết lưu cho URI « %s »"
+
+#: ../libslab/libslab-bookmarkfile.c:3373
+#: ../libslab/libslab-bookmarkfile.c:3518
+#, c-format
+msgid "No application with name '%s' registered a bookmark for '%s'"
+msgstr "Không có ứng dụng tên « %s » đã đăng ký liên kết lưu cho « %s »"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
-msgstr ""
+msgstr "Tìm"
 
-#. make start action
-#: ../libtile/application-tile.c:300
+#: ../libslab/system-tile.c:128
 #, c-format
-msgid "<b>Start %s</b>"
-msgstr ""
+msgid "<b>Open %s</b>"
+msgstr "<b>Mở %s</b>"
 
-#: ../libtile/application-tile.c:319 ../main-menu/src/system-tile.c:100
-msgid "Help"
-msgstr ""
-
-#: ../libtile/application-tile.c:326
-msgid "Help Unavailable"
-msgstr ""
-
-#: ../libtile/application-tile.c:365
-msgid "Upgrade"
-msgstr ""
-
-#: ../libtile/application-tile.c:374
-msgid "Uninstall"
-msgstr ""
-
-#: ../libtile/application-tile.c:769
-msgid "Remove from Favorites"
-msgstr ""
-
-#: ../libtile/application-tile.c:771
-msgid "Add to Favorites"
-msgstr ""
-
-#: ../libtile/application-tile.c:826
-msgid "Remove from Startup Programs"
-msgstr ""
-
-#: ../libtile/application-tile.c:828
-msgid "Add to Startup Programs"
-msgstr ""
-
-#: ../libtile/document-tile.c:140
-msgid "Edited %m/%d/%Y"
-msgstr ""
-
-#: ../libtile/document-tile.c:170
+#: ../libslab/system-tile.c:141
 #, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr ""
-
-#: ../libtile/document-tile.c:182
-msgid "Open with Default Application"
-msgstr ""
-
-#: ../libtile/document-tile.c:198
-msgid "Open in File Manager"
-msgstr ""
-
-#. make rename action
-#: ../libtile/document-tile.c:214
-msgid "Rename..."
-msgstr ""
-
-#. make move to trash action
-#: ../libtile/document-tile.c:227
-msgid "Move to Trash"
-msgstr ""
-
-#: ../libtile/document-tile.c:237 ../libtile/document-tile.c:558
-msgid "Delete"
-msgstr ""
-
-#: ../libtile/document-tile.c:257 ../libtile/document-tile.c:266
-msgid "Send To..."
-msgstr ""
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
-msgid "Open Menu"
-msgstr ""
-
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
-msgid "_About"
-msgstr ""
+msgid "Remove from System Items"
+msgstr "Gỡ bỏ ra Mục hệ thống"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr ""
+msgstr "Trình duyệt ứng dụng và trình đơn mặc định"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:303
+#: ../main-menu/src/main-menu-ui.c:2405
+#: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
-msgstr ""
+msgstr "Trình Đơn Chính GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr ""
+msgstr "Bộ tạo Trình Đơn Chính GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
-msgstr ""
+msgstr "Trình Đơn Chính"
 
-#: ../main-menu/etc/main-menu-rug.desktop.in.h:1
-msgid "Software Update"
-msgstr ""
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "_Giới thiệu"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "_Mở trình đơn"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the YaST2 network_devices utility"
-msgstr ""
+msgstr "Tập tin .desktop cho tiện ích thiết bị mạng (network_devices) YaST2"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the file browser"
-msgstr ""
+msgstr "Tập tin .desktop cho trình duyệt tập tin"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the gnome-system-monitor"
-msgstr ""
+msgstr "Tập tin .desktop cho bộ theo dõi hệ thống (gnome-system-monitor)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
-msgstr ""
+msgstr "Tập tin .desktop cho công cụ cấu hình mạng"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop files for \"Favorite Applications\""
-msgstr ""
+msgid ".desktop path for the application browser"
+msgstr "Đường dẫn .desktop cho trình duyệt ứng dụng"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
-msgid ".desktop path for the application browser"
-msgstr ""
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr "Đây là câu lệnh cần thực hiện khi kích hoạt mục trình đơn « Mở trong trình duyệt tập tin »."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "Location of the system-wide directory in which startup programs are found."
-msgstr ""
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr "Đây là câu lệnh cần thực hiện khi kích hoạt mục trình đơn « Mở trong trình duyệt tập tin ». Chuỗi FILE_URI được thay thế bằng một địa chỉ URI tương ứng với tên thư mục của tập tin được kích hoạt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid "Location of the user directory in which startup programs are found. The dir path should not be absolute, as the value of this key is appended to this path: ~/."
-msgstr ""
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr "Đây là câu lệnh cần thực hiện khi kích hoạt mục trình đơn « Gửi đi... »."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "System area items"
-msgstr ""
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr "Đây là câu lệnh cần thực hiện khi kích hoạt mục trình đơn « Gửi đi... ». Hai chuỗi DIRNAME (tên thư mục) và BASENAME (tên cơ bản) được thay thế bằng những thành phần tương ứng của tập tin được kích hoạt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "System-wide autostart program drop dir"
-msgstr ""
+msgid "This is the command to execute when the search entry is used."
+msgstr "Đây là câu lệnh cần thực hiện khi sử dụng chức năng tìm kiếm."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid "The list of the items which will appear in the System area. Possible values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = 3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the have the appropriate .desktop files defined in the, respectively, \"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-msgstr ""
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr "Đây là câu lệnh cần thực hiện khi sử dụng chức năng tìm kiếm. Chuỗi tìm kiếm (SEARCH_STRING) được thay thế bằng chuỗi tìm kiếm bạn nhập vào."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
-msgstr ""
+msgid "command to uninstall packages"
+msgstr "câu lệnh để huỷ cài đặt gói phần mềm"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
-msgstr ""
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "câu lệnh để huỷ cài đặt gói phần mềm: chuỗi PACKAGE_NAME (tên gói) được thay thế bằng tên của gói phần mềm cần huỷ cài đặt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "This is the command to execute when the \"Send To...\" menu item is activated."
-msgstr ""
+msgid "command to upgrade packages"
+msgstr "câu lệnh để nâng cấp gói phần mềm"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
-msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
-msgstr ""
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "câu lệnh để nâng cấp gói phần mềm: chuỗi PACKAGE_NAME (tên gói) được thay thế bằng tên của gói phần mềm cần nâng cấp."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
-msgid "This is the command to execute when the search entry is used."
-msgstr ""
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr "chứa danh sách (theo bất kỳ thứ tự) các bảng tập tin có thể hiển thị trong vùng tập tin.\n"
+"Giá trị có thể:\n"
+" 0	hiển thị bảng ứng dụng « Yêu thích » hay bảng được người dùng xác định\n"
+" 1	hiển thị bảng ứng dụng vừa dùng\n"
+" 2	hiển thị bảng tài liệu « Yêu thích » hay bảng được người dùng xác định\n"
+" 3	hiển thị bảng tài liệu vừa mở\n"
+" 4	hiển thị bảng thư mục « Yêu thích » hay bảng « Nơi » được người dùng xác định\n"
+" 5	hiển thị bảng thư mục hay bảng « Nơi » vừa dùng."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
-msgstr ""
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr "chứa danh sách các tập tin (gồm có tập tin .desktop) cần loại trừ ra danh sách « Ứng dụng vừa dùng » và « Tài liệu vừa mở »"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "User autostart program drop dir (within the home dir)"
-msgstr ""
+msgid "determines the limit of items in the file-area."
+msgstr "xác định giới hạn các mục trong vùng tập tin."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
-msgid "command to uninstall packages"
-msgstr ""
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr "xác định giới hạn các mục trong vùng tập tin. Số các mục yêu thích không phải bị hạn chế. Giới hạn có áp dụng cho số các mục vừa dùng, tức là số các mục vừa dùng được hiển thị bị hạn chế thành giá trị của max_total_items — số các mục yêu thích. Nếu số các mục yêu thích vượt quá phương trình (max_total_items - min_recent_items) thì giới hạn bị bỏ qua."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr ""
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr "xác định số tối thiểu các mục trong phần « vừa dùng » của vùng tập tin."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "command to upgrade packages"
-msgstr ""
+msgid "determines which types of files to display in the file area"
+msgstr "xác định những dạng tập tin nào cần hiển thị trong vùng tập tin."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
-msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr ""
+msgid "if true, main menu is more anxious to close"
+msgstr "đúng thì trình đơn chính hướng tới đóng hơn"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr ""
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr "đúng thì trình đơn sẽ đóng với những điều kiện thêm này: hai chức năng lát đều và tìm kiếm được kích hoạt"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr ""
+msgid "lock-down configuration of the file area"
+msgstr "cấu hình khoá xuống của vùng tập tin"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "control center item .desktop file"
-msgstr ""
+msgid "lock-down status for the application browser link"
+msgstr "trạng thái khoá xuống cho liên kết trình duyệt ứng dụng"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
-msgid "determines the limit of tiles in the file-area."
-msgstr ""
+msgid "lock-down status for the search area"
+msgstr "trạng thái khoá xuống cho vùng tìm kiếm"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
-msgid "determines the limit of tiles in the file-area. *Note: this does not affect the number of tiles if the file-class is USER_SPECIFIED_*."
-msgstr ""
+msgid "lock-down status for the status area"
+msgstr "trạng thái khoá xuống cho vùng trạng thái"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
-msgid "determines the reordering algorithm used when moving tiles around the main-menu"
-msgstr ""
+msgid "lock-down status for the system area"
+msgstr "trạng thái khoá xuống cho vùng hệ thống"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
-msgid "determines which types of files to display in the file area"
-msgstr ""
+msgid "lock-down status for the user-specified apps section"
+msgstr "trạng thái khoá xuống cho vùng ứng dụng được người dùng xác định"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
-msgid "help item .desktop file"
-msgstr ""
+msgid "lock-down status for the user-specified dirs section"
+msgstr "trạng thái khoá xuống cho vùng thư mục được người dùng xác định"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
-msgid "if true, main menu is more anxious to close"
-msgstr ""
+msgid "lock-down status for the user-specified docs section"
+msgstr "trạng thái khoá xuống cho vùng tài liệu được người dùng xác định"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
-msgstr ""
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "giá trị có thể:\n"
+" 0	Ứng dụng\n"
+" 1	Tài liệu\n"
+" 2	Nơi"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
-msgid "lock-down configuration of the file area"
-msgstr ""
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr "đúng thì có nên hiển thị và kích hoạt liên kết tới trình duyệt ứng dụng."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
-msgid "lock-down status for the application browser link"
-msgstr ""
+msgid "set to true if the search area should be visible and active."
+msgstr "đặt thành đúng nếu có nên hiển thị và kích hoạt vùng tìm kiếm."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
-msgid "lock-down status for the search area"
-msgstr ""
+msgid "set to true if the status area should be visible and active."
+msgstr "đặt thành đúng nếu có nên hiển thị và kích hoạt vùng trạng thái."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
-msgid "lock-down status for the status area"
-msgstr ""
+msgid "set to true if the system area should be visible and active."
+msgstr "đặt thành đúng nếu có nên hiển thị và kích hoạt vùng hệ thống."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
-msgid "lock-down status for the system area"
-msgstr ""
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr "đặt thành đúng nếu người dùng có quyền sửa đổi danh sách các mục hệ thống."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid "package manager item .desktop file"
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr "đặt thành đúng nếu người dùng có quyền sửa đổi danh sách các ứng dụng « Yêu thích » hay được người dùng xác định."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that when a tile is dragged onto another tile they should simply swap position. PUSH indicates that when a tile, A, is dragged onto another tile, B, a vacant spot is created in tile A's place. tile B (and all tiles after B) shift down until the new vacant space is filled. this operation wraps around in the case that tile A appears before tile B prior to the drag and drop operation. PUSH_PULL is similar to PUSH except that when tiles are shifted they are either pushed into the vacant spaced or pulled from the other direction, depending on which strategy affects the least number of tiles."
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr "đặt thành đúng nếu người dùng có quyền sửa đổi danh sách các thư mục hay Nơi « Yêu thích » hay được người dùng xác định."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
-msgstr ""
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr "đặt thành đúng nếu người dùng có quyền sửa đổi danh sách các tài liệu « Yêu thích » hay được người dùng xác định."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "prioritized list of commands to lock the screen"
-msgstr ""
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "Bộ th_eo dõi hệ thống"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:42
-msgid "set to true if the link to the application browser should be visible and active."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:43
-msgid "set to true if the search area should be visible and active."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:44
-msgid "set to true if the status area should be visible and active."
-msgstr ""
-
-#: ../main-menu/etc/slab.schemas.in.in.h:45
-msgid "set to true if the system area should be visible and active."
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:137
-msgid "Show:"
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:182
-msgid "Favorite Applications"
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:199
-msgid "Recently Used Applications"
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:209
-msgid "Recent Documents"
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:343
-msgid "More Applications..."
-msgstr ""
-
-#: ../main-menu/src/file-area-widget.c:347
-msgid "All Documents..."
-msgstr ""
-
-#: ../main-menu/src/hard-drive-status-tile.c:103
-msgid "Hard Drive"
-msgstr ""
-
-#: ../main-menu/src/hard-drive-status-tile.c:326
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr ""
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:328
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr ""
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:330
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr ""
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:332
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr ""
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:352
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr ""
+msgid "Home: %s Free / %s"
+msgstr "Nhà: %s Rảnh / %s"
 
-#: ../main-menu/src/main-menu-ui.c:304
+#: ../main-menu/src/main-menu-migration.c:161
+msgid "gnome-lockscreen"
+msgstr "Khoá màn hình GNOME"
+
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
-msgstr ""
-
-#: ../main-menu/src/main-menu-ui.c:420
-msgid "System"
-msgstr ""
-
-#: ../main-menu/src/main-menu-ui.c:424
-msgid "Status"
-msgstr ""
-
-#: ../main-menu/src/main-menu-ui.c:557
-msgid "Computer"
-msgstr ""
-
-#: ../main-menu/src/main-menu-ui.c:883
-msgid "Search:"
-msgstr ""
+msgstr "Trình Đơn Chính GNOME"
 
 #: ../main-menu/src/network-status-tile.c:91
-#: ../main-menu/src/network-status-tile.c:197
 msgid "Network: None"
-msgstr ""
+msgstr "Mạng: không có"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:199
 msgid "Click to configure network"
-msgstr ""
+msgstr "Nhấn chuột để cấu hình mạng"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "_Mạng: không có"
+
+#: ../main-menu/src/network-status-tile.c:207
 #, c-format
 msgid "Connected to: %s"
-msgstr ""
+msgstr "Đã kết nối đến: %s"
 
-#: ../main-menu/src/network-status-tile.c:209
-msgid "Network: Wireless"
-msgstr ""
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "_Mạng: không dây"
 
-#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:215
 #, c-format
 msgid "Using ethernet (%s)"
-msgstr ""
+msgstr "Dùng Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:218
-msgid "Network: Wired"
-msgstr ""
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "_Mạng: có dây"
 
-#: ../main-menu/src/network-status-tile.c:310
+#: ../main-menu/src/network-status-tile.c:320
 #, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr ""
+msgstr "Ethernet vô tuyến (%s)"
 
-#: ../main-menu/src/network-status-tile.c:315
+#: ../main-menu/src/network-status-tile.c:325
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr ""
+msgstr "Ethernet có dây (%s)"
 
-#: ../main-menu/src/network-status-tile.c:319
 #: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/system-tile.c:158
+#: ../main-menu/src/network-status-tile.c:339
+#, c-format
 msgid "Unknown"
-msgstr ""
+msgstr "Không rõ"
 
-#: ../main-menu/src/network-status-tile.c:327
+#: ../main-menu/src/network-status-tile.c:337
 #, c-format
 msgid "%d Mb/s"
-msgstr ""
+msgstr "%d Mb/g"
 
-#: ../main-menu/src/system-tile.c:128
-msgid "Install Software"
-msgstr ""
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "Ứng dụng"
 
-#: ../main-menu/src/system-tile.c:135
-msgid "Log Out ..."
-msgstr ""
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "Máy tính"
 
-#: ../main-menu/src/system-tile.c:142
-msgid "Lock Screen ..."
-msgstr ""
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "Ứng dụng Yêu thích"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "Tài liệu Yêu thích"
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "Nơi Yêu thích"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "Ứng dụng bổ sung..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "Tài liệu bổ sung..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "Nơi bổ sung..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "Nơi"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "Ứng dụng vừa dùng"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "Tài liệu vừa mở"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "Tìm kiếm:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "Trạng thái"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "Hệ thống"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+msgid "Add the current launcher to favorites"
+msgstr "Thêm vào Yêu thích bộ khởi chạy hiện thời"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Add the current document to favorites"
+msgstr "Thêm vào Yêu thích tài liệu hiện thời"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:134
+#: ../nautilus-main-menu/nautilus-main-menu.c:139
+msgid "Remove the current document from favorites"
+msgstr "Gỡ bỏ khỏi Yêu thích tài liệu hiện thời"
