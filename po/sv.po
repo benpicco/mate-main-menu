@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-22 12:42+0100\n"
-"PO-Revision-Date: 2008-02-22 12:44+0100\n"
+"POT-Creation-Date: 2008-06-24 00:42+0200\n"
+"PO-Revision-Date: 2008-06-24 00:42+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -83,44 +83,45 @@ msgid "Application Actions"
 msgstr "Programåtgärder"
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Starta %s</b>"
 
-#: ../libslab/application-tile.c:388
+#: ../libslab/application-tile.c:391
+#: ../libslab/bookmark-agent.c:1059
 #: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Hjälp"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "Uppgradera"
 
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "Avinstallera"
 
-#: ../libslab/application-tile.c:777
-#: ../libslab/document-tile.c:737
+#: ../libslab/application-tile.c:780
+#: ../libslab/document-tile.c:760
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Ta bort från favoriter"
 
-#: ../libslab/application-tile.c:779
-#: ../libslab/document-tile.c:739
+#: ../libslab/application-tile.c:782
+#: ../libslab/document-tile.c:762
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Lägg till i favoriter"
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr "Ta bort från startprogram"
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr "Lägg till i startprogram"
 
@@ -139,27 +140,53 @@ msgstr ""
 msgid "Other"
 msgstr "Övriga"
 
-#: ../libslab/bookmark-agent.c:1060
+#: ../libslab/bookmark-agent.c:1061
+#: ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Lås skärmen"
+
+#: ../libslab/bookmark-agent.c:1063
+#: ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Logga ut"
+
+#: ../libslab/bookmark-agent.c:1065
+#: ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Stäng av"
+
+#: ../libslab/bookmark-agent.c:1090
 msgid "New Spreadsheet"
 msgstr "Nytt kalkylblad"
 
-#: ../libslab/bookmark-agent.c:1064
+#: ../libslab/bookmark-agent.c:1095
 msgid "New Document"
 msgstr "Nytt dokument"
 
-#: ../libslab/bookmark-agent.c:1114
+#: ../libslab/bookmark-agent.c:1147
 msgid "Home"
 msgstr "Hem"
 
-#: ../libslab/bookmark-agent.c:1130
+#: ../libslab/bookmark-agent.c:1152
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Dokument"
+
+#: ../libslab/bookmark-agent.c:1158
+msgid "Desktop"
+msgstr "Skrivbord"
+
+#: ../libslab/bookmark-agent.c:1165
 msgid "File System"
 msgstr "Filsystem"
 
-#: ../libslab/bookmark-agent.c:1134
+#: ../libslab/bookmark-agent.c:1169
 msgid "Network Servers"
 msgstr "Nätverksservrar"
 
-#: ../libslab/bookmark-agent.c:1163
+#: ../libslab/bookmark-agent.c:1198
 msgid "Search"
 msgstr "Sök"
 
@@ -171,79 +198,79 @@ msgstr "<b>Öppna</b>"
 
 #. make rename action
 #: ../libslab/directory-tile.c:189
-#: ../libslab/document-tile.c:228
+#: ../libslab/document-tile.c:242
 msgid "Rename..."
 msgstr "Byt namn..."
 
 #: ../libslab/directory-tile.c:203
 #: ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242
-#: ../libslab/document-tile.c:251
+#: ../libslab/document-tile.c:256
+#: ../libslab/document-tile.c:265
 msgid "Send To..."
 msgstr "Skicka till..."
 
 #. make move to trash action
 #: ../libslab/directory-tile.c:227
-#: ../libslab/document-tile.c:277
+#: ../libslab/document-tile.c:291
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
 #: ../libslab/directory-tile.c:237
 #: ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287
-#: ../libslab/document-tile.c:850
+#: ../libslab/document-tile.c:301
+#: ../libslab/document-tile.c:873
 msgid "Delete"
 msgstr "Ta bort"
 
 #: ../libslab/directory-tile.c:575
-#: ../libslab/document-tile.c:1022
+#: ../libslab/document-tile.c:1045
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
 
 #: ../libslab/directory-tile.c:580
-#: ../libslab/document-tile.c:1026
+#: ../libslab/document-tile.c:1049
 msgid "If you delete an item, it is permanently lost."
 msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:203
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Öppna med \"%s\"</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:215
 msgid "Open with Default Application"
 msgstr "Öppna med standardprogrammet"
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:226
 msgid "Open in File Manager"
 msgstr "Öppna i filhanterare"
 
-#: ../libslab/document-tile.c:633
+#: ../libslab/document-tile.c:656
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:640
+#: ../libslab/document-tile.c:663
 msgid "%l:%M %p"
 msgstr "%H.%M"
 
-#: ../libslab/document-tile.c:648
+#: ../libslab/document-tile.c:671
 msgid "Today %l:%M %p"
 msgstr "Idag %H.%M"
 
-#: ../libslab/document-tile.c:658
+#: ../libslab/document-tile.c:681
 msgid "Yesterday %l:%M %p"
 msgstr "Igår %H.%M"
 
-#: ../libslab/document-tile.c:670
+#: ../libslab/document-tile.c:693
 msgid "%a %l:%M %p"
 msgstr "%a %H.%M"
 
-#: ../libslab/document-tile.c:678
+#: ../libslab/document-tile.c:701
 msgid "%b %d %l:%M %p"
 msgstr "%d %b %H.%M"
 
-#: ../libslab/document-tile.c:680
+#: ../libslab/document-tile.c:703
 msgid "%b %d %Y"
 msgstr "%d %b %Y"
 
@@ -350,7 +377,7 @@ msgid "Default menu and application browser"
 msgstr "Standardbläddrare för menyer och program"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2160
+#: ../main-menu/src/main-menu-ui.c:2405
 #: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME-huvudmeny"
@@ -560,25 +587,11 @@ msgstr "%.1fb"
 msgid "Home: %s Free / %s"
 msgstr "Hem: %s ledigt / %s"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Logga ut"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Stäng av"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Lås skärmen"
-
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2161
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Huvudmenyn i GNOME"
 
@@ -641,10 +654,6 @@ msgstr "Program"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Dator"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Dokument"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
