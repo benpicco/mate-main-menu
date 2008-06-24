@@ -1,3 +1,11 @@
+2008-06-25  Magnus Boman  <captain.magnus@gmail.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=262334 - When
+	using wireless/ifup, g-m-m shows the connection as wired.
+
+	* main-menu/src/network-status-agent.c (gtop_get_first_active_device_info):
+	Make sure that we only use a device that has got an ip address.
+
 2008-06-13  Federico Mena Quintero  <federico@novell.com>
 
 	https://bugzilla.novell.com/show_bug.cgi?id=336735 - On

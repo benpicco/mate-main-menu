@@ -305,7 +305,8 @@ gtop_get_first_active_device_info ()
 		glibtop_get_netload (&net_load, networks[i]);
 
 		if (CHECK_FLAG (net_load.if_flags, GLIBTOP_IF_FLAGS_RUNNING)
-			&& !CHECK_FLAG (net_load.if_flags, GLIBTOP_IF_FLAGS_LOOPBACK))
+			&& !CHECK_FLAG (net_load.if_flags, GLIBTOP_IF_FLAGS_LOOPBACK)
+			&& net_load.address)
 		{
 			sock_fd = iw_sockets_open ();
 
