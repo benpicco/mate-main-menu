@@ -1091,7 +1091,7 @@ static Tile *
 item_to_user_doc_tile (BookmarkItem *item, gpointer data)
 {
 	//force an icon since the thumbnail is basically blank - BNC#373783
-	if (!strcmp (item->title, "BLANK_SPREADSHEET") || !strcmp (item->title, "BLANK_DOCUMENT"))
+	if (item->title && (!strcmp (item->title, "BLANK_SPREADSHEET") || !strcmp (item->title, "BLANK_DOCUMENT")))
 	{
 		if (! strcmp (item->title, "BLANK_SPREADSHEET"))
 			return TILE (document_tile_new_force_icon (item->uri, item->mime_type,

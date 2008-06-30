@@ -1,3 +1,7 @@
+2008-06-30  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c:
+	Fix for BNC#393101 - check title for null
+
 2008-06-25  Magnus Boman  <captain.magnus@gmail.com>
 
 	https://bugzilla.novell.com/show_bug.cgi?id=262334 - When
