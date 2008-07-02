@@ -220,6 +220,22 @@ update_tile (NetworkStatusTile * tile)
 			subheader_text = markup;
 			break;
 
+		case DEVICE_TYPE_GSM:
+			markup = g_strdup_printf (_("Connected to: %s"), priv->status_info->iface);
+
+			icon_name = "nm-device-wireless";
+			header_text = _("Networ_k: GSM");
+			subheader_text = markup;
+			break;
+
+		case DEVICE_TYPE_CDMA:
+			markup = g_strdup_printf (_("Connected to: %s"), priv->status_info->iface);
+
+			icon_name = "nm-device-wireless";
+			header_text = _("Networ_k: CDMA");
+			subheader_text = markup;
+			break;
+
 		default:
 			icon_name = "";
 			header_text = "";
@@ -325,6 +341,16 @@ update_info_dialog (NetworkStatusTile * tile)
 			g_strdup_printf (_("Wired Ethernet (%s)"), priv->status_info->iface);
 		break;
 
+	case DEVICE_TYPE_GSM:
+		iface_and_type =
+			g_strdup_printf (_("Mobile Ethernet (%s)"), priv->status_info->iface);
+		break;
+
+	case DEVICE_TYPE_CDMA:
+		iface_and_type =
+			g_strdup_printf (_("Mobile Ethernet (%s)"), priv->status_info->iface);
+		break;
+
 	default:
 		iface_and_type = g_strdup_printf (_("Unknown"));
 		break;
@@ -348,7 +374,8 @@ update_info_dialog (NetworkStatusTile * tile)
 	set_glade_label (xml, "label-default-route", priv->status_info->route);
 	set_glade_label (xml, "label-primary-dns", priv->status_info->primary_dns);
 	set_glade_label (xml, "label-secondary-dns", priv->status_info->secondary_dns);
-	set_glade_label (xml, "label-hardware-address", priv->status_info->hw_addr);
+	if (priv->status_info->hw_addr)
+		set_glade_label (xml, "label-hardware-address", priv->status_info->hw_addr);
 }
 
 static void

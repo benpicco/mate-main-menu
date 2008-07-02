@@ -1,3 +1,8 @@
+2008-07-02  Magnus Boman  <captain.magnus@gmail.com>
+	* main-menu/src/network-status-tile.c
+	* main-menu/src/network-status-agent.c
+	Add support for GSM and CDMA devices in the Network Status tile
+
 2008-06-30  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c:
 	Fix for BNC#393101 - check title for null

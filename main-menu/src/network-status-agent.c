@@ -25,6 +25,8 @@
 #include <NetworkManager.h>
 #include <libnm-glib/nm-device-802-11-wireless.h>
 #include <libnm-glib/nm-device-802-3-ethernet.h>
+#include <libnm-glib/nm-gsm-device.h>
+#include <libnm-glib/nm-cdma-device.h>
 #include <nm-setting-ip4-config.h>
 #include <nm-utils.h>
 #include <arpa/inet.h>
@@ -258,6 +260,18 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 		info->type = DEVICE_TYPE_802_3_ETHERNET;
 		info->speed_mbs = nm_device_802_3_ethernet_get_speed (NM_DEVICE_802_3_ETHERNET(device));
 		info->hw_addr = g_strdup (nm_device_802_3_ethernet_get_hw_address (NM_DEVICE_802_3_ETHERNET(device)));
+	}
+	else if (NM_IS_GSM_DEVICE (device))
+	{
+		info->type = DEVICE_TYPE_GSM;
+		info->speed_mbs = 0;
+		info->hw_addr = NULL;
+	}
+	else if (NM_IS_CDMA_DEVICE (device))
+	{
+		info->type = DEVICE_TYPE_CDMA;
+		info->speed_mbs = 0;
+		info->hw_addr = NULL;
 	}
 
 	return info;
