@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-07 10:21+0100\n"
+"POT-Creation-Date: 2008-07-02 08:58+0200\n"
 "PO-Revision-Date: 2008-02-26 22:41+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -90,41 +90,42 @@ msgid "Application Actions"
 msgstr ""
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Aviar %s</b>"
 
-#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ajuda"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "Metre a jorn"
 
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "Desinstallar"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:760
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr ""
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:762
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr ""
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr ""
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr ""
 
@@ -140,27 +141,49 @@ msgstr ""
 msgid "Other"
 msgstr "Autre"
 
-#: ../libslab/bookmark-agent.c:1060
+#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Varrolhar l'ecran"
+
+#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Desconnexion"
+
+#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Atudar"
+
+#: ../libslab/bookmark-agent.c:1090
 msgid "New Spreadsheet"
 msgstr ""
 
-#: ../libslab/bookmark-agent.c:1064
+#: ../libslab/bookmark-agent.c:1095
 msgid "New Document"
 msgstr "Document novèl"
 
-#: ../libslab/bookmark-agent.c:1114
+#: ../libslab/bookmark-agent.c:1147
 msgid "Home"
-msgstr "Ostal"
+msgstr "Repertòri personal"
 
-#: ../libslab/bookmark-agent.c:1130
+#: ../libslab/bookmark-agent.c:1152 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Documents"
+
+#: ../libslab/bookmark-agent.c:1158
+msgid "Desktop"
+msgstr ""
+
+#: ../libslab/bookmark-agent.c:1165
 msgid "File System"
 msgstr "Sistèma de fichièrs"
 
-#: ../libslab/bookmark-agent.c:1134
+#: ../libslab/bookmark-agent.c:1169
 msgid "Network Servers"
 msgstr "Servidors ret"
 
-#: ../libslab/bookmark-agent.c:1163
+#: ../libslab/bookmark-agent.c:1198
 msgid "Search"
 msgstr "Recercar"
 
@@ -171,72 +194,72 @@ msgid "<b>Open</b>"
 msgstr "<b>Dobrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:242
 msgid "Rename..."
 msgstr "Renommar..."
 
 #: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+#: ../libslab/document-tile.c:256 ../libslab/document-tile.c:265
 msgid "Send To..."
 msgstr "Enviar a..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:291
 msgid "Move to Trash"
 msgstr "Desplaçar dins la banasta"
 
 #: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
+#: ../libslab/document-tile.c:301 ../libslab/document-tile.c:873
 msgid "Delete"
 msgstr "Suprimir"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1045
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Sètz segur que volètz suprimir per totjon \"%s\" ?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1049
 msgid "If you delete an item, it is permanently lost."
 msgstr ""
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:203
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Dobrir amb \"%s\"</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:215
 msgid "Open with Default Application"
 msgstr ""
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:226
 msgid "Open in File Manager"
 msgstr ""
 
-#: ../libslab/document-tile.c:633
+#: ../libslab/document-tile.c:656
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:640
+#: ../libslab/document-tile.c:663
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#: ../libslab/document-tile.c:648
+#: ../libslab/document-tile.c:671
 msgid "Today %l:%M %p"
 msgstr "Uèi %l:%M %p"
 
-#: ../libslab/document-tile.c:658
+#: ../libslab/document-tile.c:681
 msgid "Yesterday %l:%M %p"
 msgstr "Ièr %H:%M"
 
-#: ../libslab/document-tile.c:670
+#: ../libslab/document-tile.c:693
 msgid "%a %l:%M %p"
 msgstr "%a %l:%M %p"
 
-#: ../libslab/document-tile.c:678
+#: ../libslab/document-tile.c:701
 msgid "%b %d %l:%M %p"
 msgstr "%b %d %l:%M %p"
 
-#: ../libslab/document-tile.c:680
+#: ../libslab/document-tile.c:703
 msgid "%b %d %Y"
 msgstr "%b %d %Y"
 
@@ -339,7 +362,7 @@ msgid "Default menu and application browser"
 msgstr ""
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menut principal de GNOME"
 
@@ -590,25 +613,11 @@ msgstr ""
 msgid "Home: %s Free / %s"
 msgstr "Repertòri personal : %s liure / %s"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Desconnexion"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Atudar"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Varrolhar l'ecran"
-
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr ""
 
-#: ../main-menu/src/main-menu-ui.c:2161
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Lo menut principal de GNOME"
 
@@ -626,6 +635,8 @@ msgid "Networ_k: None"
 msgstr ""
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Connectat a : %s"
@@ -643,23 +654,38 @@ msgstr ""
 msgid "Networ_k: Wired"
 msgstr ""
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+#
+msgid "Networ_k: GSM"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Ethernet inalambric (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet de cable (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr ""
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mo/s"
@@ -671,10 +697,6 @@ msgstr "Aplicacions"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Ordenador"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Documents"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
