@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-13 18:03+0200\n"
-"PO-Revision-Date: 2008-05-13 17:55+0100\n"
-"Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
+"POT-Creation-Date: 2008-07-09 23:01+0200\n"
+"PO-Revision-Date: 2008-07-05 22:56+0100\n"
+"Last-Translator: Adrian Guniš <andygun@seznam.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,42 +90,42 @@ msgid "Application Actions"
 msgstr "Akce aplikací"
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Spustit %s</b>"
 
-#: ../libslab/application-tile.c:388 ../libslab/bookmark-agent.c:1059
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
 #: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Nápověda"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "Aktualizovat"
 
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:741
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:760
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Odebrat z oblíbených"
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:743
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:762
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Přidat do oblíbených"
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr "Odebrat z Programů při přihlášení"
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr "Přidat do Programů při přihlášení"
 
@@ -159,35 +159,35 @@ msgid "Shutdown"
 msgstr "Vypnout"
 
 # 60704 AttribValues/label
-#: ../libslab/bookmark-agent.c:1089
+#: ../libslab/bookmark-agent.c:1090
 msgid "New Spreadsheet"
 msgstr "Nový sešit"
 
-#: ../libslab/bookmark-agent.c:1093
+#: ../libslab/bookmark-agent.c:1095
 msgid "New Document"
 msgstr "Nový dokument"
 
-#: ../libslab/bookmark-agent.c:1145
+#: ../libslab/bookmark-agent.c:1147
 msgid "Home"
 msgstr "Domovská složka"
 
-#: ../libslab/bookmark-agent.c:1150 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1152 ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "Dokumenty"
 
-#: ../libslab/bookmark-agent.c:1156
+#: ../libslab/bookmark-agent.c:1158
 msgid "Desktop"
 msgstr "Plocha"
 
-#: ../libslab/bookmark-agent.c:1163
+#: ../libslab/bookmark-agent.c:1165
 msgid "File System"
 msgstr "Souborový systém"
 
-#: ../libslab/bookmark-agent.c:1167
+#: ../libslab/bookmark-agent.c:1169
 msgid "Network Servers"
 msgstr "Síťové servery"
 
-#: ../libslab/bookmark-agent.c:1196
+#: ../libslab/bookmark-agent.c:1198
 msgid "Search"
 msgstr "Hledat"
 
@@ -198,72 +198,72 @@ msgid "<b>Open</b>"
 msgstr "<b>Otevřít</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:242
 msgid "Rename..."
 msgstr "Přejmenovat..."
 
 #: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+#: ../libslab/document-tile.c:256 ../libslab/document-tile.c:265
 msgid "Send To..."
 msgstr "Odeslat..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:291
 msgid "Move to Trash"
 msgstr "Přesunout do koše"
 
 #: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:854
+#: ../libslab/document-tile.c:301 ../libslab/document-tile.c:873
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1045
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Jste si jisti, že chcete natrvalo smazat \"%s\"?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1030
+#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1049
 msgid "If you delete an item, it is permanently lost."
 msgstr "Pokud smažete položku, bude natrvalo ztracena."
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:203
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Otevřít s \"%s\"</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:215
 msgid "Open with Default Application"
 msgstr "Otevřít ve výchozí aplikaci"
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:226
 msgid "Open in File Manager"
 msgstr "Otevřít ve správci souborů"
 
-#: ../libslab/document-tile.c:637
+#: ../libslab/document-tile.c:656
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:644
+#: ../libslab/document-tile.c:663
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
-#: ../libslab/document-tile.c:652
+#: ../libslab/document-tile.c:671
 msgid "Today %l:%M %p"
 msgstr "Dnes, %H:%M"
 
-#: ../libslab/document-tile.c:662
+#: ../libslab/document-tile.c:681
 msgid "Yesterday %l:%M %p"
 msgstr "Včera, %H:%M"
 
-#: ../libslab/document-tile.c:674
+#: ../libslab/document-tile.c:693
 msgid "%a %l:%M %p"
 msgstr "%a, %H:%M"
 
-#: ../libslab/document-tile.c:682
+#: ../libslab/document-tile.c:701
 msgid "%b %d %l:%M %p"
 msgstr "%e. %b, %H:%M"
 
-#: ../libslab/document-tile.c:684
+#: ../libslab/document-tile.c:703
 msgid "%b %d %Y"
 msgstr "%e. %b %Y"
 
@@ -366,7 +366,7 @@ msgid "Default menu and application browser"
 msgstr "Výchozí nabídka a prohlížeč aplikací"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2394 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -665,7 +665,7 @@ msgstr "Domovská složka: %s volné / %s"
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2395
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -683,6 +683,8 @@ msgid "Networ_k: None"
 msgstr "_Síť: žádná"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Připojen k: %s"
@@ -700,23 +702,37 @@ msgstr "Ethernet (%s)"
 msgid "Networ_k: Wired"
 msgstr "_Síť: drátová"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "_Síť: GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "_Síť: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Bezdrátový Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Mobilní Ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
