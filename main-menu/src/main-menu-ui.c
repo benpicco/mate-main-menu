@@ -1146,7 +1146,7 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 static Tile *
 item_to_dir_tile (BookmarkItem *item, gpointer data)
 {
-	return TILE (directory_tile_new (item->uri, item->title, item->icon));
+	return TILE (directory_tile_new (item->uri, item->title, item->icon, item->mime_type));
 }
 
 static Tile *

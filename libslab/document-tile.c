@@ -82,7 +82,6 @@ typedef struct
 
 	GtkBin *header_bin;
 
-	gboolean renaming;
 	gboolean image_is_broken;
 	gchar * force_icon_name;  //show an icon instead of a thumbnail
 
@@ -342,8 +341,6 @@ document_tile_private_setup (DocumentTile *this)
 	else
 		priv->default_app = NULL;
 
-	priv->renaming = FALSE;
-
 	gnome_vfs_file_info_unref (info);
 
 	priv->delete_enabled =
@@ -376,7 +373,6 @@ document_tile_init (DocumentTile *tile)
 
 	priv->header_bin       = NULL;
 
-	priv->renaming         = FALSE;
 	priv->image_is_broken  = TRUE;
 	priv->force_icon_name  = NULL;
 

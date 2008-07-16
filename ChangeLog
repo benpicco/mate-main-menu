@@ -1,3 +1,11 @@
+2008-07-16  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* libslab/directory-tile.c
+	* libslab/bookmark-agent.c
+	* libslab/directory-tile.h
+	* libslab/document-tile.c:
+	Patch from CRivera - Fix for BNC#390400 - make places use mime type handler.
+
 2008-07-02  Magnus Boman  <captain.magnus@gmail.com>
 	* main-menu/src/network-status-tile.c
 	* main-menu/src/network-status-agent.c

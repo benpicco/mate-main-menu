@@ -24,6 +24,7 @@
 #include <string.h>
 #include <eel/eel-alert-dialog.h>
 #include <libgnomeui/gnome-icon-lookup.h>
+#include <libgnomevfs/gnome-vfs-mime-handlers.h>
 #include <libgnomevfs/gnome-vfs.h>
 #include <unistd.h>
 
@@ -48,7 +49,7 @@ static GtkWidget *create_header (const gchar *);
 
 static void header_size_allocate_cb (GtkWidget *, GtkAllocation *, gpointer);
 
-static void open_trigger (Tile *, TileEvent *, TileAction *);
+static void open_with_default_trigger (Tile *, TileEvent *, TileAction *);
 static void rename_trigger (Tile *, TileEvent *, TileAction *);
 static void move_to_trash_trigger (Tile *, TileEvent *, TileAction *);
 static void delete_trigger (Tile *, TileEvent *, TileAction *);
@@ -63,12 +64,12 @@ static void disown_spawned_child (gpointer);
 typedef struct
 {
 	gchar *basename;
-	
-	GtkBin *header_bin;
-
+	gchar *mime_type;
 	gchar *icon_name;
 	
-	gboolean renaming;
+	GtkBin *header_bin;
+	GnomeVFSMimeApplication *default_app;
+	
 	gboolean image_is_broken;
 	
 	gboolean delete_enabled;
@@ -90,7 +91,7 @@ static void directory_tile_class_init (DirectoryTileClass *this_class)
 }
 
 GtkWidget *
-directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_name)
+directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_name, const gchar *mime_type)
 {
 	DirectoryTile *this;
 	DirectoryTilePrivate *priv;
@@ -157,6 +158,7 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 	priv->basename    = g_strdup (basename);
 	priv->header_bin  = GTK_BIN (header);
 	priv->icon_name   = g_strdup (icon_name);
+	priv->mime_type   = g_strdup (mime_type);
 
 	directory_tile_private_setup (this);
 
@@ -168,7 +170,7 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 	/* make open with default action */
 
 	markup = g_markup_printf_escaped (_("<b>Open</b>"));
-	action = tile_action_new (TILE (this), open_trigger, markup, TILE_ACTION_OPENS_NEW_WINDOW);
+	action = tile_action_new (TILE (this), open_with_default_trigger, markup, TILE_ACTION_OPENS_NEW_WINDOW);
 	g_free (markup);
 
 	TILE (this)->default_action = action;
@@ -258,11 +260,12 @@ static void
 directory_tile_private_setup (DirectoryTile *tile)
 {
 	DirectoryTilePrivate *priv = DIRECTORY_TILE_GET_PRIVATE (tile);
-
 	GConfClient *client;
 
-
-	priv->renaming = FALSE;
+	if (priv->mime_type)
+		priv->default_app = gnome_vfs_mime_get_default_application (priv->mime_type);
+	else
+		priv->default_app = NULL;
 
 	priv->delete_enabled =
 		(gboolean) GPOINTER_TO_INT (get_gconf_value (GCONF_ENABLE_DELETE_KEY));
@@ -281,10 +284,11 @@ directory_tile_init (DirectoryTile *tile)
 {
 	DirectoryTilePrivate *priv = DIRECTORY_TILE_GET_PRIVATE (tile);
 
+	priv->default_app = NULL;
 	priv->basename = NULL;
 	priv->header_bin = NULL;
 	priv->icon_name = NULL;
-	priv->renaming = FALSE;
+	priv->mime_type = NULL;
 	priv->image_is_broken = TRUE;
 	priv->delete_enabled = FALSE;
 	priv->gconf_conn_id = 0;
@@ -299,7 +303,10 @@ directory_tile_finalize (GObject *g_object)
 
 	g_free (priv->basename);
 	g_free (priv->icon_name);
+	g_free (priv->mime_type);
 
+	gnome_vfs_mime_application_free (priv->default_app);
+    
 	client = gconf_client_get_default ();
 
 	gconf_client_notify_remove (client, priv->gconf_conn_id);
@@ -461,19 +468,6 @@ gconf_enable_delete_cb (GConfClient *client, guint conn_id, GConfEntry *entry, g
 
 		tile->actions[DIRECTORY_TILE_ACTION_DELETE] = NULL;
 	}
-}
-
-static void
-open_trigger (Tile *tile, TileEvent *event, TileAction *action)
-{
-	gchar *cmd;
-
-	cmd = string_replace_once (
-		get_slab_gconf_string (SLAB_FILE_MANAGER_OPEN_CMD), "FILE_URI", tile->uri);
-
-	spawn_process (cmd);
-
-	g_free (cmd);
 }
 
 static void
@@ -673,4 +667,32 @@ disown_spawned_child (gpointer user_data)
 {
 	setsid  ();
 	setpgrp ();
+}
+
+static void
+open_with_default_trigger (Tile *tile, TileEvent *event, TileAction *action)
+{
+	DirectoryTilePrivate *priv = DIRECTORY_TILE_GET_PRIVATE (tile);
+	GList *uris = NULL;
+	GnomeVFSResult retval;
+
+	if (priv->default_app)
+	{
+		uris = g_list_append (uris, TILE (tile)->uri);
+
+		retval = gnome_vfs_mime_application_launch (priv->default_app, uris);
+
+		if (retval != GNOME_VFS_OK)
+			g_warning
+				("error: could not launch application with [%s].  GnomeVFSResult = %d\n",
+				TILE (tile)->uri, retval);
+
+		g_list_free (uris);
+	} else {
+		gchar *cmd;
+		cmd = string_replace_once (
+			get_slab_gconf_string (SLAB_FILE_MANAGER_OPEN_CMD), "FILE_URI", tile->uri);
+		spawn_process (cmd);
+		g_free (cmd);
+	}
 }

@@ -1141,7 +1141,6 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 	gchar *tag_close_ptr = NULL;
 	gchar *search_string = NULL;
 
-
 	if (! strcmp (uri, "HOME")) {
 		uri_new = g_filename_to_uri (g_get_home_dir (), NULL, NULL);
 		name    = _("Home");
@@ -1205,10 +1204,7 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 
 	if (name)
 		g_bookmark_file_set_title (priv->store, uri, name);
-
-	g_bookmark_file_set_mime_type   (priv->store, uri, "inode/directory");
-	g_bookmark_file_add_application (priv->store, uri, "nautilus", "nautilus --browser %u");
-
+	
 	if (uri_new && libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
 }
