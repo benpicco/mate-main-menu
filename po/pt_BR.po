@@ -7,14 +7,15 @@
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
+# Michel Recondo <mrecondo@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 14:47-0300\n"
-"PO-Revision-Date: 2008-06-19 18:43-0300\n"
-"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
+"POT-Creation-Date: 2008-07-23 17:10-0300\n"
+"PO-Revision-Date: 2008-07-22 19:43-0300\n"
+"Last-Translator: Michel Recondo <mrecondo@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,13 +120,13 @@ msgstr "Atualizar"
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:760
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:756
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Remover dos favoritos"
 
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:762
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:758
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
@@ -177,103 +178,103 @@ msgstr "Nova planilha eletrônica"
 msgid "New Document"
 msgstr "Novo documento"
 
-#: ../libslab/bookmark-agent.c:1147
+#: ../libslab/bookmark-agent.c:1146
 msgid "Home"
 msgstr "Pasta pessoal"
 
-#: ../libslab/bookmark-agent.c:1152 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1151 ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../libslab/bookmark-agent.c:1158
+#: ../libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Área de trabalho"
 
-#: ../libslab/bookmark-agent.c:1165
+#: ../libslab/bookmark-agent.c:1164
 msgid "File System"
 msgstr "Sistema de arquivos"
 
-#: ../libslab/bookmark-agent.c:1169
+#: ../libslab/bookmark-agent.c:1168
 msgid "Network Servers"
 msgstr "Servidores de rede"
 
-#: ../libslab/bookmark-agent.c:1198
+#: ../libslab/bookmark-agent.c:1197
 msgid "Search"
 msgstr "Pesquisar"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:172
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Abrir</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:242
+#: ../libslab/directory-tile.c:191 ../libslab/document-tile.c:241
 msgid "Rename..."
 msgstr "Renomear..."
 
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:256 ../libslab/document-tile.c:265
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:214
+#: ../libslab/document-tile.c:255 ../libslab/document-tile.c:264
 msgid "Send To..."
 msgstr "Enviar para..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:291
+#: ../libslab/directory-tile.c:229 ../libslab/document-tile.c:290
 msgid "Move to Trash"
 msgstr "Mover para a lixeira"
 
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:301 ../libslab/document-tile.c:873
+#: ../libslab/directory-tile.c:239 ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:300 ../libslab/document-tile.c:869
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1045
+#: ../libslab/directory-tile.c:569 ../libslab/document-tile.c:1041
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Você tem certeza de que deseja permanentemente excluir \"%s\"?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1049
+#: ../libslab/directory-tile.c:574 ../libslab/document-tile.c:1045
 msgid "If you delete an item, it is permanently lost."
 msgstr "Se você excluir um item, ele será perdido permanentemente."
 
-#: ../libslab/document-tile.c:203
+#: ../libslab/document-tile.c:202
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Abrir com \"%s\"</b>"
 
-#: ../libslab/document-tile.c:215
+#: ../libslab/document-tile.c:214
 msgid "Open with Default Application"
 msgstr "Abrir com a aplicação padrão"
 
-#: ../libslab/document-tile.c:226
+#: ../libslab/document-tile.c:225
 msgid "Open in File Manager"
 msgstr "Abrir no gerenciador de arquivos"
 
-#: ../libslab/document-tile.c:656
+#: ../libslab/document-tile.c:652
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:663
+#: ../libslab/document-tile.c:659
 msgid "%l:%M %p"
 msgstr "%k:%M"
 
-#: ../libslab/document-tile.c:671
+#: ../libslab/document-tile.c:667
 msgid "Today %l:%M %p"
 msgstr "Hoje às %k:%M"
 
-#: ../libslab/document-tile.c:681
+#: ../libslab/document-tile.c:677
 msgid "Yesterday %l:%M %p"
 msgstr "Ontem às %k:%M"
 
-#: ../libslab/document-tile.c:693
+#: ../libslab/document-tile.c:689
 msgid "%a %l:%M %p"
 msgstr "%a %k:%M"
 
-#: ../libslab/document-tile.c:701
+#: ../libslab/document-tile.c:697
 msgid "%b %d %l:%M %p"
 msgstr "%d de %b às %k:%M"
 
-#: ../libslab/document-tile.c:703
+#: ../libslab/document-tile.c:699
 msgid "%b %d %Y"
 msgstr "%d de %b de %Y"
 
@@ -700,13 +701,15 @@ msgid "Networ_k: None"
 msgstr "_Rede: Nenhuma"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Conectado a: %s"
 
 #: ../main-menu/src/network-status-tile.c:210
 msgid "Networ_k: Wireless"
-msgstr "_Rede: Sem Fios"
+msgstr "_Rede: sem fios"
 
 #: ../main-menu/src/network-status-tile.c:215
 #, c-format
@@ -715,25 +718,39 @@ msgstr "Usando ethernet (%s)"
 
 #: ../main-menu/src/network-status-tile.c:219
 msgid "Networ_k: Wired"
-msgstr "_Rede: Com Fios"
+msgstr "_Rede: com fios"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "_Rede: GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "_Rede: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr "Ethernet Sem Fios (%s)"
+msgstr "Rede sem fios (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr "Ethernet Com Fios (%s)"
+msgstr "Rede com fios (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Rede móvel (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -806,210 +823,3 @@ msgstr "Adicione o documento atual aos favoritos"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Remova o documento atual dos favoritos"
-
-#~ msgid "Edited %m/%d/%Y"
-#~ msgstr "Editado em %d/%m/%Y"
-
-#~ msgid "Hard _Drive"
-#~ msgstr "_Disco Rígido"
-
-#~ msgid "%lluG"
-#~ msgstr "%lluG"
-
-#~ msgid "%lluM"
-#~ msgstr "%lluM"
-
-#~ msgid "%lluK"
-#~ msgstr "%lluK"
-
-#~ msgid "%llub"
-#~ msgstr "%llub"
-
-#~ msgid "Control Center"
-#~ msgstr "Centro de Controle"
-
-#~ msgid "Close the control-center when a task is activated"
-#~ msgstr "Fecha o centro de controle quando uma tarefa for ativada"
-
-#~ msgid "Task names and associated .desktop files"
-#~ msgstr "Nomes das tarefas e arquivos .desktop associados"
-
-#~ msgid ""
-#~ "The task name to be displayed in the control-center (thus needing to be "
-#~ "translated) followed by a \";\" separator then the filename of an "
-#~ "associated .desktop file to launch for that task."
-#~ msgstr ""
-#~ "O nome da tarefa a ser exibido no centro de controle (necessitando, "
-#~ "portanto, de tradução) seguido de separação por \";\" e, em seguida, o "
-#~ "nome de um arquivo .desktop associado a ser iniciado para essa tarefa."
-
-#~ msgid ""
-#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
-#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
-#~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
-#~ "YaST.desktop]"
-#~ msgstr ""
-#~ "[Mudar Plano de Fundo da Área de Trabalho;background.desktop,Adicionar "
-#~ "Impressora;gnome-cups-manager.desktop,Configurar Rede;YaST2/lan.desktop,"
-#~ "Mudar Senha;gnome-passwd.desktop,Adicionar Usuário;YaST2/users.desktop,"
-#~ "Abrir Configurações do Administrador;YaST.desktop]"
-
-#~ msgid ""
-#~ "if true, the control-center will close when a \"Common Task\" is activated"
-#~ msgstr ""
-#~ "se verdadeiro, o centro de controle será fechado quando uma \"Tarefa Comum"
-#~ "\" for ativada"
-
-#~ msgid "key not found [%s]\n"
-#~ msgstr "valor não encontrado [%s]\n"
-
-#~ msgid "Common Tasks"
-#~ msgstr "Tarefas Comuns"
-
-#~ msgid "Software Update"
-#~ msgstr "Atualização de Software"
-
-#~ msgid ".desktop files for \"Favorite Applications\""
-#~ msgstr "arquivos .desktop para \"Aplicações Favoritas\""
-
-#~ msgid "System area items"
-#~ msgstr "Itens da área do sistema"
-
-#~ msgid ""
-#~ "The list of the items which will appear in the System area. Possible "
-#~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
-#~ "3, LOCK_SCREEN = 4. HELP, CONTROL_CENTER and PACKAGE_MANAGER need to the "
-#~ "have the appropriate .desktop files defined in the, respectively, "
-#~ "\"help_item\", \"control_center_item\" and \"package_manager_item\" keys."
-#~ msgstr ""
-#~ "A lista dos itens que serão mostrados na área do Sistema. Entre os "
-#~ "possíveis valores estão HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = "
-#~ "2, LOG_OUT = 3 e LOCK_SCREEN = 4. Para HELP, CONTROL_CENTER e "
-#~ "PACKAGE_MANAGER, é preciso definir os arquivos .desktop apropriados nas "
-#~ "chaves \"help_item\", \"control_center_item\" e \"package_manager_item\", "
-#~ "respectivamente."
-
-#~ msgid ""
-#~ "contains the list (in no particular order) of allowable file types to "
-#~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
-#~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
-#~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
-#~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
-#~ "to \"Favorite Applications\". RECENT_FILES is the list of files from ~/."
-#~ "recently-used."
-#~ msgstr ""
-#~ "contém a lista (fora de uma ordem predeterminada) de tipos de arquivos "
-#~ "permitidos para exibição na área de arquivos. possíveis valores (consulte "
-#~ "também a observação sobre /desktop/gnome/ applications/main-menu/file-"
-#~ "area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-#~ "[RECENT_FILES]. RECENTLY_USED_APPS é a lista das aplicações usadas "
-#~ "recentemente (instanciados com o menu principal ou o navegador de "
-#~ "aplicações). USER_SPECIFIED_APPS é equivalente a \"Aplicações Favoritas"
-#~ "\". RECENT_FILES é a lista de arquivos de ~/.recently-used."
-
-#~ msgid "control center item .desktop file"
-#~ msgstr "arquivo .desktop de item do centro de controle"
-
-#~ msgid ""
-#~ "determines the limit of tiles in the file-area. *Note: this does not "
-#~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
-#~ msgstr ""
-#~ "determina o limite de blocos da área de arquivos. *Nota: isto não afetará "
-#~ "o número de blocos se a classe do arquivo for USER_SPECIFIED_*."
-
-#~ msgid ""
-#~ "determines the reordering algorithm used when moving tiles around the "
-#~ "main-menu"
-#~ msgstr ""
-#~ "determina o algoritmo de reordenação usado quando se movem blocos pelo "
-#~ "menu principal"
-
-#~ msgid "help item .desktop file"
-#~ msgstr "arquivo .desktop de item da ajuda"
-
-#~ msgid "package manager item .desktop file"
-#~ msgstr "arquivo .desktop de item do gerenciador de pacotes"
-
-#~ msgid ""
-#~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
-#~ "when a tile is dragged onto another tile they should simply swap "
-#~ "position. PUSH indicates that when a tile, A, is dragged onto another "
-#~ "tile, B, a vacant spot is created in tile A's place. tile B (and all "
-#~ "tiles after B) shift down until the new vacant space is filled. this "
-#~ "operation wraps around in the case that tile A appears before tile B "
-#~ "prior to the drag and drop operation. PUSH_PULL is similar to PUSH except "
-#~ "that when tiles are shifted they are either pushed into the vacant spaced "
-#~ "or pulled from the other direction, depending on which strategy affects "
-#~ "the least number of tiles."
-#~ msgstr ""
-#~ "possíveis valores = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indica que "
-#~ "quando um bloco é arrastado para outro, eles simplesmente trocam de "
-#~ "posição. PUSH indica que quando um bloco (A) é arrastado para outro (B), "
-#~ "cria-se uma vaga no lugar de A. o bloco B e todos os que estiverem depois "
-#~ "dele vão sendo passados para baixo até que o espaço vago seja preenchido. "
-#~ "essa operação se reverte caso o bloco A esteja em posição anterior à do "
-#~ "bloco B antes da operação de arrastar e soltar. PUSH_PULL é semelhante a "
-#~ "PUSH exceto que, quando são trocados, os blocos são empurrados no espaço "
-#~ "vago ou puxados da outra direção, a depender da estratégia que afetar o "
-#~ "menor número de blocos."
-
-#~ msgid ""
-#~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-#~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
-#~ "(instantiated with the main-menu or the application-browser). "
-#~ "USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". "
-#~ "RECENT_FILES is the list of files from ~/.recently-used."
-#~ msgstr ""
-#~ "possíveis valores = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
-#~ "[RECENT_FILES]. RECENTLY_USED_APPS é a lista das aplicações usadas "
-#~ "recentemente (instanciados com o menu principal ou o navegador de "
-#~ "aplicações). USER_SPECIFIED_APPS é equivalente a \"Aplicações Favoritas"
-#~ "\". RECENT_FILES é a lista de arquivos de ~/.recently-used."
-
-#~ msgid "prioritized list of commands to lock the screen"
-#~ msgstr "lista de comandos com prioridade no bloqueio da tela"
-
-#~ msgid "Sho_w:"
-#~ msgstr "_Mostrar:"
-
-#~ msgid "_Help"
-#~ msgstr "Aj_uda"
-
-#~ msgid "_Control Center"
-#~ msgstr "_Centro de Controle"
-
-#~ msgid "I_nstall Software"
-#~ msgstr "I_nstalar Software"
-
-#~ msgid "Log _Out ..."
-#~ msgstr "Efetuar Log_out..."
-
-#~ msgid "_Unknown"
-#~ msgstr "_Desconhecido"
-
-#~ msgid "Help Unavailable"
-#~ msgstr "Ajuda não Disponível"
-
-#~ msgid ""
-#~ "Location of the system-wide directory in which startup programs are found."
-#~ msgstr ""
-#~ "Local do diretório em que se encontram os programas de inicialização de "
-#~ "todo o sistema."
-
-#~ msgid ""
-#~ "Location of the user directory in which startup programs are found. The "
-#~ "dir path should not be absolute, as the value of this key is appended to "
-#~ "this path: ~/."
-#~ msgstr ""
-#~ "Local do diretório do usuário em que se encontram os programas de "
-#~ "inicialização. O caminho desse diretório não deve ser absoluto, já que o "
-#~ "valor desta chave é a ele anexada: ~/."
-
-#~ msgid "System-wide autostart program drop dir"
-#~ msgstr "Diretório de arquivamento dos programas autostart de todo o sistema"
-
-#~ msgid "User autostart program drop dir (within the home dir)"
-#~ msgstr ""
-#~ "Diretório de arquivamento dos programas autostart do usuário (dentro do "
-#~ "diretório pessoal)"
