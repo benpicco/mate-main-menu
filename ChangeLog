@@ -1,3 +1,10 @@
+2008-07-24  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	http://bugzilla.gnome.org/show_bug.cgi?id=544539	
+
+	* main-menu/src/network-status-agent.c: (nm_get_device_info):
+	Fix the build against NetworkManager 0.7 trunk.
+
 2008-07-16  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* libslab/directory-tile.c

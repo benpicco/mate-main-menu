@@ -23,8 +23,8 @@
 #include <string.h>
 #include <libnm-glib/nm-client.h>
 #include <NetworkManager.h>
-#include <libnm-glib/nm-device-802-11-wireless.h>
-#include <libnm-glib/nm-device-802-3-ethernet.h>
+#include <libnm-glib/nm-device-wifi.h>
+#include <libnm-glib/nm-device-ethernet.h>
 #include <libnm-glib/nm-gsm-device.h>
 #include <libnm-glib/nm-cdma-device.h>
 #include <nm-setting-ip4-config.h>
@@ -200,6 +200,7 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 {
 	NetworkStatusInfo *info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
 	const GArray *array;
+	const GSList *addresses;
 	NMSettingIP4Address *def_addr;
 	guint32 hostmask, network, bcast;
 
@@ -212,8 +213,10 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 	if(! cfg)
 		return info;
 
-	def_addr = nm_ip4_config_get_addresses (cfg);
-	if (def_addr) {
+	addresses = nm_ip4_config_get_addresses (cfg);
+	if (addresses) {
+		def_addr = addresses->data;
+
 		info->ip4_addr = ip4_address_as_string (def_addr->address);
 		info->subnet_mask = ip4_address_as_string (def_addr->netmask);
 		info->route = ip4_address_as_string (def_addr->gateway);
@@ -235,16 +238,16 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 			info->secondary_dns = ip4_address_as_string (g_array_index (array, guint32, 1));
 	}
 
-	if (NM_IS_DEVICE_802_11_WIRELESS(device))
+	if (NM_IS_DEVICE_WIFI(device))
 	{
 		NMAccessPoint * activeap = NULL;
 		const GByteArray * ssid;
 
 		info->type = DEVICE_TYPE_802_11_WIRELESS;
-		info->speed_mbs = nm_device_802_11_wireless_get_bitrate (NM_DEVICE_802_11_WIRELESS(device));
-		info->hw_addr = g_strdup (nm_device_802_11_wireless_get_hw_address (NM_DEVICE_802_11_WIRELESS(device)));
+		info->speed_mbs = nm_device_wifi_get_bitrate (NM_DEVICE_WIFI(device));
+		info->hw_addr = g_strdup (nm_device_wifi_get_hw_address (NM_DEVICE_WIFI(device)));
 
-		activeap = nm_device_802_11_wireless_get_active_access_point (NM_DEVICE_802_11_WIRELESS(device));
+		activeap = nm_device_wifi_get_active_access_point (NM_DEVICE_WIFI(device));
 		if (activeap)
 		{
 			ssid = nm_access_point_get_ssid (NM_ACCESS_POINT (activeap));
@@ -255,11 +258,11 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 		if (! info->essid)
 			info->essid = g_strdup ("(none)");
 	}
-	else if (NM_IS_DEVICE_802_3_ETHERNET (device))
+	else if (NM_IS_DEVICE_ETHERNET (device))
 	{
 		info->type = DEVICE_TYPE_802_3_ETHERNET;
-		info->speed_mbs = nm_device_802_3_ethernet_get_speed (NM_DEVICE_802_3_ETHERNET(device));
-		info->hw_addr = g_strdup (nm_device_802_3_ethernet_get_hw_address (NM_DEVICE_802_3_ETHERNET(device)));
+		info->speed_mbs = nm_device_ethernet_get_speed (NM_DEVICE_ETHERNET(device));
+		info->hw_addr = g_strdup (nm_device_ethernet_get_hw_address (NM_DEVICE_ETHERNET(device)));
 	}
 	else if (NM_IS_GSM_DEVICE (device))
 	{
