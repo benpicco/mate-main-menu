@@ -1,3 +1,10 @@
+2008-07-24  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	http://bugzilla.gnome.org/show_bug.cgi?id=544538
+
+	* app-shell.c: (generate_launchers):
+	Fix a build warning.
+
 ==================== 0.9.10 ====================
 
 2008-05-13  Federico Mena Quintero  <federico@novell.com>

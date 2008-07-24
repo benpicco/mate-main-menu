@@ -1031,10 +1031,8 @@ generate_launchers (GMenuTreeDirectory * root_dir, AppShellData * app_data, Cate
 			desktop_item = gnome_desktop_item_new_from_file (desktop_file, 0, NULL);
 			if (!desktop_item)
 			{
-				gchar *error_msg = g_strdup_printf("Failure - gnome_desktop_item_new_from_file(%s)",
-					desktop_file);
-				g_critical (error_msg);
-				g_free (error_msg);
+				g_critical ("Failure - gnome_desktop_item_new_from_file(%s)",
+					    desktop_file);
 				break;
 			}
 			if (!check_specific_apps_hack (desktop_item))
