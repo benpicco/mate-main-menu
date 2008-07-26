@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 00:42+0200\n"
-"PO-Revision-Date: 2008-06-24 00:42+0100\n"
+"POT-Creation-Date: 2008-07-27 01:11+0200\n"
+"PO-Revision-Date: 2008-07-27 01:12+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -104,14 +104,14 @@ msgid "Uninstall"
 msgstr "Avinstallera"
 
 #: ../libslab/application-tile.c:780
-#: ../libslab/document-tile.c:760
+#: ../libslab/document-tile.c:756
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Ta bort från favoriter"
 
 #: ../libslab/application-tile.c:782
-#: ../libslab/document-tile.c:762
+#: ../libslab/document-tile.c:758
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
@@ -165,112 +165,112 @@ msgstr "Nytt kalkylblad"
 msgid "New Document"
 msgstr "Nytt dokument"
 
-#: ../libslab/bookmark-agent.c:1147
+#: ../libslab/bookmark-agent.c:1146
 msgid "Home"
 msgstr "Hem"
 
-#: ../libslab/bookmark-agent.c:1152
+#: ../libslab/bookmark-agent.c:1151
 #: ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "Dokument"
 
-#: ../libslab/bookmark-agent.c:1158
+#: ../libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: ../libslab/bookmark-agent.c:1165
+#: ../libslab/bookmark-agent.c:1164
 msgid "File System"
 msgstr "Filsystem"
 
-#: ../libslab/bookmark-agent.c:1169
+#: ../libslab/bookmark-agent.c:1168
 msgid "Network Servers"
 msgstr "Nätverksservrar"
 
-#: ../libslab/bookmark-agent.c:1198
+#: ../libslab/bookmark-agent.c:1197
 msgid "Search"
 msgstr "Sök"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:172
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Öppna</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189
-#: ../libslab/document-tile.c:242
+#: ../libslab/directory-tile.c:191
+#: ../libslab/document-tile.c:241
 msgid "Rename..."
 msgstr "Byt namn..."
 
-#: ../libslab/directory-tile.c:203
-#: ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:256
-#: ../libslab/document-tile.c:265
+#: ../libslab/directory-tile.c:205
+#: ../libslab/directory-tile.c:214
+#: ../libslab/document-tile.c:255
+#: ../libslab/document-tile.c:264
 msgid "Send To..."
 msgstr "Skicka till..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227
-#: ../libslab/document-tile.c:291
+#: ../libslab/directory-tile.c:229
+#: ../libslab/document-tile.c:290
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
-#: ../libslab/directory-tile.c:237
-#: ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:301
-#: ../libslab/document-tile.c:873
+#: ../libslab/directory-tile.c:239
+#: ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:300
+#: ../libslab/document-tile.c:869
 msgid "Delete"
 msgstr "Ta bort"
 
-#: ../libslab/directory-tile.c:575
-#: ../libslab/document-tile.c:1045
+#: ../libslab/directory-tile.c:569
+#: ../libslab/document-tile.c:1041
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
 
-#: ../libslab/directory-tile.c:580
-#: ../libslab/document-tile.c:1049
+#: ../libslab/directory-tile.c:574
+#: ../libslab/document-tile.c:1045
 msgid "If you delete an item, it is permanently lost."
 msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
 
-#: ../libslab/document-tile.c:203
+#: ../libslab/document-tile.c:202
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Öppna med \"%s\"</b>"
 
-#: ../libslab/document-tile.c:215
+#: ../libslab/document-tile.c:214
 msgid "Open with Default Application"
 msgstr "Öppna med standardprogrammet"
 
-#: ../libslab/document-tile.c:226
+#: ../libslab/document-tile.c:225
 msgid "Open in File Manager"
 msgstr "Öppna i filhanterare"
 
-#: ../libslab/document-tile.c:656
+#: ../libslab/document-tile.c:652
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:663
+#: ../libslab/document-tile.c:659
 msgid "%l:%M %p"
 msgstr "%H.%M"
 
-#: ../libslab/document-tile.c:671
+#: ../libslab/document-tile.c:667
 msgid "Today %l:%M %p"
 msgstr "Idag %H.%M"
 
-#: ../libslab/document-tile.c:681
+#: ../libslab/document-tile.c:677
 msgid "Yesterday %l:%M %p"
 msgstr "Igår %H.%M"
 
-#: ../libslab/document-tile.c:693
+#: ../libslab/document-tile.c:689
 msgid "%a %l:%M %p"
 msgstr "%a %H.%M"
 
-#: ../libslab/document-tile.c:701
+#: ../libslab/document-tile.c:697
 msgid "%b %d %l:%M %p"
 msgstr "%d %b %H.%M"
 
-#: ../libslab/document-tile.c:703
+#: ../libslab/document-tile.c:699
 msgid "%b %d %Y"
 msgstr "%d %b %Y"
 
@@ -609,6 +609,8 @@ msgid "Networ_k: None"
 msgstr "Nätver_k: Inget"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Ansluten till: %s"
@@ -626,23 +628,37 @@ msgstr "Ethernet (%s) används"
 msgid "Networ_k: Wired"
 msgstr "Nätver_k: Trådat"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "Nätver_k: GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "Nätver_k: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Trådlöst Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Trådat Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Mobilt ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "Okänd"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
