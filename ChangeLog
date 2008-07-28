@@ -1,3 +1,10 @@
+2008-07-28  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	reviewed by Vincent Untz and Tambet Ingo.
+
+	* main-menu/src/network-status-agent.c: (nm_get_device_info):
+	Some more NetworkManager 0.7 API breakage.
+
 2008-07-24  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	http://bugzilla.gnome.org/show_bug.cgi?id=544539	

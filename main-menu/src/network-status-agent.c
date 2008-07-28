@@ -218,11 +218,11 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 		def_addr = addresses->data;
 
 		info->ip4_addr = ip4_address_as_string (def_addr->address);
-		info->subnet_mask = ip4_address_as_string (def_addr->netmask);
+		info->subnet_mask = ip4_address_as_string (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
 		info->route = ip4_address_as_string (def_addr->gateway);
 
-		network = ntohl (def_addr->address) & ntohl (def_addr->netmask);
-		hostmask = ~ntohl (def_addr->netmask);
+		network = ntohl (def_addr->address) & ntohl (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
+		hostmask = ~ntohl (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
 		bcast = htonl (network | hostmask);
 		info->broadcast = ip4_address_as_string (bcast);
 	}
