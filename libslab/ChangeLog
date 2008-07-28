@@ -1,3 +1,12 @@
+2008-07-28  Federico Mena Quintero  <federico@novell.com>
+
+	https://bugzilla.novell.com/show_bug.cgi?id=402256 - Main-menu has
+	high CPU usage on NIS/NFS home directories.
+
+	* document-tile.c (load_image): Don't do thumbnailing ourselves,
+	as we don't have the threading logic to do it in the background.
+	Instead, let Nautilus handle thumbnailing by itself.
+
 2008-07-24  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	http://bugzilla.gnome.org/show_bug.cgi?id=544538

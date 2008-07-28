@@ -424,9 +424,6 @@ load_image (DocumentTile *tile)
 {
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
-	GdkPixbuf *thumb;
-	gchar *thumb_path;
-
 	gchar *icon_id = NULL;
 	gboolean free_icon_id = TRUE;
 	GnomeThumbnailFactory *thumbnail_factory;
@@ -445,32 +442,7 @@ load_image (DocumentTile *tile)
 
 	thumbnail_factory = libslab_thumbnail_factory_get ();
 
-	thumb_path = gnome_thumbnail_factory_lookup (thumbnail_factory, TILE (tile)->uri, priv->modified);
-
-	if (!thumb_path) {
-		if (
-			gnome_thumbnail_factory_can_thumbnail (
-				thumbnail_factory, TILE (tile)->uri, priv->mime_type, priv->modified)
-		) {
-			thumb = gnome_thumbnail_factory_generate_thumbnail (
-				thumbnail_factory, TILE (tile)->uri, priv->mime_type);
-
-			if (thumb) {
-				gnome_thumbnail_factory_save_thumbnail (
-					thumbnail_factory, thumb, TILE (tile)->uri, priv->modified);
-
-				icon_id = gnome_thumbnail_factory_lookup (
-					thumbnail_factory, TILE (tile)->uri, priv->modified);
-
-				g_object_unref (thumb);
-			}
-			else
-				gnome_thumbnail_factory_create_failed_thumbnail (
-					thumbnail_factory, TILE (tile)->uri, priv->modified);
-		}
-	}
-	else
-		icon_id = thumb_path;
+	icon_id = gnome_thumbnail_factory_lookup (thumbnail_factory, TILE (tile)->uri, priv->modified);
 
 	if (! icon_id)
 		icon_id = gnome_icon_lookup (
