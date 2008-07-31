@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-22 23:21+0100\n"
+"POT-Creation-Date: 2008-07-31 11:07+0100\n"
 "PO-Revision-Date: 2007-10-14 06:16+0300\n"
 "Last-Translator: Abdulaziz AlSharif <a.a-a.s@hotmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -103,45 +103,46 @@ msgid "Application Actions"
 msgstr "إجراءات التطبيقات"
 
 #. make start action
-#: ../libslab/application-tile.c:362
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>ابدأ %s</b>"
 
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "مساعدة"
 
-#: ../libslab/application-tile.c:428
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "ترقية"
 
-#: ../libslab/application-tile.c:443
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "إلغاء التثبيت"
 
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:728
 #: ../nautilus-main-menu/nautilus-main-menu.c:133
 #: ../nautilus-main-menu/nautilus-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "أزل من المفضلات"
 
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:730
 #: ../nautilus-main-menu/nautilus-main-menu.c:123
 #: ../nautilus-main-menu/nautilus-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "أضف إلى المفضلات"
 
-#: ../libslab/application-tile.c:857
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr "أزل من برامج بدء التشغيل"
 
-#: ../libslab/application-tile.c:859
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr "أضف إلى برامج بدء التشغيل"
 
-#: ../libslab/app-shell.c:747
+#: ../libslab/app-shell.c:750
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -152,76 +153,131 @@ msgstr ""
 "\n"
 " مرشحّك \"<b>%s</b>\" لم يطابق أي عنصر.</span>"
 
-#: ../libslab/app-shell.c:897
+#: ../libslab/app-shell.c:900
 msgid "Other"
 msgstr "آخر"
 
-#: ../libslab/bookmark-agent.c:1067
+#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "أقفل الشاشة"
+
+#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "سجّل الخروج"
+
+#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "أوقف التشغيل"
+
+#: ../libslab/bookmark-agent.c:1090
 msgid "New Spreadsheet"
 msgstr "جدول ممتد جديد"
 
-#: ../libslab/bookmark-agent.c:1071
+#: ../libslab/bookmark-agent.c:1095
 msgid "New Document"
 msgstr "مستند جديد"
 
-#: ../libslab/bookmark-agent.c:1121
+#: ../libslab/bookmark-agent.c:1146
 msgid "Home"
 msgstr "المنزل"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1151 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "المستندات"
+
+#: ../libslab/bookmark-agent.c:1157
+msgid "Desktop"
+msgstr ""
+
+#: ../libslab/bookmark-agent.c:1164
 msgid "File System"
 msgstr "نظام الملفات"
 
-#: ../libslab/bookmark-agent.c:1141
+#: ../libslab/bookmark-agent.c:1168
 msgid "Network Servers"
 msgstr "خوادم الشبكة"
 
-#: ../libslab/bookmark-agent.c:1170
+#: ../libslab/bookmark-agent.c:1197
 msgid "Search"
 msgstr "ابحث"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:168
+#: ../libslab/directory-tile.c:172
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>افتح</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
+#: ../libslab/directory-tile.c:191 ../libslab/document-tile.c:241
 msgid "Rename..."
 msgstr "أعد تسمية..."
 
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
+#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:214
+#: ../libslab/document-tile.c:255 ../libslab/document-tile.c:264
 msgid "Send To..."
 msgstr "أرسل إلى..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
+#: ../libslab/directory-tile.c:229 ../libslab/document-tile.c:290
 msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
+#: ../libslab/directory-tile.c:239 ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:300 ../libslab/document-tile.c:841
 msgid "Delete"
 msgstr "احذف"
 
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "حرره %m/%d/%Y"
+#: ../libslab/directory-tile.c:569 ../libslab/document-tile.c:1013
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr ""
 
-#: ../libslab/document-tile.c:193
+#: ../libslab/directory-tile.c:574 ../libslab/document-tile.c:1017
+msgid "If you delete an item, it is permanently lost."
+msgstr ""
+
+#: ../libslab/document-tile.c:202
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>افتح بواسطة \"%s\"</b>"
 
-#: ../libslab/document-tile.c:205
+#: ../libslab/document-tile.c:214
 msgid "Open with Default Application"
 msgstr "افتح بواسطة التطبيق الافتراضي"
 
-#: ../libslab/document-tile.c:216
+#: ../libslab/document-tile.c:225
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
+
+#: ../libslab/document-tile.c:624
+msgid "?"
+msgstr ""
+
+#: ../libslab/document-tile.c:631
+msgid "%l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:639
+msgid "Today %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:649
+msgid "Yesterday %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:661
+msgid "%a %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:669
+msgid "%b %d %l:%M %p"
+msgstr ""
+
+#: ../libslab/document-tile.c:671
+msgid "%b %d %Y"
+msgstr ""
 
 #: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
 #: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
@@ -322,7 +378,7 @@ msgid "Default menu and application browser"
 msgstr "القائمة الافتراضية ومتصفح التطبيقات"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "قائمة جنوم الرئيسية"
 
@@ -577,54 +633,40 @@ msgid ""
 "\"Favorite\" documents."
 msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "محرك الأقراص الصلبة"
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr ""
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
-#, fuzzy, c-format
-msgid "%lluG"
-msgstr "لوغ ٪"
-
-#: ../main-menu/src/hard-drive-status-tile.c:347
-#, fuzzy, c-format
-msgid "%lluM"
-msgstr "لوم ٪"
-
-#: ../main-menu/src/hard-drive-status-tile.c:349
-#, fuzzy, c-format
-msgid "%lluK"
-msgstr "لوك ٪"
-
-#: ../main-menu/src/hard-drive-status-tile.c:351
-#, fuzzy, c-format
-msgid "%llub"
-msgstr "لوب ٪"
-
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%s Free / %s Total"
+msgid "%.1fG"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:214
+#, c-format
+msgid "%.1fM"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:216
+#, c-format
+msgid "%.1fK"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:218
+#, c-format
+msgid "%.1fb"
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:239
+#, fuzzy, c-format
+msgid "Home: %s Free / %s"
 msgstr "%s حر / %s المجموع"
-
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "سجّل الخروج"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "أوقف التشغيل"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "أقفل الشاشة"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "مقفل شاشة جنوم"
 
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "قائمة جنوم الرئيسية"
 
@@ -642,6 +684,8 @@ msgid "Networ_k: None"
 msgstr "ش_بكة: بلا"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "متصل بـ: %s"
@@ -659,23 +703,39 @@ msgstr "استخدام الإيثرنت (%s)"
 msgid "Networ_k: Wired"
 msgstr "ش_بكة: سِلكي"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+#, fuzzy
+msgid "Networ_k: GSM"
+msgstr "ش_بكة: بلا"
+
+#: ../main-menu/src/network-status-tile.c:235
+#, fuzzy
+msgid "Networ_k: CDMA"
+msgstr "ش_بكة: بلا"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "إيثرنت لاسلكي (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "إيثرنت سلكي (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, fuzzy, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "إيثرنت سلكي (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "مجهول"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d مب/ث"
@@ -687,10 +747,6 @@ msgstr "التطبيقات"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "الحاسوب"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "المستندات"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -752,6 +808,28 @@ msgstr "أضف المستند الحالي إلى المفضلات"
 #: ../nautilus-main-menu/nautilus-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "أزل المستند الحالي من المفضلات"
+
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "حرره %m/%d/%Y"
+
+#~ msgid "Hard _Drive"
+#~ msgstr "محرك الأقراص الصلبة"
+
+#, fuzzy
+#~ msgid "%lluG"
+#~ msgstr "لوغ ٪"
+
+#, fuzzy
+#~ msgid "%lluM"
+#~ msgstr "لوم ٪"
+
+#, fuzzy
+#~ msgid "%lluK"
+#~ msgstr "لوك ٪"
+
+#, fuzzy
+#~ msgid "%llub"
+#~ msgstr "لوب ٪"
 
 #~ msgid "Control Center"
 #~ msgstr "مركز التحكم"
