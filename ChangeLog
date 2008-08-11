@@ -1,3 +1,9 @@
+2008-08-11  A. Walton  <awalton@gnome.org>
+
+	reviewed by: Federico Mena Quintero
+	* configure.in:
+	Remove Eel dependency from libslab. Bug #524778.
+
 2008-07-28  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	reviewed by Vincent Untz and Tambet Ingo.

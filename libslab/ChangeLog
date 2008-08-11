@@ -1,3 +1,11 @@
+2008-08-11  A. Walton  <awalton@gnome.org>
+
+	reviewed by: Federico Mena Quintero
+
+	* directory-tile.c (delete_trigger):
+	* document-tile.c (delete_trigger):
+	Remove Eel dependency from libslab. Bug #524778.
+
 2008-07-28  Federico Mena Quintero  <federico@novell.com>
 
 	https://bugzilla.novell.com/show_bug.cgi?id=402256 - Main-menu has

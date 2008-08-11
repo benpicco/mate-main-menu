@@ -22,7 +22,6 @@
 
 #include <glib/gi18n.h>
 #include <string.h>
-#include <eel/eel-alert-dialog.h>
 #include <libgnomeui/gnome-icon-lookup.h>
 #include <libgnomevfs/gnome-vfs-ops.h>
 #include <libgnomevfs/gnome-vfs-uri.h>
@@ -998,7 +997,6 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 {
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
-	gchar     *prompt;
 	GtkDialog *confirm_dialog;
 	gint       result;
 
@@ -1009,12 +1007,9 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 
 
 	if (GPOINTER_TO_INT (libslab_get_gconf_value (GCONF_CONFIRM_DELETE_KEY))) {
-		prompt = g_strdup_printf (
-			_("Are you sure you want to permanently delete \"%s\"?"), priv->basename);
-
-		confirm_dialog = GTK_DIALOG (eel_alert_dialog_new (
-			NULL, 0, GTK_MESSAGE_WARNING, GTK_BUTTONS_NONE,
-			prompt, _("If you delete an item, it is permanently lost.")));
+		confirm_dialog = GTK_DIALOG(gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_WARNING, 
+				GTK_BUTTONS_NONE, _("Are you sure you want to permanently delete \"%s\"?"), priv->basename));
+		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(confirm_dialog), _("If you delete an item, it is permanently lost."));
 							
 		gtk_dialog_add_button (confirm_dialog, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
 		gtk_dialog_add_button (confirm_dialog, GTK_STOCK_DELETE, GTK_RESPONSE_YES);
@@ -1023,7 +1018,6 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		result = gtk_dialog_run (confirm_dialog);
 
 		gtk_widget_destroy (GTK_WIDGET (confirm_dialog));
-		g_free (prompt);
 
 		if (result != GTK_RESPONSE_YES)
 			return;
