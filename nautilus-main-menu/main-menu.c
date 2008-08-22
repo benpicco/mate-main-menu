@@ -27,6 +27,7 @@
 
 #include "nautilus-main-menu.h"
 
+#include <libnautilus-extension/nautilus-extension-types.h>
 #include <libintl.h>
 
 static GType type_list[1];

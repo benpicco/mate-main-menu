@@ -1,5 +1,12 @@
 2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
 
+	* nautilus-main-menu/main-menu.c:
+	* nautilus-main-menu/nautilus-main-menu.c:
+	Leftover from the GIO transition: fix includes in the nautilus
+	extension.
+
+2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
+
 	* configure.in:
 	* main-menu/src/main-menu-ui.c: (main_menu_ui_new),
 	(main_menu_ui_finalize), (create_rct_docs_section),
