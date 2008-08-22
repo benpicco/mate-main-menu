@@ -1,3 +1,30 @@
+2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* Makefile.am:
+	* app-shell.c: (generate_new_apps):
+	* bookmark-agent.c: (bookmark_agent_move_item),
+	(bookmark_agent_remove_item), (bookmark_agent_new), (finalize),
+	(update_user_spec_path), (store_monitor_cb),
+	(recent_item_mru_comp_func):
+	* directory-tile.c: (directory_tile_new),
+	(directory_tile_private_setup), (directory_tile_finalize),
+	(rename_entry_activate_cb), (move_to_trash_trigger),
+	(delete_trigger), (open_with_default_trigger):
+	* document-tile.c: (document_tile_new),
+	(document_tile_private_setup), (document_tile_finalize),
+	(rename_entry_activate_cb), (open_with_default_trigger),
+	(move_to_trash_trigger), (delete_trigger), (user_docs_trigger):
+	* recent-files.c: (main_menu_recent_monitor_init),
+	(main_menu_recent_file_init), (main_menu_recent_monitor_finalize),
+	(main_menu_recent_file_finalize), (main_menu_recent_monitor_new),
+	(get_files), (main_menu_recent_file_get_uri),
+	(main_menu_recent_file_get_mime_type),
+	(main_menu_recent_file_get_modified),
+	(main_menu_rename_recent_file), (main_menu_remove_recent_file),
+	(recent_file_store_monitor_cb), (recent_item_mru_comp_func):
+	* slab-gnome-util.c: (copy_file):
+	Port to GIO and drop gnome-vfs dependency (#527903).
+
 2008-08-11  A. Walton  <awalton@gnome.org>
 
 	reviewed by: Federico Mena Quintero

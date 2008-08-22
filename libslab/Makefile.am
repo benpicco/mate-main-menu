@@ -37,18 +37,11 @@ libslab_la_SOURCES =				\
 	app-shell-startup.c			\
 	application-tile.c			\
 	bookmark-agent.h			\
-	bookmark-agent-libslab.h		\
 	bookmark-agent.c			\
 	directory-tile.c			\
 	document-tile.c				\
 	double-click-detector.c			\
 	double-click-detector.h			\
-	libslab-bookmarkfile.c			\
-	libslab-bookmarkfile.h			\
-	egg-recent-item.c			\
-	egg-recent-item.h			\
-	egg-recent-model.c			\
-	egg-recent-model.h			\
 	gnome-utils.c				\
 	libslab-utils.c				\
 	libslab-utils.h				\

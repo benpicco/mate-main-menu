@@ -1,3 +1,14 @@
+2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* configure.in:
+	* main-menu/src/main-menu-ui.c: (main_menu_ui_new),
+	(main_menu_ui_finalize), (create_rct_docs_section),
+	(recently_used_store_monitor_changed_cb),
+	(setup_recently_used_store_monitor), (item_to_recent_doc_tile),
+	(doc_uri_to_item), (update_recently_used_sections),
+	(volume_monitor_mount_cb):
+	Port to GIO and drop gnome-vfs dependency (#527903).
+
 2008-08-11  A. Walton  <awalton@gnome.org>
 
 	reviewed by: Federico Mena Quintero

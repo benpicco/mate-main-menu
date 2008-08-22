@@ -23,12 +23,7 @@
 #include <glib/gi18n.h>
 #include <string.h>
 #include <libgnomeui/gnome-icon-lookup.h>
-#include <libgnomevfs/gnome-vfs-ops.h>
-#include <libgnomevfs/gnome-vfs-uri.h>
-#include <libgnomevfs/gnome-vfs-xfer.h>
-#include <libgnomevfs/gnome-vfs-utils.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
-#include <libgnomevfs/gnome-vfs-find-directory.h>
+#include <gio/gio.h>
 
 #include "slab-gnome-util.h"
 #include "gnome-utils.h"
@@ -77,7 +72,7 @@ typedef struct
 	gchar *mime_type;
 	time_t modified;
 
-	GnomeVFSMimeApplication *default_app;
+	GAppInfo *default_app;
 
 	GtkBin *header_bin;
 
@@ -155,7 +150,7 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	image = gtk_image_new ();
 
 	markup = g_path_get_basename (uri);
-	basename = gnome_vfs_unescape_string (markup, NULL);
+	basename = g_uri_unescape_string (markup, NULL);
 	g_free (markup);
 
 	header = create_header (basename);
@@ -199,7 +194,7 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 
 	if (priv->default_app) {
 		markup = g_markup_printf_escaped (_("<b>Open with \"%s\"</b>"),
-			priv->default_app->name);
+						    g_app_info_get_name (priv->default_app));
 		action = tile_action_new (TILE (this), open_with_default_trigger, markup,
 			TILE_ACTION_OPENS_NEW_WINDOW);
 		g_free (markup);
@@ -324,23 +319,16 @@ document_tile_private_setup (DocumentTile *this)
 {
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (this);
 
-	GnomeVFSResult result;
-	GnomeVFSFileInfo *info;
+	GFile *file;
+	GAppInfo *app;
 
 	GConfClient *client;
 
+	file = g_file_new_for_uri (TILE (this)->uri);
+	app = g_file_query_default_handler (file, NULL, NULL);
+	priv->default_app = app;
 
-	info = gnome_vfs_file_info_new ();
-
-	result = gnome_vfs_get_file_info (TILE (this)->uri, info,
-		GNOME_VFS_FILE_INFO_GET_MIME_TYPE | GNOME_VFS_FILE_INFO_FORCE_FAST_MIME_TYPE);
-
-	if (result == GNOME_VFS_OK)
-		priv->default_app = gnome_vfs_mime_get_default_application (priv->mime_type);
-	else
-		priv->default_app = NULL;
-
-	gnome_vfs_file_info_unref (info);
+	g_object_unref (file);
 
 	priv->delete_enabled =
 		(gboolean) GPOINTER_TO_INT (get_gconf_value (GCONF_ENABLE_DELETE_KEY));
@@ -395,7 +383,7 @@ document_tile_finalize (GObject *g_object)
 	g_free (priv->mime_type);
 	g_free (priv->force_icon_name);
 
-	gnome_vfs_mime_application_free (priv->default_app);
+	g_object_unref (priv->default_app);
 
 	if (priv->notify_signal_id)
 		g_signal_handler_disconnect (priv->agent, priv->notify_signal_id);
@@ -750,43 +738,46 @@ rename_entry_activate_cb (GtkEntry *entry, gpointer user_data)
 	DocumentTile *tile = DOCUMENT_TILE (user_data);
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
-	GnomeVFSURI *src_uri;
-	GnomeVFSURI *dst_uri;
+	GFile *src_file;
+	GFile *dst_file;
 
-	gchar *dirname;
-	gchar *dst_path;
-	gchar *dst_uri_str;
+	char *src_path;
+	char *dirname;
+	char *dst_path;
+
+	gboolean res;
+	GError *error = NULL;
 
 	GtkWidget *child;
 	GtkWidget *header;
 
-	GnomeVFSResult retval;
-
-
 	if (strlen (gtk_entry_get_text (entry)) < 1)
 		return;
 
-	src_uri = gnome_vfs_uri_new (TILE (tile)->uri);
+	src_file = g_file_new_for_uri (TILE (tile)->uri);
 
-	dirname = gnome_vfs_uri_extract_dirname (src_uri);
-
+	src_path = g_filename_from_uri (TILE (tile)->uri, NULL, NULL);
+	dirname = g_path_get_dirname (src_path);
 	dst_path = g_build_filename (dirname, gtk_entry_get_text (entry), NULL);
+	dst_file = g_file_new_for_path (dst_path);
 
-	dst_uri = gnome_vfs_uri_new (dst_path);
+	res = g_file_move (src_file, dst_file, 0, NULL, NULL, NULL, &error);
+	
+	if (res) {
+		char *dst_uri;
 
-	retval = gnome_vfs_xfer_uri (src_uri, dst_uri, GNOME_VFS_XFER_REMOVESOURCE,
-		GNOME_VFS_XFER_ERROR_MODE_ABORT, GNOME_VFS_XFER_OVERWRITE_MODE_SKIP, NULL, NULL);
-
-	dst_uri_str = gnome_vfs_uri_to_string (dst_uri, GNOME_VFS_URI_HIDE_NONE);
-
-	if (retval == GNOME_VFS_OK) {
-		bookmark_agent_move_item (priv->agent, TILE (tile)->uri, dst_uri_str);
+		dst_uri = g_file_get_uri (dst_file);
+		bookmark_agent_move_item (priv->agent, TILE (tile)->uri, dst_uri);
+		g_free (dst_uri);
 
 		g_free (priv->basename);
 		priv->basename = g_strdup (gtk_entry_get_text (entry));
 	}
-	else
-		g_warning ("unable to move [%s] to [%s]\n", TILE (tile)->uri, dst_uri_str);
+	else {
+		g_warning ("unable to move [%s] to [%s]: %s\n", TILE (tile)->uri,
+			   dst_path, error->message);
+		g_error_free (error);
+	}
 
 	header = gtk_label_new (priv->basename);
 	gtk_misc_set_alignment (GTK_MISC (header), 0.0, 0.5);
@@ -800,12 +791,12 @@ rename_entry_activate_cb (GtkEntry *entry, gpointer user_data)
 
 	gtk_widget_show (header);
 
-	gnome_vfs_uri_unref (src_uri);
-	gnome_vfs_uri_unref (dst_uri);
+	g_object_unref (src_file);
+	g_object_unref (dst_file);
 
 	g_free (dirname);
 	g_free (dst_path);
-	g_free (dst_uri_str);
+	g_free (src_path);
 }
 
 static gboolean
@@ -859,21 +850,31 @@ open_with_default_trigger (Tile *tile, TileEvent *event, TileAction *action)
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
 	GList *uris = NULL;
-
-	GnomeVFSResult retval;
+	gboolean res;
+	GdkAppLaunchContext *launch_context;
+	GError *error = NULL;
 
 	if (priv->default_app)
 	{
 		uris = g_list_append (uris, TILE (tile)->uri);
+		launch_context = gdk_app_launch_context_new ();
+		gdk_app_launch_context_set_screen (launch_context,
+						   gtk_widget_get_screen (GTK_WIDGET (tile)));
+		gdk_app_launch_context_set_timestamp (launch_context,
+						      event->time);
 
-		retval = gnome_vfs_mime_application_launch (priv->default_app, uris);
+		res = g_app_info_launch_uris (priv->default_app, uris,
+					      G_APP_LAUNCH_CONTEXT (launch_context), &error);
 
-		if (retval != GNOME_VFS_OK)
+		if (!res) {
 			g_warning
-				("error: could not launch application with [%s].  GnomeVFSResult = %d\n",
-				TILE (tile)->uri, retval);
+				("error: could not launch application with [%s]: %s\n",
+				TILE (tile)->uri, error->message);
+			g_error_free (error);
+		}
 
 		g_list_free (uris);
+		g_object_unref (launch_context);
 	}
 }
 
@@ -941,55 +942,24 @@ move_to_trash_trigger (Tile *tile, TileEvent *event, TileAction *action)
 {
 	DocumentTilePrivate *priv = DOCUMENT_TILE_GET_PRIVATE (tile);
 
-	GnomeVFSURI *src_uri;
-	GnomeVFSURI *trash_uri;
+	GFile *src_file;
+	gboolean res;
+	GError *error = NULL;
 
-	gchar *file_name;
-	gchar *trash_uri_str;
+	src_file = g_file_new_for_uri (TILE (tile)->uri);
 
-	GnomeVFSResult retval;
+	res = g_file_trash (src_file, NULL, &error);
 
-	src_uri = gnome_vfs_uri_new (TILE (tile)->uri);
-
-	gnome_vfs_find_directory (src_uri, GNOME_VFS_DIRECTORY_KIND_TRASH, &trash_uri,
-		FALSE, FALSE, 0777);
-
-	if (!trash_uri) {
-		g_warning ("unable to find trash location\n");
-
-		return;
-	}
-
-	file_name = gnome_vfs_uri_extract_short_name (src_uri);
-
-	if (!file_name)
-	{
-		g_warning ("unable to extract short name from [%s]\n",
-			gnome_vfs_uri_to_string (src_uri, GNOME_VFS_URI_HIDE_NONE));
-
-		return;
-	}
-
-	trash_uri = gnome_vfs_uri_append_file_name (trash_uri, file_name);
-
-	retval = gnome_vfs_xfer_uri (src_uri, trash_uri, GNOME_VFS_XFER_REMOVESOURCE,
-		GNOME_VFS_XFER_ERROR_MODE_ABORT, GNOME_VFS_XFER_OVERWRITE_MODE_REPLACE, NULL, NULL);
-
-	if (retval == GNOME_VFS_OK)
+	if (res)
 		bookmark_agent_remove_item (priv->agent, TILE (tile)->uri);
 	else {
-		trash_uri_str = gnome_vfs_uri_to_string (trash_uri, GNOME_VFS_URI_HIDE_NONE);
+		g_warning ("unable to move [%s] to the trash: %s\n", TILE (tile)->uri,
+			   error->message);
 
-		g_warning ("unable to move [%s] to the trash [%s]\n", TILE (tile)->uri,
-			trash_uri_str);
-
-		g_free (trash_uri_str);
+		g_error_free (error);
 	}
 
-	gnome_vfs_uri_unref (src_uri);
-	gnome_vfs_uri_unref (trash_uri);
-
-	g_free (file_name);
+	g_object_unref (src_file);
 }
 
 static void
@@ -1000,10 +970,9 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 	GtkDialog *confirm_dialog;
 	gint       result;
 
-	GnomeVFSURI *src_uri;
-	GList *list = NULL;
-
-	GnomeVFSResult retval;
+	GFile *src_file;
+	gboolean res;
+	GError *error = NULL;
 
 
 	if (GPOINTER_TO_INT (libslab_get_gconf_value (GCONF_CONFIRM_DELETE_KEY))) {
@@ -1023,20 +992,19 @@ delete_trigger (Tile *tile, TileEvent *event, TileAction *action)
 			return;
 	}
 
-	src_uri = gnome_vfs_uri_new (TILE (tile)->uri);
+	src_file = g_file_new_for_uri (TILE (tile)->uri);
 
-	list = g_list_append (list, src_uri);
+	res = g_file_delete (src_file, NULL, &error);
 
-	retval = gnome_vfs_xfer_delete_list (list, GNOME_VFS_XFER_ERROR_MODE_ABORT,
-		GNOME_VFS_XFER_REMOVESOURCE, NULL, NULL);
-
-	if (retval == GNOME_VFS_OK)
+	if (res)
 		bookmark_agent_remove_item (priv->agent, TILE (tile)->uri);
-	else
-		g_warning ("unable to delete [%s]\n", TILE (tile)->uri);
+	else {
+		g_warning ("unable to delete [%s]: %s\n", TILE (tile)->uri,
+			   error->message);
+		g_error_free (error);
+	}
 
-	gnome_vfs_uri_unref (src_uri);
-	g_list_free (list);
+	g_object_unref (src_file);
 }
 
 static void
@@ -1055,8 +1023,8 @@ user_docs_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		item->uri       = tile->uri;
 		item->mime_type = priv->mime_type;
 		item->mtime     = priv->modified;
-		item->app_name  = (gchar *) gnome_vfs_mime_application_get_name (priv->default_app);
-		item->app_exec  = (gchar *) gnome_vfs_mime_application_get_exec (priv->default_app);
+		item->app_name  = (gchar *) g_app_info_get_name (priv->default_app);
+		item->app_exec  = (gchar *) g_app_info_get_executable (priv->default_app);
 
 		bookmark_agent_add_item (priv->agent, item);
 		g_free (item);

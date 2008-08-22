@@ -33,8 +33,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <X11/Xlib.h>
 #include <gdk/gdkx.h>
-#include <libgnomevfs/gnome-vfs.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
+#include <gio/gio.h>
 
 #include <gtk/gtkversion.h>
 #if GTK_CHECK_VERSION (2, 10, 0)
@@ -122,11 +121,10 @@ typedef struct {
 
 	BookmarkAgent *bm_agents [BOOKMARK_STORE_N_TYPES];
 
-	GnomeVFSVolumeMonitor *volume_mon;
+	GVolumeMonitor        *volume_mon;
 	GList                 *mounts;
 
-	guint recently_used_throttle_timeout_id;
-	GnomeVFSMonitorHandle *recently_used_store_monitor;
+	GFileMonitor *recently_used_store_monitor;
 
 	guint search_cmd_gconf_mntr_id;
 	guint current_page_gconf_mntr_id;
@@ -168,7 +166,7 @@ static void create_more_buttons      (MainMenuUI *);
 static void setup_file_tables        (MainMenuUI *);
 static void setup_bookmark_agents    (MainMenuUI *);
 static void setup_lock_down          (MainMenuUI *);
-static void setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup);
+static void setup_recently_used_store_monitor (MainMenuUI *this);
 static void update_recently_used_sections (MainMenuUI *this);
 
 static void       select_page                (MainMenuUI *);
@@ -224,7 +222,7 @@ static void     search_tomboy_bindkey_cb          (gchar *, gpointer);
 static gboolean grabbing_window_event_cb          (GtkWidget *, GdkEvent *, gpointer);
 static void     user_app_agent_notify_cb          (GObject *, GParamSpec *, gpointer);
 static void     user_doc_agent_notify_cb          (GObject *, GParamSpec *, gpointer);
-static void     volume_monitor_mount_cb           (GnomeVFSVolumeMonitor *, GnomeVFSVolume *, gpointer);
+static void     volume_monitor_mount_cb           (GVolumeMonitor *, GMount *, gpointer);
 
 static GdkFilterReturn slab_gdk_message_filter (GdkXEvent *, GdkEvent *, gpointer);
 
@@ -291,7 +289,7 @@ main_menu_ui_new (PanelApplet *applet)
 	g_free (glade_xml_path);
 
 	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
-	setup_recently_used_store_monitor (this, TRUE);
+	setup_recently_used_store_monitor (this);
 	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
@@ -438,10 +436,7 @@ main_menu_ui_finalize (GObject *g_obj)
 	gint i;
 
 	if (priv->recently_used_store_monitor)
-		gnome_vfs_monitor_cancel (priv->recently_used_store_monitor);
-
-	if (priv->recently_used_throttle_timeout_id)
-		g_source_remove (priv->recently_used_throttle_timeout_id);
+		g_file_monitor_cancel (priv->recently_used_store_monitor);
 
 	for (i = 0; i < 4; ++i) {
 		g_object_unref (G_OBJECT (g_object_get_data (
@@ -475,9 +470,9 @@ main_menu_ui_finalize (GObject *g_obj)
 	for (i = 0; i < BOOKMARK_STORE_N_TYPES; ++i)
 		g_object_unref (priv->bm_agents [i]);
 
-	g_list_foreach (priv->mounts, (GFunc) gnome_vfs_volume_unref, NULL);
+	g_list_foreach (priv->mounts, (GFunc) g_object_unref, NULL);
 	g_list_free (priv->mounts);
-	gnome_vfs_volume_monitor_unref (priv->volume_mon);
+	g_object_unref (priv->volume_mon);
 
 	G_OBJECT_CLASS (main_menu_ui_parent_class)->finalize (g_obj);
 }
@@ -818,11 +813,11 @@ create_rct_docs_section (MainMenuUI *this)
 
 	gtk_container_add (ctnr, GTK_WIDGET (priv->file_tables [RCNT_DOCS_TABLE]));
 
-	priv->volume_mon = gnome_vfs_get_volume_monitor ();
-	priv->mounts = gnome_vfs_volume_monitor_get_mounted_volumes (priv->volume_mon);
+	priv->volume_mon = g_volume_monitor_get ();
+	priv->mounts = g_volume_monitor_get_mounts (priv->volume_mon);
 
-	g_signal_connect (priv->volume_mon, "volume_mounted", G_CALLBACK (volume_monitor_mount_cb), this);
-	g_signal_connect (priv->volume_mon, "volume_unmounted", G_CALLBACK (volume_monitor_mount_cb), this);
+	g_signal_connect (priv->volume_mon, "mount-added", G_CALLBACK (volume_monitor_mount_cb), this);
+	g_signal_connect (priv->volume_mon, "mount-removed", G_CALLBACK (volume_monitor_mount_cb), this);
 }
 
 static void
@@ -973,88 +968,47 @@ get_recently_used_store_filename (void)
 	return g_build_filename (g_get_home_dir (), basename, NULL);
 }
 
-static gboolean
-recently_used_throttle_timeout_cb (gpointer data)
-{
-	MainMenuUI *this = MAIN_MENU_UI (data);
-	MainMenuUIPrivate *priv = PRIVATE (this);
+#define RECENTLY_USED_STORE_THROTTLE_MILLISECONDS 2000
 
-	update_recently_used_sections (this);
-
-	priv->recently_used_throttle_timeout_id = 0;
-
-	return FALSE;
-}
-
-#define RECENTLY_USED_STORE_THROTTLE_SECONDS 2
-
-static void
-setup_recently_used_throttle_timeout (MainMenuUI *this, gboolean is_startup)
-{
-	MainMenuUIPrivate *priv = PRIVATE (this);
-
-	if (priv->recently_used_throttle_timeout_id != 0)
-		g_source_remove (priv->recently_used_throttle_timeout_id);
-
-	/* Some apps do many updates to the recently-used store quickly, like
-	 * when Nautilus or EOG are asked to open a bunch of files at the same
-	 * time.  So, we throttle our updates to the recently-used store to
-	 * avoid re-reading the store more times than needed.
-	 *
-	 * Additionally, we do this in an idle during startup, not a timeout,
-	 * so that the Computer menu will be up to date as soon as possible.
-	 */
-	if (is_startup)
-		priv->recently_used_throttle_timeout_id = g_idle_add (recently_used_throttle_timeout_cb, this);
-	else
-		priv->recently_used_throttle_timeout_id = g_timeout_add_seconds (RECENTLY_USED_STORE_THROTTLE_SECONDS,
-										 recently_used_throttle_timeout_cb,
-										 this);
-}
-
-/* Called from GnomeVFSMonitor when the recently-used store changes.  We'll note
- * this in a flag, and we'll check that flag later, when it is necessary to have
- * an up-to-date view of the recently-used store.
- */
-static void recently_used_store_monitor_changed_cb (GnomeVFSMonitorHandle *handle,
-						    const gchar *monitor_uri,
-						    const gchar *info_uri,
-						    GnomeVFSMonitorEventType event_type,
+static void recently_used_store_monitor_changed_cb (GFileMonitor *monitor,
+						    GFile *f1, GFile *f2,
+						    GFileMonitorEvent event_type,
 						    gpointer data)
 {
 	MainMenuUI *this = MAIN_MENU_UI (data);
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
 	priv->recently_used_store_has_changed = TRUE;
-	setup_recently_used_throttle_timeout (this, FALSE);
+	update_recently_used_sections (this);
 }
 
-/* Creates a GnomeVFSMonitor for the recently-used store, so we can be informed
+/* Creates a GFileMonitor for the recently-used store, so we can be informed
  * when the store changes.
  */
 static void
-setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup)
+setup_recently_used_store_monitor (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
-	char *filename;
-	char *uri;
+	char *path;
+	GFile *file;
+	GFileMonitor *monitor;
 
 	priv->recently_used_store_has_changed = TRUE; /* ensure the store gets read the first time we need it */
 
-	filename = get_recently_used_store_filename ();
-	uri = g_strconcat ("file://", filename, NULL);
-	g_free (filename);
+	path = get_recently_used_store_filename ();
+	file = g_file_new_for_path (path);
 
-	if (gnome_vfs_monitor_add (&priv->recently_used_store_monitor,
-				   uri,
-				   GNOME_VFS_MONITOR_FILE,
-				   recently_used_store_monitor_changed_cb,
-				   this) != GNOME_VFS_OK)
-		priv->recently_used_store_monitor = NULL;
+	monitor = g_file_monitor_file (file, 0, NULL, NULL);
+	if (monitor) {
+		g_file_monitor_set_rate_limit (monitor,
+					       RECENTLY_USED_STORE_THROTTLE_MILLISECONDS);
+		g_signal_connect (monitor, "changed",
+				  G_CALLBACK (recently_used_store_monitor_changed_cb),
+				  this);
+	}
 
-	g_free (uri);
-
-	setup_recently_used_throttle_timeout (this, is_startup);
+	priv->recently_used_store_monitor = monitor;
+	update_recently_used_sections (this);
 }
 
 static Tile *
@@ -1108,31 +1062,35 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 {
 	MainMenuUIPrivate *priv = PRIVATE (data);
 
-	GnomeVFSVolume *vol;
+	GMount         *mount;
+	GVolume        *volume;
+	GFile          *file;
+	char           *nfs_id;
 	gboolean        is_nfs = FALSE;
-	GnomeVFSURI    *gvfs_uri;
 	gboolean        is_local = TRUE;
 
 	GList *node;
-
 
 	if (! g_str_has_prefix (item->uri, "file://"))
 		return NULL;
 
 	for (node = priv->mounts; ! is_nfs && node; node = node->next) {
-		vol = (GnomeVFSVolume *) node->data;
+		mount = node->data;
+		volume = g_mount_get_volume (mount);
 
-		is_nfs =
-			((gnome_vfs_volume_get_device_type (vol) == GNOME_VFS_DEVICE_TYPE_NFS) &&
-			g_str_has_prefix (item->uri, gnome_vfs_volume_get_activation_uri (vol)));
+		nfs_id = g_volume_get_identifier (volume, G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT);
+		is_nfs = (nfs_id != NULL);
+
+		g_free (nfs_id);
+		g_object_unref (volume);
 	}
 
 	if (is_nfs)
 		return NULL;
 
-	gvfs_uri = gnome_vfs_uri_new (item->uri);
-	is_local = gnome_vfs_uri_is_local (gvfs_uri);
-	gnome_vfs_uri_unref (gvfs_uri);
+	file = g_file_new_for_uri (item->uri);
+	is_local = g_file_is_native (file);
+	g_object_unref (file);
 
 	if (! is_local)
 		return NULL;
@@ -1193,34 +1151,39 @@ static BookmarkItem *
 doc_uri_to_item (const gchar *uri, gpointer data)
 {
 	BookmarkItem *item;
-
-	GnomeVFSFileInfo        *info;
-	GnomeVFSMimeApplication *default_app;
-
+	GFile *file;
+	GFileInfo *info;
+	GAppInfo *default_app;
 
 	item = g_new0 (BookmarkItem, 1);
 
 	item->uri = g_strdup (uri);
 
-	info = gnome_vfs_file_info_new ();
+	file = g_file_new_for_uri (uri);
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_TIME_MODIFIED ","
+				  G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
+				  0, NULL, NULL);
+	g_object_unref (file);
 
-	gnome_vfs_get_file_info (
-		item->uri, info, 
-		GNOME_VFS_FILE_INFO_GET_MIME_TYPE | GNOME_VFS_FILE_INFO_FORCE_FAST_MIME_TYPE);
-
-	item->mime_type = g_strdup (info->mime_type);
-	item->mtime     = info->mtime;
-
-	if (item->mime_type) {
-		default_app = gnome_vfs_mime_get_default_application (item->mime_type);
-
-		item->app_name = g_strdup (gnome_vfs_mime_application_get_name (default_app));
-		item->app_exec = g_strdup (gnome_vfs_mime_application_get_exec (default_app));
-
-		gnome_vfs_mime_application_free (default_app);
+	if (!info) {
+		item->mtime = 0;
+		item->mime_type = NULL;
+	} else {
+		item->mtime = (time_t) g_file_info_get_attribute_uint64 (info,
+									 G_FILE_ATTRIBUTE_TIME_MODIFIED);
+		item->mime_type = g_strdup (g_file_info_get_content_type (info));
+		g_object_unref (info);
 	}
 
-	gnome_vfs_file_info_unref (info);
+	if (item->mime_type) {
+		default_app = g_app_info_get_default_for_type (item->mime_type, FALSE);
+
+		item->app_name = g_strdup (g_app_info_get_name (default_app));
+		item->app_exec = g_strdup (g_app_info_get_executable (default_app));
+
+		g_object_unref (default_app);
+	}
 
 	if (! (item->mime_type && item->app_name)) {
 		bookmark_item_free (item);
@@ -1842,7 +1805,7 @@ update_recently_used_sections (MainMenuUI *this)
 	}
 
 	if (!priv->recently_used_store_monitor)
-		setup_recently_used_store_monitor (this, FALSE); /* for if we couldn't create the monitor the first time */
+		setup_recently_used_store_monitor (this);
 
 	libslab_checkpoint ("main-menu-ui.c: update_recently_used_sections() end");
 }
@@ -2527,11 +2490,11 @@ user_doc_agent_notify_cb (GObject *g_obj, GParamSpec *pspec, gpointer user_data)
 }
 
 static void
-volume_monitor_mount_cb (GnomeVFSVolumeMonitor *mon, GnomeVFSVolume *vol, gpointer data)
+volume_monitor_mount_cb (GVolumeMonitor *mon, GMount *mount, gpointer data)
 {
 	MainMenuUIPrivate *priv = PRIVATE (data);
 
-	g_list_foreach (priv->mounts, (GFunc) gnome_vfs_volume_unref, NULL);
+	g_list_foreach (priv->mounts, (GFunc) g_object_unref, NULL);
 	g_list_free (priv->mounts);
-	priv->mounts = gnome_vfs_volume_monitor_get_mounted_volumes (mon);
+	priv->mounts = g_volume_monitor_get_mounts (mon);
 }

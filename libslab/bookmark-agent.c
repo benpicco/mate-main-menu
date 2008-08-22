@@ -26,24 +26,13 @@
 #	define PACKAGE "gnome-main-menu"
 #endif
 
-#if ! GLIB_CHECK_VERSION (2, 12, 0)
-#	include "bookmark-agent-libslab.h"
-#endif
-
-#include <gtk/gtkversion.h>
-#if GTK_CHECK_VERSION (2, 10, 0)
-#	define USE_GTK_RECENT_MANAGER
-#	include <gtk/gtkrecentmanager.h>
-#else
-#	define EGG_ENABLE_RECENT_FILES
-#	include "egg-recent-model.h"
-#endif
+#include <gtk/gtk.h>
 
 #include <string.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
-#include <libgnomevfs/gnome-vfs.h>
+#include <gio/gio.h>
 
 #include "libslab-utils.h"
 
@@ -80,8 +69,8 @@ typedef struct {
 	const gchar             *store_filename;
 	const gchar             *lockdown_key;
 
-	GnomeVFSMonitorHandle   *store_monitor;
-	GnomeVFSMonitorHandle   *user_store_monitor;
+	GFileMonitor            *store_monitor;
+	GFileMonitor            *user_store_monitor;
 	guint                    gconf_monitor;
 
 	void                  (* update_path) (BookmarkAgent *);
@@ -90,7 +79,7 @@ typedef struct {
 	void                  (* create_item) (BookmarkAgent *, const gchar *);
 
 	gchar                   *gtk_store_path;
-	GnomeVFSMonitorHandle   *gtk_store_monitor;
+	GFileMonitor            *gtk_store_monitor;
 } BookmarkAgentPrivate;
 
 #define PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), BOOKMARK_AGENT_TYPE, BookmarkAgentPrivate))
@@ -128,14 +117,12 @@ static void create_app_item          (BookmarkAgent *, const gchar *);
 static void create_doc_item          (BookmarkAgent *, const gchar *);
 static void create_dir_item          (BookmarkAgent *, const gchar *);
 
-static void store_monitor_cb (GnomeVFSMonitorHandle *, const gchar *, const gchar *,
-                              GnomeVFSMonitorEventType, gpointer);
+static void store_monitor_cb (GFileMonitor *, GFile *, GFile *,
+                              GFileMonitorEvent, gpointer);
 static void gconf_notify_cb  (GConfClient *, guint, GConfEntry *, gpointer);
 static void weak_destroy_cb  (gpointer, GObject *);
 
-#ifdef USE_GTK_RECENT_MANAGER
 static gint recent_item_mru_comp_func (gconstpointer a, gconstpointer b);
-#endif
 
 static gchar *find_package_data_file (const gchar *filename);
 
@@ -218,17 +205,11 @@ bookmark_agent_move_item (BookmarkAgent *this, const gchar *uri, const gchar *ur
 {
 	BookmarkAgentPrivate *priv = PRIVATE (this);
 
-#ifdef USE_GTK_RECENT_MANAGER
 	GError *error = NULL;
-#else
-	EggRecentModel *model;
-#endif
-
 
 	if (! TYPE_IS_RECENT (priv->type))
 		return;
 
-#ifdef USE_GTK_RECENT_MANAGER
 	gtk_recent_manager_move_item (
 		gtk_recent_manager_get_default (), uri, uri_new, & error);
 
@@ -236,14 +217,6 @@ bookmark_agent_move_item (BookmarkAgent *this, const gchar *uri, const gchar *ur
 		libslab_handle_g_error (
 			& error, "%s: unable to update %s with renamed file, [%s] -> [%s].",
 			G_STRFUNC, priv->store_path, uri, uri_new);
-#else
-	model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_NONE);
-
-	egg_recent_model_delete (model, uri);
-	egg_recent_model_add    (model, uri_new);
-
-	g_object_unref (model);
-#endif
 }
 
 void
@@ -253,11 +226,7 @@ bookmark_agent_remove_item (BookmarkAgent *this, const gchar *uri)
 
 	gint rank;
 
-#ifdef USE_GTK_RECENT_MANAGER
 	GError *error = NULL;
-#else
-	EggRecentModel *model;
-#endif
 
 	gchar **uris = NULL;
 	gint    rank_i;
@@ -270,7 +239,6 @@ bookmark_agent_remove_item (BookmarkAgent *this, const gchar *uri)
 		return;
 
 	if (TYPE_IS_RECENT (priv->type)) {
-#ifdef USE_GTK_RECENT_MANAGER
 		gtk_recent_manager_remove_item (
 			gtk_recent_manager_get_default (), uri, & error);
 
@@ -278,11 +246,6 @@ bookmark_agent_remove_item (BookmarkAgent *this, const gchar *uri)
 			libslab_handle_g_error (
 				& error, "%s: unable to remove [%s] from %s.",
 				G_STRFUNC, priv->store_path, uri);
-#else
-		model = egg_recent_model_new (EGG_RECENT_MODEL_SORT_NONE);
-		egg_recent_model_delete (model, uri);
-		g_object_unref (model);
-#endif
 	}
 	else {
 		rank = get_rank (this, uri);
@@ -495,6 +458,7 @@ bookmark_agent_new (BookmarkStoreType type)
 {
 	BookmarkAgent        *this;
 	BookmarkAgentPrivate *priv;
+	GFile *gtk_store_file;
 
 	this = g_object_new (BOOKMARK_AGENT_TYPE, NULL);
 	priv = PRIVATE (this);
@@ -528,9 +492,15 @@ bookmark_agent_new (BookmarkStoreType type)
 			priv->load_store = load_places_store;
 
 			priv->gtk_store_path = g_build_filename (g_get_home_dir (), GTK_BOOKMARKS_FILE, NULL);
-			gnome_vfs_monitor_add (
-				& priv->gtk_store_monitor, priv->gtk_store_path,
-				GNOME_VFS_MONITOR_FILE, store_monitor_cb, this);
+			gtk_store_file = g_file_new_for_path (priv->gtk_store_path);
+			priv->gtk_store_monitor = g_file_monitor_file (gtk_store_file,
+								       0, NULL, NULL);
+			if (priv->gtk_store_monitor) {
+				g_signal_connect (priv->gtk_store_monitor, "changed",
+						  G_CALLBACK (store_monitor_cb), this);
+			}
+
+			g_object_unref (gtk_store_file);
 
 			break;
 
@@ -539,11 +509,7 @@ bookmark_agent_new (BookmarkStoreType type)
 			priv->user_modifiable = TRUE;
 			priv->reorderable     = FALSE;
 
-#ifdef USE_GTK_RECENT_MANAGER
 			priv->store_path = g_build_filename (g_get_home_dir (), ".recently-used.xbel", NULL);
-#else
-			priv->store_path = g_build_filename (g_get_home_dir (), ".recently-used", NULL);
-#endif
 
 			break;
 
@@ -611,6 +577,7 @@ set_property (GObject *g_obj, guint prop_id, const GValue *value, GParamSpec *ps
 static void
 finalize (GObject *g_obj)
 {
+	BookmarkAgent *this = BOOKMARK_AGENT (g_obj);
 	BookmarkAgentPrivate *priv = PRIVATE (g_obj);
 
 	gint i;
@@ -624,14 +591,23 @@ finalize (GObject *g_obj)
 	g_free (priv->user_store_path);
 	g_free (priv->gtk_store_path);
 
-	if (priv->store_monitor)
-		gnome_vfs_monitor_cancel (priv->store_monitor);
+	if (priv->store_monitor) {
+		g_signal_handlers_disconnect_by_func (priv->store_monitor, store_monitor_cb, this);
+		g_file_monitor_cancel (priv->store_monitor);
+		g_object_unref (priv->store_monitor);
+	}
 
-	if (priv->user_store_monitor)
-		gnome_vfs_monitor_cancel (priv->user_store_monitor);
+	if (priv->user_store_monitor) {
+		g_signal_handlers_disconnect_by_func (priv->user_store_monitor, store_monitor_cb, this);
+		g_file_monitor_cancel (priv->user_store_monitor);
+		g_object_unref (priv->user_store_monitor);
+	}
 
-	if (priv->gtk_store_monitor)
-		gnome_vfs_monitor_cancel (priv->gtk_store_monitor);
+	if (priv->gtk_store_monitor) {
+		g_signal_handlers_disconnect_by_func (priv->gtk_store_monitor, store_monitor_cb, this);
+		g_file_monitor_cancel (priv->gtk_store_monitor);
+		g_object_unref (priv->gtk_store_monitor);
+	}
 
 	libslab_gconf_notify_remove (priv->gconf_monitor);
 
@@ -995,27 +971,48 @@ update_user_spec_path (BookmarkAgent *this)
 		g_object_notify (G_OBJECT (this), BOOKMARK_AGENT_STORE_STATUS_PROP);
 
 		if (priv->user_store_monitor) {
-			gnome_vfs_monitor_cancel (priv->user_store_monitor);
+			g_file_monitor_cancel (priv->user_store_monitor);
+			g_object_unref (priv->user_store_monitor);
 			priv->user_store_monitor = NULL;
 		}
 
-		if (priv->status == BOOKMARK_STORE_DEFAULT)
-			gnome_vfs_monitor_add (
-				& priv->user_store_monitor, priv->user_store_path,
-				GNOME_VFS_MONITOR_FILE, store_monitor_cb, this);
+		if (priv->status == BOOKMARK_STORE_DEFAULT) {
+			GFile *user_store_file;
+
+			user_store_file = g_file_new_for_path (priv->user_store_path);
+			priv->user_store_monitor = g_file_monitor_file (user_store_file,
+									0, NULL, NULL);
+			if (priv->user_store_monitor) {
+				g_signal_connect (priv->user_store_monitor, "changed",
+						  G_CALLBACK (store_monitor_cb), this);
+			}
+
+			g_object_unref (user_store_file);
+		}
 	}
 
 	if (libslab_strcmp (priv->store_path, path)) {
 		g_free (priv->store_path);
 		priv->store_path = path;
 
-		if (priv->store_monitor)
-			gnome_vfs_monitor_cancel (priv->store_monitor);
+		if (priv->store_monitor) {
+			g_file_monitor_cancel (priv->store_monitor);
+			g_object_unref (priv->store_monitor);
+		}
 
-		if (priv->store_path)
-			gnome_vfs_monitor_add (
-				& priv->store_monitor, priv->store_path,
-				GNOME_VFS_MONITOR_FILE, store_monitor_cb, this);
+		if (priv->store_path) {
+			GFile *store_file;
+
+			store_file = g_file_new_for_path (priv->store_path);
+			priv->store_monitor = g_file_monitor_file (store_file,
+								   0, NULL, NULL);
+			if (priv->store_monitor) {
+				g_signal_connect (priv->store_monitor, "changed",
+						  G_CALLBACK (store_monitor_cb), this);
+			}
+
+			g_object_unref (store_file);
+		}
 	}
 	else
 		g_free (path);
@@ -1210,8 +1207,8 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 }
 
 static void
-store_monitor_cb (GnomeVFSMonitorHandle *handle, const gchar *monitor_uri,
-                  const gchar *info_uri, GnomeVFSMonitorEventType type, gpointer user_data)
+store_monitor_cb (GFileMonitor *mon, GFile *f1, GFile *f2,
+                  GFileMonitorEvent event_type, gpointer user_data)
 {
 	update_agent (BOOKMARK_AGENT (user_data));
 }
@@ -1240,10 +1237,8 @@ weak_destroy_cb (gpointer data, GObject *g_obj)
 	instances [GPOINTER_TO_INT (data)] = NULL;
 }
 
-#ifdef USE_GTK_RECENT_MANAGER
 static gint
 recent_item_mru_comp_func (gconstpointer a, gconstpointer b)
 {
 	return ((BookmarkItem *) b)->mtime - ((BookmarkItem *) a)->mtime;
 }
-#endif

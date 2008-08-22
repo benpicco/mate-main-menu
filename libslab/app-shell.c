@@ -24,7 +24,7 @@
 
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
-#include <libgnomevfs/gnome-vfs-ops.h>
+#include <gio/gio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -1137,7 +1137,8 @@ generate_new_apps (AppShellData * app_data)
 			const gchar *uri = gnome_desktop_item_get_location (item);
 			if (!g_hash_table_lookup (all_apps_cache, uri))
 			{
-				GnomeVFSFileInfo *info;
+				GFile *file;
+				GFileInfo *info;
 				long filetime;
 
 				if (g_hash_table_lookup (new_apps_dups, uri))
@@ -1163,17 +1164,21 @@ generate_new_apps (AppShellData * app_data)
 					got_new_apps = TRUE;
 				}
 
-				info = gnome_vfs_file_info_new ();
-				if (gnome_vfs_get_file_info (uri, info,
-						GNOME_VFS_FILE_INFO_DEFAULT) != GNOME_VFS_OK
-					|| !(info->valid_fields & GNOME_VFS_FILE_INFO_FIELDS_MTIME))
+				file = g_file_new_for_uri (uri);
+				info = g_file_query_info (file,
+							  G_FILE_ATTRIBUTE_TIME_MODIFIED,
+							  0, NULL, NULL);
+
+				if (!info)
 				{
-					gnome_vfs_file_info_unref (info);
+					g_object_unref (file);
 					g_warning ("Cant get vfs info for %s\n", uri);
 					return;
 				}
-				filetime = info->mtime;
-				gnome_vfs_file_info_unref (info);
+				filetime = (long) g_file_info_get_attribute_uint64 (info,
+										    G_FILE_ATTRIBUTE_TIME_MODIFIED);
+				g_object_unref (info);
+				g_object_unref (file);
 
 				for (x = 0; x < app_data->new_apps->max_items; x++)
 				{

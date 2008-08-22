@@ -22,9 +22,7 @@
 
 #include <gconf/gconf-client.h>
 #include <libgnome/gnome-url.h>
-#include <libgnomevfs/gnome-vfs-result.h>
-#include <libgnomevfs/gnome-vfs-uri.h>
-#include <libgnomevfs/gnome-vfs-xfer.h>
+#include <gio/gio.h>
 #include <string.h>
 
 gboolean
@@ -453,20 +451,24 @@ spawn_process (const gchar *command)
 void
 copy_file (const gchar * src_uri, const gchar * dst_uri)
 {
-	GnomeVFSURI *src;
-	GnomeVFSURI *dst;
+	GFile *src;
+	GFile *dst;
+	GError *error = NULL;
+	gboolean res;
 
-	GnomeVFSResult retval;
+	src = g_file_new_for_uri (src_uri);
+	dst = g_file_new_for_uri (dst_uri);
 
-	src = gnome_vfs_uri_new (src_uri);
-	dst = gnome_vfs_uri_new (dst_uri);
+	res = g_file_copy (src, dst,
+			   G_FILE_COPY_NONE,
+			   NULL, NULL, NULL, &error);
 
-	retval = gnome_vfs_xfer_uri (src, dst, GNOME_VFS_XFER_DEFAULT,
-		GNOME_VFS_XFER_ERROR_MODE_ABORT, GNOME_VFS_XFER_OVERWRITE_MODE_SKIP, NULL, NULL);
+	if (!res)
+	{
+		g_warning ("error copying [%s] to [%s]: %s.", src_uri, dst_uri, error->message);
+		g_error_free (error);
+	}
 
-	if (retval != GNOME_VFS_OK)
-		g_warning ("error copying [%s] to [%s].", src_uri, dst_uri);
-
-	gnome_vfs_uri_unref (src);
-	gnome_vfs_uri_unref (dst);
+	g_object_unref (src);
+	g_object_unref (dst);
 }
