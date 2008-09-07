@@ -1,5 +1,9 @@
 2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
 
+	* configure.in: require GLib 2.16.0.
+
+2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
+
 	* main-menu/src/main-menu-ui.c: (main_menu_ui_new),
 	(get_recently_used_store_filename),
 	(setup_recently_used_throttle_timeout),
