@@ -35,11 +35,6 @@
 #include <gdk/gdkx.h>
 #include <gio/gio.h>
 
-#include <gtk/gtkversion.h>
-#if GTK_CHECK_VERSION (2, 10, 0)
-#	define USE_GTK_RECENT_MANAGER
-#endif
-
 #include "tile.h"
 #include "application-tile.h"
 #include "document-tile.h"
@@ -125,6 +120,7 @@ typedef struct {
 	GList                 *mounts;
 
 	GFileMonitor *recently_used_store_monitor;
+	guint recently_used_timeout_id;
 
 	guint search_cmd_gconf_mntr_id;
 	guint current_page_gconf_mntr_id;
@@ -166,7 +162,7 @@ static void create_more_buttons      (MainMenuUI *);
 static void setup_file_tables        (MainMenuUI *);
 static void setup_bookmark_agents    (MainMenuUI *);
 static void setup_lock_down          (MainMenuUI *);
-static void setup_recently_used_store_monitor (MainMenuUI *this);
+static void setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup);
 static void update_recently_used_sections (MainMenuUI *this);
 
 static void       select_page                (MainMenuUI *);
@@ -289,7 +285,7 @@ main_menu_ui_new (PanelApplet *applet)
 	g_free (glade_xml_path);
 
 	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
-	setup_recently_used_store_monitor (this);
+	setup_recently_used_store_monitor (this, TRUE);
 	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
@@ -959,11 +955,7 @@ get_recently_used_store_filename (void)
 {
 	const char *basename;
 
-#ifdef USE_GTK_RECENT_MANAGER
 	basename = ".recently-used.xbel";
-#else
-	basename = ".recently-used";
-#endif
 
 	return g_build_filename (g_get_home_dir (), basename, NULL);
 }
@@ -982,11 +974,23 @@ static void recently_used_store_monitor_changed_cb (GFileMonitor *monitor,
 	update_recently_used_sections (this);
 }
 
+static gboolean
+setup_recently_used_throttle_timeout (gpointer data)
+{
+	MainMenuUI *this = data;
+	MainMenuUIPrivate *priv = PRIVATE (this);
+
+	update_recently_used_sections (this);
+	priv->recently_used_timeout_id = 0;
+
+	return FALSE;
+}
+
 /* Creates a GFileMonitor for the recently-used store, so we can be informed
  * when the store changes.
  */
 static void
-setup_recently_used_store_monitor (MainMenuUI *this)
+setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 	char *path;
@@ -1008,7 +1012,15 @@ setup_recently_used_store_monitor (MainMenuUI *this)
 	}
 
 	priv->recently_used_store_monitor = monitor;
-	update_recently_used_sections (this);
+
+	if (priv->recently_used_timeout_id != 0)
+		g_source_remove (priv->recently_used_timeout_id);
+
+	if (is_startup)
+		priv->recently_used_timeout_id = g_idle_add (setup_recently_used_throttle_timeout, this);
+	else
+		priv->recently_used_timeout_id = g_timeout_add_seconds (RECENTLY_USED_STORE_THROTTLE_MILLISECONDS / 1000, /* 2 seconds */
+									setup_recently_used_throttle_timeout, this);
 }
 
 static Tile *
@@ -1805,7 +1817,7 @@ update_recently_used_sections (MainMenuUI *this)
 	}
 
 	if (!priv->recently_used_store_monitor)
-		setup_recently_used_store_monitor (this);
+		setup_recently_used_store_monitor (this, FALSE);
 
 	libslab_checkpoint ("main-menu-ui.c: update_recently_used_sections() end");
 }

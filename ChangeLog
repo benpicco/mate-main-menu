@@ -1,3 +1,14 @@
+2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* main-menu/src/main-menu-ui.c: (main_menu_ui_new),
+	(get_recently_used_store_filename),
+	(setup_recently_used_throttle_timeout),
+	(setup_recently_used_store_monitor),
+	(update_recently_used_sections):
+	Call update_recently_used_sections () in an idle when starting
+	up the program (this was a regression from the GIO porting, as
+	we were using this very same mechanism before).
+
 2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* nautilus-main-menu/main-menu.c:
