@@ -746,7 +746,7 @@ show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
 		gtk_container_add (GTK_CONTAINER (app_data->filtered_out_everything_widget), hbox);
 	}
 
-	markup = g_strdup_printf (
+	markup = g_markup_printf_escaped (
 		_("<span size=\"large\"><b>No matches found.</b> </span><span>\n\n Your filter \"<b>%s</b>\" does not match any items.</span>"),
 		app_data->filter_string);
 	gtk_label_set_text (app_data->filtered_out_everything_widget_label, markup);

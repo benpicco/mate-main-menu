@@ -1,3 +1,9 @@
+2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* app-shell.c: (show_no_results_message):
+	Escape the markup text properly.
+	Patch by Denis Washington (#518749).
+
 2008-08-22  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* Makefile.am:
