@@ -1,15 +1,8 @@
 # translation of eu.po to Basque
-# Spanish message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002, 2003 SuSE Linux AG.
 # Copyright (C) 1999, 2000, 2001 SuSE GmbH.
 #
-# Ibán josé García Castillo <Iban.Garcia@alufis35.uv.es>, 2000.
-# Javier Moreno <javier.moreno@alufis35.uv.es>, 2000.
-# Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
-# Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
-# Jorge Gonzalez <jorgegonz@svn.gnome.org>, 2007.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008.
 msgid ""
 msgstr ""
