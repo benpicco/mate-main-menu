@@ -1,4 +1,35 @@
 =============
+Version 0.9.11
+=============
+
+  Released: 2008-09-12
+
+  * Features / Fixes
+    - Port to GIO (Cosimo Cecchi)
+    - Remove Eel dependency (A. Walton)
+    - Build against latest NetworkManager (Cosimo Cecchi)
+    - Make places use mime type handler (CRivera, Scott Reeves)
+    - Support for GSM and CDMA devices (Magnus Boman)
+    - Bugfix - Check title for null. BNC#393101 (Scott Reeves)
+    - Multiscreen work (Federico Mena Quintero)
+    - Remove thumbnailing (Federico Mena Quintero)
+    - Escape markup text properly (Denis Washington)
+
+  * Translations
+    - Inaki Larranaga Murgoitio   eu.po: Added Basque translation.
+    - Djihed Afifi   ar.po: Updated Arabic Translation by Abdulaziz AlSharif.
+    - Daniel Nylander  sv.po: Updated Swedish translation.
+    - Jonh Wendell   pt_BR.po: Updated Brazilian Portuguese translation by Michel Recondo.
+    - Petr Kovar   cs.po: Updated Czech translation by Adrian Gunis
+    - Jorge Gonzalez   es.po: Updated Spanish translation 
+    - Yannig Marchegay  oc.po: Updated Occitan translation.
+    - Jonh Wendell   pt_BR.po: Updated Brazilian Portuguese translation by Fábio Nogueira.
+    - Daniel Nylander  sv.po: Updated Swedish translation.
+    - Claude Paroz   fr.po: Updated French translation.
+    - Clytie Siddall  vi.po: Updated Vietnamese translation.
+    - Yair Hershkovitz   he.po: Updated Hebrew translation by Mark Krapivner.
+
+=============
 Version 0.9.10
 =============
 

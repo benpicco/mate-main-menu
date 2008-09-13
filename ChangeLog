@@ -1,3 +1,5 @@
+==================== 0.9.11 ====================
+
 2008-09-12  Scott Reeves  <sreeves@novell.com>
 
 	* po/POTFILES.in: Fix distcheck - remove deleted files
