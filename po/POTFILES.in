@@ -8,8 +8,6 @@ libslab/app-shell.c
 libslab/bookmark-agent.c
 libslab/directory-tile.c
 libslab/document-tile.c
-libslab/egg-recent-item.c
-libslab/libslab-bookmarkfile.c
 libslab/search-bar.c
 libslab/system-tile.c
 main-menu/etc/GNOME_MainMenu.server.in.in

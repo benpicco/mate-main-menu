@@ -1,3 +1,7 @@
+2008-09-12  Scott Reeves  <sreeves@novell.com>
+
+	* po/POTFILES.in: Fix distcheck - remove deleted files
+
 2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* configure.in: require GLib 2.16.0.
