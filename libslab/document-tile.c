@@ -881,30 +881,29 @@ open_with_default_trigger (Tile *tile, TileEvent *event, TileAction *action)
 static void
 open_in_file_manager_trigger (Tile *tile, TileEvent *event, TileAction *action)
 {
-	gchar *filename;
-	gchar *dirname;
+	GFile *filename;
+	GFile *dirname;
 	gchar *uri;
 
 	gchar *cmd;
 
-	filename = g_filename_from_uri (TILE (tile)->uri, NULL, NULL);
-	dirname = g_path_get_dirname (filename);
-	uri = g_filename_to_uri (dirname, NULL, NULL);
-
+	filename = g_file_new_for_uri (TILE (tile)->uri);
+	dirname = g_file_get_parent (filename);
+	uri = g_file_get_uri (dirname);
+	
 	if (!uri)
 		g_warning ("error getting dirname for [%s]\n", TILE (tile)->uri);
 	else
 	{
 		cmd = string_replace_once (get_slab_gconf_string (SLAB_FILE_MANAGER_OPEN_CMD),
 			"FILE_URI", uri);
-
 		spawn_process (cmd);
 
 		g_free (cmd);
 	}
 
-	g_free (filename);
-	g_free (dirname);
+	g_object_unref (filename);
+	g_object_unref (dirname);
 	g_free (uri);
 }
 

@@ -1083,12 +1083,14 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 
 	GList *node;
 
+	/* we no longer do our own thumbnailing so this "should" not hang on stale mounts, slow endpoints ... */
+	/*
 	if (! g_str_has_prefix (item->uri, "file://"))
 		return NULL;
 
 	for (node = priv->mounts; ! is_nfs && node; node = node->next) {
 		mount = node->data;
-		volume = g_mount_get_volume (mount);
+		volume = g_mount_get_volume (mount); //need to check for null here
 
 		nfs_id = g_volume_get_identifier (volume, G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT);
 		is_nfs = (nfs_id != NULL);
@@ -1106,6 +1108,7 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 
 	if (! is_local)
 		return NULL;
+	*/
 
 	if (bookmark_agent_has_item (priv->bm_agents [BOOKMARK_STORE_USER_DOCS], item->uri))
 		return NULL;
