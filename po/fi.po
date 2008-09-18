@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-19 11:16+0300\n"
+"POT-Creation-Date: 2008-09-18 15:04+0300\n"
 "PO-Revision-Date: 2006-06-29 11:08+0300\n"
 "Last-Translator: Jyri Palokangas <jmp@netti.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -95,41 +95,42 @@ msgid "Application Actions"
 msgstr "Sovelluksien toiminnot"
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>Käynnistä %s</b>"
 
-#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1056
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Ohje"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "Päivitä"
 
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../nautilus-main-menu/nautilus-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "Poista suosikeista"
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "Lisää suosikkeihin"
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr "Poista käynnistys-valikosta"
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr "Lisää käynnistys-valikkoon"
 
@@ -148,185 +149,127 @@ msgstr ""
 msgid "Other"
 msgstr "Muu"
 
-#: ../libslab/bookmark-agent.c:1060
+#: ../libslab/bookmark-agent.c:1058 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Lukitse näyttö"
+
+#: ../libslab/bookmark-agent.c:1060 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Kirjaudu ulos"
+
+#: ../libslab/bookmark-agent.c:1062 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Sammuta"
+
+#: ../libslab/bookmark-agent.c:1087
 msgid "New Spreadsheet"
 msgstr "Uusi laskentataulukko"
 
-#: ../libslab/bookmark-agent.c:1064
+#: ../libslab/bookmark-agent.c:1092
 msgid "New Document"
 msgstr "Uusi asiakirja"
 
-#: ../libslab/bookmark-agent.c:1114
+#: ../libslab/bookmark-agent.c:1143
 msgid "Home"
 msgstr "Kotikansio"
 
-#: ../libslab/bookmark-agent.c:1130
+#: ../libslab/bookmark-agent.c:1148 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Asiakirjat"
+
+#: ../libslab/bookmark-agent.c:1154
+msgid "Desktop"
+msgstr "Työpöytä"
+
+#: ../libslab/bookmark-agent.c:1161
 msgid "File System"
 msgstr "Tiedostojärjestelmä"
 
-#: ../libslab/bookmark-agent.c:1134
+#: ../libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Verkkopalvelimet"
 
-#: ../libslab/bookmark-agent.c:1163
+#: ../libslab/bookmark-agent.c:1194
 msgid "Search"
 msgstr "Etsi"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:171
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Avaa</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:235
 msgid "Rename..."
 msgstr "Uudelleen nimeä..."
 
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:249 ../libslab/document-tile.c:258
 msgid "Send To..."
 msgstr "Lähetä..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:284
 msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:456
+#: ../libslab/document-tile.c:294 ../libslab/document-tile.c:831
 msgid "Delete"
 msgstr "Poista"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:979
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Haluatko varmasti poistaa kohteen \"%s\" pysyvästi?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:980
 msgid "If you delete an item, it is permanently lost."
 msgstr "Jos poistat kohdan, se hukataan pysyvästi."
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:196
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Avaa ohjelmalla \"%s\"</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:208
 msgid "Open with Default Application"
 msgstr "Avaa oletus sovelluksella"
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:219
 msgid "Open in File Manager"
 msgstr "Avaa tiedostonhallinnassa"
 
-#: ../libslab/document-tile.c:633
+#: ../libslab/document-tile.c:611
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:640
+#: ../libslab/document-tile.c:618
 msgid "%l:%M %p"
 msgstr "%H.%M"
 
-#: ../libslab/document-tile.c:648
+#: ../libslab/document-tile.c:626
 msgid "Today %l:%M %p"
 msgstr "Tänään %H.%M"
 
-#: ../libslab/document-tile.c:658
+#: ../libslab/document-tile.c:636
 msgid "Yesterday %l:%M %p"
 msgstr "Eilen %H.%M"
 
-#: ../libslab/document-tile.c:670
+#: ../libslab/document-tile.c:648
 msgid "%a %l:%M %p"
 msgstr "%a %H.%M"
 
-#: ../libslab/document-tile.c:678
+#: ../libslab/document-tile.c:656
 msgid "%b %d %l:%M %p"
 msgstr "%bkuun %d. %H.%M"
 
-#: ../libslab/document-tile.c:680
+#: ../libslab/document-tile.c:658
 msgid "%b %d %Y"
 msgstr "%b %d. %Y"
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Odottamaton määre \"%s\" elementille '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "Määrettä \"%s\" elementille \"%s\" ei löytynyt"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Odottamat merkki \"%s\", odotettiin merkkiä \"%s\""
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Odottamat merkki \"%s\" merkin \"%s\" sisällä"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-#, c-format
-msgid "No valid bookmark file found in data dirs"
-msgstr "Tietohakemistoista ei löytynyt kelvollista kirjanmerkkitiedostoa"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "Kirjanmerkki URI:lle \"%s\" on jo olemassa"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "URI:lle \"%s\" ei löytynyt kirjanmerkkiä"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty MIME-tyyppiä"
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty yksityinen-lippua"
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr "URI:n \"%s\" kirjanmerkissä ei ole asetettu ryhmää"
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "Mikään sovellus \"%s\" ei ole rekisteröinyt kirjanmerkkiä \"%s\""
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -347,7 +290,7 @@ msgid "Default menu and application browser"
 msgstr "Oletusvalikon ja sovellusten selain"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2383 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
@@ -469,10 +412,10 @@ msgstr ""
 "sisältää luettelon (ei järjestettynä) sallituista tiedostotauluista, jotka "
 "näytetään tiedostoalueella. Mahdolliset arvot ovat: 0 - näytä käyttäjän "
 "määrittelemät tai \"Suosikki\"-ohjelmien taulut, 1 - näytä viimeisimmäksi "
-"käytettyjen ohjelmien taulu, 2 - näytä käyttäjän määrittelemä tai "
-"\"Suosikki\"-asiakirjataulu, 3 - näytä viimeksi käytettyjen asiakirjojen "
-"taulu, 4- näytä käyttäjän määrittelemät \"Suosikki\"-kansiot tai sijainnit "
-"-taulu tai 5 - näytä viimeisimmäksi käytetyt kansiot tai \"Sijainnit\" - taulu."
+"käytettyjen ohjelmien taulu, 2 - näytä käyttäjän määrittelemä tai \"Suosikki"
+"\"-asiakirjataulu, 3 - näytä viimeksi käytettyjen asiakirjojen taulu, 4- "
+"näytä käyttäjän määrittelemät \"Suosikki\"-kansiot tai sijainnit -taulu tai "
+"5 - näytä viimeisimmäksi käytetyt kansiot tai \"Sijainnit\" - taulu."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -497,8 +440,8 @@ msgid ""
 msgstr ""
 "määrittää tiedostoalueen kohtien enimmäismäärän. Suosikkikohtien määrä ei "
 "ole rajoitettu. Tämä rajoitus koskee ainoastaan viimeisimpien käsiteltyjen "
-"kohtien luetteloa, eli viimeisimmäksi käsiteltyjen kohtien luettelon koko "
-"on rajattu arvoon max_total_items - suosikkien lukumäärä. Jos suosikkien "
+"kohtien luetteloa, eli viimeisimmäksi käsiteltyjen kohtien luettelon koko on "
+"rajattu arvoon max_total_items - suosikkien lukumäärä. Jos suosikkien "
 "lukumäärä on suurempi kuin max_recent_items - min_recent_items, tämä arvo "
 "jätetään huomioimatta."
 
@@ -638,25 +581,11 @@ msgstr "%.1fb"
 msgid "Home: %s Free / %s"
 msgstr "Kotihakemisto: %s vapaana / %s yhteensä"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Kirjaudu ulos"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Sammuta"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Lukitse näyttö"
-
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2161
+#: ../main-menu/src/main-menu-ui.c:2384
 msgid "The GNOME Main Menu"
 msgstr "GNOME päävalikko"
 
@@ -674,6 +603,8 @@ msgid "Networ_k: None"
 msgstr "Ver_kko:  Ei mitään"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Liitettynä: %s"
@@ -691,23 +622,37 @@ msgstr "Käyttäen verkkoa (%s)"
 msgid "Networ_k: Wired"
 msgstr "Ver_kko: Kiinteä"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "Ver_kko:  GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "Ver_kko:  CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Langaton verkko (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Kiinteä verkko (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Mobiiliethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
 #, c-format
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -719,10 +664,6 @@ msgstr "Sovellukset"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Tietokone"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Asiakirjat"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -772,18 +713,51 @@ msgstr "Tila"
 msgid "System"
 msgstr "Järjestelmä"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "Lisää nykyinen käynnistin suosikkeihin"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "Lisää nykyinen asiakirjan suosikkeihin"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:131
+#: ../nautilus-main-menu/nautilus-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "Poista nykyinen asiakirja suosikeista"
+
+#~ msgid "Unexpected attribute '%s' for element '%s'"
+#~ msgstr "Odottamaton määre \"%s\" elementille '%s'"
+
+#~ msgid "Attribute '%s' of element '%s' not found"
+#~ msgstr "Määrettä \"%s\" elementille \"%s\" ei löytynyt"
+
+#~ msgid "Unexpected tag '%s', tag '%s' expected"
+#~ msgstr "Odottamat merkki \"%s\", odotettiin merkkiä \"%s\""
+
+#~ msgid "Unexpected tag '%s' inside '%s'"
+#~ msgstr "Odottamat merkki \"%s\" merkin \"%s\" sisällä"
+
+#~ msgid "No valid bookmark file found in data dirs"
+#~ msgstr "Tietohakemistoista ei löytynyt kelvollista kirjanmerkkitiedostoa"
+
+#~ msgid "A bookmark for URI '%s' already exists"
+#~ msgstr "Kirjanmerkki URI:lle \"%s\" on jo olemassa"
+
+#~ msgid "No bookmark found for URI '%s'"
+#~ msgstr "URI:lle \"%s\" ei löytynyt kirjanmerkkiä"
+
+#~ msgid "No MIME type defined in the bookmark for URI '%s'"
+#~ msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty MIME-tyyppiä"
+
+#~ msgid "No private flag has been defined in bookmark for URI '%s'"
+#~ msgstr "URI:n \"%s\" kirjanmerkissä ei ole määritelty yksityinen-lippua"
+
+#~ msgid "No groups set in bookmark for URI '%s'"
+#~ msgstr "URI:n \"%s\" kirjanmerkissä ei ole asetettu ryhmää"
+
+#~ msgid "No application with name '%s' registered a bookmark for '%s'"
+#~ msgstr "Mikään sovellus \"%s\" ei ole rekisteröinyt kirjanmerkkiä \"%s\""
 
 #~ msgid "Edited %m/%d/%Y"
 #~ msgstr "Muokattu %m/%d/%Y"
