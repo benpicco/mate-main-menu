@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-31 11:07+0100\n"
+"POT-Creation-Date: 2008-09-19 01:25+0100\n"
 "PO-Revision-Date: 2007-10-14 06:16+0300\n"
 "Last-Translator: Abdulaziz AlSharif <a.a-a.s@hotmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -108,7 +108,7 @@ msgstr "إجراءات التطبيقات"
 msgid "<b>Start %s</b>"
 msgstr "<b>ابدأ %s</b>"
 
-#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1056
 #: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
@@ -122,15 +122,15 @@ msgstr "ترقية"
 msgid "Uninstall"
 msgstr "إلغاء التثبيت"
 
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:728
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../nautilus-main-menu/nautilus-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "أزل من المفضلات"
 
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:730
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "أضف إلى المفضلات"
 
@@ -157,207 +157,127 @@ msgstr ""
 msgid "Other"
 msgstr "آخر"
 
-#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
+#: ../libslab/bookmark-agent.c:1058 ../main-menu/src/main-menu-migration.c:159
 msgid "Lock Screen"
 msgstr "أقفل الشاشة"
 
-#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
+#: ../libslab/bookmark-agent.c:1060 ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
 msgid "Logout"
 msgstr "سجّل الخروج"
 
-#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
+#: ../libslab/bookmark-agent.c:1062 ../main-menu/src/main-menu-migration.c:101
 #: ../main-menu/src/main-menu-migration.c:221
 msgid "Shutdown"
 msgstr "أوقف التشغيل"
 
-#: ../libslab/bookmark-agent.c:1090
+#: ../libslab/bookmark-agent.c:1087
 msgid "New Spreadsheet"
 msgstr "جدول ممتد جديد"
 
-#: ../libslab/bookmark-agent.c:1095
+#: ../libslab/bookmark-agent.c:1092
 msgid "New Document"
 msgstr "مستند جديد"
 
-#: ../libslab/bookmark-agent.c:1146
+#: ../libslab/bookmark-agent.c:1143
 msgid "Home"
 msgstr "المنزل"
 
-#: ../libslab/bookmark-agent.c:1151 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1148 ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "المستندات"
 
-#: ../libslab/bookmark-agent.c:1157
+#: ../libslab/bookmark-agent.c:1154
 msgid "Desktop"
 msgstr ""
 
-#: ../libslab/bookmark-agent.c:1164
+#: ../libslab/bookmark-agent.c:1161
 msgid "File System"
 msgstr "نظام الملفات"
 
-#: ../libslab/bookmark-agent.c:1168
+#: ../libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "خوادم الشبكة"
 
-#: ../libslab/bookmark-agent.c:1197
+#: ../libslab/bookmark-agent.c:1194
 msgid "Search"
 msgstr "ابحث"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:172
+#: ../libslab/directory-tile.c:171
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>افتح</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:191 ../libslab/document-tile.c:241
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:235
 msgid "Rename..."
 msgstr "أعد تسمية..."
 
-#: ../libslab/directory-tile.c:205 ../libslab/directory-tile.c:214
-#: ../libslab/document-tile.c:255 ../libslab/document-tile.c:264
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:249 ../libslab/document-tile.c:258
 msgid "Send To..."
 msgstr "أرسل إلى..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:229 ../libslab/document-tile.c:290
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:284
 msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
-#: ../libslab/directory-tile.c:239 ../libslab/directory-tile.c:457
-#: ../libslab/document-tile.c:300 ../libslab/document-tile.c:841
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:456
+#: ../libslab/document-tile.c:294 ../libslab/document-tile.c:831
 msgid "Delete"
 msgstr "احذف"
 
-#: ../libslab/directory-tile.c:569 ../libslab/document-tile.c:1013
+#: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:979
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr ""
 
-#: ../libslab/directory-tile.c:574 ../libslab/document-tile.c:1017
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:980
 msgid "If you delete an item, it is permanently lost."
 msgstr ""
 
-#: ../libslab/document-tile.c:202
+#: ../libslab/document-tile.c:196
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>افتح بواسطة \"%s\"</b>"
 
-#: ../libslab/document-tile.c:214
+#: ../libslab/document-tile.c:208
 msgid "Open with Default Application"
 msgstr "افتح بواسطة التطبيق الافتراضي"
 
-#: ../libslab/document-tile.c:225
+#: ../libslab/document-tile.c:219
 msgid "Open in File Manager"
 msgstr "افتح في مدير الملفات"
 
-#: ../libslab/document-tile.c:624
+#: ../libslab/document-tile.c:611
 msgid "?"
 msgstr ""
 
-#: ../libslab/document-tile.c:631
+#: ../libslab/document-tile.c:618
 msgid "%l:%M %p"
 msgstr ""
 
-#: ../libslab/document-tile.c:639
+#: ../libslab/document-tile.c:626
 msgid "Today %l:%M %p"
 msgstr ""
 
-#: ../libslab/document-tile.c:649
+#: ../libslab/document-tile.c:636
 msgid "Yesterday %l:%M %p"
 msgstr ""
 
-#: ../libslab/document-tile.c:661
+#: ../libslab/document-tile.c:648
 msgid "%a %l:%M %p"
 msgstr ""
 
-#: ../libslab/document-tile.c:669
+#: ../libslab/document-tile.c:656
 msgid "%b %d %l:%M %p"
 msgstr ""
 
-#: ../libslab/document-tile.c:671
+#: ../libslab/document-tile.c:658
 msgid "%b %d %Y"
 msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "خاصية غير متوقعة '%s' للعنصر '%s"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "خاصية '%s' للعنصر '%s' غير موجودة"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "وسّم غير متوقع '%s' داخل '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-#, c-format
-msgid "No valid bookmark file found in data dirs"
-msgstr "لا توجد علامة صالحة في أدلة البيانات"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "علامة الرابط '%s' موجودة مسبقاً"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "لا توجد علامة للرابط '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "لا يوجد تطبيق باسم '%s' مسجل كعلامة لـٍ '%s'"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -378,7 +298,7 @@ msgid "Default menu and application browser"
 msgstr "القائمة الافتراضية ومتصفح التطبيقات"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2383 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "قائمة جنوم الرئيسية"
 
@@ -666,7 +586,7 @@ msgstr "%s حر / %s المجموع"
 msgid "gnome-lockscreen"
 msgstr "مقفل شاشة جنوم"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2384
 msgid "The GNOME Main Menu"
 msgstr "قائمة جنوم الرئيسية"
 
@@ -796,18 +716,39 @@ msgstr "الحالة"
 msgid "System"
 msgstr "النظام"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "أضف المُطْلِق الحالي إلى المفضلات"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "أضف المستند الحالي إلى المفضلات"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:131
+#: ../nautilus-main-menu/nautilus-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "أزل المستند الحالي من المفضلات"
+
+#~ msgid "Unexpected attribute '%s' for element '%s'"
+#~ msgstr "خاصية غير متوقعة '%s' للعنصر '%s"
+
+#~ msgid "Attribute '%s' of element '%s' not found"
+#~ msgstr "خاصية '%s' للعنصر '%s' غير موجودة"
+
+#~ msgid "Unexpected tag '%s' inside '%s'"
+#~ msgstr "وسّم غير متوقع '%s' داخل '%s'"
+
+#~ msgid "No valid bookmark file found in data dirs"
+#~ msgstr "لا توجد علامة صالحة في أدلة البيانات"
+
+#~ msgid "A bookmark for URI '%s' already exists"
+#~ msgstr "علامة الرابط '%s' موجودة مسبقاً"
+
+#~ msgid "No bookmark found for URI '%s'"
+#~ msgstr "لا توجد علامة للرابط '%s'"
+
+#~ msgid "No application with name '%s' registered a bookmark for '%s'"
+#~ msgstr "لا يوجد تطبيق باسم '%s' مسجل كعلامة لـٍ '%s'"
 
 #~ msgid "Edited %m/%d/%Y"
 #~ msgstr "حرره %m/%d/%Y"
