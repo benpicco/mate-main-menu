@@ -139,8 +139,8 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	gchar *markup;
 
 	AtkObject *accessible;
-	
-	gchar *filename;
+
+	GFile * file;
 	gchar *tooltip_text;
 
 	libslab_checkpoint ("document_tile_new(): start");
@@ -158,14 +158,9 @@ document_tile_new (const gchar *in_uri, const gchar *mime_type, time_t modified)
 	time_str = create_subheader_string (modified);
 	subheader = create_subheader (time_str);
 	
-	filename = g_filename_from_uri (uri, NULL, NULL);
-
-  	if (filename)
-		tooltip_text = g_filename_to_utf8 (filename, -1, NULL, NULL, NULL);
-	else
-		tooltip_text = NULL;
-
-	g_free (filename);
+	file = g_file_new_for_uri (uri);
+	tooltip_text = g_file_get_parse_name (file);
+	g_object_unref (file);
 	
 	context_menu = GTK_MENU (gtk_menu_new ());
 
@@ -417,7 +412,7 @@ load_image (DocumentTile *tile)
 
 	libslab_checkpoint ("document-tile.c: load_image(): start for %s", TILE (tile)->uri);
 
-	if (priv->force_icon_name || ! priv->mime_type || ! strstr (TILE (tile)->uri, "file://")) {
+	if (priv->force_icon_name || ! priv->mime_type) {
 		if (priv->force_icon_name)
 			icon_id = priv->force_icon_name;
 		else
