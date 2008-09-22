@@ -1,3 +1,7 @@
+2008-09-22  Scott Reeves  <sreeves@novell.com>
+	* document-tile.c:
+	show remote docs - use gio for tooltip, show icon
+
 ==================== 0.9.11 ====================
 
 2008-09-07  Cosimo Cecchi  <cosimoc@gnome.org>
