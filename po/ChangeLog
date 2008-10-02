@@ -1,3 +1,8 @@
+2008-10-02  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* LINGUAS: Added 'th'.
+	* th.po: Added Thai translation by Manatsawin Hanmongkolchai.
+
 2008-10-01  Timo Jyrinki  <timo.jyrinki@iki.fi>
 
 	* fi.po: Updated Finnish translation, sync with openSUSE (also in other dir)

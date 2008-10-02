@@ -1,0 +1,697 @@
+# Thai translation of gnome-main-menu.
+# Copyright (C) 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-main-menu package.
+# Manatsawin Hanmongkolchai <manatsawin@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-main-menu HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-01 21:59+0700\n"
+"PO-Revision-Date: 2008-10-02 14:47+0700\n"
+"Last-Translator: Manatsawin Hanmongkolchai <manatsawin@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.2.0-rc1\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:93
+msgid "Application Browser"
+msgstr "เครื่องมือเรียกดูโปรแกรม"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+msgid "Exit shell on add or remove action performed"
+msgstr "ออกจากเชลล์เมื่อเพิ่มหรือลบเสร็จ"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+msgid "Exit shell on help action performed"
+msgstr "ออกจากเชลล์เมื่อแสดงวิธีใช้"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+msgid "Exit shell on start action performed"
+msgstr "ออกจากเชลล์เมื่อเรียกโปรแกรม"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr "ออกจากเชลล์เมื่อปรับรุ่นหรือถอดถอน"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "ชื่อของแฟ้ม .desktop ที่มีอยู่แล้ว"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr "กำหนดว่าจะปิดเชลล์เมื่อแสดงวิธีใช้แล้วหรือไม่"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr "กำหนดว่าจะปิดเชลล์หรือไม่เมื่อมีการเรียกโปรแกรม"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr "กำหนดว่าจะปิดเชลล์หรือไม่เมื่อมีการเพิ่ม/ลบโปรแกรม"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr "กำหนดว่าจะปิดเชลล์หรือไม่เมื่อมีการปรับรุ่นหรือถอดถอนโปรแกรม"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "จำนวนโปรแกรมใหม่สูงสุด"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr "จำนวนโปรแกรมสูงสูดที่จะแสดงในหมวดโปรแกรมใหม่"
+
+#: ../application-browser/src/application-browser.c:85
+msgid "New Applications"
+msgstr "โปรแกรมใหม่"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Filter"
+msgstr "ตัวกรอง"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Groups"
+msgstr "กลุ่ม"
+
+#: ../application-browser/src/application-browser.c:90
+msgid "Application Actions"
+msgstr "การกระทำสำหรับโปรแกรม"
+
+#. make start action
+#: ../libslab/application-tile.c:372
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>เรียก %s</b>"
+
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1056
+#: ../main-menu/src/main-menu-migration.c:93
+#: ../main-menu/src/main-menu-migration.c:217
+msgid "Help"
+msgstr "วิธีใช้"
+
+#: ../libslab/application-tile.c:438
+msgid "Upgrade"
+msgstr "ปรับรุ่น"
+
+#: ../libslab/application-tile.c:453
+msgid "Uninstall"
+msgstr "ถอดถอน"
+
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../nautilus-main-menu/nautilus-main-menu.c:135
+msgid "Remove from Favorites"
+msgstr "ลบออกจากรายการโปรด"
+
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+msgid "Add to Favorites"
+msgstr "เพิ่มในรายการโปรด"
+
+#: ../libslab/application-tile.c:867
+msgid "Remove from Startup Programs"
+msgstr "ลบออกจากรายชื่อโปรแกรมเริ่มวาระ"
+
+#: ../libslab/application-tile.c:869
+msgid "Add to Startup Programs"
+msgstr "เพิ่มในรายชื่อโปรแกรมเริ่มวาระ"
+
+#: ../libslab/app-shell.c:750
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>ค้นหาไม่พบ</b> </span><span>\n"
+"\n"
+" ตัวกรอง \"<b>%s</b>\" ของคุณ ไม่ตรงกับรายการใดๆ เลย</span>"
+
+#: ../libslab/app-shell.c:900
+msgid "Other"
+msgstr "อื่นๆ"
+
+#: ../libslab/bookmark-agent.c:1058 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "ล็อคหน้าจอ"
+
+#: ../libslab/bookmark-agent.c:1060 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "ออกจากระบบ"
+
+#: ../libslab/bookmark-agent.c:1062 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "ปิดเครื่อง"
+
+#: ../libslab/bookmark-agent.c:1087
+msgid "New Spreadsheet"
+msgstr "สร้างตารางคำนวณใหม่"
+
+#: ../libslab/bookmark-agent.c:1092
+msgid "New Document"
+msgstr "เอกสารใหม่"
+
+#: ../libslab/bookmark-agent.c:1143
+msgid "Home"
+msgstr "บ้าน"
+
+#: ../libslab/bookmark-agent.c:1148 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "เอกสาร"
+
+#: ../libslab/bookmark-agent.c:1154
+msgid "Desktop"
+msgstr "พื้นโต๊ะ"
+
+#: ../libslab/bookmark-agent.c:1161
+msgid "File System"
+msgstr "ระบบแฟ้ม"
+
+#: ../libslab/bookmark-agent.c:1165
+msgid "Network Servers"
+msgstr "เซิร์ฟเวอร์ในเครือข่าย"
+
+#: ../libslab/bookmark-agent.c:1194
+msgid "Search"
+msgstr "ค้นหา"
+
+#. make open with default action
+#: ../libslab/directory-tile.c:171
+#, c-format
+msgid "<b>Open</b>"
+msgstr "<b>เปิด</b>"
+
+#. make rename action
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:230
+msgid "Rename..."
+msgstr "เปลี่ยนชื่อ..."
+
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:244 ../libslab/document-tile.c:253
+msgid "Send To..."
+msgstr "ส่งไปยัง..."
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:279
+msgid "Move to Trash"
+msgstr "ย้ายไปลงถังขยะ"
+
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:456
+#: ../libslab/document-tile.c:289 ../libslab/document-tile.c:826
+msgid "Delete"
+msgstr "ลบ"
+
+#: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:974
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "คุณแน่ใจหรือไม่ที่จะลบ \"%s\" อย่างถาวร?"
+
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:975
+msgid "If you delete an item, it is permanently lost."
+msgstr "ถ้าคุณลบรายการใดออกไป รายการนั้นจะสูญหายอย่างถาวร"
+
+#: ../libslab/document-tile.c:191
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>เปิดด้วย \"%s\"</b>"
+
+#: ../libslab/document-tile.c:203
+msgid "Open with Default Application"
+msgstr "เปิดด้วยโปรแกรมปริยาย"
+
+#: ../libslab/document-tile.c:214
+msgid "Open in File Manager"
+msgstr "เปิดในโปรแกรมจัดการแฟ้ม"
+
+#: ../libslab/document-tile.c:606
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:613
+msgid "%l:%M %p"
+msgstr "%H:%M น."
+
+#: ../libslab/document-tile.c:621
+msgid "Today %l:%M %p"
+msgstr "วันนี้ %H:%M น."
+
+#: ../libslab/document-tile.c:631
+msgid "Yesterday %l:%M %p"
+msgstr "เมื่อวาน %H:%M น."
+
+#: ../libslab/document-tile.c:643
+msgid "%a %l:%M %p"
+msgstr "%a %H:%M น."
+
+#: ../libslab/document-tile.c:651
+msgid "%b %d %l:%M %p"
+msgstr "%d %b %H:%M น."
+
+#: ../libslab/document-tile.c:653
+msgid "%b %d %Y"
+msgstr "%d %b %Ey"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "ค้นหาทันที"
+
+#: ../libslab/system-tile.c:128
+#, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>เปิด %s</b>"
+
+#: ../libslab/system-tile.c:141
+#, c-format
+msgid "Remove from System Items"
+msgstr "ลบออกจากรายการของระบบ"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "เมนูปริยาย และเครื่องมือเรียกดูโปรแกรม"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:2383 ../main-menu/src/slab-window.glade.h:7
+msgid "GNOME Main Menu"
+msgstr "เมนูหลักของ GNOME"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "โรงงานเมนูหลักของ GNOME"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "เมนูหลัก"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "เ_กี่ยวกับ"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "_เปิดเมนู"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr "แฟ้ม .desktop สำหรับเครื่องมือตั้งค่าอุปกรณ์เครือข่ายของ YaST2"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the file browser"
+msgstr "แฟ้ม .desktop สำหรับโปรแกรมเรียกดูแฟ้ม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "แฟ้ม .desktop สำหรับ gnome-system-monitor"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the net config tool"
+msgstr "แฟ้ม .desktop สำหรับเครื่องมือตั้งค่าเครือข่าย"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop path for the application browser"
+msgstr "พาธ .desktop สำหรับเครื่องมือเรียกดูโปรแกรม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr "นี่คือคำสั่งที่จะเรียกเมื่อเลือกเมนู \"เปิดในโปรแกรมจัดการแฟ้ม\""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"นี่คือคำสั่งที่จะเรียกเมื่อเลือกเมนู \"เปิดในโปรแกรมจัดการแฟ้ม\" โดย FILE_URI จะถูกแทนที่ด้วย "
+"URI ที่ตรงกับชื่อไดเรกทอรีของแฟ้มที่ถูกเรียก"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr "นี่คือคำสั่งที่จะเรียกเมื่อเลือกเมนู \"ส่งไปยัง...\""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"นี่คือคำสั่งที่จะเรียกใช้เมื่อเลือกเมนู \"ส่งไปยัง...\" โดย DIRNAME และ BASENAME "
+"จะถูกแทนที่ด้วยชื่อไดเรกทอรีและชื่อแฟ้มของรายการที่เลือก"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "This is the command to execute when the search entry is used."
+msgstr "นี่คือคำสั่งที่จะเรียกเมื่อมีการใช้ช่องค้นหา"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr "นี่คือคำสั่งที่จะเรียกเมื่อมีการใช้ช่องค้นหา โดย SEARCH_STRING จะถูกแทนที่ด้วยคำค้นที่ป้อน"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid "command to uninstall packages"
+msgstr "คำสั่งสำหรับถอดถอนแพกเกจ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "คำสั่งสำหรับถอดถอนแพกเกจ โดย PACKAGE_NAME จะถูกแทนที่ด้วยชื่อแพกเกจในคำสั่ง"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid "command to upgrade packages"
+msgstr "คำสั่งสำหรับปรับรุ่นแพกเกจ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr "คำสั่งสำหรับปรับรุ่นแพกเกจ โดย PACKAGE_NAME จะถูกแทนที่ด้วยชื่อแพกเกจในคำสั่ง"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr ""
+"เก็บรายชื่อ (ซึ่งลำดับไม่มีความสำคัญ) ของตารางแฟ้มที่อนุญาตให้แสดงในพื้นที่แฟ้ม ค่าที่เป็นไปได้คือ 0 "
+"- แสดงโปรแกรมที่ผู้ใช้ระบุ (โปรแกรมใช้บ่อย), 1 - แสดงโปรแกรมที่ใช้ล่าสุด, 2 - "
+"แสดงเอกสารที่ผู้ใช้ระบุ (เอกสารใช้บ่อย), 3 - แสดงเอกสารที่ใช้ล่าสุด, 4 - "
+"แสดงไดเรกทอรีหรือ \"ที่หลักๆ\" ที่ผู้ใช้ระบุ (ที่หลักๆ ใช้บ่อย) และ 5 - "
+"แสดงไดเรกทอรีหรือ \"ที่หลักๆ\" ที่ใช้ล่าสุด"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"เก็บรายชื่อแฟ้ม (รวมถึงแฟ้ม .desktop) ที่จะไม่รวมในรายชื่อ \"โปรแกรมที่ใช้ล่าสุด\" และ "
+"\"แฟ้มที่ใช้ล่าสุด\""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "determines the limit of items in the file-area."
+msgstr "กำหนดจำนวนรายการสูงสุดในพื้นที่แฟ้ม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+"กำหนดจำนวนรายการสูงสุดในพื้นที่แฟ้ม โดยจำนวนรายการใช้บ่อยจะไม่มีขีดจำกัด "
+"ขีดจำกัดนี้จะมีผลกับจำนวนรายการที่ใช้ล่าสุด กล่าวคือจำนวนรายการที่แสดงจะไม่เกิน "
+"max_total_items - จำนวนรายการใช้บ่อย หากจำนวนรายการใช้บ่อยเกิน max_total_items - "
+"min_recent_items ก็จะไม่สนใจขีดจำกัดนี้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr "กำหนดจำนวนรายการต่ำสุดในส่วน \"ล่าสุด\" ของพื้นที่แฟ้ม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "determines which types of files to display in the file area"
+msgstr "กำหนดชนิดแฟ้มที่จะแสดงในพื้นที่แฟ้ม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "if true, main menu is more anxious to close"
+msgstr "เมนูหลักรีบปิด"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr "หากเป็นจริง เมนูหลักจะปิดในเงื่อนไขต่อไปนี้: เรียกใช้งานเมนู, ทำการค้นหา"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "lock-down configuration of the file area"
+msgstr "การจำกัดการใช้งานพื้นที่แฟ้ม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "lock-down status for the application browser link"
+msgstr "สถานะจำกัดการใช้งานของลิงก์เรียกดูโปรแกรม"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the search area"
+msgstr "สถานะจำกัดการใช้งานสำหรับพื้นที่ค้นหา"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "lock-down status for the status area"
+msgstr "สถานะจำกัดการใช้งานสำหรับพื้นที่สถานะ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down status for the system area"
+msgstr "สถานะจำกัดการใช้งานสำหรับพื้นที่ระบบ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the user-specified apps section"
+msgstr "สถานะจำกัดการใช้งานสำหรับส่วนโปรแกรมที่ผู้ใช้ระบุเอง"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the user-specified dirs section"
+msgstr "สถานะจำกัดการใช้งานสำหรับไดเรกทอรีที่ผู้ใช้ระบุเอง"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the user-specified docs section"
+msgstr "สถานะจำกัดการใช้งานสำหรับส่วนเอกสารที่ผู้ใช้ระบุเอง"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "ค่าที่เป็นไปได้ = 0 [โปรแกรม], 1 [เอกสาร], 2 [ที่หลักๆ]"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr "กำหนดเป็นค่าจริงหากต้องการให้แสดงลิงก์ไปยังเครื่องมือเรียกดูโปรแกรมและให้เรียกใช้ได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "set to true if the search area should be visible and active."
+msgstr "กำหนดเป็นค่าจริงหากต้องการให้แสดงพื้นที่ค้นหาและให้ใช้งานได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "set to true if the status area should be visible and active."
+msgstr "กำหนดเป็นค่าจริงหากต้องการให้แสดงพื้นที่สถานะและให้ใช้งานได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "set to true if the system area should be visible and active."
+msgstr "กำหนดเป็นค่าจริงหากต้องการให้แสดงพื้นที่ระบบและให้ใช้งานได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr "กำหนดเป็นค่าจริงหากต้องการอนุญาตให้ผู้ใช้แก้ไขรายการของระบบได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+"กำหนดเป็นค่าจริงหากต้องการอนุญาตให้ผู้ใช้แก้ไขรายชื่อโปรแกรมของผู้ใช้ (โปรแกรมใช้บ่อย) ได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+"กำหนดเป็นค่าจริงหากต้องการอนุญาตให้ผู้ใช้แก้ไขรายชื่อไดเรกทอรีหรือ \"ที่หลักๆ\" ของผู้ใช้ (ที่หลักๆ "
+"ใช้บ่อย) ได้"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr "กำหนดเป็นค่าจริงหากต้องการอนุญาตให้ผู้ใช้แก้ไขรายชื่อเอกสารของผู้ใช้ (เอกสารใช้บ่อย) ได้"
+
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "โ_ปรแกรมเฝ้าสังเกตระบบ"
+
+#: ../main-menu/src/hard-drive-status-tile.c:212
+#, c-format
+msgid "%.1fG"
+msgstr "%.1fG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:214
+#, c-format
+msgid "%.1fM"
+msgstr "%.1fM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:216
+#, c-format
+msgid "%.1fK"
+msgstr "%.1fK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:218
+#, c-format
+msgid "%.1fb"
+msgstr "%.1fb"
+
+#: ../main-menu/src/hard-drive-status-tile.c:239
+#, c-format
+msgid "Home: %s Free / %s"
+msgstr "บ้าน: ว่าง %s / %s"
+
+#: ../main-menu/src/main-menu-migration.c:161
+msgid "gnome-lockscreen"
+msgstr "gnome-lockscreen"
+
+#: ../main-menu/src/main-menu-ui.c:2384
+msgid "The GNOME Main Menu"
+msgstr "เมนูหลักของ GNOME"
+
+#: ../main-menu/src/network-status-tile.c:91
+msgid "Network: None"
+msgstr "เครือข่าย: ไม่มี"
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:199
+msgid "Click to configure network"
+msgstr "คลิกเพื่อตั้งค่าเครือข่าย"
+
+#: ../main-menu/src/network-status-tile.c:198
+msgid "Networ_k: None"
+msgstr "เ_ครือข่าย: ไม่มี"
+
+#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
+#, c-format
+msgid "Connected to: %s"
+msgstr "เชื่อมต่อไปยัง: %s"
+
+#: ../main-menu/src/network-status-tile.c:210
+msgid "Networ_k: Wireless"
+msgstr "เ_ครือข่าย: ไร้สาย"
+
+#: ../main-menu/src/network-status-tile.c:215
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "กำลังใช้อีเทอร์เน็ต (%s)"
+
+#: ../main-menu/src/network-status-tile.c:219
+msgid "Networ_k: Wired"
+msgstr "เ_ครือข่าย: มีสาย"
+
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "เ_ครือข่าย: GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "เ_ครือข่าย: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "อีเทอร์เน็ตไร้สาย (%s)"
+
+#: ../main-menu/src/network-status-tile.c:341
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "อีเทอร์เน็ตมีสาย (%s)"
+
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "อีเทอร์เน็ตผ่านมือถือ (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
+#, c-format
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: ../main-menu/src/network-status-tile.c:363
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d Mb/s"
+
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "โปรแกรม"
+
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "คอมพิวเตอร์"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "โปรแกรมใช้บ่อย"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "เอกสารใช้บ่อย"
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "ที่หลักๆ ใช้บ่อย"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "โปรแกรมอื่นๆ..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "เอกสารอื่นๆ..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "ที่หลักๆ อื่นๆ..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "ที่หลักๆ"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "โปรแกรมล่าสุด"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "เอกสารล่าสุด"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "ค้นหา:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "สถานะ"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "ระบบ"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
+msgid "Add the current launcher to favorites"
+msgstr "เพิ่มปุ่มเรียกปัจจุบันในรายการใช้บ่อย"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
+msgid "Add the current document to favorites"
+msgstr "เพิ่มเอกสารปัจจุบันในรายการใช้บ่อย"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:131
+#: ../nautilus-main-menu/nautilus-main-menu.c:136
+msgid "Remove the current document from favorites"
+msgstr "ลบเอกสารปัจจุบันออกจากรายการใช้บ่อย"
