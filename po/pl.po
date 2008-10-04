@@ -1,7 +1,7 @@
 # Polish message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2003 SuSE Linux AG.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
