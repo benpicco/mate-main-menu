@@ -1063,6 +1063,8 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 
 	if (libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
+
+	g_free (uri_new);
 }
 
 static void
@@ -1121,6 +1123,8 @@ create_doc_item (BookmarkAgent *this, const gchar *uri)
 
 	if (libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
+
+	g_free (uri_new);
 }
 
 static void
@@ -1204,6 +1208,8 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 	
 	if (uri_new && libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
+
+	g_free (uri_new);
 }
 
 static void

@@ -9,6 +9,10 @@
 
 	* nameplate-tile.c (nameplate_tile_finalize): Free the tooltips.
 
+	* bookmark-agent.c (create_app_item): Free the URI.
+	(create_doc_item): Likewise.
+	(create_dir_item): Likewise.
+
 2008-09-22  Scott Reeves  <sreeves@novell.com>
 	* document-tile.c:
 	show remote docs - use gio for tooltip, show icon
