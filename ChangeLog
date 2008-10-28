@@ -2,6 +2,7 @@
 
 	* main-menu/src/main-menu-ui.c
 	(setup_recently_used_store_monitor): Free the path.
+	(setup_recently_used_store_monitor): Unref the file.
 
 	* main-menu/src/tile-table.c (TileTablePrivate): Add an
 	icon_size_group field.

@@ -1012,6 +1012,8 @@ setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup)
 				  this);
 	}
 
+	g_object_unref (file);
+
 	priv->recently_used_store_monitor = monitor;
 
 	if (priv->recently_used_timeout_id != 0)
