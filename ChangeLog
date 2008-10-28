@@ -1,5 +1,8 @@
 2008-10-27  Federico Mena Quintero  <federico@novell.com>
 
+	* main-menu/src/main-menu-ui.c
+	(setup_recently_used_store_monitor): Free the path.
+
 	* main-menu/src/tile-table.c (TileTablePrivate): Add an
 	icon_size_group field.
 	(tile_table_reload): Remember the size group we use for icons,

@@ -1001,6 +1001,7 @@ setup_recently_used_store_monitor (MainMenuUI *this, gboolean is_startup)
 
 	path = get_recently_used_store_filename ();
 	file = g_file_new_for_path (path);
+	g_free (path);
 
 	monitor = g_file_monitor_file (file, 0, NULL, NULL);
 	if (monitor) {
