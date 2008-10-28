@@ -209,7 +209,7 @@ tile_finalize (GObject * g_object)
 	if (tile->uri)
 		g_free (tile->uri);
 	if (tile->context_menu)
-		gtk_object_sink (GTK_OBJECT (tile->context_menu));
+		gtk_widget_destroy (GTK_WIDGET (tile->context_menu));
 
 	g_object_unref (priv->double_click_detector);
 
@@ -240,17 +240,34 @@ tile_get_property (GObject * g_obj, guint prop_id, GValue * value, GParamSpec * 
 static void
 tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamSpec * param_spec)
 {
+	Tile *tile;
+	GtkMenu *menu;
+
 	if (!IS_TILE (g_obj))
 		return;
+
+	tile = TILE (g_obj);
 
 	switch (prop_id)
 	{
 	case PROP_TILE_URI:
-		TILE (g_obj)->uri = g_strdup (g_value_get_string (value));
+		tile->uri = g_strdup (g_value_get_string (value));
 		break;
 
 	case PROP_TILE_CONTEXT_MENU:
-		TILE (g_obj)->context_menu = g_value_get_object (value);
+		menu = g_value_get_object (value);
+
+		if (menu == tile->context_menu)
+			break;
+
+		if (tile->context_menu)
+			gtk_menu_detach (tile->context_menu);
+
+		tile->context_menu = menu;
+
+		if (tile->context_menu)
+			gtk_menu_attach_to_widget (tile->context_menu, GTK_WIDGET (tile), NULL);
+
 		break;
 
 	default:
