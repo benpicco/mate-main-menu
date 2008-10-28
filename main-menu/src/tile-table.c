@@ -30,6 +30,7 @@ typedef struct {
 	BookmarkAgent   *agent;
 
 	GList           *tiles;
+	GtkSizeGroup    *icon_size_group;
 
 	GtkBin         **bins;
 	gint             n_bins;
@@ -119,8 +120,6 @@ tile_table_reload (TileTable *this)
 	GtkWidget     *tile;
 	gint           n_tiles;
 
-	GtkSizeGroup *icon_size_group;
-
 	GList *node;
 	gint   i;
 
@@ -144,7 +143,8 @@ tile_table_reload (TileTable *this)
 
 	priv->tiles = NULL;
 
-	icon_size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	if (!priv->icon_size_group)
+		priv->icon_size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
 	for (node = tiles; node; node = node->next) {
 		tile = GTK_WIDGET (node->data);
@@ -161,7 +161,7 @@ tile_table_reload (TileTable *this)
 		priv->tiles = g_list_append (priv->tiles, tile);
 
 		if (IS_NAMEPLATE_TILE (tile))
-			gtk_size_group_add_widget (icon_size_group, NAMEPLATE_TILE (tile)->image);
+			gtk_size_group_add_widget (priv->icon_size_group, NAMEPLATE_TILE (tile)->image);
 	}
 
 	g_list_free (tiles);
@@ -342,6 +342,9 @@ static void
 finalize (GObject *g_obj)
 {
 	TileTablePrivate *priv = PRIVATE (g_obj);
+
+	if (priv->icon_size_group)
+		g_object_unref (priv->icon_size_group);
 
 	g_free (priv->bins);
 

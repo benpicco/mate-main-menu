@@ -1,3 +1,11 @@
+2008-10-27  Federico Mena Quintero  <federico@novell.com>
+
+	* main-menu/src/tile-table.c (TileTablePrivate): Add an
+	icon_size_group field.
+	(tile_table_reload): Remember the size group we use for icons,
+	instead of creating it (and leaking it) every time.
+	(finalize): Free the icon_size_group.
+
 2008-09-12  Scott Reeves  <sreeves@novell.com>
 	* configure.in: post release bump to 0.9.12
 
