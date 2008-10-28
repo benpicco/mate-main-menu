@@ -117,6 +117,15 @@ nameplate_tile_constructor (GType type, guint n_param, GObjectConstructParam * p
 static void
 nameplate_tile_finalize (GObject * g_object)
 {
+	NameplateTile *np_tile;
+	NameplateTilePrivate *priv;
+
+	np_tile = NAMEPLATE_TILE (g_object);
+	priv = NAMEPLATE_TILE_GET_PRIVATE (np_tile);
+
+	if (priv->tooltips)
+		gtk_object_destroy (GTK_OBJECT (priv->tooltips));
+
 	(*G_OBJECT_CLASS (nameplate_tile_parent_class)->finalize) (g_object);
 }
 

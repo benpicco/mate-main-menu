@@ -1,11 +1,13 @@
 2008-10-27  Federico Mena Quintero  <federico@novell.com>
 
-	Fix a possible leak of menus:
+	Fix some memory leaks:
 
 	* tile.c (tile_finalize): Actually destroy the context menu, don't
 	ref/sink it.
 	(tile_set_property): Attach the context menu to the tile, don't
 	just store its pointer.
+
+	* nameplate-tile.c (nameplate_tile_finalize): Free the tooltips.
 
 2008-09-22  Scott Reeves  <sreeves@novell.com>
 	* document-tile.c:
