@@ -1,3 +1,8 @@
+2008-11-06  Federico Mena Quintero  <federico@novell.com>
+
+	* bookmark-agent.c (create_app_item): Free the title of the
+	bookmark file.
+
 2008-10-27  Federico Mena Quintero  <federico@novell.com>
 
 	Fix some memory leaks:

@@ -1061,6 +1061,8 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 	else if (! libslab_strcmp (name, "Shutdown"))
 		g_bookmark_file_set_title (priv->store, uri, _("Shutdown"));
 
+	g_free (name);
+
 	if (libslab_strcmp (uri, uri_new))
 		g_bookmark_file_move_item (priv->store, uri, uri_new, NULL);
 
