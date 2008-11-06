@@ -36,7 +36,6 @@ typedef struct
 	GtkContainer *image_ctnr;
 	GtkContainer *header_ctnr;
 	GtkContainer *subheader_ctnr;
-	GtkTooltips  *tooltips;
 } NameplateTilePrivate;
 
 #define NAMEPLATE_TILE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), NAMEPLATE_TILE_TYPE, NameplateTilePrivate))
@@ -100,7 +99,6 @@ nameplate_tile_class_init (NameplateTileClass * this_class)
 static void
 nameplate_tile_init (NameplateTile * this)
 {
-	NAMEPLATE_TILE_GET_PRIVATE (this)->tooltips = NULL;
 }
 
 static GObject *
@@ -123,9 +121,6 @@ nameplate_tile_finalize (GObject * g_object)
 	np_tile = NAMEPLATE_TILE (g_object);
 	priv = NAMEPLATE_TILE_GET_PRIVATE (np_tile);
 
-	if (priv->tooltips)
-		gtk_object_destroy (GTK_OBJECT (priv->tooltips));
-
 	(*G_OBJECT_CLASS (nameplate_tile_parent_class)->finalize) (g_object);
 }
 
@@ -133,7 +128,7 @@ static void
 nameplate_tile_get_property (GObject * g_object, guint prop_id, GValue * value,
 	GParamSpec * param_spec)
 {
-	GtkTooltipsData *tooltip;
+	char *tooltip;
 	NameplateTile *np_tile = NAMEPLATE_TILE (g_object);
 
 	switch (prop_id)
@@ -150,8 +145,9 @@ nameplate_tile_get_property (GObject * g_object, guint prop_id, GValue * value,
 		g_value_set_object (value, np_tile->subheader);
 		break;
 	case PROP_NAMEPLATE_TOOLTIP:
-		tooltip = gtk_tooltips_data_get (GTK_WIDGET (np_tile));
-		g_value_set_string (value, tooltip ? tooltip->tip_text : NULL);
+		tooltip = gtk_widget_get_tooltip_text (GTK_WIDGET (np_tile));
+		g_value_set_string (value, tooltip);
+		g_free (tooltip);
 		break;
 
 	default:
@@ -238,17 +234,7 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 		break;
 
 	case PROP_NAMEPLATE_TOOLTIP:
-		if (tooltip) {
-			if (! priv->tooltips)
-				priv->tooltips = gtk_tooltips_new ();
-
-			gtk_tooltips_set_tip (priv->tooltips, GTK_WIDGET(this), tooltip, tooltip);
-			gtk_tooltips_enable(priv->tooltips);
-		}
-		else
-			if (priv->tooltips)
-				gtk_tooltips_disable(priv->tooltips);
-
+		gtk_widget_set_tooltip_text (GTK_WIDGET (this), tooltip);
 		break;
 
 

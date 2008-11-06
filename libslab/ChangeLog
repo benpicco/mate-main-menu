@@ -1,5 +1,16 @@
 2008-11-06  Federico Mena Quintero  <federico@novell.com>
 
+	Use the new GtkTooltip mechanism rather than the deprecated
+	GtkTooltips.  This also fixes a leak of GtkTooltips objects.
+
+	* nameplate-tile.c (NameplateTilePrivate): Removed the "tooltips" field.
+	(nameplate_tile_set_property): Use gtk_widget_set_tooltip_text()
+	rather than creating a GtkTooltips object and setting the tooltips there.
+	(nameplate_tile_get_property): Use gtk_widget_get_tooltip_text()
+	instead of getting a GtkTooltipsData object.
+
+2008-11-06  Federico Mena Quintero  <federico@novell.com>
+
 	* bookmark-agent.c (create_app_item): Free the title of the
 	bookmark file.
 
