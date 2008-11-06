@@ -123,10 +123,8 @@ nameplate_tile_finalize (GObject * g_object)
 	np_tile = NAMEPLATE_TILE (g_object);
 	priv = NAMEPLATE_TILE_GET_PRIVATE (np_tile);
 
-	if (priv->tooltips) {
+	if (priv->tooltips)
 		gtk_object_destroy (GTK_OBJECT (priv->tooltips));
-		printf ("del: %p\n", np_tile);
-	}
 
 	(*G_OBJECT_CLASS (nameplate_tile_parent_class)->finalize) (g_object);
 }
@@ -241,10 +239,8 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 
 	case PROP_NAMEPLATE_TOOLTIP:
 		if (tooltip) {
-			if (! priv->tooltips) {
+			if (! priv->tooltips)
 				priv->tooltips = gtk_tooltips_new ();
-				printf ("new: %p (%s)\n", this, tooltip);
-			}
 
 			gtk_tooltips_set_tip (priv->tooltips, GTK_WIDGET(this), tooltip, tooltip);
 			gtk_tooltips_enable(priv->tooltips);
