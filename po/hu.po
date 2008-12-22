@@ -1,16 +1,15 @@
-# translation of gnome-main-menu.hu.po to
-# translation of hu.po to
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hungarian translation of gnome-main-menu
+# This file is distributed under the same license as the gnome-main-menu package.
+# Copyright (C) 2006, 2007, 2008 Free Software Foundation, Inc.
 #
 # Kalman Kemenczy <kkemenczy@novell.com>, 2006, 2007.
 # Gabor Kelemen <kelemeng@gnome.hu>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.hu\n"
+"Project-Id-Version: gnome-main-menu HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-26 00:35+0000\n"
-"PO-Revision-Date: 2008-04-22 13:42+0200\n"
+"POT-Creation-Date: 2008-11-07 13:09+0100\n"
+"PO-Revision-Date: 2008-12-22 15:14+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
@@ -97,41 +96,42 @@ msgid "Application Actions"
 msgstr "Alkalmazásműveletek"
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>%s indítása</b>"
 
-#: ../libslab/application-tile.c:388 ../main-menu/src/main-menu-migration.c:93
+#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1056
+#: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "Súgó"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "Frissítés"
 
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "Eltávolítás"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../nautilus-main-menu/nautilus-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "Eltávolítás a Kedvencek közül"
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "Hozzáadás a Kedvencekhez"
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
 msgstr "Eltávolítás az Indítópultból"
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
 msgstr "Hozzáadás az Indítópulthoz"
 
@@ -150,183 +150,127 @@ msgstr ""
 msgid "Other"
 msgstr "Egyéb"
 
-#: ../libslab/bookmark-agent.c:1034
+#: ../libslab/bookmark-agent.c:1058 ../main-menu/src/main-menu-migration.c:159
+msgid "Lock Screen"
+msgstr "Képernyő zárolása"
+
+#: ../libslab/bookmark-agent.c:1060 ../main-menu/src/main-menu-migration.c:97
+#: ../main-menu/src/main-menu-migration.c:219
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+#: ../libslab/bookmark-agent.c:1062 ../main-menu/src/main-menu-migration.c:101
+#: ../main-menu/src/main-menu-migration.c:221
+msgid "Shutdown"
+msgstr "Leállítás"
+
+#: ../libslab/bookmark-agent.c:1091
 msgid "New Spreadsheet"
 msgstr "Új táblázat"
 
-#: ../libslab/bookmark-agent.c:1038
+#: ../libslab/bookmark-agent.c:1096
 msgid "New Document"
 msgstr "Új dokumentum"
 
-#: ../libslab/bookmark-agent.c:1088
+#: ../libslab/bookmark-agent.c:1149
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: ../libslab/bookmark-agent.c:1104
+#: ../libslab/bookmark-agent.c:1154 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Dokumentumok"
+
+#: ../libslab/bookmark-agent.c:1160
+msgid "Desktop"
+msgstr "Asztal"
+
+#: ../libslab/bookmark-agent.c:1167
 msgid "File System"
 msgstr "Fájlrendszer"
 
-#: ../libslab/bookmark-agent.c:1108
+#: ../libslab/bookmark-agent.c:1171
 msgid "Network Servers"
 msgstr "Hálózati kiszolgálók"
 
-#: ../libslab/bookmark-agent.c:1137
+#: ../libslab/bookmark-agent.c:1200
 msgid "Search"
 msgstr "Keresés"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:171
+#, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Megnyitás</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:230
 msgid "Rename..."
-msgstr "Átnevezés..."
+msgstr "Átnevezés…"
 
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:244 ../libslab/document-tile.c:253
 msgid "Send To..."
-msgstr "Küldés..."
+msgstr "Küldés…"
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:279
 msgid "Move to Trash"
 msgstr "Áthelyezés a Kukába"
 
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:850
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:456
+#: ../libslab/document-tile.c:289 ../libslab/document-tile.c:826
 msgid "Delete"
 msgstr "Törlés"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1022
+#: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:974
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Valóban véglegesen törölni kívánja a következőt: „%s”?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:975
 msgid "If you delete an item, it is permanently lost."
 msgstr "Ha töröl egy elemet, az véglegesen elvész."
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:191
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Megnyitás ezzel: „%s”</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:203
 msgid "Open with Default Application"
 msgstr "Megnyitás az alapértelmezett alkalmazással"
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:214
 msgid "Open in File Manager"
 msgstr "Megnyitás a Fájlkezelőben"
 
-#: ../libslab/document-tile.c:633
+#: ../libslab/document-tile.c:606
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:640
+#: ../libslab/document-tile.c:613
 msgid "%l:%M %p"
 msgstr "%l.%M %p"
 
-#: ../libslab/document-tile.c:648
+#: ../libslab/document-tile.c:621
 msgid "Today %l:%M %p"
 msgstr "Ma %l.%M %P"
 
-#: ../libslab/document-tile.c:658
+#: ../libslab/document-tile.c:631
 msgid "Yesterday %l:%M %p"
 msgstr "Tegnap %l.%M %P"
 
-#: ../libslab/document-tile.c:670
+#: ../libslab/document-tile.c:643
 msgid "%a %l:%M %p"
 msgstr "%a., %k.%M"
 
-#: ../libslab/document-tile.c:678
+#: ../libslab/document-tile.c:651
 msgid "%b %d %l:%M %p"
 msgstr "%b. %e., %k.%M"
 
-#: ../libslab/document-tile.c:680
+#: ../libslab/document-tile.c:653
 msgid "%b %d %Y"
 msgstr "%Y %b. %d"
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Váratlan attribútum („%s”) a(z) „%s ”elemhez"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "A(z) „$2%s ”elem „$1%s ”attribútuma nem található"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Váratlan címke („%s”) a várt „%s ”helyett"
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Váratlan címke („%s”) a következőn belül: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-msgid "No valid bookmark file found in data dirs"
-msgstr "Nem található érvényes könyvjelzőfájl az adatkönyvtárakban"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "Már létezik könyvjelző a következő URI címhez: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "Nem található könyvjelző a következő URI címhez: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Nincs MIME típus meghatározva a következő URI könyvjelzőjéhez: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "Nincs magán jelző meghatározva a következő URI könyvjelzőjéhez: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr "Nincsenek csoportok beállítva a következő URI könyvjelzőjéhez: „%s”"
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "Nincs „%s ”nevű alkalmazás regisztrálva a következő könyvjelzőjéhez: „%s”"
 
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
@@ -338,6 +282,7 @@ msgid "<b>Open %s</b>"
 msgstr "<b>%s megnyitása</b>"
 
 #: ../libslab/system-tile.c:141
+#, c-format
 msgid "Remove from System Items"
 msgstr "Eltávolítás a Rendszerelemek közül"
 
@@ -346,7 +291,7 @@ msgid "Default menu and application browser"
 msgstr "Alapértelmezett menü és alkalmazásböngésző"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME főmenü"
 
@@ -408,7 +353,7 @@ msgstr ""
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr "Ez a parancs kerül végrehajtásra a „Küldés... ”menüelem aktiválásakor."
+msgstr "Ez a parancs kerül végrehajtásra a „Küldés… ”menüelem aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -416,7 +361,7 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a „Küldés... ”menüelem aktiválásakor. A "
+"Ez a parancs kerül végrehajtásra a „Küldés… ”menüelem aktiválásakor. A "
 "DIRNAME és BASENAME helyére az aktivált cím megfelelő összetevői kerülnek."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
@@ -470,9 +415,9 @@ msgstr ""
 "megjelenítése, 1 - a legutóbb használt alkalmazások tábla megjelenítése, 2 - "
 "a felhasználó által megadott vagy „Kedvenc ”dokumentumok tábla "
 "megjelenítése, 3 - a legutóbb használt dokumentumok tábla megjelenítése, 4 - "
-"a felhasználó által megadott vagy „Kedvenc ”könyvtárak vagy a „Helyek ”"
-"tábla megjelenítése és 5 - a legutóbb használt könyvtárak vagy a „Helyek ”"
-"tábla megjelenítése."
+"a felhasználó által megadott vagy „Kedvenc ”könyvtárak vagy a „Helyek ”tábla "
+"megjelenítése és 5 - a legutóbb használt könyvtárak vagy a „Helyek ”tábla "
+"megjelenítése."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -598,8 +543,7 @@ msgid ""
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
 "Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy „Kedvenc ”könyvtárak, illetve a „Helyek ”listájának "
-"módosítása."
+"megadott vagy „Kedvenc ”könyvtárak, illetve a „Helyek ”listájának módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
@@ -638,25 +582,11 @@ msgstr "%.1f b"
 msgid "Home: %s Free / %s"
 msgstr "Saját mappa: %s szabad / %s"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Kijelentkezés"
-
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Leállítás"
-
-#: ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Képernyő zárolása"
-
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2161
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "A GNOME főmenü"
 
@@ -674,6 +604,8 @@ msgid "Networ_k: None"
 msgstr "_Hálózat: nincs"
 
 #: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:232
 #, c-format
 msgid "Connected to: %s"
 msgstr "Csatlakoztatva: %s"
@@ -691,22 +623,37 @@ msgstr "Ethernet (%s) használata"
 msgid "Networ_k: Wired"
 msgstr "_Hálózat: vezetékes"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: GSM"
+msgstr "_Hálózat: GSM"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: CDMA"
+msgstr "_Hálózat: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:336
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Vezeték nélküli Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:341
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Vezetékes Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Mobil Ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:365
+#, c-format
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:363
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/mp"
@@ -718,10 +665,6 @@ msgstr "Alkalmazások"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Számítógép"
-
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Dokumentumok"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -737,15 +680,15 @@ msgstr "Kedvenc helyek"
 
 #: ../main-menu/src/slab-window.glade.h:8
 msgid "More Applications..."
-msgstr "További alkalmazások..."
+msgstr "További alkalmazások…"
 
 #: ../main-menu/src/slab-window.glade.h:9
 msgid "More Documents..."
-msgstr "További dokumentumok..."
+msgstr "További dokumentumok…"
 
 #: ../main-menu/src/slab-window.glade.h:10
 msgid "More Places..."
-msgstr "További helyek..."
+msgstr "További helyek…"
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
@@ -771,16 +714,16 @@ msgstr "Állapot"
 msgid "System"
 msgstr "Rendszer"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "Alkalmazásindító felvétele a Kedvencek közé"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "Dokumentum felvétele a Kedvencek közé"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:131
+#: ../nautilus-main-menu/nautilus-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "Dokumentum eltávolítása a Kedvencek közül"
 
