@@ -1,4 +1,12 @@
 2008-12-29  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/trigger-panel-run-dialog.c
+	* main-menu/src/Makefile.am
+	* main-menu/etc/trigger-panel-run-dialog.desktop
+	* main-menu/etc/Makefile.am:
+	Add a trivial launcher of the panel "Run Application" dialog for 
+	optional inclusion in the system area
+
+2008-12-29  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/network-status-agent.c:
 	Patch from Tambet to match the NetworkManager API change
 

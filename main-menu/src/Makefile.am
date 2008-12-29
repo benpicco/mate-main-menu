@@ -8,6 +8,8 @@ glade_DATA = slab-window.glade
 
 libexec_PROGRAMS = main-menu
 
+bin_PROGRAMS = trigger-panel-run-dialog
+
 AM_CPPFLAGS =								\
 	$(GLADE_CFLAGS)							\
 	-DDATADIR=\""$(datadir)"\"					\
@@ -29,5 +31,11 @@ main_menu_LDADD =							\
 	$(MAIN_MENU_LIBS)						\
 	$(GLADE_LIBS)							\
 	$(top_builddir)/libslab/libslab.la
+
+trigger_panel_run_dialog_SOURCES =					\
+	trigger-panel-run-dialog.c
+
+trigger_panel_run_dialog_LDADD =					\
+	$(MAIN_MENU_LIBS)
 
 EXTRA_DIST = $(glade_DATA)

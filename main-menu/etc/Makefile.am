@@ -10,7 +10,7 @@ uidir   = $(datadir)/gnome-2.0/ui
 ui_DATA = GNOME_MainMenu_ContextMenu.xml
 
 desktopdir   = $(datadir)/applications
-desktop_DATA = gnome-screensaver-lock.desktop gnome-session-kill.desktop
+desktop_DATA = gnome-screensaver-lock.desktop gnome-session-kill.desktop trigger-panel-run-dialog.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 bookmarkdir = $(datadir)/gnome-main-menu
