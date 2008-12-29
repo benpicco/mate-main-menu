@@ -1,3 +1,7 @@
+2008-12-29  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/network-status-agent.c:
+	Patch from Tambet to match the NetworkManager API change
+
 2008-11-06  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.in: Add libgnomeui to LIBSLAB_CFLAGS to make it build.

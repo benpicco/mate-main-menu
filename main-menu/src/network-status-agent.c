@@ -21,12 +21,12 @@
 #include "network-status-agent.h"
 
 #include <string.h>
-#include <libnm-glib/nm-client.h>
+#include <nm-client.h>
 #include <NetworkManager.h>
-#include <libnm-glib/nm-device-wifi.h>
-#include <libnm-glib/nm-device-ethernet.h>
-#include <libnm-glib/nm-gsm-device.h>
-#include <libnm-glib/nm-cdma-device.h>
+#include <nm-device-wifi.h>
+#include <nm-device-ethernet.h>
+#include <nm-gsm-device.h>
+#include <nm-cdma-device.h>
 #include <nm-setting-ip4-config.h>
 #include <nm-utils.h>
 #include <arpa/inet.h>
@@ -201,8 +201,8 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 	NetworkStatusInfo *info = g_object_new (NETWORK_STATUS_INFO_TYPE, NULL);
 	const GArray *array;
 	const GSList *addresses;
-	NMSettingIP4Address *def_addr;
-	guint32 hostmask, network, bcast;
+	NMIP4Address *def_addr;
+	guint32 address, netmask, hostmask, network, bcast;
 
 	info->iface = g_strdup (nm_device_get_iface (device));
 	info->driver = g_strdup (nm_device_get_driver (device));
@@ -217,14 +217,16 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 	if (addresses) {
 		def_addr = addresses->data;
 
-		info->ip4_addr = ip4_address_as_string (def_addr->address);
-		info->subnet_mask = ip4_address_as_string (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
-		info->route = ip4_address_as_string (def_addr->gateway);
-
-		network = ntohl (def_addr->address) & ntohl (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
-		hostmask = ~ntohl (nm_utils_ip4_prefix_to_netmask (def_addr->prefix));
+		address = nm_ip4_address_get_address (def_addr);
+		netmask = nm_utils_ip4_prefix_to_netmask (nm_ip4_address_get_prefix (def_addr));
+		network = ntohl (address) & ntohl (netmask);
+		hostmask = ~ntohl (netmask);
 		bcast = htonl (network | hostmask);
-		info->broadcast = ip4_address_as_string (bcast);
+
+		info->ip4_addr = ip4_address_as_string (address);
+		info->subnet_mask = ip4_address_as_string (netmask);
+		info->route = ip4_address_as_string (nm_ip4_address_get_gateway (def_addr));
+                info->broadcast = ip4_address_as_string (bcast);
 	}
 
 	info->primary_dns = NULL;
