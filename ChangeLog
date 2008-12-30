@@ -1,4 +1,10 @@
 2008-12-29  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/network-status-tile.c
+	* main-menu/etc/slab.schemas.in.in
+	* libslab/slab-gnome-util.h:
+	Fix NetworkManager status display - BNC#436718
+
+2008-12-29  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/trigger-panel-run-dialog.c
 	* main-menu/src/Makefile.am
 	* main-menu/etc/trigger-panel-run-dialog.desktop

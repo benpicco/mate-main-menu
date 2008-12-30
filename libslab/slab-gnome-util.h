@@ -32,6 +32,7 @@ G_BEGIN_DECLS
 #define SLAB_FILE_BROWSER_KEY           "/desktop/gnome/applications/main-menu/file_browser"
 #define SLAB_SYSTEM_MONITOR_KEY         "/desktop/gnome/applications/main-menu/system_monitor"
 #define SLAB_NETWORK_CONFIG_TOOL_KEY    "/desktop/gnome/applications/main-menu/network_config_tool"
+#define SLAB_NETWORK_CONFIG_TOOL_NM_KEY "/desktop/gnome/applications/main-menu/network_config_tool_nm"
 #define SLAB_URGENT_CLOSE_KEY           "/desktop/gnome/applications/main-menu/urgent_close"
 #define SLAB_LOCK_SCREEN_PRIORITY_KEY   "/desktop/gnome/applications/main-menu/lock_screen_priority"
 #define SLAB_MAIN_MENU_REORDERING_KEY   "/desktop/gnome/applications/main-menu/main_menu_reordering"

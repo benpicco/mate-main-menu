@@ -73,6 +73,18 @@
 		</schema>
 
 		<schema>
+			<key>/schemas/desktop/gnome/applications/main-menu/network_config_tool_nm</key>
+			<applyto>/desktop/gnome/applications/main-menu/network_config_tool_nm</applyto>
+			<owner>gnome-main-menu</owner>
+			<type>string</type>
+			<default>/usr/share/applications/nm-connection-editor.desktop</default>
+			<locale name="C">
+				<short>.desktop file for the net config tool</short>
+				<long>.desktop file for the Network Manager editor utility</long>
+			</locale>
+		</schema>
+
+		<schema>
 			<key>/schemas/desktop/gnome/applications/main-menu/search_command</key>
 			<applyto>/desktop/gnome/applications/main-menu/search_command</applyto>
 			<owner>gnome-main-menu</owner>

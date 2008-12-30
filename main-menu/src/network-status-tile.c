@@ -48,7 +48,7 @@ static void status_changed_cb (NetworkStatusAgent *, gpointer);
 static void info_dialog_cfg_button_clicked_cb (GtkButton *, gpointer);
 
 static void set_glade_label (GladeXML *, const gchar *, const gchar *);
-static void launch_network_config (void);
+static void launch_network_config (const gchar * desktop_key);
 
 typedef struct
 {
@@ -159,11 +159,18 @@ network_status_tile_open (Tile * tile, TileEvent * event, TileAction * action)
 
 	if (!priv->status_info || !priv->agent->nm_present)
 	{
-		launch_network_config ();
+		launch_network_config (SLAB_NETWORK_CONFIG_TOOL_KEY);
 
 		return;
 	}
+	else
+	{
+		launch_network_config (SLAB_NETWORK_CONFIG_TOOL_NM_KEY);
+		return;
+	}
 
+	/*  Using NM's glade file directly is a big maintenance problem. We need to get
+	* NM to provide a API or .desktop file to show their status. For now just call the config
 	if (!priv->info_dialog)
 		build_info_dialog (NETWORK_STATUS_TILE (tile));
 
@@ -178,6 +185,7 @@ network_status_tile_open (Tile * tile, TileEvent * event, TileAction * action)
 	update_info_dialog (NETWORK_STATUS_TILE (tile));
 
 	gtk_window_present_with_time (GTK_WINDOW (priv->info_dialog), event->time);
+	*/
 }
 
 static void
@@ -285,6 +293,7 @@ refresh_status (NetworkStatusTile * tile)
 static void
 build_info_dialog (NetworkStatusTile * tile)
 {
+	/*
 	NetworkStatusTilePrivate *priv = NETWORK_STATUS_TILE_GET_PRIVATE (tile);
 
 	gchar *filename;
@@ -314,6 +323,7 @@ build_info_dialog (NetworkStatusTile * tile)
 		priv->info_dialog);
 
 	g_free (filename);
+	*/
 }
 
 static void
@@ -413,11 +423,13 @@ status_changed_cb (NetworkStatusAgent * agent, gpointer user_data)
 static void
 info_dialog_cfg_button_clicked_cb (GtkButton * button, gpointer user_data)
 {
+	/*
 	GtkWidget *dialog = GTK_WIDGET (user_data);
 
 	launch_network_config ();
 
 	gtk_widget_hide (dialog);
+	*/
 }
 
 static void
@@ -432,10 +444,10 @@ set_glade_label (GladeXML * xml, const gchar * id, const gchar * text)
 }
 
 static void
-launch_network_config ()
+launch_network_config (const gchar * desktop_key)
 {
 	GnomeDesktopItem *desktop_item =
-		load_desktop_item_from_gconf_key (SLAB_NETWORK_CONFIG_TOOL_KEY);
+		load_desktop_item_from_gconf_key (desktop_key);
 
 	if (!open_desktop_item_exec (desktop_item))
 		g_warning ("network_status_tile_open: couldn't exec item\n");
