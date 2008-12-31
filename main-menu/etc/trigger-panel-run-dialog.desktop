@@ -6,6 +6,6 @@ Terminal=false
 Type=Application
 Icon=system-run
 Hidden=true
-Categories=System;SystemSetup;
+Categories=GNOME;Application;System;
 OnlyShowIn=GNOME;
 StartupNotify=true

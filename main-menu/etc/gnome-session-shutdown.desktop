@@ -6,5 +6,5 @@ Terminal=false
 Type=Application
 Icon=system-shutdown
 Hidden=true
-Categories=System;SystemSetup;
+Categories=GNOME;Application;System;
 OnlyShowIn=GNOME;

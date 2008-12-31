@@ -6,7 +6,7 @@ Icon=gnome-lockscreen
 Exec=gnome-screensaver-command --lock
 Terminal=false
 Type=Application
-Categories=GNOME;Application;System
+Categories=GNOME;Application;System;
 OnlyShowIn=GNOME;
 Hidden=true
 

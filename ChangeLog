@@ -1,4 +1,11 @@
 2008-12-31  Scott Reeves  <sreeves@novell.com>
+	* main-menu/etc/gnome-screensaver-lock.desktop
+	* main-menu/etc/gnome-session-logout.desktop
+	* main-menu/etc/trigger-panel-run-dialog.desktop
+	* main-menu/etc/gnome-session-shutdown.desktop:
+	Clean up .desktop files - BNC#444138
+
+2008-12-31  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/main-menu-ui.c
 	* main-menu/src/main-menu-migration.c
 	* main-menu/src/main-menu-migration.h
