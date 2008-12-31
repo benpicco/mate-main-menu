@@ -1,3 +1,23 @@
+2008-12-31  Scott Reeves  <sreeves@novell.com>
+	* main-menu/src/main-menu-ui.c
+	* main-menu/src/main-menu-migration.c
+	* main-menu/src/main-menu-migration.h
+	* main-menu/src/main-menu.c
+	* main-menu/etc/gnome-screensaver-lock.desktop
+	* main-menu/etc/gnome-session-kill.desktop
+	* main-menu/etc/system-items.xbel
+	* main-menu/etc/system-items.xbel.in
+	* main-menu/etc/gnome-session-logout.desktop
+	* main-menu/etc/gnome-session-shutdown.desktop
+	* main-menu/etc/Makefile.am
+	* libslab/bookmark-agent.c
+	* po/POTFILES.in:
+	Fix BNC#447550 - translations not updating when changing locale
+	Fix up the entire flow of how the system-items.xbel is handled
+	Title is now marked for translation directly in the .xbel file
+	Clean up old corrupted local system-items.xbel files and provide
+	a new updated default one.
+
 2008-12-29  Scott Reeves  <sreeves@novell.com>
 	* main-menu/src/network-status-tile.c
 	* main-menu/etc/slab.schemas.in.in

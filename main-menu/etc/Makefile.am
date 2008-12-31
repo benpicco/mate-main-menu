@@ -10,17 +10,23 @@ uidir   = $(datadir)/gnome-2.0/ui
 ui_DATA = GNOME_MainMenu_ContextMenu.xml
 
 desktopdir   = $(datadir)/applications
-desktop_DATA = gnome-screensaver-lock.desktop gnome-session-kill.desktop trigger-panel-run-dialog.desktop
+desktop_DATA = gnome-screensaver-lock.desktop gnome-session-logout.desktop gnome-session-shutdown.desktop trigger-panel-run-dialog.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 bookmarkdir = $(datadir)/gnome-main-menu
-bookmark_DATA = applications.xbel documents.xbel system-items.xbel places.xbel empty.ots empty.ott
+bookmark_DATA = applications.xbel documents.xbel places.xbel empty.ots empty.ott
+
+systemitemsdir = $(datadir)/gnome-main-menu
+systemitems_DATA = system-items.xbel
 
 $(server_DATA).in: $(server_DATA).in.in
 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
 $(schemas_DATA).in: $(schemas_DATA).in.in
 	sed -e "s|\@DATADIR\@|$(datadir)|g" $< > $@
+
+$(systemitems_DATA): $(systemitems_DATA).in
+	sed -e "s|_title>|title>|g" $< > $@
 
 install-data-local:
 	if test -z "$(DESTDIR)" ; then \
@@ -29,6 +35,6 @@ install-data-local:
 		done \
 	fi
 
-EXTRA_DIST = $(server_DATA).in.in $(schemas_DATA).in.in $(ui_DATA) $(desktop_DATA) $(bookmark_DATA)
+EXTRA_DIST = $(server_DATA).in.in $(schemas_DATA).in.in $(ui_DATA) $(desktop_DATA) $(bookmark_DATA) $(systemitems_DATA).in
 
-CLEANFILES = $(server_DATA) $(schemas_DATA) $(server_DATA).in $(schemas_DATA).in
+CLEANFILES = $(server_DATA) $(schemas_DATA) $(server_DATA).in $(schemas_DATA).in $(systemitems_DATA)

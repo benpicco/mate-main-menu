@@ -1130,13 +1130,17 @@ item_to_system_tile (BookmarkItem *item, gpointer data)
 {
 	Tile  *tile;
 	gchar *basename;
-
+	gchar *translated_title;
 
 	if (app_is_in_blacklist (item->uri))
 		return NULL;
+	
+	translated_title = item->title ? _(item->title) : NULL;
 
-	tile = TILE (system_tile_new (item->uri, item->title));
+	tile = TILE (system_tile_new (item->uri, translated_title));
 
+	/* with 0.9.12 we start with clean system area - see move_system_area_to_new_set
+	   no longer need this code to clean up old junk
 	if (tile)
 		return tile;
 
@@ -1147,9 +1151,10 @@ item_to_system_tile (BookmarkItem *item, gpointer data)
 		basename = item->uri;
 
 	if (! libslab_strcmp (basename, "control-center.desktop"))
-		tile = TILE (system_tile_new ("gnomecc.desktop", item->title));
+		tile = TILE (system_tile_new ("gnomecc.desktop", translated_title));
 	else if (! libslab_strcmp (basename, "zen-installer.desktop"))
-		tile = TILE (system_tile_new ("package-manager.desktop", item->title));
+		tile = TILE (system_tile_new ("package-manager.desktop", translated_title));
+	*/
 
 	return tile;
 }

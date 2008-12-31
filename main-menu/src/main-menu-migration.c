@@ -37,6 +37,7 @@
 #include "libslab-utils.h"
 
 #define SYSTEM_BOOKMARK_FILENAME "system-items.xbel"
+#define SYSTEM_BOOKMARK_MIGRATED_TO_NEW_SET "system-items.migrated"
 #define APPS_BOOKMARK_FILENAME   "applications.xbel"
 
 #define SYSTEM_ITEM_GCONF_KEY    "/desktop/gnome/applications/main-menu/system-area/system_item_list"
@@ -48,6 +49,43 @@
 #define SHOWABLE_TYPES_GCONF_KEY "/desktop/gnome/applications/main-menu/lock-down/showable_file_types"
 
 #define LOGOUT_DESKTOP_ITEM      "gnome-session-kill.desktop"
+
+void
+move_system_area_to_new_set ()
+{
+	/* for libslab 0.9.12 start with the new default system area because
+	* 1. We have significantly changed the default set and want these new values to show up
+	* 2. bug (BNC #447550) caused translated title entry to overwrite valid one
+		 causing errors and a customized file when user did not explicitly want it
+	* 3. bug in the default system-items.xbel ranking also caused a customized file
+	     again without the user explicitly wanting one.
+	*/
+	gchar * filename;
+	GFile *file;
+	GFileOutputStream *filestream;
+
+	filename = g_build_filename (
+		g_get_user_data_dir (), PACKAGE, SYSTEM_BOOKMARK_MIGRATED_TO_NEW_SET, NULL);
+	if (! g_file_test (filename, G_FILE_TEST_EXISTS))
+	{
+		file = g_file_new_for_path (filename);
+		filestream = g_file_create (file, G_FILE_CREATE_NONE, NULL, NULL);
+		if (filestream)
+			g_object_unref (filestream);
+		g_object_unref (file);
+		g_free (filename);
+		
+		filename = g_build_filename (
+			g_get_user_data_dir (), PACKAGE, SYSTEM_BOOKMARK_FILENAME, NULL);
+		if (g_file_test (filename, G_FILE_TEST_EXISTS))
+		{
+			file = g_file_new_for_path (filename);
+			g_file_delete (file, NULL, NULL);
+			g_object_unref (file);
+		}
+	}
+	g_free (filename);
+}
 
 void
 migrate_system_gconf_to_bookmark_file ()

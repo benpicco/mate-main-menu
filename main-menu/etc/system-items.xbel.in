@@ -4,7 +4,7 @@
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
   <bookmark href="yelp.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
-    <title>Help</title>
+    <_title>Help</_title>
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-desktop"/>
@@ -30,12 +30,25 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="package-manager.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+  <bookmark href="YaST.desktop" added="2008-06-04T15:58:58Z" modified="2008-06-04T15:58:58Z" visited="2008-06-04T15:58:58Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-desktop"/>
         <bookmark:groups>
           <bookmark:group>rank-2</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="YaST" exec="gnomesu -c /sbin/yast2" timestamp="1212587938" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="package-manager.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-desktop"/>
+        <bookmark:groups>
+          <bookmark:group>rank-3</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="Install Software" exec="package-manager %F" timestamp="1168926816" count="1"/>
@@ -44,20 +57,7 @@
     </info>
   </bookmark>
   <bookmark href="gnome-screensaver-lock.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-desktop"/>
-        <bookmark:groups>
-          <bookmark:group>rank-3</bookmark:group>
-        </bookmark:groups>
-        <bookmark:applications>
-          <bookmark:application name="Lock Screen" exec="gnome-screensaver-command --lock" timestamp="1168926816" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="gnome-session-kill.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
-    <title>Logout</title>
+    <_title>Lock Screen</_title>
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-desktop"/>
@@ -65,7 +65,35 @@
           <bookmark:group>rank-4</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Logout" exec="gnome-session-save --kill" timestamp="1168926816" count="1"/>
+          <bookmark:application name="Lock Screen" exec="gnome-screensaver-command --lock" timestamp="1168926816" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="gnome-session-logout.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+    <_title>Logout</_title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-desktop"/>
+        <bookmark:groups>
+          <bookmark:group>rank-5</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Session Logout Dialog" exec="gnome-session-save" timestamp="1168926816" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="gnome-session-shutdown.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+    <_title>Shutdown</_title>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-desktop"/>
+        <bookmark:groups>
+          <bookmark:group>rank-6</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Session Shutdown Dialog" exec="gnome-session-save" timestamp="1168926816" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

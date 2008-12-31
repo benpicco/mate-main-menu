@@ -25,6 +25,7 @@
 
 G_BEGIN_DECLS
 
+void move_system_area_to_new_set (void);
 void migrate_system_gconf_to_bookmark_file    (void);
 void migrate_user_apps_gconf_to_bookmark_file (void);
 void migrate_showable_file_types              (void);

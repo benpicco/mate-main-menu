@@ -13,7 +13,6 @@ libslab/system-tile.c
 main-menu/etc/GNOME_MainMenu.server.in.in
 main-menu/etc/GNOME_MainMenu_ContextMenu.xml
 main-menu/etc/gnome-screensaver-lock.desktop
-main-menu/etc/gnome-session-kill.desktop
 main-menu/etc/slab.schemas.in.in
 main-menu/src/hard-drive-status-tile.c
 main-menu/src/main-menu-migration.c
@@ -21,3 +20,4 @@ main-menu/src/main-menu-ui.c
 main-menu/src/network-status-tile.c
 main-menu/src/slab-window.glade
 nautilus-main-menu/nautilus-main-menu.c
+[type: gettext/xml] main-menu/etc/system-items.xbel.in

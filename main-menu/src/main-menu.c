@@ -67,7 +67,8 @@ main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data
 	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 1, argv, NULL, NULL);
 
 	libslab_checkpoint ("Migrating old configurations");
-	migrate_system_gconf_to_bookmark_file    ();
+	move_system_area_to_new_set ();
+	//migrate_system_gconf_to_bookmark_file    ();
 	migrate_user_apps_gconf_to_bookmark_file ();
 	migrate_showable_file_types              ();
 
