@@ -304,7 +304,8 @@ directory_tile_finalize (GObject *g_object)
 	g_free (priv->icon_name);
 	g_free (priv->mime_type);
 
-	g_object_unref (priv->default_app);
+	if (priv->default_app)
+		g_object_unref (priv->default_app);
     
 	client = gconf_client_get_default ();
 

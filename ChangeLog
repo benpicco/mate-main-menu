@@ -1,3 +1,9 @@
+2009-01-02  Scott Reeves  <sreeves@novell.com>
+	* libslab/gnome-utils.c
+	* libslab/directory-tile.c
+	* libslab/document-tile.c:
+	Fix g_object_unref G_IS_OBJECT assertions.
+
 2008-12-31  Scott Reeves  <sreeves@novell.com>
 	* main-menu/etc/gnome-screensaver-lock.desktop
 	* main-menu/etc/gnome-session-logout.desktop

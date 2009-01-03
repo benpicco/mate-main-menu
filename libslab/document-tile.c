@@ -318,11 +318,14 @@ document_tile_private_setup (DocumentTile *this)
 	GAppInfo *app;
 
 	GConfClient *client;
+	GError *error = NULL;
 
 	file = g_file_new_for_uri (TILE (this)->uri);
-	app = g_file_query_default_handler (file, NULL, NULL);
+	app = g_file_query_default_handler (file, NULL, &error);
 	priv->default_app = app;
 
+	if (error)
+		g_error_free (error);
 	g_object_unref (file);
 
 	priv->delete_enabled =
@@ -378,7 +381,8 @@ document_tile_finalize (GObject *g_object)
 	g_free (priv->mime_type);
 	g_free (priv->force_icon_name);
 
-	g_object_unref (priv->default_app);
+	if (priv->default_app)
+		g_object_unref (priv->default_app);
 
 	if (priv->notify_signal_id)
 		g_signal_handler_disconnect (priv->agent, priv->notify_signal_id);
@@ -1017,8 +1021,10 @@ user_docs_trigger (Tile *tile, TileEvent *event, TileAction *action)
 		item->uri       = tile->uri;
 		item->mime_type = priv->mime_type;
 		item->mtime     = priv->modified;
-		item->app_name  = (gchar *) g_app_info_get_name (priv->default_app);
-		item->app_exec  = (gchar *) g_app_info_get_executable (priv->default_app);
+		if (priv->default_app) {
+			item->app_name  = (gchar *) g_app_info_get_name (priv->default_app);
+			item->app_exec  = (gchar *) g_app_info_get_executable (priv->default_app);
+		}
 
 		bookmark_agent_add_item (priv->agent, item);
 		g_free (item);
