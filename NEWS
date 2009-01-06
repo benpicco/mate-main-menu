@@ -1,4 +1,40 @@
 =============
+Version 0.9.12
+=============
+
+  Released: 2009-01-06
+
+  * Features / Fixes
+    - Fix for BGO#562985 - network status not shown on resume (Scott Reeves)
+    - Clean up .desktop files - BNC#444138 (Scott Reeves)
+    - Fix BNC#447550 - translations not updating when changing locale (Scott Reeves)
+    - Fix NetworkManager status display - BNC#436718 (Scott Reeves)
+    - Add a trivial launcher of the panel "Run Application" dialog for 
+      optional inclusion in the system area (Scott Reeves)
+    - Match the NetworkManager API change (Tambet Ingo)
+    - Add libgnomeui to LIBSLAB_CFLAGS to make it build. (Kjartan Maraas)
+    - Memory leaks fixes (Federico Mena Quintero)
+    - Use the new GtkTooltip mechanism (Federico Mena Quintero)
+    - show remote docs - use gio for tooltip, show icon (Scott Reeves)
+
+  * Translations
+    - Og Maciel Updated Brazilian Portuguese translation by Vladimir Melo.
+    - Claude Paroz Added Wallon translation on behalf of Jean Cayron.
+    - Mario Blättermann de.po: Updated German Translation
+    - Jorge Gonzalez  es.po: Updated Spanish translation
+    - Daniel Nylander sv.po: Updated Swedish translation.
+    - Gabor Kelemen  hu.po: Translation updated.
+    - Mario Blättermann de.po: Updated German Translation
+    - Luca Ferretti it.po: Updated Italian translation by Gianvito Cavasoli.
+    - Gan Luzh _CN.po: Update for trunk
+    - Petr Kovar cs.po: Updated Czech translation by Adrian Gunis
+    - Wadim Dziedzic pl.po: Updated Polish translation
+    - Theppitak Karoonboonyanan th.po: Added Thai translation by Manatsawin Hanmongkolchai.
+    - Timo Jyrinki fi.po: Updated Finnish translation, sync with openSUSE
+    - Djihed Afifi ar.po: Updated Arabic Translation by Abdulaziz AlSharif.
+    - Ilkka Tuohela fi.po: Updated Finnish translation.
+
+=============
 Version 0.9.11
 =============
 
