@@ -210,34 +210,35 @@ nm_get_device_info (NetworkStatusAgent * agent, NMDevice * device)
 	if (! info->active)
 		return info;
 	NMIP4Config * cfg = nm_device_get_ip4_config (device);
-	if(! cfg)
-		return info;
-
-	addresses = nm_ip4_config_get_addresses (cfg);
-	if (addresses) {
-		def_addr = addresses->data;
-
-		address = nm_ip4_address_get_address (def_addr);
-		netmask = nm_utils_ip4_prefix_to_netmask (nm_ip4_address_get_prefix (def_addr));
-		network = ntohl (address) & ntohl (netmask);
-		hostmask = ~ntohl (netmask);
-		bcast = htonl (network | hostmask);
-
-		info->ip4_addr = ip4_address_as_string (address);
-		info->subnet_mask = ip4_address_as_string (netmask);
-		info->route = ip4_address_as_string (nm_ip4_address_get_gateway (def_addr));
-                info->broadcast = ip4_address_as_string (bcast);
-	}
-
-	info->primary_dns = NULL;
-	info->secondary_dns = NULL;
-	array = nm_ip4_config_get_nameservers (cfg);
-	if (array)
+	//According to the documentation this should not be NULL if the device is active but on resume from suspend it is (BNC#463712), so check for now
+	if(cfg)
 	{
-		if (array->len > 0)
-			info->primary_dns = ip4_address_as_string (g_array_index (array, guint32, 0));
-		if (array->len > 1)
-			info->secondary_dns = ip4_address_as_string (g_array_index (array, guint32, 1));
+		addresses = nm_ip4_config_get_addresses (cfg);
+		if (addresses) {
+			def_addr = addresses->data;
+
+			address = nm_ip4_address_get_address (def_addr);
+			netmask = nm_utils_ip4_prefix_to_netmask (nm_ip4_address_get_prefix (def_addr));
+			network = ntohl (address) & ntohl (netmask);
+			hostmask = ~ntohl (netmask);
+			bcast = htonl (network | hostmask);
+
+			info->ip4_addr = ip4_address_as_string (address);
+			info->subnet_mask = ip4_address_as_string (netmask);
+			info->route = ip4_address_as_string (nm_ip4_address_get_gateway (def_addr));
+					info->broadcast = ip4_address_as_string (bcast);
+		}
+
+		info->primary_dns = NULL;
+		info->secondary_dns = NULL;
+		array = nm_ip4_config_get_nameservers (cfg);
+		if (array)
+		{
+			if (array->len > 0)
+				info->primary_dns = ip4_address_as_string (g_array_index (array, guint32, 0));
+			if (array->len > 1)
+				info->secondary_dns = ip4_address_as_string (g_array_index (array, guint32, 1));
+		}
 	}
 
 	if (NM_IS_DEVICE_WIFI(device))
