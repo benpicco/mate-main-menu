@@ -1,4 +1,4 @@
-AC_INIT([gnome-main-menu], [0.9.12], [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu])
+AC_INIT([gnome-main-menu], [0.9.13], [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu])
 
 # Before making a release, the LT_VERSION string should be modified.
 # The string is of the form C:R:A.
