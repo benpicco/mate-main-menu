@@ -25,8 +25,11 @@
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
 #include <gio/gio.h>
+#include <gdk/gdkkeysyms.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -649,14 +652,14 @@ delete_old_data (AppShellData * app_data)
 		CategoryData *data = (CategoryData *) cat_list->data;
 		gtk_widget_destroy (GTK_WIDGET (data->section));
 		gtk_widget_destroy (GTK_WIDGET (data->group_launcher));
-		gtk_object_unref (GTK_OBJECT (data->section));
-		gtk_object_unref (GTK_OBJECT (data->group_launcher));
+		g_object_unref (data->section);
+		g_object_unref (data->group_launcher);
 		g_free (data->category);
 
 		for (temp = data->launcher_list; temp; temp = g_list_next (temp))
 		{
 			g_free (g_object_get_data (G_OBJECT (temp->data), TILE_EXEC_NAME));
-			gtk_object_unref (temp->data);
+			g_object_unref (temp->data);
 		}
 
 		g_list_free (data->launcher_list);

@@ -19,7 +19,6 @@
  */
 
 #include <gdk/gdk.h>
-#include <gdk/gdkwindow.h>
 #include <gdk/gdkx.h>
 #include <string.h>
 #include <X11/Xlib.h>

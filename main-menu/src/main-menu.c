@@ -24,6 +24,7 @@
 
 #include <glib.h>
 #include <panel-applet.h>
+#include <libgnomeui/libgnomeui.h>
 #include <string.h>
 
 #include "libslab-utils.h"

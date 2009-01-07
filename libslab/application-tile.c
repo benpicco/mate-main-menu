@@ -21,8 +21,8 @@
 #include "application-tile.h"
 
 #include <string.h>
+#include <glib.h>
 #include <glib/gi18n.h>
-#include <glib/gfileutils.h>
 #include <glib/gstdio.h>
 #include <gconf/gconf-client.h>
 #include <unistd.h>
@@ -345,12 +345,12 @@ application_tile_setup (ApplicationTile *this, const gchar *gconf_prefix)
 		"nameplate-image",         image,
 		"nameplate-header",        header,
 		"nameplate-subheader",     subheader,
-		"nameplate-tooltip",	   comment,
 		"context-menu",            context_menu,
 		"application-name",        name,
 		"application-description", desc,
 		"gconf-prefix",            gconf_prefix,
 		NULL);
+	gtk_widget_set_tooltip_text (GTK_WIDGET (this), comment);
 
 	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_APPS);
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);

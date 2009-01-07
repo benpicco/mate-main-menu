@@ -23,18 +23,11 @@
 #include <string.h>
 
 #include <gtk/gtk.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtktable.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtktogglebutton.h>
-#include <gtk/gtkentry.h>
 #include <panel-applet.h>
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
 #include <dirent.h>
+#include <stdlib.h>
 
 #include "app-shell.h"
 #include "app-shell-startup.h"

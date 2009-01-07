@@ -145,9 +145,9 @@ directory_tile_new (const gchar *in_uri, const gchar *title, const gchar *icon_n
 		"tile-uri",          uri,
 		"nameplate-image",   image,
 		"nameplate-header",  header,
-		"nameplate-tooltip", tooltip_text,
 		"context-menu",      context_menu,
 		NULL);
+	gtk_widget_set_tooltip_text (GTK_WIDGET (this), tooltip_text);
 
 	g_free (uri);
 	if (tooltip_text)

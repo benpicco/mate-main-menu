@@ -20,13 +20,7 @@
 
 #include "search-context-picker.h"
 
-#include <gtk/gtkarrow.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkimagemenuitem.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtkmenu.h>
-#include <gtk/gtkvseparator.h>
+#include <gtk/gtk.h>
 
 typedef struct
 {

@@ -18,12 +18,7 @@
  * Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include <gtk/gtkhbox.h>
-#include <gtk/gtkalignment.h>
-#include <gtk/gtklist.h>
-#include <gtk/gtklayout.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtktable.h>
+#include <gtk/gtk.h>
 #include <libgnome/gnome-desktop-item.h>
 
 #include "app-shell.h"

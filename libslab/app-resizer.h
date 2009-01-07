@@ -22,9 +22,7 @@
 #define __APP_RESIZER_H__
 
 #include <glib.h>
-#include <gtk/gtklayout.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtktable.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

@@ -21,7 +21,7 @@
 #ifndef __NLD_SEARCH_CONTEXT_PICKER_H__
 #define __NLD_SEARCH_CONTEXT_PICKER_H__
 
-#include <gtk/gtkbutton.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

@@ -148,7 +148,10 @@ hard_drive_status_tile_init (HardDriveStatusTile * tile)
 static void
 hard_drive_status_tile_finalize (GObject * g_object)
 {
-	/* FIXME */
+	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (HARD_DRIVE_STATUS_TILE (g_object));
+
+	g_object_unref (priv->gconf);
+
 	(*G_OBJECT_CLASS (hard_drive_status_tile_parent_class)->finalize) (g_object);
 }
 

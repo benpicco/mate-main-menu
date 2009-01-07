@@ -21,8 +21,7 @@
 #ifndef __NLD_SEARCH_BAR_H__
 #define __NLD_SEARCH_BAR_H__
 
-#include <gtk/gtkentry.h>
-#include <gtk/gtkvbox.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

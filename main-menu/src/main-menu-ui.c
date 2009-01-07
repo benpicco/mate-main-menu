@@ -441,7 +441,7 @@ main_menu_ui_finalize (GObject *g_obj)
 		g_object_unref (G_OBJECT (g_object_get_data (
 			G_OBJECT (priv->panel_buttons [i]), "double-click-detector")));
 
-		gtk_widget_unref (GTK_WIDGET (priv->panel_buttons [i]));
+		g_object_unref (priv->panel_buttons [i]);
 	}
 
 	libslab_gconf_notify_remove (priv->search_cmd_gconf_mntr_id);
@@ -505,7 +505,7 @@ create_panel_button (MainMenuUI *this)
 
 		button_parent = gtk_widget_get_parent (GTK_WIDGET (priv->panel_buttons [i]));
 
-		gtk_widget_ref (GTK_WIDGET (priv->panel_buttons [i]));
+		g_object_ref (priv->panel_buttons [i]);
 		gtk_container_remove (
 			GTK_CONTAINER (button_parent), GTK_WIDGET (priv->panel_buttons [i]));
 
@@ -2428,7 +2428,7 @@ panel_applet_change_background_cb (PanelApplet *applet, PanelAppletBackgroundTyp
 	gtk_widget_set_style (GTK_WIDGET (priv->panel_applet), NULL);
 	rc_style = gtk_rc_style_new ();
 	gtk_widget_modify_style (GTK_WIDGET (priv->panel_applet), rc_style);
-	gtk_rc_style_unref (rc_style);
+	g_object_unref (rc_style);
 
 	switch (type) {
 		case PANEL_NO_BACKGROUND:

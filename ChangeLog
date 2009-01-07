@@ -1,3 +1,23 @@
+2009-01-07  Magnus Boman  <captain.magnus@gmail.com>
+
+	reviewed by: Magnus Boman
+
+	* application-browser/src/application-browser.c:
+	* main-menu/src/eggaccelerators.h:
+	* main-menu/src/hard-drive-status-tile.c
+	(hard_drive_status_tile_finalize):
+	* main-menu/src/main-menu-ui.c (main_menu_ui_finalize),
+	(create_panel_button), (panel_applet_change_background_cb):
+	* main-menu/src/main-menu.c:
+	* main-menu/src/tomboykeybinder.c:
+	* nautilus-main-menu/nautilus-main-menu.c (get_menu_file_info),
+	(main_menu_callback):
+	- Use single GTK inclues - Fix bgo#551850#c2
+	  Patch by Cosimo Cecchi
+	- Compile with G*_DISABLE_DEPRECATED - Fixes bgo#551850#c3
+	  Patch by Cosimo Cecchi
+	- Directly include libgnomeui.h to build against new gnome-panel
+
 2009-01-06  Scott Reeves  <sreeves@novell.com>
 	* configure.in: post release bump to 0.9.13
 

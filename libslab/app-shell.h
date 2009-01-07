@@ -23,7 +23,6 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <gtk/gtkeventbox.h>
 #define GMENU_I_KNOW_THIS_IS_UNSTABLE
 #include <gmenu-tree.h>
 

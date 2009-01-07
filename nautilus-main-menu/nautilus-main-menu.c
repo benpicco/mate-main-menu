@@ -31,7 +31,6 @@
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
-#include <gconf/gconf-client.h>
 
 #include <string.h> /* for strcmp */
 #include <unistd.h> /* for chdir */
@@ -63,7 +62,6 @@ get_menu_file_info (NautilusFileInfo *file_info)
 	g_assert (file_info);
 
 	mime_type = nautilus_file_info_get_mime_type (file_info);
-	g_print ("Checking mime type %s\n", mime_type);
 	
 	if (strcmp (mime_type, "application/x-desktop") == 0) {
 		ret = FILE_INFO_LAUNCHER;
@@ -89,10 +87,6 @@ static void
 main_menu_callback (NautilusMenuItem *item,
 			NautilusFileInfo *file_info)
 {
-	static GConfClient *client;
-
-	client = gconf_client_get_default ();
-
 	switch (get_menu_file_info (file_info)) {
 		case FILE_INFO_LAUNCHER:
 			/* Add to the launcher favorites */
