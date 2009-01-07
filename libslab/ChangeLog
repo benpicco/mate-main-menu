@@ -1,6 +1,6 @@
-2009-01-07  Magnus Boman  <mboman@mblxsrv01>
+2009-01-07  Magnus Boman  <captain.magnus@gmail.com>
 
-	reviewed by: <delete if not using a buddy>
+	reviewed by: Magnus Boman
 
 	* app-resizer.c:
 	* app-resizer.h:
@@ -14,6 +14,10 @@
 	* search-bar.h:
 	* search-context-picker.c:
 	* search-context-picker.h:
+	- Use single GTK inclues - Fix bgo#551850#c2
+	  Patch by Cosimo Cecchi
+	- Compile with G*_DISABLE_DEPRECATED - Fixes bgo#551850#c3
+	  Patch by Cosimo Cecchi
 
 ==================== 0.9.12 ====================
 
