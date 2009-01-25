@@ -1,5 +1,4 @@
 [Desktop Entry]
-X-SuSE-translate=true
 _Name=Application Browser
 Exec=@BINDIR@/application-browser
 Terminal=false
