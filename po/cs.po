@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-19 20:20+0200\n"
-"PO-Revision-Date: 2008-10-19 17:38+0100\n"
+"POT-Creation-Date: 2009-02-01 17:45+0100\n"
+"PO-Revision-Date: 2009-01-27 20:15+0100\n"
 "Last-Translator: Adrian Guniš <andygun696@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:93
+#: ../application-browser/src/application-browser.c:86
 msgid "Application Browser"
 msgstr "Prohlížeč aplikací"
 
@@ -73,19 +73,19 @@ msgid ""
 "Applications category"
 msgstr "Maximální počet aplikací zobrazovaných v kategorii Nové aplikace"
 
-#: ../application-browser/src/application-browser.c:85
+#: ../application-browser/src/application-browser.c:78
 msgid "New Applications"
 msgstr "Nové aplikace"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Filter"
 msgstr "Filtr"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Groups"
 msgstr "Skupiny"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Application Actions"
 msgstr "Akce aplikací"
 
@@ -95,9 +95,10 @@ msgstr "Akce aplikací"
 msgid "<b>Start %s</b>"
 msgstr "<b>Spustit %s</b>"
 
-#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1056
-#: ../main-menu/src/main-menu-migration.c:93
-#: ../main-menu/src/main-menu-migration.c:217
+#: ../libslab/application-tile.c:391
+#: ../main-menu/src/main-menu-migration.c:131
+#: ../main-menu/src/main-menu-migration.c:255
+#: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Nápověda"
 
@@ -109,15 +110,15 @@ msgstr "Aktualizovat"
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Odebrat z oblíbených"
 
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Přidat do oblíbených"
 
@@ -129,7 +130,7 @@ msgstr "Odebrat z Programů při přihlášení"
 msgid "Add to Startup Programs"
 msgstr "Přidat do Programů při přihlášení"
 
-#: ../libslab/app-shell.c:750
+#: ../libslab/app-shell.c:753
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -140,54 +141,40 @@ msgstr ""
 "\n"
 " Nebyla nalezena žádná položka odpovídající filtru \"<b>%s</b>\".</span>"
 
-#: ../libslab/app-shell.c:900
+#: ../libslab/app-shell.c:903
 msgid "Other"
 msgstr "Ostatní"
 
-#: ../libslab/bookmark-agent.c:1058 ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Uzamknout obrazovku"
-
-#: ../libslab/bookmark-agent.c:1060 ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Odhlásit"
-
-#: ../libslab/bookmark-agent.c:1062 ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Vypnout"
-
 # 60704 AttribValues/label
-#: ../libslab/bookmark-agent.c:1087
+#: ../libslab/bookmark-agent.c:1077
 msgid "New Spreadsheet"
 msgstr "Nový sešit"
 
-#: ../libslab/bookmark-agent.c:1092
+#: ../libslab/bookmark-agent.c:1082
 msgid "New Document"
 msgstr "Nový dokument"
 
-#: ../libslab/bookmark-agent.c:1143
+#: ../libslab/bookmark-agent.c:1135
 msgid "Home"
 msgstr "Domovská složka"
 
-#: ../libslab/bookmark-agent.c:1148 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "Dokumenty"
 
-#: ../libslab/bookmark-agent.c:1154
+#: ../libslab/bookmark-agent.c:1146
 msgid "Desktop"
 msgstr "Plocha"
 
-#: ../libslab/bookmark-agent.c:1161
+#: ../libslab/bookmark-agent.c:1153
 msgid "File System"
 msgstr "Souborový systém"
 
-#: ../libslab/bookmark-agent.c:1165
+#: ../libslab/bookmark-agent.c:1157
 msgid "Network Servers"
 msgstr "Síťové servery"
 
-#: ../libslab/bookmark-agent.c:1194
+#: ../libslab/bookmark-agent.c:1186
 msgid "Search"
 msgstr "Hledat"
 
@@ -198,72 +185,72 @@ msgid "<b>Open</b>"
 msgstr "<b>Otevřít</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:230
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
 msgid "Rename..."
 msgstr "Přejmenovat..."
 
 #: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:244 ../libslab/document-tile.c:253
+#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
 msgid "Send To..."
 msgstr "Odeslat..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:279
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
 msgid "Move to Trash"
 msgstr "Přesunout do koše"
 
-#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:456
-#: ../libslab/document-tile.c:289 ../libslab/document-tile.c:826
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:974
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Jste si jisti, že chcete natrvalo smazat \"%s\"?"
 
-#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:975
+#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
 msgid "If you delete an item, it is permanently lost."
 msgstr "Pokud položku smažete, bude natrvalo ztracena."
 
-#: ../libslab/document-tile.c:191
+#: ../libslab/document-tile.c:192
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Otevřít pomocí \"%s\"</b>"
 
-#: ../libslab/document-tile.c:203
+#: ../libslab/document-tile.c:204
 msgid "Open with Default Application"
 msgstr "Otevřít ve výchozí aplikaci"
 
-#: ../libslab/document-tile.c:214
+#: ../libslab/document-tile.c:215
 msgid "Open in File Manager"
 msgstr "Otevřít ve správci souborů"
 
-#: ../libslab/document-tile.c:606
+#: ../libslab/document-tile.c:611
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:613
+#: ../libslab/document-tile.c:618
 msgid "%l:%M %p"
 msgstr "%H:%M"
 
-#: ../libslab/document-tile.c:621
+#: ../libslab/document-tile.c:626
 msgid "Today %l:%M %p"
 msgstr "Dnes, %H:%M"
 
-#: ../libslab/document-tile.c:631
+#: ../libslab/document-tile.c:636
 msgid "Yesterday %l:%M %p"
 msgstr "Včera, %H:%M"
 
-#: ../libslab/document-tile.c:643
+#: ../libslab/document-tile.c:648
 msgid "%a %l:%M %p"
 msgstr "%a, %H:%M"
 
-#: ../libslab/document-tile.c:651
+#: ../libslab/document-tile.c:656
 msgid "%b %d %l:%M %p"
 msgstr "%e. %b, %H:%M"
 
-#: ../libslab/document-tile.c:653
+#: ../libslab/document-tile.c:658
 msgid "%b %d %Y"
 msgstr "%e. %b %Y"
 
@@ -286,7 +273,7 @@ msgid "Default menu and application browser"
 msgstr "Výchozí nabídka a prohlížeč aplikací"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2383 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -307,26 +294,30 @@ msgid "_Open Menu"
 msgstr "_Otevřít nabídku"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr "soubor .desktop nástroje Network Manager"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr "soubor .desktop nástroje YaST2 network_devices"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:2
+#: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
 msgstr "soubor .desktop prohlížeče souborů"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:3
+#: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
 msgstr "soubor .desktop pro gnome-system-monitor"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:4
+#: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
 msgstr "soubor .desktop nástroje nastavení sítě"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:5
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr "cesta k souboru .desktop prohlížeče aplikací"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:6
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
@@ -334,7 +325,7 @@ msgstr ""
 "Toto je příkaz k vykonání při aktivaci položky \"Otevřít ve správci souborů"
 "\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
@@ -343,13 +334,13 @@ msgstr ""
 "Toto je příkaz k vykonání při aktivaci položky \"Otevřít ve správci souborů"
 "\". FILE_URI je nahrazeno uri adresáře odpovídajícího souboru."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
 msgstr "Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
@@ -358,11 +349,11 @@ msgstr ""
 "Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\". DIRNAME a "
 "BASENAME jsou nahrazeny odpovídajícími komponentami aktivované dlaždice."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "Toto je příkaz k vykonání při použití pole hledání."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
@@ -370,11 +361,11 @@ msgstr ""
 "Toto je příkaz k vykonání při použití pole hledání. SEARCH_STRING je "
 "nahrazeno zadaným textem k vyhledání."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
 msgstr "příkaz pro odinstalaci balíků"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -382,11 +373,11 @@ msgstr ""
 "příkaz pro odinstalaci balíků, PACKAGE_NAME je nahrazeno názvem balíku v "
 "příkazu"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
 msgstr "příkaz pro aktualizaci balíků"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -394,7 +385,7 @@ msgstr ""
 "příkaz pro aktualizaci balíků, PACKAGE_NAME je nahrazeno názvem balíku v "
 "příkazu"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list (in no particular order) of allowable file tables to show "
 "in the file area. possible values: 0 - show the user-specified or \"Favorite"
@@ -413,7 +404,7 @@ msgstr ""
 "\"Oblíbených\" adresářů nebo \"Míst\", a 5 - zobrazit tabulku nedávno "
 "otevřených adresářů nebo \"Míst\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
@@ -421,11 +412,11 @@ msgstr ""
 "obsahuje seznam souborů (včetně souborů .desktop), které mají být vyjmuty ze "
 "seznamů \"Naposledy použité aplikace\" a \"Nedávné soubory\""
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "určuje limit položek v souborové oblasti."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "determines the limit of items in the file-area. The number favorite items is "
 "not limited. This limit applies to the number of recent items, i.e. the "
@@ -440,22 +431,22 @@ msgstr ""
 "max_total_items - minimum nedávných položek min_recent_items, pak je tento "
 "limit ignorován."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
 msgstr ""
 "určuje minimální počet položek v sekci \"nedávné\" ze souborové oblasti."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
 msgstr "určuje, jaké typy souborů zobrazovat v souborové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
 msgstr "Nastavíte-li na hodnotu PRAVDA, zavírá se hlavní nabídka horlivěji"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
@@ -463,43 +454,43 @@ msgstr ""
 "Nastavíte-li na hodnotu PRAVDA, zavře se hlavní nabídka za těchto dalších "
 "okolností: aktivace dlaždice, aktivace hledání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
 msgstr "uzamknout konfiguraci souborové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
 msgstr "uzamknout stav odkazu na prohlížeč aplikací"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
 msgstr "uzamknout stav oblasti hledání"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
 msgstr "uzamknout stav stavové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
 msgstr "uzamknout stav systémové oblasti"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
 msgstr "uzamknout stav sekce uživatelem specifikovaných aplikací"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr "uzamknout stav sekce uživatelem specifikovaných adresářů"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
 msgstr "uzamknout stav sekce uživatelem specifikovaných dokumentů"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr "možné hodnoty = 0 [Aplikace], 1 [Dokumenty], 2 [Místa]"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
@@ -507,29 +498,29 @@ msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud má být odkaz na prohlížeč aplikací "
 "viditelný a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud má být oblast hledání viditelná a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud má být stavová oblast viditelná a aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud má být systémová oblast viditelná a "
 "aktivní."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
 "systémových položek."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
@@ -537,7 +528,7 @@ msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
 "uživatelem specifikovaných nebo \"Oblíbených\" aplikací."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
@@ -545,7 +536,7 @@ msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
 "uživatelem specifikovaných nebo \"Oblíbených\" adresářů nebo \"Míst\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
+#: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
@@ -557,36 +548,53 @@ msgstr ""
 msgid "_System Monitor"
 msgstr "S_ledování systému"
 
-#: ../main-menu/src/hard-drive-status-tile.c:212
+#: ../main-menu/src/hard-drive-status-tile.c:215
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:214
+#: ../main-menu/src/hard-drive-status-tile.c:217
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:216
+#: ../main-menu/src/hard-drive-status-tile.c:219
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:218
+#: ../main-menu/src/hard-drive-status-tile.c:221
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:239
+#: ../main-menu/src/hard-drive-status-tile.c:242
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "Domovská složka: %s volné / %s"
 
-#: ../main-menu/src/main-menu-migration.c:161
+#: ../main-menu/src/main-menu-migration.c:135
+#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/etc/system-items.xbel.in.h:3
+msgid "Logout"
+msgstr "Odhlásit"
+
+#: ../main-menu/src/main-menu-migration.c:139
+#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/etc/system-items.xbel.in.h:4
+msgid "Shutdown"
+msgstr "Vypnout"
+
+#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/etc/system-items.xbel.in.h:2
+msgid "Lock Screen"
+msgstr "Uzamknout obrazovku"
+
+#: ../main-menu/src/main-menu-migration.c:199
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2384
+#: ../main-menu/src/main-menu-ui.c:2392
 msgid "The GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -595,65 +603,65 @@ msgid "Network: None"
 msgstr "Síť: žádná"
 
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:207
 msgid "Click to configure network"
 msgstr "Kliknutím nastavíte síť"
 
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Networ_k: None"
 msgstr "_Síť: žádná"
 
-#: ../main-menu/src/network-status-tile.c:207
-#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:215
 #: ../main-menu/src/network-status-tile.c:232
+#: ../main-menu/src/network-status-tile.c:240
 #, c-format
 msgid "Connected to: %s"
 msgstr "Připojen k: %s"
 
-#: ../main-menu/src/network-status-tile.c:210
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Networ_k: Wireless"
 msgstr "_Síť: bezdrátová"
 
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:223
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:219
+#: ../main-menu/src/network-status-tile.c:227
 msgid "Networ_k: Wired"
 msgstr "_Síť: drátová"
 
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:235
 msgid "Networ_k: GSM"
 msgstr "_Síť: GSM"
 
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:243
 msgid "Networ_k: CDMA"
 msgstr "_Síť: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:336
+#: ../main-menu/src/network-status-tile.c:346
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Bezdrátový Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:341
+#: ../main-menu/src/network-status-tile.c:351
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:346
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:356
+#: ../main-menu/src/network-status-tile.c:361
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Mobilní Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
 #: ../main-menu/src/network-status-tile.c:365
+#: ../main-menu/src/network-status-tile.c:375
 #, c-format
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -714,15 +722,15 @@ msgstr "Stav"
 msgid "System"
 msgstr "Systém"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Přidat aktuální spouštěč k oblíbeným"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Přidat aktuální dokument k oblíbeným"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Odebrat aktuální dokument z oblíbených"
