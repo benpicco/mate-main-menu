@@ -3,13 +3,13 @@
 # Copyright (C) 2002, 2003 SuSE Linux AG.
 # Copyright (C) 1999, 2000, 2001 SuSE GmbH.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-02 02:23+0000\n"
-"PO-Revision-Date: 2008-09-09 19:22+0200\n"
+"POT-Creation-Date: 2009-03-16 20:09+0100\n"
+"PO-Revision-Date: 2009-03-16 20:09+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:93
+#: ../application-browser/src/application-browser.c:86
 msgid "Application Browser"
 msgstr "Aplikazioen arakatzailea"
 
@@ -55,13 +55,17 @@ msgstr "Abiarazteko ekintza landutakoan shell-a itxiko den edo ez adierazten du"
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr "Gehitzeko edo kentzeko ekintza landutakoan shell-a itxiko den edo ez adierazten du"
+msgstr ""
+"Gehitzeko edo kentzeko ekintza landutakoan shell-a itxiko den edo ez "
+"adierazten du"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
-msgstr "Bertsio-berritzeko edo desinstalatzeko ekintza landutakoan shell-a itxiko den edo ez adierazten du"
+msgstr ""
+"Bertsio-berritzeko edo desinstalatzeko ekintza landutakoan shell-a itxiko "
+"den edo ez adierazten du"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
@@ -71,23 +75,21 @@ msgstr "Aplikazio berrien gehien. kopurua"
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr ""
-"Aplikazioen gehienezko kopurua 'Aplikazio berriak' kategorian "
-"bistaratzeko"
+msgstr "Aplikazioen gehienezko kopurua 'Aplikazio berriak' kategorian bistaratzeko"
 
-#: ../application-browser/src/application-browser.c:85
+#: ../application-browser/src/application-browser.c:78
 msgid "New Applications"
 msgstr "Aplikazio berriak"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Filter"
 msgstr "Iragazkia"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Groups"
 msgstr "Taldeak"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:83
 msgid "Application Actions"
 msgstr "Aplikazioen ekintza"
 
@@ -97,9 +99,10 @@ msgstr "Aplikazioen ekintza"
 msgid "<b>Start %s</b>"
 msgstr "<b>Abiarazi %s</b>"
 
-#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
-#: ../main-menu/src/main-menu-migration.c:93
-#: ../main-menu/src/main-menu-migration.c:217
+#: ../libslab/application-tile.c:391
+#: ../main-menu/src/main-menu-migration.c:131
+#: ../main-menu/src/main-menu-migration.c:255
+#: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Laguntza"
 
@@ -112,15 +115,15 @@ msgstr "Bertsio-berritu"
 msgid "Uninstall"
 msgstr "Desinstalatu"
 
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:760
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Kendu gogokoetatik"
 
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:762
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Gehitu gogokoei"
 
@@ -132,7 +135,7 @@ msgstr "Kendu abioko programetatik"
 msgid "Add to Startup Programs"
 msgstr "Gehitu abioko programei"
 
-#: ../libslab/app-shell.c:750
+#: ../libslab/app-shell.c:753
 #, c-format
 msgid ""
 "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
@@ -143,212 +146,118 @@ msgstr ""
 "\n"
 "\"<b>%s</b>\" iragakia ez dator bat inolako elementuekin.</span>"
 
-#: ../libslab/app-shell.c:900
+#: ../libslab/app-shell.c:903
 msgid "Other"
 msgstr "Betelakoa"
 
-#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Blokeatu pantaila"
-
-#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Amaitu saioa"
-
-#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Itzali"
-
-#: ../libslab/bookmark-agent.c:1090
+#: ../libslab/bookmark-agent.c:1077
 msgid "New Spreadsheet"
 msgstr "Kalkulu-orri berria"
 
-#: ../libslab/bookmark-agent.c:1095
+#: ../libslab/bookmark-agent.c:1082
 msgid "New Document"
 msgstr "Dokumentu berria"
 
-#: ../libslab/bookmark-agent.c:1147
+#: ../libslab/bookmark-agent.c:1135
 msgid "Home"
 msgstr "Karpeta nagusia"
 
-#: ../libslab/bookmark-agent.c:1152 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "Dokumentuak"
 
-#: ../libslab/bookmark-agent.c:1158
+#: ../libslab/bookmark-agent.c:1146
 msgid "Desktop"
 msgstr "Mahaigaina"
 
-#: ../libslab/bookmark-agent.c:1165
+#: ../libslab/bookmark-agent.c:1153
 msgid "File System"
 msgstr "Fitxategi-sistema"
 
 # include/network/lan/address.ycp:40
-#: ../libslab/bookmark-agent.c:1169
+#: ../libslab/bookmark-agent.c:1157
 msgid "Network Servers"
 msgstr "Sareko zerbitzariak"
 
-#: ../libslab/bookmark-agent.c:1198
+#: ../libslab/bookmark-agent.c:1186
 msgid "Search"
 msgstr "Bilatu"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:171
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>Ireki</b>"
 
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:242
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
 msgid "Rename..."
 msgstr "Izena aldatu..."
 
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:256 ../libslab/document-tile.c:265
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
 msgid "Send To..."
 msgstr "Bidali honi..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:291
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
 msgid "Move to Trash"
 msgstr "Bota zakarrontzira"
 
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:301 ../libslab/document-tile.c:873
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1045
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Ziur zaude \"%s\" betirako ezabatzea nahi duzula?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1049
+#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
 msgid "If you delete an item, it is permanently lost."
 msgstr "Hautatutako elementu guztiak behin betiko ezabatzen ditu."
 
-#: ../libslab/document-tile.c:203
+#: ../libslab/document-tile.c:192
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>Ireki honekin: %s</b>"
 
-#: ../libslab/document-tile.c:215
+#: ../libslab/document-tile.c:204
 msgid "Open with Default Application"
 msgstr "Ireki aplikazio lehenetsiarekin"
 
-#: ../libslab/document-tile.c:226
+#: ../libslab/document-tile.c:215
 msgid "Open in File Manager"
 msgstr "Ireki fitxategi-kudeatzailean"
 
-#: ../libslab/document-tile.c:656
+#: ../libslab/document-tile.c:611
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:663
+#: ../libslab/document-tile.c:618
 msgid "%l:%M %p"
 msgstr "%l:%M %p"
 
-#: ../libslab/document-tile.c:671
+#: ../libslab/document-tile.c:626
 msgid "Today %l:%M %p"
 msgstr "Gaur %l:%M %p"
 
-#: ../libslab/document-tile.c:681
+#: ../libslab/document-tile.c:636
 msgid "Yesterday %l:%M %p"
 msgstr "Atzo %l:%M %p"
 
-#: ../libslab/document-tile.c:693
+#: ../libslab/document-tile.c:648
 msgid "%a %l:%M %p"
 msgstr "%a %l:%M %p"
 
-#: ../libslab/document-tile.c:701
+#: ../libslab/document-tile.c:656
 msgid "%b %d %l:%M %p"
 msgstr "%b %d %l:%M %p"
 
-#: ../libslab/document-tile.c:703
+#: ../libslab/document-tile.c:658
 msgid "%b %d %Y"
 msgstr "%Y %b %d"
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "'%2$s' elementuaren ustekabeko '%1$s'atributua"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "'%2$s' elementuaren '%1$s' atributua ez da aurkitu"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Ustekabeko '%s' etiketa, '%s' espero zen"
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Ustekabeko '%s' etiketa '%s'(r)en barruan"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-#, c-format
-msgid "No valid bookmark file found in data dirs"
-msgstr "Ezin izan da baliozko laster-marken fitxategia aurkitu datuen direktorioan"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "'%s' URIaren laster-marka badago lehendik ere"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "Ez da '%s' URIaren laster-markarik aurkitu"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Ez da MIME motarik definitu '%s' URIaren laster-markan"
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "'%s' URIaren laster-markan ez dago bandera pribaturik definituta"
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr "'%s' URIaren laster-markan ez dago talderik ezarrita"
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "'%s' izeneko aplikaziorik ez du erregistratu laster-markarik '%s'(e)n"
 
 # clients/inst_resize_ui.ycp:637
 # clients/inst_resize_ui.ycp:637
@@ -372,7 +281,7 @@ msgid "Default menu and application browser"
 msgstr "Menu eta aplikazioen arakatzaile lehenetsia"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
@@ -393,62 +302,70 @@ msgid "_Open Menu"
 msgstr "_Ireki menua"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr ".desktop fitxategia sareko kudeatzailearen editorearen tresnarentzako"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr ".desktop fitxategia YaST2-eko 'network_devices' tresnarentzako"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:2
+#: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
 msgstr ".desktop fitxategia fitxategi arakatzailearentzako"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:3
+#: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
 msgstr ".desktop fitxategia 'gnome-system-monitor'-entzako"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:4
+#: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
 msgstr ".desktop fitxategia sarea konfiguratzeko tresnarentzako"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:5
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr ".desktop bide-izena aplikazioen arakatzailearentzako"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:6
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
-msgstr "Komando hau exekutatuko da \"Ireki fitxategi-kudeatzailea\" menu-elementua aktibatzen denean."
+msgstr ""
+"Komando hau exekutatuko da \"Ireki fitxategi-kudeatzailea\" menu-elementua "
+"aktibatzen denean."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"Komando hau exekutatuko da \"Ireki fitxategi-kudeatzailea\" menu-elementua aktibatzen denean. "
-"FILE_URI ordeztua izango da aktibatutako fitxategiaren direktorioaren izenari dagokion "
-"URIarekin."
+"Komando hau exekutatuko da \"Ireki fitxategi-kudeatzailea\" menu-elementua "
+"aktibatzen denean. FILE_URI ordeztua izango da aktibatutako fitxategiaren "
+"direktorioaren izenari dagokion URIarekin."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr "Komando hau exekutatuko da \"Bidali honi...\" menu-elementua aktibatzen denean."
+msgstr ""
+"Komando hau exekutatuko da \"Bidali honi...\" menu-elementua aktibatzen "
+"denean."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Komando hau exekutatuko da \"Bidali honi...\" menu-elementua aktibatzen denean. "
-"DIRNAME eta BASENAME ordeztuak izango dira aktibatutako lauzari dagozkion "
-"osagaiekin."
+"Komando hau exekutatuko da \"Bidali honi...\" menu-elementua aktibatzen "
+"denean. DIRNAME eta BASENAME ordeztuak izango dira aktibatutako lauzari "
+"dagozkion osagaiekin."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "Komando hau exekutatuko da bilaketako sarrera erabiltzen denean."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
@@ -456,23 +373,23 @@ msgstr ""
 "Komando hau exekutatuko da bilaketako sarrera erabiltzen denean. "
 "SEARCH_STRING ordeztua izango da sartutako bilaketako testuarekin."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
 msgstr "komandoa paketeak desinstalatzeko"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
-"komandoa paketeak desinstalatzeko. PACKAGE_NAME ordeztua izango da "
-"komandoko paketearen izenarekin."
+"komandoa paketeak desinstalatzeko. PACKAGE_NAME ordeztua izango da komandoko "
+"paketearen izenarekin."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
 msgstr "komandoa paketeak bertsio-berritzeko"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -480,7 +397,7 @@ msgstr ""
 "komandoa paketeak bertsio-berritzeko. PACKAGE_NAME ordeztua izango da "
 "komandoko paketearen izenarekin."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list (in no particular order) of allowable file tables to show "
 "in the file area. possible values: 0 - show the user-specified or \"Favorite"
@@ -491,26 +408,27 @@ msgid ""
 "or \"Places\" table."
 msgstr ""
 "fitxategi-arean bistaratuko diren fitxategi-taula erabilgarrien zerrenda "
-"(ordena zehatzik gabe) du. Balio erabilgarriak: 0 - erakutsi erabiltzaileak zehaztutako "
-"\"Gogoko\" aplikazioen taula; 1 - erakutsi azken aldian erabilitako aplikazioen taula; "
-"2 - erakutsi erabiltzaileak zehaztutako \"Gogoko\" dokumentuen taula; 3 - "
-"erakutsi azken aldian erabilitako dokumentuen taula; 4 - "
-"erakutsi erabiltzaileak zehaztutako \"Gogoko\" direktorioen edo \"Lekuak\" taula; "
-"eta 5 - erakutsi azken aldian erabilitako \"Gogoko\" direktorioen edo \"Lekuak\" taula."
+"(ordena zehatzik gabe) du. Balio erabilgarriak: 0 - erakutsi erabiltzaileak "
+"zehaztutako \"Gogoko\" aplikazioen taula; 1 - erakutsi azken aldian "
+"erabilitako aplikazioen taula; 2 - erakutsi erabiltzaileak zehaztutako "
+"\"Gogoko\" dokumentuen taula; 3 - erakutsi azken aldian erabilitako "
+"dokumentuen taula; 4 - erakutsi erabiltzaileak zehaztutako \"Gogoko\" "
+"direktorioen edo \"Lekuak\" taula; eta 5 - erakutsi azken aldian erabilitako "
+"\"Gogoko\" direktorioen edo \"Lekuak\" taula."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
-"\"Azken erabilitako aplikazioak\" eta \"Azken fitxategiak\" zerrendetatik kanpo "
-"egongo diren fitxategien (.desktop fitxategiak baita ere) zerrenda du"
+"\"Azken erabilitako aplikazioak\" eta \"Azken fitxategiak\" zerrendetatik "
+"kanpo egongo diren fitxategien (.desktop fitxategiak baita ere) zerrenda du"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "fitxategi-areako elementuen muga zehazten du."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "determines the limit of items in the file-area. The number favorite items is "
 "not limited. This limit applies to the number of recent items, i.e. the "
@@ -518,28 +436,30 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
-"fitxategi-areako elementuen muga zehazten du. Gogoko elementuen kopurua "
-"ez dago mugatua. Muga honek azken elementuei aplikatzen zaie, adib. "
-"bistaratutako azken elementuen kopurua 'max_total_items'-en balioarekin "
-"dago mugatua (gogoko elementuen kopurua). Gogoko elementuen kopuruak "
-"max_total_items gainditzen badu,  min_recent_items mugari ez ikusi "
-"egingo zaio."
+"fitxategi-areako elementuen muga zehazten du. Gogoko elementuen kopurua ez "
+"dago mugatua. Muga honek azken elementuei aplikatzen zaie, adib. "
+"bistaratutako azken elementuen kopurua 'max_total_items'-en balioarekin dago "
+"mugatua (gogoko elementuen kopurua). Gogoko elementuen kopuruak "
+"max_total_items gainditzen badu,  min_recent_items mugari ez ikusi egingo "
+"zaio."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "fitxategi-areako \"azkenak\" atalean dauden elemenuen gutxieneko kopurua zehazten du."
+msgstr ""
+"fitxategi-areako \"azkenak\" atalean dauden elemenuen gutxieneko kopurua "
+"zehazten du."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
 msgstr "fitxategi-arean bistaratuko diren fitxategi motak zehazten ditu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
 msgstr "TRUE (egia) bada, menu nagusia ixteko irrikitan dago"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
@@ -547,126 +467,144 @@ msgstr ""
 "TRUE (egia) bada, menu nagusia itxi egingo da baldintza gehigarri hauetan: "
 "lauza aktibatutakoan, bilaketa aktibatutakoan"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
 msgstr "fitxategi-arearen konfigurazioko blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
 msgstr "aplikazioen arakatzailearen estekaren egoerako blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
 msgstr "bilaketa-areako egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
 msgstr "egoera-areako egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
 msgstr "sistema-areako egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
 msgstr "erabiltzaileak zehaztutako aplikazioen sekzioko egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr "erabiltzaileak zehaztutako direktorioen sekzioko egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
 msgstr "erabiltzaileak zehaztutako dokumentuen sekzioko egoeraren blokeoa"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr "balio erabilgarriak = 0 [aplikazioak], 1 [dokumentuak], 2 [lekuak]"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
-"ezarri TRUE (egia) gisa aplikazioen arakatzailearen esteka ikusgai eta aktibo "
-"egon behar badu."
+"ezarri TRUE (egia) gisa aplikazioen arakatzailearen esteka ikusgai eta "
+"aktibo egon behar badu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
 msgstr "ezarri TRUE (egia) gisa bilaketako area ikusgai eta aktibo egon behar badu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
 msgstr "ezarri TRUE (egia) gisa egoerako area ikusgai eta aktibo egon behar badu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
 msgstr "ezarri TRUE (egia) gisa sistemako area ikusgai eta aktibo egon behar badu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
 "ezarri TRUE (egia) gisa erabiltzailea baimenduta badago sistemako elementuen "
 "zerrenda eraldatzeko."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
-"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak zehaztutako edo \"Gogokoak\" aplikazioen "
-"zerrenda eraldatzeko."
-
-#: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" directories or \"Places\"."
-msgstr ""
-"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak zehaztutako edo \"Gogokoak\" "
-"direktorioen edo ·\"Lekuak\" zerrenda eraldatzeko."
+"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak "
+"zehaztutako edo \"Gogokoak\" aplikazioen zerrenda eraldatzeko."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak "
+"zehaztutako edo \"Gogokoak\" direktorioen edo ·\"Lekuak\" zerrenda "
+"eraldatzeko."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
 msgstr ""
-"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak zehaztutako edo \"Gogokoak\" dokumentuen "
-"zerrenda eraldatzeko."
+"ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak "
+"zehaztutako edo \"Gogokoak\" dokumentuen zerrenda eraldatzeko."
 
 #: ../main-menu/src/hard-drive-status-tile.c:102
 msgid "_System Monitor"
 msgstr "Sistemako monitorea"
 
-#: ../main-menu/src/hard-drive-status-tile.c:212
+#: ../main-menu/src/hard-drive-status-tile.c:215
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:214
+#: ../main-menu/src/hard-drive-status-tile.c:217
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:216
+#: ../main-menu/src/hard-drive-status-tile.c:219
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:218
+#: ../main-menu/src/hard-drive-status-tile.c:221
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:239
+#: ../main-menu/src/hard-drive-status-tile.c:242
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "Karpeta nagusia: %s libre / %s"
 
-#: ../main-menu/src/main-menu-migration.c:161
+#: ../main-menu/src/main-menu-migration.c:135
+#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/etc/system-items.xbel.in.h:3
+msgid "Logout"
+msgstr "Amaitu saioa"
+
+#: ../main-menu/src/main-menu-migration.c:139
+#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/etc/system-items.xbel.in.h:4
+msgid "Shutdown"
+msgstr "Itzali"
+
+#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/etc/system-items.xbel.in.h:2
+msgid "Lock Screen"
+msgstr "Blokeatu pantaila"
+
+#: ../main-menu/src/main-menu-migration.c:199
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2392
 msgid "The GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
@@ -679,34 +617,34 @@ msgstr "Sarea: bat ere ez"
 # include/ui/summary.ycp:84
 # modules/Summary.ycp:89
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:207
 msgid "Click to configure network"
 msgstr "Egin klik sarea konfiguratzeko"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Networ_k: None"
 msgstr "_Sarea: bat ere ez"
 
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
-#: ../main-menu/src/network-status-tile.c:207
-#: ../main-menu/src/network-status-tile.c:224
+#: ../main-menu/src/network-status-tile.c:215
 #: ../main-menu/src/network-status-tile.c:232
+#: ../main-menu/src/network-status-tile.c:240
 #, c-format
 msgid "Connected to: %s"
 msgstr "Honekin konektatuta: %s"
 
 # include/network/lan/address.ycp:40
-#: ../main-menu/src/network-status-tile.c:210
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Networ_k: Wireless"
 msgstr "_Sarea: haririk gabekoa"
 
 #
 # include/runlevel/ui.ycp:489
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:223
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet erabiltzen (%s)"
@@ -714,46 +652,46 @@ msgstr "Ethernet erabiltzen (%s)"
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
-#: ../main-menu/src/network-status-tile.c:219
+#: ../main-menu/src/network-status-tile.c:227
 msgid "Networ_k: Wired"
 msgstr "_Sarea: hariduna"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:235
 msgid "Networ_k: GSM"
 msgstr "_Sarea: GSM"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:243
 msgid "Networ_k: CDMA"
 msgstr "_Sarea: CDMA"
 
 # include/network/modem/dialogs.ycp:145
-#: ../main-menu/src/network-status-tile.c:336
+#: ../main-menu/src/network-status-tile.c:346
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Haririk gabeko Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:341
+#: ../main-menu/src/network-status-tile.c:351
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Haridun Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:346
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:356
+#: ../main-menu/src/network-status-tile.c:361
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Ethernet mugikorra (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
 #: ../main-menu/src/network-status-tile.c:365
+#: ../main-menu/src/network-status-tile.c:375
 #, c-format
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -818,16 +756,16 @@ msgstr "Egoera"
 msgid "System"
 msgstr "Sistema"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Gehitu uneko abiarazlea gogokoei"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Gehitu uneko dokumentua gogokoei"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Kendu uneko dokumentua gogokoetatik"
 
