@@ -5,15 +5,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-28 23:43+0000\n"
-"PO-Revision-Date: 2008-05-18 13:55+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"POT-Creation-Date: 2008-12-30 00:37+0000\n"
+"PO-Revision-Date: 2009-04-10 03:21+0200\n"
 "Last-Translator: Mark Krapivner <mark125@gmail.com>\n"
 "Language-Team: Hebrew <i18n@suse.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Hebrew\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:93
@@ -49,32 +50,20 @@ msgid "Indicates whether to close the shell when a start action is performed"
 msgstr "Indicates whether to close the shell when a start action is performed"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
-msgid ""
-"Indicates whether to close the shell when an add or remove action is "
-"performed"
-msgstr ""
-"Indicates whether to close the shell when an add or remove action is "
-"performed"
+msgid "Indicates whether to close the shell when an add or remove action is performed"
+msgstr "Indicates whether to close the shell when an add or remove action is performed"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
-msgid ""
-"Indicates whether to close the shell when an upgrade or uninstall action is "
-"performed"
-msgstr ""
-"Indicates whether to close the shell when an upgrade or uninstall action is "
-"performed"
+msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
+msgstr "Indicates whether to close the shell when an upgrade or uninstall action is performed"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
 msgstr "Max number of New Applications"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid ""
-"The maximum number of applications that will be displayed in the New "
-"Applications category"
-msgstr ""
-"The maximum number of applications that will be displayed in the New "
-"Applications category"
+msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgstr "The maximum number of applications that will be displayed in the New Applications category"
 
 #: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
@@ -93,45 +82,48 @@ msgid "Application Actions"
 msgstr "פעולות יישומים"
 
 #. make start action
-#: ../libslab/application-tile.c:369
+#: ../libslab/application-tile.c:372
 #, c-format
 msgid "<b>Start %s</b>"
 msgstr "<b>התחל את %s</b>"
 
-#: ../libslab/application-tile.c:388 ../libslab/bookmark-agent.c:1059
+#: ../libslab/application-tile.c:391
+#: ../libslab/bookmark-agent.c:1056
 #: ../main-menu/src/main-menu-migration.c:93
 #: ../main-menu/src/main-menu-migration.c:217
 msgid "Help"
 msgstr "עזרה"
 
-#: ../libslab/application-tile.c:435
+#: ../libslab/application-tile.c:438
 msgid "Upgrade"
 msgstr "שדרוג"
 
 # IT
-#: ../libslab/application-tile.c:450
+#: ../libslab/application-tile.c:453
 msgid "Uninstall"
 msgstr "הסרה"
 
-#: ../libslab/application-tile.c:777 ../libslab/document-tile.c:741
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../libslab/application-tile.c:780
+#: ../libslab/document-tile.c:710
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../nautilus-main-menu/nautilus-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "הסר מהמועדפים"
 
-#: ../libslab/application-tile.c:779 ../libslab/document-tile.c:743
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../libslab/application-tile.c:782
+#: ../libslab/document-tile.c:712
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "הוסף למועדפים"
 
-#: ../libslab/application-tile.c:864
+#: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
-msgstr ""
+msgstr "הסרה מיישומי ההפעלה"
 
-#: ../libslab/application-tile.c:866
+#: ../libslab/application-tile.c:869
 msgid "Add to Startup Programs"
-msgstr ""
+msgstr "הוספה ליישומי ההפעלה"
 
 #: ../libslab/app-shell.c:750
 #, c-format
@@ -148,11 +140,13 @@ msgstr ""
 msgid "Other"
 msgstr "אחר"
 
-#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
+#: ../libslab/bookmark-agent.c:1058
+#: ../main-menu/src/main-menu-migration.c:159
 msgid "Lock Screen"
 msgstr "נעילת מסך"
 
-#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
+#: ../libslab/bookmark-agent.c:1060
+#: ../main-menu/src/main-menu-migration.c:97
 #: ../main-menu/src/main-menu-migration.c:219
 msgid "Logout"
 msgstr "התנתקות"
@@ -160,46 +154,48 @@ msgstr "התנתקות"
 # NO
 #  Headline above bar graph that displays current partition size
 #  Headline above bar graph that displays current windows partition size
-#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
+#: ../libslab/bookmark-agent.c:1062
+#: ../main-menu/src/main-menu-migration.c:101
 #: ../main-menu/src/main-menu-migration.c:221
 msgid "Shutdown"
 msgstr "כיבוי"
 
-#: ../libslab/bookmark-agent.c:1089
+#: ../libslab/bookmark-agent.c:1091
 msgid "New Spreadsheet"
 msgstr "גיליון נתונים חדש"
 
-#: ../libslab/bookmark-agent.c:1093
+#: ../libslab/bookmark-agent.c:1096
 msgid "New Document"
 msgstr "מסמך חדש"
 
-#: ../libslab/bookmark-agent.c:1145
+#: ../libslab/bookmark-agent.c:1149
 msgid "Home"
 msgstr "בית"
 
-#: ../libslab/bookmark-agent.c:1150 ../main-menu/src/slab-window.glade.h:3
+#: ../libslab/bookmark-agent.c:1154
+#: ../main-menu/src/slab-window.glade.h:3
 msgid "Documents"
 msgstr "מסמכים"
 
-#: ../libslab/bookmark-agent.c:1156
+#: ../libslab/bookmark-agent.c:1160
 msgid "Desktop"
 msgstr "שולחן עבודה"
 
-#: ../libslab/bookmark-agent.c:1163
+#: ../libslab/bookmark-agent.c:1167
 msgid "File System"
 msgstr "מערכת קבצים"
 
 #  Frame title
-#: ../libslab/bookmark-agent.c:1167
+#: ../libslab/bookmark-agent.c:1171
 msgid "Network Servers"
 msgstr "שרתי רשת"
 
-#: ../libslab/bookmark-agent.c:1196
+#: ../libslab/bookmark-agent.c:1200
 msgid "Search"
 msgstr "חיפוש"
 
 #. make open with default action
-#: ../libslab/directory-tile.c:170
+#: ../libslab/directory-tile.c:171
 #, c-format
 msgid "<b>Open</b>"
 msgstr "<b>פתח</b>"
@@ -209,157 +205,85 @@ msgstr "<b>פתח</b>"
 #  This text will be replaced with the current values
 #  for each partition to be resized (device and new size).
 #. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:228
+#: ../libslab/directory-tile.c:190
+#: ../libslab/document-tile.c:230
 msgid "Rename..."
 msgstr "שינוי שם..."
 
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:242 ../libslab/document-tile.c:251
+#: ../libslab/directory-tile.c:204
+#: ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:244
+#: ../libslab/document-tile.c:253
 msgid "Send To..."
 msgstr "שלח אל..."
 
 #. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:277
+#: ../libslab/directory-tile.c:228
+#: ../libslab/document-tile.c:279
 msgid "Move to Trash"
 msgstr "העבר לאשפה"
 
 #  main dialog: Button Delete partition
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:287 ../libslab/document-tile.c:854
+#: ../libslab/directory-tile.c:238
+#: ../libslab/directory-tile.c:456
+#: ../libslab/document-tile.c:289
+#: ../libslab/document-tile.c:826
 msgid "Delete"
 msgstr "מחק"
 
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1026
+#: ../libslab/directory-tile.c:532
+#: ../libslab/document-tile.c:974
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "למחוק את \"%s\" לצמיתות?"
 
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1030
+#: ../libslab/directory-tile.c:533
+#: ../libslab/document-tile.c:975
 msgid "If you delete an item, it is permanently lost."
 msgstr "אם אתה מוחק פריט, הוא אבוד לנצח."
 
-#: ../libslab/document-tile.c:189
+#: ../libslab/document-tile.c:191
 #, c-format
 msgid "<b>Open with \"%s\"</b>"
 msgstr "<b>פתח עם \"%s\"</b>"
 
-#: ../libslab/document-tile.c:201
+#: ../libslab/document-tile.c:203
 msgid "Open with Default Application"
 msgstr "פתח עם יישום ברירת המחדל"
 
-#: ../libslab/document-tile.c:212
+#: ../libslab/document-tile.c:214
 msgid "Open in File Manager"
 msgstr "פתח במנהל קבצים"
 
-#: ../libslab/document-tile.c:637
+#: ../libslab/document-tile.c:606
 msgid "?"
 msgstr "?"
 
-#: ../libslab/document-tile.c:644
+#: ../libslab/document-tile.c:613
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
-#: ../libslab/document-tile.c:652
+#: ../libslab/document-tile.c:621
 msgid "Today %l:%M %p"
-msgstr ""
+msgstr "היום %l:%M %p"
 
-#: ../libslab/document-tile.c:662
+#: ../libslab/document-tile.c:631
 msgid "Yesterday %l:%M %p"
-msgstr ""
+msgstr "אתמול %l:%M %p"
 
-#: ../libslab/document-tile.c:674
+#: ../libslab/document-tile.c:643
 msgid "%a %l:%M %p"
-msgstr ""
+msgstr "%a %l:%M %p"
 
-#: ../libslab/document-tile.c:682
+#: ../libslab/document-tile.c:651
 msgid "%b %d %l:%M %p"
-msgstr ""
+msgstr "%b %d %l:%M %p"
 
-#: ../libslab/document-tile.c:684
+#: ../libslab/document-tile.c:653
 msgid "%b %d %Y"
-msgstr ""
+msgstr "%b %d %Y"
 
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-#, c-format
-msgid "No valid bookmark file found in data dirs"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr ""
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr ""
-
-#  label text 
+#  label text
 #: ../libslab/search-bar.c:255
 msgid "Find Now"
 msgstr "חפש עכשיו"
@@ -372,20 +296,21 @@ msgstr "<b>פתח %s</b>"
 #: ../libslab/system-tile.c:141
 #, c-format
 msgid "Remove from System Items"
-msgstr ""
+msgstr "הסרה מפריטי המערכת"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr ""
+msgstr "דפדפן היישומים ותפריט ברירת המחדל"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2390 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386
+#: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
-msgstr ""
+msgstr "התפריט הראשי של GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr ""
+msgstr "מחולל התפריט הראשי של GNOME"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
@@ -400,248 +325,168 @@ msgid "_Open Menu"
 msgstr "_פתח תפריט"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr ".desktop file for the Network Manager editor utility"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr ".desktop file for the YaST2 network_devices utility"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:2
+#: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
 msgstr ".desktop file for the file browser"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:3
+#: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
 msgstr ".desktop file for the gnome-system-monitor"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:4
+#: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
 msgstr ".desktop file for the net config tool"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:5
+#: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
 msgstr ".desktop path for the application browser"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:6
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated."
-msgstr ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated."
-
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
-"of the activated file."
-msgstr ""
-"This is the command to execute when the \"Open in File Manager\" menu item "
-"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
-"of the activated file."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
+msgstr "This is the command to execute when the \"Open in File Manager\" menu item is activated."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated."
-msgstr ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated."
+msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
+msgstr "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated. DIRNAME and BASENAME are replaced with the corresponding "
-"components of the activated tile."
-msgstr ""
-"This is the command to execute when the \"Send To...\" menu item is "
-"activated. DIRNAME and BASENAME are replaced with the corresponding "
-"components of the activated tile."
+msgid "This is the command to execute when the \"Send To...\" menu item is activated."
+msgstr "This is the command to execute when the \"Send To...\" menu item is activated."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+msgstr "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "This is the command to execute when the search entry is used."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
-msgid ""
-"This is the command to execute when the search entry is used. SEARCH_STRING "
-"is replaced with the entered search text."
-msgstr ""
-"This is the command to execute when the search entry is used. SEARCH_STRING "
-"is replaced with the entered search text."
-
 #: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+msgstr "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
 msgstr "command to uninstall packages"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
-msgid ""
-"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-msgstr ""
-"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
 msgstr "command to upgrade packages"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
-msgid ""
-"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-msgstr ""
-"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
-"package in the command"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:16
-msgid ""
-"contains the list (in no particular order) of allowable file tables to show "
-"in the file area. possible values: 0 - show the user-specified or \"Favorite"
-"\" applications table, 1 - show the recently used applications table, 2 - "
-"show the user-specified or \"Favorite\" documents table, 3 - show the "
-"recently used documents table, 4 - show the user-specified of \"Favorite\" "
-"directories or \"Places\" table, and 5 - show the recently used directories "
-"or \"Places\" table."
-msgstr ""
-"contains the list (in no particular order) of allowable file tables to show "
-"in the file area. possible values: 0 - show the user-specified or \"Favorite"
-"\" applications table, 1 - show the recently used applications table, 2 - "
-"show the user-specified or \"Favorite\" documents table, 3 - show the "
-"recently used documents table, 4 - show the user-specified of \"Favorite\" "
-"directories or \"Places\" table, and 5 - show the recently used directories "
-"or \"Places\" table."
+msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
+msgstr "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid ""
-"contains the list of files (including .desktop files) to be excluded from "
-"the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr ""
-"contains the list of files (including .desktop files) to be excluded from "
-"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
+msgstr "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "determines the limit of items in the file-area."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
-msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
-"number of recent items displayed is limited to max_total_items - the number "
-"of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
-msgstr ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
-"number of recent items displayed is limited to max_total_items - the number "
-"of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
-
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid ""
-"determines the minimum number of items in the \"recent\" section of the file-"
-"area."
-msgstr ""
-"determines the minimum number of items in the \"recent\" section of the file-"
-"area."
+msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
+msgstr "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgstr "determines the minimum number of items in the \"recent\" section of the file-area."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
 msgstr "determines which types of files to display in the file area"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
 msgstr "if true, main menu is more anxious to close"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid ""
-"if true, main menu will close under these additional conditions: tile is "
-"activated, search activated"
-msgstr ""
-"if true, main menu will close under these additional conditions: tile is "
-"activated, search activated"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
+msgstr "if true, main menu will close under these additional conditions: tile is activated, search activated"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
 msgstr "lock-down configuration of the file area"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
+#: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
 msgstr "lock-down status for the application browser link"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:26
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
 msgstr "lock-down status for the search area"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
 msgstr "lock-down status for the status area"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
 msgstr "lock-down status for the system area"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
 msgstr "lock-down status for the user-specified apps section"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr "lock-down status for the user-specified dirs section"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
 msgstr "lock-down status for the user-specified docs section"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
-msgid ""
-"set to true if the link to the application browser should be visible and "
-"active."
-msgstr ""
-"set to true if the link to the application browser should be visible and "
-"active."
-
 #: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid "set to true if the link to the application browser should be visible and active."
+msgstr "set to true if the link to the application browser should be visible and active."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
 msgstr "set to true if the search area should be visible and active."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
 msgstr "set to true if the status area should be visible and active."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
 msgstr "set to true if the system area should be visible and active."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr "set to true if the user is allowed to modify the list of system items."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
-msgid ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" applications."
-msgstr ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" applications."
-
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" directories or \"Places\"."
-msgstr ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" directories or \"Places\"."
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
+msgstr "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" documents."
-msgstr ""
-"set to true if the user is allowed to modify the list of user-specified or "
-"\"Favorite\" documents."
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+msgstr "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
+msgstr "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
 
 #: ../main-menu/src/hard-drive-status-tile.c:102
 msgid "_System Monitor"
@@ -650,34 +495,33 @@ msgstr "_מנטר המערכת"
 #: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
-msgstr ""
+msgstr "%.1fG"
 
 #: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
-msgstr ""
+msgstr "%.1fM"
 
 #: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
-msgstr ""
+msgstr "%.1fK"
 
 #: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
-msgstr ""
+msgstr "%.1fb"
 
 #: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
-msgstr ""
-"תיקיית הבית: %s פנוי / %s"
+msgstr "תיקיית הבית: %s פנוי / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2391
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "התפריט הראשי של GNOME"
 
@@ -687,51 +531,67 @@ msgstr "רשת: ללא"
 
 #  PushButton label
 #: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:207
 msgid "Click to configure network"
 msgstr "לחץ כדי להגדיר את הרשת"
 
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Networ_k: None"
 msgstr "רש_ת: ללא"
 
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:232
+#: ../main-menu/src/network-status-tile.c:240
 #, c-format
 msgid "Connected to: %s"
 msgstr "מחובר אל: %s"
 
 #  Frame title
-#: ../main-menu/src/network-status-tile.c:210
+#: ../main-menu/src/network-status-tile.c:218
 msgid "Networ_k: Wireless"
 msgstr "רש_ת: אלחוטית"
 
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:223
 #, c-format
 msgid "Using ethernet (%s)"
-msgstr ""
+msgstr "משתמש באתרנט (%s)"
 
 #  Selection box item
-#: ../main-menu/src/network-status-tile.c:219
+#: ../main-menu/src/network-status-tile.c:227
 msgid "Networ_k: Wired"
 msgstr "רש_ת: חוטית"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: GSM"
+msgstr "רש_ת: GSM"
+
+#: ../main-menu/src/network-status-tile.c:243
+msgid "Networ_k: CDMA"
+msgstr "רש_ת: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:346
 #, c-format
 msgid "Wireless Ethernet (%s)"
-msgstr ""
+msgstr "אתרנט אלחוטי (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:351
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr ""
+msgstr "‏אתרנט קווי (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:356
+#: ../main-menu/src/network-status-tile.c:361
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "‏אתרנט נייד (%s)"
+
+#: ../main-menu/src/network-status-tile.c:365
+#: ../main-menu/src/network-status-tile.c:375
 #, c-format
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -793,18 +653,18 @@ msgstr "סטטוס"
 msgid "System"
 msgstr "מערכת"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:121
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "הוספת המשגר הנוכחי למועדפים"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
-msgstr ""
+msgstr "הוספת המסמך הנוכחי למועדפים"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:131
+#: ../nautilus-main-menu/nautilus-main-menu.c:136
 msgid "Remove the current document from favorites"
-msgstr ""
+msgstr "הסרת המסמך הנוכחי מהמועדפים"
 
 #, fuzzy
 #~ msgid "Control Center"
@@ -822,3 +682,4 @@ msgstr ""
 #, fuzzy
 #~ msgid "Install Software"
 #~ msgstr "התקנת מקור"
+
