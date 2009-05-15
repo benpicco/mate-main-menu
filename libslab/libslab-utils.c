@@ -199,7 +199,7 @@ libslab_gnome_desktop_item_open_help (GnomeDesktopItem *item)
 	if (doc_path) {
 		help_uri = g_strdup_printf ("ghelp:%s", doc_path);
 
-		gnome_url_show (help_uri, & error);
+		gtk_show_uri (NULL, help_uri, gtk_get_current_event_time (), &error);
 
 		if (error) {
 			g_warning ("error opening %s [%s]\n", help_uri, error->message);

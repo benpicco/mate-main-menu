@@ -277,7 +277,7 @@ open_desktop_item_help (GnomeDesktopItem * desktop_item)
 
 		error = NULL;
 
-		gnome_url_show (help_uri, &error);
+		gtk_show_uri (NULL, help_uri, gtk_get_current_event_time (), &error);
 
 		if (error)
 		{
