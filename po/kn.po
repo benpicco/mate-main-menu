@@ -1,0 +1,690 @@
+# translation of gnome-main-menu.HEAD.po to Kannada
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-main-menu.HEAD\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"POT-Creation-Date: 2009-03-16 18:03+0000\n"
+"PO-Revision-Date: 2009-05-19 23:42+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:86
+msgid "Application Browser"
+msgstr "ಅನ್ವಯ ವೀಕ್ಷಕ"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+msgid "Exit shell on add or remove action performed"
+msgstr "ಸೇರಿಸು ಅಥವ ತೆಗೆದುಹಾಕುವ ಕ್ರಿಯೆಯು ನಡೆಸಲ್ಪಟ್ಟಾಗ ಶೆಲ್‍ನಿಂದ ನಿರ್ಗಮಿಸು"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+msgid "Exit shell on help action performed"
+msgstr "ಸಹಾಯ ಕ್ರಿಯೆಯು ನಡೆಸಲ್ಪಟ್ಟಾಗ ಶೆಲ್‍ನಿಂದ ನಿರ್ಗಮಿಸು"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+msgid "Exit shell on start action performed"
+msgstr "ಆರಂಭ ಕ್ರಿಯೆಯು ನಡೆಸಲ್ಪಟ್ಟಾಗ ಶೆಲ್‍ನಿಂದ ನಿರ್ಗಮಿಸು"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr "ನವೀಕರಣ ಅಥವ ಅನುಸ್ಥಾಪಿಸಲಾಗಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕಿದಾಗ ಶೆಲ್‍ನಿಂದ ನಿರ್ಗಮಿಸು"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "ಈಗಿರುವ  .desktop ಕಡತಗಳ ಕಡತದ ಹೆಸರು"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "ಹೊಸ ಅನ್ವಯಗಳ ಗರಿಷ್ಟ ಸಂಖ್ಯೆ"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr ""
+
+#: ../application-browser/src/application-browser.c:78
+msgid "New Applications"
+msgstr "ಹೊಸ ಅನ್ವಯಗಳು"
+
+#: ../application-browser/src/application-browser.c:83
+msgid "Filter"
+msgstr "ಸೋಸುಗ(ಫಿಲ್ಟರ್)"
+
+#: ../application-browser/src/application-browser.c:83
+msgid "Groups"
+msgstr "ಸಮೂಹಗಳು"
+
+#: ../application-browser/src/application-browser.c:83
+msgid "Application Actions"
+msgstr ""
+
+#. make start action
+#: ../libslab/application-tile.c:372
+#, c-format
+msgid "<b>Start %s</b>"
+msgstr "<b>%s ಅನ್ನು ಆರಂಭಿಸು</b>"
+
+#: ../libslab/application-tile.c:391
+#: ../main-menu/src/main-menu-migration.c:131
+#: ../main-menu/src/main-menu-migration.c:255
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "ನೆರವು"
+
+#: ../libslab/application-tile.c:438
+msgid "Upgrade"
+msgstr "ನವೀಕರಿಸು"
+
+#: ../libslab/application-tile.c:453
+msgid "Uninstall"
+msgstr "ಅನುಸ್ಥಾಪಿಸಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕು"
+
+#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
+
+#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
+
+#: ../libslab/application-tile.c:867
+msgid "Remove from Startup Programs"
+msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
+
+#: ../libslab/application-tile.c:869
+msgid "Add to Startup Programs"
+msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳಿಗೆ ಸೇರಿಸು"
+
+#: ../libslab/app-shell.c:753
+#, c-format
+msgid ""
+"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+"\n"
+" Your filter \"<b>%s</b>\" does not match any items.</span>"
+msgstr ""
+"<span size=\"large\"><b>ಯಾವುದೆ ಹೋಲಿಕೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.</b> </span><span>\n"
+"\n"
+" ನಿಮ್ಮ ಶೋಧಕ \"<b>%s</b>\" ವು ಯಾವುದೆ ಅಂಶಗಳನ್ನು ಹೋಲಿಸಲಿಲ್ಲ.</span>"
+
+#: ../libslab/app-shell.c:903
+msgid "Other"
+msgstr "ಇತರೆ"
+
+#: ../libslab/bookmark-agent.c:1077
+msgid "New Spreadsheet"
+msgstr "ಹೊಸ ಸ್ಪ್ರೆಡ್-ಶೀಟ್"
+
+#: ../libslab/bookmark-agent.c:1082
+msgid "New Document"
+msgstr "ಹೊಸ ದಸ್ತಾವೇಜು"
+
+#: ../libslab/bookmark-agent.c:1135
+msgid "Home"
+msgstr "ನೆಲೆ"
+
+#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "ದಸ್ತಾವೇಜುಗಳು"
+
+#: ../libslab/bookmark-agent.c:1146
+msgid "Desktop"
+msgstr "ಗಣಕತೆರೆ"
+
+#: ../libslab/bookmark-agent.c:1153
+msgid "File System"
+msgstr "ಕಡತ ವ್ಯವಸ್ಥೆ"
+
+#: ../libslab/bookmark-agent.c:1157
+msgid "Network Servers"
+msgstr "ಜಾಲಬಂಧ ಪರಿಚಾರಕಗಳು"
+
+#: ../libslab/bookmark-agent.c:1186
+msgid "Search"
+msgstr "ಹುಡುಕು"
+
+#. make open with default action
+#: ../libslab/directory-tile.c:171
+#, c-format
+msgid "<b>Open</b>"
+msgstr "<b>ತೆಗೆ</b>"
+
+#. make rename action
+#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
+msgid "Rename..."
+msgstr "ಹೆಸರನ್ನು ಬದಲಾಯಿಸು..."
+
+#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
+#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
+msgid "Send To..."
+msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು..."
+
+#. make move to trash action
+#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
+msgid "Move to Trash"
+msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸು"
+
+#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
+#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
+msgid "Delete"
+msgstr "ಅಳಿಸು"
+
+#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
+#, c-format
+msgid "Are you sure you want to permanently delete \"%s\"?"
+msgstr "\"%s\" ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
+
+#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
+msgid "If you delete an item, it is permanently lost."
+msgstr "ನೀವು ಒಂದು ಅಂಶವನ್ನು ಅಳಿಸಿ ಹಾಕಿದರೆ, ಅದು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
+
+#: ../libslab/document-tile.c:192
+#, c-format
+msgid "<b>Open with \"%s\"</b>"
+msgstr "<b>\"%s\" ನೊಂದಿಗೆ ತೆರೆ</b>"
+
+#: ../libslab/document-tile.c:204
+msgid "Open with Default Application"
+msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಅನ್ವಯದೊಂದಿಗೆ ತೆರೆ"
+
+#: ../libslab/document-tile.c:215
+msgid "Open in File Manager"
+msgstr "ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿ ತೆರೆ"
+
+#: ../libslab/document-tile.c:611
+msgid "?"
+msgstr "?"
+
+#: ../libslab/document-tile.c:618
+msgid "%l:%M %p"
+msgstr "%l:%M %p"
+
+#: ../libslab/document-tile.c:626
+msgid "Today %l:%M %p"
+msgstr "ಇಂದು %l:%M %p"
+
+#: ../libslab/document-tile.c:636
+msgid "Yesterday %l:%M %p"
+msgstr "ನಿನ್ನೆ %l:%M %p"
+
+#: ../libslab/document-tile.c:648
+msgid "%a %l:%M %p"
+msgstr "%a %l:%M %p"
+
+#: ../libslab/document-tile.c:656
+msgid "%b %d %l:%M %p"
+msgstr "%b %d %l:%M %p"
+
+#: ../libslab/document-tile.c:658
+msgid "%b %d %Y"
+msgstr "%b %d %Y"
+
+#: ../libslab/search-bar.c:255
+msgid "Find Now"
+msgstr "ಈಗ ಹುಡುಕು"
+
+#: ../libslab/system-tile.c:128
+#, c-format
+msgid "<b>Open %s</b>"
+msgstr "<b>%s ಅನ್ನು ತೆರೆ</b>"
+
+#: ../libslab/system-tile.c:141
+#, c-format
+msgid "Remove from System Items"
+msgstr "ಗಣಕ ಅಂಶಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಮೆನು ಹಾಗು ಅನ್ವಯ ವೀಕ್ಷಕ"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
+msgid "GNOME Main Menu"
+msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "GNOME ಮುಖ್ಯ ಮೆನು ಫ್ಯಾಕ್ಟರಿ"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "ಮುಖ್ಯ ಪರಿವಿಡಿ"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "ಮೆನುವನ್ನು ತೆರೆ(_O)"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the file browser"
+msgstr "ವೀಕ್ಷಕ ಕಡತಕ್ಕಾಗಿನ .desktop ಕಡತ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "gnome-system-monitor ಗಾಗಿನ .desktop ಕಡತ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop file for the net config tool"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid "This is the command to execute when the search entry is used."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid "command to uninstall packages"
+msgstr "ಅನುಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳನ್ನು ತೆಗೆದು ಹಾಕಲು ಆಜ್ಞೆ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid "command to upgrade packages"
+msgstr "ಪ್ಯಾಕೇಜುಗಳನ್ನು ನವೀಕರಿಸಲು ಆಜ್ಞೆ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "determines the limit of items in the file-area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "determines which types of files to display in the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "if true, main menu is more anxious to close"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "lock-down configuration of the file area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the application browser link"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "lock-down status for the search area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down status for the status area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the system area"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the user-specified apps section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the user-specified dirs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "lock-down status for the user-specified docs section"
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳು = 0 [ಅನ್ವಯಗಳು], 1 [ದಸ್ತಾವೇಜುಗಳು], 2 [ಸ್ಥಳಗಳು]"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "set to true if the search area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "set to true if the status area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the system area should be visible and active."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr ""
+
+#: ../main-menu/src/hard-drive-status-tile.c:102
+msgid "_System Monitor"
+msgstr "ವ್ಯವಸ್ಥೆಯ ಮೇಲ್ವಿಚಾರಕ(_S)"
+
+#: ../main-menu/src/hard-drive-status-tile.c:215
+#, c-format
+msgid "%.1fG"
+msgstr "%.1fG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:217
+#, c-format
+msgid "%.1fM"
+msgstr "%.1fM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:219
+#, c-format
+msgid "%.1fK"
+msgstr "%.1fK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:221
+#, c-format
+msgid "%.1fb"
+msgstr "%.1fb"
+
+#: ../main-menu/src/hard-drive-status-tile.c:242
+#, c-format
+msgid "Home: %s Free / %s"
+msgstr "ನೆಲೆ: %s ಮುಕ್ತ / %s"
+
+#: ../main-menu/src/main-menu-migration.c:135
+#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/etc/system-items.xbel.in.h:3
+msgid "Logout"
+msgstr "ನಿರ್ಗಮನ"
+
+#: ../main-menu/src/main-menu-migration.c:139
+#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/etc/system-items.xbel.in.h:4
+msgid "Shutdown"
+msgstr "ಮುಚ್ಚು"
+
+#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/etc/system-items.xbel.in.h:2
+msgid "Lock Screen"
+msgstr "ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡು"
+
+#: ../main-menu/src/main-menu-migration.c:199
+msgid "gnome-lockscreen"
+msgstr "gnome-lockscreen"
+
+#: ../main-menu/src/main-menu-ui.c:2392
+msgid "The GNOME Main Menu"
+msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
+
+#: ../main-menu/src/network-status-tile.c:91
+msgid "Network: None"
+msgstr "ಜಾಲಬಂಧ: ಯಾವುದೂ ಇಲ್ಲ"
+
+#: ../main-menu/src/network-status-tile.c:94
+#: ../main-menu/src/network-status-tile.c:207
+msgid "Click to configure network"
+msgstr "ಜಾಲಬಂಧವನ್ನು ಸಂರಚಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ"
+
+#: ../main-menu/src/network-status-tile.c:206
+msgid "Networ_k: None"
+msgstr "ಜಾಲಬಂಧ(_k): ಯಾವುದೂ ಇಲ್ಲ"
+
+#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:232
+#: ../main-menu/src/network-status-tile.c:240
+#, c-format
+msgid "Connected to: %s"
+msgstr "ಇದಕ್ಕೆ ಸಂಪರ್ಕಿತಗೊಂಡಿದೆ: %s"
+
+#: ../main-menu/src/network-status-tile.c:218
+msgid "Networ_k: Wireless"
+msgstr "ಜಾಲಬಂಧ(_k): ವೈರ್ಲೆಸ್"
+
+#: ../main-menu/src/network-status-tile.c:223
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "ಎತರ್ನೆಟ್‌ ಅನ್ನು ಬಳಸಿಕೊಂಡು (%s)"
+
+#: ../main-menu/src/network-status-tile.c:227
+msgid "Networ_k: Wired"
+msgstr "ಜಾಲಬಂಧ(_k): ತಂತಿಯ"
+
+#: ../main-menu/src/network-status-tile.c:235
+msgid "Networ_k: GSM"
+msgstr "ಜಾಲಬಂಧ(_k):: GSM"
+
+#: ../main-menu/src/network-status-tile.c:243
+msgid "Networ_k: CDMA"
+msgstr "ಜಾಲಬಂಧ(_k):: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:346
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "ವೈರ್ಲೆಸ್ ಎತರ್ನೆಟ್ (%s)"
+
+#: ../main-menu/src/network-status-tile.c:351
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "ತಂತಿಯ ಎತರ್ನೆಟ್ (%s)"
+
+#: ../main-menu/src/network-status-tile.c:356
+#: ../main-menu/src/network-status-tile.c:361
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "ಮೊಬೈಲ್ ಎತರ್ನೆಟ್ (%s)"
+
+#: ../main-menu/src/network-status-tile.c:365
+#: ../main-menu/src/network-status-tile.c:375
+#, c-format
+msgid "Unknown"
+msgstr "ಗೊತ್ತಿರದ"
+
+#: ../main-menu/src/network-status-tile.c:373
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d Mb/s"
+
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "ಅನ್ವಯಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "ಗಣಕ"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನ ಅನ್ವಯಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನ ದಸ್ತಾವೇಜುಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನ ಸ್ಥಳಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "ಇನ್ನಷ್ಟು ಅನ್ವಯಗಳು..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "ಇನ್ನಷ್ಟು ದಸ್ತಾವೇಜುಗಳು..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "ಇನ್ನಷ್ಟು ಸ್ಥಳಗಳು..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "ಸ್ಥಳಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "ಇತ್ತೀಚಿನ ಅನ್ವಯಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "ಇತ್ತೀಚಿನ ದಸ್ತಾವೇಜುಗಳು"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "ಹುಡುಕು:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "ಸ್ಥಿತಿ"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "ವ್ಯವಸ್ಥೆ"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
+msgid "Add the current launcher to favorites"
+msgstr ""
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+msgid "Add the current document to favorites"
+msgstr "ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜುಗಳನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+msgid "Remove the current document from favorites"
+msgstr "ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
+
