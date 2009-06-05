@@ -1,14 +1,14 @@
-# translation of gnome-main-menu.HEAD.gu.po to Gujarati
+# translation of gu.po to Gujarati
 # Marathi message file for YaST2 (@memory@).
 # Copyright (C) 2007 SUSE Linux Products GmbH.
 #
 # Sweta Kothari <swkothar@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.HEAD.gu\n"
+"Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
 "POT-Creation-Date: 2008-12-30 00:37+0000\n"
-"PO-Revision-Date: 2009-03-02 12:59+0530\n"
+"PO-Revision-Date: 2009-06-05 16:49+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -112,13 +112,13 @@ msgstr "બિનસ્થાપિત કરો"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 #: ../nautilus-main-menu/nautilus-main-menu.c:135
 msgid "Remove from Favorites"
-msgstr ""
+msgstr "પસંદીદાઓ માંથી દૂર કરો"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 msgid "Add to Favorites"
-msgstr ""
+msgstr "પસંદીદાઓમાં ઉમેરો"
 
 #: ../libslab/application-tile.c:867
 msgid "Remove from Startup Programs"
@@ -215,11 +215,11 @@ msgstr "કાઢી નાંખો"
 #: ../libslab/directory-tile.c:532 ../libslab/document-tile.c:974
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr ""
+msgstr "શું તમે ખરેખર કાયમ માટે \"%s\" ને કાઢી નાંખવા માંગો છો?"
 
 #: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:975
 msgid "If you delete an item, it is permanently lost."
-msgstr ""
+msgstr "જો તમે વસ્તુને કાઢશો તો, તે કાયમ માટે ગુમ થઇ જશે."
 
 #: ../libslab/document-tile.c:191
 #, c-format
@@ -433,23 +433,23 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
-msgstr ""
+msgstr "ફાઇલ વિસ્તારનું lock-down રૂપરેખાંકન"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
-msgstr ""
+msgstr "કાર્યક્રમ બ્રાઉઝર કડી માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
-msgstr ""
+msgstr "શોધ વિસ્તાર માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
-msgstr ""
+msgstr "પરિસ્થિતિ વિસ્તાર માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
-msgstr ""
+msgstr "સિસ્ટમ વિસ્તાર માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
@@ -534,7 +534,7 @@ msgstr "%.1fb"
 #: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
-msgstr ""
+msgstr "ઘર: %s મફત / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
 msgid "gnome-lockscreen"
@@ -674,10 +674,10 @@ msgstr ""
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
-msgstr ""
+msgstr "પસંદીદામાં હાલનાં દસ્તાવેજને ઉમેરો"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:131
 #: ../nautilus-main-menu/nautilus-main-menu.c:136
 msgid "Remove the current document from favorites"
-msgstr ""
+msgstr "પસંદીદાઓમાંથી હાલનાં દસ્તાવેજને દૂર કરો"
 
