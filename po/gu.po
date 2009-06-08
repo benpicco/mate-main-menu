@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
 "POT-Creation-Date: 2008-12-30 00:37+0000\n"
-"PO-Revision-Date: 2009-06-05 16:49+0530\n"
+"PO-Revision-Date: 2009-06-08 12:31+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -24,19 +24,19 @@ msgstr "કાર્યક્રમ બ્રાઉઝર"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
-msgstr ""
+msgstr "ઉમેરવાની અથવા દૂર કરવાની ક્રિયા કરેલ પર શેલ માંથી બહાર નીકળો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 msgid "Exit shell on help action performed"
-msgstr ""
+msgstr "મદદ ક્રિયા કરેલ પર શેલમાંથી બહાર નીકળો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 msgid "Exit shell on start action performed"
-msgstr ""
+msgstr "શરૂ થવાની ક્રિયા કરેલ પર શેલ માંથી બહાર નીકળો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
+msgstr "સુધારો અથવા બિનસ્થાપિત ક્રિયા કરેલ પર શેલ માંથી બહાર નીકળો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
@@ -44,23 +44,23 @@ msgstr "હાલની .desktop ફાઇલો નું ફાઇલ ના�
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "જ્યારે મદદ ક્રિયા કરેલ હોય ત્યારે ક્યાંતો શેલને બંધ કરવાનું નક્કી કરો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
+msgstr "જ્યારે શરૂ કરવાની ક્રિયા કરેલ હોય ત્યારે ક્યાંતો શેલને બંધ કરવાનું નક્કી કરો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr ""
+msgstr "જ્યારે ઉમેરવાની અથવા દૂર કરવાની ક્રિયા કરેલ હોય ત્યારે ક્યાંતો શેલ ને બંધ કરવાનું નક્કી કરો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
-msgstr ""
+msgstr "જ્યારે સુધારવાનું અથવા બિનસ્થાપિત કરવાની ક્રિયા થયેલ હોય ત્યારે ક્યાંતો શેલને બંધ કરવાનું નક્કી કરો"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
@@ -70,7 +70,7 @@ msgstr "નવા કાર્યક્રમોનાં મહત્તમ ન
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr ""
+msgstr "કાર્યક્રમોનો મહત્તમ નંબર કે જે નવા કાર્યક્રમો વર્ગ માં દર્શાવેલ હશે"
 
 #: ../application-browser/src/application-browser.c:85
 msgid "New Applications"
@@ -135,6 +135,9 @@ msgid ""
 "\n"
 " Your filter \"<b>%s</b>\" does not match any items.</span>"
 msgstr ""
+"<span size=\"large\"><b>બંધબેસતાઓ શોધાયા નથી.</b> </span><span>\n"
+"\n"
+" તમારુ ફિલ્ટર \"<b>%s</b>\" કોઇપણ વસ્તુઓને બંધબેસતુ નથી.</span>"
 
 #: ../libslab/app-shell.c:900
 msgid "Other"
@@ -319,7 +322,7 @@ msgstr "gnome-system-monitor માટે .desktop ફાઇલ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
-msgstr ""
+msgstr "નેટ રૂપરેખાંકન સાધન માટે .desktop ફાઇલ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
@@ -329,7 +332,7 @@ msgstr "કાર્યક્રમ બ્રાઉઝર માટે .desktop 
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
-msgstr ""
+msgstr "ચાલુ કરવા માટે આ આદેશ છે જ્યારે \"ફાઇલ વ્યવસ્થાપક માં ખોલો\" મેનુ વસ્તુ સક્રિય થયેલ હોય."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -337,12 +340,14 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
+"ચાલુ કરવા માટે આ આદેશ છે જ્યારે \"ફાઇલ વ્યવસ્થાપક માં ખોલો\" મેનુ વસ્તુ સક્રિય થયેલ હોય. "
+"FILE_URI એ સક્રિય થયેલ ફાઇલની ડિરેક્ટરી નામમાં સંકળાયેલ uri સાથે બદલાયેલ છે."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr ""
+msgstr "ચાલુ કરવા માટે આ આદેશ છે જ્યારે \"માં મોકલો...\" મેનુ વસ્તુ એ સક્રિય થયેલ હોય."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
@@ -350,6 +355,8 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
+"ચાલુ કરવા માટે આ આદેશ છે જ્યારે \"માં મોકલો...\" મેનુ વસ્તુ એ સક્રિય થયેલ હોય. "
+"DIRNAME અને BASENAME એ સક્રિય થયેલ ફાઇલનાં સંકળાયેલ ઘટકો સાથે બદલાયેલ છે."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
@@ -360,6 +367,8 @@ msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
+"ચાલુ કરવા માટે આ આદેશ છે જ્યારે શોધ પ્રવેશ વપરાયેલ છે. SEARCH_STRING "
+"એ પ્રવેશેલ શોધ લખાણ સાથે બદલાયેલ છે."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
@@ -369,7 +378,7 @@ msgstr "પેકેજો ને બિનસ્થાપિત કરવા �
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr ""
+msgstr "પેકેજોને બિનસ્થાપિત કરવા માટે આદેશ, PACKAGE_NAME એ આદેશમાં પેકેજનું નામ દ્દારા બદલાયેલ છે"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
@@ -379,7 +388,7 @@ msgstr "પેકેજો ને સુધારવા માટે આદે�
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr ""
+msgstr "પેકેજોને સુધારવા માટે આદેશ, PACKAGE_NAME એ આદેશમાં પેકેજનું નામ દ્દારા બદલાયેલ છે"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -391,12 +400,20 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
+"ફાઇલ વિસ્તારમાં બતાવવા માટે પરવાનગી મળેલ ફાઇલ કોષ્ટકોની યાદી (ચોક્કસ ક્રમમાં નથી) સમાવે છે. "
+"શક્ય કિંમતો 0 - વપરાશકર્તા -સ્પષ્ટ થયેલ અથવા અથવા \"પસંદીદા"
+"\" કાર્યક્રમો કોષ્ટકને બતાવો, 1 - તાજેતરનાં વપરાયેલ કાર્યક્રમો કોષ્ટકને બતાવો, 2 -વપરાશકર્તા-સ્પષ્ટ થયેલ અથવા "
+"\"પસંદીદા\" દસ્તાવેજો કોષ્ટકને બતાવો, 3 - તાજેતરનાં વપરાયેલ દસ્તાવેજો કોષ્ટકને બતાવો, 4 - \"પસંદીદા\" "
+"ડિરેક્ટરીઓ અથવા \"જગ્યાઓ\" કોષ્ટકની વપરાશકર્તા-સ્પષ્ટ થયેલને બતાવો, અને 5 - તાજેતરની વપરાયેલ ડિરેક્ટરીઓ "
+"અથવા \"જગ્યાઓ\" કોષ્ટકને બતાવો."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
+"\"તાજેતરમાં વપરાયેલ કાર્યક્રમો\" અને \"તાજેતરની ફાઇલો\" ની યાદીઓ માંથી બહાર કાઢવા માટે "
+"ફાઇલો (.desktop ફાઇલોને સમાવી રહ્યા છે) ની યાદીને સમાવે છે"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
@@ -410,12 +427,16 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
+"ફાઇલ -વિસ્તારમાં વસ્તુઓની મર્યાદાને નક્કી કરો. પસંદીદા વસ્તુઓની સંખ્યા મર્યાદિત નથી. "
+"મર્યાદા એ તાજેતરની વસ્તુઓની સંખ્યાને લાગુ પડે છે. એટલે કે. દર્શાવેલ તાજેતરની વસ્તુઓની સંખ્યાએ "
+"max_total_items માં મર્યાદિત થયેલ છે - પસંદીદા વસ્તુઓની સંખ્યા. જો પસંદીદા વસ્તુઓની સંખ્યા એ "
+"max_total_items ને વધારે છે - આ મર્યાદા અવગણે છે કરતા min_recent_items."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr ""
+msgstr "ફાઇલ-વિસ્તારનાં \"તાજેતરનાં\" વિભાગમાં  વસ્તુઓની ન્યૂનત્તમ સંખ્યાને નક્કી કરો."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
@@ -429,7 +450,7 @@ msgstr "જો true હોય તો, મુખ્ય મેનુ એ બંધ
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
-msgstr ""
+msgstr "જો true હોય તો, મુખ્ય મેનુ એ આ વધારાની શરતો હેઠળ બંધ થશે: ટાઇલ સક્રિય થયેલ છે, શોધ સક્રિય થયેલ છે"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
@@ -453,15 +474,15 @@ msgstr "સિસ્ટમ વિસ્તાર માટે lock-down પર�
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
-msgstr ""
+msgstr "વપરાશકર્તા-સ્પષ્ટ થયેલ કાર્યક્રમો વિભાગ માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
-msgstr ""
+msgstr "વપરાશકર્તા-સ્પષ્ટ થયેલ ડિરેક્ટરીઓ વિભાગ માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
-msgstr ""
+msgstr "વપરાશકર્તા-સ્પષ્ટ થયેલ દસ્તાવેજો વિભાગ માટે lock-down પરિસ્થિતિ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
@@ -494,18 +515,24 @@ msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
+"true ને સુયોજિત કરો જો વપરાશકર્તા ને વપરાશકર્તા-સ્પષ્ટ થયેલ યાદી અથવા \"પસંદીદા\" કાર્યક્રમોની યાદીને "
+"બદલવા માટે પરવાનગી આપેલ છે."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
+"true ને સુયોજિત કરો જો વપરાશકર્તા ને વપરાશકર્તા-સ્પષ્ટ થયેલ યાદી અથવા \"પસંદીદા\" ડિરેક્ટરીઓ અથવા \"જગ્યાઓ\" ની યાદીને "
+"બદલવા માટે પરવાનગી આપેલ છે."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
 msgstr ""
+"true ને સુયોજિત કરો જો વપરાશકર્તા ને વપરાશકર્તા-સ્પષ્ટ થયેલ યાદી અથવા \"પસંદીદા\" દસ્તાવેજોની યાદીને "
+"બદલવા માટે પરવાનગી આપેલ છે."
 
 #: ../main-menu/src/hard-drive-status-tile.c:102
 msgid "_System Monitor"
@@ -670,7 +697,7 @@ msgstr "સિસ્ટમ"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:121
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "પસંદીદા કરવા માટે હાલનાં લૉંચર ને ઉમેરો"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:126
 msgid "Add the current document to favorites"
