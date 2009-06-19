@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
 "POT-Creation-Date: 2009-03-16 18:03+0000\n"
-"PO-Revision-Date: 2009-05-19 23:42+0530\n"
+"PO-Revision-Date: 2009-06-19 16:09+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,23 +44,23 @@ msgstr "ಈಗಿರುವ  .desktop ಕಡತಗಳ ಕಡತದ ಹೆಸರ�
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
-msgstr ""
+msgstr "ಸಹಾಯ ಕಾರ್ಯವನ್ನು ನೆರವೇರಿಸಿದಾಗ ಶೆಲ್ ಅನ್ನು ಮುಚ್ಚಬೇಕೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr ""
+msgstr "ಆರಂಭ ಕಾರ್ಯವನ್ನು ನೆರವೇರಿಸಿದಾಗ ಶೆಲ್ ಅನ್ನು ಮುಚ್ಚಬೇಕೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr ""
+msgstr "ಸೇರಿಸು ಅಥವ ತೆಗೆದು ಹಾಕುವ ಕಾರ್ಯವನ್ನು ನೆರವೇರಿಸಿದಾಗ ಶೆಲ್ ಅನ್ನು ಮುಚ್ಚಬೇಕೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
-msgstr ""
+msgstr "ನವೀಕರಿಸು ಅಥವ ಅನುಸ್ಥಾಪಿಸಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕುವ ಕಾರ್ಯವನ್ನು ನೆರವೇರಿಸಿದಾಗ ಶೆಲ್ ಅನ್ನು ಮುಚ್ಚಬೇಕೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
@@ -86,7 +86,7 @@ msgstr "ಸಮೂಹಗಳು"
 
 #: ../application-browser/src/application-browser.c:83
 msgid "Application Actions"
-msgstr ""
+msgstr "ಅನ್ವಯದ ಕ್ರಿಯೆ"
 
 #. make start action
 #: ../libslab/application-tile.c:372
@@ -293,11 +293,11 @@ msgstr "ಮೆನುವನ್ನು ತೆರೆ(_O)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the Network Manager editor utility"
-msgstr ""
+msgstr "ಜಾಲಬಂಧ ವ್ಯವಸ್ಥಾಪಕ ಸಂಪಾದಕ ಸವಲತ್ತಿಗಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
-msgstr ""
+msgstr "YaST2 network_devices ಸವಲತ್ತಿಗಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
@@ -309,67 +309,69 @@ msgstr "gnome-system-monitor ಗಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
-msgstr ""
+msgstr "ಜಾಲಬಂಧ ಸಂರಚನಾ ಉಪಕರಣಕ್ಕಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
-msgstr ""
+msgstr "ಅನ್ವಯ ವೀಕ್ಷಕದ .desktop ಮಾರ್ಗ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
-msgstr ""
+msgstr "\"ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿ ತೆರೆ\" ಮೆನು ಅಂಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
-msgstr ""
+msgstr "\"ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿ ತೆರೆ\" ಮೆನು ಅಂಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ. FILE_URI ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾದ ಕಡತದ dirname ನ ಸೂಕ್ತವಾದ uri ನೊಂದಿಗೆ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr ""
+msgstr "\"ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು...\" ಮೆನು ಅಂಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
-msgstr ""
+msgstr "\"ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು...\" ಮೆನು ಅಂಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ. DIRNAME ಹಾಗು BASENAME ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾದ ಟೈಲ್‌ನಿಂದ ಅನುಕ್ರಮವಾಗಿ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
-msgstr ""
+msgstr "ಹುಡುಕು ನಮೂದನ್ನು ಬಳಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
+"ಹುಡುಕು ನಮೂದನ್ನು ಬಳಸಿದಾಗ ಈ ಆಜ್ಞೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಲಾಗುತ್ತದೆ. SEARCH_STRING "
+"ಅನ್ನು ಹುಡುಕು ನಮೂದಿನೊಂದಿಗೆ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
-msgstr "ಅನುಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳನ್ನು ತೆಗೆದು ಹಾಕಲು ಆಜ್ಞೆ"
+msgstr "ಅನುಸ್ಥಾಪಿಸಲಾದ ಪ್ಯಾಕೇಜುಗಳನ್ನು ತೆಗೆದು ಹಾಕುವ ಆಜ್ಞೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr ""
+msgstr "ಅನುಸ್ಥಾಪಿಸಾಲಾದ ಪ್ಯಾಕೇಜುಗಳನ್ನು ತೆಗೆದು ಹಾಕುವ ಆಜ್ಞೆ, ಆಜ್ಞೆಯಲ್ಲಿ PACKAGE_NAME ಅನ್ನು ಪ್ಯಾಕೇಜಿನ ಹೆಸರಿನಿಂದ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
-msgstr "ಪ್ಯಾಕೇಜುಗಳನ್ನು ನವೀಕರಿಸಲು ಆಜ್ಞೆ"
+msgstr "ಪ್ಯಾಕೇಜುಗಳನ್ನು ನವೀಕರಿಸುವ ಆಜ್ಞೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr ""
+msgstr "ಪ್ಯಾಕೇಜುಗಳನ್ನು ನವೀಕರಿಸುವ ಆಜ್ಞೆ, ಆಜ್ಞೆಯಲ್ಲಿ PACKAGE_NAME ಅನ್ನು ಪ್ಯಾಕೇಜಿನ ಹೆಸರಿನಿಂದ ಬದಲಾಯಿಸಲಾಗುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -380,17 +382,17 @@ msgid ""
 "recently used documents table, 4 - show the user-specified of \"Favorite\" "
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
-msgstr ""
+msgstr "ಕಡತದ ಸ್ಥಳದಲ್ಲಿ ತೋರಿಸಬೇಕಿರುವ ಅನುಮತಿಸಲಾಗುವ ಕಡತದ ಕೋಷ್ಟಕದ ಪಟ್ಟಿಯನ್ನು ಹೊಂದಿದೆ (ಯಾವುದೆ ನಿಶ್ಚಿತ ಅನುಕ್ರಮದಲ್ಲಿ ಇಲ್ಲ). ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ: 0 - ಬಳಕೆದಾರ ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ಅನ್ವಯಗಳ ಕೋಷ್ಟಕಗಳನ್ನು ತೋರಿಸುತ್ತದೆ, 1 -ಇತ್ತೀಚೆಗೆ ಬಳಸಲಾದ ಕೋಷ್ಟಕವನ್ನು ತೋರಿಸುತ್ತದೆ, 2 - ಬಳಕೆದಾರ ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ದಸ್ತಾವೇಜುಗಳ ಕೋಷ್ಟಕವನ್ನು ತೋರಿಸುತ್ತದೆ, 3 - ಇತ್ತೀಚೆಗೆ ಬಳಸಲಾದ ದಸ್ತಾವೇಜುಗಳ ಕೋಷ್ಟಕವನ್ನು ತೋರಿಸುತ್ತದೆ, 4 - ಬಳಕೆದಾರ ನಿಶ್ಚಿತವಾದ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ಕೋಶಗಳನ್ನು ಅಥವ \"ಸ್ಥಳಗಳ\" ಕೋಷ್ಟಕವನ್ನು ತೋರಿಸುತ್ತದೆ, ಹಾಗು 5 - ಇತ್ತೀಚೆಗೆ ಬಳಸಲಾದ ಕೋಶಗಳನ್ನು ಅಥವ \"ಸ್ಥಳಗಳ\" ಕೋಷ್ಟಕವನ್ನು ತೋರಿಸುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr ""
+msgstr "\"ಇತ್ತೀಚಿಗೆ ಬಳಸಲಾದ ಅನ್ವಯಗಳು\" ಹಾಗು \"ಇತ್ತೀಚಿನ ಕಡತಗಳು\" ಪಟ್ಟಿಗಳಿಂದ ಹೊರತುಪಡಿಸಲಾದ ಕಡತಗಳ (.desktop ಕಡತಗಳನ್ನೂ ಸಹ ಸೇರಿ) ಪಟ್ಟಿಯನ್ನು ಹೊಂದಿರುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
-msgstr ""
+msgstr "ಕಡತದ ಜಾಗದಲ್ಲಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಯ ಮಿತಿಯನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
@@ -400,58 +402,60 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
+"ಕಡತದ ಜಾಗದಲ್ಲಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಯ ಮಿತಿಯನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ. ಅಚ್ಚುಮೆಚ್ಚಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಗೆ ಯಾವುದೆ ಮಿತಿ ಇರುವುದಿಲ್ಲ. ಈ ಮಿತಿಯು ಕೇವಲ ಇತ್ತೀಚಿನ ಅಂಶಗಳಿಗಷ್ಟೆ ಅನ್ವಯಿಸುವತ್ತದೆ, ಅಂದರ. ತೋರಿಸಲಾದ ಇತ್ತೀಚಿನ ಅಂಶಗಳು max_total_items - ಅಚ್ಚುಮೆಚ್ಚಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಗೆ ಮಿತಿಗೊಳಿಸಲಾಗಿರುತ್ತದೆ. ಎಲ್ಲಿಯಾದರೂ ಅಚ್ಚುಮೆಚ್ಚಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಯು max_total_items - "
+"min_recent_items ಗಿಂತ ಹೆಚ್ಚಿದ್ದಲ್ಲಿ ಈ ಮಿತಿಯನ್ನು ಗಣನೆಗೆ ತೆಗೆದುಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr ""
+msgstr "ಕಡತದ ಜಾಗದಲ್ಲಿನ \"ಇತ್ತೀಚಿನ\" ವಿಭಾಗದಲ್ಲಿ ತೋರಿಸಬೇಕಿರುವ ಅಂಶಗಳ ಕನಿಷ್ಟ ಸಂಖ್ಯೆಯನ್ನು ಎಂದು ನಿರ್ಧರಿಸುತ್ತದೆ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
-msgstr ""
+msgstr "ಕಡತದ ಜಾಗದಲ್ಲಿ ಯಾವ ಬಗೆಯ ಕಡತಗಳನ್ನು ತೋರಿಸಬೇಕು ಎಂದು ನಿರ್ಧರಿಸುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
-msgstr ""
+msgstr "true ಆದಲ್ಲಿ, ಮುಖ್ಯ ಮೆನುವು ಮುಚ್ಚಲ್ಪಡಲು ತವಕಿಸುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
-msgstr ""
+msgstr "true ಆಗಿದ್ದಲ್ಲಿ, ಈ ಹೆಚ್ಚುವರಿ ಪರಿಸ್ಥಿತಿಯಿಂದಾಗಿ ಮುಖ್ಯ ಮೆನುವು ಮುಚ್ಚಲ್ಪಡುತ್ತದೆ: ಟೈಲ್ ಶಕ್ತವಾಗಿರುತ್ತದೆ, ಹುಡುಕುವಿಕೆಯು ಶಕ್ತವಾಗಿರುತ್ತದೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
-msgstr ""
+msgstr "ಕಡತ ಜಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸಂರಚನೆ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
-msgstr ""
+msgstr "ಅನ್ವಯ ವೀಕ್ಷಕ ಕೊಂಡಿಗಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
-msgstr ""
+msgstr "ಹುಡುಕು ಜಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
-msgstr ""
+msgstr "ಸ್ಥಿತಿ ಜಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
-msgstr ""
+msgstr "ವ್ಯವಸ್ಥೆಯ ಜಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ apps ವಿಭಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ dirs ವಿಭಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ ಡಾಕ್ಸ್ ವಿಭಾಗಕ್ಕಾಗಿನ ಲಾಕ್-ಡೌನ್ ಸ್ಥಿತಿ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
@@ -461,41 +465,41 @@ msgstr "ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳು = 0 [ಅನ್�
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
-msgstr ""
+msgstr "ಅನ್ವಯ ವೀಕ್ಷಕವು ಗೋಚರಿಸುತ್ತಿರಬೇಕಿದ್ದರೆ ಹಾಗು ಸಕ್ರಿಯವಾಗಿರಬೇಕಿದ್ದರೆ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
-msgstr ""
+msgstr "ಹುಡುಕು ಜಾಗವು ಗೋಚರಿಸುತ್ತಿರಬೇಕಿದ್ದರೆ ಹಾಗು ಸಕ್ರಿಯವಾಗಿರಬೇಕಿದ್ದರೆ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
-msgstr ""
+msgstr "ಸ್ಥಿತಿ ಜಾಗವು ಗೋಚರಿಸುತ್ತಿರಬೇಕಿದ್ದರೆ ಹಾಗು ಸಕ್ರಿಯವಾಗಿರಬೇಕಿದ್ದರೆ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
-msgstr ""
+msgstr "ವ್ಯವಸ್ಥೆಯ ಜಾಗವು ಗೋಚರಿಸುತ್ತಿರಬೇಕಿದ್ದರೆ ಹಾಗು ಸಕ್ರಿಯವಾಗಿರಬೇಕಿದ್ದರೆ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
-msgstr ""
+msgstr "ವ್ಯವಸ್ಥೆಯ ಅಂಶಗಳ ಪಟ್ಟಿಯನ್ನು ಬಳಕೆದಾರನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿ ಇದ್ದಲ್ಲಿ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ಅನ್ವಯಗಳ ಪಟ್ಟಿಯನ್ನು ಬಳಕೆದಾರನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿ ಇದ್ದಲ್ಲಿ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ಕೋಶಗಳ ಅಥವ \"ಸ್ಥಳಗಳ\" ಪಟ್ಟಿಯನ್ನು ಬಳಕೆದಾರನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿ ಇದ್ದಲ್ಲಿ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
-msgstr ""
+msgstr "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯನ್ನು ಬಳಕೆದಾರನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿ ಇದ್ದಲ್ಲಿ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
 #: ../main-menu/src/hard-drive-status-tile.c:102
 msgid "_System Monitor"
@@ -677,7 +681,7 @@ msgstr "ವ್ಯವಸ್ಥೆ"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
-msgstr ""
+msgstr "ಪ್ರಸಕ್ತ ಆರಂಭಕವನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
