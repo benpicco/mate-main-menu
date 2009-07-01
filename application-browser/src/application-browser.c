@@ -27,21 +27,43 @@
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
 #include <dirent.h>
+#include <unique/unique.h>
 #include <stdlib.h>
 
 #include "app-shell.h"
-#include "app-shell-startup.h"
 #include "slab-gnome-util.h"
 
 #define APPLICATION_BROWSER_PREFIX  "/desktop/gnome/applications/main-menu/ab_"
 #define NEW_APPS_MAX_ITEMS  (APPLICATION_BROWSER_PREFIX "new_apps_max_items")
+#define COMMAND_NEW_INSTANCE 1
+
+static UniqueResponse
+unique_app_message_cb (UniqueApp *app, gint command, UniqueMessageData *data,
+		       guint time, gpointer user_data)
+{
+	AppShellData *app_data = user_data;
+	gboolean  visible;
+
+	if (command != COMMAND_NEW_INSTANCE)
+		return UNIQUE_RESPONSE_PASSTHROUGH;
+
+	g_object_get (app_data->main_app, "visible", &visible, NULL);
+
+	if (!visible)
+		show_shell (app_data);
+
+
+	gtk_window_present (GTK_WINDOW (app_data->main_app));
+	gtk_widget_grab_focus (SLAB_SECTION (app_data->filter_section)->contents);
+
+	return UNIQUE_RESPONSE_OK;
+}
 
 int
 main (int argc, char *argv[])
 {
-	BonoboApplication *bonobo_app = NULL;
+	UniqueApp *unique_app = NULL;
 	gboolean hidden = FALSE;
-	gchar * startup_id;
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
@@ -61,16 +83,18 @@ main (int argc, char *argv[])
 		hidden = TRUE;
 	}
 
-	startup_id = g_strdup (g_getenv (DESKTOP_STARTUP_ID));
 	gnome_program_init ("Gnome Application Browser", "0.1", LIBGNOMEUI_MODULE,
 		argc, argv, NULL, NULL);
 
-	if (apss_already_running (argc, argv, &bonobo_app, "GNOME-NLD-AppBrowser", startup_id))
+	unique_app = unique_app_new_with_commands ("org.gnome.MainMenu", NULL,
+						   "new_instance", COMMAND_NEW_INSTANCE, NULL);
+
+	if (unique_app_is_running (unique_app))
 	{
-		gdk_notify_startup_complete ();
-		bonobo_debug_shutdown ();
-		g_free (startup_id);
-		exit (1);
+		unique_app_send_message (unique_app, COMMAND_NEW_INSTANCE, NULL);
+		g_object_unref (unique_app);
+
+		return 0;
 	}
 
 	NewAppConfig *config = g_new0 (NewAppConfig, 1);
@@ -82,13 +106,12 @@ main (int argc, char *argv[])
 
 	layout_shell (app_data, _("Filter"), _("Groups"), _("Application Actions"), NULL, NULL);
 
-	g_signal_connect (bonobo_app, "new-instance", G_CALLBACK (apss_new_instance_cb), app_data);
+	g_signal_connect (unique_app, "message-received", G_CALLBACK (unique_app_message_cb), app_data);
+
 	create_main_window (app_data, "MyApplicationBrowser", _("Application Browser"),
 		"gnome-fs-client", 940, 600, hidden);
 
-	if (bonobo_app)
-		bonobo_object_unref (bonobo_app);
-	bonobo_debug_shutdown ();
-	g_free (startup_id);
+	g_object_unref (unique_app);
+
 	return 0;
 };

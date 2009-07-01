@@ -71,25 +71,10 @@ fi
 AC_SUBST(MAIN_MENU_CFLAGS)
 AC_SUBST(MAIN_MENU_LIBS)
 
-PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 libgnomeui-2.0 libgnome-menu ])
+PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 libgnomeui-2.0 libgnome-menu unique-1.0 ])
 
 AC_SUBST(APPLICATION_BROWSER_CFLAGS)
 AC_SUBST(APPLICATION_BROWSER_LIBS)
-
-dnl ==============================================
-dnl How to build libslab?
-dnl ==============================================
-
-ENABLE_DYNAMIC_LIBSLAB=1
-AC_ARG_ENABLE(dynamic-libslab,
- AC_HELP_STRING([--enable-dynamic-libslab], [Enable dynamic libslab]),
- [ENABLE_DYNAMIC_LIBSLAB=1])
-
-AM_CONDITIONAL(ENABLE_DYNAMIC_LIBSLAB, test "x$ENABLE_DYNAMIC_LIBSLAB" = "x1")
-
-dnl ==============================================
-dnl End: How to build libslab?
-dnl ==============================================
 
 dnl ==============================================
 dnl Gconf
