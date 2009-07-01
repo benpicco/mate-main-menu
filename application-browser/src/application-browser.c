@@ -24,7 +24,6 @@
 
 #include <gtk/gtk.h>
 #include <libgnome/gnome-desktop-item.h>
-#include <libgnomeui/libgnomeui.h>
 #include <dirent.h>
 #include <unique/unique.h>
 #include <stdlib.h>
@@ -83,8 +82,7 @@ main (int argc, char *argv[])
 		hidden = TRUE;
 	}
 
-	gnome_program_init ("Gnome Application Browser", "0.1", LIBGNOMEUI_MODULE,
-		argc, argv, NULL, NULL);
+	gtk_init (&argc, &argv);
 
 	unique_app = unique_app_new_with_commands ("org.gnome.MainMenu", NULL,
 						   "new_instance", COMMAND_NEW_INSTANCE, NULL);
