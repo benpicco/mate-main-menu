@@ -33,8 +33,8 @@
 #	include "bookmark-agent-libslab.h"
 #endif
 
-#include "bookmark-agent.h"
-#include "libslab-utils.h"
+#include <slab/bookmark-agent.h>
+#include <slab/libslab-utils.h>
 
 #define SYSTEM_BOOKMARK_FILENAME "system-items.xbel"
 #define SYSTEM_BOOKMARK_MIGRATED_TO_NEW_SET "system-items.migrated"

@@ -23,12 +23,12 @@
 #include <string.h>
 
 #include <gtk/gtk.h>
-#include <panel-applet.h>
 #include <libgnome/gnome-desktop-item.h>
 #include <libgnomeui/libgnomeui.h>
 #include <dirent.h>
 #include <unique/unique.h>
 #include <stdlib.h>
+#include <glib/gi18n.h>
 
 #include "app-shell.h"
 #include "slab-gnome-util.h"
