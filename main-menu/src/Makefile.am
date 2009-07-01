@@ -1,6 +1,5 @@
 INCLUDES =								\
 	$(MAIN_MENU_CFLAGS)						\
-	-I$(top_srcdir)/libslab						\
 	$(WARN_CFLAGS)
 
 gladedir = $(datadir)/$(PACKAGE)
@@ -29,8 +28,7 @@ main_menu_SOURCES =							\
 
 main_menu_LDADD =							\
 	$(MAIN_MENU_LIBS)						\
-	$(GLADE_LIBS)							\
-	$(top_builddir)/libslab/libslab.la
+	$(GLADE_LIBS)
 
 trigger_panel_run_dialog_SOURCES =					\
 	trigger-panel-run-dialog.c

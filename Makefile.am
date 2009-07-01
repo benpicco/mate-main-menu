@@ -5,7 +5,6 @@ NAUTILUS_DIR=
 endif
 
 SUBDIRS =				\
-	libslab				\
 	application-browser/etc		\
 	application-browser/src		\
 	main-menu/etc			\

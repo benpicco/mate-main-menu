@@ -50,16 +50,12 @@ COMMON_MODULES="glib-2.0 >= $GLIB_REQUIRED	\
 		gio-2.0 >= $GLIB_REQUIRED 	\
 		gobject-2.0 			\
 		gtk+-2.0 >= $GTK_REQUIRED 	\
-		gdk-2.0"
+		gdk-2.0				\
+		libslab"
 
 PKG_CHECK_MODULES(GLADE, libglade-2.0)
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
-
-PKG_CHECK_MODULES(LIBSLAB, [ $COMMON_MODULES libgnomeui-2.0 gnome-desktop-2.0 librsvg-2.0 libgnome-menu pango ])
-
-AC_SUBST(LIBSLAB_CFLAGS)
-AC_SUBST(LIBSLAB_LIBS)
 
 PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ])
 
@@ -180,8 +176,6 @@ AC_CONFIG_FILES([
 Makefile
 application-browser/etc/Makefile
 application-browser/src/Makefile
-libslab/Makefile
-libslab/libslab.pc
 main-menu/etc/Makefile
 main-menu/src/Makefile
 nautilus-main-menu/Makefile
