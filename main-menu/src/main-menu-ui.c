@@ -34,20 +34,14 @@
 #include <X11/Xlib.h>
 #include <gdk/gdkx.h>
 #include <gio/gio.h>
+#include <slab.h>
 
-#include "tile.h"
-#include "application-tile.h"
-#include "document-tile.h"
-#include "directory-tile.h"
-#include "system-tile.h"
 #include "hard-drive-status-tile.h"
 #include "network-status-tile.h"
 
 #include "tile-table.h"
 
 #include "tomboykeybinder.h"
-#include "libslab-utils.h"
-#include "double-click-detector.h"
 
 #define ROOT_GCONF_DIR             "/desktop/gnome/applications/main-menu"
 #define CURRENT_PAGE_GCONF_KEY     ROOT_GCONF_DIR "/file-area/file_class"

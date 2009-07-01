@@ -36,8 +36,7 @@
 #include <iwlib.h>
 #include <glibtop/netlist.h>
 #include <glibtop/netload.h>
-
-#include "gnome-utils.h"
+#include <slab.h>
 
 typedef struct
 {

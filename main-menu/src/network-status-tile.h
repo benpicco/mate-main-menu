@@ -21,7 +21,7 @@
 #ifndef __NETWORK_STATUS_TILE_H__
 #define __NETWORK_STATUS_TILE_H__
 
-#include "nameplate-tile.h"
+#include <slab.h>
 
 G_BEGIN_DECLS
 

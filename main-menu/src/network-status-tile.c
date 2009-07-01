@@ -23,10 +23,10 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glade/glade.h>
+#include <slab.h>
 
 #include "network-status-agent.h"
 #include "network-status-info.h"
-#include "slab-gnome-util.h"
 
 G_DEFINE_TYPE (NetworkStatusTile, network_status_tile, NAMEPLATE_TILE_TYPE)
 

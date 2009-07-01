@@ -22,9 +22,7 @@
 #define __TILE_TABLE_H__
 
 #include <gtk/gtk.h>
-
-#include "tile.h"
-#include "bookmark-agent.h"
+#include <slab.h>
 
 G_BEGIN_DECLS
 

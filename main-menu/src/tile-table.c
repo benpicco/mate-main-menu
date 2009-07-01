@@ -20,9 +20,7 @@
 
 #include "tile-table.h"
 
-#include "tile.h"
-#include "nameplate-tile.h"
-#include "libslab-utils.h"
+#include <slab.h>
 
 G_DEFINE_TYPE (TileTable, tile_table, GTK_TYPE_TABLE)
 
