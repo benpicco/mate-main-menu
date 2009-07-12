@@ -20,8 +20,6 @@
 
 #include "tile-table.h"
 
-#include <slab.h>
-
 G_DEFINE_TYPE (TileTable, tile_table, GTK_TYPE_TABLE)
 
 typedef struct {

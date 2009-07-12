@@ -24,7 +24,6 @@
 #include <sys/statvfs.h>
 #include <glib/gi18n.h>
 #include <gconf/gconf-client.h>
-#include <slab.h>
 
 #define GIGA (1024 * 1024 * 1024)
 #define MEGA (1024 * 1024)

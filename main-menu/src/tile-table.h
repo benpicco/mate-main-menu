@@ -22,7 +22,7 @@
 #define __TILE_TABLE_H__
 
 #include <gtk/gtk.h>
-#include <slab.h>
+#include <libslab/slab.h>
 
 G_BEGIN_DECLS
 

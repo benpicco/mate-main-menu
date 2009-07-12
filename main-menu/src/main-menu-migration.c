@@ -29,11 +29,7 @@
 #include <glib/gstdio.h>
 #include <unistd.h>
 
-#if ! GLIB_CHECK_VERSION (2, 12, 0)
-#	include "bookmark-agent-libslab.h"
-#endif
-
-#include <slab.h>
+#include <libslab/slab.h>
 
 #define SYSTEM_BOOKMARK_FILENAME "system-items.xbel"
 #define SYSTEM_BOOKMARK_MIGRATED_TO_NEW_SET "system-items.migrated"

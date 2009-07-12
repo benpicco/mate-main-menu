@@ -36,7 +36,7 @@
 #include <iwlib.h>
 #include <glibtop/netlist.h>
 #include <glibtop/netload.h>
-#include <slab.h>
+#include <libslab/slab.h>
 
 typedef struct
 {

@@ -34,7 +34,8 @@
 #include <X11/Xlib.h>
 #include <gdk/gdkx.h>
 #include <gio/gio.h>
-#include <slab.h>
+#include <unistd.h>
+#include <libslab/slab.h>
 
 #include "hard-drive-status-tile.h"
 #include "network-status-tile.h"

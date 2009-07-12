@@ -27,7 +27,7 @@
 #include <unique/unique.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
-#include <slab.h>
+#include <libslab/slab.h>
 
 #define APPLICATION_BROWSER_PREFIX  "/desktop/gnome/applications/main-menu/ab_"
 #define NEW_APPS_MAX_ITEMS  (APPLICATION_BROWSER_PREFIX "new_apps_max_items")

@@ -26,7 +26,7 @@
 #include <panel-applet.h>
 #include <libgnomeui/libgnomeui.h>
 #include <string.h>
-#include <slab.h>
+#include <libslab/slab.h>
 
 #include "main-menu-ui.h"
 

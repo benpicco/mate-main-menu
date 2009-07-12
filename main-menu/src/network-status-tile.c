@@ -23,7 +23,6 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <glade/glade.h>
-#include <slab.h>
 
 #include "network-status-agent.h"
 #include "network-status-info.h"

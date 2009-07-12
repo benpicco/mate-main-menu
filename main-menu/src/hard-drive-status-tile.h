@@ -21,7 +21,7 @@
 #ifndef __HARD_DRIVE_STATUS_TILE_H__
 #define __HARD_DRIVE_STATUS_TILE_H__
 
-#include <slab.h>
+#include <libslab/slab.h>
 
 G_BEGIN_DECLS
 
