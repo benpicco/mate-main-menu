@@ -49,7 +49,7 @@ unique_app_message_cb (UniqueApp *app, gint command, UniqueMessageData *data,
 		show_shell (app_data);
 
 
-	gtk_window_present (GTK_WINDOW (app_data->main_app));
+	gtk_window_present_with_time (GTK_WINDOW (app_data->main_app), time);
 	gtk_widget_grab_focus (SLAB_SECTION (app_data->filter_section)->contents);
 
 	return UNIQUE_RESPONSE_OK;
