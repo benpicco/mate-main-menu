@@ -58,6 +58,11 @@ main (int argc, char *argv[])
 {
 	UniqueApp *unique_app = NULL;
 	gboolean hidden = FALSE;
+	GError *error;
+	GOptionEntry options[] = {
+	  { "hide", 0, 0, G_OPTION_ARG_NONE, &hidden, N_("Hide on start (useful to preload the shell)"), NULL },
+	  { NULL }
+	};
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
@@ -65,19 +70,13 @@ main (int argc, char *argv[])
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	if (argc > 1)
-	{
-		if (argc != 2 || strcmp ("-h", argv[1]))
-		{
-			printf ("Usage - application-browser [-h]\n");
-			printf ("Options: -h : hide on start\n");
-			printf ("\tUseful if you want to autostart the application-browser singleton so it can get all it's slow loading done\n");
-			exit (1);
-		}
-		hidden = TRUE;
+	error = NULL;
+	if (!gtk_init_with_args (&argc, &argv,
+				 NULL, options, GETTEXT_PACKAGE, &error)) {
+		g_printerr ("%s\n", error->message);
+		g_error_free (error);
+		return 1;
 	}
-
-	gtk_init (&argc, &argv);
 
 	unique_app = unique_app_new ("org.gnome.MainMenu", NULL);
 
