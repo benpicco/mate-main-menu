@@ -31,23 +31,21 @@
 
 #define APPLICATION_BROWSER_PREFIX  "/desktop/gnome/applications/main-menu/ab_"
 #define NEW_APPS_MAX_ITEMS  (APPLICATION_BROWSER_PREFIX "new_apps_max_items")
-#define COMMAND_NEW_INSTANCE 1
 
 static UniqueResponse
 unique_app_message_cb (UniqueApp *app, gint command, UniqueMessageData *data,
 		       guint time, gpointer user_data)
 {
 	AppShellData *app_data = user_data;
-	gboolean  visible;
 
-	if (command != COMMAND_NEW_INSTANCE)
+	if (command != UNIQUE_ACTIVATE)
 		return UNIQUE_RESPONSE_PASSTHROUGH;
 
-	g_object_get (app_data->main_app, "visible", &visible, NULL);
-
-	if (!visible)
+	/* move the main window to the screen that sent us the command */
+	gtk_window_set_screen (GTK_WINDOW (app_data->main_app),
+			       unique_message_data_get_screen (data));
+	if (!app_data->main_app_window_shown_once)
 		show_shell (app_data);
-
 
 	gtk_window_present_with_time (GTK_WINDOW (app_data->main_app), time);
 	gtk_widget_grab_focus (SLAB_SECTION (app_data->filter_section)->contents);
@@ -81,12 +79,11 @@ main (int argc, char *argv[])
 
 	gtk_init (&argc, &argv);
 
-	unique_app = unique_app_new_with_commands ("org.gnome.MainMenu", NULL,
-						   "new_instance", COMMAND_NEW_INSTANCE, NULL);
+	unique_app = unique_app_new ("org.gnome.MainMenu", NULL);
 
 	if (unique_app_is_running (unique_app))
 	{
-		unique_app_send_message (unique_app, COMMAND_NEW_INSTANCE, NULL);
+		unique_app_send_message (unique_app, UNIQUE_ACTIVATE, NULL);
 		g_object_unref (unique_app);
 
 		return 0;
@@ -101,10 +98,13 @@ main (int argc, char *argv[])
 
 	layout_shell (app_data, _("Filter"), _("Groups"), _("Application Actions"), NULL, NULL);
 
-	g_signal_connect (unique_app, "message-received", G_CALLBACK (unique_app_message_cb), app_data);
-
 	create_main_window (app_data, "MyApplicationBrowser", _("Application Browser"),
 		"gnome-fs-client", 940, 600, hidden);
+
+	unique_app_watch_window (unique_app, GTK_WINDOW (app_data->main_app));
+	g_signal_connect (unique_app, "message-received", G_CALLBACK (unique_app_message_cb), app_data);
+
+	gtk_main ();
 
 	g_object_unref (unique_app);
 
