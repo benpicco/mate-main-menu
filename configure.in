@@ -43,6 +43,7 @@ dnl ==============================================
 
 GLIB_REQUIRED=2.16.0
 GTK_REQUIRED=2.14
+SLAB_REQUIRED=2.27.1
 
 AM_PATH_GLIB_2_0($GLIB_REQUIRED,,,gobject)
 
@@ -51,7 +52,7 @@ COMMON_MODULES="glib-2.0 >= $GLIB_REQUIRED	\
 		gobject-2.0 			\
 		gtk+-2.0 >= $GTK_REQUIRED 	\
 		gdk-2.0				\
-		libslab"
+		libslab >= $SLAB_REQUIRED"
 
 PKG_CHECK_MODULES(GLADE, libglade-2.0)
 AC_SUBST(GLADE_CFLAGS)
