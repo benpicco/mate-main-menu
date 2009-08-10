@@ -7,13 +7,15 @@
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
 # Damien Durand <splinux@fedoraproject.org>, 2007.
+# Robert-André Mauchin <zebob.m@pengzone.org>, 2008.
+# Claude Paroz <claude@2xlibre.net>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 12:00+0200\n"
-"PO-Revision-Date: 2008-05-08 13:32+0200\n"
+"POT-Creation-Date: 2009-08-10 12:26+0200\n"
+"PO-Revision-Date: 2009-08-10 12:43+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:93
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
 msgstr "Explorateur d'applications"
 
@@ -87,301 +89,32 @@ msgstr ""
 "Nombre maximum d'applications qui seront affichées dans la catégorie "
 "Nouvelles applications"
 
-#: ../application-browser/src/application-browser.c:85
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "Masquer au démarrage (utile pour précharger le shell)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "Nouvelles applications"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "Filtre"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "Groupes"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "Opérations d'application"
 
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Démarrer %s</b>"
-
-#: ../libslab/application-tile.c:391 ../libslab/bookmark-agent.c:1059
-#: ../main-menu/src/main-menu-migration.c:93
-#: ../main-menu/src/main-menu-migration.c:217
-msgid "Help"
-msgstr "Aide"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "Mettre à niveau"
-
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "Désinstaller"
-
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:760
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
-msgid "Remove from Favorites"
-msgstr "Retirer des favoris"
-
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:762
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
-msgid "Add to Favorites"
-msgstr "Ajouter aux favoris"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "Retirer des programmes de démarrage"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "Ajouter aux programmes de démarrage"
-
-#: ../libslab/app-shell.c:750
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>Aucune correspondance trouvée.</b> </span><span>\n"
-"\n"
-" Le filtre « <b>%s</b> » ne correspond à aucun élément.</span>"
-
-#: ../libslab/app-shell.c:900
-msgid "Other"
-msgstr "Autre"
-
-#: ../libslab/bookmark-agent.c:1061 ../main-menu/src/main-menu-migration.c:159
-msgid "Lock Screen"
-msgstr "Verrouiller l'écran"
-
-#: ../libslab/bookmark-agent.c:1063 ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
-msgid "Logout"
-msgstr "Se déconnecter"
-
-#: ../libslab/bookmark-agent.c:1065 ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
-msgid "Shutdown"
-msgstr "Éteindre"
-
-#: ../libslab/bookmark-agent.c:1090
-msgid "New Spreadsheet"
-msgstr "Nouveau classeur"
-
-#: ../libslab/bookmark-agent.c:1095
-msgid "New Document"
-msgstr "Nouveau document"
-
-#: ../libslab/bookmark-agent.c:1147
-msgid "Home"
-msgstr "Dossier personnel"
-
-#: ../libslab/bookmark-agent.c:1152 ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Documents"
-
-#: ../libslab/bookmark-agent.c:1158
-msgid "Desktop"
-msgstr "Bureau"
-
-#: ../libslab/bookmark-agent.c:1165
-msgid "File System"
-msgstr "Système de fichiers"
-
-#: ../libslab/bookmark-agent.c:1169
-msgid "Network Servers"
-msgstr "Serveurs réseau"
-
-#: ../libslab/bookmark-agent.c:1198
-msgid "Search"
-msgstr "Recherche"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:170
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>Ouvrir</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:189 ../libslab/document-tile.c:242
-msgid "Rename..."
-msgstr "Renommer..."
-
-#: ../libslab/directory-tile.c:203 ../libslab/directory-tile.c:212
-#: ../libslab/document-tile.c:256 ../libslab/document-tile.c:265
-msgid "Send To..."
-msgstr "Envoyer à..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:227 ../libslab/document-tile.c:291
-msgid "Move to Trash"
-msgstr "Mettre à la corbeille"
-
-#: ../libslab/directory-tile.c:237 ../libslab/directory-tile.c:450
-#: ../libslab/document-tile.c:301 ../libslab/document-tile.c:873
-msgid "Delete"
-msgstr "Supprimer"
-
-#: ../libslab/directory-tile.c:575 ../libslab/document-tile.c:1045
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Êtes-vous sûr de vouloir supprimer définitivement « %s » ?"
-
-#: ../libslab/directory-tile.c:580 ../libslab/document-tile.c:1049
-msgid "If you delete an item, it is permanently lost."
-msgstr "Si vous supprimez un élément, il sera définitivement perdu."
-
-#: ../libslab/document-tile.c:203
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Ouvrir avec « %s »</b>"
-
-#: ../libslab/document-tile.c:215
-msgid "Open with Default Application"
-msgstr "Ouvrir avec l'application par défaut"
-
-#: ../libslab/document-tile.c:226
-msgid "Open in File Manager"
-msgstr "Ouvrir dans le gestionnaire de fichiers"
-
-#: ../libslab/document-tile.c:656
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:663
-msgid "%l:%M %p"
-msgstr "%H:%M"
-
-#: ../libslab/document-tile.c:671
-msgid "Today %l:%M %p"
-msgstr "Aujourd'hui, %H:%M"
-
-#: ../libslab/document-tile.c:681
-msgid "Yesterday %l:%M %p"
-msgstr "Hier, %H:%M"
-
-#: ../libslab/document-tile.c:693
-msgid "%a %l:%M %p"
-msgstr "%a, %H:%M"
-
-#: ../libslab/document-tile.c:701
-msgid "%b %d %l:%M %p"
-msgstr "%d %b, %H:%M"
-
-#: ../libslab/document-tile.c:703
-msgid "%b %d %Y"
-msgstr "%d %b %Y"
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Attribut « %s » inattendu pour l'élément « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "Attribut « %s » de l'élément « %s » non trouvé"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Balise « %s » inattendue, balise attendue « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Balise « %s » inattendue dans « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-#, c-format
-msgid "No valid bookmark file found in data dirs"
-msgstr ""
-"Aucun fichier de signets valide n'a été trouvé dans les répertoires de "
-"données"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "Un signet pour l'URI « %s » existe déjà"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "Aucun signet trouvé pour l'URI « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Aucun type MIME défini dans le signet pour l'URI « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr "Aucun drapeau privé a été défini dans le signet pour l'URI « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr "Aucun groupe défini dans le signet pour l'URI « %s »"
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr "Aucune application portant le nom « %s » requiert un signet pour « %s »"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Rechercher maintenant"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>Ouvrir « %s »</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "Retirer des éléments système"
-
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr "Menu et explorateur d'applications par défaut"
+msgstr "Menu et navigateur d'applications par défaut"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
@@ -402,26 +135,30 @@ msgid "_Open Menu"
 msgstr "Menu _ouvrir"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr "Fichier .desktop pour l'utilitaire du gestionnaire de connexions réseau"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr "Fichier .desktop pour l'utilitaire de périphériques réseau YaST2"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:2
-msgid ".desktop file for the file browser"
-msgstr "Fichier .desktop pour l'explorateur de fichiers"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the file browser"
+msgstr "Fichier .desktop pour le navigateur de fichiers"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
 msgstr "Fichier .desktop pour le moniteur système GNOME"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:4
+#: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
 msgstr "Fichier .desktop pour l'outil de configuration de réseau"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop path for the application browser"
-msgstr "Chemin du fichier .desktop pour l'explorateur d'applications"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr "Chemin du fichier .desktop pour le navigateur d'applications"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
@@ -429,7 +166,7 @@ msgstr ""
 "Commande à exécuter lorsque l'option de menu « Ouvrir dans le gestionnaire de "
 "fichiers » est sélectionnée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
@@ -439,7 +176,7 @@ msgstr ""
 "fichiers » est sélectionnée. FILE_URI est remplacé par un URI correspondant "
 "au nom de répertoire du fichier activé."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
@@ -447,7 +184,7 @@ msgstr ""
 "Commande à exécuter lorsque l'option de menu « Envoyer à... » est "
 "sélectionnée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
@@ -457,11 +194,11 @@ msgstr ""
 "sélectionnée. DIRNAME et BASENAME sont remplacés par les composants "
 "correspondants de la mosaïque activée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "Commande à exécuter lorsque l'entrée de recherche est utilisée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
@@ -469,11 +206,11 @@ msgstr ""
 "Commande à exécuter lorsque l'entrée de recherche est utilisée. "
 "SEARCH_STRING est remplacé par le texte à rechercher saisi."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "command to uninstall packages"
-msgstr "Commande à exécuter pour désinstaller des paquets"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid "command to uninstall packages"
+msgstr "commande pour désinstaller des paquets"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -481,19 +218,19 @@ msgstr ""
 "Commande à exécuter pour désinstaller des paquets, PACKAGE_NAME est remplacé "
 "par le nom du paquet dans la commande"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "command to upgrade packages"
-msgstr "Commande à exécuter pour mettre à niveau des paquets"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid "command to upgrade packages"
+msgstr "commande pour mettre à jour des paquets"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
 msgstr ""
-"Commande à exécuter pour mettre à niveau des paquets, PACKAGE_NAME est "
+"Commande à exécuter pour mettre à jour des paquets, PACKAGE_NAME est "
 "remplacé par le nom du paquet dans la commande"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list (in no particular order) of allowable file tables to show "
 "in the file area. possible values: 0 - show the user-specified or \"Favorite"
@@ -504,14 +241,15 @@ msgid ""
 "or \"Places\" table."
 msgstr ""
 "Contient la liste (sans ordre particulier) des tables de fichiers autorisées "
-"à l'affichage dans la zone de fichiers. Les valeurs possibles sont, 1 - "
+"à l'affichage dans la zone de fichiers. Les valeurs possibles sont, 0 - "
+"affiche la table d'applications « Favoris » ou indiquée par l'utilisateur, 1 - "
 "affiche la table des applications récemment utilisées, 2 - affiche la table "
 "des documents « Favoris » ou indiqués par l'utilisateur, 3 - affiche la table "
 "des documents récemment utilisés, 4 - affiche la table des répertoires ou "
 "emplacements « Favoris » de l'utilisateur, 5 - affiche la table des "
-"répertoires ou emplacements récemment utilisés."
+"répertoires ou « Raccourcis » récemment utilisés."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
@@ -519,11 +257,11 @@ msgstr ""
 "Contient la liste des fichiers (y compris les fichiers .desktop) à exclure "
 "des listes « Applications récemment utilisées » et « Fichiers récents »"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "Détermine la limite d'éléments dans la zone de fichiers."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
 "determines the limit of items in the file-area. The number favorite items is "
 "not limited. This limit applies to the number of recent items, i.e. the "
@@ -533,12 +271,12 @@ msgid ""
 msgstr ""
 "Détermine la limite des éléments dans la zone de fichiers. Le nombre favoris "
 "d'éléments n'est pas limité. Cette limite s'applique au nombre d'éléments "
-"récents, c.à.d. que le nombre d'éléments récents affichés est limité au "
-"nombre maximal d'éléments - le nombre d'éléments favoris. Si le nombre "
-"d'éléments favoris excède le nombre total d'éléments - le nombre d'éléments "
-"récents alors la limite est ignorée. "
+"récents, c-à-d que le nombre d'éléments récents affichés est limité à "
+"max_total_items - le nombre d'éléments favoris. Si le nombre "
+"d'éléments favoris excède max_total_items - min_recent_items, "
+"alors la limite est ignorée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
@@ -546,105 +284,105 @@ msgstr ""
 "Détermine le nombre minimum d'éléments dans la partie « Récents » de la zone "
 "de fichiers."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
 msgstr "Détermine les types de fichiers à afficher dans la zone de fichiers"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
 msgstr "Si vrai, le menu principal est plus difficile à fermer"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
 msgstr ""
 "Si vrai, le menu principal se ferme si les conditions supplémentaires "
-"suivantes sont vraies : la mosaïque est activée et la recherche est activée"
+"suivantes sont vérifiées : la mosaïque est activée et la recherche est activée"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
 msgstr "Verrouiller la configuration de la zone de fichiers"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "lock-down status for the application browser link"
-msgstr "Verrouiller l'état du lien de l'explorateur d'applications"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the application browser link"
+msgstr "Verrouiller l'état du lien du navigateur d'applications"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
 msgstr "Verrouiller l'état de la zone de recherche"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
 msgstr "Verrouiller l'état de la zone d'état"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
 msgstr "Verrouiller l'état de la zone système"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
 msgstr ""
 "État du verrouillage de la section des applications définies par "
 "l'utilisateur"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr ""
 "État du verrouillage de la section des répertoires définis par l'utilisateur"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
 msgstr ""
 "État du verrouillage de la section des documents définis par l'utilisateur"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
+#: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr ""
 "Les valeurs possibles sont : 0 [Applications], 1 [Documents], 2 "
 "[Emplacements]"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:33
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
-"Si vrai, le lien vers l'explorateur d'applications est visible et activé."
+"Si vrai, le lien vers le navigateur d'applications est visible et activé."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
 msgstr "Si vrai, la zone de recherche est visible et activée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
 msgstr "Si vrai, la zone d'état est visible et activée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
 msgstr "Si vrai, la zone système est visible et activée."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
 "Si vrai, l'utilisateur est autorisé à modifier la liste des éléments système."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
 "Si vrai, l'utilisateur est autorisé à modifier la liste des applications "
-"indiquées par l'utilisateur ou « Favorites »."
+"indiquées par l'utilisateur ou « Favoris »."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
 "Si vrai, l'utilisateur est autorisé à modifier la liste définie par "
-"l'utilisateur ou les répertoires « Favoris » ou les « Emplacements »."
+"l'utilisateur ou les répertoires « Favoris » ou les « Raccourcis »."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
+#: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
@@ -652,7 +390,7 @@ msgstr ""
 "Si vrai, l'utilisateur est autorisé à modifier la liste des documents "
 "définis par l'utilisateur ou les « Favoris »."
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "Moniteur _système"
 
@@ -679,65 +417,104 @@ msgstr "%.1f o"
 #: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
-msgstr "Dossier personnel : %s libres / %s au total"
+msgstr "Dossier personnel : %s libres sur %s"
+
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "Aide"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/etc/system-items.xbel.in.h:3
+msgid "Logout"
+msgstr "Se déconnecter"
+
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/etc/system-items.xbel.in.h:4
+msgid "Shutdown"
+msgstr "Éteindre"
+
+#: ../main-menu/src/main-menu-migration.c:192
+#: ../main-menu/etc/system-items.xbel.in.h:2
+msgid "Lock Screen"
+msgstr "Verrouiller l'écran"
 
 # http://bugzilla.gnome.org/show_bug.cgi?id=532406
-#: ../main-menu/src/main-menu-migration.c:161
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "Le menu principal de GNOME"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "Réseau : aucun"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
-msgstr "Cliquer pour configurer le réseau"
+msgstr "Cliquez pour configurer le réseau"
 
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "_Réseau : aucun"
 
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "Connecté à : %s"
 
-#: ../main-menu/src/network-status-tile.c:210
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "_Réseau : sans fil"
 
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Utilise Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:219
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
-msgstr "_Réseau : câblé"
+msgstr "_Réseau : filaire"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:234
+msgid "Networ_k: GSM"
+msgstr "_Réseau : GSM"
+
+#: ../main-menu/src/network-status-tile.c:242
+msgid "Networ_k: CDMA"
+msgstr "_Réseau : CDMA"
+
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Ethernet sans fil (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
-msgstr "Ethernet câblé (%s)"
+msgstr "Ethernet filaire (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "Ethernet mobile (%s)"
+
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -750,6 +527,10 @@ msgstr "Applications"
 msgid "Computer"
 msgstr "Ordinateur"
 
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Documents"
+
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
 msgstr "Applications favorites"
@@ -760,7 +541,7 @@ msgstr "Documents favoris"
 
 #: ../main-menu/src/slab-window.glade.h:6
 msgid "Favorite Places"
-msgstr "Emplacements favoris"
+msgstr "Raccourcis favoris"
 
 #: ../main-menu/src/slab-window.glade.h:8
 msgid "More Applications..."
@@ -772,11 +553,11 @@ msgstr "Plus de documents..."
 
 #: ../main-menu/src/slab-window.glade.h:10
 msgid "More Places..."
-msgstr "Plus d'emplacements..."
+msgstr "Plus de raccourcis..."
 
 #: ../main-menu/src/slab-window.glade.h:11
 msgid "Places"
-msgstr "Emplacements"
+msgstr "Raccourcis"
 
 #: ../main-menu/src/slab-window.glade.h:12
 msgid "Recent Applications"
@@ -798,15 +579,25 @@ msgstr "État"
 msgid "System"
 msgstr "Système"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "Ajouter aux favoris"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Ajoute le lanceur actuel aux favoris"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Ajoute le document actuel aux favoris"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "Retirer des favoris"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Supprime le document actuel des favoris"
