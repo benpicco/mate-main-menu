@@ -3,13 +3,6 @@
 application-browser/etc/application-browser.desktop.in.in
 application-browser/etc/application-browser.schemas.in
 application-browser/src/application-browser.c
-libslab/application-tile.c
-libslab/app-shell.c
-libslab/bookmark-agent.c
-libslab/directory-tile.c
-libslab/document-tile.c
-libslab/search-bar.c
-libslab/system-tile.c
 main-menu/etc/GNOME_MainMenu.server.in.in
 main-menu/etc/GNOME_MainMenu_ContextMenu.xml
 main-menu/etc/gnome-screensaver-lock.desktop
