@@ -1,0 +1,571 @@
+# translation of ml.po to
+# translation of gnome-main-menu.HEAD.ml.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"POT-Creation-Date: 2009-03-20 05:24+0000\n"
+"PO-Revision-Date: 2009-08-14 17:13+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../application-browser/etc/application-browser.desktop.in.in.h:1
+#: ../application-browser/src/application-browser.c:100
+msgid "Application Browser"
+msgstr "പ്രയോഗത്തിനുള്ള ബ്രൌസര്‍"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:1
+msgid "Exit shell on add or remove action performed"
+msgstr "ചേര്‍ക്കുക/നീക്കം ചെയ്യുക എന്ന പ്രവര്‍ത്തി ചെയ്തു് ഷെല്ലില്‍ നിന്നും പുറത്തു് കടക്കുക"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:2
+msgid "Exit shell on help action performed"
+msgstr "സഹായത്തിനുള്ള പ്രവര്‍ത്തി ചെയ്തു് ഷെല്ലില്‍ നിന്നും പുറത്തു് കടക്കുക"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:3
+msgid "Exit shell on start action performed"
+msgstr "ആരംഭിച്ചശേഷം ഷെല്ലില്‍ നിന്നും പുറത്തു് കടക്കുക"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:4
+msgid "Exit shell on upgrade or uninstall action performed"
+msgstr "പരിഷ്കരിക്കുക/അണ്‍ഇന്‍സ്റ്റോള്‍ ചെയ്തു് ഷെല്ലില്‍ നിന്നും പുറത്തു് കടക്കുക"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:5
+msgid "Filename of existing .desktop files"
+msgstr "നിലവിലുള്ള .desktop ഫയലുകളുടെ പേരു്"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:6
+msgid "Indicates whether to close the shell when a help action is performed"
+msgstr "ഒരു സഹായം ലഭ്യമാക്കുമ്പോള്‍, ഷെല്‍ അടയ്ക്കണമോ എന്നു് സൂചിപ്പിക്കുന്നു"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:7
+msgid "Indicates whether to close the shell when a start action is performed"
+msgstr "ഒരു പ്രവര്‍ത്തി ആരംഭിക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കണമോ എന്നു് സൂചിപ്പിക്കുന്നു"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:8
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr "ചേര്‍ക്കുക/നീക്കം ചെയ്യുമ്പോള്‍ ഷെല്‍ അടയ്ക്കണമോ എന്നു് സൂചിപ്പിക്കുന്നു"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:9
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr "പരിഷ്കരിക്കുക/അണ്‍ഇന്‍സ്റ്റോള്‍ ചെയ്യുമ്പോള്‍ ഷെല്‍ അടയ്ക്കണമോ എന്നു് സൂചിപ്പിക്കുന്നു"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:10
+msgid "Max number of New Applications"
+msgstr "പുതിയ പ്രയോഗങ്ങളുടെ ഏറ്റവും കൂടുതല്‍ എണ്ണം"
+
+#: ../application-browser/etc/application-browser.schemas.in.h:11
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
+msgstr "പുതിയ പ്രയോഗങ്ങളുടെ വിഭാഗത്തില്‍ കാണിക്കേണ്ട പ്രയോഗങ്ങളുടെ ഏറ്റവും കൂടുതല്‍ എണ്ണം"
+
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "ആരംഭത്തില്‍ അദൃശ്യമാകുക (ഷെല്‍ പ്രീലോഡ് ചെയ്യുന്നതിനുത്തമം)"
+
+#: ../application-browser/src/application-browser.c:93
+msgid "New Applications"
+msgstr "പുതിയ പ്രയോഗങ്ങള്‍"
+
+#: ../application-browser/src/application-browser.c:98
+msgid "Filter"
+msgstr "ഫില്‍‌റ്റര്‍"
+
+#: ../application-browser/src/application-browser.c:98
+msgid "Groups"
+msgstr "ഗ്രൂപ്പുകള്‍"
+
+#: ../application-browser/src/application-browser.c:98
+msgid "Application Actions"
+msgstr "പ്രയോഗങ്ങളുടെ പ്രവര്‍ത്തികള്‍"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+msgid "Default menu and application browser"
+msgstr "സ്വതവേയുള്ള മെനുവും പ്രയോഗത്തിനുള്ള ബ്രൌസറും"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+msgid "GNOME Main Menu"
+msgstr "ഗ്നോം പ്രധാന മെനു"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
+msgid "GNOME Main Menu Factory"
+msgstr "ഗ്നോം പ്രധാന മെനു ഫാക്ടറി"
+
+#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+msgid "Main Menu"
+msgstr "പ്രധാന മെനു"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+msgid "_About"
+msgstr "_സംബന്ധിച്ചു്"
+
+#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+msgid "_Open Menu"
+msgstr "മെനു _തുറക്കുക"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:1
+msgid ".desktop file for the Network Manager editor utility"
+msgstr "നെറ്റ്‌വര്‍ക്ക് മാനേജര്‍ എഡിറ്റര്‍ പ്രയോഗത്തിനുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
+msgid ".desktop file for the YaST2 network_devices utility"
+msgstr "YaST2 _നെറ്റ്‌വര്‍ക്ക് ഡിവൈസ് പ്രയോഗത്തിനുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:3
+msgid ".desktop file for the file browser"
+msgstr "ഫയല്‍‍ ബ്രൌസറിനുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:4
+msgid ".desktop file for the gnome-system-monitor"
+msgstr "gnome-system-monitor-നുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:5
+msgid ".desktop file for the net config tool"
+msgstr "net config പ്രയോഗത്തിനുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr "പ്രയോഗത്തിനുള്ള ബ്രൌസറിലേക്കുള്ള .desktop ഫയല്‍"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr "\"ഫയല്‍ നിരീക്ഷകനില്‍ തുറക്കുക\" മെനു വസ്തു സജീവമാക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കേണ്ട കമാന്‍ഡ്."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:8
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"\"ഫയല്‍ മാനേജറില്‍ തുറക്കുക\" മെനു വസ്തു സജീവമാക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കേണ്ട കമാന്‍ഡ്. "
+"സജീവമാക്കിയ ഫയലിന്റെ dirname അനുസരിച്ചുള്ള ഒരു യുആര്‍ഐ ആയി  FILE_URI മാറ്റിസ്ഥാപിക്കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:9
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr "\"എങ്ങോട്ട് അയയ്ക്കണം...\" മെനു വസ്തു സജീവമാക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കേണ്ട കമാന്‍ഡ്."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:10
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"\"എങ്ങോട്ട് അയയ്ക്കണം...\" മെനു വസ്തു സജീവമാക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കേണ്ട കമാന്‍ഡ്. സജീവമാക്കിയ "
+"ടൈലിന്റെ ഘടകങ്ങള്‍ അനുസരിച്ചു് DIRNAME , BASENAME എന്നിവ മാറ്റി സ്ഥാപിക്കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:11
+msgid "This is the command to execute when the search entry is used."
+msgstr "തെരച്ചിലിനുള്ള എന്‍ട്രി ഉപയോഗിക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കുന്ന കമാന്‍ഡ്."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:12
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+"തെരച്ചിലിനുള്ള എന്‍ട്രി ഉപയോഗിക്കുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിക്കുന്ന കമാന്‍ഡ്. തെരച്ചിലിനുള്ള വാചകം "
+"SEARCH_STRING-നെ മാറ്റി സ്ഥാപിക്കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:13
+msgid "command to uninstall packages"
+msgstr "പാക്കേജുകള്‍ അണ്‍ഇന്‍സ്റ്റോള്‍ ചെയ്യുന്നതിനുള്ള കമാന്‍ഡ്"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:14
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"പാക്കേജുകള്‍ അണ്‍ഇന്‍സ്റ്റോള്‍ ചെയ്യുന്നതിനുള്ള കമാന്‍ഡ്, PACKAGE_NAME-നു് പകരം കമാന്‍ഡില്‍ പാക്കേജിന്റെ "
+"പേരു് നല്‍കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:15
+msgid "command to upgrade packages"
+msgstr "പാക്കേജുകള്‍ പരിഷ്കരിക്കുന്നതിനുള്ള കമാന്‍ഡ്"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:16
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"പാക്കേജുകള്‍ പരിഷ്കരിക്കുന്നതിനുള്ള കമാന്‍ഡ്, PACKAGE_NAME-നു് പകരം കമാന്‍ഡില്‍ പാക്കേജിന്റെ പേരു് "
+"നല്‍കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:17
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr ""
+"ഫയലുകളുടെ സ്ഥലത്തു് കാണിക്കുവാന്‍ അനുവദിക്കുന്ന ഫയല്‍ പട്ടികകള്‍ (പ്രത്യേക ക്രമമില്ല) അടങ്ങുന്നു. "
+"സാധ്യമായ മൂല്ല്യങ്ങള്‍: 0 - ഉപയോക്താവു് വ്യക്തമാക്കിയ അല്ലെങ്കില്‍ \"ഇഷ്ടമുള്ള\" പ്രയോഗങ്ങളുടെ "
+"പട്ടിക കാണിക്കുക, 1 - ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച പ്രയോഗങ്ങളുടെ പട്ടിക കാണിക്കുക, 2 - "
+"ഉപയോക്താവു് വ്യക്തമാക്കിയ അല്ലെങ്കില്‍ \"ഇഷ്ടമുള്ള\" രേഖകളുടെ പട്ടിക കാണിക്കുക, 3 - ഏറ്റവും "
+"ഒടുവില്‍ ഉപയോഗിച്ച രേഖകളുടെ പട്ടിക കാണിക്കുക, 4 - ഉപയോക്താവു് വ്യക്തമാക്കിയ അല്ലെങ്കില്‍ "
+"\"ഇഷ്ടമുള്ള\" ഡയറക്ടറികള്‍ അല്ലെങ്കില്‍ \"സ്ഥലങ്ങളുടെ\" പട്ടിക കാണിക്കുക, 5 - ഏറ്റവും ഒടുവില്‍ "
+"ഉപയോഗിച്ച ഡയറക്ടറികള്‍ അല്ലെങ്കില്‍ \"സ്ഥലങ്ങളുടെ\" പട്ടിക കാണിക്കുക"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:18
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"\"ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച പ്രയോഗങ്ങള്‍\", \"ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച ഫയലുകള്‍\" എന്നിവയുടെ "
+"പട്ടികയില്‍ ഉള്‍പ്പെടുത്തുവാന്‍ പാടില്ലാത്ത ഫയലുകള്‍ (.desktop ഫയലുകള്‍ ഉള്‍പ്പടെ) അടങ്ങുന്നു"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:19
+msgid "determines the limit of items in the file-area."
+msgstr "ഫയലിനുള്ള സ്ഥലത്തു് വസ്തുക്കള്‍ക്കുള്ള പരിമിധി വ്യക്തമാക്കുന്നു."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+"ഫയലിനുള്ള സ്ഥലത്തു് വസ്തുക്കള്‍ക്കുള്ള പരിമിധി വ്യക്തമാക്കുന്നു. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:21
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
+msgstr "ഫയലുകളുടെ സ്ഥലത്തു് \"ഏറ്റവും ഒടുവില്‍\" വിഭാഗത്തു് ഏറ്റവും കുറഞ്ഞ വസ്തുക്കളുടെ എണ്ണം നിശ്ചയിക്കുന്നു"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:22
+msgid "determines which types of files to display in the file area"
+msgstr "ഫയലുകളുടെ സ്ഥലത്തു് ഏതു് തരത്തിലുള്ള ഫയലുകള്‍ എന്നു് നിശ്ചയിക്കുന്നു"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:23
+msgid "if true, main menu is more anxious to close"
+msgstr "true എങ്കില്‍, പ്രധാന മെനു പെട്ടെന്നു് അടയ്ക്കുന്നു"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:24
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+"true എങ്കില്‍, അധികമായ ഈ അവസ്ഥകളില്‍ പ്രധാന മെനു അടയ്ക്കുന്നു: ടൈല്‍ സജീവമാക്കിയിരിക്കുന്നു, "
+"തെരച്ചിലും."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:25
+msgid "lock-down configuration of the file area"
+msgstr "ഫയലിന്റെ സ്ഥലത്തിനുള്ള lock-down ക്രമീകരണം"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the application browser link"
+msgstr "പ്രയോഗത്തിന്റെ ബ്രൌസറിന്റെ ലിങ്കിനുള്ള lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
+msgid "lock-down status for the search area"
+msgstr "തെരച്ചിലിനുള്ള സ്ഥലത്തിന്റെ lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:28
+msgid "lock-down status for the status area"
+msgstr "അവസ്ഥ ലഭ്യമാക്കുന്ന സ്ഥലത്തിന്റെ lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:29
+msgid "lock-down status for the system area"
+msgstr "സിസ്റ്റമിന്റെ സ്ഥലത്തിന്റെ lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:30
+msgid "lock-down status for the user-specified apps section"
+msgstr "ഉപയോക്താവു് വ്യക്തമാക്കുന്ന പ്രയോഗങ്ങളുടെ വിഭാഗത്തുള്ള lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:31
+msgid "lock-down status for the user-specified dirs section"
+msgstr "ഉപയോക്താവു് വ്യക്തമാക്കിയ ഡയറക്ടറികളുടെ വിഭാഗത്തിന്റെ lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:32
+msgid "lock-down status for the user-specified docs section"
+msgstr "ഉപയോക്താവു് വ്യക്തമാക്കിയ രേഖകളുടെ വിഭാഗത്തിന്റെ lock-down അവസ്ഥ"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "സാധ്യമായ മൂല്ല്യങ്ങള്‍ = 0 [പ്രയോഗങ്ങള്‍], 1 [രേഖകള്‍], 2 [സ്ഥലങ്ങള്‍]"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr "പ്രയോഗത്തിനുള്ള ബ്രൌസരിലേക്കുള്ള ലിങ്കിന്റെ ദൃശ്യവും സജീവവുമാകണമെങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:35
+msgid "set to true if the search area should be visible and active."
+msgstr "തെരച്ചിലിനുള്ള സ്ഥലം ദൃശ്യവും സജീവവുമാകണമെങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:36
+msgid "set to true if the status area should be visible and active."
+msgstr "അവസ്ഥ ലഭ്യമാക്കുന്ന സ്ഥലം ദൃശ്യവും സജീവവുമാകണമെങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:37
+msgid "set to true if the system area should be visible and active."
+msgstr "സിസ്റ്റത്തിനുള്ള സ്ഥലം ദൃശ്യവും സജീവവുമാകണമെങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:38
+msgid "set to true if the user is allowed to modify the list of system items."
+msgstr ""
+"സിസ്റ്റം വസ്തുക്കളുടെ പട്ടിക മാറ്റം വരുത്തുന്നതിനായി ഉപയോക്താവിനെ അനുവദിക്കുന്നു എങ്കില്‍ true "
+"ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:39
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+"ഉപയോക്താവു് വ്യക്തമാക്കുന്ന അല്ലെങ്കില്‍ \"ഇഷ്ടമുള്ള\" പ്രയോഗങ്ങളുടെ പട്ടിക മാറ്റം വരുത്തുന്നതിനായി "
+"ഉപയോക്താവിനെ അനുവദിക്കുന്നു എങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:40
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+"ഉപയോക്താവു് വ്യക്തമാക്കുന്ന അല്ലെങ്കില്‍ \"ഇഷ്ടമുള്ള\" ഡയറക്ടറികള്‍ അല്ലെങ്കില്‍ \"സ്ഥലങ്ങള്‍\" "
+"എന്നിവയുടെ പട്ടിക മാറ്റം വരുത്തുന്നതിനായി ഉപയോക്താവിനെ അനുവദിക്കുന്നു എങ്കില്‍ true ആയി "
+"സജ്ജമാക്കുക."
+
+#: ../main-menu/etc/slab.schemas.in.in.h:41
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr ""
+"ഉപയോക്താവു് വ്യക്തമാക്കുന്ന അല്ലെങ്കില്‍ \"ഇഷ്ടമുള്ള\" രേഖകളുടെ പട്ടിക മാറ്റം വരുത്തുന്നതിനായി "
+"ഉപയോക്താവിനെ അനുവദിക്കുന്നു എങ്കില്‍ true ആയി സജ്ജമാക്കുക."
+
+#: ../main-menu/src/hard-drive-status-tile.c:99
+msgid "_System Monitor"
+msgstr "_സിസ്റ്റം മോണിറ്റര്‍"
+
+#: ../main-menu/src/hard-drive-status-tile.c:212
+#, c-format
+msgid "%.1fG"
+msgstr "%.1fG"
+
+#: ../main-menu/src/hard-drive-status-tile.c:214
+#, c-format
+msgid "%.1fM"
+msgstr "%.1fM"
+
+#: ../main-menu/src/hard-drive-status-tile.c:216
+#, c-format
+msgid "%.1fK"
+msgstr "%.1fK"
+
+#: ../main-menu/src/hard-drive-status-tile.c:218
+#, c-format
+msgid "%.1fb"
+msgstr "%.1fb"
+
+#: ../main-menu/src/hard-drive-status-tile.c:239
+#, c-format
+msgid "Home: %s Free / %s"
+msgstr "Home: %s Free / %s"
+
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "സഹായം"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/etc/system-items.xbel.in.h:3
+msgid "Logout"
+msgstr "പുറത്തു് കടക്കുക"
+
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/etc/system-items.xbel.in.h:4
+msgid "Shutdown"
+msgstr "അടച്ചുപൂട്ടുക"
+
+#: ../main-menu/src/main-menu-migration.c:192
+#: ../main-menu/etc/system-items.xbel.in.h:2
+msgid "Lock Screen"
+msgstr "സ്ക്രീന്‍ പൂട്ടുക"
+
+#: ../main-menu/src/main-menu-migration.c:194
+msgid "gnome-lockscreen"
+msgstr "gnome-lockscreen"
+
+#: ../main-menu/src/main-menu-ui.c:2387
+msgid "The GNOME Main Menu"
+msgstr "ഗ്നോം പ്രധാന മെനു"
+
+#: ../main-menu/src/network-status-tile.c:90
+msgid "Network: None"
+msgstr "നെറ്റ്‌വര്‍ക്ക്: ഒന്നുമില്ല"
+
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
+msgid "Click to configure network"
+msgstr "നെറ്റ്‌വര്‍ക്ക് ക്രമീകരിക്കുന്നതിനായി ക്ലിക്ക് ചെയ്യുക"
+
+#: ../main-menu/src/network-status-tile.c:205
+msgid "Networ_k: None"
+msgstr "_നെറ്റ്‌വര്‍ക്ക്: ഒന്നുമില്ല"
+
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
+#, c-format
+msgid "Connected to: %s"
+msgstr "കണക്ട് ചെയ്തിരിക്കുന്നതു്: %s"
+
+#: ../main-menu/src/network-status-tile.c:217
+msgid "Networ_k: Wireless"
+msgstr "_നെറ്റ്‌വര്‍ക്ക്: വയര്‍ലെസ്"
+
+#: ../main-menu/src/network-status-tile.c:222
+#, c-format
+msgid "Using ethernet (%s)"
+msgstr "ഇഥര്‍നെറ്റ് ഉപയോഗിക്കുന്ന (%s)"
+
+#: ../main-menu/src/network-status-tile.c:226
+msgid "Networ_k: Wired"
+msgstr "_നെറ്റ്‌വര്‍ക്ക്: വയര്‍ഡ്"
+
+#: ../main-menu/src/network-status-tile.c:234
+msgid "Networ_k: GSM"
+msgstr "_നെറ്റ്‌വര്‍ക്ക്: GSM"
+
+#: ../main-menu/src/network-status-tile.c:242
+msgid "Networ_k: CDMA"
+msgstr "_നെറ്റ്‌വര്‍ക്ക്: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:345
+#, c-format
+msgid "Wireless Ethernet (%s)"
+msgstr "വയര്‍ലെസ് ഇഥര്‍നെറ്റ് (%s)"
+
+#: ../main-menu/src/network-status-tile.c:350
+#, c-format
+msgid "Wired Ethernet (%s)"
+msgstr "വയര്‍ഡ് ഇഥര്‍നെറ്റ് (%s)"
+
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
+#, c-format
+msgid "Mobile Ethernet (%s)"
+msgstr "മൊബൈല്‍ ഇഥര്‍നെറ്റ് (%s)"
+
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
+#, c-format
+msgid "Unknown"
+msgstr "അപരിചിതം"
+
+#: ../main-menu/src/network-status-tile.c:372
+#, c-format
+msgid "%d Mb/s"
+msgstr "%d Mb/s"
+
+#: ../main-menu/src/slab-window.glade.h:1
+msgid "Applications"
+msgstr "പ്രയോഗങ്ങള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:2
+msgid "Computer"
+msgstr "കമ്പ്യൂട്ടര്‍"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "രേഖകള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:4
+msgid "Favorite Applications"
+msgstr "ഇഷ്ടമുള്ള പ്രയോഗങ്ങള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:5
+msgid "Favorite Documents"
+msgstr "ഇഷ്ടമുള്ള രേഖകള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:6
+msgid "Favorite Places"
+msgstr "ഇഷ്ടമുള്ള സ്ഥലങ്ങള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:8
+msgid "More Applications..."
+msgstr "കൂടുതല്‍ പ്രയോഗങ്ങള്‍..."
+
+#: ../main-menu/src/slab-window.glade.h:9
+msgid "More Documents..."
+msgstr "കൂടുതല്‍ രേഖകള്‍..."
+
+#: ../main-menu/src/slab-window.glade.h:10
+msgid "More Places..."
+msgstr "കൂടുതല്‍ സ്ഥലങ്ങള്‍..."
+
+#: ../main-menu/src/slab-window.glade.h:11
+msgid "Places"
+msgstr "സ്ഥലങ്ങള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:12
+msgid "Recent Applications"
+msgstr "ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച പ്രയോഗങ്ങള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:13
+msgid "Recent Documents"
+msgstr "ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച രേഖകള്‍"
+
+#: ../main-menu/src/slab-window.glade.h:14
+msgid "Search:"
+msgstr "തെരയുക:"
+
+#: ../main-menu/src/slab-window.glade.h:15
+msgid "Status"
+msgstr "അവസ്ഥ"
+
+#: ../main-menu/src/slab-window.glade.h:16
+msgid "System"
+msgstr "സിസ്റ്റം"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് ചേര്‍ക്കുക"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
+msgid "Add the current launcher to favorites"
+msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് നിലവില്‍ ലഭ്യമാക്കുന്ന സംവിധാനം ചേര്‍ക്കുക"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
+msgid "Add the current document to favorites"
+msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് നിലവിലുള്ള രേഖ ചേര്‍ക്കുക"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "ഇഷ്ടമുള്ളവയില്‍ നിന്നും നീക്കം ചെയ്യുക"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
+msgid "Remove the current document from favorites"
+msgstr "ഇഷ്ടമുള്ളവയില്‍ നിന്നും നിലവിലുള്ള രേഖ നീക്കം ചെയ്യുക"
+
