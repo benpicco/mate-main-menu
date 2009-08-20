@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-20 16:59+0200\n"
+"POT-Creation-Date: 2009-08-20 22:05+0200\n"
 "PO-Revision-Date: 2009-08-20 16:59+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -51,19 +51,29 @@ msgid "Indicates whether to close the shell when a start action is performed"
 msgstr "Indikerar huruvida skalet ska avslutas när en startåtgärd utförs"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
-msgid "Indicates whether to close the shell when an add or remove action is performed"
-msgstr "Indikerar huruvida skalet ska avslutas när en tilläggs- eller borttagningsåtgärd utförs"
+msgid ""
+"Indicates whether to close the shell when an add or remove action is "
+"performed"
+msgstr ""
+"Indikerar huruvida skalet ska avslutas när en tilläggs- eller "
+"borttagningsåtgärd utförs"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
-msgid "Indicates whether to close the shell when an upgrade or uninstall action is performed"
-msgstr "Indikerar huruvida skalet ska avslutas när en uppgraderings- eller avinstallationsåtgärd utförs"
+msgid ""
+"Indicates whether to close the shell when an upgrade or uninstall action is "
+"performed"
+msgstr ""
+"Indikerar huruvida skalet ska avslutas när en uppgraderings- eller "
+"avinstallationsåtgärd utförs"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
 msgstr "Högsta antalet nya program"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
-msgid "The maximum number of applications that will be displayed in the New Applications category"
+msgid ""
+"The maximum number of applications that will be displayed in the New "
+"Applications category"
 msgstr "Det högsta antal program som kan visas i kategorin Nya program"
 
 #: ../application-browser/src/application-browser.c:63
@@ -91,8 +101,7 @@ msgid "Default menu and application browser"
 msgstr "Standardbläddrare för menyer och program"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386
-#: ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME-huvudmeny"
 
@@ -137,63 +146,124 @@ msgid ".desktop path for the application browser"
 msgstr ".desktop-sökväg för programbläddraren"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated."
-msgstr "Det här är det kommando som ska köras när menyalternativet Öppna i Filhanteraren aktiveras."
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated."
+msgstr ""
+"Det här är det kommando som ska köras när menyalternativet Öppna i "
+"Filhanteraren aktiveras."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
-msgid "This is the command to execute when the \"Open in File Manager\" menu item is activated. FILE_URI is replaced with a uri corresponding to the dirname of the activated file."
-msgstr "Det här är det kommando som ska köras när menyalternativet Öppna i Filhanteraren aktiveras. FILE_URI byts ut mot en URI som motsvarar dirname för den aktiverade filen."
+msgid ""
+"This is the command to execute when the \"Open in File Manager\" menu item "
+"is activated. FILE_URI is replaced with a uri corresponding to the dirname "
+"of the activated file."
+msgstr ""
+"Det här är det kommando som ska köras när menyalternativet Öppna i "
+"Filhanteraren aktiveras. FILE_URI byts ut mot en URI som motsvarar dirname "
+"för den aktiverade filen."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
-msgid "This is the command to execute when the \"Send To...\" menu item is activated."
-msgstr "Det här är det kommando som ska köras när menyalternativet Skicka till aktiveras."
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated."
+msgstr ""
+"Det här är det kommando som ska köras när menyalternativet Skicka till "
+"aktiveras."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
-msgid "This is the command to execute when the \"Send To...\" menu item is activated. DIRNAME and BASENAME are replaced with the corresponding components of the activated tile."
-msgstr "Det här är det kommando som ska köras när menyalternativet Skicka till aktiveras. DIRNAME och BASENAME byts ut mot motsvarande komponenter i den aktiverade plattan."
+msgid ""
+"This is the command to execute when the \"Send To...\" menu item is "
+"activated. DIRNAME and BASENAME are replaced with the corresponding "
+"components of the activated tile."
+msgstr ""
+"Det här är det kommando som ska köras när menyalternativet Skicka till "
+"aktiveras. DIRNAME och BASENAME byts ut mot motsvarande komponenter i den "
+"aktiverade plattan."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "Det här är det kommando som körs när sökposten används."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
-msgid "This is the command to execute when the search entry is used. SEARCH_STRING is replaced with the entered search text."
-msgstr "Det här är kommandot som körs när sökposten används. SEARCH_STRING byts ut mot den angivna söktexten."
+msgid ""
+"This is the command to execute when the search entry is used. SEARCH_STRING "
+"is replaced with the entered search text."
+msgstr ""
+"Det här är kommandot som körs när sökposten används. SEARCH_STRING byts ut "
+"mot den angivna söktexten."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
 msgstr "kommando för avinstallation av paket"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:14
-msgid "command to uninstall packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "kommando för avinstallation av paket, PACKAGE_NAME byts ut mot paketnamnet i kommandot"
+msgid ""
+"command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"kommando för avinstallation av paket, PACKAGE_NAME byts ut mot paketnamnet i "
+"kommandot"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
 msgstr "kommando för uppgradering av paket"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:16
-msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the package in the command"
-msgstr "kommando för uppgradering av paket, PACKAGE_NAME byts ut mot paketnamnet i kommandot"
+msgid ""
+"command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
+"package in the command"
+msgstr ""
+"kommando för uppgradering av paket, PACKAGE_NAME byts ut mot paketnamnet i "
+"kommandot"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
-msgid "contains the list (in no particular order) of allowable file tables to show in the file area. possible values: 0 - show the user-specified or \"Favorite\" applications table, 1 - show the recently used applications table, 2 - show the user-specified or \"Favorite\" documents table, 3 - show the recently used documents table, 4 - show the user-specified of \"Favorite\" directories or \"Places\" table, and 5 - show the recently used directories or \"Places\" table."
-msgstr "innehåller listan (ej sorterad) med tillåtna filtabeller som kan visas i filområdet. Möjliga värden är: 0 - visa de användarspecificerade programmen (favoritprogram), 1 - visa de senast använda programmen, 2 - visa användarspecificerade dokument (favoritdokument), 3 - visa de senast använda dokumenten, 4 - visa användarspecificerade kataloger (favoritkataloger) eller platser och 5 - visa de senast använda katalogerna eller platserna."
+msgid ""
+"contains the list (in no particular order) of allowable file tables to show "
+"in the file area. possible values: 0 - show the user-specified or \"Favorite"
+"\" applications table, 1 - show the recently used applications table, 2 - "
+"show the user-specified or \"Favorite\" documents table, 3 - show the "
+"recently used documents table, 4 - show the user-specified of \"Favorite\" "
+"directories or \"Places\" table, and 5 - show the recently used directories "
+"or \"Places\" table."
+msgstr ""
+"innehåller listan (ej sorterad) med tillåtna filtabeller som kan visas i "
+"filområdet. Möjliga värden är: 0 - visa de användarspecificerade programmen "
+"(favoritprogram), 1 - visa de senast använda programmen, 2 - visa "
+"användarspecificerade dokument (favoritdokument), 3 - visa de senast använda "
+"dokumenten, 4 - visa användarspecificerade kataloger (favoritkataloger) "
+"eller platser och 5 - visa de senast använda katalogerna eller platserna."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
-msgid "contains the list of files (including .desktop files) to be excluded from the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr "innehåller listan med filer (inklusive .desktop-filer) som ska uteslutas från listorna Senast använda program och Senaste filer"
+msgid ""
+"contains the list of files (including .desktop files) to be excluded from "
+"the \"Recently Used Applications\" and \"Recent Files\" lists"
+msgstr ""
+"innehåller listan med filer (inklusive .desktop-filer) som ska uteslutas "
+"från listorna Senast använda program och Senaste filer"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "bestämmer begränsningen av objekt i filområdet."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
-msgstr "bestämmer begränsning för objekt i filområdet. Antalet favoritobjekt påverkas inte. Begränsningen gäller för de senast använda objekten, vilket betyder att antalet nyligen använda objekt är begränsat till max_total_items - antalet favoritobjekt. Om antalet favoritobjekt överskrider max_total_items - min_recent_items ignoreras den här gränsen."
+msgid ""
+"determines the limit of items in the file-area. The number favorite items is "
+"not limited. This limit applies to the number of recent items, i.e. the "
+"number of recent items displayed is limited to max_total_items - the number "
+"of favorite items. If the number of favorite items exceeds max_total_items - "
+"min_recent_items than this limit is ignored."
+msgstr ""
+"bestämmer begränsning för objekt i filområdet. Antalet favoritobjekt "
+"påverkas inte. Begränsningen gäller för de senast använda objekten, vilket "
+"betyder att antalet nyligen använda objekt är begränsat till max_total_items "
+"- antalet favoritobjekt. Om antalet favoritobjekt överskrider "
+"max_total_items - min_recent_items ignoreras den här gränsen."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
-msgid "determines the minimum number of items in the \"recent\" section of the file-area."
+msgid ""
+"determines the minimum number of items in the \"recent\" section of the file-"
+"area."
 msgstr "bestämmer det minsta antalet objekt i Senaste-delen i filområdet."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
@@ -205,8 +275,12 @@ msgid "if true, main menu is more anxious to close"
 msgstr "om sant är huvudmenyn mer angelägen att stängas"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
-msgid "if true, main menu will close under these additional conditions: tile is activated, search activated"
-msgstr "om sant stängs huvudmenyn under dessa ytterligare villkor: platta aktiveras, sökning aktiveras"
+msgid ""
+"if true, main menu will close under these additional conditions: tile is "
+"activated, search activated"
+msgstr ""
+"om sant stängs huvudmenyn under dessa ytterligare villkor: platta aktiveras, "
+"sökning aktiveras"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
@@ -245,8 +319,12 @@ msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
 msgstr "möjliga värden = 0 [Program], 1 [Dokument], 2 [Platser]"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:34
-msgid "set to true if the link to the application browser should be visible and active."
-msgstr "ställ in till sant om länken till programbläddraren ska vara synlig och aktiv."
+msgid ""
+"set to true if the link to the application browser should be visible and "
+"active."
+msgstr ""
+"ställ in till sant om länken till programbläddraren ska vara synlig och "
+"aktiv."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
@@ -262,19 +340,33 @@ msgstr "ställ in till sant om systemfältet ska vara synligt och aktivt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
-msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över systemobjekt."
+msgstr ""
+"ställ in till sant om användaren ska tillåtas att redigera listan över "
+"systemobjekt."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" applications."
-msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över användardefinierade eller \"Favorit\"-program."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" applications."
+msgstr ""
+"ställ in till sant om användaren ska tillåtas att redigera listan över "
+"användardefinierade eller \"Favorit\"-program."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" directories or \"Places\"."
-msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över användardefinierade eller \"Favorit\"-kataloger eller \"Platser\"."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" directories or \"Places\"."
+msgstr ""
+"ställ in till sant om användaren ska tillåtas att redigera listan över "
+"användardefinierade eller \"Favorit\"-kataloger eller \"Platser\"."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
-msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
-msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över användardefinierade eller \"Favorit\"-dokument."
+msgid ""
+"set to true if the user is allowed to modify the list of user-specified or "
+"\"Favorite\" documents."
+msgstr ""
+"ställ in till sant om användaren ska tillåtas att redigera listan över "
+"användardefinierade eller \"Favorit\"-dokument."
 
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
@@ -489,14 +581,19 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 
 #~ msgid "<b>Start %s</b>"
 #~ msgstr "<b>Starta %s</b>"
+
 #~ msgid "Upgrade"
 #~ msgstr "Uppgradera"
+
 #~ msgid "Uninstall"
 #~ msgstr "Avinstallera"
+
 #~ msgid "Remove from Startup Programs"
 #~ msgstr "Ta bort från startprogram"
+
 #~ msgid "Add to Startup Programs"
 #~ msgstr "Lägg till i startprogram"
+
 #~ msgid ""
 #~ "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
 #~ "\n"
@@ -505,103 +602,152 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "<span size=\"large\"><b>Inga matchningar hittades.</b> </span><span>\n"
 #~ "\n"
 #~ "  Filtret <b>%s</b> matchar inga objekt.</span>"
+
 #~ msgid "Other"
 #~ msgstr "Övriga"
+
 #~ msgid "New Spreadsheet"
 #~ msgstr "Nytt kalkylblad"
+
 #~ msgid "New Document"
 #~ msgstr "Nytt dokument"
+
 #~ msgid "Home"
 #~ msgstr "Hem"
+
 #~ msgid "Desktop"
 #~ msgstr "Skrivbord"
+
 #~ msgid "File System"
 #~ msgstr "Filsystem"
+
 #~ msgid "Network Servers"
 #~ msgstr "Nätverksservrar"
+
 #~ msgid "Search"
 #~ msgstr "Sök"
+
 #~ msgid "<b>Open</b>"
 #~ msgstr "<b>Öppna</b>"
+
 #~ msgid "Rename..."
 #~ msgstr "Byt namn..."
+
 #~ msgid "Send To..."
 #~ msgstr "Skicka till..."
+
 #~ msgid "Move to Trash"
 #~ msgstr "Flytta till papperskorgen"
+
 #~ msgid "Delete"
 #~ msgstr "Ta bort"
+
 #~ msgid "Are you sure you want to permanently delete \"%s\"?"
 #~ msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
+
 #~ msgid "If you delete an item, it is permanently lost."
 #~ msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
+
 #~ msgid "<b>Open with \"%s\"</b>"
 #~ msgstr "<b>Öppna med \"%s\"</b>"
+
 #~ msgid "Open with Default Application"
 #~ msgstr "Öppna med standardprogrammet"
+
 #~ msgid "Open in File Manager"
 #~ msgstr "Öppna i filhanterare"
+
 #~ msgid "?"
 #~ msgstr "?"
+
 #~ msgid "%l:%M %p"
 #~ msgstr "%H.%M"
+
 #~ msgid "Today %l:%M %p"
 #~ msgstr "Idag %H.%M"
+
 #~ msgid "Yesterday %l:%M %p"
 #~ msgstr "Igår %H.%M"
+
 #~ msgid "%a %l:%M %p"
 #~ msgstr "%a %H.%M"
+
 #~ msgid "%b %d %l:%M %p"
 #~ msgstr "%d %b %H.%M"
+
 #~ msgid "%b %d %Y"
 #~ msgstr "%d %b %Y"
+
 #~ msgid "Find Now"
 #~ msgstr "Sök nu"
+
 #~ msgid "<b>Open %s</b>"
 #~ msgstr "<b>Öppna %s</b>"
+
 #~ msgid "Remove from System Items"
 #~ msgstr "Ta bort från Systemobjekt"
+
 #~ msgid "Unexpected attribute '%s' for element '%s'"
 #~ msgstr "Attributet \"%s\" förväntades inte i elementet \"%s\""
+
 #~ msgid "Attribute '%s' of element '%s' not found"
 #~ msgstr "Det gick inte att hitta attributet \"%s\" hos elementet \"%s\""
+
 #~ msgid "Unexpected tag '%s', tag '%s' expected"
 #~ msgstr "Taggen \"%s\" förväntades inte, förväntad tagg var \"%s\""
+
 #~ msgid "Unexpected tag '%s' inside '%s'"
 #~ msgstr "Taggen \"%s\" förväntades inte i \"%s\""
+
 #~ msgid "No valid bookmark file found in data dirs"
 #~ msgstr "Ingen giltig bokmärkesfil kunde hittas i datakatalogerna"
+
 #~ msgid "A bookmark for URI '%s' already exists"
 #~ msgstr "Det finns redan ett bokmärke för URI:n \"%s\""
+
 #~ msgid "No bookmark found for URI '%s'"
 #~ msgstr "Det gick inte att hitta någon bokmärke för URI:n \"%s\""
+
 #~ msgid "No MIME type defined in the bookmark for URI '%s'"
 #~ msgstr "Ingen MIME-typ är definierad i bokmärket för URI:n \"%s\""
+
 #~ msgid "No private flag has been defined in bookmark for URI '%s'"
 #~ msgstr "Ingen privat flagga är definierad i bokmärket för URI:n \"%s\""
+
 #~ msgid "No groups set in bookmark for URI '%s'"
 #~ msgstr "Inga grupper är angivna i bokmärket för URI:n \"%s\""
+
 #~ msgid "No application with name '%s' registered a bookmark for '%s'"
 #~ msgstr ""
 #~ "Inget program med namnet %s har registrerat något bokmärke för \"%s\""
+
 #~ msgid "Edited %m/%d/%Y"
 #~ msgstr "Redigerade %Y-%m-%d"
+
 #~ msgid "Hard _Drive"
 #~ msgstr "Hår_ddisk"
+
 #~ msgid "%lluG"
 #~ msgstr "%lluG"
+
 #~ msgid "%lluM"
 #~ msgstr "%lluM"
+
 #~ msgid "%lluK"
 #~ msgstr "%lluK"
+
 #~ msgid "%llub"
 #~ msgstr "%llub"
+
 #~ msgid "Control Center"
 #~ msgstr "Kontrollcenter"
+
 #~ msgid "Close the control-center when a task is activated"
 #~ msgstr "Stäng kontrollcentret när en aktivitet aktiveras"
+
 #~ msgid "Task names and associated .desktop files"
 #~ msgstr "Aktivitetsnamn och tillhörande .desktop-filer"
+
 #~ msgid ""
 #~ "The task name to be displayed in the control-center (thus needing to be "
 #~ "translated) followed by a \";\" separator then the filename of an "
@@ -610,6 +756,7 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "Det aktivitetsnamn som ska visas i styrcentalen (och som behöver "
 #~ "konverteras) följt av avgränsaren ; och filnamnet på en tillhörande ."
 #~ "desktop-fil som ska startas för aktiviteten."
+
 #~ msgid ""
 #~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
 #~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
@@ -620,18 +767,24 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "manager.desktop,Ställ in nätverk;YaST2/lan.desktop,Ändra lösenord;gnome-"
 #~ "passwd.desktop,Lägg till användare;YaST2/users.desktop,Öppna "
 #~ "Administratörsinställningar;YaST.desktop]"
+
 #~ msgid ""
 #~ "if true, the control-center will close when a \"Common Task\" is activated"
 #~ msgstr "om sant stängs kontrollcentret när en Allmän aktivitet aktiveras"
+
 #~ msgid "key not found [%s]\n"
 #~ msgstr "nyckeln hittades inte [%s]\n"
+
 #~ msgid "Common Tasks"
 #~ msgstr "Vanliga uppgifter"
+
 #~ msgid "Help Unavailable"
 #~ msgstr "Hjälpen är inte tillgänglig"
+
 #~ msgid ""
 #~ "Location of the system-wide directory in which startup programs are found."
 #~ msgstr "Sökväg till den systemomfattande katalog där startprogrammen finns."
+
 #~ msgid ""
 #~ "Location of the user directory in which startup programs are found. The "
 #~ "dir path should not be absolute, as the value of this key is appended to "
@@ -640,16 +793,22 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "Sökväg till den användarkatalog där startprogrammen finns. "
 #~ "Katalogsökvägen bör inte vara absolut eftersom värdet för nyckeln bifogas "
 #~ "följande sökväg: ~/."
+
 #~ msgid "System-wide autostart program drop dir"
 #~ msgstr "Målkatalog för systemomfattande autostartprogram"
+
 #~ msgid "User autostart program drop dir (within the home dir)"
 #~ msgstr "Målkatalog för användarautostartprogram (i startkatalogen)"
+
 #~ msgid "Software Update"
 #~ msgstr "Programuppdatering"
+
 #~ msgid ".desktop files for \"Favorite Applications\""
 #~ msgstr ".desktop-filer för Favoritprogram"
+
 #~ msgid "System area items"
 #~ msgstr "Systemområdesobjekt"
+
 #~ msgid ""
 #~ "The list of the items which will appear in the System area. Possible "
 #~ "values are HELP = 0, CONTROL_CENTER = 1, PACKAGE_MANAGER = 2, LOG_OUT = "
@@ -662,6 +821,7 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "4. HELP, CONTROL_CENTER och PACKAGE_MANAGER behöver ha rätt .desktop-"
 #~ "filer definierade i nycklarna help_item,  control_center_item respektive "
 #~ "package_manager_item."
+
 #~ msgid ""
 #~ "contains the list (in no particular order) of allowable file types to "
 #~ "show in the file area. possible values (see also the note for /desktop/"
@@ -679,24 +839,30 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "senast använda (instansierade med main-menu eller application-browser).  "
 #~ "USER_SPECIFIED_APPS motsvarar Favoritprogram. RECENT_FILES  är listan med "
 #~ "filer från ~/.recently-used."
+
 #~ msgid "control center item .desktop file"
 #~ msgstr ".desktop-fil för styrcentralobjekt"
+
 #~ msgid ""
 #~ "determines the limit of tiles in the file-area. *Note: this does not "
 #~ "affect the number of tiles if the file-class is USER_SPECIFIED_*."
 #~ msgstr ""
 #~ "avgör begränsning för plattor i filområdet. *Obs! detta påverkar inte "
 #~ "antalet plattor om filklassen är USER_SPECIFIED_*."
+
 #~ msgid ""
 #~ "determines the reordering algorithm used when moving tiles around the "
 #~ "main-menu"
 #~ msgstr ""
 #~ "avgör vilken omsorteringsalgoritm som ska användas när plattor flyttas "
 #~ "runt huvudmenyn"
+
 #~ msgid "help item .desktop file"
 #~ msgstr ".desktop-fil för hjälpobjekt"
+
 #~ msgid "package manager item .desktop file"
 #~ msgstr ".desktop-fil för pakethanterarobjekt"
+
 #~ msgid ""
 #~ "possible values = 0 [SWAP], 1 [PUSH], 2 [PUSH_PULL]. SWAP indicates that "
 #~ "when a tile is dragged onto another tile they should simply swap "
@@ -717,6 +883,7 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "omvänd. PUSH_PULL liknar PUSH förutom att när plattorna växlas flyttas de "
 #~ "antingen till den tomma luckan eller dras dit från andra hållet, beroende "
 #~ "på vilket som påverkar det minsta antalet plattor."
+
 #~ msgid ""
 #~ "possible values = 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 "
 #~ "[RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used "
@@ -729,18 +896,22 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "(instansierade med main-menu eller application-browser).  "
 #~ "USER_SPECIFIED_APPS motsvarar Favoritprogram. RECENT_FILES  är listan med "
 #~ "filer från ~/.recently-used."
+
 #~ msgid "prioritized list of commands to lock the screen"
 #~ msgstr "prioriterad lista med kommandon för skärmlåsning"
+
 #~ msgid "Show:"
 #~ msgstr "Visa:"
+
 #~ msgid "Install Software"
 #~ msgstr "Installera programvara"
+
 #~ msgid "Log Out ..."
 #~ msgstr "Logga ut..."
+
 #~ msgid "Lock Screen ..."
 #~ msgstr "Lås skärm..."
 
 #, fuzzy
 #~ msgid "All Applications..."
 #~ msgstr "&LDAP-alternativ..."
-
