@@ -1,14 +1,14 @@
-# translation of gnome-main-menu.HEAD.po to Telugu
+# translation of gnome-main-menu.master.te.po to Telugu
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Krishna Babu K <kkrothap@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.HEAD\n"
+"Project-Id-Version: gnome-main-menu.master.te\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
-"POT-Creation-Date: 2009-03-16 18:03+0000\n"
-"PO-Revision-Date: 2009-03-25 16:09+0530\n"
+"POT-Creation-Date: 2009-08-10 10:24+0000\n"
+"PO-Revision-Date: 2009-08-20 21:57+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
+"\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:86
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
 msgstr "అనువర్తనం అన్వేషణి"
 
@@ -74,206 +75,32 @@ msgid ""
 "Applications category"
 msgstr "కొత్త అనువర్తనముల వర్గమునందు ప్రదర్శించబడు అనువర్తనముల గరిష్ట సంఖ్య"
 
-#: ../application-browser/src/application-browser.c:78
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "ప్రారంభమునందు మరుగునవుంచు (షెల్ ముందుగా లోడు చేయుటకు వుపయోగకరం)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "కొత్త అనువర్తనములు"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "వడపోత"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "సముదాయాలు"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "అనువర్తనము చర్యలు"
-
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>ప్రారంభించు %s</b>"
-
-#: ../libslab/application-tile.c:391
-#: ../main-menu/src/main-menu-migration.c:131
-#: ../main-menu/src/main-menu-migration.c:255
-#: ../main-menu/etc/system-items.xbel.in.h:1
-msgid "Help"
-msgstr "సహాయం"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "మెరుగుదల"
-
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "నిర్మూలించు"
-
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
-msgid "Remove from Favorites"
-msgstr "ఇష్టాంశముల నుండి తీసివేయుము"
-
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
-msgid "Add to Favorites"
-msgstr "ఇష్టాంశములకు జతచేయుము"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "ప్రారంభ ప్రోగ్రామ్సు నుండి తీసివేయుము"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "ప్రారంభ ప్రోగ్రామ్స్ కు జతచేయుము"
-
-#: ../libslab/app-shell.c:753
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>ఏ పోలికలు కనబడలేదు.</b> </span><span>\n"
-"\n"
-"మీ వడపోత \"<b>%s</b>\" ఏ అంశములకు సరిపోలేదు.</span>"
-
-#: ../libslab/app-shell.c:903
-msgid "Other"
-msgstr "ఇతర"
-
-#: ../libslab/bookmark-agent.c:1077
-msgid "New Spreadsheet"
-msgstr "కొత్త స్ప్రెడ్‌షీట్"
-
-#: ../libslab/bookmark-agent.c:1082
-msgid "New Document"
-msgstr "క్రొత్త పత్రం"
-
-#: ../libslab/bookmark-agent.c:1135
-msgid "Home"
-msgstr "నివాసం"
-
-#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "పత్రములు"
-
-#: ../libslab/bookmark-agent.c:1146
-msgid "Desktop"
-msgstr "రంగస్థలం"
-
-#: ../libslab/bookmark-agent.c:1153
-msgid "File System"
-msgstr "దస్త్ర వ్యవస్థ"
-
-#: ../libslab/bookmark-agent.c:1157
-msgid "Network Servers"
-msgstr "సేవిక అల్లికలు "
-
-#: ../libslab/bookmark-agent.c:1186
-msgid "Search"
-msgstr "వెతుకు"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:171
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>తెరువు</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
-msgid "Rename..."
-msgstr "పునర్నామకరణ..."
-
-#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
-msgid "Send To..."
-msgstr "కు పంపుము..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
-msgid "Move to Trash"
-msgstr "చెత్తబుట్టకు కదిలించు"
-
-#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
-#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
-msgid "Delete"
-msgstr "తీసివేయు"
-
-#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "మీరు \"%s\" ని శాశ్వతంగా తొలగించుదామని అనుకుంటున్నారా?"
-
-#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
-msgid "If you delete an item, it is permanently lost."
-msgstr "మీరు ఒక అంశము ను తొలగించినచో, అది శాశ్వతంగా పోతుంది."
-
-#: ../libslab/document-tile.c:192
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>\"%s\" తో తెరువుము</b>"
-
-#: ../libslab/document-tile.c:204
-msgid "Open with Default Application"
-msgstr "అప్రమేయ అనువర్తనంతో తెరువుము"
-
-#: ../libslab/document-tile.c:215
-msgid "Open in File Manager"
-msgstr "దస్త్ర నిర్వాహకినందు తెరువుము"
-
-#: ../libslab/document-tile.c:611
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:618
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../libslab/document-tile.c:626
-msgid "Today %l:%M %p"
-msgstr "ఈ రోజు·%l:%M·%p"
-
-#: ../libslab/document-tile.c:636
-msgid "Yesterday %l:%M %p"
-msgstr "నిన్న %l:%M %p"
-
-#: ../libslab/document-tile.c:648
-msgid "%a %l:%M %p"
-msgstr "%a %l:%M %p"
-
-#: ../libslab/document-tile.c:656
-msgid "%b %d %l:%M %p"
-msgstr "%b %d %l:%M %p"
-
-#: ../libslab/document-tile.c:658
-msgid "%b %d %Y"
-msgstr "%b %d %Y"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "ఇప్పుడు కనుగొనుము"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>%s తెరువుము</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "సిస్టమ్ అంశములనుండి తొలగించుము"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "అప్రమేయ మెనూ మరియు అనువర్తనము అన్వేషణి"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME ముఖ్య మెనూ"
 
@@ -321,9 +148,7 @@ msgstr "అనువర్తనము అన్వేషణి కొరకు 
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
-msgstr ""
-"\"దస్త్ర నిర్వాహకినందు తెరువుము\" అను మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు "
-"ఆదేశము యిదే."
+msgstr "\"దస్త్ర నిర్వాహకినందు తెరువుము\" అను మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -331,9 +156,8 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"\"దస్త్ర నిర్వాహకినందు తెరువుము\" అను మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు "
-"ఆదేశము యిదే. FILE_URI అనునది క్రియాశీల దస్త్రపు డైరెక్టరీ నామముకు సంభందించిన uriతో "
-"పునఃస్థాపించబడును."
+"\"దస్త్ర నిర్వాహకినందు తెరువుము\" అను మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే. "
+"FILE_URI అనునది క్రియాశీల దస్త్రపు డైరెక్టరీ నామముకు సంభందించిన uriతో పునఃస్థాపించబడును."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -347,9 +171,8 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"\"దీనికి పంపుము...\" మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే. "
-"DIRNAME మరియు BASENAME అనునవి క్రియాశీలపు దస్త్రము యొక్క సంభందిత మూలకములతో "
-"పునఃస్థాపించబడును."
+"\"దీనికి పంపుము...\" మెనూ అంశము క్రియాశీలమైనప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే. DIRNAME మరియు "
+"BASENAME అనునవి క్రియాశీలపు దస్త్రము యొక్క సంభందిత మూలకములతో పునఃస్థాపించబడును."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
@@ -360,8 +183,8 @@ msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
-"శోధన ప్రవేశము వుపయోగించబడినప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే. SEARCH_STRING "
-"అనునది ప్రవేశపెట్టిన శోధన పాఠముతో పునఃస్థాపించబడుతుంది."
+"శోధన ప్రవేశము వుపయోగించబడినప్పుడు నిర్వర్తించుటకు ఆదేశము యిదే. SEARCH_STRING అనునది "
+"ప్రవేశపెట్టిన శోధన పాఠముతో పునఃస్థాపించబడుతుంది."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
@@ -397,20 +220,20 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
-"దస్త్రము ప్రాంతమునందు చూపుటకు అనుమతించబడు దస్త్రము పట్టికల జాబితా (యెటువంటి "
-"క్రమము లేదు) కలిగివుటుంది. సాధ్యమగు విలువలు: 0 - వినియోగదారి-తెలిపిన లేదా \"ఆభీష్టమైన\" "
-"అనువర్తనముల పట్టికను చూపుము, 1 - యిటీవల వుపయోగించిన అనువర్తనముల పట్టికను చూపుము, "
-"2 - వినియోగదారి-తెలిపిన లేదా \"అభీష్టమైన\" పత్రముల పట్టికను చూపుము, 3 - యిటీవల వుపయోగించిన "
-"పత్రముల పట్టికను చూపును, 4 - వినియోగదారి-తెలిపిన \"అభీష్ట\" డైరెక్టరీలను లేదా \"స్థలముల\" పట్టికను "
-"చూపుము, మరియు 5 - యిటీవల వుపయోగించిన డైరెక్టరీల లేదా \"స్థలముల\" పట్టికను చూపుము."
+"దస్త్రము ప్రాంతమునందు చూపుటకు అనుమతించబడు దస్త్రము పట్టికల జాబితా (యెటువంటి క్రమము లేదు) "
+"కలిగివుటుంది. సాధ్యమగు విలువలు: 0 - వినియోగదారి-తెలిపిన లేదా \"ఆభీష్టమైన\" అనువర్తనముల పట్టికను "
+"చూపుము, 1 - యిటీవల వుపయోగించిన అనువర్తనముల పట్టికను చూపుము, 2 - వినియోగదారి-తెలిపిన లేదా "
+"\"అభీష్టమైన\" పత్రముల పట్టికను చూపుము, 3 - యిటీవల వుపయోగించిన పత్రముల పట్టికను చూపును, 4 - "
+"వినియోగదారి-తెలిపిన \"అభీష్ట\" డైరెక్టరీలను లేదా \"స్థలముల\" పట్టికను చూపుము, మరియు 5 - యిటీవల "
+"వుపయోగించిన డైరెక్టరీల లేదా \"స్థలముల\" పట్టికను చూపుము."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
-"\"ఇటీవల వుపయోగించిన అనువర్తనములు\" మరియు \"ఇటీవలి దస్త్రముల\" జాబితాల నుండి "
-"తీయవలసిన దస్త్రముల (.desktop దస్త్రములతో కలుపుకొని) యొక్క జాబితా కలిగివుంది"
+"\"ఇటీవల వుపయోగించిన అనువర్తనములు\" మరియు \"ఇటీవలి దస్త్రముల\" జాబితాల నుండి తీయవలసిన దస్త్రముల "
+"(.desktop దస్త్రములతో కలుపుకొని) యొక్క జాబితా కలిగివుంది"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
@@ -424,11 +247,10 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
-"దస్త్రము-ప్రాంతమునందు అంశముల పరిమితిని నిర్ధారిస్తుంది. సంఖ్యా అభీష్ట అంశములు "
-"పరిమితము కావు. ఇటీవలి అంశముల సంఖ్యకు పరిమితి ఆపాదించబడుతుంది, అంటే "
-"యిటీవలి అంశములు ప్రదర్శించే సంఖ్య max_total_items - అభీష్ట అంశముల సంఖ్యకు "
-"పరిమితమౌతుంది. అభీష్ట అంశముల సంఖ్య max_total_items - min_recent_items "
-"మించితే ఈ పరిమితి విస్మరించబడుతుంది."
+"దస్త్రము-ప్రాంతమునందు అంశముల పరిమితిని నిర్ధారిస్తుంది. సంఖ్యా అభీష్ట అంశములు పరిమితము కావు. ఇటీవలి "
+"అంశముల సంఖ్యకు పరిమితి ఆపాదించబడుతుంది, అంటే యిటీవలి అంశములు ప్రదర్శించే సంఖ్య "
+"max_total_items - అభీష్ట అంశముల సంఖ్యకు పరిమితమౌతుంది. అభీష్ట అంశముల సంఖ్య "
+"max_total_items - min_recent_items మించితే ఈ పరిమితి విస్మరించబడుతుంది."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
@@ -448,9 +270,7 @@ msgstr "నిజమైతే, ముఖ్య మెనూ మూయబడు�
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
-msgstr ""
-"నిజమైతే, ఈ అదనపు నియమాలవద్ద ముఖ్య మెనూ మూయబడుతుంది: టైలు క్రియాశీలపర్చబడింది, "
-"శోధన క్రియాశీలపర్చబడింది"
+msgstr "నిజమైతే, ఈ అదనపు నియమాలవద్ద ముఖ్య మెనూ మూయబడుతుంది: టైలు క్రియాశీలపర్చబడింది, శోధన క్రియాశీలపర్చబడింది"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
@@ -492,9 +312,7 @@ msgstr "సాధ్యమగు విలువలు = 0 [అనువర్�
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
-msgstr ""
-"అనువర్తనము అన్వేషణికి లింకు కనిపించాలి మరియు క్రియాశీలము కావలెనంటే సత్యమునకు "
-"అమర్చుము."
+msgstr "అనువర్తనము అన్వేషణికి లింకు కనిపించాలి మరియు క్రియాశీలము కావలెనంటే సత్యమునకు అమర్చుము."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
@@ -517,143 +335,149 @@ msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
-"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" అనువర్తనముల జాబితాను సవరించుటకు వినియోగదారిని "
-"అనుమతించాలంటే నిజమునకు అమర్చుము."
+"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" అనువర్తనముల జాబితాను సవరించుటకు వినియోగదారిని అనుమతించాలంటే "
+"నిజమునకు అమర్చుము."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
-"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" డైరెక్టరీలు లేక \"స్థలముల\" జాబితాను సవరించుటకు "
-"వినియోగదారిని అనుమతించాలంటే నిజమునకు అమర్చుము."
+"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" డైరెక్టరీలు లేక \"స్థలముల\" జాబితాను సవరించుటకు వినియోగదారిని "
+"అనుమతించాలంటే నిజమునకు అమర్చుము."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
 msgstr ""
-"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" పత్రములను సవరించుటకు వినియోగదారిని అనుమతించాలంటే "
-"నిజమునకు అమర్చుము."
+"వినియోగదారి-తెలిపిన లేక \"అభీష్ట\" పత్రములను సవరించుటకు వినియోగదారిని అనుమతించాలంటే నిజమునకు "
+"అమర్చుము."
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "సిస్టమ్ మానిటర్ (_S)"
 
-#: ../main-menu/src/hard-drive-status-tile.c:215
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:217
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:219
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:221
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:242
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "నివాసం: %s ఖాళీ / %s"
 
-#: ../main-menu/src/main-menu-migration.c:135
-#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "సహాయం"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "లాగ్అవుట్"
 
-#: ../main-menu/src/main-menu-migration.c:139
-#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "మూసివేయి"
 
-#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "స్క్రీన్ లాక్‌చేయుము"
 
-#: ../main-menu/src/main-menu-migration.c:199
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "గ్నోమ్-లాక్‌స్క్రీన్"
 
-#: ../main-menu/src/main-menu-ui.c:2392
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "GNOME ముఖ్య మెనూ"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "నెట్వర్కు: ఏదీకాదు"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
 msgstr "నెట్వర్కును ఆకృతీకరించుటకు నొక్కుము"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "నెట్వర్కు (_k): ఏదీకాదు"
 
-#: ../main-menu/src/network-status-tile.c:215
-#: ../main-menu/src/network-status-tile.c:232
-#: ../main-menu/src/network-status-tile.c:240
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "దీనికి అనుసంధానమైంది: %s"
 
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "నెట్వర్కు (_k): వైర్‌లేని"
 
-#: ../main-menu/src/network-status-tile.c:223
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "ఈథర్‌నెట్ వినియోగించుట (%s)"
 
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
 msgstr "నెట్వర్కు (_k): వైర్‌గల"
 
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Networ_k: GSM"
 msgstr "నెట్వర్కు (_k): GSM"
 
-#: ../main-menu/src/network-status-tile.c:243
+#: ../main-menu/src/network-status-tile.c:242
 msgid "Networ_k: CDMA"
 msgstr "నెట్వర్కు (_k): CDMA"
 
-#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "వైరులేని ఈథర్నెట్ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "వైర్‌గల ఈథర్నెట్ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:356
-#: ../main-menu/src/network-status-tile.c:361
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "మొబైల్ ఈథర్నెట్ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:365
-#: ../main-menu/src/network-status-tile.c:375
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "తెలియని"
 
-#: ../main-menu/src/network-status-tile.c:373
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -665,6 +489,10 @@ msgstr "కార్యక్షేత్రాలు"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "కంప్యూటర్"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "పత్రములు"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -714,6 +542,11 @@ msgstr "స్థితి"
 msgid "System"
 msgstr "వ్యవస్థ"
 
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "ఇష్టాంశములకు జతచేయుము"
+
 #: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "ప్రస్తుత లాంచర్‌ను అభీష్టములకు జతచేయుము"
@@ -721,6 +554,11 @@ msgstr "ప్రస్తుత లాంచర్‌ను అభీష్ట�
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "ప్రస్తుత పత్రమును అభీష్టములకు జతచేయుము"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "ఇష్టాంశముల నుండి తీసివేయుము"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
