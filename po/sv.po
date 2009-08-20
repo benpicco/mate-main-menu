@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-01 17:17+0100\n"
-"PO-Revision-Date: 2009-01-01 17:17+0100\n"
+"POT-Creation-Date: 2009-08-20 16:59+0200\n"
+"PO-Revision-Date: 2009-08-20 16:59+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:93
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
 msgstr "Programbläddrare"
 
@@ -66,217 +66,32 @@ msgstr "Högsta antalet nya program"
 msgid "The maximum number of applications that will be displayed in the New Applications category"
 msgstr "Det högsta antal program som kan visas i kategorin Nya program"
 
-#: ../application-browser/src/application-browser.c:85
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "Dölj vid start (användbart för förinläsning av skalet)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "Nya program"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "Filter"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "Grupper"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "Programåtgärder"
-
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Starta %s</b>"
-
-#: ../libslab/application-tile.c:391
-#: ../main-menu/src/main-menu-migration.c:131
-#: ../main-menu/src/main-menu-migration.c:255
-#: ../main-menu/etc/system-items.xbel.in.h:1
-msgid "Help"
-msgstr "Hjälp"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "Uppgradera"
-
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "Avinstallera"
-
-#: ../libslab/application-tile.c:780
-#: ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
-msgid "Remove from Favorites"
-msgstr "Ta bort från favoriter"
-
-#: ../libslab/application-tile.c:782
-#: ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-msgid "Add to Favorites"
-msgstr "Lägg till i favoriter"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "Ta bort från startprogram"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "Lägg till i startprogram"
-
-#: ../libslab/app-shell.c:750
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>Inga matchningar hittades.</b> </span><span>\n"
-"\n"
-"  Filtret <b>%s</b> matchar inga objekt.</span>"
-
-#: ../libslab/app-shell.c:900
-msgid "Other"
-msgstr "Övriga"
-
-#: ../libslab/bookmark-agent.c:1077
-msgid "New Spreadsheet"
-msgstr "Nytt kalkylblad"
-
-#: ../libslab/bookmark-agent.c:1082
-msgid "New Document"
-msgstr "Nytt dokument"
-
-#: ../libslab/bookmark-agent.c:1135
-msgid "Home"
-msgstr "Hem"
-
-#: ../libslab/bookmark-agent.c:1140
-#: ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Dokument"
-
-#: ../libslab/bookmark-agent.c:1146
-msgid "Desktop"
-msgstr "Skrivbord"
-
-#: ../libslab/bookmark-agent.c:1153
-msgid "File System"
-msgstr "Filsystem"
-
-#: ../libslab/bookmark-agent.c:1157
-msgid "Network Servers"
-msgstr "Nätverksservrar"
-
-#: ../libslab/bookmark-agent.c:1186
-msgid "Search"
-msgstr "Sök"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:171
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>Öppna</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:190
-#: ../libslab/document-tile.c:230
-msgid "Rename..."
-msgstr "Byt namn..."
-
-#: ../libslab/directory-tile.c:204
-#: ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:244
-#: ../libslab/document-tile.c:253
-msgid "Send To..."
-msgstr "Skicka till..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:228
-#: ../libslab/document-tile.c:279
-msgid "Move to Trash"
-msgstr "Flytta till papperskorgen"
-
-#: ../libslab/directory-tile.c:238
-#: ../libslab/directory-tile.c:456
-#: ../libslab/document-tile.c:289
-#: ../libslab/document-tile.c:826
-msgid "Delete"
-msgstr "Ta bort"
-
-#: ../libslab/directory-tile.c:532
-#: ../libslab/document-tile.c:974
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
-
-#: ../libslab/directory-tile.c:533
-#: ../libslab/document-tile.c:975
-msgid "If you delete an item, it is permanently lost."
-msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
-
-#: ../libslab/document-tile.c:191
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Öppna med \"%s\"</b>"
-
-#: ../libslab/document-tile.c:203
-msgid "Open with Default Application"
-msgstr "Öppna med standardprogrammet"
-
-#: ../libslab/document-tile.c:214
-msgid "Open in File Manager"
-msgstr "Öppna i filhanterare"
-
-#: ../libslab/document-tile.c:606
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:613
-msgid "%l:%M %p"
-msgstr "%H.%M"
-
-#: ../libslab/document-tile.c:621
-msgid "Today %l:%M %p"
-msgstr "Idag %H.%M"
-
-#: ../libslab/document-tile.c:631
-msgid "Yesterday %l:%M %p"
-msgstr "Igår %H.%M"
-
-#: ../libslab/document-tile.c:643
-msgid "%a %l:%M %p"
-msgstr "%a %H.%M"
-
-#: ../libslab/document-tile.c:651
-msgid "%b %d %l:%M %p"
-msgstr "%d %b %H.%M"
-
-#: ../libslab/document-tile.c:653
-msgid "%b %d %Y"
-msgstr "%d %b %Y"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Sök nu"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>Öppna %s</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "Ta bort från Systemobjekt"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Standardbläddrare för menyer och program"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2391
+#: ../main-menu/src/main-menu-ui.c:2386
 #: ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME-huvudmeny"
@@ -461,7 +276,7 @@ msgstr "ställ in till sant om användaren ska tillåtas att redigera listan öv
 msgid "set to true if the user is allowed to modify the list of user-specified or \"Favorite\" documents."
 msgstr "ställ in till sant om användaren ska tillåtas att redigera listan över användardefinierade eller \"Favorit\"-dokument."
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "_Systemövervakare"
 
@@ -490,95 +305,101 @@ msgstr "%.1fb"
 msgid "Home: %s Free / %s"
 msgstr "Hem: %s ledigt / %s"
 
-#: ../main-menu/src/main-menu-migration.c:135
-#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "Hjälp"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Logga ut"
 
-#: ../main-menu/src/main-menu-migration.c:139
-#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Stäng av"
 
-#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "Lås skärmen"
 
-#: ../main-menu/src/main-menu-migration.c:199
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2392
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "Huvudmenyn i GNOME"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "Nätverk: Inget"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
 msgstr "Klicka om du vill konfigurera nätverket"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "Nätver_k: Inget"
 
-#: ../main-menu/src/network-status-tile.c:215
-#: ../main-menu/src/network-status-tile.c:232
-#: ../main-menu/src/network-status-tile.c:240
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "Ansluten till: %s"
 
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "Nätver_k: Trådlöst"
 
-#: ../main-menu/src/network-status-tile.c:223
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet (%s) används"
 
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
 msgstr "Nätver_k: Trådat"
 
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Networ_k: GSM"
 msgstr "Nätver_k: GSM"
 
-#: ../main-menu/src/network-status-tile.c:243
+#: ../main-menu/src/network-status-tile.c:242
 msgid "Networ_k: CDMA"
 msgstr "Nätver_k: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Trådlöst Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Trådat Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:356
-#: ../main-menu/src/network-status-tile.c:361
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Mobilt ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:365
-#: ../main-menu/src/network-status-tile.c:375
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "Okänd"
 
-#: ../main-menu/src/network-status-tile.c:373
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -590,6 +411,10 @@ msgstr "Program"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Dator"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Dokument"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -639,19 +464,103 @@ msgstr "Status"
 msgid "System"
 msgstr "System"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "Lägg till i favoriter"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Lägg till det aktuella programmet till favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Lägg till det aktuella dokumentet till favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "Ta bort från favoriter"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Ta bort det aktuella dokumentet från favoriter"
 
+#~ msgid "<b>Start %s</b>"
+#~ msgstr "<b>Starta %s</b>"
+#~ msgid "Upgrade"
+#~ msgstr "Uppgradera"
+#~ msgid "Uninstall"
+#~ msgstr "Avinstallera"
+#~ msgid "Remove from Startup Programs"
+#~ msgstr "Ta bort från startprogram"
+#~ msgid "Add to Startup Programs"
+#~ msgstr "Lägg till i startprogram"
+#~ msgid ""
+#~ "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+#~ "\n"
+#~ " Your filter \"<b>%s</b>\" does not match any items.</span>"
+#~ msgstr ""
+#~ "<span size=\"large\"><b>Inga matchningar hittades.</b> </span><span>\n"
+#~ "\n"
+#~ "  Filtret <b>%s</b> matchar inga objekt.</span>"
+#~ msgid "Other"
+#~ msgstr "Övriga"
+#~ msgid "New Spreadsheet"
+#~ msgstr "Nytt kalkylblad"
+#~ msgid "New Document"
+#~ msgstr "Nytt dokument"
+#~ msgid "Home"
+#~ msgstr "Hem"
+#~ msgid "Desktop"
+#~ msgstr "Skrivbord"
+#~ msgid "File System"
+#~ msgstr "Filsystem"
+#~ msgid "Network Servers"
+#~ msgstr "Nätverksservrar"
+#~ msgid "Search"
+#~ msgstr "Sök"
+#~ msgid "<b>Open</b>"
+#~ msgstr "<b>Öppna</b>"
+#~ msgid "Rename..."
+#~ msgstr "Byt namn..."
+#~ msgid "Send To..."
+#~ msgstr "Skicka till..."
+#~ msgid "Move to Trash"
+#~ msgstr "Flytta till papperskorgen"
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+#~ msgid "Are you sure you want to permanently delete \"%s\"?"
+#~ msgstr "Är du säker på att du vill ta bort \"%s\" permanent?"
+#~ msgid "If you delete an item, it is permanently lost."
+#~ msgstr "Om du tar bort ett objekt kan du inte få tillbaka det."
+#~ msgid "<b>Open with \"%s\"</b>"
+#~ msgstr "<b>Öppna med \"%s\"</b>"
+#~ msgid "Open with Default Application"
+#~ msgstr "Öppna med standardprogrammet"
+#~ msgid "Open in File Manager"
+#~ msgstr "Öppna i filhanterare"
+#~ msgid "?"
+#~ msgstr "?"
+#~ msgid "%l:%M %p"
+#~ msgstr "%H.%M"
+#~ msgid "Today %l:%M %p"
+#~ msgstr "Idag %H.%M"
+#~ msgid "Yesterday %l:%M %p"
+#~ msgstr "Igår %H.%M"
+#~ msgid "%a %l:%M %p"
+#~ msgstr "%a %H.%M"
+#~ msgid "%b %d %l:%M %p"
+#~ msgstr "%d %b %H.%M"
+#~ msgid "%b %d %Y"
+#~ msgstr "%d %b %Y"
+#~ msgid "Find Now"
+#~ msgstr "Sök nu"
+#~ msgid "<b>Open %s</b>"
+#~ msgstr "<b>Öppna %s</b>"
+#~ msgid "Remove from System Items"
+#~ msgstr "Ta bort från Systemobjekt"
 #~ msgid "Unexpected attribute '%s' for element '%s'"
 #~ msgstr "Attributet \"%s\" förväntades inte i elementet \"%s\""
 #~ msgid "Attribute '%s' of element '%s' not found"
