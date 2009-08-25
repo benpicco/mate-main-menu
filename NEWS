@@ -1,3 +1,43 @@
+==============
+Version 0.9.13
+==============
+
+  Changes:
+
+	* Magnus Boman is now co-maintainer of gnome-main-menu.
+
+  Fixes:
+
+	* Update to build with the latest GNOME stack (Magnus Boman,
+          Cosimo Cecchi, Kyle Pelton, Scott Reeves)
+
+	* Remove the statically built libslab, and use the standalone
+	  version of libslab (Cosimo Cecchi)
+
+	* Use libunique's single-instance application functionality
+          instead of Bonobo's (Cosimo Cecchi, Vincent Untz)
+
+  Translators:
+
+	* Amitakhya Phukan (as)
+	* Runa Bhattacharjee (bn_IN)
+	* Adrian Guniš (cs)
+	* Jen Ockwell (en_GB)
+	* Jorge González (es)
+	* Inaki Larranaga Murgoitio (eu)
+	* Robert-André Mauchin, Claude Paroz (fr)
+	* Fran Dieguez (gl)
+	* Sweta Kothari (gu)
+	* Yaron Shahrabani (he)
+	* Shankar Prasad (kn)
+	* Peter Ani (ml)
+	* Sandeep Shedmake (mr)
+	* Kjartan Maraas (nb)
+	* Manoj Kumar Giri (or)
+	* Daniel Nylander (sv)
+	* I. Felix (ta)
+	* Krishna Babu K (te)
+
 =============
 Version 0.9.12
 =============
