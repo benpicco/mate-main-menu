@@ -1064,7 +1064,7 @@ item_to_user_doc_tile (BookmarkItem *item, gpointer data)
 			return TILE (document_tile_new_force_icon (item->uri, item->mime_type,
 				item->mtime, "gnome-mime-application-vnd.oasis.opendocument.text-template"));
 	}
-	return TILE (document_tile_new (item->uri, item->mime_type, item->mtime));
+	return TILE (document_tile_new (BOOKMARK_STORE_USER_DOCS, item->uri, item->mime_type, item->mtime));
 }
 
 static Tile *
@@ -1111,7 +1111,7 @@ item_to_recent_doc_tile (BookmarkItem *item, gpointer data)
 	if (bookmark_agent_has_item (priv->bm_agents [BOOKMARK_STORE_USER_DOCS], item->uri))
 		return NULL;
 
-	return TILE (document_tile_new (item->uri, item->mime_type, item->mtime));
+	return TILE (document_tile_new (BOOKMARK_STORE_RECENT_DOCS, item->uri, item->mime_type, item->mtime));
 }
 
 static Tile *
