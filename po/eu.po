@@ -8,18 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-16 20:09+0100\n"
-"PO-Revision-Date: 2009-03-16 20:09+0100\n"
+"POT-Creation-Date: 2009-09-04 11:20+0200\n"
+"PO-Revision-Date: 2009-09-04 11:21+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:86
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
 msgstr "Aplikazioen arakatzailea"
 
@@ -77,211 +77,32 @@ msgid ""
 "Applications category"
 msgstr "Aplikazioen gehienezko kopurua 'Aplikazio berriak' kategorian bistaratzeko"
 
-#: ../application-browser/src/application-browser.c:78
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "Ezkutatu abioan (erabilgarria shell-a aurrekargatzeko)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "Aplikazio berriak"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "Iragazkia"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "Taldeak"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "Aplikazioen ekintza"
-
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Abiarazi %s</b>"
-
-#: ../libslab/application-tile.c:391
-#: ../main-menu/src/main-menu-migration.c:131
-#: ../main-menu/src/main-menu-migration.c:255
-#: ../main-menu/etc/system-items.xbel.in.h:1
-msgid "Help"
-msgstr "Laguntza"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "Bertsio-berritu"
-
-# clients/online_update.ycp:46
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "Desinstalatu"
-
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
-msgid "Remove from Favorites"
-msgstr "Kendu gogokoetatik"
-
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
-msgid "Add to Favorites"
-msgstr "Gehitu gogokoei"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "Kendu abioko programetatik"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "Gehitu abioko programei"
-
-#: ../libslab/app-shell.c:753
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>Ez da bat datorrenik aurkitu.</b> </span><span>\n"
-"\n"
-"\"<b>%s</b>\" iragakia ez dator bat inolako elementuekin.</span>"
-
-#: ../libslab/app-shell.c:903
-msgid "Other"
-msgstr "Betelakoa"
-
-#: ../libslab/bookmark-agent.c:1077
-msgid "New Spreadsheet"
-msgstr "Kalkulu-orri berria"
-
-#: ../libslab/bookmark-agent.c:1082
-msgid "New Document"
-msgstr "Dokumentu berria"
-
-#: ../libslab/bookmark-agent.c:1135
-msgid "Home"
-msgstr "Karpeta nagusia"
-
-#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "Dokumentuak"
-
-#: ../libslab/bookmark-agent.c:1146
-msgid "Desktop"
-msgstr "Mahaigaina"
-
-#: ../libslab/bookmark-agent.c:1153
-msgid "File System"
-msgstr "Fitxategi-sistema"
-
-# include/network/lan/address.ycp:40
-#: ../libslab/bookmark-agent.c:1157
-msgid "Network Servers"
-msgstr "Sareko zerbitzariak"
-
-#: ../libslab/bookmark-agent.c:1186
-msgid "Search"
-msgstr "Bilatu"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:171
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>Ireki</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
-msgid "Rename..."
-msgstr "Izena aldatu..."
-
-#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
-msgid "Send To..."
-msgstr "Bidali honi..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
-msgid "Move to Trash"
-msgstr "Bota zakarrontzira"
-
-#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
-#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
-msgid "Delete"
-msgstr "Ezabatu"
-
-#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Ziur zaude \"%s\" betirako ezabatzea nahi duzula?"
-
-#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
-msgid "If you delete an item, it is permanently lost."
-msgstr "Hautatutako elementu guztiak behin betiko ezabatzen ditu."
-
-#: ../libslab/document-tile.c:192
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Ireki honekin: %s</b>"
-
-#: ../libslab/document-tile.c:204
-msgid "Open with Default Application"
-msgstr "Ireki aplikazio lehenetsiarekin"
-
-#: ../libslab/document-tile.c:215
-msgid "Open in File Manager"
-msgstr "Ireki fitxategi-kudeatzailean"
-
-#: ../libslab/document-tile.c:611
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:618
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../libslab/document-tile.c:626
-msgid "Today %l:%M %p"
-msgstr "Gaur %l:%M %p"
-
-#: ../libslab/document-tile.c:636
-msgid "Yesterday %l:%M %p"
-msgstr "Atzo %l:%M %p"
-
-#: ../libslab/document-tile.c:648
-msgid "%a %l:%M %p"
-msgstr "%a %l:%M %p"
-
-#: ../libslab/document-tile.c:656
-msgid "%b %d %l:%M %p"
-msgstr "%b %d %l:%M %p"
-
-#: ../libslab/document-tile.c:658
-msgid "%b %d %Y"
-msgstr "%Y %b %d"
-
-# clients/inst_resize_ui.ycp:637
-# clients/inst_resize_ui.ycp:637
-# clients/inst_resize_ui.ycp:637
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Bilatu orain"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>Ireki %s</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "Kendu sistemako elementuetatik"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Menu eta aplikazioen arakatzaile lehenetsia"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
@@ -554,97 +375,103 @@ msgstr ""
 "ezarri TRUE (egia) gisa erabiltzailea baimenduta badago erabiltzaileak "
 "zehaztutako edo \"Gogokoak\" dokumentuen zerrenda eraldatzeko."
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "Sistemako monitorea"
 
-#: ../main-menu/src/hard-drive-status-tile.c:215
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:217
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:219
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:221
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:242
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "Karpeta nagusia: %s libre / %s"
 
-#: ../main-menu/src/main-menu-migration.c:135
-#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "Laguntza"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Amaitu saioa"
 
-#: ../main-menu/src/main-menu-migration.c:139
-#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Itzali"
 
-#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "Blokeatu pantaila"
 
-#: ../main-menu/src/main-menu-migration.c:199
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2392
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "Sarea: bat ere ez"
 
 # include/ui/summary.ycp:84
 # modules/Summary.ycp:89
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
 msgstr "Egin klik sarea konfiguratzeko"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "_Sarea: bat ere ez"
 
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
-#: ../main-menu/src/network-status-tile.c:215
-#: ../main-menu/src/network-status-tile.c:232
-#: ../main-menu/src/network-status-tile.c:240
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "Honekin konektatuta: %s"
 
 # include/network/lan/address.ycp:40
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "_Sarea: haririk gabekoa"
 
 #
 # include/runlevel/ui.ycp:489
-#: ../main-menu/src/network-status-tile.c:223
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet erabiltzen (%s)"
@@ -652,46 +479,46 @@ msgstr "Ethernet erabiltzen (%s)"
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
 msgstr "_Sarea: hariduna"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Networ_k: GSM"
 msgstr "_Sarea: GSM"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:243
+#: ../main-menu/src/network-status-tile.c:242
 msgid "Networ_k: CDMA"
 msgstr "_Sarea: CDMA"
 
 # include/network/modem/dialogs.ycp:145
-#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Haririk gabeko Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Haridun Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:356
-#: ../main-menu/src/network-status-tile.c:361
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Ethernet mugikorra (%s)"
 
-#: ../main-menu/src/network-status-tile.c:365
-#: ../main-menu/src/network-status-tile.c:375
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: ../main-menu/src/network-status-tile.c:373
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -703,6 +530,10 @@ msgstr "Aplikazioak"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "Ordenagailua"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "Dokumentuak"
 
 #
 # include/lilo/ui.ycp:818
@@ -756,6 +587,11 @@ msgstr "Egoera"
 msgid "System"
 msgstr "Sistema"
 
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "Gehitu gogokoei"
+
 #: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Gehitu uneko abiarazlea gogokoei"
@@ -763,6 +599,11 @@ msgstr "Gehitu uneko abiarazlea gogokoei"
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Gehitu uneko dokumentua gogokoei"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "Kendu gogokoetatik"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
