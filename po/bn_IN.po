@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
-"POT-Creation-Date: 2009-05-20 08:14+0000\n"
-"PO-Revision-Date: 2009-06-05 17:45+0530\n"
+"POT-Creation-Date: 2009-08-10 10:24+0000\n"
+"PO-Revision-Date: 2009-10-21 14:42+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: Bengali INDIA <discuss@lists.ankur.org.in>\n"
+"Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,9 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:86
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
-msgstr "অ্যাপলিকেশন ব্রাউজার"
+msgstr "অ্যাপ্লিকেশন ব্রাউজার"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
@@ -55,13 +55,17 @@ msgstr "প্রারম্ভের কর্ম সঞ্চালিত হ
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed"
-msgstr "সংযোজন অথবা অপসারণের কর্ম সঞ্চালিত হলে শেল বন্ধ করা হবে কি না তা চিহ্নিত করতে ব্যবহৃত হয়"
+msgstr ""
+"সংযোজন অথবা অপসারণের কর্ম সঞ্চালিত হলে শেল বন্ধ করা হবে কি না তা চিহ্নিত করতে "
+"ব্যবহৃত হয়"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:9
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed"
-msgstr "আপগ্রেড অথবা আন-ইনস্টল কর্ম সঞ্চালিত হলে শেল বন্ধ করা হবে কি না তা চিহ্নিত করতে ব্যবহৃত হয়"
+msgstr ""
+"আপগ্রেড অথবা আন-ইনস্টল কর্ম সঞ্চালিত হলে শেল বন্ধ করা হবে কি না তা চিহ্নিত করতে "
+"ব্যবহৃত হয়"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
@@ -73,206 +77,32 @@ msgid ""
 "Applications category"
 msgstr "নতুন অ্যাপ্লিকেশন বিভাগে প্রদর্শনযোগ্য সর্বাধিক অ্যাপ্লিকেশনের সংখ্যা"
 
-#: ../application-browser/src/application-browser.c:78
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "প্রারম্ভে আড়াল করা হবে (শেল প্রি-লোড করার জন্য সুবিধাজনক)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "নতুন অ্যাপলিকেশন"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "ফিল্টার"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "সংকলন"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "অ্যাপলিকেশন সংক্রান্ত কর্ম"
-
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>%s আরম্ভ করুন</b>"
-
-#: ../libslab/application-tile.c:391
-#: ../main-menu/src/main-menu-migration.c:131
-#: ../main-menu/src/main-menu-migration.c:255
-#: ../main-menu/etc/system-items.xbel.in.h:1
-msgid "Help"
-msgstr "সহায়তা"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "আপগ্রেড করুন"
-
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "আন-ইনস্টল করুন"
-
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
-msgid "Remove from Favorites"
-msgstr "পছন্দের তালিকা থেকে সরিয়ে ফেলুন"
-
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
-msgid "Add to Favorites"
-msgstr "পছন্দের তালিকায় যোগ করুন"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "প্রারম্ভিক প্রোগ্রামের তালিকা থেকে সরিয়ে ফেলুন"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "প্রারম্ভিক প্রোগ্রামের তালিকায় যোগ করুন"
-
-#: ../libslab/app-shell.c:753
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>কোনো মিল পাওয়া যায়নি।</b> </span><span>\n"
-"\n"
-" \"<b>%s</b>\" ফিল্টার অনুযায়ী কোনো সামগ্রী পাওয়া যায়নি।</span>"
-
-#: ../libslab/app-shell.c:903
-msgid "Other"
-msgstr "অন্যান্য"
-
-#: ../libslab/bookmark-agent.c:1077
-msgid "New Spreadsheet"
-msgstr "নতুন স্প্রেড-শিট"
-
-#: ../libslab/bookmark-agent.c:1082
-msgid "New Document"
-msgstr "নতুন নথিপত্র"
-
-#: ../libslab/bookmark-agent.c:1135
-msgid "Home"
-msgstr "ব্যক্তিগত ডিরেক্টরি"
-
-#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "নথিপত্র"
-
-#: ../libslab/bookmark-agent.c:1146
-msgid "Desktop"
-msgstr "ডেস্কটপ"
-
-#: ../libslab/bookmark-agent.c:1153
-msgid "File System"
-msgstr "ফাইল-সিস্টেম"
-
-#: ../libslab/bookmark-agent.c:1157
-msgid "Network Servers"
-msgstr "নেটওয়ার্ক সার্ভার"
-
-#: ../libslab/bookmark-agent.c:1186
-msgid "Search"
-msgstr "অনুসন্ধান"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:171
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>খুলুন</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
-msgid "Rename..."
-msgstr "নাম পরিবর্তন..."
-
-#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
-msgid "Send To..."
-msgstr "চিহ্নিত স্থানে প্রেরণ..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
-msgid "Move to Trash"
-msgstr "আবর্জনার বাক্সে স্থানান্তরণ"
-
-#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
-#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
-msgid "Delete"
-msgstr "মুছে ফেলুন"
-
-#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "আপনি কি নিশ্চিতরূপে \"%s\" স্থায়ীভাবে বর্জন করতে ইচ্ছুক?"
-
-#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
-msgid "If you delete an item, it is permanently lost."
-msgstr "কোনো বস্তু মুছে ফেলা হলে তা স্থায়ীরূপে মুছে যাবে।"
-
-#: ../libslab/document-tile.c:192
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>\"%s\" সহযোগে খুলুন</b>"
-
-#: ../libslab/document-tile.c:204
-msgid "Open with Default Application"
-msgstr "ডিফল্ট অ্যাপ্লিকেশন সহযোগে খুলুন"
-
-#: ../libslab/document-tile.c:215
-msgid "Open in File Manager"
-msgstr "ফাইল পরিচালন ব্যবস্থা সহযোগে খুলুন"
-
-#: ../libslab/document-tile.c:611
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:618
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../libslab/document-tile.c:626
-msgid "Today %l:%M %p"
-msgstr "আজ %l:%M %p"
-
-#: ../libslab/document-tile.c:636
-msgid "Yesterday %l:%M %p"
-msgstr "গতকাল %l:%M %p"
-
-#: ../libslab/document-tile.c:648
-msgid "%a %l:%M %p"
-msgstr "%a %l:%M %p"
-
-#: ../libslab/document-tile.c:656
-msgid "%b %d %l:%M %p"
-msgstr "%b %d %l:%M %p"
-
-#: ../libslab/document-tile.c:658
-msgid "%b %d %Y"
-msgstr "%b %d %Y"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "এখন অনুসন্ধান করুন"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>%s খুলুন</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "সিস্টেমের বিভিন্ন সরঞ্জাম থেকে মুছে ফেলুন"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "ডিফল্ট মেনু ও অ্যাপ্লিকেশন ব্রাউজার"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME প্রধান মেনু"
 
@@ -320,14 +150,19 @@ msgstr "অ্যাপ্লকিশেন ব্রাউজারের জ�
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
-msgstr "মেনু থেকে \"ফাইল পরিচালন ব্যবস্থা সহযোগে খুলুন\" ব্যবহার করা হলে এই কমান্ডটি সঞ্চালিত হবে।"
+msgstr ""
+"মেনু থেকে \"ফাইল পরিচালন ব্যবস্থা সহযোগে খুলুন\" ব্যবহার করা হলে এই কমান্ডটি "
+"সঞ্চালিত হবে।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
-msgstr "মেনু থেকে \"ফাইল পরিচালন ব্যবস্থা সহযোগে খুলুন\" ব্যবহার করা হলে এই কমান্ডটি সঞ্চালিত হবে। FILE_URI-র পরিবর্তনে সক্রিয় করা ফাইলের dirname-র uri ব্যবহার করা হবে।"
+msgstr ""
+"মেনু থেকে \"ফাইল পরিচালন ব্যবস্থা সহযোগে খুলুন\" ব্যবহার করা হলে এই কমান্ডটি "
+"সঞ্চালিত হবে। FILE_URI-র পরিবর্তনে সক্রিয় করা ফাইলের dirname-র uri ব্যবহার করা "
+"হবে।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -340,7 +175,9 @@ msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
-msgstr "মেনু থেকে \"চিহ্নিত স্থানে প্রেরণ...\"  ব্যবহার করা হলে এই কমান্ডটি সঞ্চালিত হবে। FILE_URI-র পরিবর্তনে সক্রিয় করা ফাইলের dirname-র uri ব্যবহার করা হবে।"
+msgstr ""
+"মেনু থেকে \"চিহ্নিত স্থানে প্রেরণ...\"  ব্যবহার করা হলে এই কমান্ডটি সঞ্চালিত হবে। "
+"FILE_URI-র পরিবর্তনে সক্রিয় করা ফাইলের dirname-র uri ব্যবহার করা হবে।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
@@ -350,7 +187,9 @@ msgstr "অনুসন্ধানের এনট্রি প্রয়োগ 
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
-msgstr "অনুসন্ধানের এনট্রি প্রয়োগ করা হলে এই কমান্ডটি সঞ্চালিত হবে। SEARCH_STRING-র পরিবর্তে অনুসন্ধানের জন্য উল্লিখিত তথ্য ব্যবহার করা হবে।"
+msgstr ""
+"অনুসন্ধানের এনট্রি প্রয়োগ করা হলে এই কমান্ডটি সঞ্চালিত হবে। SEARCH_STRING-র "
+"পরিবর্তে অনুসন্ধানের জন্য উল্লিখিত তথ্য ব্যবহার করা হবে।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
@@ -360,7 +199,9 @@ msgstr "প্যাকেজ আন-ইনস্টল করতে ব্য�
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr "প্যাকেজ আন-ইনস্টল করতে ব্যবহৃত কমান্ড, PACKAGE_NAME-র পরিবর্তে কমান্ডে উল্লিখিত প্যাকেজের নাম ব্যবহার করা হবে"
+msgstr ""
+"প্যাকেজ আন-ইনস্টল করতে ব্যবহৃত কমান্ড, PACKAGE_NAME-র পরিবর্তে কমান্ডে উল্লিখিত "
+"প্যাকেজের নাম ব্যবহার করা হবে"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
@@ -370,7 +211,9 @@ msgstr "প্যাকেজ আপগ্রেড করার কমান্
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
-msgstr "প্যাকেজ আপগ্রেড করার কমান্ড, PACKAGE_NAME-র পরিবর্তে কমান্ডে উল্লিখিত প্যাকেজের নাম ব্যবহার করা হবে"
+msgstr ""
+"প্যাকেজ আপগ্রেড করার কমান্ড, PACKAGE_NAME-র পরিবর্তে কমান্ডে উল্লিখিত প্যাকেজের নাম "
+"ব্যবহার করা হবে"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
@@ -382,14 +225,21 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
-"file area-র মধ্যে প্রদর্শনযোগ্য অনুমোদিত ফাইল টেবিলের তালিকা (কোনো নির্দিষ্ট অনুক্রম ব্যবহার করা হয়নি)। সম্ভাব্য মান: 0 - ব্যবহারকারী দ্বারা নির্ধারিত অথবা \"পছন্দের\" অ্যাপ্লিকেশন টেবিল প্রদর্শন করা হবে, 1 - সম্প্রতি ব্যবহৃত অ্যাপ্লিকেশনের টেবিল প্রদর্শন করা হবে, 2 - "
-"ব্যবহারকারী দ্বারা নির্ধারিত অথবা \"পছন্দের\" নথিপত্রের টেবিল প্রদর্শন করা হবে, 3 - সম্প্রতি ব্যবহৃত নথিপত্রের টেবিল প্রদর্শন করা হবে, 4 - ব্যবহারকারী দ্বারা নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরি অথবা \"স্থান\" টেবিল প্রদর্শন করা হবে, এবং 5 - সম্প্রতি ব্যবহৃত ডিরেক্টরি অথবা \"স্থান\" টেবিল প্রদর্শন করা হবে"
+"file area-র মধ্যে প্রদর্শনযোগ্য অনুমোদিত ফাইল টেবিলের তালিকা (কোনো নির্দিষ্ট অনুক্রম "
+"ব্যবহার করা হয়নি)। সম্ভাব্য মান: 0 - ব্যবহারকারী দ্বারা নির্ধারিত অথবা \"পছন্দের\" "
+"অ্যাপ্লিকেশন টেবিল প্রদর্শন করা হবে, 1 - সম্প্রতি ব্যবহৃত অ্যাপ্লিকেশনের টেবিল প্রদর্শন "
+"করা হবে, 2 - ব্যবহারকারী দ্বারা নির্ধারিত অথবা \"পছন্দের\" নথিপত্রের টেবিল প্রদর্শন "
+"করা হবে, 3 - সম্প্রতি ব্যবহৃত নথিপত্রের টেবিল প্রদর্শন করা হবে, 4 - ব্যবহারকারী "
+"দ্বারা নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরি অথবা \"স্থান\" টেবিল প্রদর্শন করা হবে, "
+"এবং 5 - সম্প্রতি ব্যবহৃত ডিরেক্টরি অথবা \"স্থান\" টেবিল প্রদর্শন করা হবে"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
-msgstr "\"সম্প্রতি ব্যবহৃত অ্যাপ্লিকেশন\" ও \"সর্বশেষ ব্যবহৃত ফাইল\"-র তালিকায় অন্তর্ভুক্ত না করার জন্য চিহ্নিত ফাইলের তালিকা (.desktop ফাইল এই তালিকায় অন্তর্ভুক্ত) ধারণকারী"
+msgstr ""
+"\"সম্প্রতি ব্যবহৃত অ্যাপ্লিকেশন\" ও \"সর্বশেষ ব্যবহৃত ফাইল\"-র তালিকায় অন্তর্ভুক্ত না "
+"করার জন্য চিহ্নিত ফাইলের তালিকা (.desktop ফাইল এই তালিকায় অন্তর্ভুক্ত) ধারণকারী"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
@@ -402,13 +252,20 @@ msgid ""
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
-msgstr "file-area-র মধ্যে উপস্থিত সামগ্রীর তালিকার সংখ্যা নির্ধারণ করে। পছন্দের সামগ্রীর কোনো সীমা নেই। এই সীমা শুধুমাত্র সম্প্রতি ব্যবহৃত সামগ্রীর জন্য অর্থাৎ max_total_items - পছন্দের সামগ্রী সংখ্যার, সমান সংখ্যক সম্প্রতি ব্যবহৃত সামগ্রী প্রদর্শন করা হয়। max_total_items - min_recent_items সংখ্যার থেকে বেশি সংখ্যক পছন্দের সামগ্রী উপস্থিত থাকলে এই সীমা উপেক্ষা করা হয়।"
+msgstr ""
+"file-area-র মধ্যে উপস্থিত সামগ্রীর তালিকার সংখ্যা নির্ধারণ করে। পছন্দের সামগ্রীর "
+"কোনো সীমা নেই। এই সীমা শুধুমাত্র সম্প্রতি ব্যবহৃত সামগ্রীর জন্য অর্থাৎ max_total_items "
+"- পছন্দের সামগ্রী সংখ্যার, সমান সংখ্যক সম্প্রতি ব্যবহৃত সামগ্রী প্রদর্শন করা হয়। "
+"max_total_items - min_recent_items সংখ্যার থেকে বেশি সংখ্যক পছন্দের সামগ্রী "
+"উপস্থিত থাকলে এই সীমা উপেক্ষা করা হয়।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "file-area-র \"সম্প্রতি\" বিভাগে উপস্থিত সামগ্রীর সর্বনিম্ন সংখ্যা নির্ধারণ করতে ব্যবহৃত।"
+msgstr ""
+"file-area-র \"সম্প্রতি\" বিভাগে উপস্থিত সামগ্রীর সর্বনিম্ন সংখ্যা নির্ধারণ করতে "
+"ব্যবহৃত।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
@@ -422,7 +279,9 @@ msgstr "মান true (সত্য) হলে, প্রধান মেনু
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
-msgstr "মান true (সত্য) হলে, অতিরিক্ত পরিস্থিতিতে প্রধান মেনু বন্ধ করা হবে: টালি সক্রিয়, অনুসন্ধান সক্রিয় হলে"
+msgstr ""
+"মান true (সত্য) হলে, অতিরিক্ত পরিস্থিতিতে প্রধান মেনু বন্ধ করা হবে: টালি সক্রিয়, "
+"অনুসন্ধান সক্রিয় হলে"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
@@ -464,160 +323,182 @@ msgstr "সম্ভাব্য মান = 0 [Applications], 1 [Documents], 2 
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
-msgstr "অ্যাপ্লিকেশন ব্রাউজারের লিংক প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"অ্যাপ্লিকেশন ব্রাউজারের লিংক প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান "
+"true (সত্য) নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
-msgstr "search area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"search area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) "
+"নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
-msgstr "status area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"status area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) "
+"নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
-msgstr "system area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"system area প্রদর্শন ও সক্রিয় করা হবে কি না চিহ্নিত করার জন্য মান true (সত্য) "
+"নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
-msgstr "ব্যবহারকারী দ্বারা সিস্টেমের বিভিন্ন সরঞ্জামের তালিকা সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"ব্যবহারকারী দ্বারা সিস্টেমের বিভিন্ন সরঞ্জামের তালিকা সম্পাদনযোগ্য হলে মান true "
+"(সত্য) নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
-msgstr "ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" অ্যাপ্লিকেশনের তালিকা সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" অ্যাপ্লিকেশনের তালিকা "
+"সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
-msgstr "ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরির তালিকা অথবা \"স্থান\" সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরির তালিকা "
+"অথবা \"স্থান\" সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
-msgstr "ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরির তালিকা সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
+msgstr ""
+"ব্যবহারকারী দ্বারা ব্যবহারকারীদের নির্ধারিত অথবা \"পছন্দের\" ডিরেক্টরির তালিকা "
+"সম্পাদনযোগ্য হলে মান true (সত্য) নির্ধারণ করুন।"
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "সিস্টেম নিরীক্ষণ ব্যবস্থা (_S)"
 
-#: ../main-menu/src/hard-drive-status-tile.c:215
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:217
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:219
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:221
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:242
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "ব্যক্তিগত ফোল্ডার: %s মুক্ত / %s"
 
-#: ../main-menu/src/main-menu-migration.c:135
-#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "সহায়তা"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "লগ-আউট করুন"
 
-#: ../main-menu/src/main-menu-migration.c:139
-#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "বন্ধ করুন"
 
-#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "পর্দা লক করুন"
 
-#: ../main-menu/src/main-menu-migration.c:199
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2392
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "GNOME Main Menu"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "নেটওয়ার্ক: শূণ্য"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
 msgstr "নেটওয়ার্ক কনফিগার করার জন্য ক্লিক করুন"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "নেটওয়ার্ক: শূণ্য (_k)"
 
-#: ../main-menu/src/network-status-tile.c:215
-#: ../main-menu/src/network-status-tile.c:232
-#: ../main-menu/src/network-status-tile.c:240
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "চিহ্নিত নেটওয়ার্কের সাথে সংযুক্ত: %s"
 
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "নেটওয়ার্ক: বেতার (_k)"
 
-#: ../main-menu/src/network-status-tile.c:223
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "ইথারনেট ব্যবহার করা হচ্ছে (%s)"
 
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
 msgstr "নেটওয়ার্ক: তারযুক্ত (_k)"
 
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Networ_k: GSM"
 msgstr "নেটওয়ার্ক: GSM (_k)"
 
-#: ../main-menu/src/network-status-tile.c:243
+#: ../main-menu/src/network-status-tile.c:242
 msgid "Networ_k: CDMA"
 msgstr "নেটওয়ার্ক: CDMA (_k)"
 
-#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "বেতার ইথারনেট (%s)"
 
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "তারযুক্ত ইথারনেট (%s)"
 
-#: ../main-menu/src/network-status-tile.c:356
-#: ../main-menu/src/network-status-tile.c:361
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "মোবাইল ইথারনেট (%s)"
 
-#: ../main-menu/src/network-status-tile.c:365
-#: ../main-menu/src/network-status-tile.c:375
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "অজানা"
 
-#: ../main-menu/src/network-status-tile.c:373
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -629,6 +510,10 @@ msgstr "অ্যাপলিকেশন"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "কম্পিউটার"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "নথিপত্র"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -678,6 +563,11 @@ msgstr "অবস্থা"
 msgid "System"
 msgstr "সিস্টেম"
 
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "পছন্দের তালিকায় যোগ করুন"
+
 #: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "পছন্দের তালিকায় বর্তমান লঞ্চারটি যোগ করুন"
@@ -685,6 +575,11 @@ msgstr "পছন্দের তালিকায় বর্তমান লঞ
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "পছন্দের তালিকায় বর্তমান নথিটি যোগ করুন"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "পছন্দের তালিকা থেকে সরিয়ে ফেলুন"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
