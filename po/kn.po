@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.master.kn\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
-"POT-Creation-Date: 2009-06-19 10:46+0000\n"
-"PO-Revision-Date: 2009-06-19 16:19+0530\n"
+"POT-Creation-Date: 2009-08-10 10:24+0000\n"
+"PO-Revision-Date: 2009-10-27 16:31+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:86
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
 msgstr "ಅನ್ವಯ ವೀಕ್ಷಕ"
 
@@ -76,206 +76,32 @@ msgid ""
 "Applications category"
 msgstr "ಹೊಸ ಅನ್ವಯಗಳ ವರ್ಗದಡಿಯಲ್ಲಿ ತೋರಿಸಲಾಗುವ ಗರಿಷ್ಟ ಸಂಖ್ಯೆಯ ಅನ್ವಯಗಳ ಸಂಖ್ಯೆ"
 
-#: ../application-browser/src/application-browser.c:78
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "ಆರಂಭದಲ್ಲಿ ಅಡಗಿಸು (ಶೆಲ್‌ ಅನ್ನು ಮೊದಲೆ ಲೋಡ್‌ ಮಾಡಲು ಉಪಯುಕ್ತವಾಗುತ್ತದೆ)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
 msgstr "ಹೊಸ ಅನ್ವಯಗಳು"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "ಸೋಸುಗ(ಫಿಲ್ಟರ್)"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "ಸಮೂಹಗಳು"
 
-#: ../application-browser/src/application-browser.c:83
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
 msgstr "ಅನ್ವಯದ ಕ್ರಿಯೆ"
-
-#. make start action
-#: ../libslab/application-tile.c:372
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>%s ಅನ್ನು ಆರಂಭಿಸು</b>"
-
-#: ../libslab/application-tile.c:391
-#: ../main-menu/src/main-menu-migration.c:131
-#: ../main-menu/src/main-menu-migration.c:255
-#: ../main-menu/etc/system-items.xbel.in.h:1
-msgid "Help"
-msgstr "ನೆರವು"
-
-#: ../libslab/application-tile.c:438
-msgid "Upgrade"
-msgstr "ನವೀಕರಿಸು"
-
-#: ../libslab/application-tile.c:453
-msgid "Uninstall"
-msgstr "ಅನುಸ್ಥಾಪಿಸಿದ್ದನ್ನು ತೆಗೆದು ಹಾಕು"
-
-#: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
-msgid "Remove from Favorites"
-msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
-
-#: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
-msgid "Add to Favorites"
-msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
-
-#: ../libslab/application-tile.c:867
-msgid "Remove from Startup Programs"
-msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
-
-#: ../libslab/application-tile.c:869
-msgid "Add to Startup Programs"
-msgstr "ಆರಂಭಿಕ ಪ್ರೋಗ್ರಾಂಗಳಿಗೆ ಸೇರಿಸು"
-
-#: ../libslab/app-shell.c:753
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>ಯಾವುದೆ ಹೋಲಿಕೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.</b> </span><span>\n"
-"\n"
-" ನಿಮ್ಮ ಶೋಧಕ \"<b>%s</b>\" ವು ಯಾವುದೆ ಅಂಶಗಳನ್ನು ಹೋಲಿಸಲಿಲ್ಲ.</span>"
-
-#: ../libslab/app-shell.c:903
-msgid "Other"
-msgstr "ಇತರೆ"
-
-#: ../libslab/bookmark-agent.c:1077
-msgid "New Spreadsheet"
-msgstr "ಹೊಸ ಸ್ಪ್ರೆಡ್-ಶೀಟ್"
-
-#: ../libslab/bookmark-agent.c:1082
-msgid "New Document"
-msgstr "ಹೊಸ ದಸ್ತಾವೇಜು"
-
-#: ../libslab/bookmark-agent.c:1135
-msgid "Home"
-msgstr "ನೆಲೆ"
-
-#: ../libslab/bookmark-agent.c:1140 ../main-menu/src/slab-window.glade.h:3
-msgid "Documents"
-msgstr "ದಸ್ತಾವೇಜುಗಳು"
-
-#: ../libslab/bookmark-agent.c:1146
-msgid "Desktop"
-msgstr "ಗಣಕತೆರೆ"
-
-#: ../libslab/bookmark-agent.c:1153
-msgid "File System"
-msgstr "ಕಡತ ವ್ಯವಸ್ಥೆ"
-
-#: ../libslab/bookmark-agent.c:1157
-msgid "Network Servers"
-msgstr "ಜಾಲಬಂಧ ಪರಿಚಾರಕಗಳು"
-
-#: ../libslab/bookmark-agent.c:1186
-msgid "Search"
-msgstr "ಹುಡುಕು"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:171
-#, c-format
-msgid "<b>Open</b>"
-msgstr "<b>ತೆಗೆ</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:190 ../libslab/document-tile.c:231
-msgid "Rename..."
-msgstr "ಹೆಸರನ್ನು ಬದಲಾಯಿಸು..."
-
-#: ../libslab/directory-tile.c:204 ../libslab/directory-tile.c:213
-#: ../libslab/document-tile.c:245 ../libslab/document-tile.c:254
-msgid "Send To..."
-msgstr "ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:228 ../libslab/document-tile.c:280
-msgid "Move to Trash"
-msgstr "ಕಸದ ಬುಟ್ಟಿಗೆ ವರ್ಗಾಯಿಸು"
-
-#: ../libslab/directory-tile.c:238 ../libslab/directory-tile.c:457
-#: ../libslab/document-tile.c:290 ../libslab/document-tile.c:831
-msgid "Delete"
-msgstr "ಅಳಿಸು"
-
-#: ../libslab/directory-tile.c:533 ../libslab/document-tile.c:979
-#, c-format
-msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "\"%s\" ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವೆ?"
-
-#: ../libslab/directory-tile.c:534 ../libslab/document-tile.c:980
-msgid "If you delete an item, it is permanently lost."
-msgstr "ನೀವು ಒಂದು ಅಂಶವನ್ನು ಅಳಿಸಿ ಹಾಕಿದರೆ, ಅದು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
-
-#: ../libslab/document-tile.c:192
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>\"%s\" ನೊಂದಿಗೆ ತೆರೆ</b>"
-
-#: ../libslab/document-tile.c:204
-msgid "Open with Default Application"
-msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಅನ್ವಯದೊಂದಿಗೆ ತೆರೆ"
-
-#: ../libslab/document-tile.c:215
-msgid "Open in File Manager"
-msgstr "ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿ ತೆರೆ"
-
-#: ../libslab/document-tile.c:611
-msgid "?"
-msgstr "?"
-
-#: ../libslab/document-tile.c:618
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
-#: ../libslab/document-tile.c:626
-msgid "Today %l:%M %p"
-msgstr "ಇಂದು %l:%M %p"
-
-#: ../libslab/document-tile.c:636
-msgid "Yesterday %l:%M %p"
-msgstr "ನಿನ್ನೆ %l:%M %p"
-
-#: ../libslab/document-tile.c:648
-msgid "%a %l:%M %p"
-msgstr "%a %l:%M %p"
-
-#: ../libslab/document-tile.c:656
-msgid "%b %d %l:%M %p"
-msgstr "%b %d %l:%M %p"
-
-#: ../libslab/document-tile.c:658
-msgid "%b %d %Y"
-msgstr "%b %d %Y"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "ಈಗ ಹುಡುಕು"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b>%s ಅನ್ನು ತೆರೆ</b>"
-
-#: ../libslab/system-tile.c:141
-#, c-format
-msgid "Remove from System Items"
-msgstr "ಗಣಕ ಅಂಶಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಮೆನು ಹಾಗು ಅನ್ವಯ ವೀಕ್ಷಕ"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
 
@@ -551,124 +377,130 @@ msgstr ""
 "ಬಳಕೆದಾರ-ನಿಶ್ಚಿತ ಅಥವ \"ಅಚ್ಚುಮೆಚ್ಚಿನ\" ದಸ್ತಾವೇಜುಗಳ ಪಟ್ಟಿಯನ್ನು ಬಳಕೆದಾರನು ಮಾರ್ಪಡಿಸಲು "
 "ಅನುಮತಿ ಇದ್ದಲ್ಲಿ ಇದನ್ನು true ಗೆ ಬದಲಾಯಿಸಿ."
 
-#: ../main-menu/src/hard-drive-status-tile.c:102
+#: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "ವ್ಯವಸ್ಥೆಯ ಮೇಲ್ವಿಚಾರಕ(_S)"
 
-#: ../main-menu/src/hard-drive-status-tile.c:215
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
 msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:217
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
 msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:219
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
 msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:221
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
 msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:242
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
 msgstr "ನೆಲೆ: %s ಮುಕ್ತ / %s"
 
-#: ../main-menu/src/main-menu-migration.c:135
-#: ../main-menu/src/main-menu-migration.c:257
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "ನೆರವು"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "ನಿರ್ಗಮನ"
 
-#: ../main-menu/src/main-menu-migration.c:139
-#: ../main-menu/src/main-menu-migration.c:259
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "ಮುಚ್ಚು"
 
-#: ../main-menu/src/main-menu-migration.c:197
+#: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡು"
 
-#: ../main-menu/src/main-menu-migration.c:199
+#: ../main-menu/src/main-menu-migration.c:194
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2392
+#: ../main-menu/src/main-menu-ui.c:2387
 msgid "The GNOME Main Menu"
 msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
 msgstr "ಜಾಲಬಂಧ: ಯಾವುದೂ ಇಲ್ಲ"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:93
+#: ../main-menu/src/network-status-tile.c:206
 msgid "Click to configure network"
 msgstr "ಜಾಲಬಂಧವನ್ನು ಸಂರಚಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ"
 
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Networ_k: None"
 msgstr "ಜಾಲಬಂಧ(_k): ಯಾವುದೂ ಇಲ್ಲ"
 
-#: ../main-menu/src/network-status-tile.c:215
-#: ../main-menu/src/network-status-tile.c:232
-#: ../main-menu/src/network-status-tile.c:240
+#: ../main-menu/src/network-status-tile.c:214
+#: ../main-menu/src/network-status-tile.c:231
+#: ../main-menu/src/network-status-tile.c:239
 #, c-format
 msgid "Connected to: %s"
 msgstr "ಇದಕ್ಕೆ ಸಂಪರ್ಕಿತಗೊಂಡಿದೆ: %s"
 
-#: ../main-menu/src/network-status-tile.c:218
+#: ../main-menu/src/network-status-tile.c:217
 msgid "Networ_k: Wireless"
 msgstr "ಜಾಲಬಂಧ(_k): ವೈರ್ಲೆಸ್"
 
-#: ../main-menu/src/network-status-tile.c:223
+#: ../main-menu/src/network-status-tile.c:222
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "ಎತರ್ನೆಟ್‌ ಅನ್ನು ಬಳಸಿಕೊಂಡು (%s)"
 
-#: ../main-menu/src/network-status-tile.c:227
+#: ../main-menu/src/network-status-tile.c:226
 msgid "Networ_k: Wired"
 msgstr "ಜಾಲಬಂಧ(_k): ತಂತಿಯ"
 
-#: ../main-menu/src/network-status-tile.c:235
+#: ../main-menu/src/network-status-tile.c:234
 msgid "Networ_k: GSM"
 msgstr "ಜಾಲಬಂಧ(_k):: GSM"
 
-#: ../main-menu/src/network-status-tile.c:243
+#: ../main-menu/src/network-status-tile.c:242
 msgid "Networ_k: CDMA"
 msgstr "ಜಾಲಬಂಧ(_k):: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:346
+#: ../main-menu/src/network-status-tile.c:345
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "ವೈರ್ಲೆಸ್ ಎತರ್ನೆಟ್ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:351
+#: ../main-menu/src/network-status-tile.c:350
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "ತಂತಿಯ ಎತರ್ನೆಟ್ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:356
-#: ../main-menu/src/network-status-tile.c:361
+#: ../main-menu/src/network-status-tile.c:355
+#: ../main-menu/src/network-status-tile.c:360
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "ಮೊಬೈಲ್ ಎತರ್ನೆಟ್ (%s)"
 
-#: ../main-menu/src/network-status-tile.c:365
-#: ../main-menu/src/network-status-tile.c:375
+#: ../main-menu/src/network-status-tile.c:364
+#: ../main-menu/src/network-status-tile.c:374
 #, c-format
 msgid "Unknown"
 msgstr "ಗೊತ್ತಿರದ"
 
-#: ../main-menu/src/network-status-tile.c:373
+#: ../main-menu/src/network-status-tile.c:372
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
@@ -680,6 +512,10 @@ msgstr "ಅನ್ವಯಗಳು"
 #: ../main-menu/src/slab-window.glade.h:2
 msgid "Computer"
 msgstr "ಗಣಕ"
+
+#: ../main-menu/src/slab-window.glade.h:3
+msgid "Documents"
+msgstr "ದಸ್ತಾವೇಜುಗಳು"
 
 #: ../main-menu/src/slab-window.glade.h:4
 msgid "Favorite Applications"
@@ -729,6 +565,11 @@ msgstr "ಸ್ಥಿತಿ"
 msgid "System"
 msgstr "ವ್ಯವಸ್ಥೆ"
 
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
+
 #: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "ಪ್ರಸಕ್ತ ಆರಂಭಕವನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
@@ -736,6 +577,11 @@ msgstr "ಪ್ರಸಕ್ತ ಆರಂಭಕವನ್ನು ಅಚ್ಚುಮ�
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜುಗಳನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
