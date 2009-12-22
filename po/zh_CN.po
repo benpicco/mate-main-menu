@@ -366,7 +366,7 @@ msgstr "%.1fb"
 #: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
 msgid "Home: %s Free / %s"
-msgstr "主文件夹：%s 可用空间/共 %s 可用空间 "
+msgstr "主文件夹：%s 可用空间/共 %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
 #: ../main-menu/src/main-menu-migration.c:250
