@@ -259,32 +259,18 @@ enum {
 
 static Atom slab_action_main_menu_atom = None;
 
-MainMenuUI *
-main_menu_ui_new (PanelApplet *applet)
+static gboolean
+main_menu_delayed_setup (MainMenuUI *this)
 {
-	MainMenuUI        *this;
-	MainMenuUIPrivate *priv;
+	MainMenuUIPrivate *priv = PRIVATE (this);
 
-	gchar *glade_xml_path;
-
-
-	this = g_object_new (MAIN_MENU_UI_TYPE, NULL);
-	priv = PRIVATE (this);
-
-	priv->panel_applet = applet;
-
-	glade_xml_path = g_build_filename (DATADIR, PACKAGE, "slab-window.glade", NULL);
-
-	priv->main_menu_xml    = glade_xml_new (glade_xml_path, "slab-main-menu-window", NULL);
-	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
-	g_free (glade_xml_path);
+	if (priv->recently_used_store_monitor != NULL)
+		return; /* already setup */
 
 	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
 	setup_recently_used_store_monitor (this, TRUE);
 	libslab_checkpoint ("main_menu_ui_new(): setup_bookmark_agents");
 	setup_bookmark_agents    (this);
-	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
-	create_panel_button      (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_slab_window");
 	create_slab_window       (this);
 	libslab_checkpoint ("main_menu_ui_new(): create_search_section");
@@ -318,6 +304,33 @@ main_menu_ui_new (PanelApplet *applet)
 	select_page             (this);
 	libslab_checkpoint ("main_menu_ui_new(): apply_lockdown_settings");
 	apply_lockdown_settings (this);
+
+	return FALSE;
+}
+
+MainMenuUI *
+main_menu_ui_new (PanelApplet *applet)
+{
+	MainMenuUI        *this;
+	MainMenuUIPrivate *priv;
+
+	gchar *glade_xml_path;
+
+
+	this = g_object_new (MAIN_MENU_UI_TYPE, NULL);
+	priv = PRIVATE (this);
+
+	priv->panel_applet = applet;
+
+	glade_xml_path = g_build_filename (DATADIR, PACKAGE, "slab-window.glade", NULL);
+
+	priv->main_menu_xml    = glade_xml_new (glade_xml_path, "slab-main-menu-window", NULL);
+	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
+	g_free (glade_xml_path);
+
+	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
+	create_panel_button (this);
+	g_timeout_add_seconds (5, (GSourceFunc) main_menu_delayed_setup, this);
 
 	return this;
 }
@@ -1854,6 +1867,7 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 
 	gboolean visible;
 
+	main_menu_delayed_setup (this);
 
 	detector = DOUBLE_CLICK_DETECTOR (
 		g_object_get_data (G_OBJECT (toggle), "double-click-detector"));
@@ -1866,7 +1880,7 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 		else
 			gtk_widget_hide (priv->slab_window);
 
-		visible = GTK_WIDGET_VISIBLE (priv->slab_window);
+  		visible = GTK_WIDGET_VISIBLE (priv->slab_window);
 	}
 
 	gtk_toggle_button_set_active (priv->panel_button, visible);
@@ -2378,6 +2392,7 @@ panel_menu_about_cb (BonoboUIComponent *component, gpointer user_data, const gch
 	MainMenuUI *this        = MAIN_MENU_UI (user_data);
 	MainMenuUIPrivate *priv = PRIVATE      (this);
 
+	main_menu_delayed_setup (this);
 
 	if (! priv->panel_about_dialog) {
 		priv->panel_about_dialog = gtk_about_dialog_new ();
