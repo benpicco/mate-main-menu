@@ -60,12 +60,12 @@ AC_SUBST(GLADE_LIBS)
 
 PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ])
 
-AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, have_iwlib=yes, have_iwlib=no)], have_iwlib=no)
+AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, have_iwlib=yes, have_iwlib=no, -lm)], have_iwlib=no)
 
 if test "x$have_iwlib" != "xyes" ; then
 	AC_ERROR(cannot find iwlib)
 else
-	MAIN_MENU_LIBS="$MAIN_MENU_LIBS -liw"
+	MAIN_MENU_LIBS="$MAIN_MENU_LIBS -liw -lm"
 	AC_SUBST(MAIN_MENU_LIBS)
 fi
 
