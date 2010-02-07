@@ -2325,7 +2325,9 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 		if (GTK_WIDGET (button) == priv->more_buttons [APPS_PAGE])
 			ditem_id = libslab_get_gconf_value (APP_BROWSER_GCONF_KEY);
 		else if (GTK_WIDGET (button) == priv->more_buttons [DOCS_PAGE]) {
-			dir = g_build_filename (g_get_home_dir (), "Documents", NULL);
+			dir = g_strdup (g_get_user_special_dir (G_USER_DIRECTORY_DOCUMENTS));
+			if (! dir)
+			      dir = g_build_filename (g_get_home_dir (), "Documents", NULL);
 
 			if (! g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
 				dir = g_strdup (g_get_home_dir ());
