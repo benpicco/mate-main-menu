@@ -21,5 +21,6 @@
         <oaf_attribute name="name" type="string" _value="Main Menu"/>
         <oaf_attribute name="description" type="string" _value="Default menu and application browser"/>
         <oaf_attribute name="panel:icon" type="string" value="computer.png"/>
+        <oaf_attribute name="panel:category" type="string" value="Utilities"/>
 </oaf_server>
 </oaf_info>
