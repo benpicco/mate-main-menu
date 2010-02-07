@@ -64,7 +64,7 @@ if test "x$NM_GLIB" = "x"; then
 	PKG_CHECK_EXISTS(libnm_glib, [ NM_GLIB=libnm_glib ], [ AC_ERROR(cannot find NetworkManager Glib library) ])
 fi
 
-PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager $NM_GLIB >= 0.7.0 hal-storage cairo ])
+PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager $NM_GLIB >= 0.7.0 libnm-util >= 0.7.0 x11 hal-storage cairo ])
 
 AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, have_iwlib=yes, have_iwlib=no, -lm)], have_iwlib=no)
 
