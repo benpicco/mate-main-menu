@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Run Application
 Comment=Show the "Run Application" panel app
-Exec=trigger-panel-run-dialog
+Exec=@BINDIR@/trigger-panel-run-dialog
 Terminal=false
 Type=Application
 Icon=system-run
