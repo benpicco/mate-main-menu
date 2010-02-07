@@ -76,7 +76,7 @@
           <bookmark:group>rank-5</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Nautilus" exec="nautilus --no-desktop --browser %U" timestamp="1168926682" count="1"/>
+          <bookmark:application name="Nautilus" exec="nautilus --no-desktop %U" timestamp="1168926682" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
