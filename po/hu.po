@@ -1,16 +1,15 @@
 # Hungarian translation of gnome-main-menu
 # This file is distributed under the same license as the gnome-main-menu package.
-# Copyright (C) 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
-# Kalman Kemenczy <kkemenczy@novell.com>, 2006, 2007.
-# Gabor Kelemen <kelemeng@gnome.hu>, 2007, 2008.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
+# Kalman Kemenczy <kkemenczy at novell dot com>, 2006, 2007, 2010.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu HEAD\n"
+"Project-Id-Version: gnome-main-menu master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-26 13:58+0100\n"
-"PO-Revision-Date: 2009-11-26 14:00+0100\n"
+"POT-Creation-Date: 2010-02-11 14:28+0100\n"
+"PO-Revision-Date: 2010-02-11 14:31+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -26,23 +25,27 @@ msgstr "Alkalmazásböngésző"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
-msgstr "Hozzáadás vagy eltávolítás művelet után kilépés a parancsértelmezőbe"
+msgstr ""
+"Kilépés a parancsértelmezőből hozzáadás vagy eltávolítás művelet "
+"végrehajtása után"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:2
 msgid "Exit shell on help action performed"
-msgstr "Súgó művelet után kilépés a parancsértelmezőbe"
+msgstr "Kilépés a parancsértelmezőből súgóművelet végrehajtása után"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:3
 msgid "Exit shell on start action performed"
-msgstr "Indítás művelet után kilépés a parancsértelmezőbe"
+msgstr "Kilépés a parancsértelmezőből indítás művelet végrehajtása után"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "Frissítés vagy eltávolítás művelet után kilépés a parancsértelmezőbe"
+msgstr ""
+"Kilépés a parancsértelmezőből frissítés vagy eltávolítás művelet "
+"végrehajtása után"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
-msgstr "Meglévő .desktop fájlok fájlnevei"
+msgstr "Meglévő .desktop fájlok fájlneve"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:6
 msgid "Indicates whether to close the shell when a help action is performed"
@@ -78,11 +81,11 @@ msgstr "Új alkalmazások max. száma"
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr "Maximum hány alkalmazás szerepeljen az Új alkalmazások kategóriában"
+msgstr "Az Új alkalmazások kategóriában megjelenített alkalmazások maximális száma"
 
 #: ../application-browser/src/application-browser.c:63
 msgid "Hide on start (useful to preload the shell)"
-msgstr "Elrejtés indításkor (előtöltéshez hasznos)"
+msgstr "Elrejtés indításkor (hasznos a parancsértelmező előzetes betöltéséhez)"
 
 #: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
@@ -105,13 +108,13 @@ msgid "Default menu and application browser"
 msgstr "Alapértelmezett menü és alkalmazásböngésző"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2401 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME főmenü"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
 msgid "GNOME Main Menu Factory"
-msgstr "GNOME főmenü factory"
+msgstr "GNOME főmenü-készítő"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
 msgid "Main Menu"
@@ -163,15 +166,15 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a „Megnyitás a fájlkezelőben ”menüelem "
-"aktiválásakor. A FILE_URI helyére az aktivált fájl könyvtárnevének megfelelő "
-"URI kerül."
+"A rendszer ezt a parancsot hajtja végre a „Megnyitás a fájlkezelőben” "
+"menüelem aktiválásakor. A FILE_URI helyére az aktivált fájl könyvtárnevének "
+"megfelelő URI kerül."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr "Ez a parancs kerül végrehajtásra a „Küldés… ”menüelem aktiválásakor."
+msgstr "A rendszer ezt a parancsot hajtja végre a „Küldés…” menüelem aktiválásakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
@@ -179,19 +182,19 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a „Küldés… ”menüelem aktiválásakor. A "
-"DIRNAME és BASENAME helyére az aktivált cím megfelelő összetevői kerülnek."
+"A rendszer ezt a parancsot hajtja végre a „Küldés…” menüelem aktiválásakor. "
+"A DIRNAME és BASENAME helyére az aktivált cím megfelelő összetevői kerülnek."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
-msgstr "Ez a parancs kerül végrehajtásra a keresés bejegyzés használatakor."
+msgstr "A rendszer ezt a parancsot hajtja végre a keresés bejegyzés használatakor."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
 msgstr ""
-"Ez a parancs kerül végrehajtásra a keresés bejegyzés használatakor. A "
+"A rendszer ezt a parancsot hajtja végre a keresés bejegyzés használatakor. A "
 "SEARCH_STRING helyére a beírt szöveg kerül."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:13
@@ -228,26 +231,25 @@ msgid ""
 "directories or \"Places\" table, and 5 - show the recently used directories "
 "or \"Places\" table."
 msgstr ""
-"A fájlterületen megjelenítendő fájltáblák listája. A lehetséges értékek: 0 - "
-"a felhasználó által megadott vagy „Kedvenc ”alkalmazások tábla "
-"megjelenítése, 1 - a legutóbb használt alkalmazások tábla megjelenítése, 2 - "
-"a felhasználó által megadott vagy „Kedvenc ”dokumentumok tábla "
-"megjelenítése, 3 - a legutóbb használt dokumentumok tábla megjelenítése, 4 - "
-"a felhasználó által megadott vagy „Kedvenc ”könyvtárak vagy a „Helyek ”tábla "
-"megjelenítése és 5 - a legutóbb használt könyvtárak vagy a „Helyek ”tábla "
-"megjelenítése."
+"A fájlterületen megjelenítendő fájltáblák listáját tartalmazza "
+"(rendezetlenül). Lehetséges értékek: 0 - a felhasználó által megadott vagy "
+"„Kedvenc” alkalmazások táblája, 1 - a legutóbb használt alkalmazások tábla, "
+"2 - a felhasználó által megadott vagy „Kedvenc” dokumentumok tábla, 3 - a "
+"legutóbb használt dokumentumok tábla, 4 - a felhasználó által megadott vagy "
+"„Kedvenc” könyvtárak vagy a „Helyek” tábla; 5 - a legutóbb használt "
+"könyvtárak vagy a „Helyek” táblája."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
-"A „Legutóbb használt alkalmazások ”és a „Legutóbbi fájlok ”listákból "
+"A „Legutóbb használt alkalmazások” és a „Legutóbbi fájlok” listából "
 "kihagyandó fájlok listája (a .desktop fájlok is)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
-msgstr "a fájlterület elemeinek korlátait adja meg."
+msgstr "a fájlterületen szereplő elemek számkorlátját határozza meg."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
@@ -257,17 +259,20 @@ msgid ""
 "of favorite items. If the number of favorite items exceeds max_total_items - "
 "min_recent_items than this limit is ignored."
 msgstr ""
-"a fájlterület elemeinek korlátait adja meg. A kedvenc elemek száma nincs "
-"korlátozva. Ez a korlát a legutóbbi elemek számára érvényes, azaz a "
-"megjelenített legutóbbi elemek száma a max_total_items - a kedvenc elemek "
-"száma. Ha a kedvenc elemek száma meghaladja a max_total_items - "
-"min_recent_items számát, akkor ez a korlát figyelmen kívül marad."
+"a fájlterületen szereplő elemek számkorlátját határozza meg. A kedvenc "
+"elemek száma nincs korlátozva. Ez a korlát a legutóbbi elemek számára "
+"vonatkozik, így a megjelenített legutóbbi elemek számkorlátja: "
+"(max_total_items - kedvenc elemek száma). Ha a kedvenc elemek száma "
+"meghaladja a (max_total_items - min_recent_items) értéket, a program "
+"figyelmen kívül hagyja ezt a korlátot."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr "megadja az elemek legkisebb számát a fájlterület „legutóbbi ”szakaszában."
+msgstr ""
+"a fájlterület „legutóbbi” területén található elemek legkisebb számát adja "
+"meg."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
@@ -275,23 +280,23 @@ msgstr "a fájlterületen megjelenítendő fájlok típusát adja meg"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
-msgstr "ha igaz, a főmenü jobban igyekszik bezáródni"
+msgstr "ha igaz, a főmenü hajlamosabb bezáródni"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
 msgstr ""
-"ha igaz, a főmenü a következő esetekben is bezáródik: a mozaik aktiválódik, "
+"ha igaz, a főmenü a következő esetekben is bezáródik: mozaik aktiválódik, "
 "keresés aktiválódik"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
-msgstr "a fájlterület lezárási állapota"
+msgstr "a fájlterület lezárási beállítása"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
-msgstr "az alkalmazásböngésző hivatkozás lezárási állapota"
+msgstr "az alkalmazásböngésző hivatkozásának lezárási állapota"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
@@ -307,15 +312,15 @@ msgstr "a rendszerterület lezárási állapota"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
-msgstr "a felhasználó által megadott alkalmazások terület lezárási állapota"
+msgstr "a felhasználó által megadott alkalmazások területének lezárási állapota"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
-msgstr "a felhasználó által megadott könyvtárak terület lezárási állapota"
+msgstr "a felhasználó által megadott könyvtárak területének lezárási állapota"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
-msgstr "a felhasználó által megadott dokumentumok terület lezárási állapota"
+msgstr "a felhasználó által megadott dokumentumok területének lezárási állapota"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:33
 msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
@@ -326,25 +331,31 @@ msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
-"Állítsa igazra, ha az alkalmazásböngésző hivatkozásának láthatónak és "
+"Állítsa igaz értékre, ha az alkalmazásböngésző hivatkozásának láthatónak és "
 "aktívnak kell lennie."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
-msgstr "Állítsa igazra, ha a keresési területnek láthatónak és aktívnak kell lennie."
+msgstr ""
+"Állítsa igaz értékre, ha a keresési területnek láthatónak és aktívnak kell "
+"lennie."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
-msgstr "Állítsa igazra, ha az állapotterületnek láthatónak és aktívnak kell lennie."
+msgstr ""
+"Állítsa igaz értékre, ha az állapotterületnek láthatónak és aktívnak kell "
+"lennie."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
-msgstr "Állítsa igazra, ha a rendszerterületnek láthatónak és aktívnak kell lennie."
+msgstr ""
+"Állítsa igaz értékre, ha a rendszerterületnek láthatónak és aktívnak kell "
+"lennie."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
-"Állítsa igazra, ha a felhasználónak engedélyezett a rendszerelemek "
+"Állítsa igaz értékre, ha a felhasználónak engedélyezett a rendszerelemek "
 "listájának módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:39
@@ -352,24 +363,24 @@ msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
-"Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy „Kedvenc ”alkalmazások listájának módosítása."
+"Állítsa igaz értékre, ha a felhasználónak engedélyezett a felhasználó által "
+"megadott vagy „Kedvenc” alkalmazások listájának módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
-"Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy „Kedvenc ”könyvtárak, illetve a „Helyek ”listájának módosítása."
+"Állítsa igaz értékre, ha a felhasználónak engedélyezett a felhasználó által "
+"megadott vagy „Kedvenc” könyvtárak, illetve a „Helyek” listájának módosítása."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
 msgstr ""
-"Állítsa igazra, ha a felhasználónak engedélyezett a felhasználó által "
-"megadott vagy „Kedvenc ”dokumentumok listájának módosítása."
+"Állítsa igaz értékre, ha a felhasználónak engedélyezett a felhasználó által "
+"megadott vagy „Kedvenc” dokumentumok listájának módosítása."
 
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
@@ -378,22 +389,22 @@ msgstr "_Rendszerfigyelő"
 #: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
 msgid "%.1fG"
-msgstr "%.1f G"
+msgstr "%.1fG"
 
 #: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
 msgid "%.1fM"
-msgstr "%.1f M"
+msgstr "%.1fM"
 
 #: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
 msgid "%.1fK"
-msgstr "%.1f K"
+msgstr "%.1fK"
 
 #: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
 msgid "%.1fb"
-msgstr "%.1f b"
+msgstr "%.1fb"
 
 #: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
@@ -416,7 +427,7 @@ msgstr "Kijelentkezés"
 #: ../main-menu/src/main-menu-migration.c:254
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
-msgstr "Leállítás"
+msgstr "Kikapcsolás"
 
 #: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
@@ -427,7 +438,7 @@ msgstr "Képernyő zárolása"
 msgid "gnome-lockscreen"
 msgstr "gnome-lockscreen"
 
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2402
 msgid "The GNOME Main Menu"
 msgstr "A GNOME főmenü"
 
@@ -570,7 +581,7 @@ msgstr "Alkalmazásindító felvétele a Kedvencek közé"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
-msgstr "Dokumentum felvétele a Kedvencek közé"
+msgstr "Az aktuális dokumentum felvétele a Kedvencek közé"
 
 #: ../nautilus-main-menu/nautilus-main-menu.c:124
 #: ../nautilus-main-menu/nautilus-main-menu.c:129
@@ -580,5 +591,5 @@ msgstr "Eltávolítás a Kedvencek közül"
 #: ../nautilus-main-menu/nautilus-main-menu.c:125
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
-msgstr "Dokumentum eltávolítása a Kedvencek közül"
+msgstr "Az aktuális dokumentum eltávolítása a Kedvencek közül"
 
