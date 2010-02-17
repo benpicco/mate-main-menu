@@ -199,9 +199,7 @@ migrate_system_gconf_to_bookmark_file ()
 						gnome_desktop_item_set_entry_type (
 							ditem, GNOME_DESKTOP_ITEM_TYPE_APPLICATION);
 						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_ENCODING, "UTF-8");
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_CATEGORIES, "GNOME;Application;");
+							ditem, GNOME_DESKTOP_ITEM_CATEGORIES, "GNOME;GTK;");
 						gnome_desktop_item_set_string (
 							ditem, GNOME_DESKTOP_ITEM_ONLY_SHOW_IN, "GNOME;");
 
