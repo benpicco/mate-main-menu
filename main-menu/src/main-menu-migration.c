@@ -191,7 +191,7 @@ migrate_system_gconf_to_bookmark_file ()
 						gnome_desktop_item_set_string (
 							ditem, GNOME_DESKTOP_ITEM_NAME, _("Lock Screen"));
 						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_ICON, _("gnome-lockscreen"));
+							ditem, GNOME_DESKTOP_ITEM_ICON, "gnome-lockscreen");
 						gnome_desktop_item_set_string (
 							ditem, GNOME_DESKTOP_ITEM_EXEC, exec_string);
 						gnome_desktop_item_set_boolean (
