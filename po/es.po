@@ -8,14 +8,14 @@
 # Javier Moreno <javier.moreno@alufis35.uv.es>, 2000.
 # Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
 # Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2009-08-10 10:24+0000\n"
-"PO-Revision-Date: 2009-08-14 15:56+0200\n"
+"POT-Creation-Date: 2010-02-18 12:15+0000\n"
+"PO-Revision-Date: 2010-02-18 18:28+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgid "Default menu and application browser"
 msgstr "Menú por defecto y navegador de aplicaciones"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -397,6 +397,15 @@ msgstr ""
 "establezca el valor a true si se permite al usuario modificar la lista de "
 "especificadas por el usuario o documentos «Favoritos»."
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+#| msgid "Recent Applications"
+msgid "Run Application"
+msgstr "Ejecutar una aplicación"
+
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Mostrar el diálogo «Ejecutar una aplicación»"
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "Monitor del _sistema"
@@ -427,19 +436,19 @@ msgid "Home: %s Free / %s"
 msgstr "Carpeta personal: %s Disponible / %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Ayuda"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Salir de la sesión"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Apagar"
@@ -449,11 +458,7 @@ msgstr "Apagar"
 msgid "Lock Screen"
 msgstr "Bloquear la pantalla"
 
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -631,6 +636,9 @@ msgstr "Eliminar de favoritos"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Eliminar de favoritos el documento actual"
+
+#~ msgid "gnome-lockscreen"
+#~ msgstr "gnome-lockscreen"
 
 #~ msgid "<b>Start %s</b>"
 #~ msgstr "<b>Iniciar %s</b>"
