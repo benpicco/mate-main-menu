@@ -2329,8 +2329,10 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 			if (! dir)
 			      dir = g_build_filename (g_get_home_dir (), "Documents", NULL);
 
-			if (! g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
+			if (! g_file_test (dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR)) {
+				g_free (dir);
 				dir = g_strdup (g_get_home_dir ());
+			}
 
 			uri = g_filename_to_uri (dir, NULL, NULL);
 
