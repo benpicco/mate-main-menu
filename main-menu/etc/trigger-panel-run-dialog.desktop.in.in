@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Run Application
-Comment=Show the "Run Application" panel app
+_Name=Run Application
+_Comment=Show the "Run Application" dialog
 Exec=@BINDIR@/trigger-panel-run-dialog
 Terminal=false
 Type=Application
