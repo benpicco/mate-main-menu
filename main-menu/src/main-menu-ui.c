@@ -2169,11 +2169,11 @@ slab_window_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_
 
 	if (orient == PANEL_APPLET_ORIENT_UP || orient == PANEL_APPLET_ORIENT_DOWN) {
 		if ((slab_geom.x + slab_geom.width) > (monitor_geom.x + monitor_geom.width))
-			slab_geom.x = button_geom.x + button_geom.width - slab_geom.width;
+			slab_geom.x = MAX (monitor_geom.x, monitor_geom.x + monitor_geom.width - slab_geom.width);
 	}
 	else {
 		if ((slab_geom.y + slab_geom.height) > (monitor_geom.y + monitor_geom.height))
-			slab_geom.y = button_geom.y + button_geom.height - slab_geom.height;
+			slab_geom.y = MAX (monitor_geom.y, monitor_geom.y + monitor_geom.height - slab_geom.height);
 	}
 
 	gtk_window_move (GTK_WINDOW (priv->slab_window), slab_geom.x, slab_geom.y);
