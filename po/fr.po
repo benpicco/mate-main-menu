@@ -13,8 +13,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-10 12:26+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"main-menu&component=general\n"
+"POT-Creation-Date: 2010-02-18 12:15+0000\n"
 "PO-Revision-Date: 2009-08-10 12:43+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -114,7 +115,7 @@ msgid "Default menu and application browser"
 msgstr "Menu et navigateur d'applications par défaut"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
@@ -136,7 +137,8 @@ msgstr "Menu _ouvrir"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the Network Manager editor utility"
-msgstr "Fichier .desktop pour l'utilitaire du gestionnaire de connexions réseau"
+msgstr ""
+"Fichier .desktop pour l'utilitaire du gestionnaire de connexions réseau"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -242,11 +244,11 @@ msgid ""
 msgstr ""
 "Contient la liste (sans ordre particulier) des tables de fichiers autorisées "
 "à l'affichage dans la zone de fichiers. Les valeurs possibles sont, 0 - "
-"affiche la table d'applications « Favoris » ou indiquée par l'utilisateur, 1 - "
-"affiche la table des applications récemment utilisées, 2 - affiche la table "
-"des documents « Favoris » ou indiqués par l'utilisateur, 3 - affiche la table "
-"des documents récemment utilisés, 4 - affiche la table des répertoires ou "
-"emplacements « Favoris » de l'utilisateur, 5 - affiche la table des "
+"affiche la table d'applications « Favoris » ou indiquée par l'utilisateur, 1 "
+"- affiche la table des applications récemment utilisées, 2 - affiche la "
+"table des documents « Favoris » ou indiqués par l'utilisateur, 3 - affiche la "
+"table des documents récemment utilisés, 4 - affiche la table des répertoires "
+"ou emplacements « Favoris » de l'utilisateur, 5 - affiche la table des "
 "répertoires ou « Raccourcis » récemment utilisés."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
@@ -272,9 +274,9 @@ msgstr ""
 "Détermine la limite des éléments dans la zone de fichiers. Le nombre favoris "
 "d'éléments n'est pas limité. Cette limite s'applique au nombre d'éléments "
 "récents, c-à-d que le nombre d'éléments récents affichés est limité à "
-"max_total_items - le nombre d'éléments favoris. Si le nombre "
-"d'éléments favoris excède max_total_items - min_recent_items, "
-"alors la limite est ignorée."
+"max_total_items - le nombre d'éléments favoris. Si le nombre d'éléments "
+"favoris excède max_total_items - min_recent_items, alors la limite est "
+"ignorée."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
@@ -298,7 +300,8 @@ msgid ""
 "activated, search activated"
 msgstr ""
 "Si vrai, le menu principal se ferme si les conditions supplémentaires "
-"suivantes sont vérifiées : la mosaïque est activée et la recherche est activée"
+"suivantes sont vérifiées : la mosaïque est activée et la recherche est "
+"activée"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
@@ -390,6 +393,14 @@ msgstr ""
 "Si vrai, l'utilisateur est autorisé à modifier la liste des documents "
 "définis par l'utilisateur ou les « Favoris »."
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+msgid "Run Application"
+msgstr "Lancer une application"
+
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Affiche la boîte de dialogue « Lancer une application »"
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "Moniteur _système"
@@ -420,19 +431,19 @@ msgid "Home: %s Free / %s"
 msgstr "Dossier personnel : %s libres sur %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Aide"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Se déconnecter"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Éteindre"
@@ -442,12 +453,7 @@ msgstr "Éteindre"
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-# http://bugzilla.gnome.org/show_bug.cgi?id=532406
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Le menu principal de GNOME"
 
@@ -601,3 +607,7 @@ msgstr "Retirer des favoris"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Supprime le document actuel des favoris"
+
+# http://bugzilla.gnome.org/show_bug.cgi?id=532406
+#~ msgid "gnome-lockscreen"
+#~ msgstr "gnome-lockscreen"
