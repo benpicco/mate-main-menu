@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-11 14:28+0100\n"
-"PO-Revision-Date: 2010-02-11 14:31+0100\n"
+"POT-Creation-Date: 2010-03-07 20:22+0100\n"
+"PO-Revision-Date: 2010-03-07 20:23+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -108,7 +108,7 @@ msgid "Default menu and application browser"
 msgstr "Alapértelmezett menü és alkalmazásböngésző"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2401 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "GNOME főmenü"
 
@@ -382,6 +382,15 @@ msgstr ""
 "Állítsa igaz értékre, ha a felhasználónak engedélyezett a felhasználó által "
 "megadott vagy „Kedvenc” dokumentumok listájának módosítása."
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+msgid "Run Application"
+msgstr "Alkalmazás futtatása"
+
+# Az eredeti fuzzy üzenetben Nemrég használt alkalmazások szerepelt.
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Az „Alkalmazás futtatása” ablak megjelenítése"
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "_Rendszerfigyelő"
@@ -412,19 +421,19 @@ msgid "Home: %s Free / %s"
 msgstr "Saját mappa: %s szabad / %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Súgó"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Kijelentkezés"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Kikapcsolás"
@@ -434,11 +443,7 @@ msgstr "Kikapcsolás"
 msgid "Lock Screen"
 msgstr "Képernyő zárolása"
 
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2402
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "A GNOME főmenü"
 
