@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 12:24+0100\n"
-"PO-Revision-Date: 2010-03-08 12:24+0100\n"
-"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
+"POT-Creation-Date: 2010-03-08 12:25+0100\n"
+"PO-Revision-Date: 2010-03-06 17:21+0100\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,7 +110,7 @@ msgid "Default menu and application browser"
 msgstr "Domyślna przeglądarka menu i programów"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Główne menu GNOME"
 
@@ -380,6 +380,14 @@ msgstr ""
 "ustawione na \"true\", jeśli użytkownik może modyfikować listę \"Ulubionych"
 "\" dokumentów lub dokumentów określonych przez użytkownika"
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+msgid "Run Application"
+msgstr "Uruchom program"
+
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Wyświetlenie okna \"Uruchom program\""
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "_Monitor systemu"
@@ -410,19 +418,19 @@ msgid "Home: %s Free / %s"
 msgstr "Katalog domowy: wolne %s z %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Pomoc"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Wyloguj"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Wyłącz komputer"
@@ -432,11 +440,7 @@ msgstr "Wyłącz komputer"
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
 
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Główne menu GNOME"
 
@@ -590,9 +594,3 @@ msgstr "Usuń z ulubionych"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Usuwa bieżący dokument z ulubionych"
-
-#~ msgid "Run Application"
-#~ msgstr "Uruchom program"
-
-#~ msgid "Show the \"Run Application\" dialog"
-#~ msgstr "Wyświetlenie okna \"Uruchom program\""
