@@ -150,9 +150,11 @@ then
 	NAUTILUS_REQUIRED=2.6.0
 
 	PKG_CHECK_MODULES(NAUTILUS, [libnautilus-extension >= $NAUTILUS_REQUIRED glib-2.0 gobject-2.0 gconf-2.0])
+	NAUTILUSDIR=`pkg-config --variable=extensiondir libnautilus-extension`
 
 	AC_SUBST(NAUTILUS_CFLAGS)
 	AC_SUBST(NAUTILUS_LIBS)
+	AC_SUBST(NAUTILUSDIR)
 fi
 
 AM_CONDITIONAL(ENABLE_NAUTILUS_EXTENSION, test "x$ENABLE_NAUTILUS_EXTENSION" = "x1")

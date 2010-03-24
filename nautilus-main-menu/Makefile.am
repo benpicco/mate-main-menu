@@ -6,8 +6,7 @@ INCLUDES =						\
 	$(NAUTILUS_CFLAGS)				\
 	$(WARN_CFLAGS)
 
-# FIXME: get this from the .pc file
-nautilus_extensiondir=$(libdir)/nautilus/extensions-1.0
+nautilus_extensiondir=@NAUTILUSDIR@
 
 nautilus_extension_LTLIBRARIES=libnautilus-main-menu.la
 
