@@ -2,7 +2,7 @@
 # Copyright (C) 2008 the author(s) of gnome-main-menu.
 # This file is distributed under the same license as the gnome-main-menu package.
 # Klara Cihlarova <koty@seznam.cz>, 2006.
-# Adrian Guniš <andygun@seznam.cz>, 2008, 2009.
+# Adrian Guniš <andygun@seznam.cz>, 2008, 2009, 2010.
 # Petr Kovar <pknbe@volny.cz>, 2008.
 #
 msgid ""
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2009-08-17 09:55+0000\n"
-"PO-Revision-Date: 2009-08-17 19:17+0100\n"
+"POT-Creation-Date: 2010-03-24 16:24+0000\n"
+"PO-Revision-Date: 2010-03-26 20:50+0100\n"
 "Last-Translator: Adrian Guniš <andygun696@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid "Default menu and application browser"
 msgstr "Výchozí nabídka a prohlížeč aplikací"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
 msgid "GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -371,6 +371,14 @@ msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
 "uživatelem specifikovaných nebo \"Oblíbených\" dokumentů."
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+msgid "Run Application"
+msgstr "Spustit aplikaci"
+
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Zobrazit okno \"Spustit aplikaci\""
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "S_ledování systému"
@@ -401,19 +409,19 @@ msgid "Home: %s Free / %s"
 msgstr "Domovská složka: %s volné / %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Nápověda"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Odhlásit"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Vypnout"
@@ -423,11 +431,7 @@ msgstr "Vypnout"
 msgid "Lock Screen"
 msgstr "Uzamknout obrazovku"
 
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2406
 msgid "The GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -581,31 +585,4 @@ msgstr "Odebrat z oblíbených"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Odebrat aktuální dokument z oblíbených"
-
-#~ msgid "<b>Start %s</b>"
-#~ msgstr "<b>Spustit %s</b>"
-
-#~ msgid "Upgrade"
-#~ msgstr "Aktualizovat"
-
-#~ msgid "Uninstall"
-#~ msgstr "Odinstalovat"
-
-#~ msgid "Remove from Startup Programs"
-#~ msgstr "Odebrat z Programů při přihlášení"
-
-#~ msgid "Add to Startup Programs"
-#~ msgstr "Přidat do Programů při přihlášení"
-
-#~ msgid ""
-#~ "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-#~ "\n"
-#~ " Your filter \"<b>%s</b>\" does not match any items.</span>"
-#~ msgstr ""
-#~ "<span size=\"large\"><b>Nebylo nic nalezeno.</b> </span><span>\n"
-#~ "\n"
-#~ " Nebyla nalezena žádná položka odpovídající filtru \"<b>%s</b>\".</span>"
-
-#~ msgid "Other"
-#~ msgstr "Ostatní"
 
