@@ -5,6 +5,7 @@ application-browser/etc/application-browser.schemas.in
 application-browser/src/application-browser.c
 main-menu/etc/GNOME_MainMenu.server.in.in
 main-menu/etc/GNOME_MainMenu_ContextMenu.xml
+main-menu/etc/trigger-panel-run-dialog.desktop.in
 main-menu/etc/gnome-screensaver-lock.desktop
 main-menu/etc/slab.schemas.in.in
 main-menu/etc/trigger-panel-run-dialog.desktop.in.in
