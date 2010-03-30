@@ -1,4 +1,57 @@
 ==============
+Version 0.9.14
+==============
+
+  Features
+
+	* Let one clear the recent-documents list (David Liang)
+
+  Fixes
+
+	* Defer loading of the glade file for faster login (Michael Meeks)
+	* Link to libm (Vincent Untz)
+	* Fix build with NetworkManager 0.8 (Vincent Untz)
+	* Don't mark icon name as translatable (Vincent Untz)
+	* Do not add Application category to desktop file we create (Vincent
+	  Untz)
+	* Use XDG user directory instead of hardcoding $HOME/Documents (Julian
+	  Andres Klode)
+	* Plug leak (Vincent Untz)
+	* Link against libnm-util and x11 to fix builds with GNU gold (Julian
+	  Andres Klode)
+	* Use @BINDIR@/trigger-panel-run-dialog in its desktop file (Julian
+	  Andres Klode)
+	* Mark keys translatable in trigger-panel-run-dialog.desktop (Vincent
+	  Untz)
+	* Add a category to the applet .server file (Julian Andres Klode)
+	* Do not pass --browser to nautilus (Christopher James Halse Rogers)
+	* Make the main-menu fit in small monitors (Federico Mena Quintero)
+	* Install nautilus extension in the right directory (Vincent)
+
+  Translators
+
+	* Runa Bhattacharjee (bn_IN)
+        * Denis Arnaud (br)
+	* Adrian Guniš (cs)
+	* Joe Hansen (da)
+	* Mario Blättermann (de)
+	* Bruce Cowan (en_GB)
+	* Jorge González (es)
+	* Iñaki Larrañaga Murgoitio (eu)
+	* Claude Paroz (fr)
+	* Gabor Kelemen (hu)
+	* Shankar Prasad (kn)
+	* Gintautas Miliauskas (lt)
+	* Kjartan Maraas (nb)
+	* Nils-Christoph Fiedler (nds)
+	* Piotr Drąg (pl)
+	* Og Maciel (pt_BR)
+	* Andrej Žnidaršič (sl)
+	* Daniel Nylander (sv)
+	* I. Felix (ta)
+	* Tao Wei (zh_CN)
+
+==============
 Version 0.9.13
 ==============
 
