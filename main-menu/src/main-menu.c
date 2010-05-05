@@ -24,7 +24,6 @@
 
 #include <glib.h>
 #include <panel-applet.h>
-#include <libgnomeui/libgnomeui.h>
 #include <string.h>
 #include <libslab/slab.h>
 
@@ -43,7 +42,6 @@ PANEL_APPLET_BONOBO_FACTORY ("OAFIID:GNOME_MainMenu_Factory", PANEL_TYPE_APPLET,
 static gboolean
 main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data)
 {
-	gchar *argv [1] = { "slab" };
 
 	libslab_checkpoint_init (CHECKPOINT_CONFIG_BASENAME, CHECKPOINT_FILE_BASENAME);
 
@@ -65,7 +63,7 @@ main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 1, argv, NULL, NULL);
+	g_set_application_name (_("GNOME Main Menu"));
 
 	libslab_checkpoint ("Migrating old configurations");
 	move_system_area_to_new_set ();
