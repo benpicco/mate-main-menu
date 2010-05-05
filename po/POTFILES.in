@@ -12,6 +12,7 @@ main-menu/src/hard-drive-status-tile.c
 main-menu/src/main-menu-migration.c
 main-menu/src/main-menu-ui.c
 main-menu/src/network-status-tile.c
-main-menu/src/slab-window.glade
+[type: gettext/glade]main-menu/src/slab-button.ui
+[type: gettext/glade]main-menu/src/slab-window.ui
 nautilus-main-menu/nautilus-main-menu.c
 [type: gettext/xml] main-menu/etc/system-items.xbel.in

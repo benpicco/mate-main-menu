@@ -25,7 +25,6 @@
 #endif
 
 #include <panel-applet.h>
-#include <glade/glade.h>
 #include <cairo.h>
 #include <string.h>
 #include <libxml/parser.h>
@@ -76,8 +75,8 @@ typedef struct {
 	PanelApplet *panel_applet;
 	GtkWidget   *panel_about_dialog;
 
-	GladeXML *main_menu_xml;
-	GladeXML *panel_button_xml;
+	GtkBuilder *main_menu_ui;
+	GtkBuilder *panel_button_ui;
 
 	GtkToggleButton *panel_buttons [4];
 	GtkToggleButton *panel_button;
@@ -314,7 +313,7 @@ main_menu_ui_new (PanelApplet *applet)
 	MainMenuUI        *this;
 	MainMenuUIPrivate *priv;
 
-	gchar *glade_xml_path;
+	gchar *window_ui_path, *button_ui_path;
 
 
 	this = g_object_new (MAIN_MENU_UI_TYPE, NULL);
@@ -322,11 +321,15 @@ main_menu_ui_new (PanelApplet *applet)
 
 	priv->panel_applet = applet;
 
-	glade_xml_path = g_build_filename (DATADIR, PACKAGE, "slab-window.glade", NULL);
+	window_ui_path = g_build_filename (DATADIR, PACKAGE, "slab-window.ui", NULL);
+	button_ui_path = g_build_filename (DATADIR, PACKAGE, "slab-button.ui", NULL);
 
-	priv->main_menu_xml    = glade_xml_new (glade_xml_path, "slab-main-menu-window", NULL);
-	priv->panel_button_xml = glade_xml_new (glade_xml_path, "slab-panel-button-root", NULL);
-	g_free (glade_xml_path);
+	priv->main_menu_ui    = gtk_builder_new ();
+	gtk_builder_add_from_file (priv->main_menu_ui, window_ui_path, NULL);
+	priv->panel_button_ui = gtk_builder_new ();
+	gtk_builder_add_from_file (priv->panel_button_ui, button_ui_path, NULL);
+	g_free (window_ui_path);
+	g_free (button_ui_path);
 
 	libslab_checkpoint ("main_menu_ui_new(): create_panel_button");
 	create_panel_button (this);
@@ -353,8 +356,8 @@ main_menu_ui_init (MainMenuUI *this)
 	priv->panel_applet                               = NULL;
 	priv->panel_about_dialog                         = NULL;
 
-	priv->main_menu_xml                              = NULL;
-	priv->panel_button_xml                           = NULL;
+	priv->main_menu_ui                               = NULL;
+	priv->panel_button_ui                            = NULL;
 
 	priv->panel_buttons [PANEL_BUTTON_ORIENT_TOP]    = NULL;
 	priv->panel_buttons [PANEL_BUTTON_ORIENT_BOTTOM] = NULL;
@@ -492,19 +495,19 @@ create_panel_button (MainMenuUI *this)
 	gint i;
 
 
-	button_root = glade_xml_get_widget (
-		priv->panel_button_xml, "slab-panel-button-root");
+	button_root = GTK_WIDGET (gtk_builder_get_object (
+		priv->panel_button_ui, "slab-panel-button-root"));
 
 	gtk_widget_hide (button_root);
 
-	priv->panel_buttons [PANEL_BUTTON_ORIENT_TOP] = GTK_TOGGLE_BUTTON (glade_xml_get_widget (
-		priv->panel_button_xml, "slab-main-menu-panel-button-top"));
-	priv->panel_buttons [PANEL_BUTTON_ORIENT_BOTTOM] = GTK_TOGGLE_BUTTON (glade_xml_get_widget (
-		priv->panel_button_xml, "slab-main-menu-panel-button-bottom"));
-	priv->panel_buttons [PANEL_BUTTON_ORIENT_LEFT] = GTK_TOGGLE_BUTTON (glade_xml_get_widget (
-		priv->panel_button_xml, "slab-main-menu-panel-button-left"));
-	priv->panel_buttons [PANEL_BUTTON_ORIENT_RIGHT] = GTK_TOGGLE_BUTTON (glade_xml_get_widget (
-		priv->panel_button_xml, "slab-main-menu-panel-button-right"));
+	priv->panel_buttons [PANEL_BUTTON_ORIENT_TOP] = GTK_TOGGLE_BUTTON (gtk_builder_get_object (
+		priv->panel_button_ui, "slab-main-menu-panel-button-top"));
+	priv->panel_buttons [PANEL_BUTTON_ORIENT_BOTTOM] = GTK_TOGGLE_BUTTON (gtk_builder_get_object (
+		priv->panel_button_ui, "slab-main-menu-panel-button-bottom"));
+	priv->panel_buttons [PANEL_BUTTON_ORIENT_LEFT] = GTK_TOGGLE_BUTTON (gtk_builder_get_object (
+		priv->panel_button_ui, "slab-main-menu-panel-button-left"));
+	priv->panel_buttons [PANEL_BUTTON_ORIENT_RIGHT] = GTK_TOGGLE_BUTTON (gtk_builder_get_object (
+		priv->panel_button_ui, "slab-main-menu-panel-button-right"));
 
 	for (i = 0; i < 4; ++i) {
 		g_object_set_data (
@@ -554,6 +557,13 @@ create_panel_button (MainMenuUI *this)
 		G_CALLBACK (panel_applet_change_background_cb), this);
 }
 
+static GtkWidget *
+get_widget (MainMenuUIPrivate *priv, const gchar *name)
+{
+	return GTK_WIDGET (gtk_builder_get_object (priv->main_menu_ui, name));
+}
+
+
 static void
 create_slab_window (MainMenuUI *this)
 {
@@ -562,14 +572,13 @@ create_slab_window (MainMenuUI *this)
 	GdkAtom slab_action_atom;
 
 
-	priv->slab_window = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-main-menu-window");
+	priv->slab_window = get_widget (priv, "slab-main-menu-window");
 	gtk_widget_set_app_paintable (priv->slab_window, TRUE);
 	gtk_widget_hide              (priv->slab_window);
 	gtk_window_stick             (GTK_WINDOW (priv->slab_window));
 
-	priv->top_pane  = glade_xml_get_widget (priv->main_menu_xml, "top-pane");
-	priv->left_pane = glade_xml_get_widget (priv->main_menu_xml, "left-pane");
+	priv->top_pane  = get_widget (priv, "top-pane");
+	priv->left_pane = get_widget (priv, "left-pane");
 
 	tomboy_keybinder_init ();
 	tomboy_keybinder_bind ("<Ctrl>Escape", slab_window_tomboy_bindkey_cb, this);
@@ -614,8 +623,8 @@ create_search_section (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
-        priv->search_section = glade_xml_get_widget (priv->main_menu_xml, "search-section");
-	priv->search_entry   = glade_xml_get_widget (priv->main_menu_xml, "search-entry");
+	priv->search_section = get_widget (priv, "search-section");
+	priv->search_entry   = get_widget (priv, "search-entry");
 
 	g_signal_connect (
 		G_OBJECT (priv->search_entry), "activate",
@@ -637,19 +646,19 @@ create_file_section (MainMenuUI *this)
 	gint i;
 
 
-	priv->file_section = GTK_NOTEBOOK (glade_xml_get_widget (
-		priv->main_menu_xml, "file-area-notebook"));
+	priv->file_section = GTK_NOTEBOOK (gtk_builder_get_object (
+		priv->main_menu_ui, "file-area-notebook"));
 
-	priv->page_selectors [APPS_PAGE] = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-page-selector-button-applications");
-	priv->page_selectors [DOCS_PAGE] = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-page-selector-button-documents");
-	priv->page_selectors [DIRS_PAGE] = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-page-selector-button-places");
+	priv->page_selectors [APPS_PAGE] =
+        get_widget (priv, "slab-page-selector-button-applications");
+	priv->page_selectors [DOCS_PAGE] =
+        get_widget (priv, "slab-page-selector-button-documents");
+	priv->page_selectors [DIRS_PAGE] =
+        get_widget (priv, "slab-page-selector-button-places");
 
-	pages [APPS_PAGE] = glade_xml_get_widget (priv->main_menu_xml, "applications-page");
-	pages [DOCS_PAGE] = glade_xml_get_widget (priv->main_menu_xml, "documents-page");
-	pages [DIRS_PAGE] = glade_xml_get_widget (priv->main_menu_xml, "places-page");
+	pages [APPS_PAGE] = get_widget (priv, "applications-page");
+	pages [DOCS_PAGE] = get_widget (priv, "documents-page");
+	pages [DIRS_PAGE] = get_widget (priv, "places-page");
 
 	for (i = 0; i < 3; ++i) {
 		gtk_container_child_get (
@@ -667,16 +676,16 @@ create_file_section (MainMenuUI *this)
 	priv->current_page_gconf_mntr_id = libslab_gconf_notify_add (
 		CURRENT_PAGE_GCONF_KEY, current_page_notify_cb, this);
 
-	priv->table_sections [USER_APPS_TABLE] = glade_xml_get_widget (
-		priv->main_menu_xml, "user-apps-section");
-	priv->table_sections [RCNT_APPS_TABLE] = glade_xml_get_widget (
-		priv->main_menu_xml, "recent-apps-section");
-	priv->table_sections [USER_DOCS_TABLE] = glade_xml_get_widget (
-		priv->main_menu_xml, "user-docs-section");
-	priv->table_sections [RCNT_DOCS_TABLE] = glade_xml_get_widget (
-		priv->main_menu_xml, "recent-docs-section");
-	priv->table_sections [USER_DIRS_TABLE] = glade_xml_get_widget (
-		priv->main_menu_xml, "user-dirs-section");
+	priv->table_sections [USER_APPS_TABLE] =
+        get_widget (priv, "user-apps-section");
+	priv->table_sections [RCNT_APPS_TABLE] =
+        get_widget (priv, "recent-apps-section");
+	priv->table_sections [USER_DOCS_TABLE] =
+        get_widget (priv, "user-docs-section");
+	priv->table_sections [RCNT_DOCS_TABLE] =
+        get_widget (priv, "recent-docs-section");
+	priv->table_sections [USER_DIRS_TABLE] =
+        get_widget (priv, "user-dirs-section");
 }
 
 static void
@@ -687,8 +696,8 @@ create_system_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "system-item-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "system-item-table-container"));
 
 	priv->sys_table = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_SYSTEM], -1, 1, TRUE, TRUE,
@@ -702,8 +711,7 @@ create_system_section (MainMenuUI *this)
 		G_OBJECT (priv->sys_table), "notify::" TILE_TABLE_TILES_PROP,
 		G_CALLBACK (tile_table_notify_cb), this);
 
-	priv->system_section = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-system-section");
+	priv->system_section = get_widget (priv, "slab-system-section");
 }
 
 static void
@@ -717,8 +725,8 @@ create_status_section (MainMenuUI *this)
 	gint icon_width;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "hard-drive-status-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "hard-drive-status-container"));
 	tile = hard_drive_status_tile_new ();
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_DND, & icon_width, NULL);
@@ -729,8 +737,8 @@ create_status_section (MainMenuUI *this)
 	gtk_container_add   (ctnr, tile);
 	gtk_widget_show_all (GTK_WIDGET (ctnr));
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "network-status-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "network-status-container"));
 	priv->network_status = network_status_tile_new ();
 
 	gtk_widget_set_size_request (priv->network_status, 6 * icon_width, -1);
@@ -742,8 +750,8 @@ create_status_section (MainMenuUI *this)
 	gtk_container_add   (ctnr, priv->network_status);
 	gtk_widget_show_all (GTK_WIDGET (ctnr));
 
-	priv->status_section = glade_xml_get_widget (
-		priv->main_menu_xml, "slab-status-section");
+	priv->status_section = get_widget (priv, "slab-status-section");
+
 }
 
 static void
@@ -754,8 +762,8 @@ create_user_apps_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "user-apps-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "user-apps-table-container"));
 
 	priv->file_tables [USER_APPS_TABLE] = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_USER_APPS], -1, 2, TRUE, TRUE,
@@ -772,8 +780,8 @@ create_rct_apps_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "recent-apps-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "recent-apps-table-container"));
 
 	priv->file_tables [RCNT_APPS_TABLE] = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_RECENT_APPS], -1, 2, FALSE, FALSE,
@@ -790,8 +798,8 @@ create_user_docs_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "user-docs-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "user-docs-table-container"));
 
 	priv->file_tables [USER_DOCS_TABLE] = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_USER_DOCS], -1, 2, TRUE, TRUE,
@@ -808,8 +816,8 @@ create_rct_docs_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "recent-docs-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "recent-docs-table-container"));
 
 	priv->file_tables [RCNT_DOCS_TABLE] = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_RECENT_DOCS], -1, 2, FALSE, FALSE,
@@ -832,8 +840,8 @@ create_user_dirs_section (MainMenuUI *this)
 	GtkContainer *ctnr;
 
 
-	ctnr = GTK_CONTAINER (glade_xml_get_widget (
-		priv->main_menu_xml, "user-dirs-table-container"));
+	ctnr = GTK_CONTAINER (gtk_builder_get_object (
+		priv->main_menu_ui, "user-dirs-table-container"));
 
 	priv->file_tables [USER_DIRS_TABLE] = TILE_TABLE (tile_table_new (
 		priv->bm_agents [BOOKMARK_STORE_USER_DIRS], -1, 2, FALSE, FALSE,
@@ -850,9 +858,9 @@ create_more_buttons (MainMenuUI *this)
 	gint i;
 
 
-	priv->more_buttons [0] = glade_xml_get_widget (priv->main_menu_xml, "more-applications-button");
-	priv->more_buttons [1] = glade_xml_get_widget (priv->main_menu_xml, "more-documents-button");
-	priv->more_buttons [2] = glade_xml_get_widget (priv->main_menu_xml, "more-places-button");
+	priv->more_buttons [0] = get_widget (priv, "more-applications-button");
+	priv->more_buttons [1] = get_widget (priv, "more-documents-button");
+	priv->more_buttons [2] = get_widget (priv, "more-places-button");
 
 	for (i = 0; i < 3; ++i) {
 		g_object_set_data (
@@ -864,9 +872,9 @@ create_more_buttons (MainMenuUI *this)
 			G_CALLBACK (more_buttons_clicked_cb), this);
 	}
 
-	priv->more_sections [0] = glade_xml_get_widget (priv->main_menu_xml, "more-apps-section");
-	priv->more_sections [1] = glade_xml_get_widget (priv->main_menu_xml, "more-docs-section");
-	priv->more_sections [2] = glade_xml_get_widget (priv->main_menu_xml, "more-dirs-section");
+	priv->more_sections [0] = get_widget (priv, "more-apps-section");
+	priv->more_sections [1] = get_widget (priv, "more-docs-section");
+	priv->more_sections [2] = get_widget (priv, "more-dirs-section");
 }
 
 static void

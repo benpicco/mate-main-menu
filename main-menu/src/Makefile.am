@@ -2,15 +2,14 @@ INCLUDES =								\
 	$(MAIN_MENU_CFLAGS)						\
 	$(WARN_CFLAGS)
 
-gladedir = $(datadir)/$(PACKAGE)
-glade_DATA = slab-window.glade
+uidir = $(datadir)/$(PACKAGE)
+ui_DATA = slab-button.ui slab-window.ui
 
 libexec_PROGRAMS = main-menu
 
 bin_PROGRAMS = trigger-panel-run-dialog
 
 AM_CPPFLAGS =								\
-	$(GLADE_CFLAGS)							\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
@@ -27,8 +26,7 @@ main_menu_SOURCES =							\
 	eggaccelerators.c		eggaccelerators.h
 
 main_menu_LDADD =							\
-	$(MAIN_MENU_LIBS)						\
-	$(GLADE_LIBS)
+	$(MAIN_MENU_LIBS)
 
 trigger_panel_run_dialog_SOURCES =					\
 	trigger-panel-run-dialog.c
@@ -36,4 +34,4 @@ trigger_panel_run_dialog_SOURCES =					\
 trigger_panel_run_dialog_LDADD =					\
 	$(MAIN_MENU_LIBS)
 
-EXTRA_DIST = $(glade_DATA)
+EXTRA_DIST = $(ui_DATA)

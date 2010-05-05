@@ -22,7 +22,6 @@
 
 #include <string.h>
 #include <glib/gi18n.h>
-#include <glade/glade.h>
 
 #include "network-status-agent.h"
 #include "network-status-info.h"
@@ -46,7 +45,7 @@ static void tile_show_event_cb (GtkWidget *, gpointer);
 static void status_changed_cb (NetworkStatusAgent *, gpointer);
 static void info_dialog_cfg_button_clicked_cb (GtkButton *, gpointer);
 
-static void set_glade_label (GladeXML *, const gchar *, const gchar *);
+static void set_ui_label (GtkBuilder *, const gchar *, const gchar *);
 static void launch_network_config (const gchar * desktop_key);
 
 typedef struct
@@ -54,7 +53,7 @@ typedef struct
 	NetworkStatusAgent *agent;
 	NetworkStatusInfo *status_info;
 	
-	GladeXML *info_dialog_xml;
+	GtkBuilder *info_dialog_ui;
 	GtkWidget *info_dialog;
 } NetworkStatusTilePrivate;
 
@@ -120,7 +119,7 @@ network_status_tile_init (NetworkStatusTile * tile)
 	NetworkStatusTilePrivate *priv = NETWORK_STATUS_TILE_GET_PRIVATE (tile);
 
 	priv->agent = NULL;
-	priv->info_dialog_xml = NULL;
+	priv->info_dialog_ui = NULL;
 	priv->info_dialog = NULL;
 }
 
@@ -132,8 +131,8 @@ network_status_tile_finalize (GObject * g_object)
 		g_object_unref (priv->status_info);
 	if (priv->agent)
 		g_object_unref (priv->agent);
-	if (priv->info_dialog_xml)
-		g_object_unref (priv->info_dialog_xml);
+	if (priv->info_dialog_ui)
+		g_object_unref (priv->info_dialog_ui);
 
 	(*G_OBJECT_CLASS (network_status_tile_parent_class)->finalize) (g_object);
 }
@@ -330,7 +329,7 @@ update_info_dialog (NetworkStatusTile * tile)
 {
 	NetworkStatusTilePrivate *priv = NETWORK_STATUS_TILE_GET_PRIVATE (tile);
 
-	GladeXML *xml = priv->info_dialog_xml;
+	GtkBuilder *ui = priv->info_dialog_ui;
 
 	gchar *iface_and_type = NULL;
 	gchar *speed = NULL;
@@ -365,7 +364,7 @@ update_info_dialog (NetworkStatusTile * tile)
 		break;
 	}
 
-	set_glade_label (xml, "label-interface", iface_and_type);
+	set_ui_label (ui, "label-interface", iface_and_type);
 	g_free (iface_and_type);
 
 	if (priv->status_info->speed_mbs)
@@ -373,18 +372,18 @@ update_info_dialog (NetworkStatusTile * tile)
 	else
 		speed = g_strdup_printf (_("Unknown"));
 
-	set_glade_label (xml, "label-speed", speed);
+	set_ui_label (ui, "label-speed", speed);
 	g_free (speed);
 
-	set_glade_label (xml, "label-driver", priv->status_info->driver);
-	set_glade_label (xml, "label-ip-address", priv->status_info->ip4_addr);
-	set_glade_label (xml, "label-broadcast-address", priv->status_info->broadcast);
-	set_glade_label (xml, "label-subnet-mask", priv->status_info->subnet_mask);
-	set_glade_label (xml, "label-default-route", priv->status_info->route);
-	set_glade_label (xml, "label-primary-dns", priv->status_info->primary_dns);
-	set_glade_label (xml, "label-secondary-dns", priv->status_info->secondary_dns);
+	set_ui_label (ui, "label-driver", priv->status_info->driver);
+	set_ui_label (ui, "label-ip-address", priv->status_info->ip4_addr);
+	set_ui_label (ui, "label-broadcast-address", priv->status_info->broadcast);
+	set_ui_label (ui, "label-subnet-mask", priv->status_info->subnet_mask);
+	set_ui_label (ui, "label-default-route", priv->status_info->route);
+	set_ui_label (ui, "label-primary-dns", priv->status_info->primary_dns);
+	set_ui_label (ui, "label-secondary-dns", priv->status_info->secondary_dns);
 	if (priv->status_info->hw_addr)
-		set_glade_label (xml, "label-hardware-address", priv->status_info->hw_addr);
+		set_ui_label (ui, "label-hardware-address", priv->status_info->hw_addr);
 }
 
 static void
@@ -432,11 +431,11 @@ info_dialog_cfg_button_clicked_cb (GtkButton * button, gpointer user_data)
 }
 
 static void
-set_glade_label (GladeXML * xml, const gchar * id, const gchar * text)
+set_ui_label (GtkBuilder * ui, const gchar * id, const gchar * text)
 {
 	GtkLabel *label = NULL;
 
-	label = GTK_LABEL (glade_xml_get_widget (xml, id));
+	label = GTK_LABEL (gtk_builder_get_object (ui, id));
 
 	if (label)
 		gtk_label_set_text (label, text);
