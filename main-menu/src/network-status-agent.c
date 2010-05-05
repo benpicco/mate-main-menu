@@ -30,9 +30,6 @@
 #include <nm-setting-ip4-config.h>
 #include <nm-utils.h>
 #include <arpa/inet.h>
-#include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 #include <iwlib.h>
 #include <glibtop/netlist.h>
 #include <glibtop/netload.h>
