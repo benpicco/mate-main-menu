@@ -37,7 +37,10 @@
 #include <libslab/slab.h>
 
 #include "hard-drive-status-tile.h"
+
+#ifdef HAVE_NETWORK
 #include "network-status-tile.h"
+#endif
 
 #include "tile-table.h"
 
@@ -737,6 +740,7 @@ create_status_section (MainMenuUI *this)
 	gtk_container_add   (ctnr, tile);
 	gtk_widget_show_all (GTK_WIDGET (ctnr));
 
+#ifdef HAVE_NETWORK
 	ctnr = GTK_CONTAINER (gtk_builder_get_object (
 		priv->main_menu_ui, "network-status-container"));
 	priv->network_status = network_status_tile_new ();
@@ -749,6 +753,7 @@ create_status_section (MainMenuUI *this)
 
 	gtk_container_add   (ctnr, priv->network_status);
 	gtk_widget_show_all (GTK_WIDGET (ctnr));
+#endif
 
 	priv->status_section = get_widget (priv, "slab-status-section");
 
@@ -1855,7 +1860,9 @@ present_slab_window (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
+#ifdef HAVE_NETWORK
 	network_tile_update_status (priv->network_status);
+#endif
 
 	update_recently_used_sections (this);
 

@@ -43,30 +43,49 @@ COMMON_MODULES="glib-2.0 >= $GLIB_REQUIRED	\
 		gdk-2.0				\
 		libslab >= $SLAB_REQUIRED"
 
-NM_GLIB=
-PKG_CHECK_EXISTS(libnm-glib, [ NM_GLIB=libnm-glib ])
-if test "x$NM_GLIB" = "x"; then
-	PKG_CHECK_EXISTS(libnm_glib, [ NM_GLIB=libnm_glib ], [ AC_ERROR(cannot find NetworkManager Glib library) ])
-fi
 
-PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 NetworkManager $NM_GLIB >= 0.7.0 libnm-util >= 0.7.0 x11 cairo ])
+PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES gnome-desktop-2.0 unique-1.0 ])
+AC_SUBST(APPLICATION_BROWSER_CFLAGS)
+AC_SUBST(APPLICATION_BROWSER_LIBS)
 
-AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, have_iwlib=yes, have_iwlib=no, -lm)], have_iwlib=no)
-
-if test "x$have_iwlib" != "xyes" ; then
-	AC_ERROR(cannot find iwlib)
-else
-	MAIN_MENU_LIBS="$MAIN_MENU_LIBS -liw -lm"
-	AC_SUBST(MAIN_MENU_LIBS)
-fi
-
+PKG_CHECK_MODULES(MAIN_MENU, [ $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 x11 cairo ])
 AC_SUBST(MAIN_MENU_CFLAGS)
 AC_SUBST(MAIN_MENU_LIBS)
 
-PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES gnome-desktop-2.0 unique-1.0 ])
+# Check for network support
+NM_GLIB=
+PKG_CHECK_EXISTS(libnm-glib, [ NM_GLIB=libnm-glib ],
+		 PKG_CHECK_EXISTS(libnm_glib, [ NM_GLIB=libnm_glib ]))
+if test "x$NM_GLIB" = "x"; then
+	# make sure we have something set for the call to PKG_CHECK_MODULES
+	NM_GLIB=libnm-glib
+fi
 
-AC_SUBST(APPLICATION_BROWSER_CFLAGS)
-AC_SUBST(APPLICATION_BROWSER_LIBS)
+PKG_CHECK_MODULES(NETWORKMANAGER, [NetworkManager $NM_GLIB >= 0.7.0 libnm-util >= 0.7.0], HAVE_NM=1, HAVE_NM=0)
+if test "x$HAVE_NM" != "x1"; then
+	AC_WARN(NetworkManager is not available)
+fi
+
+AC_CHECK_HEADERS(iwlib.h, [ AC_CHECK_LIB(iw, iw_sockets_open, HAVE_IWLIB=1, HAVE_IWLIB=0, -lm)], HAVE_IWLIB=0)
+if test "x$HAVE_IWLIB" != "x1"; then
+	AC_WARN(iwlib is not available)
+fi
+
+HAVE_NETWORK=0
+NETWORK_CFLAGS=
+NETWORK_LIBS=
+if test "x$HAVE_NM" != "x1" -o "x$HAVE_IWLIB" != "x1"; then
+	AC_WARN(network support disabled)
+else
+	HAVE_NETWORK=1
+	NETWORK_CFLAGS="$NETWORKMANAGER_CFLAGS"
+	NETWORK_LIBS="$NETWORKMANAGER_LIBS -liw -lm"
+	AC_DEFINE(HAVE_NETWORK, 1, [Use NetworkManager and wireless library])
+fi
+
+AM_CONDITIONAL(HAVE_NETWORK, test "x$HAVE_NETWORK" = "x1")
+AC_SUBST(NETWORK_CFLAGS)
+AC_SUBST(NETWORK_LIBS)
 
 dnl ==============================================
 dnl Gconf
