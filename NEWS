@@ -1,4 +1,22 @@
 ==============
+Version 0.9.15
+==============
+
+  Fixes
+
+	* Replace libglade with gtkbuilder (Robert Ancell, Julian Andres Klode)
+	* Change default search tool to tracker-search-tool (Julian Andres
+	  Klode)
+	* Drop usage of libgnome-2.0 and libgnomeui-2.0 (Julian Andres Klode)
+
+  Misc
+
+	* Remove libglade, hal, dbus-glib, libgnome and libgnomeui dependencies
+	  (Julian Andres Klode)
+	* Allow building without NetworkManager and iwlib (Petr Salinger,
+	  Julian Andres Klode)
+
+==============
 Version 0.9.14
 ==============
 
