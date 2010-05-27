@@ -11,6 +11,7 @@ main-menu/etc/trigger-panel-run-dialog.desktop.in.in
 main-menu/src/hard-drive-status-tile.c
 main-menu/src/main-menu-migration.c
 main-menu/src/main-menu-ui.c
+main-menu/src/main-menu.c
 main-menu/src/network-status-tile.c
 [type: gettext/glade]main-menu/src/slab-button.ui
 [type: gettext/glade]main-menu/src/slab-window.ui
