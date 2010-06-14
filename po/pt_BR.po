@@ -5,7 +5,7 @@
 # Amadeu A. Barbosa Junior <amadeu@gmail.com>, 2007.
 # Pedro de Medeiros <pedrovmm@gmail.com>, 2007.
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2007.
-# Og Maciel <ogmaciel@gnome.org>, 2008-2009.
+# Og Maciel <ogmaciel@gnome.org>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Michel Recondo <mrecondo@gmail.com>, 2008.
 # Vladimir Melo <vmelo@gnome.org>, 2009.
@@ -14,10 +14,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-19 10:23-0400\n"
-"PO-Revision-Date: 2009-09-19 10:27-0500\n"
-"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"POT-Creation-Date: 2010-06-13 22:47-0300\n"
+"PO-Revision-Date: 2010-06-04 10:41-0300\n"
+"Last-Translator: Djavan Fagundes <djavan@syst.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,7 +88,7 @@ msgstr ""
 
 #: ../application-browser/src/application-browser.c:63
 msgid "Hide on start (useful to preload the shell)"
-msgstr "Ocultar na inicialização (útil para o pré-carregamento do shell)"
+msgstr "Ocultar ao iniciar (útil para pré-carregar do shell)"
 
 #: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
@@ -110,7 +111,8 @@ msgid "Default menu and application browser"
 msgstr "Navegador de aplicativos e menu padrão"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "Menu principal do GNOME"
 
@@ -132,7 +134,7 @@ msgstr "Menu _abrir"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
 msgid ".desktop file for the Network Manager editor utility"
-msgstr "arquivo .desktop para o utilitário NetWork Manager"
+msgstr "arquivo .desktop para o utilitário Network Manager"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
@@ -386,6 +388,14 @@ msgstr ""
 "definir como verdadeiro para permitir ao usuário modificar a lista de "
 "documentos definidos pelo usuário ou de documentos \"Favoritos\"."
 
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+msgid "Run Application"
+msgstr "Executar aplicativo"
+
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Exibir o diálogo \"Executar aplicativo \""
+
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
 msgstr "Monitor do _sistema"
@@ -416,19 +426,19 @@ msgid "Home: %s Free / %s"
 msgstr "Pasta pessoal: %s Disponível / %s"
 
 #: ../main-menu/src/main-menu-migration.c:126
-#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/src/main-menu-migration.c:248
 #: ../main-menu/etc/system-items.xbel.in.h:1
 msgid "Help"
 msgstr "Ajuda"
 
 #: ../main-menu/src/main-menu-migration.c:130
-#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/src/main-menu-migration.c:250
 #: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Sair"
 
 #: ../main-menu/src/main-menu-migration.c:134
-#: ../main-menu/src/main-menu-migration.c:254
+#: ../main-menu/src/main-menu-migration.c:252
 #: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Desligar"
@@ -436,141 +446,137 @@ msgstr "Desligar"
 #: ../main-menu/src/main-menu-migration.c:192
 #: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
-msgstr "Bloquear tela..."
+msgstr "Bloquear tela"
 
-#: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2387
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "O menu principal do GNOME"
 
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Rede: Nenhuma"
 
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Clique para configurar a rede"
 
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "_Rede: Nenhuma"
 
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Conectado a: %s"
 
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "_Rede: sem fios"
 
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Usando ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "_Rede: com fios"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "_Rede: GSM"
 
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "_Rede: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Rede sem fios (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Rede com fios (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Rede móvel (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Aplicativos"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Computador"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Aplicativos"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Documentos"
 
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Aplicativos favoritos"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Documentos favoritos"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Locais favoritos"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
 msgstr "Mais _aplicativos..."
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Mais _documentos..."
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Mais _locais..."
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Locais"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Aplicativos usados recentemente"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Documentos recentes"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Pesquisar:"
 
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Estado"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Sistema"
 
@@ -596,6 +602,9 @@ msgstr "Remover dos favoritos"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Remova o documento atual dos favoritos"
+
+#~ msgid "gnome-lockscreen"
+#~ msgstr "gnome-lockscreen"
 
 #~ msgid "<b>Start %s</b>"
 #~ msgstr "<b>Iniciar %s</b>"
