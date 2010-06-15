@@ -1339,7 +1339,7 @@ update_limits (MainMenuUI *this)
 	priv->max_total_items = max_total_items_default;
 
 	for (i = 0; i < 2; ++i) {
-		if (GTK_WIDGET_VISIBLE (sections [i]))
+		if (gtk_widget_get_visible (sections [i]))
 			g_object_get (
 				user_tables [i],
 				"n-rows", & n_rows, "n-columns", & n_cols, NULL);
@@ -1458,22 +1458,22 @@ set_table_section_visible (MainMenuUI *this, TileTable *table)
 		gtk_widget_hide (priv->table_sections [table_id]);
 
 	if (
-		GTK_WIDGET_VISIBLE (priv->table_sections [USER_APPS_TABLE]) ||
-		GTK_WIDGET_VISIBLE (priv->table_sections [RCNT_APPS_TABLE])
+		gtk_widget_get_visible (priv->table_sections [USER_APPS_TABLE]) ||
+		gtk_widget_get_visible (priv->table_sections [RCNT_APPS_TABLE])
 	)
 		gtk_widget_show (priv->page_selectors [APPS_PAGE]);
 	else
 		gtk_widget_hide (priv->page_selectors [APPS_PAGE]);
 
 	if (
-		GTK_WIDGET_VISIBLE (priv->table_sections [USER_DOCS_TABLE]) ||
-		GTK_WIDGET_VISIBLE (priv->table_sections [RCNT_DOCS_TABLE])
+		gtk_widget_get_visible (priv->table_sections [USER_DOCS_TABLE]) ||
+		gtk_widget_get_visible (priv->table_sections [RCNT_DOCS_TABLE])
 	)
 		gtk_widget_show (priv->page_selectors [DOCS_PAGE]);
 	else
 		gtk_widget_hide (priv->page_selectors [DOCS_PAGE]);
 
-	if (GTK_WIDGET_VISIBLE (priv->table_sections [USER_DIRS_TABLE]))
+	if (gtk_widget_get_visible (priv->table_sections [USER_DIRS_TABLE]))
 		gtk_widget_show (priv->page_selectors [DIRS_PAGE]);
 	else
 		gtk_widget_hide (priv->page_selectors [DIRS_PAGE]);
@@ -1887,7 +1887,7 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 	detector = DOUBLE_CLICK_DETECTOR (
 		g_object_get_data (G_OBJECT (toggle), "double-click-detector"));
 
-	visible = GTK_WIDGET_VISIBLE (priv->slab_window);
+	visible = gtk_widget_get_visible (priv->slab_window);
 
 	if (! double_click_detector_is_double_click (detector, gtk_get_current_event_time (), TRUE)) {
 		if (! visible)
@@ -1895,7 +1895,7 @@ panel_button_clicked_cb (GtkButton *button, gpointer user_data)
 		else
 			gtk_widget_hide (priv->slab_window);
 
-  		visible = GTK_WIDGET_VISIBLE (priv->slab_window);
+		visible = gtk_widget_get_visible (priv->slab_window);
 	}
 
 	gtk_toggle_button_set_active (priv->panel_button, visible);
