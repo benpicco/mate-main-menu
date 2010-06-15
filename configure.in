@@ -31,7 +31,7 @@ dnl Check that we meet the dependencies
 dnl ==============================================
 
 GLIB_REQUIRED=2.16.0
-GTK_REQUIRED=2.14
+GTK_REQUIRED=2.18
 SLAB_REQUIRED=2.29.0
 
 AM_PATH_GLIB_2_0($GLIB_REQUIRED,,,gobject)
