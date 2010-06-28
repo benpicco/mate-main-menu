@@ -152,7 +152,7 @@
 			<default>8</default>
 			<locale name="C">
 				<short>determines the limit of items in the file-area.</short>
-				<long>determines the limit of items in the file-area.  The number favorite items is not limited.  This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items.  If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored.</long>
+				<long>determines the limit of items in the file-area.  The number of favorite items is not limited.  This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items.  If the number of favorite items exceeds max_total_items - min_recent_items then this limit is ignored.</long>
 			</locale>
 		</schema>
 
