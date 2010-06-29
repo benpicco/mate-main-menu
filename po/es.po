@@ -9,19 +9,20 @@
 # Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
 # Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2010-02-18 12:15+0000\n"
-"PO-Revision-Date: 2010-02-18 18:28+0100\n"
+"POT-Creation-Date: 2010-06-28 13:19+0000\n"
+"PO-Revision-Date: 2010-06-29 05:30+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
@@ -112,7 +113,8 @@ msgid "Default menu and application browser"
 msgstr "Menú por defecto y navegador de aplicaciones"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
@@ -262,19 +264,25 @@ msgid "determines the limit of items in the file-area."
 msgstr "determina los límites de elementos del área de archivos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
+#| msgid ""
+#| "determines the limit of items in the file-area. The number favorite items "
+#| "is not limited. This limit applies to the number of recent items, i.e. "
+#| "the number of recent items displayed is limited to max_total_items - the "
+#| "number of favorite items. If the number of favorite items exceeds "
+#| "max_total_items - min_recent_items than this limit is ignored."
 msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
+"determines the limit of items in the file-area. The number of favorite items "
+"is not limited. This limit applies to the number of recent items, i.e. the "
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
+"min_recent_items then this limit is ignored."
 msgstr ""
 "determina el límite de elementos en el área de archivos. El número de "
 "elementos favoritos no está limitado. Este límite se aplica al número de "
 "elementos recientes, por ejemplo, el número de elementos recientes mostrados "
-"está limitado a max_total_items; el número de elementos favoritos. Si el "
-"número de elementos favoritos excede max_total_items; se ignorará el límite "
-"de min_recent_items."
+"está limitado a «max_total_items»; el número de elementos favoritos. Si el "
+"número de elementos favoritos excede «max_total_items»; se ignorará el límite "
+"de «min_recent_items»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
@@ -398,7 +406,6 @@ msgstr ""
 "especificadas por el usuario o documentos «Favoritos»."
 
 #: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
-#| msgid "Recent Applications"
 msgid "Run Application"
 msgstr "Ejecutar una aplicación"
 
@@ -458,47 +465,47 @@ msgstr "Apagar"
 msgid "Lock Screen"
 msgstr "Bloquear la pantalla"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "Menú principal de GNOME"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Red: Ninguno"
 
 # include/ui/summary.ycp:84
 # modules/Summary.ycp:89
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Pulse para configurar la red"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "Red: ninguna"
 
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Conectado a: %s"
 
 # include/network/lan/address.ycp:40
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "_Red: inalámbrica"
 
 #
 # include/runlevel/ui.ycp:489
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Mediante ethernet (%s)"
@@ -506,111 +513,111 @@ msgstr "Mediante ethernet (%s)"
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "_Red: cableada"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "_Red: GSM"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "_Red: CDMA"
 
 # include/network/modem/dialogs.ycp:145
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Conexión ethernet inalámbrica (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Conexión ethernet fija (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Conexión ethernet móvil (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Aplicaciones"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Equipo"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Documentos"
 
 #
 # include/lilo/ui.ycp:818
 # include/backup/ui.ycp:300
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Aplicaciones favoritas"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Documentos favoritos"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Lugares favoritos"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
 msgstr "Más aplicaciones…"
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Más documentos…"
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Más lugares…"
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Lugares"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Aplicaciones recientes"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Documentos recientes"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Buscar:"
 
 # clients/lan_inetd_custom.ycp:748
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Estado"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Sistema"
 
