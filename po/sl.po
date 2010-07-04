@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
-"POT-Creation-Date: 2010-02-25 19:40+0000\n"
-"PO-Revision-Date: 2010-02-28 13:59+0100\n"
+"POT-Creation-Date: 2010-06-29 18:41+0000\n"
+"PO-Revision-Date: 2010-07-03 11:25+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -96,8 +96,9 @@ msgid "Default menu and application browser"
 msgstr "Privzeti meni in brskalnik programov"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405
-#: ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420
+#: ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "Glavni meni GNOME"
 
@@ -194,8 +195,8 @@ msgid "determines the limit of items in the file-area."
 msgstr "določa največje število predmetov v območju datotek."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-msgid "determines the limit of items in the file-area. The number favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items than this limit is ignored."
-msgstr "določa največje število predmetov v območju datotek. Število najljubših predmetov ni omejeno. Ta meja velja za število nedavnih predmetov, le to je omejeno na razliko nastavljene vrednosti in števila priljubljenih predmetov. Če število najljubših predmetov preseže največje število predmetov, je najmanjše število nedavnih predmetov prezrto."
+msgid "determines the limit of items in the file-area. The number of favorite items is not limited. This limit applies to the number of recent items, i.e. the number of recent items displayed is limited to max_total_items - the number of favorite items. If the number of favorite items exceeds max_total_items - min_recent_items then this limit is ignored."
+msgstr "določa največje število predmetov v področju datotek. Število najljubših predmetov ni omejeno. Ta meja velja za število nedavnih predmetov, to pomeni da število nedavnih predmetov  omejeno na razliko max_total_items in števila priljubljenih predmetov. V kolikor število najljubših predmetov preseže max_total_items - min_recent_items, je ta omejitev prezrta."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid "determines the minimum number of items in the \"recent\" section of the file-area."
@@ -341,135 +342,135 @@ msgstr "Izklopi"
 msgid "Lock Screen"
 msgstr "Zakleni zaslon"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "Glavni meni GNOME"
 
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Omrežje: brez"
 
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Kliknite za nastavitev omrežja"
 
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "Omrež_je: brez"
 
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Povezava z: %s"
 
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "Omrež_je: brezžično"
 
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Uporaba eterneta (%s)"
 
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "Omrež_je: žično"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "Omrež_je: GSM"
 
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "Omrež_je: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Brezžični eternet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Žični eternet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Mobilni eternet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Neznano"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Programi"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Računalnik"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Programi"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Priljubljeni programi"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Priljubljeni dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Priljubljena mesta"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
 msgstr "Več programov ..."
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Več dokumentov ..."
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Več mest ..."
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Mesta"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Nedavni programi"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Nedavni dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Poišči:"
 
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Stanje"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Sistem"
 
