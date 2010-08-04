@@ -1,18 +1,20 @@
 # Translation of gnome-main-menu to Czech.
 # Copyright (C) 2008 the author(s) of gnome-main-menu.
 # This file is distributed under the same license as the gnome-main-menu package.
+#
 # Klara Cihlarova <koty@seznam.cz>, 2006.
 # Adrian Guniš <andygun@seznam.cz>, 2008, 2009, 2010.
 # Petr Kovar <pknbe@volny.cz>, 2008.
+# Marek Černocký <marek@manet.cz>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2010-03-24 16:24+0000\n"
-"PO-Revision-Date: 2010-03-26 20:50+0100\n"
-"Last-Translator: Adrian Guniš <andygun696@gmail.com>\n"
+"POT-Creation-Date: 2010-06-29 03:32+0000\n"
+"PO-Revision-Date: 2010-06-29 17:22+0200\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,7 +102,8 @@ msgid "Default menu and application browser"
 msgstr "Výchozí nabídka a prohlížeč aplikací"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
@@ -149,8 +152,7 @@ msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
-"Toto je příkaz k vykonání při aktivaci položky \"Otevřít ve správci souborů"
-"\"."
+"Toto je příkaz k vykonání při aktivaci položky „Otevřít ve správci souborů“."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -158,14 +160,14 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"Toto je příkaz k vykonání při aktivaci položky \"Otevřít ve správci souborů"
-"\". FILE_URI je nahrazeno uri adresáře odpovídajícího souboru."
+"Toto je příkaz k vykonání při aktivaci položky „Otevřít ve správci souborů“. "
+"FILE_URI je nahrazeno uri adresáře odpovídajícího souboru."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
-msgstr "Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\"."
+msgstr "Toto je příkaz k vykonání při aktivaci položky „Odeslat…“."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
@@ -173,7 +175,7 @@ msgid ""
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
 "components of the activated tile."
 msgstr ""
-"Toto je příkaz k vykonání při aktivaci položky \"Odeslat...\". DIRNAME a "
+"Toto je příkaz k vykonání při aktivaci položky „Odeslat…“. DIRNAME a "
 "BASENAME jsou nahrazeny odpovídajícími komponentami aktivované dlaždice."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:11
@@ -224,12 +226,12 @@ msgid ""
 msgstr ""
 "obsahuje seznam (v neurčitém pořadí) přípustných tabulek souborů, které se "
 "mají zobrazit v souborové oblasti. možné hodnoty: 0 - zobrazit tabulku "
-"uživatelem specifikovaných nebo \"Oblíbených\" aplikací, 1 - zobrazit "
-"tabulku naposledy použitých aplikací, 2 - zobrazit tabulku uživatelem "
-"specifikovaných nebo \"Oblíbených\" dokumentů, 3 - zobrazit tabulku "
-"nedávných dokumentů, 4 - zobrazit tabulku uživatelem specifikovaných "
-"\"Oblíbených\" adresářů nebo \"Míst\", a 5 - zobrazit tabulku nedávno "
-"otevřených adresářů nebo \"Míst\"."
+"uživatelem specifikovaných nebo „Oblíbených“ aplikací, 1 - zobrazit tabulku "
+"naposledy použitých aplikací, 2 - zobrazit tabulku uživatelem "
+"specifikovaných nebo „Oblíbených“ dokumentů, 3 - zobrazit tabulku nedávných "
+"dokumentů, 4 - zobrazit tabulku uživatelem specifikovaných „Oblíbených“ "
+"adresářů nebo „Míst“, a 5 - zobrazit tabulku nedávno otevřených adresářů "
+"nebo „Míst“."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
@@ -237,7 +239,7 @@ msgid ""
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 "obsahuje seznam souborů (včetně souborů .desktop), které mají být vyjmuty ze "
-"seznamů \"Naposledy použité aplikace\" a \"Nedávné soubory\""
+"seznamů „Naposledy použité aplikace“ a „Nedávné soubory“"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
@@ -245,11 +247,11 @@ msgstr "určuje limit položek v souborové oblasti."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
+"determines the limit of items in the file-area. The number of favorite items "
+"is not limited. This limit applies to the number of recent items, i.e. the "
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
+"min_recent_items then this limit is ignored."
 msgstr ""
 "určuje limit položek v souborové oblasti. Počet oblíbených položek není "
 "omezen. Tento limit platí pro počet nedávných položek, tj. počet nedávno "
@@ -262,8 +264,7 @@ msgstr ""
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
-msgstr ""
-"určuje minimální počet položek v sekci \"nedávné\" ze souborové oblasti."
+msgstr "určuje minimální počet položek v sekci „nedávné“ ze souborové oblasti."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
@@ -353,7 +354,7 @@ msgid ""
 "\"Favorite\" applications."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
-"uživatelem specifikovaných nebo \"Oblíbených\" aplikací."
+"uživatelem specifikovaných nebo „Oblíbených“ aplikací."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
@@ -361,7 +362,7 @@ msgid ""
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
-"uživatelem specifikovaných nebo \"Oblíbených\" adresářů nebo \"Míst\"."
+"uživatelem specifikovaných nebo „Oblíbených“ adresářů nebo „Míst“."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
@@ -369,7 +370,7 @@ msgid ""
 "\"Favorite\" documents."
 msgstr ""
 "Nastavte na hodnotu PRAVDA, pokud je uživatel oprávněn upravovat seznam "
-"uživatelem specifikovaných nebo \"Oblíbených\" dokumentů."
+"uživatelem specifikovaných nebo „Oblíbených“ dokumentů."
 
 #: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
 msgid "Run Application"
@@ -377,7 +378,7 @@ msgstr "Spustit aplikaci"
 
 #: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
 msgid "Show the \"Run Application\" dialog"
-msgstr "Zobrazit okno \"Spustit aplikaci\""
+msgstr "Zobrazit okno „Spustit aplikaci“"
 
 #: ../main-menu/src/hard-drive-status-tile.c:99
 msgid "_System Monitor"
@@ -431,135 +432,135 @@ msgstr "Vypnout"
 msgid "Lock Screen"
 msgstr "Uzamknout obrazovku"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "Hlavní nabídka GNOME"
 
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Síť: žádná"
 
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Kliknutím nastavíte síť"
 
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "_Síť: žádná"
 
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Připojen k: %s"
 
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "_Síť: bezdrátová"
 
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "_Síť: drátová"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "_Síť: GSM"
 
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "_Síť: CDMA"
 
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Bezdrátový Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Mobilní Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Aplikace"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Počítač"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Aplikace"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Dokumenty"
 
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Oblíbené aplikace"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Oblíbené dokumenty"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Oblíbená místa"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
-msgstr "Více aplikací..."
+msgstr "Více aplikací…"
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
-msgstr "Více dokumentů..."
+msgstr "Více dokumentů…"
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
-msgstr "Více míst..."
+msgstr "Více míst…"
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Místa"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Naposledy použité aplikace"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Nedávné dokumenty"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Hledat:"
 
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Stav"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Systém"
 
