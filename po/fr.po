@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: gnome-main-menu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2010-02-18 12:15+0000\n"
+"POT-Creation-Date: 2010-06-28 13:19+0000\n"
 "PO-Revision-Date: 2009-08-10 12:43+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -115,7 +115,8 @@ msgid "Default menu and application browser"
 msgstr "Menu et navigateur d'applications par défaut"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "Menu principal GNOME"
 
@@ -265,11 +266,11 @@ msgstr "Détermine la limite d'éléments dans la zone de fichiers."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
+"determines the limit of items in the file-area. The number of favorite items "
+"is not limited. This limit applies to the number of recent items, i.e. the "
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
+"min_recent_items then this limit is ignored."
 msgstr ""
 "Détermine la limite des éléments dans la zone de fichiers. Le nombre favoris "
 "d'éléments n'est pas limité. Cette limite s'applique au nombre d'éléments "
@@ -453,135 +454,135 @@ msgstr "Éteindre"
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "Le menu principal de GNOME"
 
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Réseau : aucun"
 
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Cliquez pour configurer le réseau"
 
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "_Réseau : aucun"
 
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Connecté à : %s"
 
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "_Réseau : sans fil"
 
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Utilise Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "_Réseau : filaire"
 
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "_Réseau : GSM"
 
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "_Réseau : CDMA"
 
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Ethernet sans fil (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Ethernet filaire (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Ethernet mobile (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Applications"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Ordinateur"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Applications"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Documents"
 
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Applications favorites"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Documents favoris"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Raccourcis favoris"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
 msgstr "Plus d'applications..."
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Plus de documents..."
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Plus de raccourcis..."
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Raccourcis"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Applications récentes"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Documents récents"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Recherche :"
 
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "État"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Système"
 
