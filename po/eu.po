@@ -1,4 +1,4 @@
-# translation of eu.po to Basque
+# translation of eu_to_be_translate.po to Basque
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002, 2003 SuSE Linux AG.
 # Copyright (C) 1999, 2000, 2001 SuSE GmbH.
@@ -6,10 +6,10 @@
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: eu_to_be_translate\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-18 18:08+0100\n"
-"PO-Revision-Date: 2010-03-18 18:09+0100\n"
+"POT-Creation-Date: 2010-10-08 00:00+0200\n"
+"PO-Revision-Date: 2010-10-08 00:01+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,8 @@ msgstr "Irten shell-etik abiarazteko ekintza landutakoan"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:4
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr "Irten shell-etik bertsio-berritzeko edo desinstalatzeko ekintza landutakoan"
+msgstr ""
+"Irten shell-etik bertsio-berritzeko edo desinstalatzeko ekintza landutakoan"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:5
 msgid "Filename of existing .desktop files"
@@ -49,7 +50,8 @@ msgstr "Laguntzako ekintza landutakoan shell-a itxiko den edo ez adierazten du"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:7
 msgid "Indicates whether to close the shell when a start action is performed"
-msgstr "Abiarazteko ekintza landutakoan shell-a itxiko den edo ez adierazten du"
+msgstr ""
+"Abiarazteko ekintza landutakoan shell-a itxiko den edo ez adierazten du"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:8
 msgid ""
@@ -75,7 +77,8 @@ msgstr "Aplikazio berrien gehien. kopurua"
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr "Aplikazioen gehienezko kopurua 'Aplikazio berriak' kategorian bistaratzeko"
+msgstr ""
+"Aplikazioen gehienezko kopurua 'Aplikazio berriak' kategorian bistaratzeko"
 
 #: ../application-browser/src/application-browser.c:63
 msgid "Hide on start (useful to preload the shell)"
@@ -102,7 +105,8 @@ msgid "Default menu and application browser"
 msgstr "Menu eta aplikazioen arakatzaile lehenetsia"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2405 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
@@ -251,18 +255,17 @@ msgstr "fitxategi-areako elementuen muga zehazten du."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
 msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
+"determines the limit of items in the file-area. The number of favorite items "
+"is not limited. This limit applies to the number of recent items, i.e. the "
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
+"min_recent_items then this limit is ignored."
 msgstr ""
 "fitxategi-areako elementuen muga zehazten du. Gogoko elementuen kopurua ez "
 "dago mugatua. Muga honek azken elementuei aplikatzen zaie, adib. "
 "bistaratutako azken elementuen kopurua 'max_total_items'-en balioarekin dago "
 "mugatua (gogoko elementuen kopurua). Gogoko elementuen kopuruak "
-"max_total_items gainditzen badu,  min_recent_items mugari ez ikusi egingo "
-"zaio."
+"max_total_items gainditzen badu, min_recent_items mugari ezikusi egingo zaio."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
@@ -334,15 +337,18 @@ msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
-msgstr "ezarri TRUE (egia) gisa bilaketako area ikusgai eta aktibo egon behar badu."
+msgstr ""
+"ezarri TRUE (egia) gisa bilaketako area ikusgai eta aktibo egon behar badu."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
-msgstr "ezarri TRUE (egia) gisa egoerako area ikusgai eta aktibo egon behar badu."
+msgstr ""
+"ezarri TRUE (egia) gisa egoerako area ikusgai eta aktibo egon behar badu."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
-msgstr "ezarri TRUE (egia) gisa sistemako area ikusgai eta aktibo egon behar badu."
+msgstr ""
+"ezarri TRUE (egia) gisa sistemako area ikusgai eta aktibo egon behar badu."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
@@ -435,47 +441,47 @@ msgstr "Itzali"
 msgid "Lock Screen"
 msgstr "Blokeatu pantaila"
 
-#: ../main-menu/src/main-menu-ui.c:2406
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "GNOMEren menu nagusia"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:90
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Sarea: bat ere ez"
 
 # include/ui/summary.ycp:84
 # modules/Summary.ycp:89
-#: ../main-menu/src/network-status-tile.c:93
-#: ../main-menu/src/network-status-tile.c:206
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Egin klik sarea konfiguratzeko"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:205
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "_Sarea: bat ere ez"
 
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
 # include/scanner/scanner_overview.ycp:85
-#: ../main-menu/src/network-status-tile.c:214
-#: ../main-menu/src/network-status-tile.c:231
-#: ../main-menu/src/network-status-tile.c:239
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Honekin konektatuta: %s"
 
 # include/network/lan/address.ycp:40
-#: ../main-menu/src/network-status-tile.c:217
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "_Sarea: haririk gabekoa"
 
 #
 # include/runlevel/ui.ycp:489
-#: ../main-menu/src/network-status-tile.c:222
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet erabiltzen (%s)"
@@ -483,111 +489,111 @@ msgstr "Ethernet erabiltzen (%s)"
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
 # clients/hwinfo.ycp:101
-#: ../main-menu/src/network-status-tile.c:226
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "_Sarea: hariduna"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:234
+#: ../main-menu/src/network-status-tile.c:233
 msgid "Networ_k: GSM"
 msgstr "_Sarea: GSM"
 
 #
 # include/network/lan/address.ycp:102
-#: ../main-menu/src/network-status-tile.c:242
+#: ../main-menu/src/network-status-tile.c:241
 msgid "Networ_k: CDMA"
 msgstr "_Sarea: CDMA"
 
 # include/network/modem/dialogs.ycp:145
-#: ../main-menu/src/network-status-tile.c:345
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Haririk gabeko Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:350
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Haridun Ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:355
-#: ../main-menu/src/network-status-tile.c:360
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
 #, c-format
 msgid "Mobile Ethernet (%s)"
 msgstr "Ethernet mugikorra (%s)"
 
-#: ../main-menu/src/network-status-tile.c:364
-#: ../main-menu/src/network-status-tile.c:374
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
 #, c-format
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: ../main-menu/src/network-status-tile.c:372
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Aplikazioak"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Ordenagailua"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Aplikazioak"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Dokumentuak"
 
 #
 # include/lilo/ui.ycp:818
 # include/backup/ui.ycp:300
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
 msgstr "Gogoko aplikazioak"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Gogoko dokumentuak"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Gogoko lekuak"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
 msgstr "Aplikazio gehiago..."
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Dokumentu gehiago..."
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Leku gehiago..."
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Lekuak"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
 msgstr "Azken aplikazioak"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Azken dokumentuak"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Bilatu:"
 
 # clients/lan_inetd_custom.ycp:748
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Egoera"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Sistema"
 
@@ -613,4 +619,3 @@ msgstr "Kendu gogokoetatik"
 #: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Kendu uneko dokumentua gogokoetatik"
-
