@@ -137,7 +137,7 @@
 			<applyto>/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>string</type>
-			<default>nautilus-sendto --default-dir=DIRNAME BASENAME</default>
+			<default>nautilus-sendto DIRNAME/BASENAME</default>
 			<locale name="C">
 				<short>This is the command to execute when the "Send To..." menu item is activated.</short>
 				<long>This is the command to execute when the "Send To..." menu item is activated.  DIRNAME and BASENAME are replaced with the corresponding components of the activated tile.</long>
