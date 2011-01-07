@@ -89,7 +89,7 @@
 			<applyto>/desktop/gnome/applications/main-menu/search_command</applyto>
 			<owner>gnome-main-menu</owner>
 			<type>string</type>
-			<default>tracker-search-tool SEARCH_STRING</default>
+			<default>tracker-needle SEARCH_STRING</default>
 			<locale name="C">
 				<short>This is the command to execute when the search entry is used.</short>
 				<long>This is the command to execute when the search entry is used.  SEARCH_STRING is replaced with the entered search text.</long>
