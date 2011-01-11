@@ -513,6 +513,9 @@ create_panel_button (MainMenuUI *this)
 		priv->panel_button_ui, "slab-main-menu-panel-button-right"));
 
 	for (i = 0; i < 4; ++i) {
+		gtk_widget_set_name (GTK_WIDGET (priv->panel_buttons [i]),
+				     "slab-main-menu-panel-button");
+
 		g_object_set_data (
 			G_OBJECT (priv->panel_buttons [i]), "double-click-detector",
 			double_click_detector_new ());
