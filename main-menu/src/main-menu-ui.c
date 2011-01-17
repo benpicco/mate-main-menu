@@ -267,7 +267,7 @@ main_menu_delayed_setup (MainMenuUI *this)
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
 	if (priv->recently_used_store_monitor != NULL)
-		return; /* already setup */
+		return FALSE; /* already setup */
 
 	libslab_checkpoint ("main_menu_ui_new(): setup_recently_used_store_monitor");
 	setup_recently_used_store_monitor (this, TRUE);
