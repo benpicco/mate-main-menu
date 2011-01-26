@@ -3,7 +3,7 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="MozillaFirefox.desktop" added="2007-01-16T05:51:22Z" modified="2007-01-16T05:51:22Z" visited="2007-01-16T05:51:22Z">
+  <bookmark href="firefox.desktop" added="2007-01-16T05:51:22Z" modified="2007-01-16T05:51:22Z" visited="2007-01-16T05:51:22Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-desktop"/>
