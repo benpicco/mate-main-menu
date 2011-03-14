@@ -14,5 +14,12 @@
     </foaf:Person>
   </maintainer>
 
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Julian Andres Klode</foaf:name>
+      <gnome:userid>jak</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
   <!-- FIXME: we need other maintainers here -->
 </Project>
