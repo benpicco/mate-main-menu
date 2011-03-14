@@ -1,4 +1,35 @@
 ==============
+Version 0.9.16
+==============
+  Fixes
+	* Use gtk_widget_get_visible(), require GTK+ 2.18 (Julian Andres Klode)
+	* Fix typos in schema (Vincent Untz, Bug #620269)
+	* Check for libxml-2.0 (Vincent Untz, Bug #620201)
+	* Fix use of nautilus-sendto (Vincent Untz, Bug #647263)
+	* Use tracker-needle instead of tracker-search-tool (Atri Bhattacharya)
+	* Name the main menu button widgets (Vincent Untz, Bug #642956)
+	* Use firefox.desktop instead of MozillaFirefox.desktop (Vincent Untz)
+
+  Misc
+	* Create bzip2 tarballs (Vincent Untz)
+
+  Translators
+	* Andika Triwidada (id)
+	* Djavan Fagundes, Mateus Zenaide (pt_BR)
+	* Fran Diéguez <fran.dieguez@mabishu.com> (gl)
+	* Yaron Shahrabani (he)
+	* Jorge González (es)
+	* Mario Blättermann (de)
+	* Andrej Žnidaršič (sl)
+	* Aron Xu (zh_CN)
+	* Marek Černocký (cs)
+	* Bruno Brouard  (fr)
+	* Gabor Kelemen (hu)
+	* Inaki Larranaga Murgoitio (eu)
+	* Daniel Nylander (sv)
+	* Piotr Drąg (pl)
+
+==============
 Version 0.9.15
 ==============
 
