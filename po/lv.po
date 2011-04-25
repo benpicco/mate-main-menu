@@ -5,25 +5,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Raivis Dejus <orvils@gmail.com>, 2007.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD3\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-20 14:53+0300\n"
-"PO-Revision-Date: 2007-05-02 16:05+0300\n"
-"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=gnome-main-menu&component=general\n"
+"POT-Creation-Date: 2010-06-28 13:19+0000\n"
+"PO-Revision-Date: 2011-04-18 23:15+0300\n"
+"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.1\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
-#: ../application-browser/src/application-browser.c:93
+#: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
-msgstr "Aplikācijas pārlūks"
+msgstr "Lietotņu pārlūks"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
@@ -69,251 +71,41 @@ msgstr ""
 
 #: ../application-browser/etc/application-browser.schemas.in.h:10
 msgid "Max number of New Applications"
-msgstr "Maksimālais jauno aplikāciju skaits"
+msgstr "Maksimālais jauno lietotņu skaits"
 
 #: ../application-browser/etc/application-browser.schemas.in.h:11
 msgid ""
 "The maximum number of applications that will be displayed in the New "
 "Applications category"
-msgstr ""
-"Maksimālais aplikāciju skaits, kas parādīsies jauno aplikāciju kategorijā"
+msgstr "Maksimālais lietotņu skaits, kas parādīsies jauno lietotņu kategorijā"
 
-#: ../application-browser/src/application-browser.c:85
+#: ../application-browser/src/application-browser.c:63
+msgid "Hide on start (useful to preload the shell)"
+msgstr "Palaižoties paslēpt (noderīgs, iepriekš ielādējot čaulu)"
+
+#: ../application-browser/src/application-browser.c:93
 msgid "New Applications"
-msgstr "Jaunas aplikācijas"
+msgstr "Jaunas lietotnes"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Filter"
 msgstr "Filtrs"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Groups"
 msgstr "Grupas"
 
-#: ../application-browser/src/application-browser.c:90
+#: ../application-browser/src/application-browser.c:98
 msgid "Application Actions"
-msgstr "Aplikāciju darbības"
-
-#. make start action
-#: ../libslab/application-tile.c:362
-#, c-format
-msgid "<b>Start %s</b>"
-msgstr "<b>Palaist %s</b>"
-
-#: ../libslab/application-tile.c:381 ../main-menu/src/main-menu-migration.c:93
-#: ../main-menu/src/main-menu-migration.c:217
-msgid "Help"
-msgstr "Palīdzība"
-
-#: ../libslab/application-tile.c:428
-msgid "Upgrade"
-msgstr "Uzlabojums"
-
-#: ../libslab/application-tile.c:443
-msgid "Uninstall"
-msgstr "Atinstalēt"
-
-#: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
-msgid "Remove from Favorites"
-msgstr "Izņemt no Favorītiem"
-
-#: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
-msgid "Add to Favorites"
-msgstr "Pievienot Favorītiem"
-
-#: ../libslab/application-tile.c:857
-msgid "Remove from Startup Programs"
-msgstr "Izņemt no sākuma programmām"
-
-#: ../libslab/application-tile.c:859
-msgid "Add to Startup Programs"
-msgstr "Pievienot sākuma programmām"
-
-#: ../libslab/app-shell.c:747
-#, c-format
-msgid ""
-"<span size=\"large\"><b>No matches found.</b> </span><span>\n"
-"\n"
-" Your filter \"<b>%s</b>\" does not match any items.</span>"
-msgstr ""
-"<span size=\"large\"><b>Nekas nav atrasts.</b> </span><span>\n"
-"\n"
-" Jūsu filtrs \"<b>%s</b>\" neatbilst nevienam ierakstam.</span>"
-
-#: ../libslab/app-shell.c:897
-msgid "Other"
-msgstr "Cits"
-
-#: ../libslab/bookmark-agent.c:1067
-msgid "New Spreadsheet"
-msgstr "Jauna tabullapa"
-
-#: ../libslab/bookmark-agent.c:1071
-msgid "New Document"
-msgstr "Jauns dokuments"
-
-#: ../libslab/bookmark-agent.c:1121
-msgid "Home"
-msgstr "Mājas"
-
-#: ../libslab/bookmark-agent.c:1137
-msgid "File System"
-msgstr "Failu sistēma"
-
-#: ../libslab/bookmark-agent.c:1141
-msgid "Network Servers"
-msgstr "Tīkla serveri"
-
-#: ../libslab/bookmark-agent.c:1170
-msgid "Search"
-msgstr "Meklēt"
-
-#. make open with default action
-#: ../libslab/directory-tile.c:168
-msgid "<b>Open</b>"
-msgstr "<b> Atvērt</b>"
-
-#. make rename action
-#: ../libslab/directory-tile.c:187 ../libslab/document-tile.c:232
-msgid "Rename..."
-msgstr "Pārsaukt..."
-
-#: ../libslab/directory-tile.c:201 ../libslab/directory-tile.c:210
-#: ../libslab/document-tile.c:246 ../libslab/document-tile.c:255
-msgid "Send To..."
-msgstr "Sūtīt..."
-
-#. make move to trash action
-#: ../libslab/directory-tile.c:225 ../libslab/document-tile.c:281
-msgid "Move to Trash"
-msgstr "Pārvietot uz miskasti"
-
-#: ../libslab/directory-tile.c:235 ../libslab/directory-tile.c:448
-#: ../libslab/document-tile.c:291 ../libslab/document-tile.c:639
-msgid "Delete"
-msgstr "Dzēst"
-
-#: ../libslab/document-tile.c:153
-msgid "Edited %m/%d/%Y"
-msgstr "Rediģēts %m/%d/%Y"
-
-#: ../libslab/document-tile.c:193
-#, c-format
-msgid "<b>Open with \"%s\"</b>"
-msgstr "<b>Atvērt ar \"%s\"</b>"
-
-#: ../libslab/document-tile.c:205
-msgid "Open with Default Application"
-msgstr "Atvērt ar noklusēto aplikāciju"
-
-#: ../libslab/document-tile.c:216
-msgid "Open in File Manager"
-msgstr "Atvērt datņu pārvaldniekā"
-
-#: ../libslab/libslab-bookmarkfile.c:700 ../libslab/libslab-bookmarkfile.c:777
-#: ../libslab/libslab-bookmarkfile.c:856 ../libslab/libslab-bookmarkfile.c:903
-#, c-format
-msgid "Unexpected attribute '%s' for element '%s'"
-msgstr "Negaidīts atribūts '%s' elementam '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:711 ../libslab/libslab-bookmarkfile.c:788
-#: ../libslab/libslab-bookmarkfile.c:798 ../libslab/libslab-bookmarkfile.c:914
-#, c-format
-msgid "Attribute '%s' of element '%s' not found"
-msgstr "Attribūts '%s' no elementa '%s' nav atrasts"
-
-#: ../libslab/libslab-bookmarkfile.c:1087
-#: ../libslab/libslab-bookmarkfile.c:1152
-#: ../libslab/libslab-bookmarkfile.c:1216
-#: ../libslab/libslab-bookmarkfile.c:1226
-#, c-format
-msgid "Unexpected tag '%s', tag '%s' expected"
-msgstr "Negaidīts tags '%s', tags '%s' bija gaidīts"
-
-#: ../libslab/libslab-bookmarkfile.c:1112
-#: ../libslab/libslab-bookmarkfile.c:1126
-#: ../libslab/libslab-bookmarkfile.c:1194
-#: ../libslab/libslab-bookmarkfile.c:1246
-#, c-format
-msgid "Unexpected tag '%s' inside '%s'"
-msgstr "Negaidīts tags '%s' iekš '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:1929
-msgid "No valid bookmark file found in data dirs"
-msgstr "Datu direktorijās nav atrasta neviena derīga grāmatzīmju datne"
-
-#: ../libslab/libslab-bookmarkfile.c:2130
-#, c-format
-msgid "A bookmark for URI '%s' already exists"
-msgstr "Grāmatzīme priekš URI '%s' jau eksistē"
-
-#: ../libslab/libslab-bookmarkfile.c:2176
-#: ../libslab/libslab-bookmarkfile.c:2333
-#: ../libslab/libslab-bookmarkfile.c:2418
-#: ../libslab/libslab-bookmarkfile.c:2499
-#: ../libslab/libslab-bookmarkfile.c:2584
-#: ../libslab/libslab-bookmarkfile.c:2667
-#: ../libslab/libslab-bookmarkfile.c:2745
-#: ../libslab/libslab-bookmarkfile.c:2824
-#: ../libslab/libslab-bookmarkfile.c:2866
-#: ../libslab/libslab-bookmarkfile.c:2963
-#: ../libslab/libslab-bookmarkfile.c:3089
-#: ../libslab/libslab-bookmarkfile.c:3279
-#: ../libslab/libslab-bookmarkfile.c:3355
-#: ../libslab/libslab-bookmarkfile.c:3508
-#: ../libslab/libslab-bookmarkfile.c:3573
-#: ../libslab/libslab-bookmarkfile.c:3663
-#: ../libslab/libslab-bookmarkfile.c:3790
-#, c-format
-msgid "No bookmark found for URI '%s'"
-msgstr "Priekš URI '%s' netika atrasta neviena grāmatzīme"
-
-#: ../libslab/libslab-bookmarkfile.c:2508
-#, c-format
-msgid "No MIME type defined in the bookmark for URI '%s'"
-msgstr "Grāmatzīmē priekš URI '%s' nav definēts neviens MIME tips"
-
-#: ../libslab/libslab-bookmarkfile.c:2593
-#, c-format
-msgid "No private flag has been defined in bookmark for URI '%s'"
-msgstr ""
-"Neviens privilēģiju karodziņš netika definēts grāmatzīmē priekš URI '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:2972
-#, c-format
-msgid "No groups set in bookmark for URI '%s'"
-msgstr "Grāmatzīmē nav iestatītas grupas priekš URI '%s'"
-
-#: ../libslab/libslab-bookmarkfile.c:3373
-#: ../libslab/libslab-bookmarkfile.c:3518
-#, c-format
-msgid "No application with name '%s' registered a bookmark for '%s'"
-msgstr ""
-"Neviena aplikācija ar nosaukumu '%s' nav reģistrējusi grāmatzīmi priekš '%s'"
-
-#: ../libslab/search-bar.c:255
-msgid "Find Now"
-msgstr "Meklēt"
-
-#: ../libslab/system-tile.c:128
-#, c-format
-msgid "<b>Open %s</b>"
-msgstr "<b> Atvērt %s</b>"
-
-#: ../libslab/system-tile.c:141
-msgid "Remove from System Items"
-msgstr "Aizvākt no sistēmas ierakstiem"
+msgstr "Lietotņu darbības"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr "Noklusētā izvēlne un aplikāciju pārlūks"
+msgstr "Noklusētā izvēlne un lietotņu pārlūks"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
-#: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
+#: ../main-menu/src/main-menu-ui.c:2420 ../main-menu/src/main-menu.c:66
+#: ../main-menu/src/slab-window.ui.h:6
 msgid "GNOME Main Menu"
 msgstr "GNOME galvenā izvēlne"
 
@@ -334,26 +126,31 @@ msgid "_Open Menu"
 msgstr "_Atvērt izvēlni"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:1
+#| msgid ".desktop file for the YaST2 network_devices utility"
+msgid ".desktop file for the Network Manager editor utility"
+msgstr ".desktop datne Network Manager redaktora utilītprogrammai"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:2
 msgid ".desktop file for the YaST2 network_devices utility"
 msgstr ".desktop datne YaST2 network_devices utilītprogrammai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:2
+#: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
 msgstr ".desktop datne datņu pārlūkam"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:3
+#: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
 msgstr ".desktop datne priekš gnome-system-monitor"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:4
+#: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
 msgstr ".desktop datne net config rīkam"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:5
-msgid ".desktop path for the application browser"
-msgstr ".desktop ceļš aplikāciju pārlūkam"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:6
+msgid ".desktop path for the application browser"
+msgstr ".desktop ceļš lietotņu pārlūkam"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
@@ -361,7 +158,7 @@ msgstr ""
 "Šī ir komanda, ko izpilda, kad \"Atvērt datņu pārvaldniekā\" izvēlnes "
 "vienība tiek aktivizēta."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:7
+#: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
@@ -371,7 +168,7 @@ msgstr ""
 "ieraksts tiek aktivizēts. FILE_URI tiek aizvietots ar uri, kam apbilst "
 "dirname no aktivizētās datnes."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:8
+#: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated."
@@ -379,7 +176,7 @@ msgstr ""
 "Šī ir komanda, ko izpilda, kad \"Sūtīt...\" izvēlnes ieraksts tiek "
 "aktivizēts."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:9
+#: ../main-menu/etc/slab.schemas.in.in.h:10
 msgid ""
 "This is the command to execute when the \"Send To...\" menu item is "
 "activated. DIRNAME and BASENAME are replaced with the corresponding "
@@ -389,11 +186,11 @@ msgstr ""
 "aktivizēts. DIRNAME un BASENAME tiek aizvietoti ar atbilstošām komponentēm "
 "no aktivizēta cilindra."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:10
+#: ../main-menu/etc/slab.schemas.in.in.h:11
 msgid "This is the command to execute when the search entry is used."
 msgstr "Šī ir komanda, ko izpilda, kad tiek lietots meklējamais ieraksts."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:11
+#: ../main-menu/etc/slab.schemas.in.in.h:12
 msgid ""
 "This is the command to execute when the search entry is used. SEARCH_STRING "
 "is replaced with the entered search text."
@@ -401,11 +198,11 @@ msgstr ""
 "Šī ir komanda, ko izpilda, kad tiek lietots meklējamais ieraksts. "
 "SEARCH_STRING tiek aizvietots ar ievadīto meklējamo tekstu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:12
+#: ../main-menu/etc/slab.schemas.in.in.h:13
 msgid "command to uninstall packages"
 msgstr "komanda paku atinstalēšanai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:13
+#: ../main-menu/etc/slab.schemas.in.in.h:14
 msgid ""
 "command to uninstall packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -413,11 +210,11 @@ msgstr ""
 "komanda paku atinstalēšanai, PACKAGE_NAME tiek aizvietots ar pakas nosaukumu "
 "komandā"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:14
+#: ../main-menu/etc/slab.schemas.in.in.h:15
 msgid "command to upgrade packages"
 msgstr "komanda paku atjaunināšanai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:15
+#: ../main-menu/etc/slab.schemas.in.in.h:16
 msgid ""
 "command to upgrade packages, PACKAGE_NAME is replaced by the name of the "
 "package in the command"
@@ -425,7 +222,7 @@ msgstr ""
 "komanda paku atjaunināšanai, PACKAGE_NAME tiek aizvietots ar pakas nosaukumu "
 "komandā"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:16
+#: ../main-menu/etc/slab.schemas.in.in.h:17
 msgid ""
 "contains the list (in no particular order) of allowable file tables to show "
 "in the file area. possible values: 0 - show the user-specified or \"Favorite"
@@ -437,31 +234,37 @@ msgid ""
 msgstr ""
 "satur sarakstu (ne īpašā kārtībā) ar pieļaujamām datņu tabulām, ko rādīt "
 "datņu apgabalā. iespējamas vērtības: 0 - parādīt lietotāja norādīto vai "
-"\"Favorīti\" aplikāciju tabulu, 1 - parādīt nesen izmantoto aplikāciju "
+"\"Favorīti\" lietotņu tabulu, 1 - parādīt nesen izmantoto lietotņu "
 "tabulu, 2 - parādīt lietotāja norādīto vai \"Favorīti\" dokumentu tabulu, 3 "
 "- parādīt  nesen izmantoto dokumentu tabulu, 4 - parādīt lietotāja norādītās "
 "vai \"Favorīti\" direktorijas vai \"Vietas\" tabulu, un 5 - parādīt nesen "
-"izmantoto direktoriju  vai \"Vietas\" tabulu."
+"izmantoto direktoriju vai \"Vietas\" tabulu."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:17
+#: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
 "contains the list of files (including .desktop files) to be excluded from "
 "the \"Recently Used Applications\" and \"Recent Files\" lists"
 msgstr ""
 "satur sarakstu ar datnēm (ieskaitot .desktop datnes), kuras tiks izslēgtas "
-"no \"Nesen izmantotās aplikācijas\" un \"Nesen izmantotās datnes\" sarakstiem"
+"no \"Nesen izmantotās lietotnes\" un \"Nesen izmantotās datnes\" sarakstiem"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:18
+#: ../main-menu/etc/slab.schemas.in.in.h:19
 msgid "determines the limit of items in the file-area."
 msgstr "nosaka ierakstu ierobežojumu datnes apgabalā."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:19
+#: ../main-menu/etc/slab.schemas.in.in.h:20
+#| msgid ""
+#| "determines the limit of items in the file-area. The number favorite items "
+#| "is not limited. This limit applies to the number of recent items, i.e. "
+#| "the number of recent items displayed is limited to max_total_items - the "
+#| "number of favorite items. If the number of favorite items exceeds "
+#| "max_total_items - min_recent_items than this limit is ignored."
 msgid ""
-"determines the limit of items in the file-area. The number favorite items is "
-"not limited. This limit applies to the number of recent items, i.e. the "
+"determines the limit of items in the file-area. The number of favorite items "
+"is not limited. This limit applies to the number of recent items, i.e. the "
 "number of recent items displayed is limited to max_total_items - the number "
 "of favorite items. If the number of favorite items exceeds max_total_items - "
-"min_recent_items than this limit is ignored."
+"min_recent_items then this limit is ignored."
 msgstr ""
 "nosaka ierakstu ierobežojumu datnes apgabalā. Iecienīto ierakstu skaits nav "
 "ierobežots. Šis ierobežojums ir pielietojams nesen izmantoto ierakstu "
@@ -470,22 +273,22 @@ msgstr ""
 "ierakstu skaits pārsniedz max_total_items - min_recent_items, tad šis "
 "ierobežojums tiek ignorēts."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:20
+#: ../main-menu/etc/slab.schemas.in.in.h:21
 msgid ""
 "determines the minimum number of items in the \"recent\" section of the file-"
 "area."
 msgstr ""
 "nosaka minimālo ierakstu skaitu \"nesen izmantoti\" sadaļā datnes-apgabalā."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:21
+#: ../main-menu/etc/slab.schemas.in.in.h:22
 msgid "determines which types of files to display in the file area"
 msgstr "nosaka, kurus datņu tipus attēlot datņu apgabalā"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:22
+#: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid "if true, main menu is more anxious to close"
 msgstr "ja patiess, galvenā izvēlne ir vairāk norūpējusies aizvērties"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:23
+#: ../main-menu/etc/slab.schemas.in.in.h:24
 msgid ""
 "if true, main menu will close under these additional conditions: tile is "
 "activated, search activated"
@@ -493,80 +296,80 @@ msgstr ""
 "ja patiess, galvenā izvēlne aizvērsies šo papildus nosacījumu dēļ: tile is "
 "aktivizēta, meklēšana aktivizēta"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:24
+#: ../main-menu/etc/slab.schemas.in.in.h:25
 msgid "lock-down configuration of the file area"
 msgstr "noslēgt datņu apgabala konfigurāciju"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:25
-msgid "lock-down status for the application browser link"
-msgstr "noslēgt statusu aplikāciju pārlūka saitei"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:26
+msgid "lock-down status for the application browser link"
+msgstr "noslēgt statusu lietotņu pārlūka saitei"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
 msgstr "noslēgt statusu meklēšanas apgabalam"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:27
+#: ../main-menu/etc/slab.schemas.in.in.h:28
 msgid "lock-down status for the status area"
 msgstr "noslēgt statusu statusa apgabalam"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:28
+#: ../main-menu/etc/slab.schemas.in.in.h:29
 msgid "lock-down status for the system area"
 msgstr "noslēgt statusu sistēmas apgabalam"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:29
+#: ../main-menu/etc/slab.schemas.in.in.h:30
 msgid "lock-down status for the user-specified apps section"
 msgstr "noslēgt statusu lietotāja norādītai apps sadaļai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:30
+#: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr "noslēgt statusu lietotāja norādītai dirs sadaļai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:31
+#: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
 msgstr "noslēgt statusu lietotāja norādītai docs sadaļai"
 
-#: ../main-menu/etc/slab.schemas.in.in.h:32
-msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
-msgstr "iespējamās vērtības = 0 [Aplikācijas], 1 [Dokumenti], 2 [Vietas]"
-
 #: ../main-menu/etc/slab.schemas.in.in.h:33
+msgid "possible values = 0 [Applications], 1 [Documents], 2 [Places]"
+msgstr "iespējamās vērtības = 0 [Lietotnes], 1 [Dokumenti], 2 [Vietas]"
+
+#: ../main-menu/etc/slab.schemas.in.in.h:34
 msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
-"iestatīt uz patiess, ja saitei uz aplikācijas pārlūku ir jābūt redzamai un "
+"iestatīt uz patiess, ja saitei uz lietotņu pārlūku ir jābūt redzamai un "
 "aktīvai."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:34
+#: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
 msgstr ""
 "iestatīt uz patiess, ja meklēšanas apgabalam ir jābūt redzamam un aktīvam."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:35
+#: ../main-menu/etc/slab.schemas.in.in.h:36
 msgid "set to true if the status area should be visible and active."
 msgstr ""
 "iestatīt uz patiess, ja statusa apgabalam ir jābūt redzamam un aktīvam."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:36
+#: ../main-menu/etc/slab.schemas.in.in.h:37
 msgid "set to true if the system area should be visible and active."
 msgstr ""
 "iestatīt uz patiess, ja sistēmas apgabalam ir jābūt redzamam un aktīvam."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:37
+#: ../main-menu/etc/slab.schemas.in.in.h:38
 msgid "set to true if the user is allowed to modify the list of system items."
 msgstr ""
 "iestatīt uz patiess, ja lietotājam ir atļauts modificēt sarakstu ar sistēmas "
 "ierakstiem."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:38
+#: ../main-menu/etc/slab.schemas.in.in.h:39
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" applications."
 msgstr ""
 "iestatīt uz patiess, ja lietotājam ir atļauts modificēt sarakstu ar "
-"lietotāja norādītām vai \"Favorīti\" aplikācijām."
+"lietotāja norādītām vai \"Favorīti\" lietotnēm."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:39
+#: ../main-menu/etc/slab.schemas.in.in.h:40
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" directories or \"Places\"."
@@ -574,7 +377,7 @@ msgstr ""
 "iestatīt uz patiess, ja lietotājam ir atļauts modificēt sarakstu ar "
 "lietotāja norādītām vai \"Favorīti\" direktorijām vai \"Vietas\"."
 
-#: ../main-menu/etc/slab.schemas.in.in.h:40
+#: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
 "set to true if the user is allowed to modify the list of user-specified or "
 "\"Favorite\" documents."
@@ -582,180 +385,360 @@ msgstr ""
 "iestatīt uz patiess, ja lietotājam ir atļauts modificēt sarakstu ar "
 "lietotāja norādītiem vai \"Favorīti\" dokumentiem."
 
-#: ../main-menu/src/hard-drive-status-tile.c:110
-msgid "Hard _Drive"
-msgstr "Cetais _disks"
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:1
+#| msgid "Recent Applications"
+msgid "Run Application"
+msgstr "Palaist lietotni"
 
-#: ../main-menu/src/hard-drive-status-tile.c:345
+#: ../main-menu/etc/trigger-panel-run-dialog.desktop.in.in.h:2
+msgid "Show the \"Run Application\" dialog"
+msgstr "Rādīt \"Palaist lietotni\" dialogu"
+
+#: ../main-menu/src/hard-drive-status-tile.c:99
+msgid "_System Monitor"
+msgstr "_Sistēmas pārraugs"
+
+#: ../main-menu/src/hard-drive-status-tile.c:212
 #, c-format
-msgid "%lluG"
-msgstr "%lluG"
+msgid "%.1fG"
+msgstr "%.1fG"
 
-#: ../main-menu/src/hard-drive-status-tile.c:347
+#: ../main-menu/src/hard-drive-status-tile.c:214
 #, c-format
-msgid "%lluM"
-msgstr "%lluM"
+msgid "%.1fM"
+msgstr "%.1fM"
 
-#: ../main-menu/src/hard-drive-status-tile.c:349
+#: ../main-menu/src/hard-drive-status-tile.c:216
 #, c-format
-msgid "%lluK"
-msgstr "%lluK"
+msgid "%.1fK"
+msgstr "%.1fK"
 
-#: ../main-menu/src/hard-drive-status-tile.c:351
+#: ../main-menu/src/hard-drive-status-tile.c:218
 #, c-format
-msgid "%llub"
-msgstr "%llub"
+msgid "%.1fb"
+msgstr "%.1fb"
 
-#: ../main-menu/src/hard-drive-status-tile.c:372
+#: ../main-menu/src/hard-drive-status-tile.c:239
 #, c-format
-msgid "%s Free / %s Total"
-msgstr "%s Brīvs / %s Kopā"
+#| msgid "%s Free / %s Total"
+msgid "Home: %s Free / %s"
+msgstr "Mājas: %s brīvs / %s"
 
-#: ../main-menu/src/main-menu-migration.c:97
-#: ../main-menu/src/main-menu-migration.c:219
+#: ../main-menu/src/main-menu-migration.c:126
+#: ../main-menu/src/main-menu-migration.c:248
+#: ../main-menu/etc/system-items.xbel.in.h:1
+msgid "Help"
+msgstr "Palīdzība"
+
+#: ../main-menu/src/main-menu-migration.c:130
+#: ../main-menu/src/main-menu-migration.c:250
+#: ../main-menu/etc/system-items.xbel.in.h:3
 msgid "Logout"
 msgstr "Izlogoties"
 
-#: ../main-menu/src/main-menu-migration.c:101
-#: ../main-menu/src/main-menu-migration.c:221
+#: ../main-menu/src/main-menu-migration.c:134
+#: ../main-menu/src/main-menu-migration.c:252
+#: ../main-menu/etc/system-items.xbel.in.h:4
 msgid "Shutdown"
 msgstr "Izslēgt"
 
-#: ../main-menu/src/main-menu-migration.c:159
+#: ../main-menu/src/main-menu-migration.c:192
+#: ../main-menu/etc/system-items.xbel.in.h:2
 msgid "Lock Screen"
 msgstr "Bloķēt ekrānu"
 
-#: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
-
-#: ../main-menu/src/main-menu-ui.c:2146
+#: ../main-menu/src/main-menu-ui.c:2421
 msgid "The GNOME Main Menu"
 msgstr "GNOME galvenā izvēlne"
 
-#: ../main-menu/src/network-status-tile.c:91
+#: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
 msgstr "Tīkls: Nekas"
 
-#: ../main-menu/src/network-status-tile.c:94
-#: ../main-menu/src/network-status-tile.c:199
+#: ../main-menu/src/network-status-tile.c:92
+#: ../main-menu/src/network-status-tile.c:205
 msgid "Click to configure network"
 msgstr "Klikšķināt, lai konfigurētu tīklu"
 
-#: ../main-menu/src/network-status-tile.c:198
+#: ../main-menu/src/network-status-tile.c:204
 msgid "Networ_k: None"
 msgstr "Tī_kls: Nekas"
 
-#: ../main-menu/src/network-status-tile.c:207
+#: ../main-menu/src/network-status-tile.c:213
+#: ../main-menu/src/network-status-tile.c:230
+#: ../main-menu/src/network-status-tile.c:238
 #, c-format
 msgid "Connected to: %s"
 msgstr "Savienots ar: %s"
 
-#: ../main-menu/src/network-status-tile.c:210
+#: ../main-menu/src/network-status-tile.c:216
 msgid "Networ_k: Wireless"
 msgstr "Tī_kls: Bezvadu"
 
-#: ../main-menu/src/network-status-tile.c:215
+#: ../main-menu/src/network-status-tile.c:221
 #, c-format
 msgid "Using ethernet (%s)"
 msgstr "Ethernet lietošana (%s)"
 
-#: ../main-menu/src/network-status-tile.c:219
+#: ../main-menu/src/network-status-tile.c:225
 msgid "Networ_k: Wired"
 msgstr "Tī_kls: Vadu"
 
-#: ../main-menu/src/network-status-tile.c:320
+#: ../main-menu/src/network-status-tile.c:233
+#| msgid "Networ_k: None"
+msgid "Networ_k: GSM"
+msgstr "Tī_kls: GSM"
+
+#: ../main-menu/src/network-status-tile.c:241
+#| msgid "Networ_k: None"
+msgid "Networ_k: CDMA"
+msgstr "Tī_kls: CDMA"
+
+#: ../main-menu/src/network-status-tile.c:344
 #, c-format
 msgid "Wireless Ethernet (%s)"
 msgstr "Bezvadu tīks ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:325
+#: ../main-menu/src/network-status-tile.c:349
 #, c-format
 msgid "Wired Ethernet (%s)"
 msgstr "Vadu tīkls ethernet (%s)"
 
-#: ../main-menu/src/network-status-tile.c:329
-#: ../main-menu/src/network-status-tile.c:339
+#: ../main-menu/src/network-status-tile.c:354
+#: ../main-menu/src/network-status-tile.c:359
+#, c-format
+#| msgid "Wired Ethernet (%s)"
+msgid "Mobile Ethernet (%s)"
+msgstr "Mobilais Ethernet (%s)"
+
+#: ../main-menu/src/network-status-tile.c:363
+#: ../main-menu/src/network-status-tile.c:373
+#, c-format
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: ../main-menu/src/network-status-tile.c:337
+#: ../main-menu/src/network-status-tile.c:371
 #, c-format
 msgid "%d Mb/s"
 msgstr "%d Mb/s"
 
-#: ../main-menu/src/slab-window.glade.h:1
-msgid "Applications"
-msgstr "Programmas"
-
-#: ../main-menu/src/slab-window.glade.h:2
+#: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
 msgstr "Dators"
 
-#: ../main-menu/src/slab-window.glade.h:3
+#: ../main-menu/src/slab-window.ui.h:1
+msgid "Applications"
+msgstr "Lietotnes"
+
+#: ../main-menu/src/slab-window.ui.h:2
 msgid "Documents"
 msgstr "Dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:4
+#: ../main-menu/src/slab-window.ui.h:3
 msgid "Favorite Applications"
-msgstr "Iecienītas aplikācijas"
+msgstr "Iecienītas lietotnes"
 
-#: ../main-menu/src/slab-window.glade.h:5
+#: ../main-menu/src/slab-window.ui.h:4
 msgid "Favorite Documents"
 msgstr "Iecienīti dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:6
+#: ../main-menu/src/slab-window.ui.h:5
 msgid "Favorite Places"
 msgstr "Iecienītas vietas"
 
-#: ../main-menu/src/slab-window.glade.h:8
+#: ../main-menu/src/slab-window.ui.h:7
 msgid "More Applications..."
-msgstr "Citas programmas..."
+msgstr "Citas lietotnes..."
 
-#: ../main-menu/src/slab-window.glade.h:9
+#: ../main-menu/src/slab-window.ui.h:8
 msgid "More Documents..."
 msgstr "Vairāk dokumentu..."
 
-#: ../main-menu/src/slab-window.glade.h:10
+#: ../main-menu/src/slab-window.ui.h:9
 msgid "More Places..."
 msgstr "Vairāk vietas..."
 
-#: ../main-menu/src/slab-window.glade.h:11
+#: ../main-menu/src/slab-window.ui.h:10
 msgid "Places"
 msgstr "Vietas"
 
-#: ../main-menu/src/slab-window.glade.h:12
+#: ../main-menu/src/slab-window.ui.h:11
 msgid "Recent Applications"
-msgstr "Nesen izmantotās aplikācijas"
+msgstr "Nesen izmantotās lietotnes"
 
-#: ../main-menu/src/slab-window.glade.h:13
+#: ../main-menu/src/slab-window.ui.h:12
 msgid "Recent Documents"
 msgstr "Nesen izmantotie dokumenti"
 
-#: ../main-menu/src/slab-window.glade.h:14
+#: ../main-menu/src/slab-window.ui.h:13
 msgid "Search:"
 msgstr "Meklēt:"
 
-#: ../main-menu/src/slab-window.glade.h:15
+#: ../main-menu/src/slab-window.ui.h:14
 msgid "Status"
 msgstr "Statuss"
 
-#: ../main-menu/src/slab-window.glade.h:16
+#: ../main-menu/src/slab-window.ui.h:15
 msgid "System"
 msgstr "Sistēma"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:114
+#: ../nautilus-main-menu/nautilus-main-menu.c:119
+msgid "Add to Favorites"
+msgstr "Pievienot Favorītiem"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Pievienot pašreizējo palaidēju favorītiem"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../nautilus-main-menu/nautilus-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Pievienot pašreizējo dokumentu favorītiem"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../nautilus-main-menu/nautilus-main-menu.c:129
+msgid "Remove from Favorites"
+msgstr "Izņemt no Favorītiem"
+
+#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../nautilus-main-menu/nautilus-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Aizvākt pašreizējo dokumentu no favorītiem"
+
+#~ msgid "<b>Start %s</b>"
+#~ msgstr "<b>Palaist %s</b>"
+
+#~ msgid "Upgrade"
+#~ msgstr "Uzlabojums"
+
+#~ msgid "Uninstall"
+#~ msgstr "Atinstalēt"
+
+#~ msgid "Remove from Startup Programs"
+#~ msgstr "Izņemt no sākuma programmām"
+
+#~ msgid "Add to Startup Programs"
+#~ msgstr "Pievienot sākuma programmām"
+
+#~ msgid ""
+#~ "<span size=\"large\"><b>No matches found.</b> </span><span>\n"
+#~ "\n"
+#~ " Your filter \"<b>%s</b>\" does not match any items.</span>"
+#~ msgstr ""
+#~ "<span size=\"large\"><b>Nekas nav atrasts.</b> </span><span>\n"
+#~ "\n"
+#~ " Jūsu filtrs \"<b>%s</b>\" neatbilst nevienam ierakstam.</span>"
+
+#~ msgid "Other"
+#~ msgstr "Cits"
+
+#~ msgid "New Spreadsheet"
+#~ msgstr "Jauna tabullapa"
+
+#~ msgid "New Document"
+#~ msgstr "Jauns dokuments"
+
+#~ msgid "Home"
+#~ msgstr "Mājas"
+
+#~ msgid "File System"
+#~ msgstr "Failu sistēma"
+
+#~ msgid "Network Servers"
+#~ msgstr "Tīkla serveri"
+
+#~ msgid "Search"
+#~ msgstr "Meklēt"
+
+#~ msgid "<b>Open</b>"
+#~ msgstr "<b> Atvērt</b>"
+
+#~ msgid "Rename..."
+#~ msgstr "Pārsaukt..."
+
+#~ msgid "Send To..."
+#~ msgstr "Sūtīt..."
+
+#~ msgid "Move to Trash"
+#~ msgstr "Pārvietot uz miskasti"
+
+#~ msgid "Delete"
+#~ msgstr "Dzēst"
+
+#~ msgid "Edited %m/%d/%Y"
+#~ msgstr "Rediģēts %m/%d/%Y"
+
+#~ msgid "<b>Open with \"%s\"</b>"
+#~ msgstr "<b>Atvērt ar \"%s\"</b>"
+
+#~ msgid "Open with Default Application"
+#~ msgstr "Atvērt ar noklusēto aplikāciju"
+
+#~ msgid "Open in File Manager"
+#~ msgstr "Atvērt datņu pārvaldniekā"
+
+#~ msgid "Unexpected attribute '%s' for element '%s'"
+#~ msgstr "Negaidīts atribūts '%s' elementam '%s'"
+
+#~ msgid "Attribute '%s' of element '%s' not found"
+#~ msgstr "Attribūts '%s' no elementa '%s' nav atrasts"
+
+#~ msgid "Unexpected tag '%s', tag '%s' expected"
+#~ msgstr "Negaidīts tags '%s', tags '%s' bija gaidīts"
+
+#~ msgid "Unexpected tag '%s' inside '%s'"
+#~ msgstr "Negaidīts tags '%s' iekš '%s'"
+
+#~ msgid "No valid bookmark file found in data dirs"
+#~ msgstr "Datu direktorijās nav atrasta neviena derīga grāmatzīmju datne"
+
+#~ msgid "A bookmark for URI '%s' already exists"
+#~ msgstr "Grāmatzīme priekš URI '%s' jau eksistē"
+
+#~ msgid "No bookmark found for URI '%s'"
+#~ msgstr "Priekš URI '%s' netika atrasta neviena grāmatzīme"
+
+#~ msgid "No MIME type defined in the bookmark for URI '%s'"
+#~ msgstr "Grāmatzīmē priekš URI '%s' nav definēts neviens MIME tips"
+
+#~ msgid "No private flag has been defined in bookmark for URI '%s'"
+#~ msgstr ""
+#~ "Neviens privilēģiju karodziņš netika definēts grāmatzīmē priekš URI '%s'"
+
+#~ msgid "No groups set in bookmark for URI '%s'"
+#~ msgstr "Grāmatzīmē nav iestatītas grupas priekš URI '%s'"
+
+#~ msgid "No application with name '%s' registered a bookmark for '%s'"
+#~ msgstr ""
+#~ "Neviena aplikācija ar nosaukumu '%s' nav reģistrējusi grāmatzīmi priekš '%"
+#~ "s'"
+
+#~ msgid "Find Now"
+#~ msgstr "Meklēt"
+
+#~ msgid "<b>Open %s</b>"
+#~ msgstr "<b> Atvērt %s</b>"
+
+#~ msgid "Remove from System Items"
+#~ msgstr "Aizvākt no sistēmas ierakstiem"
+
+#~ msgid "Hard _Drive"
+#~ msgstr "Cetais _disks"
+
+#~ msgid "%lluG"
+#~ msgstr "%lluG"
+
+#~ msgid "%lluM"
+#~ msgstr "%lluM"
+
+#~ msgid "%lluK"
+#~ msgstr "%lluK"
+
+#~ msgid "%llub"
+#~ msgstr "%llub"
+
+#~ msgid "gnome-lockscreen"
+#~ msgstr "gnome-lockscreen"
 
 #~ msgid "Control Center"
 #~ msgstr "Kontroles centrs"
