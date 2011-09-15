@@ -9,15 +9,16 @@
 # Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
 # Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&component=general\n"
-"POT-Creation-Date: 2010-06-28 13:19+0000\n"
-"PO-Revision-Date: 2010-06-29 05:30+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2010-06-29 18:41+0000\n"
+"PO-Revision-Date: 2011-09-15 16:30+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,7 +175,7 @@ msgid ""
 msgstr ""
 "Éste es el comando que se debe ejecutar al activar el elemento de menú «Abrir "
 "en el gestor de archivos». FILE_URI se sustituye con un URI correspondiente "
-"al nombre de directorio del archivo activado."
+"al nombre de la carpeta del archivo activado."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -247,9 +248,9 @@ msgstr ""
 "aplicaciones «Favoritas», 1, muestra la tabla de aplicaciones usadas "
 "recientemente, 2, muestra los documentos especificados por el usuario o "
 "documentos «Favoritos», 3, muestra la tabla de documentos usados "
-"recientemente, 4, muestra los directorios especificados como «Favoritos» por "
-"el usuario o la tabla de «Lugares», y 5, muestra la tabla de directorios "
-"usados recientemente o tabla «Lugares»."
+"recientemente, 4, muestra las carpetas especificadas como «Favoritos» por el "
+"usuario o la tabla de «Lugares», y 5, muestra la tabla de carpetas usadas "
+"recientemente o tabla «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:18
 msgid ""
@@ -264,12 +265,6 @@ msgid "determines the limit of items in the file-area."
 msgstr "determina los límites de elementos del área de archivos."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:20
-#| msgid ""
-#| "determines the limit of items in the file-area. The number favorite items "
-#| "is not limited. This limit applies to the number of recent items, i.e. "
-#| "the number of recent items displayed is limited to max_total_items - the "
-#| "number of favorite items. If the number of favorite items exceeds "
-#| "max_total_items - min_recent_items than this limit is ignored."
 msgid ""
 "determines the limit of items in the file-area. The number of favorite items "
 "is not limited. This limit applies to the number of recent items, i.e. the "
@@ -338,7 +333,7 @@ msgstr ""
 #: ../main-menu/etc/slab.schemas.in.in.h:31
 msgid "lock-down status for the user-specified dirs section"
 msgstr ""
-"estado de bloqueo para la sección de directorios especificadas por el usuario"
+"estado de bloqueo para la sección de carpetas especificadas por el usuario"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:32
 msgid "lock-down status for the user-specified docs section"
@@ -395,7 +390,7 @@ msgid ""
 "\"Favorite\" directories or \"Places\"."
 msgstr ""
 "establezca el valor a true si se permite al usuario modificar la lista de "
-"especificadas por el usuario o directorios «Favoritos» o «Lugares»."
+"especificadas por el usuario o carpetas «Favoritos» o «Lugares»."
 
 #: ../main-menu/etc/slab.schemas.in.in.h:41
 msgid ""
