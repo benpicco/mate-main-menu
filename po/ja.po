@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "main-menu&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-09 19:39+0000\n"
-"PO-Revision-Date: 2011-11-22 12:32+0900\n"
+"POT-Creation-Date: 2011-11-22 23:36+0000\n"
+"PO-Revision-Date: 2012-01-01 19:55+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: ../application-browser/etc/application-browser.desktop.in.in.h:1
 #: ../application-browser/src/application-browser.c:100
 msgid "Application Browser"
-msgstr "アプリケーションブラウザ "
+msgstr "アプリケーションブラウザー "
 
 #: ../application-browser/etc/application-browser.schemas.in.h:1
 msgid "Exit shell on add or remove action performed"
@@ -86,7 +86,7 @@ msgstr "新しいアプリケーション"
 
 #: ../application-browser/src/application-browser.c:98
 msgid "Filter"
-msgstr "フィルタ"
+msgstr "フィルター"
 
 #: ../application-browser/src/application-browser.c:98
 msgid "Groups"
@@ -98,7 +98,7 @@ msgstr "アプリケーションアクション "
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
-msgstr "デフォルトメニューとアプリケーションブラウザ"
+msgstr "デフォルトメニューとアプリケーションブラウザー"
 
 #: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2423 ../main-menu/src/main-menu.c:66
@@ -135,11 +135,11 @@ msgstr "YaST2ネットワークデバイスユーティリティ用の.desktop�
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
 msgid ".desktop file for the file browser"
-msgstr "ファイルブラウザ用の.desktopファイル"
+msgstr "ファイルブラウザー用の.desktopファイル"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnomeシステムモニタ用の.desktopファイル"
+msgstr "gnomeシステムモニター用の.desktopファイル"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -147,15 +147,15 @@ msgstr "net設定ツール用.desktopファイル"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:6
 msgid ".desktop path for the application browser"
-msgstr "アプリケーションブラウザ用の.desktopパス"
+msgstr "アプリケーションブラウザー用の.desktopパス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:7
 msgid ""
 "This is the command to execute when the \"Open in File Manager\" menu item "
 "is activated."
 msgstr ""
-"このコマンドは、「ファイルマネージャで開く」メニュー項目が有効な場合に実行し"
-"ます。"
+"このコマンドは、「ファイルマネージャーで開く」メニュー項目が有効な場合に実行"
+"します。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:8
 msgid ""
@@ -163,8 +163,9 @@ msgid ""
 "is activated. FILE_URI is replaced with a uri corresponding to the dirname "
 "of the activated file."
 msgstr ""
-"このコマンドは「ファイルマネージャで開く」メニュー項目が有効な場合に実行しま"
-"す。 FILE_URIは有効ファイルのディレクトリ名に該当するURIに置き換えられます。"
+"このコマンドは「ファイルマネージャーで開く」メニュー項目が有効な場合に実行し"
+"ます。 FILE_URIは有効ファイルのディレクトリ名に該当するURIに置き換えられま"
+"す。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:9
 msgid ""
@@ -279,7 +280,7 @@ msgstr "ファイルエリアのロックダウン設定"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:26
 msgid "lock-down status for the application browser link"
-msgstr "アプリケーションブラウザリンクのロックダウンステータス"
+msgstr "アプリケーションブラウザーリンクのロックダウンステータス"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:27
 msgid "lock-down status for the search area"
@@ -317,8 +318,8 @@ msgid ""
 "set to true if the link to the application browser should be visible and "
 "active."
 msgstr ""
-"アプリケーションブラウザへのリンクが表示されていて有効な場合はTRUEに設定され"
-"ます。"
+"アプリケーションブラウザーへのリンクが表示されていて有効な場合はTRUEに設定さ"
+"れます。"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:35
 msgid "set to true if the search area should be visible and active."
@@ -498,7 +499,7 @@ msgstr "%d Mb/s"
 
 #: ../main-menu/src/slab-button.ui.h:1
 msgid "Computer"
-msgstr "コンピュータ"
+msgstr "コンピューター"
 
 #: ../main-menu/src/slab-window.ui.h:1
 msgid "Applications"
