@@ -32,7 +32,7 @@ dnl ==============================================
 
 GLIB_REQUIRED=2.16.0
 GTK_REQUIRED=2.18
-SLAB_REQUIRED=2.29.0
+SLAB_REQUIRED=1.4.0
 
 AM_PATH_GLIB_2_0($GLIB_REQUIRED,,,gobject)
 
@@ -41,7 +41,7 @@ COMMON_MODULES="glib-2.0 >= $GLIB_REQUIRED	\
 		gobject-2.0 			\
 		gtk+-2.0 >= $GTK_REQUIRED 	\
 		gdk-2.0				\
-		libslab >= $SLAB_REQUIRED"
+		libslab-mate >= $SLAB_REQUIRED"
 
 
 PKG_CHECK_MODULES(APPLICATION_BROWSER, [ $COMMON_MODULES mate-desktop-2.0 unique-1.0 ])
