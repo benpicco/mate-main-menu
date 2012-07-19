@@ -17,10 +17,10 @@ DIE=0
 
 rm -f .using-mate-libs-package
 
-if ! which mate-autogen.sh ; then
+if ! which mate-autogen ; then
   echo "You need to install the mate-common module and make"
-  echo "sure the mate-autogen.sh script is in your \$PATH."
+  echo "sure the mate-autogen script is in your \$PATH."
   exit 1
 fi
 
-REQUIRED_AUTOMAKE_VERSION=1.9 . mate-autogen.sh
+REQUIRED_AUTOMAKE_VERSION=1.9 . mate-autogen
