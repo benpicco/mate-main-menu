@@ -12,7 +12,7 @@ bin_PROGRAMS = trigger-panel-run-dialog
 
 AM_CPPFLAGS =								\
 	-DDATADIR=\""$(datadir)"\"					\
-	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
+	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
 main_menu_SOURCES =							\
 	main-menu.c							\

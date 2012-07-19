@@ -1,4 +1,4 @@
-# Italian translation of gnome-main-menu.
+# Italian translation of mate-main-menu.
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002 SuSE Linux AG.
 # Copyright (C) 1999, 2000, 2001 SuSE GmbH.
@@ -9,7 +9,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu 0.9.11\n"
+"Project-Id-Version: mate-main-menu 0.9.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-08 14:44+0100\n"
 "PO-Revision-Date: 2008-10-21 15:41+0200\n"
@@ -118,14 +118,14 @@ msgid "Uninstall"
 msgstr "Disinstalla"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../caja-main-menu/caja-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "Rimuovi dai preferiti"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "Aggiungi ai preferiti"
 
@@ -290,28 +290,28 @@ msgstr "<b>Apri %s</b>"
 msgid "Remove from System Items"
 msgstr "Rimuovi dagli oggetti di sistema"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Menù predefinito e esploratore di applicazioni"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "Menù principale di GNOME"
+msgid "MATE Main Menu"
+msgstr "Menù principale di MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Menù principale predefinito di GNOME"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Menù principale predefinito di MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_Informazioni"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Apri menù"
 
@@ -324,8 +324,8 @@ msgid ".desktop file for the file browser"
 msgstr "File .desktop per l'esploratore dei file"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "File .desktop per gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "File .desktop per mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -593,12 +593,12 @@ msgid "Home: %s Free / %s"
 msgstr "Home: %s Disponibile / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "Menù principale di GNOME"
+msgid "The MATE Main Menu"
+msgstr "Menù principale di MATE"
 
 # TLABEL modules/dialup/dialup.ycp:1187
 #: ../main-menu/src/network-status-tile.c:91
@@ -733,15 +733,15 @@ msgstr "Stato"
 msgid "System"
 msgstr "Sistema"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "Aggiungi l'attuale lanciatore ai preferiti"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "Aggiungi l'attuale documento ai preferiti"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../caja-main-menu/caja-main-menu.c:131
+#: ../caja-main-menu/caja-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "Rimuovi l'attuale documenti dai preferiti"

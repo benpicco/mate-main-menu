@@ -16,8 +16,8 @@ run_dialog (GdkDisplay *display, GdkScreen  *screen, guint32 timestamp)
 		screen = gdk_display_get_default_screen (display);
 	root = GDK_WINDOW_XWINDOW (gdk_screen_get_root_window (screen));
 	
-	action_atom = gdk_x11_get_xatom_by_name_for_display (display, "_GNOME_PANEL_ACTION");
-	atom = gdk_x11_get_xatom_by_name_for_display (display, "_GNOME_PANEL_ACTION_RUN_DIALOG");
+	action_atom = gdk_x11_get_xatom_by_name_for_display (display, "_MATE_PANEL_ACTION");
+	atom = gdk_x11_get_xatom_by_name_for_display (display, "_MATE_PANEL_ACTION_RUN_DIALOG");
 	
 	ev.type = ClientMessage;
 	ev.window = root;

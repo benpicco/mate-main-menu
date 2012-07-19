@@ -22,7 +22,7 @@
 #define __MAIN_MENU_COMMON_H__
 
 #include <gtk/gtk.h>
-#include <panel-applet.h>
+#include <mate-panel-applet.h>
 
 G_BEGIN_DECLS
 
@@ -43,7 +43,7 @@ typedef struct {
 
 GType main_menu_ui_get_type (void);
 
-MainMenuUI *main_menu_ui_new (PanelApplet *applet);
+MainMenuUI *main_menu_ui_new (MatePanelApplet *applet);
 
 G_END_DECLS
 

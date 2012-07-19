@@ -24,7 +24,7 @@
 #	include <config.h>
 #endif
 
-#include <panel-applet.h>
+#include <mate-panel-applet.h>
 #include <cairo.h>
 #include <string.h>
 #include <libxml/parser.h>
@@ -46,36 +46,36 @@
 
 #include "tomboykeybinder.h"
 
-#define ROOT_GCONF_DIR             "/desktop/gnome/applications/main-menu"
-#define CURRENT_PAGE_GCONF_KEY     ROOT_GCONF_DIR "/file-area/file_class"
-#define URGENT_CLOSE_GCONF_KEY     ROOT_GCONF_DIR "/urgent_close"
-#define MAX_TOTAL_ITEMS_GCONF_KEY  ROOT_GCONF_DIR "/file-area/max_total_items"
-#define MIN_RECENT_ITEMS_GCONF_KEY ROOT_GCONF_DIR "/file-area/min_recent_items"
-#define APP_BROWSER_GCONF_KEY      ROOT_GCONF_DIR "/application_browser"
-#define FILE_BROWSER_GCONF_KEY     ROOT_GCONF_DIR "/file_browser"
-#define SEARCH_CMD_GCONF_KEY       ROOT_GCONF_DIR "/search_command"
-#define FILE_MGR_OPEN_GCONF_KEY    ROOT_GCONF_DIR "/file-area/file_mgr_open_cmd"
-#define APP_BLACKLIST_GCONF_KEY    ROOT_GCONF_DIR "/file-area/file_blacklist"
+#define ROOT_MATECONF_DIR             "/desktop/mate/applications/main-menu"
+#define CURRENT_PAGE_MATECONF_KEY     ROOT_MATECONF_DIR "/file-area/file_class"
+#define URGENT_CLOSE_MATECONF_KEY     ROOT_MATECONF_DIR "/urgent_close"
+#define MAX_TOTAL_ITEMS_MATECONF_KEY  ROOT_MATECONF_DIR "/file-area/max_total_items"
+#define MIN_RECENT_ITEMS_MATECONF_KEY ROOT_MATECONF_DIR "/file-area/min_recent_items"
+#define APP_BROWSER_MATECONF_KEY      ROOT_MATECONF_DIR "/application_browser"
+#define FILE_BROWSER_MATECONF_KEY     ROOT_MATECONF_DIR "/file_browser"
+#define SEARCH_CMD_MATECONF_KEY       ROOT_MATECONF_DIR "/search_command"
+#define FILE_MGR_OPEN_MATECONF_KEY    ROOT_MATECONF_DIR "/file-area/file_mgr_open_cmd"
+#define APP_BLACKLIST_MATECONF_KEY    ROOT_MATECONF_DIR "/file-area/file_blacklist"
 
-#define LOCKDOWN_GCONF_DIR           ROOT_GCONF_DIR "/lock-down"
-#define MORE_LINK_VIS_GCONF_KEY      LOCKDOWN_GCONF_DIR "/application_browser_link_visible"
-#define SEARCH_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/search_area_visible"
-#define STATUS_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/status_area_visible"
-#define SYSTEM_VIS_GCONF_KEY         LOCKDOWN_GCONF_DIR "/system_area_visible"
-#define SHOWABLE_TYPES_GCONF_KEY     LOCKDOWN_GCONF_DIR "/showable_file_types"
-#define MODIFIABLE_SYSTEM_GCONF_KEY  LOCKDOWN_GCONF_DIR "/user_modifiable_system_area"
-#define MODIFIABLE_APPS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_apps"
-#define MODIFIABLE_DOCS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_docs"
-#define MODIFIABLE_DIRS_GCONF_KEY    LOCKDOWN_GCONF_DIR "/user_modifiable_dirs"
-#define DISABLE_TERMINAL_GCONF_KEY   "/desktop/gnome/lockdown/disable_command_line"
-#define PANEL_LOCKDOWN_GCONF_DIR     "/apps/panel/global"
-#define DISABLE_LOGOUT_GCONF_KEY     PANEL_LOCKDOWN_GCONF_DIR "/disable_log_out"
-#define DISABLE_LOCKSCREEN_GCONF_KEY PANEL_LOCKDOWN_GCONF_DIR "/disable_lock_screen"
+#define LOCKDOWN_MATECONF_DIR           ROOT_MATECONF_DIR "/lock-down"
+#define MORE_LINK_VIS_MATECONF_KEY      LOCKDOWN_MATECONF_DIR "/application_browser_link_visible"
+#define SEARCH_VIS_MATECONF_KEY         LOCKDOWN_MATECONF_DIR "/search_area_visible"
+#define STATUS_VIS_MATECONF_KEY         LOCKDOWN_MATECONF_DIR "/status_area_visible"
+#define SYSTEM_VIS_MATECONF_KEY         LOCKDOWN_MATECONF_DIR "/system_area_visible"
+#define SHOWABLE_TYPES_MATECONF_KEY     LOCKDOWN_MATECONF_DIR "/showable_file_types"
+#define MODIFIABLE_SYSTEM_MATECONF_KEY  LOCKDOWN_MATECONF_DIR "/user_modifiable_system_area"
+#define MODIFIABLE_APPS_MATECONF_KEY    LOCKDOWN_MATECONF_DIR "/user_modifiable_apps"
+#define MODIFIABLE_DOCS_MATECONF_KEY    LOCKDOWN_MATECONF_DIR "/user_modifiable_docs"
+#define MODIFIABLE_DIRS_MATECONF_KEY    LOCKDOWN_MATECONF_DIR "/user_modifiable_dirs"
+#define DISABLE_TERMINAL_MATECONF_KEY   "/desktop/mate/lockdown/disable_command_line"
+#define PANEL_LOCKDOWN_MATECONF_DIR     "/apps/panel/global"
+#define DISABLE_LOGOUT_MATECONF_KEY     PANEL_LOCKDOWN_MATECONF_DIR "/disable_log_out"
+#define DISABLE_LOCKSCREEN_MATECONF_KEY PANEL_LOCKDOWN_MATECONF_DIR "/disable_lock_screen"
 
 G_DEFINE_TYPE (MainMenuUI, main_menu_ui, G_TYPE_OBJECT)
 
 typedef struct {
-	PanelApplet *panel_applet;
+	MatePanelApplet *mate_panel_applet;
 	GtkWidget   *panel_about_dialog;
 
 	GtkBuilder *main_menu_ui;
@@ -119,20 +119,20 @@ typedef struct {
 	GFileMonitor *recently_used_store_monitor;
 	guint recently_used_timeout_id;
 
-	guint search_cmd_gconf_mntr_id;
-	guint current_page_gconf_mntr_id;
-	guint more_link_vis_gconf_mntr_id;
-	guint search_vis_gconf_mntr_id;
-	guint status_vis_gconf_mntr_id;
-	guint system_vis_gconf_mntr_id;
-	guint showable_types_gconf_mntr_id;
-	guint modifiable_system_gconf_mntr_id;
-	guint modifiable_apps_gconf_mntr_id;
-	guint modifiable_docs_gconf_mntr_id;
-	guint modifiable_dirs_gconf_mntr_id;
-	guint disable_term_gconf_mntr_id;
-	guint disable_logout_gconf_mntr_id;
-	guint disable_lockscreen_gconf_mntr_id;
+	guint search_cmd_mateconf_mntr_id;
+	guint current_page_mateconf_mntr_id;
+	guint more_link_vis_mateconf_mntr_id;
+	guint search_vis_mateconf_mntr_id;
+	guint status_vis_mateconf_mntr_id;
+	guint system_vis_mateconf_mntr_id;
+	guint showable_types_mateconf_mntr_id;
+	guint modifiable_system_mateconf_mntr_id;
+	guint modifiable_apps_mateconf_mntr_id;
+	guint modifiable_docs_mateconf_mntr_id;
+	guint modifiable_dirs_mateconf_mntr_id;
+	guint disable_term_mateconf_mntr_id;
+	guint disable_logout_mateconf_mntr_id;
+	guint disable_lockscreen_mateconf_mntr_id;
 
 	gboolean ptr_is_grabbed;
 	gboolean kbd_is_grabbed;
@@ -202,13 +202,13 @@ static void     tile_table_notify_cb              (GObject *, GParamSpec *, gpoi
 static void     gtk_table_notify_cb               (GObject *, GParamSpec *, gpointer);
 static void     tile_action_triggered_cb          (Tile *, TileEvent *, TileAction *, gpointer);
 static void     more_buttons_clicked_cb            (GtkButton *, gpointer);
-static void     search_cmd_notify_cb              (GConfClient *, guint, GConfEntry *, gpointer);
-static void     current_page_notify_cb            (GConfClient *, guint, GConfEntry *, gpointer);
-static void     lockdown_notify_cb                (GConfClient *, guint, GConfEntry *, gpointer);
-static void     panel_menu_open_cb                (BonoboUIComponent *, gpointer, const gchar *);
-static void     panel_menu_about_cb               (BonoboUIComponent *, gpointer, const gchar *);
-static void     panel_applet_change_orient_cb     (PanelApplet *, PanelAppletOrient, gpointer);
-static void     panel_applet_change_background_cb (PanelApplet *, PanelAppletBackgroundType, GdkColor *,
+static void     search_cmd_notify_cb              (MateConfClient *, guint, MateConfEntry *, gpointer);
+static void     current_page_notify_cb            (MateConfClient *, guint, MateConfEntry *, gpointer);
+static void     lockdown_notify_cb                (MateConfClient *, guint, MateConfEntry *, gpointer);
+static void     panel_menu_open_cb                (MateComponentUIComponent *, gpointer, const gchar *);
+static void     panel_menu_about_cb               (MateComponentUIComponent *, gpointer, const gchar *);
+static void     mate_panel_applet_change_orient_cb     (MatePanelApplet *, MatePanelAppletOrient, gpointer);
+static void     mate_panel_applet_change_background_cb (MatePanelApplet *, MatePanelAppletBackgroundType, GdkColor *,
                                                    GdkPixmap * pixmap, gpointer);
 static void     slab_window_tomboy_bindkey_cb     (gchar *, gpointer);
 static void     search_tomboy_bindkey_cb          (gchar *, gpointer);
@@ -219,10 +219,10 @@ static void     volume_monitor_mount_cb           (GVolumeMonitor *, GMount *, g
 
 static GdkFilterReturn slab_gdk_message_filter (GdkXEvent *, GdkEvent *, gpointer);
 
-static const BonoboUIVerb applet_bonobo_verbs [] = {
-	BONOBO_UI_UNSAFE_VERB ("MainMenuOpen",  panel_menu_open_cb),
-	BONOBO_UI_UNSAFE_VERB ("MainMenuAbout", panel_menu_about_cb),
-	BONOBO_UI_VERB_END
+static const MateComponentUIVerb applet_matecomponent_verbs [] = {
+	MATECOMPONENT_UI_UNSAFE_VERB ("MainMenuOpen",  panel_menu_open_cb),
+	MATECOMPONENT_UI_UNSAFE_VERB ("MainMenuAbout", panel_menu_about_cb),
+	MATECOMPONENT_UI_VERB_END
 };
 
 static const gchar *main_menu_authors [] = {
@@ -311,7 +311,7 @@ main_menu_delayed_setup (MainMenuUI *this)
 }
 
 MainMenuUI *
-main_menu_ui_new (PanelApplet *applet)
+main_menu_ui_new (MatePanelApplet *applet)
 {
 	MainMenuUI        *this;
 	MainMenuUIPrivate *priv;
@@ -322,7 +322,7 @@ main_menu_ui_new (PanelApplet *applet)
 	this = g_object_new (MAIN_MENU_UI_TYPE, NULL);
 	priv = PRIVATE (this);
 
-	priv->panel_applet = applet;
+	priv->mate_panel_applet = applet;
 
 	window_ui_path = g_build_filename (DATADIR, PACKAGE, "slab-window.ui", NULL);
 	button_ui_path = g_build_filename (DATADIR, PACKAGE, "slab-button.ui", NULL);
@@ -356,7 +356,7 @@ main_menu_ui_init (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
-	priv->panel_applet                               = NULL;
+	priv->mate_panel_applet                               = NULL;
 	priv->panel_about_dialog                         = NULL;
 
 	priv->main_menu_ui                               = NULL;
@@ -417,20 +417,20 @@ main_menu_ui_init (MainMenuUI *this)
 
 	priv->volume_mon                                 = NULL;
 
-	priv->search_cmd_gconf_mntr_id                   = 0;
-	priv->current_page_gconf_mntr_id                 = 0;
-	priv->more_link_vis_gconf_mntr_id                = 0;
-	priv->search_vis_gconf_mntr_id                   = 0;
-	priv->status_vis_gconf_mntr_id                   = 0;
-	priv->system_vis_gconf_mntr_id                   = 0;
-	priv->showable_types_gconf_mntr_id               = 0;
-	priv->modifiable_system_gconf_mntr_id            = 0;
-	priv->modifiable_apps_gconf_mntr_id              = 0;
-	priv->modifiable_docs_gconf_mntr_id              = 0;
-	priv->modifiable_dirs_gconf_mntr_id              = 0;
-	priv->disable_term_gconf_mntr_id                 = 0;
-	priv->disable_logout_gconf_mntr_id               = 0;
-	priv->disable_lockscreen_gconf_mntr_id           = 0;
+	priv->search_cmd_mateconf_mntr_id                   = 0;
+	priv->current_page_mateconf_mntr_id                 = 0;
+	priv->more_link_vis_mateconf_mntr_id                = 0;
+	priv->search_vis_mateconf_mntr_id                   = 0;
+	priv->status_vis_mateconf_mntr_id                   = 0;
+	priv->system_vis_mateconf_mntr_id                   = 0;
+	priv->showable_types_mateconf_mntr_id               = 0;
+	priv->modifiable_system_mateconf_mntr_id            = 0;
+	priv->modifiable_apps_mateconf_mntr_id              = 0;
+	priv->modifiable_docs_mateconf_mntr_id              = 0;
+	priv->modifiable_dirs_mateconf_mntr_id              = 0;
+	priv->disable_term_mateconf_mntr_id                 = 0;
+	priv->disable_logout_mateconf_mntr_id               = 0;
+	priv->disable_lockscreen_mateconf_mntr_id           = 0;
 
 	priv->ptr_is_grabbed                             = FALSE;
 	priv->kbd_is_grabbed                             = FALSE;
@@ -441,7 +441,7 @@ main_menu_ui_finalize (GObject *g_obj)
 {
 	MainMenuUIPrivate *priv = PRIVATE (g_obj);
 
-	GConfClient *client;
+	MateConfClient *client;
 
 	gint i;
 
@@ -458,23 +458,23 @@ main_menu_ui_finalize (GObject *g_obj)
 		g_object_unref (priv->panel_buttons [i]);
 	}
 
-	libslab_gconf_notify_remove (priv->search_cmd_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->current_page_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->more_link_vis_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->search_vis_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->status_vis_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->system_vis_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->showable_types_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->modifiable_system_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->modifiable_apps_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->modifiable_docs_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->modifiable_dirs_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->disable_term_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->disable_logout_gconf_mntr_id);
-	libslab_gconf_notify_remove (priv->disable_lockscreen_gconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->search_cmd_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->current_page_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->more_link_vis_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->search_vis_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->status_vis_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->system_vis_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->showable_types_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->modifiable_system_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->modifiable_apps_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->modifiable_docs_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->modifiable_dirs_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->disable_term_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->disable_logout_mateconf_mntr_id);
+	libslab_mateconf_notify_remove (priv->disable_lockscreen_mateconf_mntr_id);
 
-	client  = gconf_client_get_default ();
-	gconf_client_remove_dir (client, PANEL_LOCKDOWN_GCONF_DIR, NULL);
+	client  = mateconf_client_get_default ();
+	mateconf_client_remove_dir (client, PANEL_LOCKDOWN_MATECONF_DIR, NULL);
 	g_object_unref (client);
 
 	for (i = 0; i < BOOKMARK_STORE_N_TYPES; ++i)
@@ -546,21 +546,21 @@ create_panel_button (MainMenuUI *this)
 
 	gtk_widget_destroy (button_root);
 
-	panel_applet_set_flags (priv->panel_applet, PANEL_APPLET_EXPAND_MINOR);
+	mate_panel_applet_set_flags (priv->mate_panel_applet, MATE_PANEL_APPLET_EXPAND_MINOR);
 
 	reorient_panel_button (this);
 
-	panel_applet_setup_menu_from_file (
-		priv->panel_applet, NULL, "GNOME_MainMenu_ContextMenu.xml",
-		NULL, applet_bonobo_verbs, this);
+	mate_panel_applet_setup_menu_from_file (
+		priv->mate_panel_applet, NULL, "MATE_MainMenu_ContextMenu.xml",
+		NULL, applet_matecomponent_verbs, this);
 
 	g_signal_connect (
-		G_OBJECT (priv->panel_applet), "change_orient",
-		G_CALLBACK (panel_applet_change_orient_cb), this);
+		G_OBJECT (priv->mate_panel_applet), "change_orient",
+		G_CALLBACK (mate_panel_applet_change_orient_cb), this);
 
 	g_signal_connect (
-		G_OBJECT (priv->panel_applet), "change_background",
-		G_CALLBACK (panel_applet_change_background_cb), this);
+		G_OBJECT (priv->mate_panel_applet), "change_background",
+		G_CALLBACK (mate_panel_applet_change_background_cb), this);
 }
 
 static GtkWidget *
@@ -638,8 +638,8 @@ create_search_section (MainMenuUI *this)
 
 	set_search_section_visible (this);
 
-	priv->search_cmd_gconf_mntr_id = libslab_gconf_notify_add (
-		SEARCH_CMD_GCONF_KEY, search_cmd_notify_cb, this);
+	priv->search_cmd_mateconf_mntr_id = libslab_mateconf_notify_add (
+		SEARCH_CMD_MATECONF_KEY, search_cmd_notify_cb, this);
 }
 
 static void
@@ -679,8 +679,8 @@ create_file_section (MainMenuUI *this)
 			G_CALLBACK (page_button_clicked_cb), this);
 	}
 
-	priv->current_page_gconf_mntr_id = libslab_gconf_notify_add (
-		CURRENT_PAGE_GCONF_KEY, current_page_notify_cb, this);
+	priv->current_page_mateconf_mntr_id = libslab_mateconf_notify_add (
+		CURRENT_PAGE_MATECONF_KEY, current_page_notify_cb, this);
 
 	priv->table_sections [USER_APPS_TABLE] =
         get_widget (priv, "user-apps-section");
@@ -942,36 +942,36 @@ setup_lock_down (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
-	GConfClient *client;
+	MateConfClient *client;
 
-	client = gconf_client_get_default ();
-	gconf_client_add_dir (client, PANEL_LOCKDOWN_GCONF_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
+	client = mateconf_client_get_default ();
+	mateconf_client_add_dir (client, PANEL_LOCKDOWN_MATECONF_DIR, MATECONF_CLIENT_PRELOAD_NONE, NULL);
 	g_object_unref (client);
 
-	priv->more_link_vis_gconf_mntr_id = libslab_gconf_notify_add (
-		MORE_LINK_VIS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->search_vis_gconf_mntr_id = libslab_gconf_notify_add (
-		SEARCH_VIS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->status_vis_gconf_mntr_id = libslab_gconf_notify_add (
-		STATUS_VIS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->system_vis_gconf_mntr_id = libslab_gconf_notify_add (
-		SYSTEM_VIS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->showable_types_gconf_mntr_id = libslab_gconf_notify_add (
-		SHOWABLE_TYPES_GCONF_KEY, lockdown_notify_cb, this);
-	priv->modifiable_system_gconf_mntr_id = libslab_gconf_notify_add (
-		MODIFIABLE_SYSTEM_GCONF_KEY, lockdown_notify_cb, this);
-	priv->modifiable_apps_gconf_mntr_id = libslab_gconf_notify_add (
-		MODIFIABLE_APPS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->modifiable_docs_gconf_mntr_id = libslab_gconf_notify_add (
-		MODIFIABLE_DOCS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->modifiable_dirs_gconf_mntr_id = libslab_gconf_notify_add (
-		MODIFIABLE_DIRS_GCONF_KEY, lockdown_notify_cb, this);
-	priv->disable_term_gconf_mntr_id = libslab_gconf_notify_add (
-		DISABLE_TERMINAL_GCONF_KEY, lockdown_notify_cb, this);
-	priv->disable_logout_gconf_mntr_id = libslab_gconf_notify_add (
-		DISABLE_LOGOUT_GCONF_KEY, lockdown_notify_cb, this);
-	priv->disable_lockscreen_gconf_mntr_id = libslab_gconf_notify_add (
-		DISABLE_LOCKSCREEN_GCONF_KEY, lockdown_notify_cb, this);
+	priv->more_link_vis_mateconf_mntr_id = libslab_mateconf_notify_add (
+		MORE_LINK_VIS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->search_vis_mateconf_mntr_id = libslab_mateconf_notify_add (
+		SEARCH_VIS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->status_vis_mateconf_mntr_id = libslab_mateconf_notify_add (
+		STATUS_VIS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->system_vis_mateconf_mntr_id = libslab_mateconf_notify_add (
+		SYSTEM_VIS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->showable_types_mateconf_mntr_id = libslab_mateconf_notify_add (
+		SHOWABLE_TYPES_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->modifiable_system_mateconf_mntr_id = libslab_mateconf_notify_add (
+		MODIFIABLE_SYSTEM_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->modifiable_apps_mateconf_mntr_id = libslab_mateconf_notify_add (
+		MODIFIABLE_APPS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->modifiable_docs_mateconf_mntr_id = libslab_mateconf_notify_add (
+		MODIFIABLE_DOCS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->modifiable_dirs_mateconf_mntr_id = libslab_mateconf_notify_add (
+		MODIFIABLE_DIRS_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->disable_term_mateconf_mntr_id = libslab_mateconf_notify_add (
+		DISABLE_TERMINAL_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->disable_logout_mateconf_mntr_id = libslab_mateconf_notify_add (
+		DISABLE_LOGOUT_MATECONF_KEY, lockdown_notify_cb, this);
+	priv->disable_lockscreen_mateconf_mntr_id = libslab_mateconf_notify_add (
+		DISABLE_LOCKSCREEN_MATECONF_KEY, lockdown_notify_cb, this);
 }
 
 static char *
@@ -1088,10 +1088,10 @@ item_to_user_doc_tile (BookmarkItem *item, gpointer data)
 	{
 		if (! strcmp (item->title, "BLANK_SPREADSHEET"))
 			return TILE (document_tile_new_force_icon (item->uri, item->mime_type,
-				item->mtime, "gnome-mime-application-vnd.oasis.opendocument.spreadsheet-template"));
+				item->mtime, "mate-mime-application-vnd.oasis.opendocument.spreadsheet-template"));
 		else
 			return TILE (document_tile_new_force_icon (item->uri, item->mime_type,
-				item->mtime, "gnome-mime-application-vnd.oasis.opendocument.text-template"));
+				item->mtime, "mate-mime-application-vnd.oasis.opendocument.text-template"));
 	}
 	return TILE (document_tile_new (BOOKMARK_STORE_USER_DOCS, item->uri, item->mime_type, item->mtime));
 }
@@ -1175,7 +1175,7 @@ item_to_system_tile (BookmarkItem *item, gpointer data)
 		basename = item->uri;
 
 	if (! libslab_strcmp (basename, "control-center.desktop"))
-		tile = TILE (system_tile_new ("gnomecc.desktop", translated_title));
+		tile = TILE (system_tile_new ("matecc.desktop", translated_title));
 	else if (! libslab_strcmp (basename, "zen-installer.desktop"))
 		tile = TILE (system_tile_new ("package-manager.desktop", translated_title));
 	*/
@@ -1254,27 +1254,27 @@ app_is_in_blacklist (const gchar *uri)
 	GList *node;
 
 
-	disable_term = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_TERMINAL_GCONF_KEY));
+	disable_term = GPOINTER_TO_INT (libslab_get_mateconf_value (DISABLE_TERMINAL_MATECONF_KEY));
 	blacklisted  = disable_term && libslab_desktop_item_is_a_terminal (uri);
 
 	if (blacklisted)
 		return TRUE;
 
-	disable_logout = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_LOGOUT_GCONF_KEY));
+	disable_logout = GPOINTER_TO_INT (libslab_get_mateconf_value (DISABLE_LOGOUT_MATECONF_KEY));
 	blacklisted    = disable_logout && libslab_desktop_item_is_logout (uri);
 
 	if (blacklisted)
 		return TRUE;
 
-	disable_lockscreen = GPOINTER_TO_INT (libslab_get_gconf_value (DISABLE_LOCKSCREEN_GCONF_KEY));
-	/* Dont allow lock screen if root - same as gnome-panel */
+	disable_lockscreen = GPOINTER_TO_INT (libslab_get_mateconf_value (DISABLE_LOCKSCREEN_MATECONF_KEY));
+	/* Dont allow lock screen if root - same as mate-panel */
 	blacklisted = libslab_desktop_item_is_lockscreen (uri) &&
 		( (geteuid () == 0) || disable_lockscreen );
 
 	if (blacklisted)
 		return TRUE;
 
-	blacklist = libslab_get_gconf_value (APP_BLACKLIST_GCONF_KEY);
+	blacklist = libslab_get_mateconf_value (APP_BLACKLIST_MATECONF_KEY);
 
 	for (node = blacklist; node; node = node->next) {
 		if (! blacklisted && strstr (uri, (gchar *) node->data))
@@ -1297,7 +1297,7 @@ select_page (MainMenuUI *this)
 	gint curr_page;
 
 
-	curr_page = GPOINTER_TO_INT (libslab_get_gconf_value (CURRENT_PAGE_GCONF_KEY));
+	curr_page = GPOINTER_TO_INT (libslab_get_mateconf_value (CURRENT_PAGE_MATECONF_KEY));
 	button    = GTK_TOGGLE_BUTTON (priv->page_selectors [curr_page]);
 
 	gtk_toggle_button_set_active (button, TRUE);
@@ -1335,9 +1335,9 @@ update_limits (MainMenuUI *this)
 /* TODO: make this instant apply */
 
 	max_total_items_default = GPOINTER_TO_INT (
-		libslab_get_gconf_value (MAX_TOTAL_ITEMS_GCONF_KEY));
+		libslab_get_mateconf_value (MAX_TOTAL_ITEMS_MATECONF_KEY));
 	min_recent_items = GPOINTER_TO_INT (
-		libslab_get_gconf_value (MIN_RECENT_ITEMS_GCONF_KEY));
+		libslab_get_mateconf_value (MIN_RECENT_ITEMS_MATECONF_KEY));
 
 	priv->max_total_items = max_total_items_default;
 
@@ -1405,7 +1405,7 @@ hide_slab_if_urgent_close (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
-	if (! GPOINTER_TO_INT (libslab_get_gconf_value (URGENT_CLOSE_GCONF_KEY)))
+	if (! GPOINTER_TO_INT (libslab_get_mateconf_value (URGENT_CLOSE_MATECONF_KEY)))
 		return;
 
 	gtk_toggle_button_set_active (priv->panel_button, FALSE);
@@ -1423,7 +1423,7 @@ set_search_section_visible (MainMenuUI *this)
 	gchar  *found_cmd = NULL;
 
 
-	allowable = GPOINTER_TO_INT (libslab_get_gconf_value (SEARCH_VIS_GCONF_KEY));
+	allowable = GPOINTER_TO_INT (libslab_get_mateconf_value (SEARCH_VIS_MATECONF_KEY));
 
 	if (allowable) {
 		argv = get_search_argv (NULL);
@@ -1494,10 +1494,10 @@ get_search_argv (const gchar *search_txt)
 	gint i;
 
 
-	cmd = (gchar *) libslab_get_gconf_value (SEARCH_CMD_GCONF_KEY);
+	cmd = (gchar *) libslab_get_mateconf_value (SEARCH_CMD_MATECONF_KEY);
 
 	if (! cmd) {
-		g_warning ("could not find search command in gconf [" SEARCH_CMD_GCONF_KEY "]\n");
+		g_warning ("could not find search command in mateconf [" SEARCH_CMD_MATECONF_KEY "]\n");
 
 		return NULL;
 	}
@@ -1529,28 +1529,28 @@ reorient_panel_button (MainMenuUI *this)
 {
 	MainMenuUIPrivate *priv = PRIVATE (this);
 
-	PanelAppletOrient orientation;
+	MatePanelAppletOrient orientation;
 
 	GtkWidget *child;
 
 
-	orientation = panel_applet_get_orient (priv->panel_applet);
+	orientation = mate_panel_applet_get_orient (priv->mate_panel_applet);
 
-	child = gtk_bin_get_child (GTK_BIN (priv->panel_applet));
+	child = gtk_bin_get_child (GTK_BIN (priv->mate_panel_applet));
 
 	if (GTK_IS_WIDGET (child))
-		gtk_container_remove (GTK_CONTAINER (priv->panel_applet), child);
+		gtk_container_remove (GTK_CONTAINER (priv->mate_panel_applet), child);
 
 	switch (orientation) {
-		case PANEL_APPLET_ORIENT_LEFT:
+		case MATE_PANEL_APPLET_ORIENT_LEFT:
 			priv->panel_button = priv->panel_buttons [PANEL_BUTTON_ORIENT_RIGHT];
 			break;
 
-		case PANEL_APPLET_ORIENT_RIGHT:
+		case MATE_PANEL_APPLET_ORIENT_RIGHT:
 			priv->panel_button = priv->panel_buttons [PANEL_BUTTON_ORIENT_LEFT];
 			break;
 
-		case PANEL_APPLET_ORIENT_UP:
+		case MATE_PANEL_APPLET_ORIENT_UP:
 			priv->panel_button = priv->panel_buttons [PANEL_BUTTON_ORIENT_BOTTOM];
 			break;
 
@@ -1559,7 +1559,7 @@ reorient_panel_button (MainMenuUI *this)
 			break;
 	}
 
-	gtk_container_add (GTK_CONTAINER (priv->panel_applet), GTK_WIDGET (priv->panel_button));
+	gtk_container_add (GTK_CONTAINER (priv->mate_panel_applet), GTK_WIDGET (priv->panel_button));
 }
 
 static void
@@ -1606,7 +1606,7 @@ grab_pointer_and_keyboard (MainMenuUI *this, guint32 time)
 	if (time == 0)
 		time = GDK_CURRENT_TIME;
 
-	if (GPOINTER_TO_INT (libslab_get_gconf_value (URGENT_CLOSE_GCONF_KEY))) {
+	if (GPOINTER_TO_INT (libslab_get_mateconf_value (URGENT_CLOSE_MATECONF_KEY))) {
 		gtk_widget_grab_focus (priv->slab_window);
 		gtk_grab_add          (priv->slab_window);
 
@@ -1650,10 +1650,10 @@ apply_lockdown_settings (MainMenuUI *this)
 
 	libslab_checkpoint ("apply_lockdown_settings(): start");
 
-	more_link_visible   = GPOINTER_TO_INT (libslab_get_gconf_value (MORE_LINK_VIS_GCONF_KEY));
-	status_area_visible = GPOINTER_TO_INT (libslab_get_gconf_value (STATUS_VIS_GCONF_KEY));
-	system_area_visible = GPOINTER_TO_INT (libslab_get_gconf_value (SYSTEM_VIS_GCONF_KEY));
-	showable_types      = (GList *) libslab_get_gconf_value (SHOWABLE_TYPES_GCONF_KEY);
+	more_link_visible   = GPOINTER_TO_INT (libslab_get_mateconf_value (MORE_LINK_VIS_MATECONF_KEY));
+	status_area_visible = GPOINTER_TO_INT (libslab_get_mateconf_value (STATUS_VIS_MATECONF_KEY));
+	system_area_visible = GPOINTER_TO_INT (libslab_get_mateconf_value (SYSTEM_VIS_MATECONF_KEY));
+	showable_types      = (GList *) libslab_get_mateconf_value (SHOWABLE_TYPES_MATECONF_KEY);
 
 	for (i = 0; i < 3; ++i)
 		if (more_link_visible)
@@ -1869,7 +1869,7 @@ present_slab_window (MainMenuUI *this)
 
 	update_recently_used_sections (this);
 
-	gtk_window_set_screen (GTK_WINDOW (priv->slab_window), gtk_widget_get_screen (GTK_WIDGET (priv->panel_applet)));
+	gtk_window_set_screen (GTK_WINDOW (priv->slab_window), gtk_widget_get_screen (GTK_WIDGET (priv->mate_panel_applet)));
 	gtk_window_present_with_time (GTK_WINDOW (priv->slab_window), gtk_get_current_event_time ());
 }
 
@@ -2138,7 +2138,7 @@ slab_window_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_
 	GdkRectangle slab_geom;
 	GdkRectangle monitor_geom;
 
-	PanelAppletOrient orient;
+	MatePanelAppletOrient orient;
 
 
 	gdk_window_get_origin (GTK_WIDGET (priv->panel_button)->window, & button_geom.x, & button_geom.y);
@@ -2156,25 +2156,25 @@ slab_window_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_
 			panel_button_screen, GTK_WIDGET (priv->panel_button)->window),
 		& monitor_geom);
 
-	orient = panel_applet_get_orient (priv->panel_applet);
+	orient = mate_panel_applet_get_orient (priv->mate_panel_applet);
 
 	switch (orient) {
-		case PANEL_APPLET_ORIENT_UP:
+		case MATE_PANEL_APPLET_ORIENT_UP:
 			slab_geom.x = button_geom.x;
 			slab_geom.y = button_geom.y - slab_geom.height;
 			break;
 
-		case PANEL_APPLET_ORIENT_DOWN:
+		case MATE_PANEL_APPLET_ORIENT_DOWN:
 			slab_geom.x = button_geom.x;
 			slab_geom.y = button_geom.y + button_geom.height;
 			break;
 
-		case PANEL_APPLET_ORIENT_RIGHT:
+		case MATE_PANEL_APPLET_ORIENT_RIGHT:
 			slab_geom.x = button_geom.x + button_geom.width;
 			slab_geom.y = button_geom.y;
 			break;
 
-		case PANEL_APPLET_ORIENT_LEFT:
+		case MATE_PANEL_APPLET_ORIENT_LEFT:
 			slab_geom.x = button_geom.x - slab_geom.width;
 			slab_geom.y = button_geom.y;
 			break;
@@ -2185,7 +2185,7 @@ slab_window_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_
 			break;
 	}
 
-	if (orient == PANEL_APPLET_ORIENT_UP || orient == PANEL_APPLET_ORIENT_DOWN) {
+	if (orient == MATE_PANEL_APPLET_ORIENT_UP || orient == MATE_PANEL_APPLET_ORIENT_DOWN) {
 		if ((slab_geom.x + slab_geom.width) > (monitor_geom.x + monitor_geom.width))
 			slab_geom.x = MAX (monitor_geom.x, monitor_geom.x + monitor_geom.width - slab_geom.width);
 	}
@@ -2261,7 +2261,7 @@ page_button_clicked_cb (GtkButton *button, gpointer user_data)
 
 	gtk_notebook_set_current_page (priv->file_section, priv->notebook_page_ids [page_type]);
 
-	libslab_set_gconf_value (CURRENT_PAGE_GCONF_KEY, GINT_TO_POINTER (page_type));
+	libslab_set_mateconf_value (CURRENT_PAGE_MATECONF_KEY, GINT_TO_POINTER (page_type));
 }
 
 static void
@@ -2323,7 +2323,7 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 	GTimeVal current_time;
 	guint32 current_time_millis;
 
-	GnomeDesktopItem *ditem;
+	MateDesktopItem *ditem;
 	gchar            *ditem_id;
 
 	gchar *cmd_template;
@@ -2341,7 +2341,7 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 
 	if (! double_click_detector_is_double_click (detector, current_time_millis, TRUE)) {
 		if (GTK_WIDGET (button) == priv->more_buttons [APPS_PAGE])
-			ditem_id = libslab_get_gconf_value (APP_BROWSER_GCONF_KEY);
+			ditem_id = libslab_get_mateconf_value (APP_BROWSER_MATECONF_KEY);
 		else if (GTK_WIDGET (button) == priv->more_buttons [DOCS_PAGE]) {
 			dir = g_strdup (g_get_user_special_dir (G_USER_DIRECTORY_DOCUMENTS));
 			if (! dir)
@@ -2354,7 +2354,7 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 
 			uri = g_filename_to_uri (dir, NULL, NULL);
 
-			cmd_template = (gchar *) libslab_get_gconf_value (FILE_MGR_OPEN_GCONF_KEY);
+			cmd_template = (gchar *) libslab_get_mateconf_value (FILE_MGR_OPEN_MATECONF_KEY);
 			cmd = libslab_string_replace_once (cmd_template, "FILE_URI", uri);
 
 			libslab_spawn_command (cmd);
@@ -2369,12 +2369,12 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 			hide_slab_if_urgent_close (this);
 		}
 		else
-			ditem_id = libslab_get_gconf_value (FILE_BROWSER_GCONF_KEY);
+			ditem_id = libslab_get_mateconf_value (FILE_BROWSER_MATECONF_KEY);
 
-		ditem = libslab_gnome_desktop_item_new_from_unknown_id (ditem_id);
+		ditem = libslab_mate_desktop_item_new_from_unknown_id (ditem_id);
 
 		if (ditem) {
-			libslab_gnome_desktop_item_launch_default (ditem);
+			libslab_mate_desktop_item_launch_default (ditem);
 
 			hide_slab_if_urgent_close (this);
 		}
@@ -2382,34 +2382,34 @@ more_buttons_clicked_cb (GtkButton *button, gpointer user_data)
 }
 
 static void
-search_cmd_notify_cb (GConfClient *client, guint conn_id,
-                      GConfEntry *entry, gpointer user_data)
+search_cmd_notify_cb (MateConfClient *client, guint conn_id,
+                      MateConfEntry *entry, gpointer user_data)
 {
 	set_search_section_visible (MAIN_MENU_UI (user_data));
 }
 
 static void
-current_page_notify_cb (GConfClient *client, guint conn_id,
-                        GConfEntry *entry, gpointer user_data)
+current_page_notify_cb (MateConfClient *client, guint conn_id,
+                        MateConfEntry *entry, gpointer user_data)
 {
 	select_page (MAIN_MENU_UI (user_data));
 }
 
 static void
-lockdown_notify_cb (GConfClient *client, guint conn_id,
-                    GConfEntry *entry, gpointer user_data)
+lockdown_notify_cb (MateConfClient *client, guint conn_id,
+                    MateConfEntry *entry, gpointer user_data)
 {
 	apply_lockdown_settings (MAIN_MENU_UI (user_data));
 }
 
 static void
-panel_menu_open_cb (BonoboUIComponent *component, gpointer user_data, const gchar *verb)
+panel_menu_open_cb (MateComponentUIComponent *component, gpointer user_data, const gchar *verb)
 {
 	gtk_toggle_button_set_active (PRIVATE (user_data)->panel_button, TRUE);
 }
 
 static void
-panel_menu_about_cb (BonoboUIComponent *component, gpointer user_data, const gchar *verb)
+panel_menu_about_cb (MateComponentUIComponent *component, gpointer user_data, const gchar *verb)
 {
 	MainMenuUI *this        = MAIN_MENU_UI (user_data);
 	MainMenuUIPrivate *priv = PRIVATE      (this);
@@ -2420,12 +2420,12 @@ panel_menu_about_cb (BonoboUIComponent *component, gpointer user_data, const gch
 		priv->panel_about_dialog = gtk_about_dialog_new ();
 
 		g_object_set (priv->panel_about_dialog,
-			"name", _("GNOME Main Menu"),
-			"comments", _("The GNOME Main Menu"),
+			"name", _("MATE Main Menu"),
+			"comments", _("The MATE Main Menu"),
 			"version", VERSION,
 			"authors", main_menu_authors,
 			"artists", main_menu_artists,
-			"logo-icon-name", "gnome-fs-client",
+			"logo-icon-name", "mate-fs-client",
 			"copyright", "Copyright \xc2\xa9 2005-2007 Novell, Inc.",
 			NULL);
 
@@ -2439,13 +2439,13 @@ panel_menu_about_cb (BonoboUIComponent *component, gpointer user_data, const gch
 }
 
 static void
-panel_applet_change_orient_cb (PanelApplet *applet, PanelAppletOrient orient, gpointer user_data)
+mate_panel_applet_change_orient_cb (MatePanelApplet *applet, MatePanelAppletOrient orient, gpointer user_data)
 {
 	reorient_panel_button (MAIN_MENU_UI (user_data));
 }
 
 static void
-panel_applet_change_background_cb (PanelApplet *applet, PanelAppletBackgroundType type, GdkColor *color,
+mate_panel_applet_change_background_cb (MatePanelApplet *applet, MatePanelAppletBackgroundType type, GdkColor *color,
                                    GdkPixmap *pixmap, gpointer user_data)
 {
 	MainMenuUI        *this = MAIN_MENU_UI (user_data);
@@ -2457,9 +2457,9 @@ panel_applet_change_background_cb (PanelApplet *applet, PanelAppletBackgroundTyp
 
 /* reset style */
 
-	gtk_widget_set_style (GTK_WIDGET (priv->panel_applet), NULL);
+	gtk_widget_set_style (GTK_WIDGET (priv->mate_panel_applet), NULL);
 	rc_style = gtk_rc_style_new ();
-	gtk_widget_modify_style (GTK_WIDGET (priv->panel_applet), rc_style);
+	gtk_widget_modify_style (GTK_WIDGET (priv->mate_panel_applet), rc_style);
 	g_object_unref (rc_style);
 
 	switch (type) {
@@ -2468,19 +2468,19 @@ panel_applet_change_background_cb (PanelApplet *applet, PanelAppletBackgroundTyp
 
 		case PANEL_COLOR_BACKGROUND:
 			gtk_widget_modify_bg (
-				GTK_WIDGET (priv->panel_applet), GTK_STATE_NORMAL, color);
+				GTK_WIDGET (priv->mate_panel_applet), GTK_STATE_NORMAL, color);
 
 			break;
 
 		case PANEL_PIXMAP_BACKGROUND:
-			style = gtk_style_copy (GTK_WIDGET (priv->panel_applet)->style);
+			style = gtk_style_copy (GTK_WIDGET (priv->mate_panel_applet)->style);
 
 			if (style->bg_pixmap [GTK_STATE_NORMAL])
 				g_object_unref (style->bg_pixmap [GTK_STATE_NORMAL]);
 
 			style->bg_pixmap [GTK_STATE_NORMAL] = g_object_ref (pixmap);
 
-			gtk_widget_set_style (GTK_WIDGET (priv->panel_applet), style);
+			gtk_widget_set_style (GTK_WIDGET (priv->mate_panel_applet), style);
 
 			g_object_unref (style);
 

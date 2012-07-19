@@ -11,4 +11,4 @@ application_browser_LDADD =					\
 	$(APPLICATION_BROWSER_LIBS)
 
 AM_CPPFLAGS =							\
-	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
+	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"

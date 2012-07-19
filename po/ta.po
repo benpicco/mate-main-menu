@@ -1,4 +1,4 @@
-# translation of gnome-main-menu.master.ta.po to Tamil
+# translation of mate-main-menu.master.ta.po to Tamil
 # Tamil message file for YaST2 (@memory@).
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2003 SuSE Linux AG.
@@ -6,8 +6,8 @@
 # I. Felix <ifelix@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.master.ta\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Project-Id-Version: mate-main-menu.master.ta\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2009-08-10 10:24+0000\n"
 "PO-Revision-Date: 2009-10-28 15:54+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
@@ -100,28 +100,28 @@ msgstr "குழுக்கள்"
 msgid "Application Actions"
 msgstr "பயன்பாடின் செயல்கள்"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "முன்னிருப்பு மெனு மற்றும் பயன்பாட்டு உலாவி"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME முக்கிய மெனு"
+msgid "MATE Main Menu"
+msgstr "MATE முக்கிய மெனு"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME முக்கிய மெனு தொழிற்சாலை"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE முக்கிய மெனு தொழிற்சாலை"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "முக்கிய மெனு"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "பற்றி (_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "மெனுவை திற (_O)"
 
@@ -138,8 +138,8 @@ msgid ".desktop file for the file browser"
 msgstr " கோப்பு உலாவிக்கான பணிமேடை கோப்பு"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop கோப்பு gnome-system-monitorக்கு"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop கோப்பு mate-system-monitorக்கு"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -422,12 +422,12 @@ msgid "Lock Screen"
 msgstr "திரையை பூட்டு"
 
 #: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-திரைப்பூட்டு"
+msgid "mate-lockscreen"
+msgstr "mate-திரைப்பூட்டு"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "GNOME ன் முக்கிய மெனு"
+msgid "The MATE Main Menu"
+msgstr "MATE ன் முக்கிய மெனு"
 
 #: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
@@ -557,26 +557,26 @@ msgstr "திலை"
 msgid "System"
 msgstr "கணினி"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "விருப்பங்களுடன் சேர்"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "நடப்பு துவக்கியை பிடித்தவைகளில் சேர்"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "நடப்பு ஆவணத்தை விருப்பத்துடன் சேர்க்கவும்"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "விருப்பங்களிலிருந்து நீக்கு"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "விருப்பத்திலிருந்து நடப்பு ஆவணத்தை நீக்கவும்"
 

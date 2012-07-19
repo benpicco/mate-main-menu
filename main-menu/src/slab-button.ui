@@ -26,7 +26,7 @@
                     <child>
                       <object class="GtkImage" id="panel-button-icon">
                         <property name="visible">True</property>
-                        <property name="icon_name">gnome-fs-client</property>
+                        <property name="icon_name">mate-fs-client</property>
                         <property name="icon-size">1</property>
                       </object>
                       <packing>
@@ -89,7 +89,7 @@
                     <child>
                       <object class="GtkImage" id="image42">
                         <property name="visible">True</property>
-                        <property name="icon_name">gnome-fs-client</property>
+                        <property name="icon_name">mate-fs-client</property>
                         <property name="icon-size">1</property>
                       </object>
                       <packing>
@@ -127,7 +127,7 @@
                     <child>
                       <object class="GtkImage" id="image43">
                         <property name="visible">True</property>
-                        <property name="icon_name">gnome-fs-client</property>
+                        <property name="icon_name">mate-fs-client</property>
                         <property name="icon-size">1</property>
                       </object>
                       <packing>
@@ -176,7 +176,7 @@
                     <child>
                       <object class="GtkImage" id="image44">
                         <property name="visible">True</property>
-                        <property name="icon_name">gnome-fs-client</property>
+                        <property name="icon_name">mate-fs-client</property>
                         <property name="icon-size">1</property>
                       </object>
                       <packing>

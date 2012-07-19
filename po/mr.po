@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2008-12-30 00:37+0000\n"
 "PO-Revision-Date: 2009-03-06 19:41+0530\n"
 "Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
@@ -110,14 +110,14 @@ msgid "Uninstall"
 msgstr "काढूण टाका"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../caja-main-menu/caja-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "पसंतीचे पासून काढूण टाका"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "पसंतीचे अंतर्गत समावेष करा"
 
@@ -280,28 +280,28 @@ msgstr "<b>%s उघडा</b>"
 msgid "Remove from System Items"
 msgstr "प्रणाली घटक पासून काढूण टाका"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "मुलभूत मेन्यू व अनुप्रयोग ब्राऊजर"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME मुख्य मेन्यू"
+msgid "MATE Main Menu"
+msgstr "MATE मुख्य मेन्यू"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME मुख्य मेन्यू साचा"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE मुख्य मेन्यू साचा"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "मुख्य मेन्यू"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "विषयी (_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "मेन्यू उघडा (_O)"
 
@@ -318,8 +318,8 @@ msgid ".desktop file for the file browser"
 msgstr "फाइल ब्राऊजर करीता .desktop फाइल"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor करीता .desktop फाइल"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor करीता .desktop फाइल"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -543,12 +543,12 @@ msgid "Home: %s Free / %s"
 msgstr "घर: %s शिल्लक / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "GNOME मुख्य मेन्यू"
+msgid "The MATE Main Menu"
+msgstr "MATE मुख्य मेन्यू"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -674,16 +674,16 @@ msgstr "स्थिती"
 msgid "System"
 msgstr "प्रणाली"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "वर्तमान प्रक्षेपक पसंतीचे करीता समावेष करा"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "वर्तमान दस्तऐवज पसंतीचे अंतर्गत समावेष करा"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../caja-main-menu/caja-main-menu.c:131
+#: ../caja-main-menu/caja-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "पसंतीचे पासून वर्तमान दस्तऐवज काढूण टाका"
 

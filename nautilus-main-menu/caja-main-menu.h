@@ -1,5 +1,5 @@
 /*
- *  nautilus-main-menu.h
+ *  caja-main-menu.h
  * 
  *  Copyright (C) 2004, 2005 Free Software Foundation, Inc.
  *
@@ -17,38 +17,38 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  Author: Christian Neumair <chris@gnome-de.org>
+ *  Author: Christian Neumair <chris@mate-de.org>
  * 
  */
 
-#ifndef NAUTILUS_MAIN_MENU_H
-#define NAUTILUS_MAIN_MENU_H
+#ifndef CAJA_MAIN_MENU_H
+#define CAJA_MAIN_MENU_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
 /* Declarations for the open terminal extension object.  This object will be
- * instantiated by nautilus.  It implements the GInterfaces 
- * exported by libnautilus. */
+ * instantiated by caja.  It implements the GInterfaces 
+ * exported by libcaja. */
 
 
-#define NAUTILUS_TYPE_MAIN_MENU	  (nautilus_main_menu_get_type ())
-#define NAUTILUS_MAIN_MENU(o)	  (G_TYPE_CHECK_INSTANCE_CAST ((o), NAUTILUS_TYPE_MAIN_MENU, NautilusMainMenu))
-#define NAUTILUS_IS_MAIN_MENU(o)	  (G_TYPE_CHECK_INSTANCE_TYPE ((o), NAUTILUS_TYPE_MAIN_MENU))
-typedef struct _NautilusMainMenu      NautilusMainMenu;
-typedef struct _NautilusMainMenuClass NautilusMainMenuClass;
+#define CAJA_TYPE_MAIN_MENU	  (caja_main_menu_get_type ())
+#define CAJA_MAIN_MENU(o)	  (G_TYPE_CHECK_INSTANCE_CAST ((o), CAJA_TYPE_MAIN_MENU, CajaMainMenu))
+#define CAJA_IS_MAIN_MENU(o)	  (G_TYPE_CHECK_INSTANCE_TYPE ((o), CAJA_TYPE_MAIN_MENU))
+typedef struct _CajaMainMenu      CajaMainMenu;
+typedef struct _CajaMainMenuClass CajaMainMenuClass;
 
-struct _NautilusMainMenu {
+struct _CajaMainMenu {
 	GObject parent_slot;
 };
 
-struct _NautilusMainMenuClass {
+struct _CajaMainMenuClass {
 	GObjectClass parent_slot;
 };
 
-GType nautilus_main_menu_get_type      (void);
-void  nautilus_main_menu_register_type (GTypeModule *module);
+GType caja_main_menu_get_type      (void);
+void  caja_main_menu_register_type (GTypeModule *module);
 
 G_END_DECLS
 

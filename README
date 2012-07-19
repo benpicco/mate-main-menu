@@ -1,8 +1,8 @@
 General Info
 ------------
-The gnome-main-menu is a set of three utilities.  A gnome-panel applet similar
+The mate-main-menu is a set of three utilities.  A mate-panel applet similar
 to the traditional main-menu but a few addtions and changes.  In particular the
-gnome-main-menu does not provide direct access to all the applications on the
+mate-main-menu does not provide direct access to all the applications on the
 system, but rather displays user specified "favorites" and recently launched
 applications [1].
 
@@ -11,11 +11,11 @@ utilities, the application-browser, which is a larger format application than
 that the traditional main-menu which is managed by the window manager to allow
 for resizing, etc.
 
-The final utility is the gnome-control-center which is laid out exactly as the
+The final utility is the mate-control-center which is laid out exactly as the
 application-browser, but providing access to all the system's configuration
 utilities.
 
-Both the application-browser and the gnome-control-center are accessible
+Both the application-browser and the mate-control-center are accessible
 directly from the main-menu.
 
 Installing
@@ -29,18 +29,18 @@ A standard combination of ...
 should suffice.
 
 *Note*  As for the "recently used applications" functionality, this requires
-patched versions of gnome-desktop and gnome-panel.  These patches are available
+patched versions of mate-desktop and mate-panel.  These patches are available
 in the patch subdir.
 
 Usage
 -----
-After installing a "Gnome Main Menu" applet should appear in your "Add to panel
+After installing a "Mate Main Menu" applet should appear in your "Add to panel
 ..." dialog.
 
 Contributing
 ------------
-This project can be found in gnome svn under the module named "gnome-main-menu".  To
-access this see: http://svn.gnome.org/viewvc/gnome-main-menu/  Feel free to send
+This project can be found in mate svn under the module named "mate-main-menu".  To
+access this see: http://svn.gnome.org/viewvc/mate-main-menu/  Feel free to send
 any patches to anyone in the MAINTAINERS file.
 
 Any bugs found with this project can be filed at http://bugzilla.novell.com.

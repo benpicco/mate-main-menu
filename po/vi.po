@@ -1,10 +1,10 @@
-# Vietnamese translation for GNOME Main Menu.
-# Copyright © 2008 GNOME i18n Project for Vietnamese.
+# Vietnamese translation for MATE Main Menu.
+# Copyright © 2008 MATE i18n Project for Vietnamese.
 # Clytie Siddall <clytie@riverland.net.au>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu 0.9.10\n"
+"Project-Id-Version: mate-main-menu 0.9.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-15 04:03+0000\n"
 "PO-Revision-Date: 2008-06-15 22:41+0930\n"
@@ -111,15 +111,15 @@ msgstr "Huỷ cài đặt"
 
 #: ../libslab/application-tile.c:780
 #: ../libslab/document-tile.c:760
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../caja-main-menu/caja-main-menu.c:133
+#: ../caja-main-menu/caja-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "Gỡ khỏi Yêu thích"
 
 #: ../libslab/application-tile.c:782
 #: ../libslab/document-tile.c:762
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../caja-main-menu/caja-main-menu.c:123
+#: ../caja-main-menu/caja-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "Thêm vào Yêu thích"
 
@@ -378,29 +378,29 @@ msgstr "<b>Mở %s</b>"
 msgid "Remove from System Items"
 msgstr "Gỡ bỏ ra Mục hệ thống"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Trình duyệt ứng dụng và trình đơn mặc định"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2405
 #: ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "Trình Đơn Chính GNOME"
+msgid "MATE Main Menu"
+msgstr "Trình Đơn Chính MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Bộ tạo Trình Đơn Chính GNOME"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Bộ tạo Trình Đơn Chính MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Trình Đơn Chính"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Mở trình đơn"
 
@@ -413,8 +413,8 @@ msgid ".desktop file for the file browser"
 msgstr "Tập tin .desktop cho trình duyệt tập tin"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "Tập tin .desktop cho bộ theo dõi hệ thống (gnome-system-monitor)"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "Tập tin .desktop cho bộ theo dõi hệ thống (mate-system-monitor)"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -646,12 +646,12 @@ msgid "Home: %s Free / %s"
 msgstr "Nhà: %s Rảnh / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "Khoá màn hình GNOME"
+msgid "mate-lockscreen"
+msgstr "Khoá màn hình MATE"
 
 #: ../main-menu/src/main-menu-ui.c:2406
-msgid "The GNOME Main Menu"
-msgstr "Trình Đơn Chính GNOME"
+msgid "The MATE Main Menu"
+msgstr "Trình Đơn Chính MATE"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -761,15 +761,15 @@ msgstr "Trạng thái"
 msgid "System"
 msgstr "Hệ thống"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:124
 msgid "Add the current launcher to favorites"
 msgstr "Thêm vào Yêu thích bộ khởi chạy hiện thời"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Add the current document to favorites"
 msgstr "Thêm vào Yêu thích tài liệu hiện thời"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../caja-main-menu/caja-main-menu.c:134
+#: ../caja-main-menu/caja-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "Gỡ bỏ khỏi Yêu thích tài liệu hiện thời"

@@ -116,7 +116,7 @@ msgstr ""
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgid "[Change Desktop Background;background.desktop,Add Printer;mate-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
 msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:14
@@ -159,14 +159,14 @@ msgid "Uninstall"
 msgstr "&Instaliraj"
 
 #: ../libslab/application-tile.c:712 ../libslab/document-tile.c:525
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../caja-main-menu/caja-main-menu.c:133
+#: ../caja-main-menu/caja-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr ""
 
 #: ../libslab/application-tile.c:714 ../libslab/document-tile.c:527
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../caja-main-menu/caja-main-menu.c:123
+#: ../caja-main-menu/caja-main-menu.c:128
 msgid "Add to Favorites"
 msgstr ""
 
@@ -315,28 +315,28 @@ msgstr ""
 msgid "Remove from System Items"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:1560 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
+msgid "MATE Main Menu"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr ""
 
@@ -349,7 +349,7 @@ msgid ".desktop file for the file browser"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
@@ -558,7 +558,7 @@ msgid "Lock Screen"
 msgstr ""
 
 #: ../main-menu/src/main-menu-migration.c:207
-msgid "gnome-lockscreen"
+msgid "mate-lockscreen"
 msgstr ""
 
 #: ../main-menu/src/main-menu-migration.c:531
@@ -571,7 +571,7 @@ msgid "New Document"
 msgstr "Moji dokumenti"
 
 #: ../main-menu/src/main-menu-ui.c:1561
-msgid "The GNOME Main Menu"
+msgid "The MATE Main Menu"
 msgstr ""
 
 #: ../main-menu/src/network-status-tile.c:91
@@ -700,16 +700,16 @@ msgstr "Status"
 msgid "System"
 msgstr "Sistem"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:124
 msgid "Add the current launcher to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Add the current document to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../caja-main-menu/caja-main-menu.c:134
+#: ../caja-main-menu/caja-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr ""
 

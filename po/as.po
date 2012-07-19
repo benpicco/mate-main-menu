@@ -1,13 +1,13 @@
-# translation of gnome-main-menu.po.master.as.po to Assamese
-# Assamese translation of gnome-main-menu.
-# Copyright (C) 2009 gnome-main-menu's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-main-menu package.
+# translation of mate-main-menu.po.master.as.po to Assamese
+# Assamese translation of mate-main-menu.
+# Copyright (C) 2009 mate-main-menu's COPYRIGHT HOLDER
+# This file is distributed under the same license as the mate-main-menu package.
 #
 # Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.po.master.as\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Project-Id-Version: mate-main-menu.po.master.as\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2009-06-08 07:02+0000\n"
 "PO-Revision-Date: 2009-06-12 15:14+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
@@ -115,14 +115,14 @@ msgid "Uninstall"
 msgstr "সংস্থাপন আঁতৰাওক"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:715
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "পছন্দৰ তালিকাৰ পৰা আঁতৰাওক"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:717
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "পছন্দৰ তালিকাত যোগ কৰক"
 
@@ -271,28 +271,28 @@ msgstr "<b>%s খোলক</b>"
 msgid "Remove from System Items"
 msgstr "প্ৰণালীৰ বিভিন্ন সৰঞ্জামৰ পৰা আঁতৰাওক"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "অবিকল্পিত তালিকা আৰু অনুপ্ৰয়োগ চৰক"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME প্ৰধান তালিকা"
+msgid "MATE Main Menu"
+msgstr "MATE প্ৰধান তালিকা"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME Main Menu কলঘৰ"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE Main Menu কলঘৰ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "প্ৰধান তালিকা"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "বিষয়ে (_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "তালিকা খোলক (_O)"
 
@@ -309,8 +309,8 @@ msgid ".desktop file for the file browser"
 msgstr "নথিপত্ৰ চৰকৰ বাবে .desktop নথিপত্ৰ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor-ৰ বাবে .desktop নথিপত্ৰ"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor-ৰ বাবে .desktop নথিপত্ৰ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -594,12 +594,12 @@ msgid "Lock Screen"
 msgstr "পৰ্দা লক কৰক"
 
 #: ../main-menu/src/main-menu-migration.c:199
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2392
-msgid "The GNOME Main Menu"
-msgstr "GNOME Main Menu"
+msgid "The MATE Main Menu"
+msgstr "MATE Main Menu"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -725,16 +725,16 @@ msgstr "অৱস্থা"
 msgid "System"
 msgstr "প্ৰণালী"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "পছন্দৰ তালিকাত বৰ্তমান লঞ্চাৰ যোগ কৰক"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "পছন্দৰ তালিকাত বৰ্তমান নথি যোগ কৰক"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "পছন্দৰ তালিকাৰ পৰা বৰ্তমান নথি আঁতৰাওক"
 

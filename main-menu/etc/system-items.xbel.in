@@ -17,7 +17,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="gnomecc.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+  <bookmark href="matecc.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-desktop"/>
@@ -25,7 +25,7 @@
           <bookmark:group>rank-1</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Control Center" exec="/opt/gnome/bin/control-center" timestamp="1168926816" count="1"/>
+          <bookmark:application name="Control Center" exec="/opt/mate/bin/control-center" timestamp="1168926816" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -38,7 +38,7 @@
           <bookmark:group>rank-2</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="YaST" exec="gnomesu -c /sbin/yast2" timestamp="1212587938" count="1"/>
+          <bookmark:application name="YaST" exec="matesu -c /sbin/yast2" timestamp="1212587938" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -56,7 +56,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="gnome-screensaver-lock.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+  <bookmark href="mate-screensaver-lock.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
     <_title>Lock Screen</_title>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -65,12 +65,12 @@
           <bookmark:group>rank-4</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Lock Screen" exec="gnome-screensaver-command --lock" timestamp="1168926816" count="1"/>
+          <bookmark:application name="Lock Screen" exec="mate-screensaver-command --lock" timestamp="1168926816" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="gnome-session-logout.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+  <bookmark href="mate-session-logout.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
     <_title>Logout</_title>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -79,12 +79,12 @@
           <bookmark:group>rank-5</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Session Logout Dialog" exec="gnome-session-save" timestamp="1168926816" count="1"/>
+          <bookmark:application name="Session Logout Dialog" exec="mate-session-save" timestamp="1168926816" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="gnome-session-shutdown.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
+  <bookmark href="mate-session-shutdown.desktop" added="2007-01-16T05:53:36Z" modified="2007-01-16T05:53:36Z" visited="2007-01-16T05:53:36Z">
     <_title>Shutdown</_title>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -93,7 +93,7 @@
           <bookmark:group>rank-6</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Session Shutdown Dialog" exec="gnome-session-save" timestamp="1168926816" count="1"/>
+          <bookmark:application name="Session Shutdown Dialog" exec="mate-session-save" timestamp="1168926816" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

@@ -1,4 +1,4 @@
-# Danish translation of gnome-main-menu.
+# Danish translation of mate-main-menu.
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002 SuSE Linux AG.
 # Copyright (C) 2001 SuSE GmbH.
@@ -15,7 +15,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: mate-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-06 22:22+0200\n"
 "PO-Revision-Date: 2011-04-02 18:29+0200\n"
@@ -112,29 +112,29 @@ msgstr "Grupper"
 msgid "Application Actions"
 msgstr "Programhandlinger"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Standard menu og gennemse programmer"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2423 ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "GNOME hovedmenu"
+msgid "MATE Main Menu"
+msgstr "MATE hovedmenu"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Gnome hovedmenu-værksted"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Mate hovedmenu-værksted"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_Om"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Åbn menu"
 
@@ -151,8 +151,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop-fil til filhåndtering"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop-fil til gnomes systemovervåger"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop-fil til mates systemovervåger"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -448,8 +448,8 @@ msgid "Lock Screen"
 msgstr "Lås skærm"
 
 #: ../main-menu/src/main-menu-ui.c:2424
-msgid "The GNOME Main Menu"
-msgstr "GNOME hovedmenu"
+msgid "The MATE Main Menu"
+msgstr "MATE hovedmenu"
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -583,28 +583,28 @@ msgstr "Status"
 msgid "System"
 msgstr "System"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Tilføj til favoritter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Tilføj den nuværende starter til favoritterne"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Tilføj det nuværende dokument til favoritterne"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Fjern fra favoritter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Fjern det nuværende dokument fra favoritterne"
 
-#~ msgid "gnome-lockscreen"
-#~ msgstr "gnome-lockscreen"
+#~ msgid "mate-lockscreen"
+#~ msgstr "mate-lockscreen"

@@ -1,4 +1,4 @@
-# translation of gnome-main-menu.et.po to Estonian
+# translation of mate-main-menu.et.po to Estonian
 # translation of
 # Copyright (C) 2006 SUSE Linux Products GmbH.
 # Estonian message file for YaST2 (@memory@).
@@ -6,7 +6,7 @@
 # Ain Vagula <avagula@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.et\n"
+"Project-Id-Version: mate-main-menu.et\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-26 12:18-0600\n"
 "PO-Revision-Date: 2006-11-02 16:22+0200\n"
@@ -113,7 +113,7 @@ msgstr ""
 
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
-msgid "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
+msgid "[Change Desktop Background;background.desktop,Add Printer;mate-cups-manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST.desktop]"
 msgstr ""
 
 #: ../control-center/etc/control-center.schemas.in.h:14
@@ -217,28 +217,28 @@ msgstr "Kustuta"
 msgid "Send To..."
 msgstr "Saada..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
 msgstr "Ava menüü"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_About"
 msgstr "_Teave"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Vaikimisi menüü ja rakenduste sirvija"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:303
-msgid "GNOME Main Menu"
-msgstr "GNOME peamenüü"
+msgid "MATE Main Menu"
+msgstr "MATE peamenüü"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
 msgstr ""
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Peamenüü"
 
@@ -255,8 +255,8 @@ msgid ".desktop file for the file browser"
 msgstr "Failisirvija .desktop-fail"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor'i .desktop-fail"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor'i .desktop-fail"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -335,7 +335,7 @@ msgid "command to upgrade packages, PACKAGE_NAME is replaced by the name of the 
 msgstr "käsk pakettide uuendamiseks, PACKAGE_NAME asendatakse käsus paketi nimega"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:23
-msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/gnome/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
+msgid "contains the list (in no particular order) of allowable file types to show in the file area. possible values (see also the note for /desktop/mate/applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of recently used (instantiated with the main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent to \"Favorite Applications\". RECENT_FILES is the list of files from ~/.recently-used."
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:24
@@ -480,8 +480,8 @@ msgid "%s Free / %s Total"
 msgstr "%s vaba / %s kokku"
 
 #: ../main-menu/src/main-menu-ui.c:304
-msgid "The GNOME Main Menu"
-msgstr "GNOME peamenüü"
+msgid "The MATE Main Menu"
+msgstr "MATE peamenüü"
 
 #: ../main-menu/src/main-menu-ui.c:420
 msgid "System"

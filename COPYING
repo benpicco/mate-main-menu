@@ -1,4 +1,4 @@
-The gnome-main-menu, application-browser, control-center, and libslab are all
+The mate-main-menu, application-browser, control-center, and libslab are all
 Copyright (C) 2006 Novell, Inc and are subject to either the GNU General Public
 License or the GNU Lesser General Public license, see individual source files.
 
@@ -233,7 +233,7 @@ be a consequence of the rest of this License.
   8. If the distribution and/or use of the Program is restricted in
 certain countries either by patents or by copyrighted interfaces, the
 original copyright holder who places the Program under this License
-may add an explicit geographical distribution limitation excluding
+may add an explicit geomraphical distribution limitation excluding
 those countries, so that distribution is permitted only in or among
 countries not thus excluded.  In such case, this License incorporates
 the limitation as if written in the body of this License.
@@ -690,7 +690,7 @@ be a consequence of the rest of this License.
   12. If the distribution and/or use of the Library is restricted in
 certain countries either by patents or by copyrighted interfaces, the
 original copyright holder who places the Library under this License may add
-an explicit geographical distribution limitation excluding those countries,
+an explicit geomraphical distribution limitation excluding those countries,
 so that distribution is permitted only in or among countries not thus
 excluded.  In such case, this License incorporates the limitation as if
 written in the body of this License.

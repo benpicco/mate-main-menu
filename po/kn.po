@@ -1,12 +1,12 @@
-# translation of gnome-main-menu.master.kn.po to Kannada
+# translation of mate-main-menu.master.kn.po to Kannada
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Shankar Prasad <svenkate@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.master.kn\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Project-Id-Version: mate-main-menu.master.kn\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2009-08-10 10:24+0000\n"
 "PO-Revision-Date: 2009-10-27 16:31+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
@@ -96,28 +96,28 @@ msgstr "ಸಮೂಹಗಳು"
 msgid "Application Actions"
 msgstr "ಅನ್ವಯದ ಕ್ರಿಯೆ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಮೆನು ಹಾಗು ಅನ್ವಯ ವೀಕ್ಷಕ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
+msgid "MATE Main Menu"
+msgstr "MATE ಮುಖ್ಯ ಮೆನು"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME ಮುಖ್ಯ ಮೆನು ಫ್ಯಾಕ್ಟರಿ"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE ಮುಖ್ಯ ಮೆನು ಫ್ಯಾಕ್ಟರಿ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "ಮುಖ್ಯ ಪರಿವಿಡಿ"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "ಮೆನುವನ್ನು ತೆರೆ(_O)"
 
@@ -134,8 +134,8 @@ msgid ".desktop file for the file browser"
 msgstr "ವೀಕ್ಷಕ ಕಡತಕ್ಕಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor ಗಾಗಿನ .desktop ಕಡತ"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor ಗಾಗಿನ .desktop ಕಡತ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -430,12 +430,12 @@ msgid "Lock Screen"
 msgstr "ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡು"
 
 #: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "GNOME ಮುಖ್ಯ ಮೆನು"
+msgid "The MATE Main Menu"
+msgstr "MATE ಮುಖ್ಯ ಮೆನು"
 
 #: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
@@ -565,26 +565,26 @@ msgstr "ಸ್ಥಿತಿ"
 msgid "System"
 msgstr "ವ್ಯವಸ್ಥೆ"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "ಪ್ರಸಕ್ತ ಆರಂಭಕವನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜುಗಳನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸು"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "ಪ್ರಸಕ್ತ ದಸ್ತಾವೇಜನ್ನು ಅಚ್ಚುಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದು ಹಾಕು"
 

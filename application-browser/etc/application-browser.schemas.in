@@ -1,8 +1,8 @@
-<gconfschemafile>
+<mateconfschemafile>
 	<schemalist>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_new_apps_file_key</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_new_apps_file_key</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_new_apps_file_key</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_new_apps_file_key</applyto>
 			<owner>application-browser</owner>
 			<type>string</type>
 			<default>.config/ab-newapps.txt</default>
@@ -12,8 +12,8 @@
 			</locale>
 		</schema>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_new_apps_max_items</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_new_apps_max_items</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_new_apps_max_items</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_new_apps_max_items</applyto>
 			<owner>application-browser</owner>
 			<type>int</type>
 			<default>9</default>
@@ -23,8 +23,8 @@
 			</locale>
 		</schema>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_start</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_start</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_exit_shell_on_action_start</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_exit_shell_on_action_start</applyto>
 			<owner>application-browser</owner>
 			<type>bool</type>
 			<default>true</default>
@@ -34,8 +34,8 @@
 			</locale>
 		</schema>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_help</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_help</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_exit_shell_on_action_help</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_exit_shell_on_action_help</applyto>
 			<owner>application-browser</owner>
 			<type>bool</type>
 			<default>false</default>
@@ -45,8 +45,8 @@
 			</locale>
 		</schema>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_add_remove</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_add_remove</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_exit_shell_on_action_add_remove</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_exit_shell_on_action_add_remove</applyto>
 			<owner>application-browser</owner>
 			<type>bool</type>
 			<default>false</default>
@@ -56,8 +56,8 @@
 			</locale>
 		</schema>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_upgrade_uninstall</key>
-			<applyto>/desktop/gnome/applications/main-menu/ab_exit_shell_on_action_upgrade_uninstall</applyto>
+			<key>/schemas/desktop/mate/applications/main-menu/ab_exit_shell_on_action_upgrade_uninstall</key>
+			<applyto>/desktop/mate/applications/main-menu/ab_exit_shell_on_action_upgrade_uninstall</applyto>
 			<owner>application-browser</owner>
 			<type>bool</type>
 			<default>true</default>
@@ -67,4 +67,4 @@
 			</locale>
 		</schema>
 	</schemalist>
-</gconfschemafile>
+</mateconfschemafile>

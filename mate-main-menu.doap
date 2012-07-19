@@ -1,23 +1,23 @@
 <Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
-         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns:mate="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">gnome-main-menu</name>
-  <shortdesc xml:lang="en">Alternative applications/documents menu for the GNOME Panel</shortdesc>
+  <name xml:lang="en">mate-main-menu</name>
+  <shortdesc xml:lang="en">Alternative applications/documents menu for the MATE Panel</shortdesc>
 
   <maintainer>
     <foaf:Person>
       <foaf:name>Federico Mena Quintero</foaf:name>
-      <gnome:userid>federico</gnome:userid>
+      <mate:userid>federico</mate:userid>
     </foaf:Person>
   </maintainer>
 
   <maintainer>
     <foaf:Person>
       <foaf:name>Julian Andres Klode</foaf:name>
-      <gnome:userid>jak</gnome:userid>
+      <mate:userid>jak</mate:userid>
     </foaf:Person>
   </maintainer>
 

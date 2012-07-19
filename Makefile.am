@@ -1,7 +1,7 @@
-if ENABLE_NAUTILUS_EXTENSION
-NAUTILUS_DIR=nautilus-main-menu
+if ENABLE_CAJA_EXTENSION
+CAJA_DIR=caja-main-menu
 else
-NAUTILUS_DIR=
+CAJA_DIR=
 endif
 
 SUBDIRS =				\
@@ -9,7 +9,7 @@ SUBDIRS =				\
 	application-browser/src		\
 	main-menu/etc			\
 	main-menu/src			\
-	$(NAUTILUS_DIR)			\
+	$(CAJA_DIR)			\
 	patch				\
 	po
 

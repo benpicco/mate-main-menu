@@ -12,7 +12,7 @@
           <bookmark:group>rank-0</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="nautilus" exec="nautilus --browser %u" timestamp="1169767039" count="1"/>
+          <bookmark:application name="caja" exec="caja --browser %u" timestamp="1169767039" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -25,7 +25,7 @@
           <bookmark:group>rank-1</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="nautilus" exec="nautilus --browser %u" timestamp="1169767039" count="1"/>
+          <bookmark:application name="caja" exec="caja --browser %u" timestamp="1169767039" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -39,7 +39,7 @@
           <bookmark:group>rank-2</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="nautilus" exec="nautilus --browser %u" timestamp="1169767039" count="1"/>
+          <bookmark:application name="caja" exec="caja --browser %u" timestamp="1169767039" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -52,7 +52,7 @@
           <bookmark:group>rank-3</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="nautilus" exec="nautilus --browser %u" timestamp="1169767039" count="1"/>
+          <bookmark:application name="caja" exec="caja --browser %u" timestamp="1169767039" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -66,7 +66,7 @@
           <bookmark:group>rank-4</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="nautilus" exec="nautilus --browser %u" timestamp="1169767039" count="1"/>
+          <bookmark:application name="caja" exec="caja --browser %u" timestamp="1169767039" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

@@ -1,4 +1,4 @@
-# Swedish translation for gnome-main-menu.
+# Swedish translation for mate-main-menu.
 # Copyright (C) 2001-2010 Free Software Foundation, Inc.
 # Mattias Newzella <newzella@linux.nu>, 2001.
 # Gudmund Areskoug <fta@algonet.se>, 2001.
@@ -6,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: mate-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-29 13:22+0100\n"
 "PO-Revision-Date: 2010-12-29 13:23+0100\n"
@@ -87,30 +87,30 @@ msgstr "Grupper"
 msgid "Application Actions"
 msgstr "Programåtgärder"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Standardbläddrare för menyer och program"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2420
 #: ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "GNOME-huvudmeny"
+msgid "MATE Main Menu"
+msgstr "MATE-huvudmeny"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Fabrik för GNOME-huvudmeny"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Fabrik för MATE-huvudmeny"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_Om"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "Öpp_na menyn"
 
@@ -127,8 +127,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop-fil för filbläddraren"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop-fil för gnome-systemövervakaren"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop-fil för mate-systemövervakaren"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -339,8 +339,8 @@ msgid "Lock Screen"
 msgstr "Lås skärmen"
 
 #: ../main-menu/src/main-menu-ui.c:2421
-msgid "The GNOME Main Menu"
-msgstr "Huvudmenyn i GNOME"
+msgid "The MATE Main Menu"
+msgstr "Huvudmenyn i MATE"
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -470,31 +470,31 @@ msgstr "Status"
 msgid "System"
 msgstr "System"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Lägg till i favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Lägg till det aktuella programmet till favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Lägg till det aktuella dokumentet till favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Ta bort från favoriter"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Ta bort det aktuella dokumentet från favoriter"
 
-#~ msgid "gnome-lockscreen"
-#~ msgstr "gnome-lockscreen"
+#~ msgid "mate-lockscreen"
+#~ msgstr "mate-lockscreen"
 #~ msgid "<b>Start %s</b>"
 #~ msgstr "<b>Starta %s</b>"
 #~ msgid "Upgrade"
@@ -619,13 +619,13 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "konverteras) följt av avgränsaren ; och filnamnet på en tillhörande ."
 #~ "desktop-fil som ska startas för aktiviteten."
 #~ msgid ""
-#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
-#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
+#~ "[Change Desktop Background;background.desktop,Add Printer;mate-cups-"
+#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-"
 #~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
 #~ "YaST.desktop]"
 #~ msgstr ""
-#~ "[Byt skrivbordsbakgrund;background.desktop,Lägg till skrivare;gnome-cups-"
-#~ "manager.desktop,Ställ in nätverk;YaST2/lan.desktop,Ändra lösenord;gnome-"
+#~ "[Byt skrivbordsbakgrund;background.desktop,Lägg till skrivare;mate-cups-"
+#~ "manager.desktop,Ställ in nätverk;YaST2/lan.desktop,Ändra lösenord;mate-"
 #~ "passwd.desktop,Lägg till användare;YaST2/users.desktop,Öppna "
 #~ "Administratörsinställningar;YaST.desktop]"
 #~ msgid ""
@@ -673,7 +673,7 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ msgid ""
 #~ "contains the list (in no particular order) of allowable file types to "
 #~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "mate/applications/main-menu/file-area/file_class): 0 "
 #~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
 #~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
 #~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
@@ -681,7 +681,7 @@ msgstr "Ta bort det aktuella dokumentet från favoriter"
 #~ "recently-used."
 #~ msgstr ""
 #~ "innehåller listan (inte i ordning) med tillåtna filtyper som visas i "
-#~ "filområdet. möjliga värden (se även kommentaren till /desktop/gnome/ "
+#~ "filområdet. möjliga värden (se även kommentaren till /desktop/mate/ "
 #~ "applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1  "
 #~ "[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS är listan med "
 #~ "senast använda (instansierade med main-menu eller application-browser).  "

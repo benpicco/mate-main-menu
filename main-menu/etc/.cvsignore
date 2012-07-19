@@ -1,5 +1,5 @@
-GNOME_MainMenu.server
-GNOME_MainMenu.server.in
+MATE_MainMenu.server
+MATE_MainMenu.server.in
 Makefile
 Makefile.in
 slab.schemas

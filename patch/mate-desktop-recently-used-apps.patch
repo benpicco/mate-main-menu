@@ -1,26 +1,26 @@
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/Makefile.am gnome-desktop-2.16.1/libgnome-desktop/Makefile.am
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/Makefile.am	2006-06-04 07:53:09.000000000 -0400
-+++ gnome-desktop-2.16.1/libgnome-desktop/Makefile.am	2006-10-23 16:19:45.000000000 -0400
-@@ -17,9 +17,13 @@ lib_LTLIBRARIES = libgnome-desktop-2.la
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/Makefile.am mate-desktop-2.16.1/libmate-desktop/Makefile.am
+--- mate-desktop-2.16.1-pristine/libmate-desktop/Makefile.am	2006-06-04 07:53:09.000000000 -0400
++++ mate-desktop-2.16.1/libmate-desktop/Makefile.am	2006-10-23 16:19:45.000000000 -0400
+@@ -17,9 +17,13 @@ lib_LTLIBRARIES = libmate-desktop-2.la
  
  noinst_PROGRAMS = test-ditem test-hint test-ditem-edit
  
--libgnome_desktop_2_la_SOURCES = \
--	gnome-desktop-item.c	\
--	gnome-ditem-edit.c	\
-+libgnome_desktop_2_la_SOURCES =		\
-+	gnome-desktop-item.c		\
-+	gnome-ditem-edit.c		\
+-libmate_desktop_2_la_SOURCES = \
+-	mate-desktop-item.c	\
+-	mate-ditem-edit.c	\
++libmate_desktop_2_la_SOURCES =		\
++	mate-desktop-item.c		\
++	mate-ditem-edit.c		\
 +	egg-recent-item.h		\
 +	egg-recent-item.c		\
 +	egg-recent-model.h		\
 +	egg-recent-model.c		\
- 	gnome-hint.c
+ 	mate-hint.c
  
- libgnome_desktop_2_la_LIBADD = \
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnome-desktop-2.16.1/libgnome-desktop/egg-recent-item.c
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c	1969-12-31 19:00:00.000000000 -0500
-+++ gnome-desktop-2.16.1/libgnome-desktop/egg-recent-item.c	2006-10-23 16:19:45.000000000 -0400
+ libmate_desktop_2_la_LIBADD = \
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-item.c mate-desktop-2.16.1/libmate-desktop/egg-recent-item.c
+--- mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-item.c	1969-12-31 19:00:00.000000000 -0500
++++ mate-desktop-2.16.1/libmate-desktop/egg-recent-item.c	2006-10-23 16:19:45.000000000 -0400
 @@ -0,0 +1,426 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 +/*
@@ -46,8 +46,8 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +#include <stdio.h>
 +#include <string.h>
 +#include <glib.h>
-+#include <libgnomevfs/gnome-vfs.h>
-+#include <libgnomevfs/gnome-vfs-mime-utils.h>
++#include <libmatevfs/mate-vfs.h>
++#include <libmatevfs/mate-vfs-mime-utils.h>
 +#include "egg-recent-item.h"
 +
 +
@@ -133,10 +133,10 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +		item->mime_type = NULL;
 +
 +		if (item->uri)
-+			item->mime_type = gnome_vfs_get_mime_type (item->uri);
++			item->mime_type = mate_vfs_get_mime_type (item->uri);
 +
 +		if (!item->mime_type)
-+			item->mime_type = g_strdup (GNOME_VFS_MIME_TYPE_UNKNOWN);
++			item->mime_type = g_strdup (MATE_VFS_MIME_TYPE_UNKNOWN);
 +	}
 +}
 +
@@ -147,7 +147,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +
 +	/* if G_BROKEN_FILENAMES is not set, this should succede */
 +	if (g_utf8_validate (uri, -1, NULL)) {
-+		item->uri = gnome_vfs_make_uri_from_input (uri);
++		item->uri = mate_vfs_make_uri_from_input (uri);
 +	} else {
 +		utf8_uri = g_filename_to_utf8 (uri, -1, NULL, NULL, NULL);
 +
@@ -157,7 +157,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +		}
 +
 +		if (g_utf8_validate (utf8_uri, -1, NULL)) {
-+			item->uri = gnome_vfs_make_uri_from_input (utf8_uri);
++			item->uri = mate_vfs_make_uri_from_input (utf8_uri);
 +		} else {
 +			g_free (utf8_uri);
 +			return FALSE;
@@ -175,7 +175,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +	return g_strdup (item->uri);
 +}
 +
-+G_CONST_RETURN gchar * 
++const gchar * 
 +egg_recent_item_peek_uri (const EggRecentItem *item)
 +{
 +	return item->uri;
@@ -193,10 +193,10 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +gchar *
 +egg_recent_item_get_uri_for_display (const EggRecentItem *item)
 +{
-+	return gnome_vfs_format_uri_for_display (item->uri);
++	return mate_vfs_format_uri_for_display (item->uri);
 +}
 +
-+/* Stolen from gnome_vfs_make_valid_utf8() */
++/* Stolen from mate_vfs_make_valid_utf8() */
 +static char *
 +make_valid_utf8 (const char *name)
 +{
@@ -235,24 +235,24 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +}
 +
 +static gchar *
-+get_uri_shortname_for_display (GnomeVFSURI *uri)
++get_uri_shortname_for_display (MateVFSURI *uri)
 +{
 +	gchar    *name;	
 +	gboolean  validated;
 +
 +	validated = FALSE;
-+	name = gnome_vfs_uri_extract_short_name (uri);
++	name = mate_vfs_uri_extract_short_name (uri);
 +	
 +	if (name == NULL)
 +	{
-+		name = gnome_vfs_uri_to_string (uri, GNOME_VFS_URI_HIDE_PASSWORD);
++		name = mate_vfs_uri_to_string (uri, MATE_VFS_URI_HIDE_PASSWORD);
 +	}
 +	else if (g_ascii_strcasecmp (uri->method_string, "file") == 0)
 +	{
 +		gchar *text_uri;
 +		gchar *local_file;
-+		text_uri = gnome_vfs_uri_to_string (uri, GNOME_VFS_URI_HIDE_PASSWORD);
-+		local_file = gnome_vfs_get_local_path_from_uri (text_uri);
++		text_uri = mate_vfs_uri_to_string (uri, MATE_VFS_URI_HIDE_PASSWORD);
++		local_file = mate_vfs_get_local_path_from_uri (text_uri);
 +		
 +		if (local_file != NULL)
 +		{
@@ -264,14 +264,14 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +		g_free (local_file);
 +		g_free (text_uri);
 +	} 
-+	else if (!gnome_vfs_uri_has_parent (uri)) 
++	else if (!mate_vfs_uri_has_parent (uri)) 
 +	{
 +		const gchar *method;
 +		
 +		method = uri->method_string;
 +		
 +		if (name == NULL ||
-+		    strcmp (name, GNOME_VFS_URI_PATH_STR) == 0) 
++		    strcmp (name, MATE_VFS_URI_PATH_STR) == 0) 
 +		{
 +			g_free (name);
 +			name = g_strdup (method);
@@ -312,7 +312,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +gchar *
 +egg_recent_item_get_short_name (const EggRecentItem *item)
 +{
-+	GnomeVFSURI *uri;
++	MateVFSURI *uri;
 +	gchar *short_name;
 +
 +	g_return_val_if_fail (item != NULL, NULL);
@@ -320,13 +320,13 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +	if (item->uri == NULL)
 +		return NULL;
 +
-+	uri = gnome_vfs_uri_new (item->uri);
++	uri = mate_vfs_uri_new (item->uri);
 +	if (uri == NULL)
 +		return NULL;
 +
 +	short_name = get_uri_shortname_for_display (uri);
 +
-+	gnome_vfs_uri_unref (uri);
++	mate_vfs_uri_unref (uri);
 +
 +	return short_name;
 +}
@@ -368,7 +368,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +	return item->timestamp;
 +}
 +
-+G_CONST_RETURN GList *
++const GList *
 +egg_recent_item_get_groups (const EggRecentItem *item)
 +{
 +	return item->groups;
@@ -448,9 +448,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.c gnom
 +	
 +	return boxed_type;
 +}
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.h gnome-desktop-2.16.1/libgnome-desktop/egg-recent-item.h
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.h	1969-12-31 19:00:00.000000000 -0500
-+++ gnome-desktop-2.16.1/libgnome-desktop/egg-recent-item.h	2006-10-23 16:19:45.000000000 -0400
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-item.h mate-desktop-2.16.1/libmate-desktop/egg-recent-item.h
+--- mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-item.h	1969-12-31 19:00:00.000000000 -0500
++++ mate-desktop-2.16.1/libmate-desktop/egg-recent-item.h	2006-10-23 16:19:45.000000000 -0400
 @@ -0,0 +1,80 @@
 +
 +#ifndef __EGG_RECENT_ITEM_H__
@@ -508,11 +508,11 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.h gnom
 +void egg_recent_item_set_timestamp (EggRecentItem *item, time_t timestamp);
 +time_t egg_recent_item_get_timestamp (const EggRecentItem *item);
 +
-+G_CONST_RETURN gchar *egg_recent_item_peek_uri (const EggRecentItem *item);
++const gchar *egg_recent_item_peek_uri (const EggRecentItem *item);
 +
 +
 +/* groups */
-+G_CONST_RETURN GList *  egg_recent_item_get_groups (const EggRecentItem *item);
++const GList *  egg_recent_item_get_groups (const EggRecentItem *item);
 +
 +gboolean       egg_recent_item_in_group (const EggRecentItem *item,
 +					   const gchar *group_name);
@@ -532,9 +532,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-item.h gnom
 +G_END_DECLS
 +
 +#endif /* __EGG_RECENT_ITEM_H__ */
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gnome-desktop-2.16.1/libgnome-desktop/egg-recent-model.c
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c	1969-12-31 19:00:00.000000000 -0500
-+++ gnome-desktop-2.16.1/libgnome-desktop/egg-recent-model.c	2006-10-23 16:19:45.000000000 -0400
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-model.c mate-desktop-2.16.1/libmate-desktop/egg-recent-model.c
+--- mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-model.c	1969-12-31 19:00:00.000000000 -0500
++++ mate-desktop-2.16.1/libmate-desktop/egg-recent-model.c	2006-10-23 16:19:45.000000000 -0400
 @@ -0,0 +1,1965 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 +/*
@@ -570,9 +570,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +#include <sys/stat.h>
 +#include <time.h>
 +#include <gtk/gtk.h>
-+#include <libgnomevfs/gnome-vfs.h>
-+#include <libgnomevfs/gnome-vfs-mime-utils.h>
-+#include <gconf/gconf-client.h>
++#include <libmatevfs/mate-vfs.h>
++#include <libmatevfs/mate-vfs-mime-utils.h>
++#include <mateconf/mateconf-client.h>
 +
 +#define EGG_ENABLE_RECENT_FILES
 +#include "egg-recent-model.h"
@@ -591,7 +591,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +int lockf (int filedes, int function, off_t size);
 +#endif
 +
-+#define EGG_RECENT_MODEL_KEY_DIR "/desktop/gnome/recent_files"
++#define EGG_RECENT_MODEL_KEY_DIR "/desktop/mate/recent_files"
 +#define EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY EGG_RECENT_MODEL_KEY_DIR "/default_limit"
 +#define EGG_RECENT_MODEL_EXPIRE_KEY EGG_RECENT_MODEL_KEY_DIR "/expire"
 +
@@ -609,9 +609,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +
 +	GHashTable *monitors;
 +
-+	GnomeVFSMonitorHandle *monitor;
++	MateVFSMonitorHandle *monitor;
 +
-+	GConfClient *client;
++	MateConfClient *client;
 +	gboolean use_default_limit;
 +
 +	guint limit_change_notify_id;
@@ -819,7 +819,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	while (tmp) {
 +		EggRecentItem *item = tmp->data;
 +
-+		if (gnome_vfs_uris_match (egg_recent_item_peek_uri (item), uri)) {
++		if (mate_vfs_uris_match (egg_recent_item_peek_uri (item), uri)) {
 +			egg_recent_item_set_timestamp (item, (time_t) -1);
 +
 +			egg_recent_model_add_new_groups (item, upd_item);
@@ -1175,7 +1175,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +		    model->priv->scheme_filter_values != NULL) {
 +			gchar *scheme;
 +			
-+			scheme = gnome_vfs_get_uri_scheme (uri);
++			scheme = mate_vfs_get_uri_scheme (uri);
 +
 +			if (egg_recent_model_string_match
 +				(model->priv->scheme_filter_values, scheme))
@@ -1202,17 +1202,17 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +
 +#if 0
 +static void
-+egg_recent_model_monitor_list_cb (GnomeVFSMonitorHandle *handle,
++egg_recent_model_monitor_list_cb (MateVFSMonitorHandle *handle,
 +			       const gchar *monitor_uri,
 +			       const gchar *info_uri,
-+			       GnomeVFSMonitorEventType event_type,
++			       MateVFSMonitorEventType event_type,
 +			       gpointer user_data)
 +{
 +	EggRecentModel *model;
 +
 +	model = EGG_RECENT_MODEL (user_data);
 +
-+	if (event_type == GNOME_VFS_MONITOR_EVENT_DELETED) {
++	if (event_type == MATE_VFS_MONITOR_EVENT_DELETED) {
 +		egg_recent_model_delete (model, monitor_uri);
 +		g_hash_table_remove (model->priv->monitors, monitor_uri);
 +	}
@@ -1228,8 +1228,8 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	tmp = list;
 +	while (tmp) {
 +		EggRecentItem *item = (EggRecentItem *)tmp->data;
-+		GnomeVFSMonitorHandle *handle;
-+		GnomeVFSResult res;
++		MateVFSMonitorHandle *handle;
++		MateVFSResult res;
 +		gchar *uri;
 +
 +		tmp = tmp->next;
@@ -1241,12 +1241,12 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +			continue;
 +		}
 +
-+		res = gnome_vfs_monitor_add (&handle, uri,
-+					     GNOME_VFS_MONITOR_FILE,
++		res = mate_vfs_monitor_add (&handle, uri,
++					     MATE_VFS_MONITOR_FILE,
 +					     egg_recent_model_monitor_list_cb,
 +					     model);
 +		
-+		if (res == GNOME_VFS_OK)
++		if (res == MATE_VFS_OK)
 +			g_hash_table_insert (model->priv->monitors, uri, handle);
 +		else
 +			g_free (uri);
@@ -1266,10 +1266,10 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +}
 +
 +static void
-+egg_recent_model_monitor_cb (GnomeVFSMonitorHandle *handle,
++egg_recent_model_monitor_cb (MateVFSMonitorHandle *handle,
 +			       const gchar *monitor_uri,
 +			       const gchar *info_uri,
-+			       GnomeVFSMonitorEventType event_type,
++			       MateVFSMonitorEventType event_type,
 +			       gpointer user_data)
 +{
 +	EggRecentModel *model;
@@ -1278,9 +1278,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	g_return_if_fail (EGG_IS_RECENT_MODEL (user_data));
 +	model = EGG_RECENT_MODEL (user_data);
 +
-+	if (event_type == GNOME_VFS_MONITOR_EVENT_CHANGED ||
-+	    event_type == GNOME_VFS_MONITOR_EVENT_CREATED ||
-+	    event_type == GNOME_VFS_MONITOR_EVENT_DELETED) {
++	if (event_type == MATE_VFS_MONITOR_EVENT_CHANGED ||
++	    event_type == MATE_VFS_MONITOR_EVENT_CREATED ||
++	    event_type == MATE_VFS_MONITOR_EVENT_DELETED) {
 +		if (model->priv->changed_timeout > 0) {
 +			g_source_remove (model->priv->changed_timeout);
 +		}
@@ -1322,13 +1322,13 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +{
 +	if (should_monitor && model->priv->monitor == NULL) {
 +		char *uri;
-+		GnomeVFSResult result;
++		MateVFSResult result;
 +
-+		uri = gnome_vfs_get_uri_from_local_path (model->priv->path);
++		uri = mate_vfs_get_uri_from_local_path (model->priv->path);
 +
-+		result = gnome_vfs_monitor_add (&model->priv->monitor,
++		result = mate_vfs_monitor_add (&model->priv->monitor,
 +				       		uri,
-+				       		GNOME_VFS_MONITOR_FILE,
++				       		MATE_VFS_MONITOR_FILE,
 +				       		egg_recent_model_monitor_cb,
 +				       		model);
 +
@@ -1337,7 +1337,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +		/* if the above fails, don't worry about it.
 +		 * local notifications will still happen
 +		 */
-+		if (result == GNOME_VFS_ERROR_NOT_SUPPORTED) {
++		if (result == MATE_VFS_ERROR_NOT_SUPPORTED) {
 +			if (model->priv->poll_timeout > 0)
 +				g_source_remove (model->priv->poll_timeout);
 +			
@@ -1348,7 +1348,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +		}
 +
 +	} else if (!should_monitor && model->priv->monitor != NULL) {
-+		gnome_vfs_monitor_cancel (model->priv->monitor);
++		mate_vfs_monitor_cancel (model->priv->monitor);
 +		model->priv->monitor = NULL;
 +	}
 +}
@@ -1620,12 +1620,12 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +
 +
 +	if (model->priv->limit_change_notify_id)
-+		gconf_client_notify_remove (model->priv->client,
++		mateconf_client_notify_remove (model->priv->client,
 +					    model->priv->limit_change_notify_id);
 +	model->priv->expiration_change_notify_id = 0;
 +
 +	if (model->priv->expiration_change_notify_id)
-+		gconf_client_notify_remove (model->priv->client,
++		mateconf_client_notify_remove (model->priv->client,
 +					    model->priv->expiration_change_notify_id);
 +	model->priv->expiration_change_notify_id = 0;
 +
@@ -1802,11 +1802,11 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +
 +
 +static void
-+egg_recent_model_limit_changed (GConfClient *client, guint cnxn_id,
-+				GConfEntry *entry, gpointer user_data)
++egg_recent_model_limit_changed (MateConfClient *client, guint cnxn_id,
++				MateConfEntry *entry, gpointer user_data)
 +{
 +	EggRecentModel *model;
-+	GConfValue *value;
++	MateConfValue *value;
 +
 +	model = EGG_RECENT_MODEL (user_data);
 +
@@ -1819,20 +1819,20 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	if (entry == NULL)
 +		return;
 +
-+	value = gconf_entry_get_value (entry);
++	value = mateconf_entry_get_value (entry);
 +
-+	if (value->type != GCONF_VALUE_INT) {
-+		g_warning ("Expected GConfValue of type integer, "
++	if (value->type != MATECONF_VALUE_INT) {
++		g_warning ("Expected MateConfValue of type integer, "
 +			   "got something else");
 +	}
 +
 +
-+	egg_recent_model_set_limit_internal (model, gconf_value_get_int (value));
++	egg_recent_model_set_limit_internal (model, mateconf_value_get_int (value));
 +}
 +
 +static void
-+egg_recent_model_expiration_changed (GConfClient *client, guint cnxn_id,
-+				     GConfEntry *entry, gpointer user_data)
++egg_recent_model_expiration_changed (MateConfClient *client, guint cnxn_id,
++				     MateConfEntry *entry, gpointer user_data)
 +{
 +
 +}
@@ -1840,8 +1840,8 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +static void
 +egg_recent_model_init (EggRecentModel * model)
 +{
-+	if (!gnome_vfs_init ()) {
-+		g_warning ("gnome-vfs initialization failed.");
++	if (!mate_vfs_init ()) {
++		g_warning ("mate-vfs initialization failed.");
 +		return;
 +	}
 +	
@@ -1855,30 +1855,30 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	model->priv->group_filter_values  = NULL;
 +	model->priv->scheme_filter_values = NULL;
 +	
-+	model->priv->client = gconf_client_get_default ();
-+	gconf_client_add_dir (model->priv->client, EGG_RECENT_MODEL_KEY_DIR,
-+			      GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
++	model->priv->client = mateconf_client_get_default ();
++	mateconf_client_add_dir (model->priv->client, EGG_RECENT_MODEL_KEY_DIR,
++			      MATECONF_CLIENT_PRELOAD_ONELEVEL, NULL);
 +
 +	model->priv->limit_change_notify_id =
-+			gconf_client_notify_add (model->priv->client,
++			mateconf_client_notify_add (model->priv->client,
 +						 EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY,
 +						 egg_recent_model_limit_changed,
 +						 model, NULL, NULL);
 +
 +	model->priv->expiration_change_notify_id =
-+			gconf_client_notify_add (model->priv->client,
++			mateconf_client_notify_add (model->priv->client,
 +						 EGG_RECENT_MODEL_EXPIRE_KEY,
 +						 egg_recent_model_expiration_changed,
 +						 model, NULL, NULL);
 +
-+	model->priv->expire_days = gconf_client_get_int (
++	model->priv->expire_days = mateconf_client_get_int (
 +					model->priv->client,
 +					EGG_RECENT_MODEL_EXPIRE_KEY,
 +					NULL);
 +					
 +#if 0
 +	/* keep this out, for now */
-+	model->priv->limit = gconf_client_get_int (
++	model->priv->limit = mateconf_client_get_int (
 +					model->priv->client,
 +					EGG_RECENT_MODEL_DEFAULT_LIMIT_KEY, NULL);
 +	model->priv->use_default_limit = TRUE;
@@ -1889,7 +1889,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	model->priv->monitors = g_hash_table_new_full (
 +					g_str_hash, g_str_equal,
 +					(GDestroyNotify) g_free,
-+					(GDestroyNotify) gnome_vfs_monitor_cancel);
++					(GDestroyNotify) mate_vfs_monitor_cancel);
 +
 +	model->priv->monitor = NULL;
 +	model->priv->poll_timeout = 0;
@@ -2501,9 +2501,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.c gno
 +	return egg_recent_model_type;
 +}
 +
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.h gnome-desktop-2.16.1/libgnome-desktop/egg-recent-model.h
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.h	1969-12-31 19:00:00.000000000 -0500
-+++ gnome-desktop-2.16.1/libgnome-desktop/egg-recent-model.h	2006-10-23 16:19:45.000000000 -0400
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-model.h mate-desktop-2.16.1/libmate-desktop/egg-recent-model.h
+--- mate-desktop-2.16.1-pristine/libmate-desktop/egg-recent-model.h	1969-12-31 19:00:00.000000000 -0500
++++ mate-desktop-2.16.1/libmate-desktop/egg-recent-model.h	2006-10-23 16:19:45.000000000 -0400
 @@ -0,0 +1,84 @@
 +/* vim: set sw=8: -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 +#ifndef __EGG_RECENT_MODEL_H__
@@ -2589,9 +2589,9 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/egg-recent-model.h gno
 +G_END_DECLS
 +
 +#endif /* __EGG_RECENT_MODEL_H__ */
-diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c gnome-desktop-2.16.1/libgnome-desktop/gnome-desktop-item.c
---- gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c	2006-08-05 07:59:08.000000000 -0400
-+++ gnome-desktop-2.16.1/libgnome-desktop/gnome-desktop-item.c	2006-10-23 17:15:41.000000000 -0400
+diff -uprN mate-desktop-2.16.1-pristine/libmate-desktop/mate-desktop-item.c mate-desktop-2.16.1/libmate-desktop/mate-desktop-item.c
+--- mate-desktop-2.16.1-pristine/libmate-desktop/mate-desktop-item.c	2006-08-05 07:59:08.000000000 -0400
++++ mate-desktop-2.16.1/libmate-desktop/mate-desktop-item.c	2006-10-23 17:15:41.000000000 -0400
 @@ -59,6 +59,16 @@
  #include <gtk/gtk.h>
  #endif
@@ -2608,18 +2608,18 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c g
 +
  #define sure_string(s) ((s)!=NULL?(s):"")
  
- struct _GnomeDesktopItem {
+ struct _MateDesktopItem {
 @@ -128,6 +138,8 @@ static gboolean          ditem_save (Gno
  				     const char        *uri,
  				     GError           **error);
  
-+static void update_recently_used_apps (const GnomeDesktopItem *item);
++static void update_recently_used_apps (const MateDesktopItem *item);
 +
  static int
  readbuf_getc (ReadBuf *rb)
  {
-@@ -2103,6 +2115,8 @@ gnome_desktop_item_launch_on_screen_with
- 			     (flags & GNOME_DESKTOP_ITEM_LAUNCH_APPEND_PATHS),
+@@ -2103,6 +2115,8 @@ mate_desktop_item_launch_on_screen_with
+ 			     (flags & MATE_DESKTOP_ITEM_LAUNCH_APPEND_PATHS),
  			     error);
  
 +	update_recently_used_apps (item);
@@ -2627,13 +2627,13 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c g
  	return ret;
  }
  
-@@ -4098,3 +4112,71 @@ gnome_desktop_item_error_quark (void)
+@@ -4098,3 +4112,71 @@ mate_desktop_item_error_quark (void)
  
  	return q;
  }
 +
 +static void
-+update_recently_used_apps (const GnomeDesktopItem *item)
++update_recently_used_apps (const MateDesktopItem *item)
 +{
 +#ifdef USE_GTK_RECENT_MANAGER
 +	GtkRecentManager *manager;
@@ -2660,17 +2660,17 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c g
 +
 +	recent_data.app_name = g_strdup (g_get_application_name ());
 +	if (! recent_data.app_name)
-+		recent_data.app_name = g_strdup ("libgnomedesktop");
++		recent_data.app_name = g_strdup ("libmatedesktop");
 +
-+	recent_data.app_exec = g_strdup (gnome_desktop_item_get_string (item, GNOME_DESKTOP_ITEM_EXEC));
++	recent_data.app_exec = g_strdup (mate_desktop_item_get_string (item, MATE_DESKTOP_ITEM_EXEC));
 +	if (! recent_data.app_exec)
-+		recent_data.app_exec = g_strdup ("gnome-open %u");
++		recent_data.app_exec = g_strdup ("mate-open %u");
 +
 +	recent_data.groups     = g_new0 (gchar *, 2);
 +	recent_data.groups [0] = g_strdup ("recently-used-apps");
 +	recent_data.groups [1] = NULL;
 +
-+	gtk_recent_manager_add_full (manager, gnome_desktop_item_get_location (item), & recent_data);
++	gtk_recent_manager_add_full (manager, mate_desktop_item_get_location (item), & recent_data);
 +
 +	g_free (recent_data.mime_type);
 +	g_free (recent_data.app_name);
@@ -2685,7 +2685,7 @@ diff -uprN gnome-desktop-2.16.1-pristine/libgnome-desktop/gnome-desktop-item.c g
 +	if (! model)
 +		return;
 +
-+	recent_item = egg_recent_item_new_from_uri (gnome_desktop_item_get_location (item));
++	recent_item = egg_recent_item_new_from_uri (mate_desktop_item_get_location (item));
 +
 +	if (recent_item) {
 +		egg_recent_item_add_group (recent_item, "recently-used-apps");

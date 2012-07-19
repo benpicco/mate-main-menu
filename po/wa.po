@@ -1,10 +1,10 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-main-menu package.
+# This file is distributed under the same license as the mate-main-menu package.
 #
 # Jean Cayron <jean.cayron@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu.HEAD\n"
+"Project-Id-Version: mate-main-menu.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-01 22:06+0100\n"
 "PO-Revision-Date: 2008-11-28 18:36+0100\n"
@@ -116,14 +116,14 @@ msgid "Uninstall"
 msgstr "Disastaler"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../caja-main-menu/caja-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "Oister des favoris"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "Radjouter ås favoris"
 
@@ -272,28 +272,28 @@ msgstr "<b>Drovi %s</b>"
 msgid "Remove from System Items"
 msgstr "Oister des Cayets sistinme"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Prémetowe dressêye et betchteu des programes"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2391 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "Mwaisse dressêye GNOME"
+msgid "MATE Main Menu"
+msgstr "Mwaisse dressêye MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Mwaisse dressêye GNOME Fabrike"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Mwaisse dressêye MATE Fabrike"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Mwaisse dressêye"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "Å dfw_ait"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Drovi dressêye"
 
@@ -311,8 +311,8 @@ msgid ".desktop file for the file browser"
 msgstr "fitchî .desktop pol betchteu d' fitchî"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "fitchî .desktop pol gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "fitchî .desktop pol mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -596,12 +596,12 @@ msgid "Lock Screen"
 msgstr "Aclawer waitroûle"
 
 #: ../main-menu/src/main-menu-migration.c:199
-msgid "gnome-lockscreen"
-msgstr "gnome-aclawer-waitroûle"
+msgid "mate-lockscreen"
+msgstr "mate-aclawer-waitroûle"
 
 #: ../main-menu/src/main-menu-ui.c:2392
-msgid "The GNOME Main Menu"
-msgstr "Li mwaisse dressêye di GNOME"
+msgid "The MATE Main Menu"
+msgstr "Li mwaisse dressêye di MATE"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -727,15 +727,15 @@ msgstr "Estat"
 msgid "System"
 msgstr "Sistinme"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "Radjouter l' enondeu do moumint ås favoris"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "Radjouter l' documint do moumint ås favoris"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../caja-main-menu/caja-main-menu.c:131
+#: ../caja-main-menu/caja-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "Oister l' documint do moumint des favoris"

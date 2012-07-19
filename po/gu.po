@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2008-12-30 00:37+0000\n"
 "PO-Revision-Date: 2009-06-08 12:31+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
@@ -109,14 +109,14 @@ msgid "Uninstall"
 msgstr "બિનસ્થાપિત કરો"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../caja-main-menu/caja-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "પસંદીદાઓ માંથી દૂર કરો"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "પસંદીદાઓમાં ઉમેરો"
 
@@ -279,28 +279,28 @@ msgstr "<b>ખોલો %s</b>"
 msgid "Remove from System Items"
 msgstr "સિસ્ટમ વસ્તુઓ માંથી દૂર કરો"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "મૂળભૂત મેનુ અને કાર્યક્રમ બ્રાઉઝર"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME મુખ્ય મેનુ"
+msgid "MATE Main Menu"
+msgstr "MATE મુખ્ય મેનુ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME મુખ્ય મેનુ ફેક્ટરી"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE મુખ્ય મેનુ ફેક્ટરી"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "મુખ્ય મેનુ"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "વિશે (_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "મેનુ ને ખોલો (_O)"
 
@@ -317,8 +317,8 @@ msgid ".desktop file for the file browser"
 msgstr "ફાઇલ બ્રાઉઝર માટે .desktop ફાઇલ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor માટે .desktop ફાઇલ"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor માટે .desktop ફાઇલ"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -564,12 +564,12 @@ msgid "Home: %s Free / %s"
 msgstr "ઘર: %s મફત / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "GNOME મુખ્ય મેનુ"
+msgid "The MATE Main Menu"
+msgstr "MATE મુખ્ય મેનુ"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -695,16 +695,16 @@ msgstr "પરિસ્થિતિ"
 msgid "System"
 msgstr "સિસ્ટમ"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "પસંદીદા કરવા માટે હાલનાં લૉંચર ને ઉમેરો"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "પસંદીદામાં હાલનાં દસ્તાવેજને ઉમેરો"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../caja-main-menu/caja-main-menu.c:131
+#: ../caja-main-menu/caja-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "પસંદીદાઓમાંથી હાલનાં દસ્તાવેજને દૂર કરો"
 

@@ -17,7 +17,7 @@
  *  License along with this library; if not, write to the Free
  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *  Author: Christian Neumair <chris@gnome-de.org>
+ *  Author: Christian Neumair <chris@mate-de.org>
  * 
  */
 
@@ -25,33 +25,33 @@
  #include <config.h>
 #endif
 
-#include "nautilus-main-menu.h"
+#include "caja-main-menu.h"
 
-#include <libnautilus-extension/nautilus-extension-types.h>
+#include <libcaja-extension/caja-extension-types.h>
 #include <libintl.h>
 
 static GType type_list[1];
 
 void
-nautilus_module_initialize (GTypeModule *module)
+caja_module_initialize (GTypeModule *module)
 {
-	g_print ("Initializing nautilus-main-menu extension\n");
+	g_print ("Initializing caja-main-menu extension\n");
 
-	nautilus_main_menu_register_type (module);
-	type_list[0] = NAUTILUS_TYPE_MAIN_MENU;
+	caja_main_menu_register_type (module);
+	type_list[0] = CAJA_TYPE_MAIN_MENU;
 
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 }
 
 void
-nautilus_module_shutdown (void)
+caja_module_shutdown (void)
 {
-	g_print ("Shutting down nautilus-main-menu extension\n");
+	g_print ("Shutting down caja-main-menu extension\n");
 }
 
 void 
-nautilus_module_list_types (const GType **types,
+caja_module_list_types (const GType **types,
 			    int          *num_types)
 {
 	*types = type_list;

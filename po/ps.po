@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNOME\n"
+"Project-Id-Version: MATE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-07 22:11+0100\n"
 "PO-Revision-Date: 2008-02-05 11:15-0800\n"
@@ -108,14 +108,14 @@ msgid "Uninstall"
 msgstr "نالګول"
 
 #: ../libslab/application-tile.c:777 ../libslab/document-tile.c:737
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../caja-main-menu/caja-main-menu.c:133
+#: ../caja-main-menu/caja-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "له خواپورو نه ړنګول"
 
 #: ../libslab/application-tile.c:779 ../libslab/document-tile.c:739
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../caja-main-menu/caja-main-menu.c:123
+#: ../caja-main-menu/caja-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "خواپورو ته زياتول"
 
@@ -333,28 +333,28 @@ msgstr "<b>پرانيستل %s</b>"
 msgid "Remove from System Items"
 msgstr "له غونډال توکو نه ړنګول"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "د غورنۍ او کاريال تلواله لټونی"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2160 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
+msgid "MATE Main Menu"
 msgstr "د جنومي اره غورنۍ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
 msgstr "د جنومي ارې غورنۍ فېکټري"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "اره غورنۍ"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "په اړه_"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "غورنۍ پرانيستل_"
 
@@ -367,7 +367,7 @@ msgid ".desktop file for the file browser"
 msgstr "دوتنه .desktop د دوتنه لټوني لپاره"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
 msgstr "دوتنه .desktop د جنومي-غونډال-څارن لپاره"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
@@ -604,11 +604,11 @@ msgid "Lock Screen"
 msgstr "پرده کولپول"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
+msgid "mate-lockscreen"
 msgstr "جنومي-پرده کولپول"
 
 #: ../main-menu/src/main-menu-ui.c:2161
-msgid "The GNOME Main Menu"
+msgid "The MATE Main Menu"
 msgstr "د جنومي اره غورنۍ"
 
 #: ../main-menu/src/network-status-tile.c:91
@@ -722,15 +722,15 @@ msgstr "انکړ"
 msgid "System"
 msgstr "غونډال"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:124
 msgid "Add the current launcher to favorites"
 msgstr "اوسنی پېلوونکی خواپورو ته زياتول"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Add the current document to favorites"
 msgstr "اوسنی لاسوند خواپورو ته زياتول"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../caja-main-menu/caja-main-menu.c:134
+#: ../caja-main-menu/caja-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "اوسنی لاسوند له خواپورو نه ړنګول"

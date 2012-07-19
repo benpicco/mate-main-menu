@@ -7,12 +7,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-"
 "main-menu&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-04-25 17:55+0000\n"
 "PO-Revision-Date: 2011-07-12 21:36+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
-"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"Language-Team: Russian <mate-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,29 +95,29 @@ msgstr "Группы"
 msgid "Application Actions"
 msgstr "Действия приложения"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Проводник приложений по умолчанию"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2423 ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "Главное меню GNOME"
+msgid "MATE Main Menu"
+msgstr "Главное меню MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Фабрика главного меню GNOME"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Фабрика главного меню MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "О _программе"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Открыть меню"
 
@@ -134,8 +134,8 @@ msgid ".desktop file for the file browser"
 msgstr "Файл .desktop для проводника файлов"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "Файл .desktop для системного монитора GNOME"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "Файл .desktop для системного монитора MATE"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -434,8 +434,8 @@ msgid "Lock Screen"
 msgstr "Заблокировать экран"
 
 #: ../main-menu/src/main-menu-ui.c:2424
-msgid "The GNOME Main Menu"
-msgstr "Главное меню GNOME"
+msgid "The MATE Main Menu"
+msgstr "Главное меню MATE"
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -565,25 +565,25 @@ msgstr "Состояние"
 msgid "System"
 msgstr "Система"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Добавить в избранное"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Добавить текущую кнопку запуска в избранное"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Добавить текущий документ в избранное"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Удалить из избранного"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Удалить текущий документ из избранного"

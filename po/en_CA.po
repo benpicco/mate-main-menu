@@ -1,12 +1,12 @@
-# Canadian English translation for gnome-main-menu
+# Canadian English translation for mate-main-menu
 # Copyright (C) 2007 tasty burritos
-# This file is distributed under the same licence as the gnome-main-menu package.
+# This file is distributed under the same licence as the mate-main-menu package.
 # Adam Weinberger <adamw@gnome.org>, 2007.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: mate-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-28 12:45-0500\n"
 "PO-Revision-Date: 2006-12-28 12:45-0500\n"
@@ -129,13 +129,13 @@ msgstr ""
 #. Translators: The format of this string is the task name to be displayed (translate that part) followed by a ";" separator then the filename (DONT translate the file name) of a .desktop file to launch. Multiple entries are separated by a ","
 #: ../control-center/etc/control-center.schemas.in.h:13
 msgid ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"[Change Desktop Background;background.desktop,Add Printer;mate-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-passwd."
 "desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
 "desktop]"
 msgstr ""
-"[Change Desktop Background;background.desktop,Add Printer;gnome-cups-manager."
-"desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-passwd."
+"[Change Desktop Background;background.desktop,Add Printer;mate-cups-manager."
+"desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-passwd."
 "desktop,Add User;YaST2/users.desktop,Open Administrator Settings;YaST."
 "desktop]"
 
@@ -196,8 +196,8 @@ msgid "Remove from Favorites"
 msgstr "Remove from Favorites"
 
 #: ../libslab/application-tile.c:783
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add to Favorites"
 msgstr "Add to Favorites"
 
@@ -244,28 +244,28 @@ msgstr "Delete"
 msgid "Send To..."
 msgstr "Send To..."
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "Open Menu"
 msgstr "Open Menu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_About"
 msgstr "_About"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Default menu and application browser"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:303
-msgid "GNOME Main Menu"
-msgstr "GNOME Main Menu"
+msgid "MATE Main Menu"
+msgstr "MATE Main Menu"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE Main Menu Factory"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 #: ../main-menu/src/slab-window.c:57
 msgid "Main Menu"
 msgstr "Main Menu"
@@ -283,8 +283,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop file for the file browser"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop file for the mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -415,7 +415,7 @@ msgstr ""
 #: ../main-menu/etc/slab.schemas.in.in.h:23
 msgid ""
 "contains the list (in no particular order) of allowable file types to show "
-"in the file area. possible values (see also the note for /desktop/gnome/"
+"in the file area. possible values (see also the note for /desktop/mate/"
 "applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
 "[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
 "recently used (instantiated with the main-menu or the application-browser). "
@@ -423,7 +423,7 @@ msgid ""
 "is the list of files from ~/.recently-used."
 msgstr ""
 "contains the list (in no particular order) of allowable file types to show "
-"in the file area. possible values (see also the note for /desktop/gnome/"
+"in the file area. possible values (see also the note for /desktop/mate/"
 "applications/main-menu/file-area/file_class): 0 [USER_SPECIFIED_APPS], 1 "
 "[RECENTLY_USED_APPS], 2 [RECENT_FILES]. RECENTLY_USED_APPS is the list of "
 "recently used (instantiated with the main-menu or the application-browser). "
@@ -620,8 +620,8 @@ msgid "%s Free / %s Total"
 msgstr "%s Free / %s Total"
 
 #: ../main-menu/src/main-menu-ui.c:304
-msgid "The GNOME Main Menu"
-msgstr "The GNOME Main Menu"
+msgid "The MATE Main Menu"
+msgstr "The MATE Main Menu"
 
 #: ../main-menu/src/main-menu-ui.c:420
 msgid "System"
@@ -714,10 +714,10 @@ msgstr "_Lock Screen..."
 msgid "_Unknown"
 msgstr "_Unknown"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:122
+#: ../caja-main-menu/caja-main-menu.c:122
 msgid "Add the current launcher to favorites"
 msgstr "Add the current launcher to favourites"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:127
+#: ../caja-main-menu/caja-main-menu.c:127
 msgid "Add the current document to favorites"
 msgstr "Add the current document to favourites"

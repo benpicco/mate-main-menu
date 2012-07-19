@@ -35,15 +35,15 @@
 #define SYSTEM_BOOKMARK_MIGRATED_TO_NEW_SET "system-items.migrated"
 #define APPS_BOOKMARK_FILENAME   "applications.xbel"
 
-#define SYSTEM_ITEM_GCONF_KEY    "/desktop/gnome/applications/main-menu/system-area/system_item_list"
-#define HELP_ITEM_GCONF_KEY      "/desktop/gnome/applications/main-menu/system-area/help_item"
-#define CC_ITEM_GCONF_KEY        "/desktop/gnome/applications/main-menu/system-area/control_center_item"
-#define PM_ITEM_GCONF_KEY        "/desktop/gnome/applications/main-menu/system-area/package_manager_item"
-#define LOCKSCREEN_GCONF_KEY     "/desktop/gnome/applications/main-menu/lock_screen_priority"
-#define USER_APPS_GCONF_KEY      "/desktop/gnome/applications/main-menu/file-area/user_specified_apps"
-#define SHOWABLE_TYPES_GCONF_KEY "/desktop/gnome/applications/main-menu/lock-down/showable_file_types"
+#define SYSTEM_ITEM_MATECONF_KEY    "/desktop/mate/applications/main-menu/system-area/system_item_list"
+#define HELP_ITEM_MATECONF_KEY      "/desktop/mate/applications/main-menu/system-area/help_item"
+#define CC_ITEM_MATECONF_KEY        "/desktop/mate/applications/main-menu/system-area/control_center_item"
+#define PM_ITEM_MATECONF_KEY        "/desktop/mate/applications/main-menu/system-area/package_manager_item"
+#define LOCKSCREEN_MATECONF_KEY     "/desktop/mate/applications/main-menu/lock_screen_priority"
+#define USER_APPS_MATECONF_KEY      "/desktop/mate/applications/main-menu/file-area/user_specified_apps"
+#define SHOWABLE_TYPES_MATECONF_KEY "/desktop/mate/applications/main-menu/lock-down/showable_file_types"
 
-#define LOGOUT_DESKTOP_ITEM      "gnome-session-kill.desktop"
+#define LOGOUT_DESKTOP_ITEM      "mate-session-kill.desktop"
 
 void
 move_system_area_to_new_set ()
@@ -83,7 +83,7 @@ move_system_area_to_new_set ()
 }
 
 void
-migrate_system_gconf_to_bookmark_file ()
+migrate_system_mateconf_to_bookmark_file ()
 {
 	BookmarkAgent        *agent;
 	BookmarkStoreStatus   status;
@@ -91,9 +91,9 @@ migrate_system_gconf_to_bookmark_file ()
 
 	gboolean need_migration;
 
-	GList            *gconf_system_list;
+	GList            *mateconf_system_list;
 	gint              system_tile_type;
-	GnomeDesktopItem *ditem;
+	MateDesktopItem *ditem;
 	gchar            *path;
 	const gchar      *loc;
 	gchar            *uri;
@@ -126,11 +126,11 @@ migrate_system_gconf_to_bookmark_file ()
 				items [i]->title = g_strdup (_("Help"));
 				bookmark_agent_add_item (agent, items [i]);
 			}
-			else if (g_str_has_suffix (items [i]->uri, "gnome-session-logout.desktop") && ! items [i]->title) {
+			else if (g_str_has_suffix (items [i]->uri, "mate-session-logout.desktop") && ! items [i]->title) {
 				items [i]->title = g_strdup (_("Logout"));
 				bookmark_agent_add_item (agent, items [i]);
 			}
-			else if (g_str_has_suffix (items [i]->uri, "gnome-session-shutdown.desktop")) {
+			else if (g_str_has_suffix (items [i]->uri, "mate-session-shutdown.desktop")) {
 				items [i]->title = g_strdup (_("Shutdown"));
 				bookmark_agent_add_item (agent, items [i]);
 			}
@@ -141,14 +141,14 @@ migrate_system_gconf_to_bookmark_file ()
 	else if (status == BOOKMARK_STORE_DEFAULT_ONLY)
 		goto exit;
 
-	gconf_system_list = (GList *) libslab_get_gconf_value (SYSTEM_ITEM_GCONF_KEY);
+	mateconf_system_list = (GList *) libslab_get_mateconf_value (SYSTEM_ITEM_MATECONF_KEY);
 
-	if (! gconf_system_list)
+	if (! mateconf_system_list)
 		goto exit;
 
-	need_migration = g_list_length (gconf_system_list) != 5;
+	need_migration = g_list_length (mateconf_system_list) != 5;
 
-	for (node_i = gconf_system_list, i = 0; ! need_migration && node_i; node_i = node_i->next, ++i)
+	for (node_i = mateconf_system_list, i = 0; ! need_migration && node_i; node_i = node_i->next, ++i)
 		need_migration |= ! (GPOINTER_TO_INT (node_i->data) == i);
 
 	if (need_migration) {
@@ -157,22 +157,22 @@ migrate_system_gconf_to_bookmark_file ()
 
 		bm_file = g_bookmark_file_new ();
 
-		for (node_i = gconf_system_list; node_i; node_i = node_i->next) {
+		for (node_i = mateconf_system_list; node_i; node_i = node_i->next) {
 			system_tile_type = GPOINTER_TO_INT (node_i->data);
 
 			ditem = NULL;
 
 			if (system_tile_type == 0)
-				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-					(gchar *) libslab_get_gconf_value (HELP_ITEM_GCONF_KEY));
+				ditem = libslab_mate_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_mateconf_value (HELP_ITEM_MATECONF_KEY));
 			else if (system_tile_type == 1)
-				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-					(gchar *) libslab_get_gconf_value (CC_ITEM_GCONF_KEY));
+				ditem = libslab_mate_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_mateconf_value (CC_ITEM_MATECONF_KEY));
 			else if (system_tile_type == 2)
-				ditem = libslab_gnome_desktop_item_new_from_unknown_id (
-					(gchar *) libslab_get_gconf_value (PM_ITEM_GCONF_KEY));
+				ditem = libslab_mate_desktop_item_new_from_unknown_id (
+					(gchar *) libslab_get_mateconf_value (PM_ITEM_MATECONF_KEY));
 			else if (system_tile_type == 3) {
-				screensavers = libslab_get_gconf_value (LOCKSCREEN_GCONF_KEY);
+				screensavers = libslab_get_mateconf_value (LOCKSCREEN_MATECONF_KEY);
 
 				for (node_j = screensavers; node_j; node_j = node_j->next) {
 					exec_string = (gchar *) node_j->data;
@@ -182,28 +182,28 @@ migrate_system_gconf_to_bookmark_file ()
 					cmd_path = g_find_program_in_path (argv [0]);
 
 					if (cmd_path) {
-						ditem = gnome_desktop_item_new ();
+						ditem = mate_desktop_item_new ();
 
 						path = g_build_filename (
 							g_get_user_data_dir (), PACKAGE, "lockscreen.desktop", NULL);
 
-						gnome_desktop_item_set_location_file (ditem, path);
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_NAME, _("Lock Screen"));
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_ICON, "gnome-lockscreen");
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_EXEC, exec_string);
-						gnome_desktop_item_set_boolean (
-							ditem, GNOME_DESKTOP_ITEM_TERMINAL, FALSE);
-						gnome_desktop_item_set_entry_type (
-							ditem, GNOME_DESKTOP_ITEM_TYPE_APPLICATION);
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_CATEGORIES, "GNOME;GTK;");
-						gnome_desktop_item_set_string (
-							ditem, GNOME_DESKTOP_ITEM_ONLY_SHOW_IN, "GNOME;");
+						mate_desktop_item_set_location_file (ditem, path);
+						mate_desktop_item_set_string (
+							ditem, MATE_DESKTOP_ITEM_NAME, _("Lock Screen"));
+						mate_desktop_item_set_string (
+							ditem, MATE_DESKTOP_ITEM_ICON, "mate-lockscreen");
+						mate_desktop_item_set_string (
+							ditem, MATE_DESKTOP_ITEM_EXEC, exec_string);
+						mate_desktop_item_set_boolean (
+							ditem, MATE_DESKTOP_ITEM_TERMINAL, FALSE);
+						mate_desktop_item_set_entry_type (
+							ditem, MATE_DESKTOP_ITEM_TYPE_APPLICATION);
+						mate_desktop_item_set_string (
+							ditem, MATE_DESKTOP_ITEM_CATEGORIES, "MATE;GTK;");
+						mate_desktop_item_set_string (
+							ditem, MATE_DESKTOP_ITEM_ONLY_SHOW_IN, "MATE;");
 
-						gnome_desktop_item_save (ditem, NULL, TRUE, NULL);
+						mate_desktop_item_save (ditem, NULL, TRUE, NULL);
 
 						g_free (path);
 
@@ -220,12 +220,12 @@ migrate_system_gconf_to_bookmark_file ()
 				g_list_free (screensavers);
 			}
 			else if (system_tile_type == 4)
-				ditem = libslab_gnome_desktop_item_new_from_unknown_id (LOGOUT_DESKTOP_ITEM);
+				ditem = libslab_mate_desktop_item_new_from_unknown_id (LOGOUT_DESKTOP_ITEM);
 			else
 				ditem = NULL;
 
 			if (ditem) {
-				loc = gnome_desktop_item_get_location (ditem);
+				loc = mate_desktop_item_get_location (ditem);
 
 				if (g_path_is_absolute (loc))
 					uri = g_filename_to_uri (loc, NULL, NULL);
@@ -239,10 +239,10 @@ migrate_system_gconf_to_bookmark_file ()
 				g_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
 				g_bookmark_file_add_application (
 					bm_file, uri,
-					gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
-					gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
+					mate_desktop_item_get_localestring (ditem, MATE_DESKTOP_ITEM_NAME),
+					mate_desktop_item_get_localestring (ditem, MATE_DESKTOP_ITEM_EXEC));
 
-				name = gnome_desktop_item_get_string (ditem, GNOME_DESKTOP_ITEM_NAME);
+				name = mate_desktop_item_get_string (ditem, MATE_DESKTOP_ITEM_NAME);
 
 				if (! strcmp (name, "Yelp"))
 					g_bookmark_file_set_title (bm_file, uri, _("Help"));
@@ -255,7 +255,7 @@ migrate_system_gconf_to_bookmark_file ()
 			g_free (uri);
 
 			if (ditem)
-				gnome_desktop_item_unref (ditem);
+				mate_desktop_item_unref (ditem);
 		}
 
 		bm_path = g_build_filename (bm_dir, SYSTEM_BOOKMARK_FILENAME, NULL);
@@ -268,7 +268,7 @@ migrate_system_gconf_to_bookmark_file ()
 		g_bookmark_file_free (bm_file);
 	}
 
-	g_list_free (gconf_system_list);
+	g_list_free (mateconf_system_list);
 
 exit:
 
@@ -276,14 +276,14 @@ exit:
 }
 
 void
-migrate_user_apps_gconf_to_bookmark_file ()
+migrate_user_apps_mateconf_to_bookmark_file ()
 {
 	BookmarkAgent *agent;
 	BookmarkStoreStatus status;
 
 	GList *user_apps_list;
 
-	GnomeDesktopItem *ditem;
+	MateDesktopItem *ditem;
 	const gchar      *loc;
 	gchar            *uri;
 
@@ -303,7 +303,7 @@ migrate_user_apps_gconf_to_bookmark_file ()
 	if (status == BOOKMARK_STORE_USER || status == BOOKMARK_STORE_DEFAULT_ONLY)
 		return;
 
-	user_apps_list = (GList *) libslab_get_gconf_value (USER_APPS_GCONF_KEY);
+	user_apps_list = (GList *) libslab_get_mateconf_value (USER_APPS_MATECONF_KEY);
 
 	if (! user_apps_list)
 		return;
@@ -311,10 +311,10 @@ migrate_user_apps_gconf_to_bookmark_file ()
 	bm_file = g_bookmark_file_new ();
 
 	for (node = user_apps_list; node; node = node->next) {
-		ditem = libslab_gnome_desktop_item_new_from_unknown_id ((gchar *) node->data);
+		ditem = libslab_mate_desktop_item_new_from_unknown_id ((gchar *) node->data);
 
 		if (ditem) {
-			loc = gnome_desktop_item_get_location (ditem);
+			loc = mate_desktop_item_get_location (ditem);
 
 			if (g_path_is_absolute (loc))
 				uri = g_filename_to_uri (loc, NULL, NULL);
@@ -328,14 +328,14 @@ migrate_user_apps_gconf_to_bookmark_file ()
 			g_bookmark_file_set_mime_type (bm_file, uri, "application/x-desktop");
 			g_bookmark_file_add_application (
 				bm_file, uri,
-				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_NAME),
-				gnome_desktop_item_get_localestring (ditem, GNOME_DESKTOP_ITEM_EXEC));
+				mate_desktop_item_get_localestring (ditem, MATE_DESKTOP_ITEM_NAME),
+				mate_desktop_item_get_localestring (ditem, MATE_DESKTOP_ITEM_EXEC));
 		}
 
 		g_free (uri);
 
 		if (ditem)
-			gnome_desktop_item_unref (ditem);
+			mate_desktop_item_unref (ditem);
 
 		g_free (node->data);
 	}
@@ -375,7 +375,7 @@ migrate_showable_file_types ()
 	if (g_file_test (mig_lock_path, G_FILE_TEST_EXISTS))
 		goto exit;
 
-	showable_files = (GList *) libslab_get_gconf_value (SHOWABLE_TYPES_GCONF_KEY);
+	showable_files = (GList *) libslab_get_mateconf_value (SHOWABLE_TYPES_MATECONF_KEY);
 
 	for (i = 0; i < 3; ++i)
 		allowed_types [i] = FALSE;
@@ -400,7 +400,7 @@ migrate_showable_file_types ()
 		for (i = 0; i < 6; ++i)
 			showable_files = g_list_append (showable_files, GINT_TO_POINTER (i));
 
-		libslab_set_gconf_value (SHOWABLE_TYPES_GCONF_KEY, showable_files);
+		libslab_set_mateconf_value (SHOWABLE_TYPES_MATECONF_KEY, showable_files);
 
 		g_list_free (showable_files);
 	}

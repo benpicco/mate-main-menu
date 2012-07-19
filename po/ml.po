@@ -1,5 +1,5 @@
 # translation of ml.po to
-# translation of gnome-main-menu.HEAD.ml.po to
+# translation of mate-main-menu.HEAD.ml.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2009-03-20 05:24+0000\n"
 "PO-Revision-Date: 2009-08-14 17:13+0530\n"
 "Last-Translator: \n"
@@ -92,28 +92,28 @@ msgstr "ഗ്രൂപ്പുകള്‍"
 msgid "Application Actions"
 msgstr "പ്രയോഗങ്ങളുടെ പ്രവര്‍ത്തികള്‍"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "സ്വതവേയുള്ള മെനുവും പ്രയോഗത്തിനുള്ള ബ്രൌസറും"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
+msgid "MATE Main Menu"
 msgstr "ഗ്നോം പ്രധാന മെനു"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
 msgstr "ഗ്നോം പ്രധാന മെനു ഫാക്ടറി"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "പ്രധാന മെനു"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_സംബന്ധിച്ചു്"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "മെനു _തുറക്കുക"
 
@@ -130,8 +130,8 @@ msgid ".desktop file for the file browser"
 msgstr "ഫയല്‍‍ ബ്രൌസറിനുള്ള .desktop ഫയല്‍"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnome-system-monitor-നുള്ള .desktop ഫയല്‍"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mate-system-monitor-നുള്ള .desktop ഫയല്‍"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -411,11 +411,11 @@ msgid "Lock Screen"
 msgstr "സ്ക്രീന്‍ പൂട്ടുക"
 
 #: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
+msgid "The MATE Main Menu"
 msgstr "ഗ്നോം പ്രധാന മെനു"
 
 #: ../main-menu/src/network-status-tile.c:90
@@ -546,26 +546,26 @@ msgstr "അവസ്ഥ"
 msgid "System"
 msgstr "സിസ്റ്റം"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് ചേര്‍ക്കുക"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് നിലവില്‍ ലഭ്യമാക്കുന്ന സംവിധാനം ചേര്‍ക്കുക"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "ഇഷ്ടമുള്ളവയിലേക്കു് നിലവിലുള്ള രേഖ ചേര്‍ക്കുക"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "ഇഷ്ടമുള്ളവയില്‍ നിന്നും നീക്കം ചെയ്യുക"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "ഇഷ്ടമുള്ളവയില്‍ നിന്നും നിലവിലുള്ള രേഖ നീക്കം ചെയ്യുക"
 

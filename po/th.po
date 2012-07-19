@@ -1,10 +1,10 @@
-# Thai translation of gnome-main-menu.
+# Thai translation of mate-main-menu.
 # Copyright (C) 2008 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-main-menu package.
+# This file is distributed under the same license as the mate-main-menu package.
 # Manatsawin Hanmongkolchai <manatsawin@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu HEAD\n"
+"Project-Id-Version: mate-main-menu HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-01 21:59+0700\n"
 "PO-Revision-Date: 2008-10-02 14:47+0700\n"
@@ -107,14 +107,14 @@ msgid "Uninstall"
 msgstr "ถอดถอน"
 
 #: ../libslab/application-tile.c:780 ../libslab/document-tile.c:710
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
-#: ../nautilus-main-menu/nautilus-main-menu.c:135
+#: ../caja-main-menu/caja-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:135
 msgid "Remove from Favorites"
 msgstr "ลบออกจากรายการโปรด"
 
 #: ../libslab/application-tile.c:782 ../libslab/document-tile.c:712
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:125
 msgid "Add to Favorites"
 msgstr "เพิ่มในรายการโปรด"
 
@@ -277,28 +277,28 @@ msgstr "<b>เปิด %s</b>"
 msgid "Remove from System Items"
 msgstr "ลบออกจากรายการของระบบ"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "เมนูปริยาย และเครื่องมือเรียกดูโปรแกรม"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2383 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "เมนูหลักของ GNOME"
+msgid "MATE Main Menu"
+msgstr "เมนูหลักของ MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "โรงงานเมนูหลักของ GNOME"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "โรงงานเมนูหลักของ MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "เมนูหลัก"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_เปิดเมนู"
 
@@ -311,8 +311,8 @@ msgid ".desktop file for the file browser"
 msgstr "แฟ้ม .desktop สำหรับโปรแกรมเรียกดูแฟ้ม"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "แฟ้ม .desktop สำหรับ gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "แฟ้ม .desktop สำหรับ mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
 msgid ".desktop file for the net config tool"
@@ -552,12 +552,12 @@ msgid "Home: %s Free / %s"
 msgstr "บ้าน: ว่าง %s / %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2384
-msgid "The GNOME Main Menu"
-msgstr "เมนูหลักของ GNOME"
+msgid "The MATE Main Menu"
+msgstr "เมนูหลักของ MATE"
 
 #: ../main-menu/src/network-status-tile.c:91
 msgid "Network: None"
@@ -683,15 +683,15 @@ msgstr "สถานะ"
 msgid "System"
 msgstr "ระบบ"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:121
+#: ../caja-main-menu/caja-main-menu.c:121
 msgid "Add the current launcher to favorites"
 msgstr "เพิ่มปุ่มเรียกปัจจุบันในรายการใช้บ่อย"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:126
+#: ../caja-main-menu/caja-main-menu.c:126
 msgid "Add the current document to favorites"
 msgstr "เพิ่มเอกสารปัจจุบันในรายการใช้บ่อย"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:131
-#: ../nautilus-main-menu/nautilus-main-menu.c:136
+#: ../caja-main-menu/caja-main-menu.c:131
+#: ../caja-main-menu/caja-main-menu.c:136
 msgid "Remove the current document from favorites"
 msgstr "ลบเอกสารปัจจุบันออกจากรายการใช้บ่อย"

@@ -5,10 +5,10 @@
   <object class="GtkWindow" id="slab-main-menu-window">
     <property name="border_width">3</property>
     <property name="type">popup</property>
-    <property name="title" translatable="yes">GNOME Main Menu</property>
+    <property name="title" translatable="yes">MATE Main Menu</property>
     <property name="resizable">False</property>
     <property name="destroy_with_parent">True</property>
-    <property name="icon_name">gnome-fs-client</property>
+    <property name="icon_name">mate-fs-client</property>
     <property name="type_hint">menu</property>
     <property name="skip_taskbar_hint">True</property>
     <property name="decorated">False</property>

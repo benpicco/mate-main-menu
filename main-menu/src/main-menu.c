@@ -23,7 +23,7 @@
 #endif
 
 #include <glib.h>
-#include <panel-applet.h>
+#include <mate-panel-applet.h>
 #include <string.h>
 #include <libslab/slab.h>
 
@@ -31,44 +31,44 @@
 
 #include "main-menu-migration.h"
 
-static gboolean main_menu_applet_init (PanelApplet *, const gchar *, gpointer);
+static gboolean main_menu_applet_init (MatePanelApplet *, const gchar *, gpointer);
 
-PANEL_APPLET_BONOBO_FACTORY ("OAFIID:GNOME_MainMenu_Factory", PANEL_TYPE_APPLET, "Main Menu", "0",
+MATE_PANEL_APPLET_MATECOMPONENT_FACTORY ("OAFIID:MATE_MainMenu_Factory", PANEL_TYPE_APPLET, "Main Menu", "0",
 	main_menu_applet_init, NULL);
 
 #define CHECKPOINT_CONFIG_BASENAME "main-menu-checkpoint.conf"
 #define CHECKPOINT_FILE_BASENAME "main-menu"
 
 static gboolean
-main_menu_applet_init (PanelApplet *applet, const gchar *iid, gpointer user_data)
+main_menu_applet_init (MatePanelApplet *applet, const gchar *iid, gpointer user_data)
 {
 
 	libslab_checkpoint_init (CHECKPOINT_CONFIG_BASENAME, CHECKPOINT_FILE_BASENAME);
 
 	libslab_checkpoint ("Main-menu starts up");
 
-	if (strcmp (iid, "OAFIID:GNOME_MainMenu") != 0)
+	if (strcmp (iid, "OAFIID:MATE_MainMenu") != 0)
 		return FALSE;
 
 #ifdef ENABLE_NLS
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
 	/* We need load messages of Network Connection Information
 	   dialog from NetworkManager's mo files.
 	 */
-	bindtextdomain ("NetworkManager", GNOMELOCALEDIR);
+	bindtextdomain ("NetworkManager", MATELOCALEDIR);
 	bind_textdomain_codeset ("NetworkManager", "UTF-8");
 
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	g_set_application_name (_("GNOME Main Menu"));
+	g_set_application_name (_("MATE Main Menu"));
 
 	libslab_checkpoint ("Migrating old configurations");
 	move_system_area_to_new_set ();
-	//migrate_system_gconf_to_bookmark_file    ();
-	migrate_user_apps_gconf_to_bookmark_file ();
+	//migrate_system_mateconf_to_bookmark_file    ();
+	migrate_user_apps_mateconf_to_bookmark_file ();
 	migrate_showable_file_types              ();
 
 	libslab_checkpoint ("Creating user interface for whole applet");

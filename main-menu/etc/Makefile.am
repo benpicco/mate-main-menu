@@ -1,25 +1,25 @@
-serverdir   = $(libdir)/bonobo/servers
-server_DATA = GNOME_MainMenu.server
+serverdir   = $(libdir)/matecomponent/servers
+server_DATA = MATE_MainMenu.server
 @INTLTOOL_SERVER_RULE@
 
-schemasdir   = @GCONF_SCHEMA_FILE_DIR@
+schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
 schemas_DATA = slab.schemas
 @INTLTOOL_SCHEMAS_RULE@
 
-uidir   = $(datadir)/gnome-2.0/ui
-ui_DATA = GNOME_MainMenu_ContextMenu.xml
+uidir   = $(datadir)/mate-2.0/ui
+ui_DATA = MATE_MainMenu_ContextMenu.xml
 
 desktop_helperdir = $(datadir)/applications
-desktop_helper_DATA = gnome-screensaver-lock.desktop gnome-session-logout.desktop gnome-session-shutdown.desktop
+desktop_helper_DATA = mate-screensaver-lock.desktop mate-session-logout.desktop mate-session-shutdown.desktop
 
 desktopdir   = $(datadir)/applications
 desktop_DATA = trigger-panel-run-dialog.desktop
 @INTLTOOL_DESKTOP_RULE@
 
-bookmarkdir = $(datadir)/gnome-main-menu
+bookmarkdir = $(datadir)/mate-main-menu
 bookmark_DATA = applications.xbel documents.xbel places.xbel empty.ots empty.ott
 
-systemitemsdir = $(datadir)/gnome-main-menu
+systemitemsdir = $(datadir)/mate-main-menu
 systemitems_DATA = system-items.xbel
 
 $(desktop_DATA).in: $(desktop_DATA).in.in
@@ -37,7 +37,7 @@ $(systemitems_DATA): $(systemitems_DATA).in
 install-data-local:
 	if test -z "$(DESTDIR)" ; then \
 		for p in $(schemas_DATA) ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $$p; \
+			MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $$p; \
 		done \
 	fi
 

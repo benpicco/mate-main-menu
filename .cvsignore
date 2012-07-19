@@ -23,5 +23,5 @@ intltool-extract.in
 intltool-update
 intltool-update.in
 compile
-gnome-main-menu-*.tar.gz
+mate-main-menu-*.tar.gz
 gtk-doc.make

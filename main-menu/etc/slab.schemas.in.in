@@ -1,9 +1,9 @@
-<gconfschemafile>
+<mateconfschemafile>
 	<schemalist>
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/uninstall_package_command</key>
-			<applyto>/desktop/gnome/applications/main-menu/uninstall_package_command</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/uninstall_package_command</key>
+			<applyto>/desktop/mate/applications/main-menu/uninstall_package_command</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>package-manager --remove PACKAGE_NAME</default>
 			<locale name="C">
@@ -13,9 +13,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/upgrade_package_command</key>
-			<applyto>/desktop/gnome/applications/main-menu/upgrade_package_command</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/upgrade_package_command</key>
+			<applyto>/desktop/mate/applications/main-menu/upgrade_package_command</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>package-manager --update PACKAGE_NAME</default>
 			<locale name="C">
@@ -25,9 +25,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/application_browser</key>
-			<applyto>/desktop/gnome/applications/main-menu/application_browser</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/application_browser</key>
+			<applyto>/desktop/mate/applications/main-menu/application_browser</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>@DATADIR@/applications/application-browser.desktop</default>
 			<locale name="C">
@@ -37,11 +37,11 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file_browser</key>
-			<applyto>/desktop/gnome/applications/main-menu/file_browser</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file_browser</key>
+			<applyto>/desktop/mate/applications/main-menu/file_browser</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
-			<default>nautilus-home.desktop</default>
+			<default>caja-home.desktop</default>
 			<locale name="C">
 				<short>.desktop file for the file browser</short>
 				<long>.desktop file for the file browser</long>
@@ -49,21 +49,21 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/system_monitor</key>
-			<applyto>/desktop/gnome/applications/main-menu/system_monitor</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/system_monitor</key>
+			<applyto>/desktop/mate/applications/main-menu/system_monitor</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
-			<default>gnome-system-monitor.desktop</default>
+			<default>mate-system-monitor.desktop</default>
 			<locale name="C">
-				<short>.desktop file for the gnome-system-monitor</short>
-				<long>.desktop file for the gnome-system-monitor</long>
+				<short>.desktop file for the mate-system-monitor</short>
+				<long>.desktop file for the mate-system-monitor</long>
 			</locale>
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/network_config_tool</key>
-			<applyto>/desktop/gnome/applications/main-menu/network_config_tool</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/network_config_tool</key>
+			<applyto>/desktop/mate/applications/main-menu/network_config_tool</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>/usr/share/applications/YaST2/lan.desktop</default>
 			<locale name="C">
@@ -73,9 +73,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/network_config_tool_nm</key>
-			<applyto>/desktop/gnome/applications/main-menu/network_config_tool_nm</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/network_config_tool_nm</key>
+			<applyto>/desktop/mate/applications/main-menu/network_config_tool_nm</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>/usr/share/applications/nm-connection-editor.desktop</default>
 			<locale name="C">
@@ -85,9 +85,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/search_command</key>
-			<applyto>/desktop/gnome/applications/main-menu/search_command</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/search_command</key>
+			<applyto>/desktop/mate/applications/main-menu/search_command</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
 			<default>tracker-needle SEARCH_STRING</default>
 			<locale name="C">
@@ -97,9 +97,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/urgent_close</key>
-			<applyto>/desktop/gnome/applications/main-menu/urgent_close</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/urgent_close</key>
+			<applyto>/desktop/mate/applications/main-menu/urgent_close</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -109,9 +109,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_class</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/file_class</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/file_class</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/file_class</applyto>
+			<owner>mate-main-menu</owner>
 			<type>int</type>
 			<default>0</default>
 			<locale name="C">
@@ -121,11 +121,11 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_mgr_open_cmd</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/file_mgr_open_cmd</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/file_mgr_open_cmd</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/file_mgr_open_cmd</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
-			<default>nautilus FILE_URI</default>
+			<default>caja FILE_URI</default>
 			<locale name="C">
 				<short>This is the command to execute when the "Open in File Manager" menu item is activated.</short>
 				<long>This is the command to execute when the "Open in File Manager" menu item is activated.  FILE_URI is replaced with a uri corresponding to the dirname of the activated file.</long>
@@ -133,11 +133,11 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/file_send_to_cmd</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/file_send_to_cmd</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/file_send_to_cmd</applyto>
+			<owner>mate-main-menu</owner>
 			<type>string</type>
-			<default>nautilus-sendto DIRNAME/BASENAME</default>
+			<default>caja-sendto DIRNAME/BASENAME</default>
 			<locale name="C">
 				<short>This is the command to execute when the "Send To..." menu item is activated.</short>
 				<long>This is the command to execute when the "Send To..." menu item is activated.  DIRNAME and BASENAME are replaced with the corresponding components of the activated tile.</long>
@@ -145,9 +145,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/max_total_items</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/max_total_items</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/max_total_items</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/max_total_items</applyto>
+			<owner>mate-main-menu</owner>
 			<type>int</type>
 			<default>8</default>
 			<locale name="C">
@@ -157,9 +157,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/min_recent_items</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/min_recent_items</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/min_recent_items</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/min_recent_items</applyto>
+			<owner>mate-main-menu</owner>
 			<type>int</type>
 			<default>2</default>
 			<locale name="C">
@@ -169,9 +169,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/file-area/file_blacklist</key>
-			<applyto>/desktop/gnome/applications/main-menu/file-area/file_blacklist</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/file-area/file_blacklist</key>
+			<applyto>/desktop/mate/applications/main-menu/file-area/file_blacklist</applyto>
+			<owner>mate-main-menu</owner>
 			<type>list</type>
 			<list_type>string</list_type>
 			<default>[application-browser.desktop]</default>
@@ -182,9 +182,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/application_browser_link_visible</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/application_browser_link_visible</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/application_browser_link_visible</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -194,9 +194,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/search_area_visible</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/search_area_visible</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/search_area_visible</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/search_area_visible</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -206,9 +206,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/status_area_visible</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/status_area_visible</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/status_area_visible</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/status_area_visible</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -218,9 +218,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/system_area_visible</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/system_area_visible</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/system_area_visible</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/system_area_visible</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -230,9 +230,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_system_area</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_system_area</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/user_modifiable_system_area</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/user_modifiable_system_area</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -242,9 +242,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_apps</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_apps</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/user_modifiable_apps</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/user_modifiable_apps</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -254,9 +254,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_docs</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_docs</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/user_modifiable_docs</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/user_modifiable_docs</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -266,9 +266,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/user_modifiable_dirs</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/user_modifiable_dirs</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/user_modifiable_dirs</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/user_modifiable_dirs</applyto>
+			<owner>mate-main-menu</owner>
 			<type>bool</type>
 			<default>true</default>
 			<locale name="C">
@@ -278,9 +278,9 @@
 		</schema>
 
 		<schema>
-			<key>/schemas/desktop/gnome/applications/main-menu/lock-down/showable_file_types</key>
-			<applyto>/desktop/gnome/applications/main-menu/lock-down/showable_file_types</applyto>
-			<owner>gnome-main-menu</owner>
+			<key>/schemas/desktop/mate/applications/main-menu/lock-down/showable_file_types</key>
+			<applyto>/desktop/mate/applications/main-menu/lock-down/showable_file_types</applyto>
+			<owner>mate-main-menu</owner>
 			<type>list</type>
 			<list_type>int</list_type>
 			<default>[0,1,2,3,4,5]</default>
@@ -290,4 +290,4 @@
 			</locale>
 		</schema>
 	</schemalist>
-</gconfschemafile>
+</mateconfschemafile>

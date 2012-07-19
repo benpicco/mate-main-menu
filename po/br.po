@@ -1,14 +1,14 @@
-# Breton translation for gnome-main-menu.
+# Breton translation for mate-main-menu.
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2000 SuSE GmbH.
-# Copyright (C) 2009 The GNOME Foundation
+# Copyright (C) 2009 The MATE Foundation
 #
 # Francoise Lermen <flermen@suse.de>, 2000.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gnome-main-menu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Project-Id-Version: Mate-main-menu\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2009-08-10 10:24+0000\n"
 "PO-Revision-Date: 2009-09-11 11:43+0100\n"
 "Last-Translator: Denis\n"
@@ -92,29 +92,29 @@ msgid "Application Actions"
 msgstr "Gwezhiadurioù an arload"
 
 # TLABEL /usr/lib/YaST2/clients/inst_sw_single.ycp:107
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Lañser dre ziouer hag furcher arloadoù"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386
 #: ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "Pennlañser GNOME"
+msgid "MATE Main Menu"
+msgstr "Pennlañser MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "Aozerez ar pennlañser GNOME"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "Aozerez ar pennlañser MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Pennlañser"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_A-zivout"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Digeriñ al lañser"
 
@@ -131,7 +131,7 @@ msgid ".desktop file for the file browser"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
 msgstr ""
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
@@ -336,12 +336,12 @@ msgid "Lock Screen"
 msgstr "Prennañ ar skramm"
 
 #: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
+msgid "mate-lockscreen"
 msgstr ""
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "Pennlañser GNOME"
+msgid "The MATE Main Menu"
+msgstr "Pennlañser MATE"
 
 # TLABEL /usr/lib/YaST2/clients/inst_ask_config.ycp:146
 #: ../main-menu/src/network-status-tile.c:90
@@ -496,26 +496,26 @@ msgstr "Stad"
 msgid "System"
 msgstr "Reizhiad"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr ""
 

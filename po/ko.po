@@ -9,12 +9,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
+"Project-Id-Version: mate-main-menu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-15 23:21+0100\n"
 "PO-Revision-Date: 2007-11-16 20:26+0900\n"
 "Last-Translator: Namhyung Kim<namhyung@gmail.com>\n"
-"Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
+"Language-Team: MATE Korea <mate-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -122,14 +122,14 @@ msgid "Uninstall"
 msgstr "설치 취소"
 
 #: ../libslab/application-tile.c:770 ../libslab/document-tile.c:526
-#: ../nautilus-main-menu/nautilus-main-menu.c:133
-#: ../nautilus-main-menu/nautilus-main-menu.c:138
+#: ../caja-main-menu/caja-main-menu.c:133
+#: ../caja-main-menu/caja-main-menu.c:138
 msgid "Remove from Favorites"
 msgstr "자주 쓰는 프로그램에서 지우기"
 
 #: ../libslab/application-tile.c:772 ../libslab/document-tile.c:528
-#: ../nautilus-main-menu/nautilus-main-menu.c:123
-#: ../nautilus-main-menu/nautilus-main-menu.c:128
+#: ../caja-main-menu/caja-main-menu.c:123
+#: ../caja-main-menu/caja-main-menu.c:128
 msgid "Add to Favorites"
 msgstr "자주 쓰는 프로그램에 더하기"
 
@@ -335,28 +335,28 @@ msgid "Remove from System Items"
 msgstr "시스템 항목에서 지우기"
 
 #  frame
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "기본 메뉴와 프로그램 찾아보기"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2145 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
+msgid "MATE Main Menu"
 msgstr "그놈 기본 메뉴"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
 msgstr "그놈 기본 메뉴 팩토리"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "기본 메뉴"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "정보(_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "메뉴 열기(_O)"
 
@@ -369,7 +369,7 @@ msgid ".desktop file for the file browser"
 msgstr "파일 관리자의 .desktop 파일"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:3
-msgid ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
 msgstr "그놈 시스템 감시기의 .desktop 파일"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
@@ -627,11 +627,11 @@ msgid "%s Free / %s Total"
 msgstr "%s 남음/ 전체 %s"
 
 #: ../main-menu/src/main-menu-migration.c:161
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2146
-msgid "The GNOME Main Menu"
+msgid "The MATE Main Menu"
 msgstr "그놈 기본 메뉴"
 
 #: ../main-menu/src/network-status-tile.c:91
@@ -759,16 +759,16 @@ msgstr "상태"
 msgid "System"
 msgstr "시스템"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:124
 msgid "Add the current launcher to favorites"
 msgstr "현재 실행 아이콘을 즐겨찾기에 더합니다"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Add the current document to favorites"
 msgstr "현재 문서를 즐겨찾기에 더합니다"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:134
-#: ../nautilus-main-menu/nautilus-main-menu.c:139
+#: ../caja-main-menu/caja-main-menu.c:134
+#: ../caja-main-menu/caja-main-menu.c:139
 msgid "Remove the current document from favorites"
 msgstr "현재 문서를 즐겨찾기에서 지웁니다"
 

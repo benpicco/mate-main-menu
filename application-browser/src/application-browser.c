@@ -23,13 +23,13 @@
 #include <string.h>
 
 #include <gtk/gtk.h>
-#include <libgnome/gnome-desktop-item.h>
+#include <libmate/mate-desktop-item.h>
 #include <unique/unique.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
 #include <libslab/slab.h>
 
-#define APPLICATION_BROWSER_PREFIX  "/desktop/gnome/applications/main-menu/ab_"
+#define APPLICATION_BROWSER_PREFIX  "/desktop/mate/applications/main-menu/ab_"
 #define NEW_APPS_MAX_ITEMS  (APPLICATION_BROWSER_PREFIX "new_apps_max_items")
 
 static UniqueResponse
@@ -65,7 +65,7 @@ main (int argc, char *argv[])
 	};
 
 #ifdef ENABLE_NLS
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 #endif
@@ -78,7 +78,7 @@ main (int argc, char *argv[])
 		return 1;
 	}
 
-	unique_app = unique_app_new ("org.gnome.MainMenu", NULL);
+	unique_app = unique_app_new ("org.mate.MainMenu", NULL);
 
 	if (unique_app_is_running (unique_app))
 	{
@@ -89,7 +89,7 @@ main (int argc, char *argv[])
 	}
 
 	NewAppConfig *config = g_new0 (NewAppConfig, 1);
-	config->max_items = get_slab_gconf_int (NEW_APPS_MAX_ITEMS);
+	config->max_items = get_slab_mateconf_int (NEW_APPS_MAX_ITEMS);
 	config->name = _("New Applications");
 	AppShellData *app_data = appshelldata_new ("applications.menu", config,
 		APPLICATION_BROWSER_PREFIX, GTK_ICON_SIZE_DND, TRUE, FALSE);
@@ -98,7 +98,7 @@ main (int argc, char *argv[])
 	layout_shell (app_data, _("Filter"), _("Groups"), _("Application Actions"), NULL, NULL);
 
 	create_main_window (app_data, "MyApplicationBrowser", _("Application Browser"),
-		"gnome-fs-client", 940, 600, hidden);
+		"mate-fs-client", 940, 600, hidden);
 
 	unique_app_watch_window (unique_app, GTK_WINDOW (app_data->main_app));
 	g_signal_connect (unique_app, "message-received", G_CALLBACK (unique_app_message_cb), app_data);

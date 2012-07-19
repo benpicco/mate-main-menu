@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-"
 "main-menu&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-11-22 23:36+0000\n"
 "PO-Revision-Date: 2012-01-01 19:55+0900\n"
@@ -96,29 +96,29 @@ msgstr "グループ"
 msgid "Application Actions"
 msgstr "アプリケーションアクション "
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "デフォルトメニューとアプリケーションブラウザー"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2423 ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "GNOMEメインメニュー "
+msgid "MATE Main Menu"
+msgstr "MATEメインメニュー "
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOMEメインメニューファクトリ "
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATEメインメニューファクトリ "
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "メインメニュー "
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "について(_A)"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 #, fuzzy
 msgid "_Open Menu"
 msgstr "オープンメニュー "
@@ -138,8 +138,8 @@ msgid ".desktop file for the file browser"
 msgstr "ファイルブラウザー用の.desktopファイル"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr "gnomeシステムモニター用の.desktopファイル"
+msgid ".desktop file for the mate-system-monitor"
+msgstr "mateシステムモニター用の.desktopファイル"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -420,8 +420,8 @@ msgid "Lock Screen"
 msgstr "画面のロック"
 
 #: ../main-menu/src/main-menu-ui.c:2424
-msgid "The GNOME Main Menu"
-msgstr "GNOMEメインメニュー "
+msgid "The MATE Main Menu"
+msgstr "MATEメインメニュー "
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -562,26 +562,26 @@ msgstr "状態"
 msgid "System"
 msgstr "システム"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "お気に入りへの追加"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr ""
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "お気に入りからの削除"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 #, fuzzy
 msgid "Remove the current document from favorites"
 msgstr "お気に入りからの削除"
@@ -605,14 +605,14 @@ msgstr "お気に入りからの削除"
 #~ "ます。"
 
 #~ msgid ""
-#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
-#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
+#~ "[Change Desktop Background;background.desktop,Add Printer;mate-cups-"
+#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-"
 #~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
 #~ "YaST.desktop]"
 #~ msgstr ""
-#~ "[デスクトップの背景の変更;background.desktop,プリンタの追加;gnome-cups-"
+#~ "[デスクトップの背景の変更;background.desktop,プリンタの追加;mate-cups-"
 #~ "manager.desktop,ネットワークの設定;YaST2/lan.desktop,パスワードの変更;"
-#~ "gnome-passwd.desktop,ユーザの追加;YaST2/users.desktop,管理者設定を開く;"
+#~ "mate-passwd.desktop,ユーザの追加;YaST2/users.desktop,管理者設定を開く;"
 #~ "YaST.desktop]"
 
 #~ msgid ""
@@ -769,7 +769,7 @@ msgstr "お気に入りからの削除"
 #~ msgid ""
 #~ "contains the list (in no particular order) of allowable file types to "
 #~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "mate/applications/main-menu/file-area/file_class): 0 "
 #~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
 #~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
 #~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
@@ -777,7 +777,7 @@ msgstr "お気に入りからの削除"
 #~ "recently-used."
 #~ msgstr ""
 #~ "ファイルエリアに表示される実行可能なファイルタイプのリスト(特定の順序では"
-#~ "ない)を含みます。有効値は以下の通りです(/desktop/gnome/ applications/main-"
+#~ "ない)を含みます。有効値は以下の通りです(/desktop/mate/ applications/main-"
 #~ "menu/file-area/file_classの注意も参照）: 0［USER_SPECIFIED_APPS］、1"
 #~ "［RECENTLY_USED_APPS］、2［RECENT_FILES］。RECENTLY_USED_APPSは最近使用さ"
 #~ "れたリストです(メインメニューまたはアプリケーションブラウザにより初期化済"

@@ -23,7 +23,7 @@
 #include <string.h>
 #include <sys/statvfs.h>
 #include <glib/gi18n.h>
-#include <gconf/gconf-client.h>
+#include <mateconf/mateconf-client.h>
 
 #define GIGA (1024 * 1024 * 1024)
 #define MEGA (1024 * 1024)
@@ -32,7 +32,7 @@
 #define TIMEOUT_KEY_DIR "/apps/procman"
 #define TIMEOUT_KEY     "/apps/procman/disks_interval"
 
-#define SYSTEM_MONITOR_GCONF_KEY "/desktop/gnome/applications/main-menu/system_monitor"
+#define SYSTEM_MONITOR_MATECONF_KEY "/desktop/mate/applications/main-menu/system_monitor"
 
 G_DEFINE_TYPE (HardDriveStatusTile, hard_drive_status_tile, NAMEPLATE_TILE_TYPE)
 
@@ -51,7 +51,7 @@ static void tile_show_event_cb (GtkWidget *, gpointer);
 
 typedef struct
 {
-	GConfClient *gconf;
+	MateConfClient *mateconf;
 	
 	gdouble capacity_bytes;
 	gdouble available_bytes;	
@@ -138,8 +138,8 @@ hard_drive_status_tile_init (HardDriveStatusTile * tile)
 {
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (tile);
 
-	priv->gconf = gconf_client_get_default ();
-	gconf_client_add_dir (priv->gconf, TIMEOUT_KEY_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
+	priv->mateconf = mateconf_client_get_default ();
+	mateconf_client_add_dir (priv->mateconf, TIMEOUT_KEY_DIR, MATECONF_CLIENT_PRELOAD_NONE, NULL);
 }
 
 static void
@@ -147,7 +147,7 @@ hard_drive_status_tile_finalize (GObject * g_object)
 {
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (HARD_DRIVE_STATUS_TILE (g_object));
 
-	g_object_unref (priv->gconf);
+	g_object_unref (priv->mateconf);
 
 	(*G_OBJECT_CLASS (hard_drive_status_tile_parent_class)->finalize) (g_object);
 }
@@ -163,7 +163,7 @@ hard_drive_status_tile_destroy (GtkObject * gtk_object)
 
 	if (priv->timeout_notify)
 	{
-		gconf_client_notify_remove (priv->gconf, priv->timeout_notify);
+		mateconf_client_notify_remove (priv->mateconf, priv->timeout_notify);
 		priv->timeout_notify = 0;
 	}
 
@@ -260,7 +260,7 @@ timeout_cb (gpointer user_data)
 }
 
 static void
-timeout_changed_cb (GConfClient * client, guint id, GConfEntry * entry, gpointer user_data)
+timeout_changed_cb (MateConfClient * client, guint id, MateConfEntry * entry, gpointer user_data)
 {
 	HardDriveStatusTile *tile = HARD_DRIVE_STATUS_TILE (user_data);
 	HardDriveStatusTilePrivate *priv = HARD_DRIVE_STATUS_TILE_GET_PRIVATE (tile);
@@ -270,7 +270,7 @@ timeout_changed_cb (GConfClient * client, guint id, GConfEntry * entry, gpointer
 	if (priv->update_timeout)
 		g_source_remove (priv->update_timeout);
 
-	timeout = gconf_value_get_int (gconf_entry_get_value (entry));
+	timeout = mateconf_value_get_int (mateconf_entry_get_value (entry));
 	timeout = MAX (timeout, 1000);
 
 	priv->update_timeout = g_timeout_add (timeout, timeout_cb, tile);
@@ -284,7 +284,7 @@ tile_hide_event_cb (GtkWidget * widget, gpointer user_data)
 
 	if (priv->timeout_notify)
 	{
-		gconf_client_notify_remove (priv->gconf, priv->timeout_notify);
+		mateconf_client_notify_remove (priv->mateconf, priv->timeout_notify);
 		priv->timeout_notify = 0;
 	}
 
@@ -308,11 +308,11 @@ tile_show_event_cb (GtkWidget * widget, gpointer user_data)
 	{
 		int timeout;
 
-		timeout = gconf_client_get_int (priv->gconf, TIMEOUT_KEY, NULL);
+		timeout = mateconf_client_get_int (priv->mateconf, TIMEOUT_KEY, NULL);
 		timeout = MAX (timeout, 1000);
 
 		priv->timeout_notify =
-			gconf_client_notify_add (priv->gconf, TIMEOUT_KEY, timeout_changed_cb, tile,
+			mateconf_client_notify_add (priv->mateconf, TIMEOUT_KEY, timeout_changed_cb, tile,
 			NULL, NULL);
 
 		priv->update_timeout = g_timeout_add (timeout, timeout_cb, tile);
@@ -322,20 +322,20 @@ tile_show_event_cb (GtkWidget * widget, gpointer user_data)
 static void
 open_hard_drive_tile (Tile * tile, TileEvent * event, TileAction * action)
 {
-	GnomeDesktopItem *ditem;
+	MateDesktopItem *ditem;
 	gchar *fb_ditem_id;
 	
 
-	fb_ditem_id = (gchar *) libslab_get_gconf_value (SYSTEM_MONITOR_GCONF_KEY);
+	fb_ditem_id = (gchar *) libslab_get_mateconf_value (SYSTEM_MONITOR_MATECONF_KEY);
 
 	if (! fb_ditem_id)
-		fb_ditem_id = g_strdup ("gnome-system-monitor.desktop");
+		fb_ditem_id = g_strdup ("mate-system-monitor.desktop");
 
-	ditem = libslab_gnome_desktop_item_new_from_unknown_id (fb_ditem_id);
+	ditem = libslab_mate_desktop_item_new_from_unknown_id (fb_ditem_id);
 
 	if (! open_desktop_item_exec (ditem))
 		g_warning ("open_hard_drive_tile: couldn't exec item\n");
 
-	gnome_desktop_item_unref (ditem);
+	mate_desktop_item_unref (ditem);
 	g_free (fb_ditem_id);
 }

@@ -7,8 +7,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-main-menu&component=general\n"
+"Project-Id-Version: mate-main-menu\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-main-menu&component=general\n"
 "POT-Creation-Date: 2010-06-29 18:41+0000\n"
 "PO-Revision-Date: 2010-07-03 11:25+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
@@ -91,30 +91,30 @@ msgstr "Skupine"
 msgid "Application Actions"
 msgstr "Dejanja programov"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Privzeti meni in brskalnik programov"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2420
 #: ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "Glavni meni GNOME"
+msgid "MATE Main Menu"
+msgstr "Glavni meni MATE"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME tovarna glavnega menija"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE tovarna glavnega menija"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_O Programu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Odpri meni"
 
@@ -131,8 +131,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop datoteka za upravljalnik datotek"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop datoteka za gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop datoteka za mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -343,8 +343,8 @@ msgid "Lock Screen"
 msgstr "Zakleni zaslon"
 
 #: ../main-menu/src/main-menu-ui.c:2421
-msgid "The GNOME Main Menu"
-msgstr "Glavni meni GNOME"
+msgid "The MATE Main Menu"
+msgstr "Glavni meni MATE"
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -474,31 +474,31 @@ msgstr "Stanje"
 msgid "System"
 msgstr "Sistem"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Dodaj med priljubljene"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Dodaj trenutni zaganjalnik med priljubljene"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Dodaj trenutni dokument med priljubljene"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Odstrani iz priljubljenih"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Odstrani trenutni dokument iz priljubljenih"
 
-#~ msgid "gnome-lockscreen"
-#~ msgstr "gnome-lockscreen"
+#~ msgid "mate-lockscreen"
+#~ msgstr "mate-lockscreen"
 
 #, fuzzy
 #~ msgid "Control Center"

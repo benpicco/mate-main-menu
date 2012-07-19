@@ -444,10 +444,10 @@ set_ui_label (GtkBuilder * ui, const gchar * id, const gchar * text)
 static void
 launch_network_config (const gchar * desktop_key)
 {
-	GnomeDesktopItem *desktop_item =
-		load_desktop_item_from_gconf_key (desktop_key);
+	MateDesktopItem *desktop_item =
+		load_desktop_item_from_mateconf_key (desktop_key);
 
 	if (!open_desktop_item_exec (desktop_item))
 		g_warning ("network_status_tile_open: couldn't exec item\n");
-	gnome_desktop_item_unref (desktop_item);
+	mate_desktop_item_unref (desktop_item);
 }

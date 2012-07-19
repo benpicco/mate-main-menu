@@ -7,8 +7,8 @@
 # Bruce Cowan <bcowan@fastmail.co.uk>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-main-menu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Project-Id-Version: mate-main-menu\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-"
 "main-menu&component=general\n"
 "POT-Creation-Date: 2009-10-06 14:16+0100\n"
 "PO-Revision-Date: 2009-10-06 14:17+0100\n"
@@ -100,28 +100,28 @@ msgstr "Groups"
 msgid "Application Actions"
 msgstr "Application Actions"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Default menu and application browser"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2386 ../main-menu/src/slab-window.glade.h:7
-msgid "GNOME Main Menu"
-msgstr "GNOME Main Menu"
+msgid "MATE Main Menu"
+msgstr "MATE Main Menu"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME Main Menu Factory"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE Main Menu Factory"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Main Menu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_About"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Open Menu"
 
@@ -138,8 +138,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop file for the file browser"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop file for the gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop file for the mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -426,12 +426,12 @@ msgid "Lock Screen"
 msgstr "Lock Screen"
 
 #: ../main-menu/src/main-menu-migration.c:194
-msgid "gnome-lockscreen"
-msgstr "gnome-lockscreen"
+msgid "mate-lockscreen"
+msgstr "mate-lockscreen"
 
 #: ../main-menu/src/main-menu-ui.c:2387
-msgid "The GNOME Main Menu"
-msgstr "The GNOME Main Menu"
+msgid "The MATE Main Menu"
+msgstr "The MATE Main Menu"
 
 #: ../main-menu/src/network-status-tile.c:90
 msgid "Network: None"
@@ -561,26 +561,26 @@ msgstr "Status"
 msgid "System"
 msgstr "System"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Add to Favourites"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Add the current launcher to favourites"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Add the current document to favourites"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Remove from Favourites"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Remove the current document from favourites"
 
@@ -762,13 +762,13 @@ msgstr "Remove the current document from favourites"
 #~ "associated .desktop file to launch for that task."
 
 #~ msgid ""
-#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
-#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
+#~ "[Change Desktop Background;background.desktop,Add Printer;mate-cups-"
+#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-"
 #~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
 #~ "YaST.desktop]"
 #~ msgstr ""
-#~ "[Change Desktop Background;background.desktop,Add Printer;gnome-cups-"
-#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;gnome-"
+#~ "[Change Desktop Background;background.desktop,Add Printer;mate-cups-"
+#~ "manager.desktop,Configure Network;YaST2/lan.desktop,Change Password;mate-"
 #~ "passwd.desktop,Add User;YaST2/users.desktop,Open Administrator Settings;"
 #~ "YaST.desktop]"
 
@@ -831,7 +831,7 @@ msgstr "Remove the current document from favourites"
 #~ msgid ""
 #~ "contains the list (in no particular order) of allowable file types to "
 #~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "mate/applications/main-menu/file-area/file_class): 0 "
 #~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
 #~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
 #~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "
@@ -840,7 +840,7 @@ msgstr "Remove the current document from favourites"
 #~ msgstr ""
 #~ "contains the list (in no particular order) of allowable file types to "
 #~ "show in the file area. possible values (see also the note for /desktop/"
-#~ "gnome/applications/main-menu/file-area/file_class): 0 "
+#~ "mate/applications/main-menu/file-area/file_class): 0 "
 #~ "[USER_SPECIFIED_APPS], 1 [RECENTLY_USED_APPS], 2 [RECENT_FILES]. "
 #~ "RECENTLY_USED_APPS is the list of recently used (instantiated with the "
 #~ "main-menu or the application-browser). USER_SPECIFIED_APPS is equivalent "

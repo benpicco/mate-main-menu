@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-"
 "main-menu&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-09-28 14:33+0000\n"
 "PO-Revision-Date: 2011-10-09 08:45+0300\n"
@@ -100,29 +100,29 @@ msgstr "Grupės"
 msgid "Application Actions"
 msgstr "Programų veiksmai"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:1
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:1
 msgid "Default menu and application browser"
 msgstr "Numatytoji meniu ir programų naršyklė"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:2
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:2
 #: ../main-menu/src/main-menu-ui.c:2423 ../main-menu/src/main-menu.c:66
 #: ../main-menu/src/slab-window.ui.h:6
-msgid "GNOME Main Menu"
-msgstr "GNOME pagrindinis meniu"
+msgid "MATE Main Menu"
+msgstr "MATE pagrindinis meniu"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:3
-msgid "GNOME Main Menu Factory"
-msgstr "GNOME pagrindinio meniu gamykla"
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:3
+msgid "MATE Main Menu Factory"
+msgstr "MATE pagrindinio meniu gamykla"
 
-#: ../main-menu/etc/GNOME_MainMenu.server.in.in.h:4
+#: ../main-menu/etc/MATE_MainMenu.server.in.in.h:4
 msgid "Main Menu"
 msgstr "Pagrindinis meniu"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:1
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:1
 msgid "_About"
 msgstr "_Apie"
 
-#: ../main-menu/etc/GNOME_MainMenu_ContextMenu.xml.h:2
+#: ../main-menu/etc/MATE_MainMenu_ContextMenu.xml.h:2
 msgid "_Open Menu"
 msgstr "_Atverti meniu"
 
@@ -139,8 +139,8 @@ msgid ".desktop file for the file browser"
 msgstr ".desktop failas failų naršyklei"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:4
-msgid ".desktop file for the gnome-system-monitor"
-msgstr ".desktop failas programai gnome-system-monitor"
+msgid ".desktop file for the mate-system-monitor"
+msgstr ".desktop failas programai mate-system-monitor"
 
 #: ../main-menu/etc/slab.schemas.in.in.h:5
 msgid ".desktop file for the net config tool"
@@ -430,8 +430,8 @@ msgid "Lock Screen"
 msgstr "Užrakinti ekraną"
 
 #: ../main-menu/src/main-menu-ui.c:2424
-msgid "The GNOME Main Menu"
-msgstr "GNOME pagrindinis meniu"
+msgid "The MATE Main Menu"
+msgstr "MATE pagrindinis meniu"
 
 #: ../main-menu/src/network-status-tile.c:89
 msgid "Network: None"
@@ -561,31 +561,31 @@ msgstr "Būsena"
 msgid "System"
 msgstr "Sistema"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:114
-#: ../nautilus-main-menu/nautilus-main-menu.c:119
+#: ../caja-main-menu/caja-main-menu.c:114
+#: ../caja-main-menu/caja-main-menu.c:119
 msgid "Add to Favorites"
 msgstr "Į&traukti į mėgiamus"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:115
+#: ../caja-main-menu/caja-main-menu.c:115
 msgid "Add the current launcher to favorites"
 msgstr "Pridėti leistuką į mėgiamus"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:120
+#: ../caja-main-menu/caja-main-menu.c:120
 msgid "Add the current document to favorites"
 msgstr "Pridėti dokumentą į mėgiamus"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:124
-#: ../nautilus-main-menu/nautilus-main-menu.c:129
+#: ../caja-main-menu/caja-main-menu.c:124
+#: ../caja-main-menu/caja-main-menu.c:129
 msgid "Remove from Favorites"
 msgstr "Pašalinti iš mėgiamų"
 
-#: ../nautilus-main-menu/nautilus-main-menu.c:125
-#: ../nautilus-main-menu/nautilus-main-menu.c:130
+#: ../caja-main-menu/caja-main-menu.c:125
+#: ../caja-main-menu/caja-main-menu.c:130
 msgid "Remove the current document from favorites"
 msgstr "Pašalinti dokumentą iš mėgiamų"
 
 #, fuzzy
-#~ msgid "gnome-lockscreen"
+#~ msgid "mate-lockscreen"
 #~ msgstr "Užrakinti ekraną"
 
 #, fuzzy

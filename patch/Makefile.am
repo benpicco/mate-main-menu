@@ -1,1 +1,1 @@
-EXTRA_DIST = gnome-desktop-recently-used-apps.patch gnome-panel-recently-used-apps.patch
+EXTRA_DIST = mate-desktop-recently-used-apps.patch mate-panel-recently-used-apps.patch

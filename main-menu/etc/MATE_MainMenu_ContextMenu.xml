@@ -1,0 +1,8 @@
+<Root>
+  <popups>
+    <popup name="button3">
+      <menuitem name="Main Menu Open Item" verb="MainMenuOpen" _label="_Open Menu" pixtype="stock" pixname="mate-fs-client"/>
+      <menuitem name="Main Menu About Item" verb="MainMenuAbout" _label="_About" pixtype="stock" pixname="mate-stock-about"/>
+    </popup>
+  </popups>
+</Root>

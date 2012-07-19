@@ -2,7 +2,7 @@ desktopdir       = $(datadir)/applications
 desktop_DATA     = application-browser.desktop
 @INTLTOOL_DESKTOP_RULE@
 
-schemasdir   = @GCONF_SCHEMA_FILE_DIR@
+schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
 schemas_DATA = application-browser.schemas
 @INTLTOOL_SCHEMAS_RULE@
 
@@ -12,7 +12,7 @@ $(desktop_DATA).in: $(desktop_DATA).in.in
 install-data-local:
 	if test -z "$(DESTDIR)" ; then \
 		for p in $(schemas_DATA) ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $$p; \
+			MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $$p; \
 		done \
 	fi
 

@@ -1,5 +1,5 @@
 /*
- *  nautilus-main-menu.c
+ *  caja-main-menu.c
  * 
  *  Copyright (C) 2006 Novell, Inc.
  *
@@ -25,9 +25,9 @@
 #include <config.h>
 #endif
 
-#include "nautilus-main-menu.h"
+#include "caja-main-menu.h"
 
-#include <libnautilus-extension/nautilus-menu-provider.h>
+#include <libcaja-extension/caja-menu-provider.h>
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
@@ -35,8 +35,8 @@
 #include <string.h> /* for strcmp */
 #include <unistd.h> /* for chdir */
 
-static void nautilus_main_menu_instance_init (NautilusMainMenu      *cvs);
-static void nautilus_main_menu_class_init    (NautilusMainMenuClass *class);
+static void caja_main_menu_instance_init (CajaMainMenu      *cvs);
+static void caja_main_menu_class_init    (CajaMainMenuClass *class);
 
 static GType menu_type = 0;
 
@@ -54,14 +54,14 @@ static const char * const document_blacklist [] =
 };
 
 static MenuFileInfo
-get_menu_file_info (NautilusFileInfo *file_info)
+get_menu_file_info (CajaFileInfo *file_info)
 {
 	MenuFileInfo  ret;
 	gchar            *mime_type;
 	
 	g_assert (file_info);
 
-	mime_type = nautilus_file_info_get_mime_type (file_info);
+	mime_type = caja_file_info_get_mime_type (file_info);
 	
 	if (strcmp (mime_type, "application/x-desktop") == 0) {
 		ret = FILE_INFO_LAUNCHER;
@@ -84,8 +84,8 @@ get_menu_file_info (NautilusFileInfo *file_info)
 }
 
 static void
-main_menu_callback (NautilusMenuItem *item,
-			NautilusFileInfo *file_info)
+main_menu_callback (CajaMenuItem *item,
+			CajaFileInfo *file_info)
 {
 	switch (get_menu_file_info (file_info)) {
 		case FILE_INFO_LAUNCHER:
@@ -102,10 +102,10 @@ main_menu_callback (NautilusMenuItem *item,
 	}
 }
 
-static NautilusMenuItem *
+static CajaMenuItem *
 main_menu_menu_item_new (MenuFileInfo  menu_file_info)
 {
-	NautilusMenuItem *ret;
+	CajaMenuItem *ret;
 	const char *name;
 	const char *tooltip;		
 
@@ -135,18 +135,18 @@ main_menu_menu_item_new (MenuFileInfo  menu_file_info)
 		g_assert_not_reached ();
 	}
 
-	ret = nautilus_menu_item_new ("NautilusMainMenu::main_menu",
-				      name, tooltip, "gnome-fs-client");
+	ret = caja_menu_item_new ("CajaMainMenu::main_menu",
+				      name, tooltip, "mate-fs-client");
 
 	return ret;
 }
 
 static GList *
-nautilus_main_menu_get_file_items (NautilusMenuProvider *provider,
+caja_main_menu_get_file_items (CajaMenuProvider *provider,
 				       GtkWidget            *window,
 				       GList                *files)
 {
-	NautilusMenuItem *item;
+	CajaMenuItem *item;
 	MenuFileInfo  menu_file_info;
 	GList *l;
 	
@@ -174,55 +174,55 @@ nautilus_main_menu_get_file_items (NautilusMenuProvider *provider,
 }
 
 static void
-nautilus_main_menu_menu_provider_iface_init (NautilusMenuProviderIface *iface)
+caja_main_menu_menu_provider_iface_init (CajaMenuProviderIface *iface)
 {
-	iface->get_file_items = nautilus_main_menu_get_file_items;
+	iface->get_file_items = caja_main_menu_get_file_items;
 }
 
 static void 
-nautilus_main_menu_instance_init (NautilusMainMenu *cvs)
+caja_main_menu_instance_init (CajaMainMenu *cvs)
 {
 }
 
 static void
-nautilus_main_menu_class_init (NautilusMainMenuClass *class)
+caja_main_menu_class_init (CajaMainMenuClass *class)
 {
 }
 
 GType
-nautilus_main_menu_get_type (void) 
+caja_main_menu_get_type (void) 
 {
 	return menu_type;
 }
 
 void
-nautilus_main_menu_register_type (GTypeModule *module)
+caja_main_menu_register_type (GTypeModule *module)
 {
 	static const GTypeInfo info = {
-		sizeof (NautilusMainMenuClass),
+		sizeof (CajaMainMenuClass),
 		(GBaseInitFunc) NULL,
 		(GBaseFinalizeFunc) NULL,
-		(GClassInitFunc) nautilus_main_menu_class_init,
+		(GClassInitFunc) caja_main_menu_class_init,
 		NULL, 
 		NULL,
-		sizeof (NautilusMainMenu),
+		sizeof (CajaMainMenu),
 		0,
-		(GInstanceInitFunc) nautilus_main_menu_instance_init,
+		(GInstanceInitFunc) caja_main_menu_instance_init,
 	};
 
 	static const GInterfaceInfo menu_provider_iface_info = {
-		(GInterfaceInitFunc) nautilus_main_menu_menu_provider_iface_init,
+		(GInterfaceInitFunc) caja_main_menu_menu_provider_iface_init,
 		NULL,
 		NULL
 	};
 
 	menu_type = g_type_module_register_type (module,
 						     G_TYPE_OBJECT,
-						     "NautilusMainMenu",
+						     "CajaMainMenu",
 						     &info, 0);
 
 	g_type_module_add_interface (module,
 				     menu_type,
-				     NAUTILUS_TYPE_MENU_PROVIDER,
+				     CAJA_TYPE_MENU_PROVIDER,
 				     &menu_provider_iface_info);
 }
